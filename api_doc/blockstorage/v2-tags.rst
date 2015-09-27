@@ -13,7 +13,7 @@
 
    Shows absolute limits for a tenant.
    
-   An absolute limit value of ``-1`` indicates that theabsolute limit
+   An absolute limit value of ``-1``indicates that theabsolute limit
    for the item is infinite.
 
 .. swagger:tag:: volumes
@@ -22,8 +22,8 @@
    A volume is a detachable block storage device similar to a USBhard
    drive. You can attach a volume to one instance at a time.
    
-   The ``snapshot_id`` and ``source_volid`` parameters specify the ID
-   of the snapshot or volume from which thisvolume originates. If the
+   The ``snapshot_id``and ``source_volid``parameters specify the ID of
+   the snapshot or volume from which thisvolume originates. If the
    volume was not created from a snapshot orsource volume, these
    values are null.
    
@@ -64,7 +64,7 @@
    Creates private volumes.
    
    By default, volumes are public. To create a private volume, setthe
-   ``is_public`` boolean field to ``false`` atvolume creation time. To
+   ``is_public``boolean field to ``false``atvolume creation time. To
    control access to a private volume, youadd a project to or remove a
    project from the volume. Privatevolume types without projects are
    only accessible by users with theadministrative role and context.

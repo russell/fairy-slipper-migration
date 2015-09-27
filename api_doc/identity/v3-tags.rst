@@ -74,8 +74,8 @@
    Manages policies.
    
    You can encode policy rule sets into a blob to be consumed byremote
-   services. To do so, set ``type`` to ``application/json`` and
-   specify policy rules as JSON strings in a ``blob`` . For example:
+   services. To do so, set ``type``to ``application/json``and specify
+   policy rules as JSON strings in a ``blob``. For example:
    
    ::
       "blob": {           "default": false       }
@@ -95,5 +95,5 @@
    
    Although a region does not have a geographical connotation,
    adeployment can use a geographical name for a region, such as ``us-
-   east`` .
+   east``.
 

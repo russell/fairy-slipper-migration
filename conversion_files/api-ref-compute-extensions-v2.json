@@ -125,7 +125,7 @@
     {
       "description": "Servers extended status (servers)", 
       "name": "extended-status", 
-      "summary": "Shows the ``vm_state`` , ``task_state`` , and ``power_state``\nextended status information in detailedserver responses."
+      "summary": "Shows the ``vm_state``, ``task_state``, and ``power_state``extended\nstatus information in detailedserver responses."
     }, 
     {
       "description": "Servers with IP type (servers)", 
@@ -140,7 +140,7 @@
     {
       "description": "Servers with mac_addr extended attribute(servers)", 
       "name": "server-ext-ips-mac", 
-      "summary": "Creates, shows information for, and lists servers with the\n``mac_addr`` extended attribute."
+      "summary": "Creates, shows information for, and lists servers with the\n``mac_addr``extended attribute."
     }, 
     {
       "description": "Servers with scheduler hints (servers)", 
@@ -165,7 +165,7 @@
     {
       "description": "Servers shelve (servers, action)", 
       "name": "server-shelve", 
-      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. Allassociated data\nand resources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelvedinstance that\nyou no longer need."
+      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve``action to shelve a server. Allassociated data and\nresources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve``action to restore a shelved instance.\n\nUse the ``shelveOffload``action to remove a shelvedinstance that\nyou no longer need."
     }, 
     {
       "description": "Servers start and stop (servers, action)", 
@@ -180,7 +180,7 @@
     {
       "description": "Servers and images with disk config (servers,images)", 
       "name": "disk-config", 
-      "summary": "Extends servers with the ``diskConfig`` attribute."
+      "summary": "Extends servers with the ``diskConfig``attribute."
     }, 
     {
       "description": "Servers availability zones (servers, os-availability-zone)", 
@@ -210,7 +210,7 @@
     {
       "description": "Server boot from volume (os-volumes_boot)", 
       "name": "os-volume_boot", 
-      "summary": "Starts an instance by using a volume with the ``bootable``\nattribute. The image on the volume is usedto boot the instance."
+      "summary": "Starts an instance by using a volume with the\n``bootable``attribute. The image on the volume is usedto boot the\ninstance."
     }, 
     {
       "description": "Flavors create and delete (flavors)", 
@@ -220,7 +220,7 @@
     {
       "description": "Flavors with disabled attribute (flavors)", 
       "name": "flv-disabled", 
-      "summary": "Lists and gets details for flavors. Includes the ``disabled``\nextended attribute."
+      "summary": "Lists and gets details for flavors. Includes the\n``disabled``extended attribute."
     }, 
     {
       "description": "Flavors with extended attributes (flavors)", 
@@ -245,12 +245,12 @@
     {
       "description": "Flavors swap (flavors, os-flavor-swap)", 
       "name": "flavor-swap", 
-      "summary": "Creates and lists flavors with a swap value. Requires the ``os-\nflavormanage`` extension. The swap value is the amount ofswap disk\nspace, in GBs, to allocate to a server."
+      "summary": "Creates and lists flavors with a swap value. Requires the ``os-\nflavormanage``extension. The swap value is the amount ofswap disk\nspace, in GBs, to allocate to a server."
     }, 
     {
       "description": "Images with size attribute (images)", 
       "name": "ext-img-size", 
-      "summary": "Lists details for available images and gets details for aspecified\nimage. Includes the ``OS-EXT-IMG-SIZE:size`` extended attribute,\nwhich shows the image size."
+      "summary": "Lists details for available images and gets details for aspecified\nimage. Includes the ``OS-EXT-IMG-SIZE:size``extended attribute,\nwhich shows the image size."
     }, 
     {
       "description": "Limits with project usage (limits)", 
@@ -345,7 +345,7 @@
     {
       "description": "Keypairs (os-keypairs)", 
       "name": "keypairs", 
-      "summary": "Generates, imports, and deletes SSH keys.\n\nTo add a keypair to a server, specify the ``key_name`` parameter in\nthe request body in acreate serverrequest."
+      "summary": "Generates, imports, and deletes SSH keys.\n\nTo add a keypair to a server, specify the ``key_name``parameter in\nthe request body in acreate serverrequest."
     }, 
     {
       "description": "Migrations (os-migrations)", 

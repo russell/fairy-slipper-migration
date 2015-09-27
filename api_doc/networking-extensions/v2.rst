@@ -96,7 +96,6 @@
    This example request lists floating IPs in JSON format:
    
    ::
-   
       GET /v2.0/floatingips
       Accept: application/json
    Use the ``fields`` query parameter to control which fields are
@@ -1350,7 +1349,6 @@
    This example removes an interface from a router:
    
    ::
-   
       PUT /v2.0/routers/{router_id}/remove_router_interface
       Accept: application/json
 
@@ -1680,7 +1678,6 @@
    ``fixed_ip_address`` and ``floating_ip_address`` fields.
    
    ::
-   
       GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address
       &
       fields=floating_ip_address
@@ -1710,7 +1707,6 @@
    This example updates a floating IP:
    
    ::
-   
       PUT /v2.0/floatingips/{floatingip_id}
       Accept: application/json
    Depending on the request body that you submit, this request
@@ -1736,7 +1732,6 @@
    This example deletes a floating IP:
    
    ::
-   
       DELETE /v2.0/floatingips/{floatingip_id}
       Accept: application/json
 
@@ -2159,7 +2154,6 @@
    This example request shows details for a router in JSON format:
    
    ::
-   
       GET /v2.0/routers/{router_id}
       Accept: application/json
    Use the ``fields`` query parameter to control which fields are
@@ -2190,7 +2184,6 @@
    This example updates the external gateway information for a router:
    
    ::
-   
       PUT /v2.0/routers/{router_id}
       Accept: application/json
 
@@ -2218,7 +2211,6 @@
    This example deletes a router:
    
    ::
-   
       DELETE /v2.0/routers/{router_id}
       Accept: application/json
 
@@ -2447,7 +2439,6 @@
    This example request lists routers in JSON format:
    
    ::
-   
       GET /v2.0/routers
       Accept: application/json
    Use the ``fields`` query parameter to control which fields are
@@ -2478,7 +2469,6 @@
    in the request body, as follows:
    
    .. code-block:: json
-   
       {
          "router": {
             "external_gateway_info": {

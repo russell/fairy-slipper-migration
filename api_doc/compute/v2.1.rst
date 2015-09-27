@@ -1380,7 +1380,7 @@
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :query before_timestamp: The date and time before which to list
                             usage audits.  The date and time stamp
-                            format is ISO 8601 :  ::     CCYY-MM-
+                            format is ISO 8601 :  ::    CCYY-MM-
                             DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                             included, returns the time zone as an
                             offset from UTC.  For example,
@@ -1570,13 +1570,11 @@
    all tenants. For example:
    
    .. code-block:: json
-   
       GET /os-fping?all_tenants=1
    Specify the ``include`` and ``exclude`` query parameters to filter
    the results. For example:
    
    .. code-block:: json
-   
       GET /os-fping?all_tenants=1
       &
       include=uuid1,uuid2
@@ -2610,7 +2608,6 @@
    the URI, as follows:
    
    .. code-block:: json
-   
       DELETE /os-assisted-volume-snapshots?delete_info='{"volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
 
    :tag: os-assisted-volume-snapshots-v2.1
@@ -2618,7 +2615,7 @@
    :parameter snapshot_id: The ID of the snapshot.
    :query delete_info: Information for snapshot deletion. Include the
                        ID of the associated volume. For example:  ..
-                       code-block:: json     DELETE /os-assisted-
+                       code-block:: json    DELETE /os-assisted-
                        volume-snapshots?delete_info='{"volume_id":
                        "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
    :statuscode 204: 
@@ -2967,7 +2964,7 @@
                          the last 30 days. Items deleted more than 30
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
-                         is ISO 8601 :  ::     CCYY-MM-
+                         is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
@@ -3066,7 +3063,7 @@
                          the last 30 days. Items deleted more than 30
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
-                         is ISO 8601 :  ::     CCYY-MM-
+                         is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
