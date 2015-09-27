@@ -67,10 +67,10 @@
      multiplerecipients, an authorized user can define a KDS group for
      therecipients. Membership in a group is determined by comparing
      aparty name with the group name. The party is considered to be
-     amember if the party name matches ``<group name>.*``.For example,
-     a party named ``scheduler.host.example.com``is considered a
-     member of the ``scheduler``group. Thismethod is the same method
-     that is used to name message queues inOpenStack.
+     amember if the party name matches ``<group name>.*`` .For
+     example, a party named ``scheduler.host.example.com`` is
+     considered a member of the ``scheduler`` group. Thismethod is the
+     same method that is used to name message queues inOpenStack.
    
    - When a source party requests a ticket for a destination partythat
      is a group, KDS generates a short-lived group key and assigns
@@ -126,36 +126,36 @@
    The KDS requires that all ticket requests are authenticated
    and,where appropriate, data is encrypted. You must pass any time
    stampvalue to the API as aUTCISO8601date and time string that
-   includes microseconds. Forexample, ``2012-03-26T10:01:01.720000``.
+   includes microseconds. Forexample, ``2012-03-26T10:01:01.720000`` .
    
    The default algorithms for message authentication andencryption
    are, respectively, HMAC-SHA-256 and AES-128-CBC.Therefore, the
    default block size is 128 bit.
    
    The source party that requests a ticket must send the encrypted
-   ``esek``payload to the destination party. The source anddestination
-   strings used when requesting the ticket also must besent to the
-   destination party to enable it to derive the sharedsigning end
-   encryption keys. The messaging implementation isresponsible for
-   transferring this data to the destination party.
+   ``esek`` payload to the destination party. The source
+   anddestination strings used when requesting the ticket also must
+   besent to the destination party to enable it to derive the
+   sharedsigning end encryption keys. The messaging implementation
+   isresponsible for transferring this data to the destination party.
    
    The key derivation used to generate the shared signing
    andencryption keys uses the Hashed Message Authentication
    Code(HMAC)-based key derivation function (HKDF) standard,
    asdescribed in RFC 5869. The destination party must use the HKDF
-   ``expand``function by using the information that itreceives from
+   ``expand`` function by using the information that itreceives from
    the source party to complete derivation of theshared signing and
-   encryption keys. The inputs to the HKDF ``expand``function are:
+   encryption keys. The inputs to the HKDF ``expand`` function are:
    
    ::
       HKDF-Expand(esek.key, info, 256)
-   The ``info``input for the HKDF ``expand``function is a string that
-   concatenates the source, destination,and ``esek.timestamp``strings
-   by using a comma( ``,``) separator between each element. The
-   followingexample shows a valid ``info``string where
-   ``scheduler.host.example.com``is the source,
-   ``compute.host.example.com``is the destination, and
-   ``2012-03-26T10:01:01.720000``is the ``esek.timestamp``:
+   The ``info`` input for the HKDF ``expand`` function is a string
+   that concatenates the source, destination,and ``esek.timestamp``
+   strings by using a comma( ``,`` ) separator between each element.
+   The followingexample shows a valid ``info`` string where
+   ``scheduler.host.example.com`` is the source,
+   ``compute.host.example.com`` is the destination, and
+   ``2012-03-26T10:01:01.720000`` is the ``esek.timestamp`` :
    
    ::
       scheduler.host.example.com,compute.host.example.com,2012-03-26T10:01:01.720000
@@ -220,7 +220,7 @@
    Creates a trust.
    
    A trust is an OpenStack Identity extension that enables
-   delegationand, optionally, impersonation through ``keystone``.
+   delegationand, optionally, impersonation through ``keystone`` .
    Atrust extension defines a relationship between a trustor
    andtrustee. A trustor is the user who delegates a limited set
    oftheir own rights to another user. A trustee is the user

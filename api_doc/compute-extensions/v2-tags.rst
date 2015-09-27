@@ -33,8 +33,8 @@
 .. swagger:tag:: extended-status
    :synopsis: Servers extended status (servers)
 
-   Shows the ``vm_state``, ``task_state``, and ``power_state``extended
-   status information in detailedserver responses.
+   Shows the ``vm_state`` , ``task_state`` , and ``power_state``
+   extended status information in detailedserver responses.
 
 .. swagger:tag:: ext-ips
    :synopsis: Servers with IP type (servers)
@@ -53,7 +53,7 @@
    :synopsis: Servers with mac_addr extended attribute(servers)
 
    Creates, shows information for, and lists servers with the
-   ``mac_addr``extended attribute.
+   ``mac_addr`` extended attribute.
 
 .. swagger:tag:: scheduler-hints
    :synopsis: Servers with scheduler hints (servers)
@@ -90,12 +90,12 @@
    
    Your cloud provider might bill you for a shelved server.
    
-   Use the ``shelve``action to shelve a server. Allassociated data and
-   resources are kept but anything still in memoryis not retained.
+   Use the ``shelve`` action to shelve a server. Allassociated data
+   and resources are kept but anything still in memoryis not retained.
    
-   Use the ``unshelve``action to restore a shelved instance.
+   Use the ``unshelve`` action to restore a shelved instance.
    
-   Use the ``shelveOffload``action to remove a shelvedinstance that
+   Use the ``shelveOffload`` action to remove a shelvedinstance that
    you no longer need.
 
 .. swagger:tag:: server-start-stop
@@ -111,7 +111,7 @@
 .. swagger:tag:: disk-config
    :synopsis: Servers and images with disk config (servers,images)
 
-   Extends servers with the ``diskConfig``attribute.
+   Extends servers with the ``diskConfig`` attribute.
 
 .. swagger:tag:: availability-zone
    :synopsis: Servers availability zones (servers, os-availability-zone)
@@ -146,9 +146,8 @@
 .. swagger:tag:: os-volume_boot
    :synopsis: Server boot from volume (os-volumes_boot)
 
-   Starts an instance by using a volume with the
-   ``bootable``attribute. The image on the volume is usedto boot the
-   instance.
+   Starts an instance by using a volume with the ``bootable``
+   attribute. The image on the volume is usedto boot the instance.
 
 .. swagger:tag:: flavormanage
    :synopsis: Flavors create and delete (flavors)
@@ -158,8 +157,8 @@
 .. swagger:tag:: flv-disabled
    :synopsis: Flavors with disabled attribute (flavors)
 
-   Lists and gets details for flavors. Includes the
-   ``disabled``extended attribute.
+   Lists and gets details for flavors. Includes the ``disabled``
+   extended attribute.
 
 .. swagger:tag:: flavorextradata
    :synopsis: Flavors with extended attributes (flavors)
@@ -190,14 +189,14 @@
    :synopsis: Flavors swap (flavors, os-flavor-swap)
 
    Creates and lists flavors with a swap value. Requires the ``os-
-   flavormanage``extension. The swap value is the amount ofswap disk
+   flavormanage`` extension. The swap value is the amount ofswap disk
    space, in GBs, to allocate to a server.
 
 .. swagger:tag:: ext-img-size
    :synopsis: Images with size attribute (images)
 
    Lists details for available images and gets details for aspecified
-   image. Includes the ``OS-EXT-IMG-SIZE:size``extended attribute,
+   image. Includes the ``OS-EXT-IMG-SIZE:size`` extended attribute,
    which shows the image size.
 
 .. swagger:tag:: used-limits
@@ -317,7 +316,7 @@
 
    Generates, imports, and deletes SSH keys.
    
-   To add a keypair to a server, specify the ``key_name``parameter in
+   To add a keypair to a server, specify the ``key_name`` parameter in
    the request body in acreate serverrequest.
 
 .. swagger:tag:: migrations

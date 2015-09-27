@@ -55,7 +55,7 @@
     {
       "description": "Volumes", 
       "name": "volumes", 
-      "summary": "The ``snapshot_id``and ``source_volid``parameters specify the ID of\nthe snapshot or volume from whichthe volume originates.If the\nvolume was not created from a snapshot or source volume,these\nvalues are null."
+      "summary": "The ``snapshot_id`` and ``source_volid`` parameters specify the ID\nof the snapshot or volume from whichthe volume originates.If the\nvolume was not created from a snapshot or source volume,these\nvalues are null."
     }, 
     {
       "description": "Volume types", 

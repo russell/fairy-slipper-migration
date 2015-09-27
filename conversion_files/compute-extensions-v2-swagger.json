@@ -73,7 +73,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -175,7 +175,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -240,7 +240,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -252,7 +252,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -354,7 +354,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -430,7 +430,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -442,7 +442,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -544,7 +544,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -632,7 +632,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -644,7 +644,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -746,7 +746,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -2186,7 +2186,7 @@
     "getMigrations_200": {
       "properties": {
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -2246,7 +2246,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -4359,7 +4359,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
+            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
             "format": "", 
             "in": "query", 
             "name": "created_at", 
@@ -4481,7 +4481,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
+            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
             "format": "", 
             "in": "query", 
             "name": "created_at", 
@@ -17723,7 +17723,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -18884,7 +18884,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -24650,7 +24650,7 @@
     {
       "description": "Servers extended status (servers)", 
       "name": "extended-status", 
-      "summary": "Shows the ``vm_state``, ``task_state``, and ``power_state``extended\nstatus information in detailedserver responses."
+      "summary": "Shows the ``vm_state`` , ``task_state`` , and ``power_state``\nextended status information in detailedserver responses."
     }, 
     {
       "description": "Servers with IP type (servers)", 
@@ -24665,7 +24665,7 @@
     {
       "description": "Servers with mac_addr extended attribute(servers)", 
       "name": "server-ext-ips-mac", 
-      "summary": "Creates, shows information for, and lists servers with the\n``mac_addr``extended attribute."
+      "summary": "Creates, shows information for, and lists servers with the\n``mac_addr`` extended attribute."
     }, 
     {
       "description": "Servers with scheduler hints (servers)", 
@@ -24690,7 +24690,7 @@
     {
       "description": "Servers shelve (servers, action)", 
       "name": "server-shelve", 
-      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve``action to shelve a server. Allassociated data and\nresources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve``action to restore a shelved instance.\n\nUse the ``shelveOffload``action to remove a shelvedinstance that\nyou no longer need."
+      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. Allassociated data\nand resources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelvedinstance that\nyou no longer need."
     }, 
     {
       "description": "Servers start and stop (servers, action)", 
@@ -24705,7 +24705,7 @@
     {
       "description": "Servers and images with disk config (servers,images)", 
       "name": "disk-config", 
-      "summary": "Extends servers with the ``diskConfig``attribute."
+      "summary": "Extends servers with the ``diskConfig`` attribute."
     }, 
     {
       "description": "Servers availability zones (servers, os-availability-zone)", 
@@ -24735,7 +24735,7 @@
     {
       "description": "Server boot from volume (os-volumes_boot)", 
       "name": "os-volume_boot", 
-      "summary": "Starts an instance by using a volume with the\n``bootable``attribute. The image on the volume is usedto boot the\ninstance."
+      "summary": "Starts an instance by using a volume with the ``bootable``\nattribute. The image on the volume is usedto boot the instance."
     }, 
     {
       "description": "Flavors create and delete (flavors)", 
@@ -24745,7 +24745,7 @@
     {
       "description": "Flavors with disabled attribute (flavors)", 
       "name": "flv-disabled", 
-      "summary": "Lists and gets details for flavors. Includes the\n``disabled``extended attribute."
+      "summary": "Lists and gets details for flavors. Includes the ``disabled``\nextended attribute."
     }, 
     {
       "description": "Flavors with extended attributes (flavors)", 
@@ -24770,12 +24770,12 @@
     {
       "description": "Flavors swap (flavors, os-flavor-swap)", 
       "name": "flavor-swap", 
-      "summary": "Creates and lists flavors with a swap value. Requires the ``os-\nflavormanage``extension. The swap value is the amount ofswap disk\nspace, in GBs, to allocate to a server."
+      "summary": "Creates and lists flavors with a swap value. Requires the ``os-\nflavormanage`` extension. The swap value is the amount ofswap disk\nspace, in GBs, to allocate to a server."
     }, 
     {
       "description": "Images with size attribute (images)", 
       "name": "ext-img-size", 
-      "summary": "Lists details for available images and gets details for aspecified\nimage. Includes the ``OS-EXT-IMG-SIZE:size``extended attribute,\nwhich shows the image size."
+      "summary": "Lists details for available images and gets details for aspecified\nimage. Includes the ``OS-EXT-IMG-SIZE:size`` extended attribute,\nwhich shows the image size."
     }, 
     {
       "description": "Limits with project usage (limits)", 
@@ -24870,7 +24870,7 @@
     {
       "description": "Keypairs (os-keypairs)", 
       "name": "keypairs", 
-      "summary": "Generates, imports, and deletes SSH keys.\n\nTo add a keypair to a server, specify the ``key_name``parameter in\nthe request body in acreate serverrequest."
+      "summary": "Generates, imports, and deletes SSH keys.\n\nTo add a keypair to a server, specify the ``key_name`` parameter in\nthe request body in acreate serverrequest."
     }, 
     {
       "description": "Migrations (os-migrations)", 
