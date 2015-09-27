@@ -109,6 +109,8 @@
    | error_restoring | An error occurred during backup restoration to a volume. |
    +-----------------+----------------------------------------------------------+
    
+   
+   
    In the event of an error, more information about the error can be
    found in the fail_reason field for the backup.
 
