@@ -410,7 +410,7 @@
 
    Some attributes, such as IP version (ip_version), and CIDR (cidr)
    cannot be updated. Attempting to update these attributes results in
-   a ``400 BadRequest`` error.
+   a ``400 Bad Request`` error.
 
    :requestexample: v2/examples/updateSubnet_req.json
    :responseexample 200: v2/examples/updateSubnet_resp_200.json

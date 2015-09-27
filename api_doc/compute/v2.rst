@@ -157,7 +157,7 @@
    and can be used to determine this scenario if it is relevant to
    your application.
    
-   HostId is unique **peraccount** and is not globally unique.
+   HostId is unique **per account** and is not globally unique.
 
    :responseexample 200: v2/examples/listDetailServers_resp_200.json
    :responseexample 203: v2/examples/listDetailServers_resp_203.json

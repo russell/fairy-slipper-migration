@@ -1,38 +1,38 @@
 .. swagger:tag:: plugins
    :synopsis: Plugins
 
-   A plugin object defines the Hadoop or Spark version that it can
-   install and which configurations can be set for the cluster.
+   A plugin object defines the Hadoop or Spark version that it
+   caninstall and which configurations can be set for the cluster.
 
 .. swagger:tag:: imageregistry
    :synopsis: Image registry
 
-   The image registry is a tool for managing images. Each plugin lists
-   required tags for an image. The Data Processing service also
-   requires a user name to log in to an instance’s OS for remote
-   operations execution.
+   The image registry is a tool for managing images. Each pluginlists
+   required tags for an image. The Data Processing service
+   alsorequires a user name to log in to an instance’s OS for
+   remoteoperations execution.
    
    The image registry enables you to add tags to and remove tags from
-   images and define the OS user name.
+   imagesand define the OS user name.
 
 .. swagger:tag:: node-group-template
    :synopsis: Node group templates
 
-   A cluster is a group of nodes with the same configuration. A node
-   group template configures a node in the cluster.
+   A cluster is a group of nodes with the same configuration. A
+   nodegroup template configures a node in the cluster.
    
-   A template configures Hadoop processes and VM characteristics, such
-   as the number of reduced slots for task tracker, the number of
-   CPUs, and the amount of RAM. The template specifies the VM
-   characteristics through an OpenStack flavor.
+   A template configures Hadoop processes and VM characteristics,such
+   as the number of reduced slots for task tracker, the number ofCPUs,
+   and the amount of RAM. The template specifies the VMcharacteristics
+   through an OpenStack flavor.
 
 .. swagger:tag:: clustertemplate
    :synopsis: Cluster templates
 
-   A cluster template configures a Hadoop cluster. A cluster template
-   lists node groups with the number of instances in each group. You
-   can also define cluster-scoped configurations in a cluster
-   template.
+   A cluster template configures a Hadoop cluster. A cluster
+   templatelists node groups with the number of instances in each
+   group. Youcan also define cluster-scoped configurations in a
+   clustertemplate.
 
 .. swagger:tag:: clusters
    :synopsis: Clusters
@@ -43,35 +43,34 @@
    :synopsis: Event log
 
    The event log feature provides information about cluster
-   provisioning. In the event of errors, the event log shows the
-   reason for the failure.
+   provisioning.In the event of errors, the event log shows the reason
+   for the failure.
 
 .. swagger:tag:: datasources
    :synopsis: Data sources
 
-   A data source object defines the location of input or output for
-   MapReduce jobs and might reference different types of storage.
+   A data source object defines the location of input or output
+   forMapReduce jobs and might reference different types of storage.
    
-   The Data Processing service does not validate data source
-   locations.
+   The Data Processing service does not validate data sourcelocations.
 
 .. swagger:tag:: jobbinary-internals
    :synopsis: Job binary internals
 
-   Job binary internal objects represent data processing applications
-   and libraries that are stored in the internal database.
+   Job binary internal objects represent data processing
+   applicationsand libraries that are stored in the internal database.
 
 .. swagger:tag:: jobbinaries
    :synopsis: Job binaries
 
-   Job binary objects represent data processing applications and
-   libraries that are stored in either the internal database or the
-   Object Storage service.
+   Job binary objects represent data processing applications
+   andlibraries that are stored in either the internal database or
+   theObject Storage service.
 
 .. swagger:tag:: jobs
    :synopsis: Jobs
 
-   A job object lists the binaries that a job needs to run. To run a
+   A job object lists the binaries that a job needs to run. Torun a
    job, you must specify data sources and job parameters.
    
    You can run a job on an existing or new transient cluster.
@@ -79,18 +78,19 @@
 .. swagger:tag:: job-executions
    :synopsis: Job executions
 
-   A job execution object represents a Hadoop job that runs on a
-   specified cluster. A job execution polls the status of a running
-   job and reports it to the user. Also a user can cancel a running
-   job.
+   A job execution object represents a Hadoop job that runs on
+   aspecified cluster. A job execution polls the status of a
+   runningjob and reports it to the user. Also a user can cancel a
+   running job.
 
 .. swagger:tag:: job-types
    :synopsis: Job types
 
-   Each plugin that supports EDP also supports specific job types.
-   Different versions of a plugin might actually support different job
-   types. Configuration options vary by plugin, version, and job type.
+   Each plugin that supports EDP also supports specific job
+   types.Different versions of a plugin might actually support
+   different jobtypes. Configuration options vary by plugin, version,
+   andjob type.
    
-   The job types provide information about which plugins support which
+   The job types provide information about which plugins supportwhich
    job types and how to configure the job types.
 

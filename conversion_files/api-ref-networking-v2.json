@@ -24,22 +24,22 @@
     {
       "description": "API versions", 
       "name": "versions", 
-      "summary": "Lists information for all Networking API versions and shows details\nabout API v2.0."
+      "summary": "Lists information for all Networking API versions and showsdetails\nabout API v2.0."
     }, 
     {
       "description": "Networks", 
       "name": "networks", 
-      "summary": "Lists, shows information for, creates, updates, and deletes\nnetworks."
+      "summary": "Lists, shows information for, creates, updates, and\ndeletesnetworks."
     }, 
     {
       "description": "Subnets", 
       "name": "subnets", 
-      "summary": "Lists, shows information for, creates, updates, and deletes subnet\nresources."
+      "summary": "Lists, shows information for, creates, updates, and deletes\nsubnetresources."
     }, 
     {
       "description": "Ports", 
       "name": "ports", 
-      "summary": "Lists, shows information for, creates, updates, and deletes ports."
+      "summary": "Lists, shows information for, creates, updates, and deletesports."
     }
   ], 
   "title": "Networking", 

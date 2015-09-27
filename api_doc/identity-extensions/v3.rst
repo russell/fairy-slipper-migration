@@ -560,7 +560,7 @@
    ``GET /role_assignments?user.id={user_id}`` lists all role
    assignments for the specified user.
    
-   ``GET/role_assignments?scope.project.id={project_id}`` lists all
+   ``GET /role_assignments?scope.project.id={project_id}`` lists all
    role assignments for the specified project.
    
    Each role assignment entity in the collection contains a link to
@@ -581,12 +581,12 @@
    query parameters with the ``effective`` parameter.
    
    For example, to determine what a user can actually do, issue this
-   request: ``GET/role_assignments?user.id={user_id}&effective``
+   request: ``GET /role_assignments?user.id={user_id} & effective``
    
    To return the equivalent set of role assignments that would be
-   included in the token response of a project-scoped token, issue: ``
-   GET/role_assignments?user.id={user_id}&scope.project.id={project_id
-   }&effective``
+   included in the token response of a project-scoped token, issue:
+   ``GET /role_assignments?user.id={user_id} &
+   scope.project.id={project_id} & effective``
    
    In the response, the entity ``links`` section for entities that are
    included by virtue of group members also contains a url that you

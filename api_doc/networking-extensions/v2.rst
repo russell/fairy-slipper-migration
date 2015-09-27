@@ -313,7 +313,7 @@
    This operation returns a listener object identified by
    ``listener_id`` . If the user is not an administrative user and the
    listener object does not belong to her tenant account, the call
-   returns the HTTP ``Forbidden(403)`` response code.
+   returns the HTTP ``Forbidden (403)`` response code.
    
    If this operation succeeds, it returns a listener element that can
    contain the following attributes:
@@ -740,7 +740,7 @@
    
    - ``operating_status``
    
-   **Example: Show loadbalancer details**
+   **Example: Show load balancer details**
 
    :responseexample 200: v2/examples/showLoadBalancer_resp_200.json
    :accepts: application/json
@@ -829,11 +829,11 @@
    - Port ID. The IP address associated with the port is used to create
      the router interface.
    
-   If you specify both IDs, the operation returns a ``400 BadRequest``
-   error.
+   If you specify both IDs, the operation returns a ``400 Bad
+   Request`` error.
    
-   If the port is already used, the operation returns a
-   ``409Conflict`` error.
+   If the port is already used, the operation returns a ``409
+   Conflict`` error.
    
    The port ID that is returned by this operation can be either:
    
@@ -1020,7 +1020,7 @@
    successfully provisioned and is operational for traffic handling.
    
    If the request cannot be fulfilled due to insufficient or invalid
-   data, the service returns the HTTP ``Bad Request(400)`` response
+   data, the service returns the HTTP ``Bad Request (400)`` response
    code with information about the failure in the response body.
    Validation errors require that you correct the error and submit the
    request again.
@@ -1053,7 +1053,7 @@
    - ``description`` . The default is an empty string.
    
    If the request cannot be fulfilled due to insufficient data or data
-   that is not valid, the service returns the HTTP ``BadRequest
+   that is not valid, the service returns the HTTP ``Bad Request
    (400)`` response code with information about the failure in the
    response body. Validation errors require that you correct the error
    and submit the request again.
@@ -1830,8 +1830,8 @@
 
    This operation returns a pool object identified by ``pool_id`` . If
    the user is not an administrative user and the pool object does not
-   belong to her tenant account, the call returns the HTTP
-   ``Forbidden(403)`` response code.
+   belong to her tenant account, the call returns the HTTP ``Forbidden
+   (403)`` response code.
    
    If this operation succeeds, it returns a ``pool`` element that can
    contain the following attributes:
@@ -2277,7 +2277,7 @@
      infinite limit.
    
    If the request cannot be fulfilled due to insufficient or invalid
-   data, the service returns the HTTP ``Bad Request(400)`` response
+   data, the service returns the HTTP ``Bad Request (400)`` response
    code with information about the failure in the response body.
    Validation errors require that you correct the error and submit the
    request again.
@@ -2645,7 +2645,7 @@
    - ``session_persistence`` . The default is an empty dictionary.
    
    If the request cannot be fulfilled due to insufficient or invalid
-   data, the service returns the HTTP ``Bad Request(400)`` response
+   data, the service returns the HTTP ``Bad Request (400)`` response
    code with information about the failure in the response body.
    Validation errors require that you correct the error and submit the
    request again.

@@ -208,7 +208,7 @@
    You must specify an IP protocol ( ``ip_protocol`` ) value if you
    specify a source ( ``from_port`` ) or destination ( ``to_port`` )
    port value. Otherwise, the operation returns the ``Bad request
-   (400)Source/destination port requires a protocol`` error.
+   (400) Source/destination port requires a protocol`` error.
 
    :requestexample: v2/examples/createSecGroupRule_req.json
    :responseexample 200: v2/examples/createSecGroupRule_resp_200.json
@@ -896,9 +896,9 @@
    
    Asynchronous Postconditions
    
-   - After you successfully unrescue a server and make a
-     ``GET/v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its
-     status changes to ``ACTIVE`` .
+   - After you successfully unrescue a server and make a ``GET
+     /v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its status
+     changes to ``ACTIVE`` .
 
    :requestexample: v2/examples/rescue_req.json
    :responseexample 200: v2/examples/rescue_resp_200.json
@@ -931,9 +931,9 @@
    
    Asynchronous Postconditions
    
-   - After you successfully unrescue a server and make a
-     ``GET/v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its
-     status changes to ``ACTIVE`` .
+   - After you successfully unrescue a server and make a ``GET
+     /v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its status
+     changes to ``ACTIVE`` .
 
    :requestexample: v2/examples/unrescue_req.json
    :accepts: application/json

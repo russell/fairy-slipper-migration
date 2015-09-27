@@ -1,11 +1,11 @@
 .. swagger:tag:: general-info
    :synopsis: General API information
 
-   Authenticated calls that target a known URI but that use an HTTP
+   Authenticated calls that target a known URI but that use anHTTP
    method that the implementation does not support return a
-   ``405Method Not Allowed`` error code. In addition, the HTTP
-   ``OPTIONS`` method is supported for each known URI. In both cases,
-   the ``Allow`` response header indicates the HTTP methods that are
+   ``405Method Not Allowed``error code. In addition, the HTTP
+   ``OPTIONS``method is supported for each known URI. Inboth cases,
+   the ``Allow``response header indicates theHTTP methods that are
    supported for the resource.
 
 .. swagger:tag:: heat-versions
@@ -21,7 +21,7 @@
 .. swagger:tag:: stack-actions
    :synopsis: Stack actions
 
-   Performs non-lifecycle operations on the stack. Specify the action
+   Performs non-lifecycle operations on the stack. Specifythe action
    in the request body.
 
 .. swagger:tag:: stack-resources

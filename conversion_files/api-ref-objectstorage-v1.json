@@ -30,7 +30,7 @@
     {
       "description": "Discoverability", 
       "name": "storage_info", 
-      "summary": "If configured, lists the activated capabilities for this version of\nthe OpenStack Object Storage API."
+      "summary": "If configured, lists the activated capabilities for this versionof\nthe OpenStack Object Storage API."
     }, 
     {
       "description": "Endpoints", 
@@ -40,17 +40,17 @@
     {
       "description": "Accounts", 
       "name": "storage-account-services", 
-      "summary": "Lists containers for a specified account. Creates, updates, shows,\nand deletes account metadata."
+      "summary": "Lists containers for a specified account. Creates, updates,\nshows,and deletes account metadata."
     }, 
     {
       "description": "Containers", 
       "name": "storage-container-services", 
-      "summary": "Lists objects in a specified container. Creates, shows details for,\nand deletes containers. Creates, updates, shows, and deletes\ncontainer metadata."
+      "summary": "Lists objects in a specified container. Creates, shows detailsfor,\nand deletes containers. Creates, updates, shows, and\ndeletescontainer metadata."
     }, 
     {
       "description": "Objects", 
       "name": "storage-object-services", 
-      "summary": "Creates, replaces, shows details for, and deletes objects. Copies\nobjects from another object with a new or different name. Updates\nobject metadata."
+      "summary": "Creates, replaces, shows details for, and deletes objects.\nCopiesobjects from another object with a new or different name.\nUpdatesobject metadata."
     }
   ], 
   "title": "Object Storage", 

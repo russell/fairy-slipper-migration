@@ -477,7 +477,7 @@
    Pass your own token in the ``X-Auth-Token`` header. Pass the token
    to be validated in the ``X-Subject-Token`` header. The Identity API
    returns the same response as when the subject token was issued by
-   ``POST/auth/tokens`` .
+   ``POST /auth/tokens`` .
 
    :responseexample 200: v3/examples/validateTokens_resp_200.json
    :accepts: application/json
@@ -674,7 +674,7 @@
    :synopsis: Updates a specified region.
 
    If you try to update a region with a parent region ID that does not
-   exist, this call returns the HTTP ``Not Found(404)`` status code.
+   exist, this call returns the HTTP ``Not Found (404)`` status code.
 
    :requestexample: v3/examples/updateRegion_req.json
    :responseexample 200: v3/examples/updateRegion_resp_200.json
@@ -1147,7 +1147,7 @@
    :synopsis: Updates a specified group.
 
    If the back-end driver does not allow this functionality, this
-   operation might return the HTTP ``Not Implemented(501)`` status
+   operation might return the HTTP ``Not Implemented (501)`` status
    code.
 
    :requestexample: v3/examples/updateGroup_req.json
@@ -1189,7 +1189,7 @@
    :synopsis: Creates a region.
 
    If you try to add a region with a parent region ID that does not
-   exist, this call returns the HTTP ``Not Found(404)`` status code.
+   exist, this call returns the HTTP ``Not Found (404)`` status code.
    
    If you try to add a region with a parent region ID that would form
    a circular relationship, this call returns the HTTP ``Conflict
@@ -1391,12 +1391,12 @@
    :synopsis: Creates a region with a user-defined region ID.
 
    The user-defined region ID must be unique to the OpenStack
-   deployment. If not, this call returns the HTTP ``Conflict(409)``
+   deployment. If not, this call returns the HTTP ``Conflict (409)``
    status code. You must URL-encode the user-defined region ID if it
    contains characters that are not allowed in an URI.
    
    If you try to add a region with a parent region ID that does not
-   exist, this call returns the HTTP ``Not Found(404)`` status code.
+   exist, this call returns the HTTP ``Not Found (404)`` status code.
    
    If you try to add a region with a parent region ID that would form
    a circular relationship, this call returns the HTTP ``Conflict
@@ -1431,7 +1431,7 @@
    ``GET /role_assignments?user.id={user_id}`` lists role assignments
    for the specified user.
    
-   ``GET/role_assignments?scope.project.id={project_id}`` lists role
+   ``GET /role_assignments?scope.project.id={project_id}`` lists role
    assignments for the specified project.
    
    Each role assignment entity in the collection contains a link to
@@ -1446,12 +1446,12 @@
    ``effective`` parameter.
    
    For example, to determine what a user can actually do, issue the
-   ``GET/role_assignments?user.id={user_id}&effective`` request.
+   ``GET /role_assignments?user.id={user_id} & effective`` request.
    
    To return the equivalent set of role assignments that would be
    included in the token response of a project-scoped token, issue the
-   ``GET /role_assignments?user.id={user_id}&scope.project.id={project
-   _id}&effective`` request.
+   ``GET /role_assignments?user.id={user_id} & s
+   cope.project.id={project_id} & effective`` request.
    
    In the response, the ``links`` entity section for entities that are
    included by virtue of group members also contains a URL that you

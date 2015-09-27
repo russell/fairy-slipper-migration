@@ -10,7 +10,7 @@
     "signature": {
       "required": true, 
       "type": "string", 
-      "description": "A Base64-encoded HMAC signature over the Base64-encoded request\nmetadata object. For example:\n\n``Base64encode(HMAC(SigningKey,RequestMetadata))``\n\nThe long-term key of the requester is used for the signature. When\nthe KDS receives the request, the KDS must access the ``source``\nvalue from the request metadata to look up the associated long-term\nkey to use to verify the signature. The KDS should not access any\nother data that is contained in the request metadata before\nverifying the signature. If the KDS fails to verify the signature,\nit risks issuing a ticket to a party who is impersonating the\nsource.", 
+      "description": "A Base64-encoded HMAC signature over the Base64-encoded request\nmetadata object. For example:\n\n``Base64encode(HMAC(SigningKey, RequestMetadata))``\n\nThe long-term key of the requester is used for the signature. When\nthe KDS receives the request, the KDS must access the ``source``\nvalue from the request metadata to look up the associated long-term\nkey to use to verify the signature. The KDS should not access any\nother data that is contained in the request metadata before\nverifying the signature. If the KDS fails to verify the signature,\nit risks issuing a ticket to a party who is impersonating the\nsource.", 
       "format": ""
     }, 
     "metadata": {
