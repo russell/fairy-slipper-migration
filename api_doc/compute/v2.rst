@@ -1,4 +1,403 @@
-.. http:get:: //v2/{tenant_id}/images
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Change password
+   :synopsis: Changes the password for a server. Specify the ``changePassword`` action in the request body.
+
+   
+
+   :requestexample: v2/examples/changePassword_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Reboot server
+   :synopsis: Reboots the specified server. Specify the ``reboot`` action in the request body.
+
+   
+
+   :requestexample: v2/examples/rebootServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2/rebootServer.json
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Rebuild server
+   :synopsis: Rebuilds the specified server. Specify the ``rebuild`` action in the request body.
+
+   
+
+   :requestexample: v2/examples/rebuildServer_req.json
+   :responseexample 202: v2/examples/rebuildServer_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Resize server
+   :synopsis: Resizes the specified server. Specify the ``resize`` action in the request body.
+
+   A successfully resized server shows the ``VERIFY_RESIZE`` status,
+   ``RESIZED`` VM status, and ``finished`` migration status. If you
+   set the ``auto_confirm`` option of the Compute service to ``True``
+   , the Compute service automatically confirms the resize operation.
+   
+   Preconditions
+   
+   - You can only resize a server when its status is ``ACTIVE`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to resize the server.
+
+   :requestexample: v2/examples/resizeServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Confirm resized server
+   :synopsis: Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.
+
+   After you make this request, you typically must keep polling the
+   server status to determine whether the request succeeded. A
+   successfully confirming resize operation shows ``ACTIVE`` status
+   and ``confirmed`` migration status. You can also see the resized
+   server in the compute node that OpenStack Compute manages.
+   
+   Preconditions
+   
+   To confirm a pending resize action, these preconditions must be
+   met:
+   
+   - Server status is ``VERIFY_RESIZED`` , VM status is ``RESIZED`` ,
+     and migration status is ``finished`` or ``confirming`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to confirm the server.
+   
+   Troubleshooting
+   
+   - If the specified server status remains ``RESIZED`` , the request
+     failed. Ensure you meet the preconditions and run the request
+     again. If the request fails again, investigate the compute back
+     end or ask your cloud provider.
+
+   :requestexample: v2/examples/confirmServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Revert resized server
+   :synopsis: Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.
+
+   After you make this request, you typically must keep polling the
+   server status to determine whether the request succeeded. A
+   successfully reverting resize operation shows ``ACTIVE`` status and
+   ``reverted`` migration status. You can also see the reverted server
+   in the compute node that OpenStack Compute manages.
+   
+   Preconditions
+   
+   To cancel and revert a pending resize action, these preconditions
+   must be met:
+   
+   - Server status is ``VERIFY_RESIZE`` and VM status is ``RESIZED`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to revert the resizing.
+   
+   Troubleshooting
+   
+   - If the specified server status remains ``RESIZED`` , the request
+     failed. Ensure you meet the preconditions and run the request
+     again. If the request fails again, investigate the compute back
+     end.
+   
+   - The specified server is not reverted in the compute node that
+     OpenStack Compute manages.
+
+   :requestexample: v2/examples/revertServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Associate security          group with server
+   :synopsis: Associates a specified security group with a server. Specify the ``security_group`` action and the name of the security group in the request body.
+
+   
+
+   :requestexample: v2/examples/associateSecGroup_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/action
+   :title: Create image
+   :synopsis: Creates an image. Specify the ``createImage`` action in the request body.
+
+   After you make this request, you typically must keep polling the
+   created image's status to determine whether the request succeeded.
+   A successfully creating image operation shows the ``available``
+   image status and the server status reverts to its original status.
+   You can also see the new image in the image back end that OpenStack
+   Image service manages.
+   
+   Preconditions
+   
+   To create an image, these preconditions must be met:
+   
+   - The specified server must exist.
+   
+   - The server status is ``ACTIVE`` , ``PAUSED`` , or ``SUSPENDED`` .
+   
+   - The connection to the Image service is valid.
+   
+   Troubleshooting
+   
+   - If the image status remains uploading or shows another error
+     status, the request failed. Ensure you meet the preconditions and
+     run the request again. If the request fails again, investigate
+     the image back end.
+   
+   - If the server status does not go back to an original server's
+     status, the request failed. Ensure you meet the preconditions, or
+     check if there is another operation that causes race conditions
+     for the server, then run the request again. If the request fails
+     again, investigate the compute back end or ask your cloud
+     provider.
+   
+   - If the request fails due to an error on OpenStack Compute service,
+     the image is purged from the image store that OpenStack Image
+     service manages. Ensure you meet the preconditions and run the
+     request again. If the request fails again, investigate OpenStack
+     Compute service or ask your cloud provider.
+
+   :requestexample: v2/examples/createImage_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2/createImage.json
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2/extensions/{alias}
+   :title: Get extension
+   :synopsis: Gets details about the specified extension.
+
+   Extensions introduce features and vendor-specific functionality to
+   the API without requiring a version change.
+
+   :responseexample 200: v2/examples/getExtensionv2_resp_200.json
+   :responseexample 203: v2/examples/getExtensionv2_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions
+   :parameter alias: An alias, which is a name for a pointer to a
+                     resource. For example, a named extension.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/flavors/{flavor_id}
+   :title: Get flavor details
+   :synopsis: Gets details for a specified flavor.
+
+   
+
+   :responseexample 200: v2/examples/getFlavor_resp_200.json
+   :responseexample 203: v2/examples/getFlavor_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: UUID for the specific flavor (combination of
+                         memory, disk size, and CPUs).
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/servers/{server_id}/ips
+   :title: List addresses
+   :synopsis: Lists networks and addresses for a specified tenant and server.
+
+   Specify the tenant ID and server ID in the URI.
+
+   :responseexample 200: v2/examples/getServerAddresses_resp_200.json
+   :responseexample 203: v2/examples/getServerAddresses_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-addresses
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2/{tenant_id}/flavors
+   :title: List flavors
+   :synopsis: Lists IDs, names, and links for available flavors.
+
+   
+
+   :responseexample 200: v2/examples/listFlavors_resp_200.json
+   :responseexample 203: v2/examples/listFlavors_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query minDisk: Integer value for the minimum disk space, in GB, so
+                   that you can filter results.
+   :query minRam: Integer value for the minimum RAM, in MB, so that
+                  you can filter results.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/images
    :title: List images
    :synopsis: Lists IDs, names, and links for available images.
 
@@ -64,19 +463,20 @@
    :statuscode 503: 
 
 
-.. http:get:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :title: Show server metadata
-   :synopsis: Shows metadata for a specified server.
+.. http:get:: /v2/{tenant_id}/images/{image_id}/metadata/{key}
+   :title: Show image metadata item details
+   :synopsis: Shows details for a metadata item by key for a specified image.
 
    
 
-   :responseexample 200: v2/examples/showServerMetadata_resp_200.json
-   :responseexample 203: v2/examples/showServerMetadata_resp_203.json
+   :responseexample 200: v2/examples/getImageMetadataItem_resp_200.json
+   :responseexample 203: v2/examples/getImageMetadataItem_resp_203.json
    :accepts: application/json
    :produces: application/json
-   :tag: server-metadata
-   :parameter server_id: The UUID for the server.
+   :tag: image-metadata
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
    :statuscode 200: 
    :statuscode 203: 
    :statuscode 413: 
@@ -88,23 +488,21 @@
    :statuscode 503: 
 
 
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :title: Update server metadata items
-   :synopsis: Updates metadata items by key for a specified server.
+.. http:put:: /v2/{tenant_id}/images/{image_id}/metadata/{key}
+   :title: Create or update image metadata item
+   :synopsis: Creates or updates a metadata item by key for a specified image.
 
-   Replaces items that match the specified keys and does not modify
-   items not specified in the request.
-   
    If this operation exceeds the metadata items quota, the API throws
    an ``overLimit (413)`` fault.
 
-   :requestexample: v2/examples/updateServerMetadata_req.json
-   :responseexample 200: v2/examples/updateServerMetadata_resp_200.json
+   :requestexample: v2/examples/setImageMetadataItem_req.json
+   :responseexample 200: v2/examples/setImageMetadataItem_resp_200.json
    :accepts: application/json
    :produces: application/json
-   :tag: server-metadata
-   :parameter server_id: The UUID for the server.
+   :tag: image-metadata
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
    :statuscode 200: 
    :statuscode 413: 
    :statuscode 415: 
@@ -117,26 +515,18 @@
    :statuscode 409: 
 
 
-.. http:put:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :title: Create or replace server metadata items
-   :synopsis: Creates or replaces metadata items for a specified server.
+.. http:delete:: /v2/{tenant_id}/images/{image_id}/metadata/{key}
+   :title: Delete image metadata item
+   :synopsis: Deletes a metadata item by key for a specified image.
 
-   All existing metadata items are removed and completely replaced by
-   the metadata items in the request.
    
-   If this operation exceeds the metadata items quota, the API throws
-   an ``overLimit (413)`` fault.
 
-   :requestexample: v2/examples/createServerMetadata_req.json
-   :responseexample 200: v2/examples/createServerMetadata_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-metadata
-   :parameter server_id: The UUID for the server.
+   :tag: image-metadata
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 204: 
    :statuscode 413: 
-   :statuscode 415: 
    :statuscode 405: 
    :statuscode 404: 
    :statuscode 403: 
@@ -146,7 +536,29 @@
    :statuscode 409: 
 
 
-.. http:get:: //v2/{tenant_id}/servers/detail
+.. http:get:: /
+   :title: List API versions
+   :synopsis: Lists information about all Compute API versions.
+
+   
+
+   :responseexample 200: v2/examples/listVersionsv2_resp_200.json
+   :responseexample 300: v2/examples/listVersionsv2_resp_300.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 300: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/servers/detail
    :title: List details for servers
    :synopsis: Lists details for all servers.
 
@@ -226,22 +638,21 @@
    :statuscode 503: 
 
 
-.. http:get:: //v2/{tenant_id}/servers/{server_id}/ips/{network_label}
-   :title: List addresses by network
-   :synopsis: Lists addresses for a specified tenant, server, and network.
+.. http:get:: /v2/{tenant_id}/servers/{server_id}
+   :title: Get server details
+   :synopsis: Gets details for a specified server.
 
-   Specify the tenant ID, server ID, and network label in the request
-   URI.
+   Preconditions
+   
+   - The specified server must exist.
 
-   :responseexample 200: v2/examples/getNetworkAddresses_resp_200.json
-   :responseexample 203: v2/examples/getNetworkAddresses_resp_203.json
+   :responseexample 200: v2/examples/getServer_resp_200.json
+   :responseexample 203: v2/examples/getServer_resp_203.json
    :accepts: application/json
    :produces: application/json
-   :tag: server-addresses
+   :tag: servers
    :parameter server_id: The UUID for the server.
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter network_label: The network label, such as public or
-                             private .
    :statuscode 200: 
    :statuscode 203: 
    :statuscode 413: 
@@ -251,10 +662,319 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
+
+
+.. http:put:: /v2/{tenant_id}/servers/{server_id}
+   :title: Update server
+   :synopsis: Updates the editable attributes of the specified server.
+
+   Preconditions
+   
+   - The specified server must exist.
+
+   :requestexample: v2/examples/updateServer_req.json
+   :responseexample 200: v2/examples/updateServer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: servers
+   :requestschema: v2/updateServer.json
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
    :statuscode 409: 
 
 
-.. http:get:: //v2/{tenant_id}/images/{image_id}/metadata
+.. http:delete:: /v2/{tenant_id}/servers/{server_id}
+   :title: Delete server
+   :synopsis: Deletes a specified server.
+
+   Preconditions
+   
+   - The specified server must exist.
+   
+   - Anyone can delete a server when the server's status is not locked.
+   
+   - You can delete a server which status is not locked.
+   
+   - If the specified server is locked, you need to have administrator
+     privileges to delete the server.
+   
+   Asynchronous postconditions
+   
+   - With correct permissions, you can see the specified server status
+     as ``DELETED`` through API calls.
+   
+   - The port attached to the specified server is deleted.
+   
+   - The server is deleted from the list of servers returned by an API
+     call.
+   
+   - The server managed by OpenStack Compute is deleted on the compute
+     node.
+   
+   Troubleshooting
+   
+   - If server status remains in ``deleting`` or shows another error
+     status, the request failed. Ensure you meet the preconditions
+     then investigate the compute back end.
+   
+   - The request returns the HTTP 409 status code when the server is
+     locked even if you have a correct permissions. Ensure you meet
+     the preconditions then investigate the server status.
+   
+   - The server managed by OpenStack Compute is not deleted from the
+     compute node.
+
+   :tag: servers
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/servers/{server_id}/metadata
+   :title: Show server metadata
+   :synopsis: Shows metadata for a specified server.
+
+   
+
+   :responseexample 200: v2/examples/showServerMetadata_resp_200.json
+   :responseexample 203: v2/examples/showServerMetadata_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2/{tenant_id}/servers/{server_id}/metadata
+   :title: Update server metadata items
+   :synopsis: Updates metadata items by key for a specified server.
+
+   Replaces items that match the specified keys and does not modify
+   items not specified in the request.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2/examples/updateServerMetadata_req.json
+   :responseexample 200: v2/examples/updateServerMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2/{tenant_id}/servers/{server_id}/metadata
+   :title: Create or replace server metadata items
+   :synopsis: Creates or replaces metadata items for a specified server.
+
+   All existing metadata items are removed and completely replaced by
+   the metadata items in the request.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2/examples/createServerMetadata_req.json
+   :responseexample 200: v2/examples/createServerMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2/{tenant_id}/images/{image_id}
+   :title: Get image details
+   :synopsis: Gets details for a specified image.
+
+   
+
+   :responseexample 200: v2/examples/getImage_resp_200.json
+   :responseexample 203: v2/examples/getImage_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: images
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2/{tenant_id}/images/{image_id}
+   :title: Delete image
+   :synopsis: Deletes a specified image.
+
+   
+
+   :tag: images
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter image_id: The UUID for the image.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/flavors/detail
+   :title: List details for flavors
+   :synopsis: Lists all details for available flavors.
+
+   
+
+   :responseexample 200: v2/examples/listDetailFlavors_resp_200.json
+   :responseexample 203: v2/examples/listDetailFlavors_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query minDisk: Integer value for the minimum disk space, in GB, so
+                   that you can filter results.
+   :query minRam: Integer value for the minimum RAM, in MB, so that
+                  you can filter results.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/images/detail
+   :title: List images details
+   :synopsis: Lists all details for available images.
+
+   
+
+   :responseexample 200: v2/examples/listDetailImages_resp_200.json
+   :responseexample 203: v2/examples/listDetailImages_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: images
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query changes-since: The date and time when the image or server
+                         last changed status.  Use this query
+                         parameter to check for changes since a
+                         previous request rather than re-downloading
+                         and re-parsing the full status at each
+                         polling interval. If data has changed, only
+                         the items changed since the specified time
+                         are returned in the response. If data has not
+                         changed since the ``changes-since`` time, an
+                         empty list is returned.  For example, issue a
+                         GET request against the following endpoint to
+                         list all servers that have changed since Mon,
+                         24 Jan 2015 17:08:00 UTC:  ::     GET
+                         /v2/010101/servers?changes-
+                         since=2015-01-24T17:08:00Z  To enable you to
+                         keep track of changes, this filter also
+                         displays images and servers that were deleted
+                         if the ``changes-since`` value specifies a
+                         date in the last 30 days. Items deleted more
+                         than 30 days ago might be returned, but it is
+                         not guaranteed.  The date and time stamp
+                         format is ISO 8601 :  ::     CCYY-MM-
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
+                         included, returns the time zone as an offset
+                         from UTC.  For example,
+                         ``2015-08-27T09:49:58-05:00`` .  If you omit
+                         the time zone, the UTC time zone is assumed.
+   :query server: Name of the server in URL format.
+   :query name: Name of the image as a string.
+   :query status: Value of the status of the image so that you can
+                  filter on "ACTIVE" for example.
+   :query type: Value of the type of image, such as snapshot or
+                backup.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/images/{image_id}/metadata
    :title: Show image metadata
    :synopsis: Shows metadata for a specified image.
 
@@ -278,7 +998,7 @@
    :statuscode 503: 
 
 
-.. http:post:: //v2/{tenant_id}/images/{image_id}/metadata
+.. http:post:: /v2/{tenant_id}/images/{image_id}/metadata
    :title: Update image metadata items
    :synopsis: Updates metadata items by key for a specified image.
 
@@ -307,7 +1027,7 @@
    :statuscode 409: 
 
 
-.. http:put:: //v2/{tenant_id}/images/{image_id}/metadata
+.. http:put:: /v2/{tenant_id}/images/{image_id}/metadata
    :title: Create or replace image metadata
    :synopsis: Creates or replaces metadata for a specified image.
 
@@ -336,7 +1056,7 @@
    :statuscode 409: 
 
 
-.. http:post:: //v2/{tenant_id}/servers
+.. http:post:: /v2/{tenant_id}/servers
    :title: Create server
    :synopsis: Creates a server.
 
@@ -412,7 +1132,7 @@
    :statuscode 503: 
 
 
-.. http:get:: //v2/{tenant_id}/servers
+.. http:get:: /v2/{tenant_id}/servers
    :title: List servers
    :synopsis: Lists IDs, names, and links for all servers.
 
@@ -546,799 +1266,7 @@
    :statuscode 503: 
 
 
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Change password
-   :synopsis: Changes the password for a server. Specify the ``changePassword`` action in the request body.
-
-   
-
-   :requestexample: v2/examples/changePassword_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Reboot server
-   :synopsis: Reboots the specified server. Specify the ``reboot`` action in the request body.
-
-   
-
-   :requestexample: v2/examples/rebootServer_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :requestschema: v2/rebootServer.json
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 422: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Rebuild server
-   :synopsis: Rebuilds the specified server. Specify the ``rebuild`` action in the request body.
-
-   
-
-   :requestexample: v2/examples/rebuildServer_req.json
-   :responseexample 202: v2/examples/rebuildServer_resp_202.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Resize server
-   :synopsis: Resizes the specified server. Specify the ``resize`` action in the request body.
-
-   A successfully resized server shows the ``VERIFY_RESIZE`` status,
-   ``RESIZED`` VM status, and ``finished`` migration status. If you
-   set the ``auto_confirm`` option of the Compute service to ``True``
-   , the Compute service automatically confirms the resize operation.
-   
-   Preconditions
-   
-   - You can only resize a server when its status is ``ACTIVE`` .
-   
-   - If the specified server is locked, you must have administrator
-     privileges to resize the server.
-
-   :requestexample: v2/examples/resizeServer_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Confirm resized server
-   :synopsis: Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.
-
-   After you make this request, you typically must keep polling the
-   server status to determine whether the request succeeded. A
-   successfully confirming resize operation shows ``ACTIVE`` status
-   and ``confirmed`` migration status. You can also see the resized
-   server in the compute node that OpenStack Compute manages.
-   
-   Preconditions
-   
-   To confirm a pending resize action, these preconditions must be
-   met:
-   
-   - Server status is ``VERIFY_RESIZED`` , VM status is ``RESIZED`` ,
-     and migration status is ``finished`` or ``confirming`` .
-   
-   - If the specified server is locked, you must have administrator
-     privileges to confirm the server.
-   
-   Troubleshooting
-   
-   - If the specified server status remains ``RESIZED`` , the request
-     failed. Ensure you meet the preconditions and run the request
-     again. If the request fails again, investigate the compute back
-     end or ask your cloud provider.
-
-   :requestexample: v2/examples/confirmServer_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 204: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Revert resized server
-   :synopsis: Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.
-
-   After you make this request, you typically must keep polling the
-   server status to determine whether the request succeeded. A
-   successfully reverting resize operation shows ``ACTIVE`` status and
-   ``reverted`` migration status. You can also see the reverted server
-   in the compute node that OpenStack Compute manages.
-   
-   Preconditions
-   
-   To cancel and revert a pending resize action, these preconditions
-   must be met:
-   
-   - Server status is ``VERIFY_RESIZE`` and VM status is ``RESIZED`` .
-   
-   - If the specified server is locked, you must have administrator
-     privileges to revert the resizing.
-   
-   Troubleshooting
-   
-   - If the specified server status remains ``RESIZED`` , the request
-     failed. Ensure you meet the preconditions and run the request
-     again. If the request fails again, investigate the compute back
-     end.
-   
-   - The specified server is not reverted in the compute node that
-     OpenStack Compute manages.
-
-   :requestexample: v2/examples/revertServer_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Associate security          group with server
-   :synopsis: Associates a specified security group with a server. Specify the ``security_group`` action and the name of the security group in the request body.
-
-   
-
-   :requestexample: v2/examples/associateSecGroup_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :title: Create image
-   :synopsis: Creates an image. Specify the ``createImage`` action in the request body.
-
-   After you make this request, you typically must keep polling the
-   created image's status to determine whether the request succeeded.
-   A successfully creating image operation shows the ``available``
-   image status and the server status reverts to its original status.
-   You can also see the new image in the image back end that OpenStack
-   Image service manages.
-   
-   Preconditions
-   
-   To create an image, these preconditions must be met:
-   
-   - The specified server must exist.
-   
-   - The server status is ``ACTIVE`` , ``PAUSED`` , or ``SUSPENDED`` .
-   
-   - The connection to the Image service is valid.
-   
-   Troubleshooting
-   
-   - If the image status remains uploading or shows another error
-     status, the request failed. Ensure you meet the preconditions and
-     run the request again. If the request fails again, investigate
-     the image back end.
-   
-   - If the server status does not go back to an original server's
-     status, the request failed. Ensure you meet the preconditions, or
-     check if there is another operation that causes race conditions
-     for the server, then run the request again. If the request fails
-     again, investigate the compute back end or ask your cloud
-     provider.
-   
-   - If the request fails due to an error on OpenStack Compute service,
-     the image is purged from the image store that OpenStack Image
-     service manages. Ensure you meet the preconditions and run the
-     request again. If the request fails again, investigate OpenStack
-     Compute service or ask your cloud provider.
-
-   :requestexample: v2/examples/createImage_req.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-actions
-   :requestschema: v2/createImage.json
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:get:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :title: Show image metadata item details
-   :synopsis: Shows details for a metadata item by key for a specified image.
-
-   
-
-   :responseexample 200: v2/examples/getImageMetadataItem_resp_200.json
-   :responseexample 203: v2/examples/getImageMetadataItem_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: image-metadata
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:put:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :title: Create or update image metadata item
-   :synopsis: Creates or updates a metadata item by key for a specified image.
-
-   If this operation exceeds the metadata items quota, the API throws
-   an ``overLimit (413)`` fault.
-
-   :requestexample: v2/examples/setImageMetadataItem_req.json
-   :responseexample 200: v2/examples/setImageMetadataItem_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: image-metadata
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 200: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:delete:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :title: Delete image metadata item
-   :synopsis: Deletes a metadata item by key for a specified image.
-
-   
-
-   :tag: image-metadata
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 204: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:get:: //v2/{tenant_id}/servers/{server_id}/ips
-   :title: List addresses
-   :synopsis: Lists networks and addresses for a specified tenant and server.
-
-   Specify the tenant ID and server ID in the URI.
-
-   :responseexample 200: v2/examples/getServerAddresses_resp_200.json
-   :responseexample 203: v2/examples/getServerAddresses_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: server-addresses
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:get:: /
-   :title: List API versions
-   :synopsis: Lists information about all Compute API versions.
-
-   
-
-   :responseexample 200: v2/examples/listVersionsv2_resp_200.json
-   :responseexample 300: v2/examples/listVersionsv2_resp_300.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: versions
-   :statuscode 200: 
-   :statuscode 300: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/limits
-   :title: List limits
-   :synopsis: Lists the current absolute and rate limits for a specified project.
-
-   An absolute limit value of ``-1`` indicates that the absolute limit
-   for the item is infinite.
-
-   :responseexample 200: v2/examples/listLimits_resp_200.json
-   :responseexample 203: v2/examples/listLimits_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: limits
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/extensions
-   :title: List extensions
-   :synopsis: Lists available extensions.
-
-   
-
-   :responseexample 200: v2/examples/listExtensionsv2_resp_200.json
-   :responseexample 203: v2/examples/listExtensionsv2_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: extensions
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/images/{image_id}
-   :title: Get image details
-   :synopsis: Gets details for a specified image.
-
-   
-
-   :responseexample 200: v2/examples/getImage_resp_200.json
-   :responseexample 203: v2/examples/getImage_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: images
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter image_id: The UUID for the image.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:delete:: //v2/{tenant_id}/images/{image_id}
-   :title: Delete image
-   :synopsis: Deletes a specified image.
-
-   
-
-   :tag: images
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter image_id: The UUID for the image.
-   :statuscode 204: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/flavors/detail
-   :title: List details for flavors
-   :synopsis: Lists all details for available flavors.
-
-   
-
-   :responseexample 200: v2/examples/listDetailFlavors_resp_200.json
-   :responseexample 203: v2/examples/listDetailFlavors_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: flavors
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :query minDisk: Integer value for the minimum disk space, in GB, so
-                   that you can filter results.
-   :query minRam: Integer value for the minimum RAM, in MB, so that
-                  you can filter results.
-   :query limit: Requests a specified page size of returned items from
-                 the query. Returns a number of items up to the
-                 specified limit value. Use the ``limit`` parameter to
-                 make an initial limited request and use the ID of the
-                 last-seen item from the response as the ``marker``
-                 parameter value in a subsequent limited request.
-   :query marker: Specifies the ID of the last-seen item. Use the
-                  ``limit`` parameter to make an initial limited
-                  request and use the ID of the last-seen item from
-                  the response as the ``marker`` parameter value in a
-                  subsequent limited request.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/flavors
-   :title: List flavors
-   :synopsis: Lists IDs, names, and links for available flavors.
-
-   
-
-   :responseexample 200: v2/examples/listFlavors_resp_200.json
-   :responseexample 203: v2/examples/listFlavors_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: flavors
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :query minDisk: Integer value for the minimum disk space, in GB, so
-                   that you can filter results.
-   :query minRam: Integer value for the minimum RAM, in MB, so that
-                  you can filter results.
-   :query limit: Requests a specified page size of returned items from
-                 the query. Returns a number of items up to the
-                 specified limit value. Use the ``limit`` parameter to
-                 make an initial limited request and use the ID of the
-                 last-seen item from the response as the ``marker``
-                 parameter value in a subsequent limited request.
-   :query marker: Specifies the ID of the last-seen item. Use the
-                  ``limit`` parameter to make an initial limited
-                  request and use the ID of the last-seen item from
-                  the response as the ``marker`` parameter value in a
-                  subsequent limited request.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/flavors/{flavor_id}
-   :title: Get flavor details
-   :synopsis: Gets details for a specified flavor.
-
-   
-
-   :responseexample 200: v2/examples/getFlavor_resp_200.json
-   :responseexample 203: v2/examples/getFlavor_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: flavors
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :parameter flavor_id: UUID for the specific flavor (combination of
-                         memory, disk size, and CPUs).
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/servers/{server_id}
-   :title: Get server details
-   :synopsis: Gets details for a specified server.
-
-   Preconditions
-   
-   - The specified server must exist.
-
-   :responseexample 200: v2/examples/getServer_resp_200.json
-   :responseexample 203: v2/examples/getServer_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: servers
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:put:: //v2/{tenant_id}/servers/{server_id}
-   :title: Update server
-   :synopsis: Updates the editable attributes of the specified server.
-
-   Preconditions
-   
-   - The specified server must exist.
-
-   :requestexample: v2/examples/updateServer_req.json
-   :responseexample 200: v2/examples/updateServer_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: servers
-   :requestschema: v2/updateServer.json
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
-   :statuscode 413: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:delete:: //v2/{tenant_id}/servers/{server_id}
-   :title: Delete server
-   :synopsis: Deletes a specified server.
-
-   Preconditions
-   
-   - The specified server must exist.
-   
-   - Anyone can delete a server when the server's status is not locked.
-   
-   - You can delete a server which status is not locked.
-   
-   - If the specified server is locked, you need to have administrator
-     privileges to delete the server.
-   
-   Asynchronous postconditions
-   
-   - With correct permissions, you can see the specified server status
-     as ``DELETED`` through API calls.
-   
-   - The port attached to the specified server is deleted.
-   
-   - The server is deleted from the list of servers returned by an API
-     call.
-   
-   - The server managed by OpenStack Compute is deleted on the compute
-     node.
-   
-   Troubleshooting
-   
-   - If server status remains in ``deleting`` or shows another error
-     status, the request failed. Ensure you meet the preconditions
-     then investigate the compute back end.
-   
-   - The request returns the HTTP 409 status code when the server is
-     locked even if you have a correct permissions. Ensure you meet
-     the preconditions then investigate the server status.
-   
-   - The server managed by OpenStack Compute is not deleted from the
-     compute node.
-
-   :tag: servers
-   :parameter server_id: The UUID for the server.
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 204: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/extensions/{alias}
-   :title: Get extension
-   :synopsis: Gets details about the specified extension.
-
-   Extensions introduce features and vendor-specific functionality to
-   the API without requiring a version change.
-
-   :responseexample 200: v2/examples/getExtensionv2_resp_200.json
-   :responseexample 203: v2/examples/getExtensionv2_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: extensions
-   :parameter alias: An alias, which is a name for a pointer to a
-                     resource. For example, a named extension.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/images/detail
-   :title: List images details
-   :synopsis: Lists all details for available images.
-
-   
-
-   :responseexample 200: v2/examples/listDetailImages_resp_200.json
-   :responseexample 203: v2/examples/listDetailImages_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: images
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :query changes-since: The date and time when the image or server
-                         last changed status.  Use this query
-                         parameter to check for changes since a
-                         previous request rather than re-downloading
-                         and re-parsing the full status at each
-                         polling interval. If data has changed, only
-                         the items changed since the specified time
-                         are returned in the response. If data has not
-                         changed since the ``changes-since`` time, an
-                         empty list is returned.  For example, issue a
-                         GET request against the following endpoint to
-                         list all servers that have changed since Mon,
-                         24 Jan 2015 17:08:00 UTC:  ::     GET
-                         /v2/010101/servers?changes-
-                         since=2015-01-24T17:08:00Z  To enable you to
-                         keep track of changes, this filter also
-                         displays images and servers that were deleted
-                         if the ``changes-since`` value specifies a
-                         date in the last 30 days. Items deleted more
-                         than 30 days ago might be returned, but it is
-                         not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
-                         included, returns the time zone as an offset
-                         from UTC.  For example,
-                         ``2015-08-27T09:49:58-05:00`` .  If you omit
-                         the time zone, the UTC time zone is assumed.
-   :query server: Name of the server in URL format.
-   :query name: Name of the image as a string.
-   :query status: Value of the status of the image so that you can
-                  filter on "ACTIVE" for example.
-   :query type: Value of the type of image, such as snapshot or
-                backup.
-   :query limit: Requests a specified page size of returned items from
-                 the query. Returns a number of items up to the
-                 specified limit value. Use the ``limit`` parameter to
-                 make an initial limited request and use the ID of the
-                 last-seen item from the response as the ``marker``
-                 parameter value in a subsequent limited request.
-   :query marker: Specifies the ID of the last-seen item. Use the
-                  ``limit`` parameter to make an initial limited
-                  request and use the ID of the last-seen item from
-                  the response as the ``marker`` parameter value in a
-                  subsequent limited request.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 413: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:get:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
+.. http:get:: /v2/{tenant_id}/servers/{server_id}/metadata/{key}
    :title: Show server metadata item details
    :synopsis: Shows details for a metadata item by key for a specified server.
 
@@ -1363,7 +1291,7 @@
    :statuscode 503: 
 
 
-.. http:put:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
+.. http:put:: /v2/{tenant_id}/servers/{server_id}/metadata/{key}
    :title: Create or update server metadata item
    :synopsis: Sets a metadata item by key for a specified server.
 
@@ -1390,7 +1318,7 @@
    :statuscode 409: 
 
 
-.. http:delete:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
+.. http:delete:: /v2/{tenant_id}/servers/{server_id}/metadata/{key}
    :title: Delete server metadata item
    :synopsis: Deletes a metadata item by key for a specified server.
 
@@ -1401,6 +1329,78 @@
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter key: A string. Maximum length is 255 characters.
    :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2/{tenant_id}/limits
+   :title: List limits
+   :synopsis: Lists the current absolute and rate limits for a specified project.
+
+   An absolute limit value of ``-1`` indicates that the absolute limit
+   for the item is infinite.
+
+   :responseexample 200: v2/examples/listLimits_resp_200.json
+   :responseexample 203: v2/examples/listLimits_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: limits
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/extensions
+   :title: List extensions
+   :synopsis: Lists available extensions.
+
+   
+
+   :responseexample 200: v2/examples/listExtensionsv2_resp_200.json
+   :responseexample 203: v2/examples/listExtensionsv2_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2/{tenant_id}/servers/{server_id}/ips/{network_label}
+   :title: List addresses by network
+   :synopsis: Lists addresses for a specified tenant, server, and network.
+
+   Specify the tenant ID, server ID, and network label in the request
+   URI.
+
+   :responseexample 200: v2/examples/getNetworkAddresses_resp_200.json
+   :responseexample 203: v2/examples/getNetworkAddresses_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-addresses
+   :parameter server_id: The UUID for the server.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter network_label: The network label, such as public or
+                             private .
+   :statuscode 200: 
+   :statuscode 203: 
    :statuscode 413: 
    :statuscode 405: 
    :statuscode 404: 

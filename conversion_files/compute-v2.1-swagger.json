@@ -1324,7 +1324,148 @@
         "title": "List API versions"
       }
     ], 
-    "//v2.1/images": [
+    "/v2.1/extensions": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "", 
+        "examples": {}, 
+        "id": "listExtensions", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "os-create-backup", 
+                  "description": "Create a backup of a server.", 
+                  "links": [], 
+                  "name": "CreateBackup", 
+                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
+                  "updated": "2014-12-03T00:00:00Z"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "os-create-backup", 
+                  "description": "Create a backup of a server.", 
+                  "links": [], 
+                  "name": "CreateBackup", 
+                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
+                  "updated": "2014-12-03T00:00:00Z"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }
+        }, 
+        "summary": "Lists available extensions.", 
+        "tags": [
+          "extensions-v2.1"
+        ], 
+        "title": "List extensions"
+      }
+    ], 
+    "/v2.1/extensions/{alias}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
+        "examples": {}, 
+        "id": "getExtension", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "An alias, which is a name for a pointer to a resource. For example,\na named extension.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alias", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "OS-DCF", 
+                  "description": "Disk Management Extension.", 
+                  "links": [], 
+                  "name": "DiskConfig", 
+                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
+                  "updated": "2011-09-27T00:00:00+00:00"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "OS-DCF", 
+                  "description": "Disk Management Extension.", 
+                  "links": [], 
+                  "name": "DiskConfig", 
+                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
+                  "updated": "2011-09-27T00:00:00+00:00"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }
+        }, 
+        "summary": "Shows details about a specified extension.", 
+        "tags": [
+          "extensions-v2.1"
+        ], 
+        "title": "Get extension"
+      }
+    ], 
+    "/v2.1/images": [
       {
         "consumes": [
           "application/json"
@@ -1721,7 +1862,7 @@
         "title": "List images"
       }
     ], 
-    "//v2.1/images/detail": [
+    "/v2.1/images/detail": [
       {
         "consumes": [
           "application/json"
@@ -2272,7 +2413,7 @@
         "title": "List images details"
       }
     ], 
-    "//v2.1/images/{image_id}": [
+    "/v2.1/images/{image_id}": [
       {
         "consumes": [
           "application/json"
@@ -2472,7 +2613,7 @@
         "title": "Delete image"
       }
     ], 
-    "//v2.1/images/{image_id}/metadata": [
+    "/v2.1/images/{image_id}/metadata": [
       {
         "consumes": [
           "application/json"
@@ -2728,7 +2869,7 @@
         "title": "Create or replace image metadata"
       }
     ], 
-    "//v2.1/images/{image_id}/metadata/{key}": [
+    "/v2.1/images/{image_id}/metadata/{key}": [
       {
         "consumes": [
           "application/json"
@@ -2981,147 +3122,6 @@
           "compute_image_metadata-v2.1"
         ], 
         "title": "Delete image metadata item"
-      }
-    ], 
-    "/v2.1/extensions": [
-      {
-        "consumes": [
-          "application/json"
-        ], 
-        "description": "", 
-        "examples": {}, 
-        "id": "listExtensions", 
-        "method": "get", 
-        "parameters": [], 
-        "produces": [
-          "application/json"
-        ], 
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "os-create-backup", 
-                  "description": "Create a backup of a server.", 
-                  "links": [], 
-                  "name": "CreateBackup", 
-                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
-                  "updated": "2014-12-03T00:00:00Z"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }, 
-          "203": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "os-create-backup", 
-                  "description": "Create a backup of a server.", 
-                  "links": [], 
-                  "name": "CreateBackup", 
-                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
-                  "updated": "2014-12-03T00:00:00Z"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }
-        }, 
-        "summary": "Lists available extensions.", 
-        "tags": [
-          "extensions-v2.1"
-        ], 
-        "title": "List extensions"
-      }
-    ], 
-    "/v2.1/extensions/{alias}": [
-      {
-        "consumes": [
-          "application/json"
-        ], 
-        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
-        "examples": {}, 
-        "id": "getExtension", 
-        "method": "get", 
-        "parameters": [
-          {
-            "description": "An alias, which is a name for a pointer to a resource. For example,\na named extension.", 
-            "format": "", 
-            "in": "path", 
-            "name": "alias", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
-        "produces": [
-          "application/json"
-        ], 
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "OS-DCF", 
-                  "description": "Disk Management Extension.", 
-                  "links": [], 
-                  "name": "DiskConfig", 
-                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
-                  "updated": "2011-09-27T00:00:00+00:00"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }, 
-          "203": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "OS-DCF", 
-                  "description": "Disk Management Extension.", 
-                  "links": [], 
-                  "name": "DiskConfig", 
-                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
-                  "updated": "2011-09-27T00:00:00+00:00"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }
-        }, 
-        "summary": "Shows details about a specified extension.", 
-        "tags": [
-          "extensions-v2.1"
-        ], 
-        "title": "Get extension"
       }
     ], 
     "/v2.1/os-simple-tenant-usage": [
