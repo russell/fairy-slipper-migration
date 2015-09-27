@@ -1,25 +1,25 @@
 .. swagger:tag:: versions-identity
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: tokens
-   :summary: Tokens
+   :synopsis: Tokens
 
    Manages tokens.
 
 .. swagger:tag:: service-catalog
-   :summary: Service catalog
+   :synopsis: Service catalog
 
    Manages the catalog of services.
 
 .. swagger:tag:: endpoints
-   :summary: Endpoints
+   :synopsis: Endpoints
 
    Manages endpoints.
 
 .. swagger:tag:: domains
-   :summary: Domains
+   :synopsis: Domains
 
    Manages domains.
    
@@ -44,32 +44,32 @@
    - *Group name* . Unique within the owning domain.
 
 .. swagger:tag:: projects
-   :summary: Projects
+   :synopsis: Projects
 
    Manages projects.
 
 .. swagger:tag:: users
-   :summary: Users
+   :synopsis: Users
 
    Manages users.
 
 .. swagger:tag:: groups
-   :summary: Groups
+   :synopsis: Groups
 
    Manages groups.
 
 .. swagger:tag:: credentials
-   :summary: Credentials
+   :synopsis: Credentials
 
    Manages credentials.
 
 .. swagger:tag:: roles
-   :summary: Roles
+   :synopsis: Roles
 
    Manages roles.
 
 .. swagger:tag:: policies
-   :summary: Policies
+   :synopsis: Policies
 
    Manages policies.
    
@@ -82,7 +82,7 @@
    "blob": { "foobar_user": [ "role:compute-user" ] }
 
 .. swagger:tag:: regions-v3
-   :summary: Regions
+   :synopsis: Regions
 
    Manages regions.
    

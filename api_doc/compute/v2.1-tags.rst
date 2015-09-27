@@ -1,57 +1,57 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    Lists information for all API versions.
 
 .. swagger:tag:: multiple-create
-   :summary: Servers multiple create (servers)
+   :synopsis: Servers multiple create (servers)
 
    Creates one or more servers with an optional reservation ID. The
    request and response examples show how to create multiple servers
    with or without a reservation ID.
 
 .. swagger:tag:: server-actions
-   :summary: Servers actions (servers, action)
+   :synopsis: Servers actions (servers, action)
 
    Performs actions on a server. Specify the action in the request
    body.
 
 .. swagger:tag:: os-server-actions-add-v2.1
-   :summary: Servers action (servers, os-server-actions)
+   :synopsis: Servers action (servers, os-server-actions)
 
    Permits all users to list available server actions for a specified
    server. Permits administrators to get details for a specified
    server action for a specified server.
 
 .. swagger:tag:: admin-actions
-   :summary: Servers admin actions (servers, action)
+   :synopsis: Servers admin actions (servers, action)
 
    Administrators only. Performs actions on a server. Specify the
    action in the request body.
 
 .. swagger:tag:: admin-password
-   :summary: Servers admin password (servers, action)
+   :synopsis: Servers admin password (servers, action)
 
    Enables users with the administrative role or the owner of the
    server to change the password of the administrative user.
 
 .. swagger:tag:: console-output
-   :summary: Servers console output (servers, action)
+   :synopsis: Servers console output (servers, action)
 
    Gets console output for a server instance.
 
 .. swagger:tag:: multinic
-   :summary: Servers multiple fixed IP support (servers, action)
+   :synopsis: Servers multiple fixed IP support (servers, action)
 
    Adds or removes fixed IP addresses from an instance.
 
 .. swagger:tag:: remote-consoles
-   :summary: Servers remote console (servers, action)
+   :synopsis: Servers remote console (servers, action)
 
    Provides interactive console support.
 
 .. swagger:tag:: shelve
-   :summary: Servers shelve (servers, action)
+   :synopsis: Servers shelve (servers, action)
 
    Shelves running servers, restores shelved servers, and removes
    shelved servers.
@@ -73,30 +73,30 @@
    you no longer need.
 
 .. swagger:tag:: deferred-delete
-   :summary: Servers deferred delete (servers, action)
+   :synopsis: Servers deferred delete (servers, action)
 
    Force-deletes a server or restores a soft-deleted server.
 
 .. swagger:tag:: evacuate
-   :summary: Servers evacuate (servers, action)
+   :synopsis: Servers evacuate (servers, action)
 
    Evacuates servers.
    
    Specify the ``evacuate`` action in the request body.
 
 .. swagger:tag:: diagnostics
-   :summary: Servers diagnostics (servers, diagnostics)
+   :synopsis: Servers diagnostics (servers, diagnostics)
 
    Gets the usage data for a server.
 
 .. swagger:tag:: server-ips
-   :summary: Servers IPs (servers, ips)
+   :synopsis: Servers IPs (servers, ips)
 
    Lists the IP addresses assigned to an instance or shows details for
    a specified IP address.
 
 .. swagger:tag:: server-metadata-v2.1
-   :summary: Server metadata (servers, metadata)
+   :synopsis: Server metadata (servers, metadata)
 
    Lists metadata, creates or replaces one or more metadata items, and
    updates one or more metadata items for a server.
@@ -105,19 +105,19 @@
    metadata item, by key, for a server.
 
 .. swagger:tag:: config-drive
-   :summary: Servers configuration drive (servers, os-config-drive)
+   :synopsis: Servers configuration drive (servers, os-config-drive)
 
    Shows server details including configuration drive information for
    a specified server ID or user.
 
 .. swagger:tag:: server-password
-   :summary: Servers password (servers, os-server-password)
+   :synopsis: Servers password (servers, os-server-password)
 
    Gets the encrypted administrative password set through the metadata
    service.
 
 .. swagger:tag:: server-usage
-   :summary: Servers usage (servers, os-server-usage)
+   :synopsis: Servers usage (servers, os-server-usage)
 
    Lists all servers and shows server details. Includes server usage
    information.
@@ -126,48 +126,48 @@
    attributes in server responses.
 
 .. swagger:tag:: virtual-interfaces
-   :summary: Servers virtual interfaces (servers, os-virtual-interfaces)
+   :synopsis: Servers virtual interfaces (servers, os-virtual-interfaces)
 
    Lists virtual interfaces for a specified server instance.
 
 .. swagger:tag:: flavors
-   :summary: Flavors with extended attributes (flavors)
+   :synopsis: Flavors with extended attributes (flavors)
 
    Shows information about flavors.
 
 .. swagger:tag:: flavor-access
-   :summary: Flavors access (flavors, os-flavor-access, action)
+   :synopsis: Flavors access (flavors, os-flavor-access, action)
 
    Provides flavor access support.
 
 .. swagger:tag:: flavor-extra-specs
-   :summary: Flavors extra-specs (flavors, os-flavor-extra-specs)
+   :synopsis: Flavors extra-specs (flavors, os-flavor-extra-specs)
 
    Lists, creates, deletes, and updates the extra-specs or keys for a
    flavor.
 
 .. swagger:tag:: flavor-manage
-   :summary: Flavors manage (flavors, os-flavor-manage)
+   :synopsis: Flavors manage (flavors, os-flavor-manage)
 
    Creates and deletes flavors.
 
 .. swagger:tag:: keypairs
-   :summary: Keypairs (keypairs)
+   :synopsis: Keypairs (keypairs)
 
    Generates, imports, and deletes SSH keys.
 
 .. swagger:tag:: limits
-   :summary: Limits (limits)
+   :synopsis: Limits (limits)
 
    Shows all global and rate limit information.
 
 .. swagger:tag:: extensions-v2.1
-   :summary: Extensions (extensions)
+   :synopsis: Extensions (extensions)
 
    Available extensions.
 
 .. swagger:tag:: compute_images-v2.1
-   :summary: Images
+   :synopsis: Images
 
    Lists, gets details for, and deletes images. Also sets, lists, gets
    details for, and deletes image metadata.
@@ -181,13 +181,13 @@
    ``OS-EXT-IMG-SIZE:size`` extended attribute is visible.
 
 .. swagger:tag:: compute_image_metadata-v2.1
-   :summary: Image metadata
+   :synopsis: Image metadata
 
    Shows details for, sets, updates, and deletes image metadata or
    metadata items.
 
 .. swagger:tag:: agents
-   :summary: Guest agents (os-agents)
+   :synopsis: Guest agents (os-agents)
 
    Creates, lists, updates, and deletes guest agent builds. Use guest
    agents to access files on the disk, configure networking, or run
@@ -197,14 +197,14 @@
    provider uses the Xen driver.
 
 .. swagger:tag:: aggregates
-   :summary: Host aggregates (os-aggregates, action)
+   :synopsis: Host aggregates (os-aggregates, action)
 
    Creates and manages host aggregates. An aggregate assigns metadata
    to groups of compute nodes. Aggregates are only visible to the
    cloud provider.
 
 .. swagger:tag:: os-assisted-volume-snapshots-v2.1
-   :summary: Assisted volume snapshots (os-assisted-volume-snapshots)
+   :synopsis: Assisted volume snapshots (os-assisted-volume-snapshots)
 
    Creates and deletes snapshots through an emulator/hypervisor. The
    qcow2 file format is supported.
@@ -213,101 +213,101 @@
    can use an emulator/hypervisor to add the snapshot feature.
 
 .. swagger:tag:: availability-zone
-   :summary: Availability zones (os-availability-zone)
+   :synopsis: Availability zones (os-availability-zone)
 
    Gets availability zone information.
 
 .. swagger:tag:: os-baremetal-nodes-v2.1
-   :summary: Bare metal nodes (os-baremetal-nodes)
+   :synopsis: Bare metal nodes (os-baremetal-nodes)
 
    Bare metal nodes.
 
 .. swagger:tag:: os-block-device-mapping-v2.1
-   :summary: Servers with block device mapping format (servers, os-block-device-mapping)
+   :synopsis: Servers with block device mapping format (servers, os-block-device-mapping)
 
    Creates a server with a block device mapping.
 
 .. swagger:tag:: cells
-   :summary: Cells (os-cells, capacities)
+   :synopsis: Cells (os-cells, capacities)
 
    Adds neighbor cells, lists neighbor cells, and gets the
    capabilities of the local cell.
 
 .. swagger:tag:: certificates
-   :summary: Root certificates (os-certificates)
+   :synopsis: Root certificates (os-certificates)
 
    Creates and shows details for a root certificate.
 
 .. swagger:tag:: os-cloudpipe-v2.1
-   :summary: Cloudpipe (os-cloudpipe)
+   :synopsis: Cloudpipe (os-cloudpipe)
 
    Manages virtual VPNs for projects.
 
 .. swagger:tag:: os-consoles-v2.1
-   :summary: Server consoles (servers, os-consoles, os-console-auth-token)
+   :synopsis: Server consoles (servers, os-consoles, os-console-auth-token)
 
    Manages server consoles.
 
 .. swagger:tag:: os-fixed-ips-v2.1
-   :summary: Fixed IPs (os-fixed-ips)
+   :synopsis: Fixed IPs (os-fixed-ips)
 
    Shows data for a specified fixed IP, such as host name, CIDR, and
    address. Also, reserves and frees a fixed IP address.
 
 .. swagger:tag:: floating-ip-dns
-   :summary: Floating IP DNS records (os-floating-ip-dns)
+   :synopsis: Floating IP DNS records (os-floating-ip-dns)
 
    Manages DNS records associated with IP addresses allocated by the
    floating IPs extension. Requests are dispatched to a DNS driver
    selected at startup.
 
 .. swagger:tag:: floating-ip-pools
-   :summary: Floating IP pools (os-floating-ip-pools)
+   :synopsis: Floating IP pools (os-floating-ip-pools)
 
    Manages groups of floating IPs.
 
 .. swagger:tag:: floating-ips
-   :summary: Floating IPs (os-floating-ips)
+   :synopsis: Floating IPs (os-floating-ips)
 
    Assigns and allocates floating IP addresses to instances that run
    in an OpenStack cloud.
 
 .. swagger:tag:: floating-ips-bulk
-   :summary: Floating IPs bulk (os-floating-ips-bulk)
+   :synopsis: Floating IPs bulk (os-floating-ips-bulk)
 
    Bulk-creates, deletes, and lists floating IPs. Default pool name is
    ``nova`` . To view available pools, use the ``os-floating-ip-
    pools`` extension.
 
 .. swagger:tag:: fping
-   :summary: Ping instances (os-fping)
+   :synopsis: Ping instances (os-fping)
 
    Pings all or specified instances and reports which ones are alive.
 
 .. swagger:tag:: hosts
-   :summary: Hosts (os-hosts)
+   :synopsis: Hosts (os-hosts)
 
    Manages physical hosts.
 
 .. swagger:tag:: hypervisors
-   :summary: Hypervisors (os-hypervisors)
+   :synopsis: Hypervisors (os-hypervisors)
 
    Displays extra statistical information from the machine that hosts
    the hypervisor through the API for the hypervisor (XenAPI or
    KVM/libvirt).
 
 .. swagger:tag:: instance-usage-audit-log
-   :summary: Instance usage audit log (os-instance-usage-audit-log)
+   :synopsis: Instance usage audit log (os-instance-usage-audit-log)
 
    Administrator only. Monitors task logs.
 
 .. swagger:tag:: migrations
-   :summary: Migrations (os-migrations)
+   :synopsis: Migrations (os-migrations)
 
    Shows data on migrations.
 
 .. swagger:tag:: networks
-   :summary: Networks (os-networks)
+   :synopsis: Networks (os-networks)
 
    Creates, lists, shows information for, and deletes networks.
    
@@ -317,74 +317,74 @@
    Associates host with and disassociates host from a network.
 
 .. swagger:tag:: os-pci-v2.1
-   :summary: PCI pools (os-pci)
+   :synopsis: PCI pools (os-pci)
 
    Displays extra statistical information from the machine that hosts
    the hypervisor through the API for the hypervisor (XenAPI or
    KVM/libvirt).
 
 .. swagger:tag:: quota-class-sets
-   :summary: Quota class (os-quota-class-sets)
+   :synopsis: Quota class (os-quota-class-sets)
 
    Provides quota classes management support.
 
 .. swagger:tag:: quota-sets
-   :summary: Quota sets (os-quota-sets)
+   :synopsis: Quota sets (os-quota-sets)
 
    Permits administrators, depending on policy settings, to view
    quotas for a project and view and update default quotas.
 
 .. swagger:tag:: os-scheduler-hints-v2.1
-   :summary: Scheduler hints (os-scheduler-hints)
+   :synopsis: Scheduler hints (os-scheduler-hints)
 
    Creates a server with scheduler hints that are passed directly to
    the scheduler.
 
 .. swagger:tag:: security-groups
-   :summary: Security groups (os-security-groups)
+   :synopsis: Security groups (os-security-groups)
 
    Lists, shows information for, creates, and deletes security groups.
 
 .. swagger:tag:: os-security-group-default-rules-v2.1
-   :summary: Rules for default security group (os-security-group-default-rules)
+   :synopsis: Rules for default security group (os-security-group-default-rules)
 
    Lists, shows information for, and creates default security group
    rules.
 
 .. swagger:tag:: os-security-group-rules-v2.1
-   :summary: Rules for security group (os-security-group-rules)
+   :synopsis: Rules for security group (os-security-group-rules)
 
    Creates and deletes security group rules.
 
 .. swagger:tag:: os-server-external-events-v2.1
-   :summary: Execute external events (os-server-external-events)
+   :synopsis: Execute external events (os-server-external-events)
 
    Executes external events.
 
 .. swagger:tag:: server-groups
-   :summary: Server groups (os-server-groups)
+   :synopsis: Server groups (os-server-groups)
 
    Lists, shows information for, creates, and deletes server groups.
 
 .. swagger:tag:: services
-   :summary: Manage services (os-services)
+   :synopsis: Manage services (os-services)
 
    Lists, enables, disables, and deletes Compute services in all
    hosts.
 
 .. swagger:tag:: os-simple-tenant-usage-v2.1
-   :summary: Usage reports (os-simple-tenant-usage)
+   :synopsis: Usage reports (os-simple-tenant-usage)
 
    Reports usage statistics on compute and storage resources.
 
 .. swagger:tag:: tenant-networks
-   :summary: Project networks (os-tenant-networks)
+   :synopsis: Project networks (os-tenant-networks)
 
    Creates, lists, shows information for, and deletes project
    networks.
 
 .. swagger:tag:: os-volumes
-   :summary: Volume extension (os-volumes, os-snapshots)
+   :synopsis: Volume extension (os-volumes, os-snapshots)
 
    Manages volumes and snapshots for use with the Compute API.
 

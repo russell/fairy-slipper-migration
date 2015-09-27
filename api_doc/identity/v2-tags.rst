@@ -1,10 +1,10 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: identity-auth
-   :summary: Tokens
+   :synopsis: Tokens
 
    
 

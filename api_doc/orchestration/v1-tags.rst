@@ -1,5 +1,5 @@
 .. swagger:tag:: general-info
-   :summary: General API information
+   :synopsis: General API information
 
    Authenticated calls that target a known URI but that use an HTTP
    method that the implementation does not support return a
@@ -9,48 +9,48 @@
    supported for the resource.
 
 .. swagger:tag:: heat-versions
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: stacks
-   :summary: Stacks
+   :synopsis: Stacks
 
    
 
 .. swagger:tag:: stack-actions
-   :summary: Stack actions
+   :synopsis: Stack actions
 
    Performs non-lifecycle operations on the stack. Specify the action
    in the request body.
 
 .. swagger:tag:: stack-resources
-   :summary: Stack resources
+   :synopsis: Stack resources
 
    
 
 .. swagger:tag:: stack-events
-   :summary: Stack events
+   :synopsis: Stack events
 
    
 
 .. swagger:tag:: stack-templates
-   :summary: Templates
+   :synopsis: Templates
 
    
 
 .. swagger:tag:: build-info
-   :summary: Build info
+   :synopsis: Build info
 
    
 
 .. swagger:tag:: software-config
-   :summary: Software configuration
+   :synopsis: Software configuration
 
    
 
 .. swagger:tag:: service-status
-   :summary: Manage service
+   :synopsis: Manage service
 
    
 

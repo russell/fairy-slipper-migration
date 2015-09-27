@@ -1,10 +1,10 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    Lists information for all API versions.
 
 .. swagger:tag:: limits
-   :summary: Limits
+   :synopsis: Limits
 
    Gets rate and absolute limits.
    
@@ -12,13 +12,13 @@
    for the item is infinite.
 
 .. swagger:tag:: extensions
-   :summary: Extensions
+   :synopsis: Extensions
 
    Lists available Compute API v2 extensions and shows details for a
    specified extension.
 
 .. swagger:tag:: servers
-   :summary: Servers
+   :synopsis: Servers
 
    Lists, creates, gets details for, updates, and deletes servers.
    
@@ -103,33 +103,33 @@
      directly are encouraged to do so through an access address.
 
 .. swagger:tag:: server-metadata
-   :summary: Server metadata
+   :synopsis: Server metadata
 
    Shows details for, sets, updates, and deletes server metadata and
    metadata items.
 
 .. swagger:tag:: server-addresses
-   :summary: Server addresses
+   :synopsis: Server addresses
 
    Lists addresses for a specified server or a specified server and
    network.
 
 .. swagger:tag:: server-actions
-   :summary: Server actions
+   :synopsis: Server actions
 
    Performs actions for a specified server: Changes administrator
    password, reboots, rebuilds, and resizes servers, and creates an
    image from a server.
 
 .. swagger:tag:: flavors
-   :summary: Flavors
+   :synopsis: Flavors
 
    Lists available flavors and gets details for a specified flavor. A
    flavor is a hardware configuration for a server. Each flavor is a
    unique combination of disk space and memory capacity.
 
 .. swagger:tag:: images
-   :summary: Images
+   :synopsis: Images
 
    Lists, gets details for, and deletes images.
    
@@ -141,7 +141,7 @@
    server actions.
 
 .. swagger:tag:: image-metadata
-   :summary: Image metadata
+   :synopsis: Image metadata
 
    Shows details for, sets, updates, and deletes image metadata or
    metadata items.

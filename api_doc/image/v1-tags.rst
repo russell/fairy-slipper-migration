@@ -1,20 +1,20 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: images
-   :summary: Images
+   :synopsis: Images
 
    
 
 .. swagger:tag:: members
-   :summary: Members
+   :synopsis: Members
 
    
 
 .. swagger:tag:: shared-images
-   :summary: Shared images
+   :synopsis: Shared images
 
    
 

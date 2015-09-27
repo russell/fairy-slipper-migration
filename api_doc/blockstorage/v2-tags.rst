@@ -1,15 +1,15 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: extensions
-   :summary: API extensions (extensions)
+   :synopsis: API extensions (extensions)
 
    
 
 .. swagger:tag:: limits
-   :summary: Limits (limits)
+   :synopsis: Limits (limits)
 
    Shows absolute limits for a tenant.
    
@@ -17,7 +17,7 @@
    for the item is infinite.
 
 .. swagger:tag:: volumes
-   :summary: Volumes (volumes)
+   :synopsis: Volumes (volumes)
 
    A volume is a detachable block storage device similar to a USB hard
    drive. You can attach a volume to one instance at a time.
@@ -59,7 +59,7 @@
    +------------------+----------------------------------------------------------+
 
 .. swagger:tag:: volume-type-access
-   :summary: Volume type access (volumes)
+   :synopsis: Volume type access (volumes)
 
    Creates private volumes.
    
@@ -71,14 +71,14 @@
    and context.
 
 .. swagger:tag:: volume-api-v2-volumes-actions
-   :summary: Volume actions (volumes, action)
+   :synopsis: Volume actions (volumes, action)
 
    Performs actions for a specified volume. Extends the size, resets
    statuses for, sets image metadata, or removes image metadata from a
    volume.
 
 .. swagger:tag:: ext-backups
-   :summary: Backups (backups)
+   :synopsis: Backups (backups)
 
    A backup is a full copy of a volume stored in an external service.
    The service can be configured. The only supported service is Object
@@ -113,24 +113,24 @@
    found in the fail_reason field for the backup.
 
 .. swagger:tag:: ext-backups-actions-v2
-   :summary: Backup actions (backups, action)
+   :synopsis: Backup actions (backups, action)
 
    Force-deletes a backup.
 
 .. swagger:tag:: os-backend-capabilities-v2
-   :summary: Capabilities for storage back ends (capabilities)
+   :synopsis: Capabilities for storage back ends (capabilities)
 
    Shows capabilities for a storage back end.
 
 .. swagger:tag:: quota-sets
-   :summary: Quota sets extension (os-quota-sets)
+   :synopsis: Quota sets extension (os-quota-sets)
 
    Administrators only, depending on policy settings.
    
    Shows, updates, and deletes quotas for a tenant.
 
 .. swagger:tag:: qos-v2-qos-specs
-   :summary: Quality of service (QoS) specifications (qos-specs)
+   :synopsis: Quality of service (QoS) specifications (qos-specs)
 
    Administrators only, depending on policy settings.
    
@@ -139,12 +139,12 @@
    specifications.
 
 .. swagger:tag:: types
-   :summary: Volume types (types)
+   :synopsis: Volume types (types)
 
    
 
 .. swagger:tag:: snapshots
-   :summary: Volume snapshots (snapshots)
+   :synopsis: Volume snapshots (snapshots)
 
    A snapshot is a point-in-time copy of the data that a volume
    contains.
@@ -169,13 +169,13 @@
    +----------------+---------------------------------------------+
 
 .. swagger:tag:: volume-manage
-   :summary: Volume manage extension (os-volume-manage)
+   :synopsis: Volume manage extension (os-volume-manage)
 
    Creates volumes by using existing storage instead of allocating new
    storage.
 
 .. swagger:tag:: os-vol-image-meta-v2
-   :summary: Volume image metadata extension (os-vol-image-meta)
+   :synopsis: Volume image metadata extension (os-vol-image-meta)
 
    Shows image metadata that is associated with a specified volume.
 

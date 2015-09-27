@@ -1,10 +1,10 @@
 .. swagger:tag:: versions
-   :summary: API versions
+   :synopsis: API versions
 
    
 
 .. swagger:tag:: volumes
-   :summary: Volumes
+   :synopsis: Volumes
 
    The ``snapshot_id`` and ``source_volid`` parameters specify the ID
    of the snapshot or volume from which the volume originates. If the
@@ -12,17 +12,17 @@
    values are null.
 
 .. swagger:tag:: types
-   :summary: Volume types
+   :synopsis: Volume types
 
    
 
 .. swagger:tag:: snapshots
-   :summary: Snapshots
+   :synopsis: Snapshots
 
    
 
 .. swagger:tag:: os-quota-sets-v1
-   :summary: Quota sets extension (os-quota-sets)
+   :synopsis: Quota sets extension (os-quota-sets)
 
    Administrators only, depending on policy settings.
    

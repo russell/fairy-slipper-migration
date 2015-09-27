@@ -1,20 +1,20 @@
 .. swagger:tag:: admin-versions
-   :summary: Versions
+   :synopsis: Versions
 
    
 
 .. swagger:tag:: admin-tokens
-   :summary: Tokens
+   :synopsis: Tokens
 
    
 
 .. swagger:tag:: admin-users
-   :summary: Users
+   :synopsis: Users
 
    
 
 .. swagger:tag:: admin-tenants
-   :summary: Tenants
+   :synopsis: Tenants
 
    
 

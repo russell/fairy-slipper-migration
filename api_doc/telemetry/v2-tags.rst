@@ -1,10 +1,10 @@
 .. swagger:tag:: alarms
-   :summary: Alarms
+   :synopsis: Alarms
 
    Lists, creates, gets details for, updates, and deletes alarms.
 
 .. swagger:tag:: meters
-   :summary: Meters
+   :synopsis: Meters
 
    Creates, lists all, and lists samples for meters. Computes and
    lists statistics for samples in a specified time range.
@@ -14,7 +14,7 @@
    the ``default_api_return_limit`` configuration option value.
 
 .. swagger:tag:: samples
-   :summary: Samples
+   :synopsis: Samples
 
    Lists all samples and gets information for a specified sample.
    
@@ -23,12 +23,12 @@
    the ``default_api_return_limit`` configuration option value.
 
 .. swagger:tag:: resources
-   :summary: Resources
+   :synopsis: Resources
 
    Lists all and gets information for resources.
 
 .. swagger:tag:: capabilities
-   :summary: Capabilities
+   :synopsis: Capabilities
 
    Gets information for API and storage capabilities.
    

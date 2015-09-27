@@ -1,5 +1,5 @@
 .. swagger:tag:: inherit
-   :summary: OS-INHERIT extension (OS-INHERIT)
+   :synopsis: OS-INHERIT extension (OS-INHERIT)
 
    Enables projects to inherit role assignments from either their
    owning domain or projects that are higher in the hierarchy.
@@ -10,7 +10,7 @@
    at least API v3.4.
 
 .. swagger:tag:: kds
-   :summary: Key Distribution Server (KDS) extension (OS-KDS)
+   :synopsis: Key Distribution Server (KDS) extension (OS-KDS)
 
    The Key Distribution Server (KDS) is a trusted third party that
    generates and securely distributes signing and encryption keys to
@@ -166,7 +166,7 @@
    Identity API for these purposes.
 
 .. swagger:tag:: oauth1
-   :summary: OAuth extension (OS-OAUTH1)
+   :synopsis: OAuth extension (OS-OAUTH1)
 
    Enables users to delegate roles to third-party consumers through
    the The OAuth 1.0 Protocol .
@@ -211,7 +211,7 @@
      token.
 
 .. swagger:tag:: trust
-   :summary: Trust extension (OS-TRUST)
+   :synopsis: Trust extension (OS-TRUST)
 
    Creates a trust.
    

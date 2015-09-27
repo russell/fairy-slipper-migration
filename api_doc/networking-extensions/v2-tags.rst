@@ -1,22 +1,22 @@
 .. swagger:tag:: extensions
-   :summary: Extensions
+   :synopsis: Extensions
 
    Lists available Networking API v2.0 extensions and shows details
    for a specified extension.
 
 .. swagger:tag:: quotas
-   :summary: Quotas extension (quotas)
+   :synopsis: Quotas extension (quotas)
 
    Lists, shows information for, updates, and resets quotas.
 
 .. swagger:tag:: network-provider
-   :summary: Networks provider extended attributes (networks)
+   :synopsis: Networks provider extended attributes (networks)
 
    Lists, creates, shows information for, updates, and deletes
    networks.
 
 .. swagger:tag:: network-multi-provider
-   :summary: Networks multiple provider extension (networks)
+   :synopsis: Networks multiple provider extension (networks)
 
    Enables administrative users to define multiple physical bindings
    for an OpenStack Networking network and list or show details for
@@ -42,7 +42,7 @@
    tunnel ID, and a VLAN.
 
 .. swagger:tag:: network-vlan-transparency
-   :summary: VLAN transparency extension (networks)
+   :synopsis: VLAN transparency extension (networks)
 
    Enables plug-ins that support VLAN transparency to deliver VLAN-
    transparent trunk networks. If the service does not support VLAN
@@ -61,24 +61,24 @@
    ``true`` or ``false`` .
 
 .. swagger:tag:: port-binding
-   :summary: Ports binding extended attributes (ports)
+   :synopsis: Ports binding extended attributes (ports)
 
    Lists, creates, shows information for, and updates ports.
 
 .. swagger:tag:: security-groups
-   :summary: Security groups (security-groups)
+   :synopsis: Security groups (security-groups)
 
    Lists, creates, shows information for, updates, and deletes
    security groups.
 
 .. swagger:tag:: security_group-ruless
-   :summary: Security group rules (security-group-rules)
+   :synopsis: Security group rules (security-group-rules)
 
    Lists, creates, shows information for, and deletes security group
    rules.
 
 .. swagger:tag:: layer3
-   :summary: Layer-3 networking
+   :synopsis: Layer-3 networking
 
    Routes packets between subnets, forwards packets from internal
    networks to external ones, and accesses instances from external
@@ -94,13 +94,13 @@
      that is attached to an internal network.
 
 .. swagger:tag:: metering
-   :summary: Metering labels and rules
+   :synopsis: Metering labels and rules
 
    Creates, modifies, and deletes OpenStack Layer3 metering labels and
    rules.
 
 .. swagger:tag:: lbaas
-   :summary: Load-Balancer-as-a-Service (LBaaS) 1.0 (STABLE)
+   :synopsis: Load-Balancer-as-a-Service (LBaaS) 1.0 (STABLE)
 
    The LBaaS version 1.0 extension pairs with the Networking 2.0 API
    to enable OpenStack tenants to manage load balancers for their VMs.
@@ -132,7 +132,7 @@
    +----------------+-----------------------------------------------------------------+
 
 .. swagger:tag:: lbaas
-   :summary: Load-Balancer-as-a-Service (LBaaS) 2.0 (EXPERIMENTAL)
+   :synopsis: Load-Balancer-as-a-Service (LBaaS) 2.0 (EXPERIMENTAL)
 
    The LBaaS version 2.0 extension pairs with the Networking 2.0 API
    to enable OpenStack tenants to manage load balancers for their VMs.
@@ -164,12 +164,12 @@
    +----------------+-----------------------------------------------------------------+
 
 .. swagger:tag:: subnetpools-ext
-   :summary: Subnet pools extension (subnetpools)
+   :synopsis: Subnet pools extension (subnetpools)
 
    Manages subnet pools
 
 .. swagger:tag:: vpnaas
-   :summary: Virtual-Private-Network-as-a-Service (VPNaaS) 2.0 (CURRENT)
+   :synopsis: Virtual-Private-Network-as-a-Service (VPNaaS) 2.0 (CURRENT)
 
    The VPNaaS extension enables OpenStack tenants to extend private
    networks across the public telecommunication infrastructure.
@@ -208,7 +208,7 @@
      peer address, DPD settings, and status.
 
 .. swagger:tag:: extraroute
-   :summary: Extra routes
+   :synopsis: Extra routes
 
    Adds extra routes to the ``router`` resource.
    
