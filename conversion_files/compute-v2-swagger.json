@@ -813,7 +813,7 @@
         "title": "List API versions"
       }
     ], 
-    "//v2/extensions": [
+    "/v2/extensions": [
       {
         "consumes": [
           "application/json"
@@ -2235,7 +2235,7 @@
         "title": "List extensions"
       }
     ], 
-    "//v2/extensions/{alias}": [
+    "/v2/extensions/{alias}": [
       {
         "consumes": [
           "application/json"
@@ -2338,7 +2338,7 @@
         "title": "Get extension"
       }
     ], 
-    "//v2/{tenant_id}/flavors": [
+    "/v2/{tenant_id}/flavors": [
       {
         "consumes": [
           "application/json"
@@ -2597,7 +2597,7 @@
         "title": "List flavors"
       }
     ], 
-    "//v2/{tenant_id}/flavors/detail": [
+    "/v2/{tenant_id}/flavors/detail": [
       {
         "consumes": [
           "application/json"
@@ -2856,7 +2856,7 @@
         "title": "List details for flavors"
       }
     ], 
-    "//v2/{tenant_id}/flavors/{flavor_id}": [
+    "/v2/{tenant_id}/flavors/{flavor_id}": [
       {
         "consumes": [
           "application/json"
@@ -2985,7 +2985,7 @@
         "title": "Get flavor details"
       }
     ], 
-    "//v2/{tenant_id}/images": [
+    "/v2/{tenant_id}/images": [
       {
         "consumes": [
           "application/json"
@@ -3394,7 +3394,7 @@
         "title": "List images"
       }
     ], 
-    "//v2/{tenant_id}/images/detail": [
+    "/v2/{tenant_id}/images/detail": [
       {
         "consumes": [
           "application/json"
@@ -3953,7 +3953,7 @@
         "title": "List images details"
       }
     ], 
-    "//v2/{tenant_id}/images/{image_id}": [
+    "/v2/{tenant_id}/images/{image_id}": [
       {
         "consumes": [
           "application/json"
@@ -4175,7 +4175,7 @@
         "title": "Delete image"
       }
     ], 
-    "//v2/{tenant_id}/images/{image_id}/metadata": [
+    "/v2/{tenant_id}/images/{image_id}/metadata": [
       {
         "consumes": [
           "application/json"
@@ -4467,7 +4467,7 @@
         "title": "Create or replace image metadata"
       }
     ], 
-    "//v2/{tenant_id}/images/{image_id}/metadata/{key}": [
+    "/v2/{tenant_id}/images/{image_id}/metadata/{key}": [
       {
         "consumes": [
           "application/json"
@@ -4758,7 +4758,7 @@
         "title": "Delete image metadata item"
       }
     ], 
-    "//v2/{tenant_id}/limits": [
+    "/v2/{tenant_id}/limits": [
       {
         "consumes": [
           "application/json"
@@ -5011,7 +5011,7 @@
         "title": "List limits"
       }
     ], 
-    "//v2/{tenant_id}/servers": [
+    "/v2/{tenant_id}/servers": [
       {
         "consumes": [
           "application/json"
@@ -5314,7 +5314,7 @@
         "title": "List servers"
       }
     ], 
-    "//v2/{tenant_id}/servers/detail": [
+    "/v2/{tenant_id}/servers/detail": [
       {
         "consumes": [
           "application/json"
@@ -5569,7 +5569,7 @@
         "title": "List details for servers"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}": [
+    "/v2/{tenant_id}/servers/{server_id}": [
       {
         "consumes": [
           "application/json"
@@ -6005,7 +6005,7 @@
         "title": "Delete server"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}/action": [
+    "/v2/{tenant_id}/servers/{server_id}/action": [
       {
         "consumes": [
           "application/json"
@@ -6775,7 +6775,7 @@
         "title": "Create image"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}/ips": [
+    "/v2/{tenant_id}/servers/{server_id}/ips": [
       {
         "consumes": [
           "application/json"
@@ -6934,7 +6934,7 @@
         "title": "List addresses"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}/ips/{network_label}": [
+    "/v2/{tenant_id}/servers/{server_id}/ips/{network_label}": [
       {
         "consumes": [
           "application/json"
@@ -7077,7 +7077,7 @@
         "title": "List addresses by network"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}/metadata": [
+    "/v2/{tenant_id}/servers/{server_id}/metadata": [
       {
         "consumes": [
           "application/json"
@@ -7356,7 +7356,7 @@
         "title": "Create or replace server metadata items"
       }
     ], 
-    "//v2/{tenant_id}/servers/{server_id}/metadata/{key}": [
+    "/v2/{tenant_id}/servers/{server_id}/metadata/{key}": [
       {
         "consumes": [
           "application/json"

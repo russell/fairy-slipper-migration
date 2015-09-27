@@ -30,55 +30,6 @@
    :statuscode 501: 
 
 
-.. http:post:: /v2.1/{tenant_id}/servers
-   :title: Create multiple servers
-   :synopsis: Creates one or more servers with an optional reservation ID.
-
-   
-
-   :requestexample: v2.1/examples/createServer_req.json
-   :responseexample 202: v2.1/examples/createServer_resp_202.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: multiple-create
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
-
-
-.. http:post:: /v2.1/{tenant_id}/servers
-   :title: Create server with block device mapping
-   :synopsis: Creates a server with a block device mapping.
-
-   To define the block device mapping, you can include either a
-   ``block_device_mapping`` or ``block_device_mapping_v2`` object in
-   the request body. The ``block_device_mapping_v2`` object is
-   preferred.
-
-   :requestexample: v2.1/examples/createServer_req.json
-   :responseexample 202: v2.1/examples/createServer_resp_202.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: os-block-device-mapping-v2.1
-   :requestschema: v2.1/createServer.json
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :query security_group: The name of the security group in which the
-                          server is created. Default is the
-                          ``default`` security group.
-   :query user_data: Base64-encoded configuration information or
-                     script that you want to use on launch.
-   :query availability_zone: The availability zone in which to launch
-                             the server.
-   :statuscode 202: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 422: 
-   :statuscode 503: 
-
-
 .. http:get:: /v2.1/{tenant_id}/os-cells/{cell_id}/capacities
    :title: Show cell capacities
    :synopsis: Shows capacities for a specified cell.
@@ -162,44 +113,57 @@
    :statuscode 200: 
 
 
-.. http:post:: /v2.1/{tenant_id}/os-agents
-   :title: Create agent build
-   :synopsis: Creates an agent build.
+.. http:get:: /v2.1/{tenant_id}/os-quota-sets/defaults
+   :title: Show default quotas
+   :synopsis: Shows default quotas for tenant.
 
    
 
-   :requestexample: v2.1/examples/agentbuild_req.json
-   :responseexample 201: v2.1/examples/agentbuild_resp_201.json
+   :responseexample 200: v2.1/examples/showdefaultquotas_resp_200.json
    :accepts: application/json
    :produces: application/json
-   :tag: agents
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 201: 
-
-
-.. http:get:: /v2.1/{tenant_id}/os-agents
-   :title: List agent builds
-   :synopsis: Lists agent builds.
-
-   
-
-   :responseexample 200: v2.1/examples/listbuilds_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: agents
+   :tag: quota-sets
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
 
 
-.. http:delete:: /v2.1/{tenant_id}/os-agents
-   :title: Delete agent build
-   :synopsis: Deletes an existing agent build.
+.. http:get:: /v2.1/images/{image_id}
+   :title: Get image details
+   :synopsis: Gets details for a specified image.
 
    
 
-   :tag: agents
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 202: 
+   :responseexample 200: v2.1/examples/getImage_resp_200.json
+   :responseexample 203: v2.1/examples/getImage_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.1/images/{image_id}
+   :title: Delete image
+   :synopsis: Deletes a specified image.
+
+   
+
+   :tag: compute_images-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ips-bulk
@@ -260,6 +224,66 @@
    :parameter domain: Registered DNS domain published by the DNS
                       drivers.
    :statuscode 200: 
+
+
+.. http:get:: /v2.1/images
+   :title: List images
+   :synopsis: Lists IDs, names, and links for available images.
+
+   
+
+   :responseexample 200: v2.1/examples/listImages_resp_200.json
+   :responseexample 203: v2.1/examples/listImages_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :query changes-since: The date and time when the image last changed
+                         status.  Use this query parameter to check
+                         for changes since a previous request rather
+                         than re-downloading and re-parsing the full
+                         status at each polling interval. If data has
+                         changed, the call returns only the items
+                         changed since the specified time. If data has
+                         not changed since the ``changes-since`` time,
+                         the call returns an empty list.  To enable
+                         you to keep track of changes, this filter
+                         also displays images that were deleted if the
+                         ``changes-since`` value specifies a date in
+                         the last 30 days. Items deleted more than 30
+                         days ago might be returned, but it is not
+                         guaranteed.  The date and time stamp format
+                         is `ISO 8601
+                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
+                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00``.  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
+   :query server: Name of the server in URL format.
+   :query name: Name of the image as a string.
+   :query status: Value of the image statuses. For example, you can
+                  filter on ``ACTIVE`` .
+   :query type: Value of the type of image, such as snapshot or
+                backup.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}
@@ -691,45 +715,6 @@
    :statuscode 200: 
 
 
-.. http:get:: //v2.1/images/{image_id}
-   :title: Get image details
-   :synopsis: Gets details for a specified image.
-
-   
-
-   :responseexample 200: v2.1/examples/getImage_resp_200.json
-   :responseexample 203: v2.1/examples/getImage_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_images-v2.1
-   :parameter image_id: The UUID for the image.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:delete:: //v2.1/images/{image_id}
-   :title: Delete image
-   :synopsis: Deletes a specified image.
-
-   
-
-   :tag: compute_images-v2.1
-   :parameter image_id: The UUID for the image.
-   :statuscode 204: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
 .. http:get:: /v2.1/{tenant_id}/os-snapshots/detail
    :title: List details for snapshots
    :synopsis: Lists details for all snapshots.
@@ -1055,6 +1040,66 @@
    :statuscode 200: 
 
 
+.. http:get:: /v2.1/images/detail
+   :title: List images details
+   :synopsis: Lists all details for available images.
+
+   
+
+   :responseexample 200: v2.1/examples/listDetailImages_resp_200.json
+   :responseexample 203: v2.1/examples/listDetailImages_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :query changes-since: The date and time when the image last changed
+                         status.  Use this query parameter to check
+                         for changes since a previous request rather
+                         than re-downloading and re-parsing the full
+                         status at each polling interval. If data has
+                         changed, the call returns only the items
+                         changed since the specified time. If data has
+                         not changed since the ``changes-since`` time,
+                         the call returns an empty list.  To enable
+                         you to keep track of changes, this filter
+                         also displays images that were deleted if the
+                         ``changes-since`` value specifies a date in
+                         the last 30 days. Items deleted more than 30
+                         days ago might be returned, but it is not
+                         guaranteed.  The date and time stamp format
+                         is `ISO 8601
+                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
+                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00``.  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
+   :query server: Name of the server in URL format.
+   :query name: Name of the image as a string.
+   :query status: Value of the image statuses. For example, you can
+                  filter on ``ACTIVE`` .
+   :query type: Value of the type of image, such as snapshot or
+                backup.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
 .. http:get:: /v2.1/{tenant_id}/flavors
    :title: List flavors
    :synopsis: Lists flavors.
@@ -1157,82 +1202,6 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
-
-
-.. http:get:: //v2.1/images/{image_id}/metadata
-   :title: Show image metadata
-   :synopsis: Shows metadata for a specified image.
-
-   
-
-   :responseexample 200: v2.1/examples/showImageMetadata_resp_200.json
-   :responseexample 203: v2.1/examples/showImageMetadata_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:post:: //v2.1/images/{image_id}/metadata
-   :title: Update image metadata items
-   :synopsis: Updates metadata items by key for a specified image.
-
-   Replaces items that match the specified keys and does not modify
-   items not specified in the request.
-   
-   If this operation exceeds the metadata items quota, the API throws
-   an ``overLimit (413)`` fault.
-
-   :requestexample: v2.1/examples/updateImageMetadata_req.json
-   :responseexample 200: v2.1/examples/updateImageMetadata_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :statuscode 200: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:put:: //v2.1/images/{image_id}/metadata
-   :title: Create or replace image metadata
-   :synopsis: Creates or replaces metadata for a specified image.
-
-   Replaces items that match the specified keys. If you omit a key
-   that already exists, this key retains its value.
-   
-   If this operation exceeds the metadata items quota, the API throws
-   an ``overLimit (413)`` fault.
-
-   :requestexample: v2.1/examples/createImageMetadata_req.json
-   :responseexample 200: v2.1/examples/createImageMetadata_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :statuscode 200: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-pci/{pci_id}
@@ -2944,64 +2913,20 @@
    :statuscode 203: 
 
 
-.. http:get:: //v2.1/images/detail
-   :title: List images details
-   :synopsis: Lists all details for available images.
+.. http:put:: /v2.1/{tenant_id}/os-services/disable-log-reason
+   :title: Log disabled service information
+   :synopsis: Logs information to the service table about why a service was disabled.
 
    
 
-   :responseexample 200: v2.1/examples/listDetailImages_resp_200.json
-   :responseexample 203: v2.1/examples/listDetailImages_resp_203.json
+   :requestexample: v2.1/examples/disableLogReason_req.json
+   :responseexample 200: v2.1/examples/disableLogReason_resp_200.json
    :accepts: application/json
    :produces: application/json
-   :tag: compute_images-v2.1
-   :query changes-since: The date and time when the image last changed
-                         status.  Use this query parameter to check
-                         for changes since a previous request rather
-                         than re-downloading and re-parsing the full
-                         status at each polling interval. If data has
-                         changed, the call returns only the items
-                         changed since the specified time. If data has
-                         not changed since the ``changes-since`` time,
-                         the call returns an empty list.  To enable
-                         you to keep track of changes, this filter
-                         also displays images that were deleted if the
-                         ``changes-since`` value specifies a date in
-                         the last 30 days. Items deleted more than 30
-                         days ago might be returned, but it is not
-                         guaranteed.  The date and time stamp format
-                         is `ISO 8601
-                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
-                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
-                         ``±hh:mm`` value, if included, returns the
-                         time zone as an offset from UTC.  For
-                         example, ``2015-08-27T09:49:58-05:00``.  If
-                         you omit the time zone, the UTC time zone is
-                         assumed.
-   :query server: Name of the server in URL format.
-   :query name: Name of the image as a string.
-   :query status: Value of the image statuses. For example, you can
-                  filter on ``ACTIVE`` .
-   :query type: Value of the type of image, such as snapshot or
-                backup.
-   :query limit: Requests a specified page size of returned items from
-                 the query. Returns a number of items up to the
-                 specified limit value. Use the ``limit`` parameter to
-                 make an initial limited request and use the ID of the
-                 last-seen item from the response as the ``marker``
-                 parameter value in a subsequent limited request.
-   :query marker: Specifies the ID of the last-seen item. Use the
-                  ``limit`` parameter to make an initial limited
-                  request and use the ID of the last-seen item from
-                  the response as the ``marker`` parameter value in a
-                  subsequent limited request.
+   :tag: services
+   :requestschema: v2.1/disableLogReason.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 405: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volumes/{volume_id}
@@ -3046,63 +2971,52 @@
    :statuscode 503: 
 
 
-.. http:get:: //v2.1/images
-   :title: List images
-   :synopsis: Lists IDs, names, and links for available images.
+.. http:post:: /v2.1/{tenant_id}/servers
+   :title: Create multiple servers
+   :synopsis: Creates one or more servers with an optional reservation ID.
 
    
 
-   :responseexample 200: v2.1/examples/listImages_resp_200.json
-   :responseexample 203: v2.1/examples/listImages_resp_203.json
+   :requestexample: v2.1/examples/createServer_req.json
+   :responseexample 202: v2.1/examples/createServer_resp_202.json
    :accepts: application/json
    :produces: application/json
-   :tag: compute_images-v2.1
-   :query changes-since: The date and time when the image last changed
-                         status.  Use this query parameter to check
-                         for changes since a previous request rather
-                         than re-downloading and re-parsing the full
-                         status at each polling interval. If data has
-                         changed, the call returns only the items
-                         changed since the specified time. If data has
-                         not changed since the ``changes-since`` time,
-                         the call returns an empty list.  To enable
-                         you to keep track of changes, this filter
-                         also displays images that were deleted if the
-                         ``changes-since`` value specifies a date in
-                         the last 30 days. Items deleted more than 30
-                         days ago might be returned, but it is not
-                         guaranteed.  The date and time stamp format
-                         is `ISO 8601
-                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
-                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
-                         ``±hh:mm`` value, if included, returns the
-                         time zone as an offset from UTC.  For
-                         example, ``2015-08-27T09:49:58-05:00``.  If
-                         you omit the time zone, the UTC time zone is
-                         assumed.
-   :query server: Name of the server in URL format.
-   :query name: Name of the image as a string.
-   :query status: Value of the image statuses. For example, you can
-                  filter on ``ACTIVE`` .
-   :query type: Value of the type of image, such as snapshot or
-                backup.
-   :query limit: Requests a specified page size of returned items from
-                 the query. Returns a number of items up to the
-                 specified limit value. Use the ``limit`` parameter to
-                 make an initial limited request and use the ID of the
-                 last-seen item from the response as the ``marker``
-                 parameter value in a subsequent limited request.
-   :query marker: Specifies the ID of the last-seen item. Use the
-                  ``limit`` parameter to make an initial limited
-                  request and use the ID of the last-seen item from
-                  the response as the ``marker`` parameter value in a
-                  subsequent limited request.
-   :statuscode 200: 
-   :statuscode 203: 
+   :tag: multiple-create
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers
+   :title: Create server with block device mapping
+   :synopsis: Creates a server with a block device mapping.
+
+   To define the block device mapping, you can include either a
+   ``block_device_mapping`` or ``block_device_mapping_v2`` object in
+   the request body. The ``block_device_mapping_v2`` object is
+   preferred.
+
+   :requestexample: v2.1/examples/createServer_req.json
+   :responseexample 202: v2.1/examples/createServer_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-block-device-mapping-v2.1
+   :requestschema: v2.1/createServer.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query security_group: The name of the security group in which the
+                          server is created. Default is the
+                          ``default`` security group.
+   :query user_data: Base64-encoded configuration information or
+                     script that you want to use on launch.
+   :query availability_zone: The availability zone in which to launch
+                             the server.
+   :statuscode 202: 
+   :statuscode 415: 
    :statuscode 405: 
+   :statuscode 404: 
    :statuscode 403: 
    :statuscode 401: 
    :statuscode 400: 
+   :statuscode 422: 
    :statuscode 503: 
 
 
@@ -3144,6 +3058,82 @@
    :parameter tenant_id: The ID for the tenant or account in a multi-
                          tenancy cloud.
    :parameter server_id: The UUID for the server of interest to you.
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2.1/images/{image_id}/metadata
+   :title: Show image metadata
+   :synopsis: Shows metadata for a specified image.
+
+   
+
+   :responseexample 200: v2.1/examples/showImageMetadata_resp_200.json
+   :responseexample 203: v2.1/examples/showImageMetadata_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/images/{image_id}/metadata
+   :title: Update image metadata items
+   :synopsis: Updates metadata items by key for a specified image.
+
+   Replaces items that match the specified keys and does not modify
+   items not specified in the request.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/updateImageMetadata_req.json
+   :responseexample 200: v2.1/examples/updateImageMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.1/images/{image_id}/metadata
+   :title: Create or replace image metadata
+   :synopsis: Creates or replaces metadata for a specified image.
+
+   Replaces items that match the specified keys. If you omit a key
+   that already exists, this key retains its value.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/createImageMetadata_req.json
+   :responseexample 200: v2.1/examples/createImageMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
    :statuscode 415: 
    :statuscode 405: 
    :statuscode 404: 
@@ -3470,73 +3460,6 @@
    :statuscode 200: 
 
 
-.. http:get:: //v2.1/images/{image_id}/metadata/{key}
-   :title: Show image metadata item details
-   :synopsis: Shows details for a metadata item by key for a specified image.
-
-   
-
-   :responseexample 200: v2.1/examples/getImageMetadataItem_resp_200.json
-   :responseexample 203: v2.1/examples/getImageMetadataItem_resp_203.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 200: 
-   :statuscode 203: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-
-
-.. http:put:: //v2.1/images/{image_id}/metadata/{key}
-   :title: Create or update image metadata item
-   :synopsis: Creates or updates a metadata item by key for a specified image.
-
-   If this operation exceeds the metadata items quota, the API throws
-   an ``overLimit (413)`` fault.
-
-   :requestexample: v2.1/examples/setImageMetadataItem_req.json
-   :responseexample 200: v2.1/examples/setImageMetadataItem_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 200: 
-   :statuscode 415: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
-.. http:delete:: //v2.1/images/{image_id}/metadata/{key}
-   :title: Delete image metadata item
-   :synopsis: Deletes a metadata item by key for a specified image.
-
-   
-
-   :tag: compute_image_metadata-v2.1
-   :parameter image_id: The UUID for the image.
-   :parameter key: A string. Maximum length is 255 characters.
-   :statuscode 204: 
-   :statuscode 405: 
-   :statuscode 404: 
-   :statuscode 403: 
-   :statuscode 401: 
-   :statuscode 400: 
-   :statuscode 503: 
-   :statuscode 409: 
-
-
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
    :title: Delete bare metal node
    :synopsis: Deletes a bare metal node from a specified server.
@@ -3646,18 +3569,44 @@
    :statuscode 200: 
 
 
-.. http:get:: /v2.1/{tenant_id}/os-quota-sets/defaults
-   :title: Show default quotas
-   :synopsis: Shows default quotas for tenant.
+.. http:post:: /v2.1/{tenant_id}/os-agents
+   :title: Create agent build
+   :synopsis: Creates an agent build.
 
    
 
-   :responseexample 200: v2.1/examples/showdefaultquotas_resp_200.json
+   :requestexample: v2.1/examples/agentbuild_req.json
+   :responseexample 201: v2.1/examples/agentbuild_resp_201.json
    :accepts: application/json
    :produces: application/json
-   :tag: quota-sets
+   :tag: agents
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-agents
+   :title: List agent builds
+   :synopsis: Lists agent builds.
+
+   
+
+   :responseexample 200: v2.1/examples/listbuilds_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: agents
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-agents
+   :title: Delete agent build
+   :synopsis: Deletes an existing agent build.
+
+   
+
+   :tag: agents
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-pci/detail
@@ -4136,22 +4085,6 @@
    :statuscode 200: 
 
 
-.. http:put:: /v2.1/{tenant_id}/os-services/disable-log-reason
-   :title: Log disabled service information
-   :synopsis: Logs information to the service table about why a service was disabled.
-
-   
-
-   :requestexample: v2.1/examples/disableLogReason_req.json
-   :responseexample 200: v2.1/examples/disableLogReason_resp_200.json
-   :accepts: application/json
-   :produces: application/json
-   :tag: services
-   :requestschema: v2.1/disableLogReason.json
-   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
-   :statuscode 200: 
-
-
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-server-password
    :title: Get server password
    :synopsis: Gets the administrative password for a specified server.
@@ -4240,6 +4173,73 @@
                     the natural sorting direction of the server
                     attribute that is provided as the ``sort_key`` .
    :statuscode 200: 
+
+
+.. http:get:: /v2.1/images/{image_id}/metadata/{key}
+   :title: Show image metadata item details
+   :synopsis: Shows details for a metadata item by key for a specified image.
+
+   
+
+   :responseexample 200: v2.1/examples/getImageMetadataItem_resp_200.json
+   :responseexample 203: v2.1/examples/getImageMetadataItem_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.1/images/{image_id}/metadata/{key}
+   :title: Create or update image metadata item
+   :synopsis: Creates or updates a metadata item by key for a specified image.
+
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/setImageMetadataItem_req.json
+   :responseexample 200: v2.1/examples/setImageMetadataItem_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 200: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:delete:: /v2.1/images/{image_id}/metadata/{key}
+   :title: Delete image metadata item
+   :synopsis: Deletes a metadata item by key for a specified image.
+
+   
+
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx/detail
