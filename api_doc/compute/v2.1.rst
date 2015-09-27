@@ -1380,8 +1380,8 @@
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :query before_timestamp: The date and time before which to list
                             usage audits.  The date and time stamp
-                            format is ISO 8601 :  CCYY-MM-
-                            DDThh:mm:ss±hh:mmThe ``±hh:mm`` value, if
+                            format is ISO 8601 :  ::    CCYY-MM-
+                            DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                             included, returns the time zone as an
                             offset from UTC.  For example,
                             ``2015-08-27T09:49:58-05:00`` .  If you
@@ -1569,10 +1569,18 @@
    Specify the ``all_tenants=1`` query parameter to ping instances for
    all tenants. For example:
    
-   GET /os-fping?all_tenants=1Specify the ``include`` and ``exclude`` query parameters to filter
+   .. code-block:: json
+      GET /os-fping?all_tenants=1
+   Specify the ``include`` and ``exclude`` query parameters to filter
    the results. For example:
    
-   GET /os-fping?all_tenants=1 & include=uuid1,uuid2 & exclude=uuid3,uuid4Policy defaults enable only users with the administrative role or
+   .. code-block:: json
+      GET /os-fping?all_tenants=1
+      &
+      include=uuid1,uuid2
+      &
+      exclude=uuid3,uuid4
+   Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
@@ -2599,15 +2607,16 @@
    To make this request, add the ``delete_info`` query parameter to
    the URI, as follows:
    
-   DELETE /os-assisted-volume-snapshots?delete_info='{"volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
+   .. code-block:: json
+      DELETE /os-assisted-volume-snapshots?delete_info='{"volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
 
    :tag: os-assisted-volume-snapshots-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter snapshot_id: The ID of the snapshot.
    :query delete_info: Information for snapshot deletion. Include the
-                       ID of the associated volume. For example:
-                       DELETE /os-assisted-volume-
-                       snapshots?delete_info='{"volume_id":
+                       ID of the associated volume. For example:  ..
+                       code-block:: json    DELETE /os-assisted-
+                       volume-snapshots?delete_info='{"volume_id":
                        "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
    :statuscode 204: 
 
@@ -2955,12 +2964,12 @@
                          the last 30 days. Items deleted more than 30
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
-                         is ISO 8601 :  CCYY-MM-DDThh:mm:ss±hh:mmThe
-                         ``±hh:mm`` value, if included, returns the
-                         time zone as an offset from UTC.  For
-                         example, ``2015-08-27T09:49:58-05:00`` .  If
-                         you omit the time zone, the UTC time zone is
-                         assumed.
+                         is ISO 8601 :  ::    CCYY-MM-
+                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         included, returns the time zone as an offset
+                         from UTC.  For example,
+                         ``2015-08-27T09:49:58-05:00`` .  If you omit
+                         the time zone, the UTC time zone is assumed.
    :query server: Name of the server in URL format.
    :query name: Name of the image as a string.
    :query status: Value of the image statuses. For example, you can
@@ -3054,12 +3063,12 @@
                          the last 30 days. Items deleted more than 30
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
-                         is ISO 8601 :  CCYY-MM-DDThh:mm:ss±hh:mmThe
-                         ``±hh:mm`` value, if included, returns the
-                         time zone as an offset from UTC.  For
-                         example, ``2015-08-27T09:49:58-05:00`` .  If
-                         you omit the time zone, the UTC time zone is
-                         assumed.
+                         is ISO 8601 :  ::    CCYY-MM-
+                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         included, returns the time zone as an offset
+                         from UTC.  For example,
+                         ``2015-08-27T09:49:58-05:00`` .  If you omit
+                         the time zone, the UTC time zone is assumed.
    :query server: Name of the server in URL format.
    :query name: Name of the image as a string.
    :query status: Value of the image statuses. For example, you can

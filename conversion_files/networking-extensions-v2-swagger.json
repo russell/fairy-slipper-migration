@@ -3963,7 +3963,7 @@
           "type": "string"
         }, 
         "routes": {
-          "description": "List of dictionary pairs in this format:\n\n[ { \"nexthop\":\"IPADDRESS\", \"destination\":\"CIDR\" } ]", 
+          "description": "List of dictionary pairs in this format:\n\n::\n   [\n     {\n       \"nexthop\":\"IPADDRESS\",\n       \"destination\":\"CIDR\"\n     }\n   ]", 
           "format": "", 
           "required": false, 
           "type": "object"
@@ -4650,7 +4650,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Default policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\nGET /v2.0/floatingips Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\n::\n   GET /v2.0/floatingips\n   Accept: application/json\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
         "examples": {}, 
         "id": "listFloatingIps", 
         "method": "get", 
@@ -4765,7 +4765,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Use the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\nGET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address & fields=floating_ip_address Accept: application/json", 
+        "description": "Use the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\n::\n   GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address\n   &\n   fields=floating_ip_address\n   Accept: application/json", 
         "examples": {}, 
         "id": "showFloatingIp", 
         "method": "get", 
@@ -4823,7 +4823,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "The association process is the same as the process for the create\nfloating IP operation.\n\nTo disassociate a floating IP from a port, set the ``port_id``\nattribute to null or omit it from the request body.\n\nThis example updates a floating IP:\n\nPUT /v2.0/floatingips/{floatingip_id} Accept: application/jsonDepending on the request body that you submit, this request\nassociates a port with or disassociates a port from a floating IP.", 
+        "description": "The association process is the same as the process for the create\nfloating IP operation.\n\nTo disassociate a floating IP from a port, set the ``port_id``\nattribute to null or omit it from the request body.\n\nThis example updates a floating IP:\n\n::\n   PUT /v2.0/floatingips/{floatingip_id}\n   Accept: application/json\nDepending on the request body that you submit, this request\nassociates a port with or disassociates a port from a floating IP.", 
         "examples": {
           "application/json": {
             "floatingip": {
@@ -4889,7 +4889,7 @@
       }, 
       {
         "consumes": [], 
-        "description": "This example deletes a floating IP:\n\nDELETE /v2.0/floatingips/{floatingip_id} Accept: application/json", 
+        "description": "This example deletes a floating IP:\n\n::\n   DELETE /v2.0/floatingips/{floatingip_id}\n   Accept: application/json", 
         "examples": {}, 
         "id": "deleteFloatingIp", 
         "method": "delete", 
@@ -9834,7 +9834,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Default policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\nGET /v2.0/routers Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\n::\n   GET /v2.0/routers\n   Accept: application/json\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
         "examples": {}, 
         "id": "listRouters", 
         "method": "get", 
@@ -9893,7 +9893,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "This operation creates a new logical router. When it is created, a\nlogical router does not have any internal interface; it is not\nassociated to any subnet. You can optionally specify an external\ngateway for a router at create time. The external gateway for the\nrouter must be plugged into an external network. An external\nnetwork has its extended field ``router:external`` set to ``true``\n. To specify an external gateway, the identifier of the external\nnetwork must be passed in the ``external_gateway_info`` attribute\nin the request body, as follows:\n\n{ \"router\": { \"external_gateway_info\": { \"network_id\": \"8ca37218-28ff-41cb-9b10-039601ea7e6b\" } } }", 
+        "description": "This operation creates a new logical router. When it is created, a\nlogical router does not have any internal interface; it is not\nassociated to any subnet. You can optionally specify an external\ngateway for a router at create time. The external gateway for the\nrouter must be plugged into an external network. An external\nnetwork has its extended field ``router:external`` set to ``true``\n. To specify an external gateway, the identifier of the external\nnetwork must be passed in the ``external_gateway_info`` attribute\nin the request body, as follows:\n\n.. code-block:: json\n   {\n      \"router\": {\n         \"external_gateway_info\": {\n            \"network_id\": \"8ca37218-28ff-41cb-9b10-039601ea7e6b\"\n         }\n      }\n   }", 
         "examples": {
           "application/json": {
             "router": {
@@ -9964,7 +9964,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "This example request shows details for a router in JSON format:\n\nGET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .", 
+        "description": "This example request shows details for a router in JSON format:\n\n::\n   GET /v2.0/routers/{router_id}\n   Accept: application/json\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .", 
         "examples": {}, 
         "id": "showRouter", 
         "method": "get", 
@@ -10029,7 +10029,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "You can update the name, administrative state, and the external\ngateway. For more information about how to set the external gateway\nfor a router, see the create router operation. This operation does\nnot enable the update of router interfaces. To update a router, use\nthe add router interface and remove router interface operations.\n\nThis example updates the external gateway information for a router:\n\nPUT /v2.0/routers/{router_id} Accept: application/json", 
+        "description": "You can update the name, administrative state, and the external\ngateway. For more information about how to set the external gateway\nfor a router, see the create router operation. This operation does\nnot enable the update of router interfaces. To update a router, use\nthe add router interface and remove router interface operations.\n\nThis example updates the external gateway information for a router:\n\n::\n   PUT /v2.0/routers/{router_id}\n   Accept: application/json", 
         "examples": {
           "application/json": {
             "router": {
@@ -10107,7 +10107,7 @@
       }, 
       {
         "consumes": [], 
-        "description": "This operation fails if the router has attached interfaces.\n\nUse the remove router interface operation to remove all router\ninterfaces before you delete the router.\n\nThis example deletes a router:\n\nDELETE /v2.0/routers/{router_id} Accept: application/json", 
+        "description": "This operation fails if the router has attached interfaces.\n\nUse the remove router interface operation to remove all router\ninterfaces before you delete the router.\n\nThis example deletes a router:\n\n::\n   DELETE /v2.0/routers/{router_id}\n   Accept: application/json", 
         "examples": {}, 
         "id": "deleteRouter", 
         "method": "delete", 
@@ -10317,7 +10317,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "This operation removes an internal router interface, which detaches\na subnet from the router. You must specify either a subnet ID or\nport ID in the request body; this value is used to identify the\nrouter interface to remove.\n\nYou can also specify both a subnet ID and port ID. If you specify\nboth IDs, the subnet ID must correspond to the subnet ID of the\nfirst IP address on the port specified by the port ID. Otherwise,\nthe operation returns a ``409 Conflict`` error. The response\ncontains information about the affected router and interface.\n\nThe operation returns a ``404 Not Found`` if the router or the\nsubnet and port do not exist or are not visible to you. As a\nconsequence of this operation, the port connecting the router with\nthe subnet is removed from the subnet for the network.\n\nThis example removes an interface from a router:\n\nPUT /v2.0/routers/{router_id}/remove_router_interface Accept: application/json", 
+        "description": "This operation removes an internal router interface, which detaches\na subnet from the router. You must specify either a subnet ID or\nport ID in the request body; this value is used to identify the\nrouter interface to remove.\n\nYou can also specify both a subnet ID and port ID. If you specify\nboth IDs, the subnet ID must correspond to the subnet ID of the\nfirst IP address on the port specified by the port ID. Otherwise,\nthe operation returns a ``409 Conflict`` error. The response\ncontains information about the affected router and interface.\n\nThe operation returns a ``404 Not Found`` if the router or the\nsubnet and port do not exist or are not visible to you. As a\nconsequence of this operation, the port connecting the router with\nthe subnet is removed from the subnet for the network.\n\nThis example removes an interface from a router:\n\n::\n   PUT /v2.0/routers/{router_id}/remove_router_interface\n   Accept: application/json", 
         "examples": {
           "application/json": {
             "subnet_id": "a2f1f29d-571b-4533-907f-5803ab96ead1"

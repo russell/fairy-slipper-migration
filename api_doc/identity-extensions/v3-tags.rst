@@ -147,7 +147,9 @@
    the source party to complete derivation of theshared signing and
    encryption keys. The inputs to the HKDF ``expand``function are:
    
-   HKDF-Expand(esek.key, info, 256)The ``info``input for the HKDF ``expand``function is a string that
+   ::
+      HKDF-Expand(esek.key, info, 256)
+   The ``info``input for the HKDF ``expand``function is a string that
    concatenates the source, destination,and ``esek.timestamp``strings
    by using a comma( ``,``) separator between each element. The
    followingexample shows a valid ``info``string where
@@ -155,7 +157,9 @@
    ``compute.host.example.com``is the destination, and
    ``2012-03-26T10:01:01.720000``is the ``esek.timestamp``:
    
-   scheduler.host.example.com,compute.host.example.com,2012-03-26T10:01:01.720000The output of the HKDF expand function is an array of bytes of
+   ::
+      scheduler.host.example.com,compute.host.example.com,2012-03-26T10:01:01.720000
+   The output of the HKDF expand function is an array of bytes of
    256bit length. The first half is the signing key, and the second
    halfis the encryption key.
    

@@ -163,7 +163,7 @@
     {
       "description": "Policies", 
       "name": "policies", 
-      "summary": "Manages policies.\n\nYou can encode policy rule sets into a blob to be consumed byremote\nservices. To do so, set ``type``to ``application/json``and specify\npolicy rules as JSON strings in a ``blob``. For example:\n\n\"blob\": {\"default\": false}Or:\n\n\"blob\": {\"foobar_user\": [\"role:compute-user\"]}"
+      "summary": "Manages policies.\n\nYou can encode policy rule sets into a blob to be consumed byremote\nservices. To do so, set ``type``to ``application/json``and specify\npolicy rules as JSON strings in a ``blob``. For example:\n\n::\n   \"blob\": {           \"default\": false       }\nOr:\n\n::\n   \"blob\": {           \"foobar_user\": [               \"role:compute-user\"           ]       }"
     }, 
     {
       "description": "Regions", 

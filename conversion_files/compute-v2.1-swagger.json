@@ -1335,7 +1335,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -1732,7 +1732,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -5599,7 +5599,7 @@
     "/v2.1/{tenant_id}/os-assisted-volume-snapshots/{snapshot_id}": [
       {
         "consumes": [], 
-        "description": "To make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\nDELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
+        "description": "To make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\n.. code-block:: json\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
         "examples": {}, 
         "id": "deletesnapshots", 
         "method": "delete", 
@@ -5621,7 +5621,7 @@
             "type": "string"
           }, 
           {
-            "description": "Information for snapshot deletion. Include the ID of the associated\nvolume. For example:\n\nDELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
+            "description": "Information for snapshot deletion. Include the ID of the associated\nvolume. For example:\n\n.. code-block:: json\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
             "format": "", 
             "in": "query", 
             "name": "delete_info", 
@@ -7333,7 +7333,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Specify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\nGET /os-fping?all_tenants=1Specify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\nGET /os-fping?all_tenants=1 & include=uuid1,uuid2 & exclude=uuid3,uuid4Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\n.. code-block:: json\n   GET /os-fping?all_tenants=1\nSpecify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\n.. code-block:: json\n   GET /os-fping?all_tenants=1\n   &\n   include=uuid1,uuid2\n   &\n   exclude=uuid3,uuid4\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "list-fping", 
         "method": "get", 
@@ -8331,7 +8331,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "before_timestamp", 

@@ -16,7 +16,7 @@
     "created_at": {
       "required": true, 
       "type": "string", 
-      "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
       "format": ""
     }, 
     "source_node": {
@@ -28,7 +28,7 @@
     "updated_at": {
       "required": true, 
       "type": "string", 
-      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
       "format": ""
     }, 
     "dest_compute": {

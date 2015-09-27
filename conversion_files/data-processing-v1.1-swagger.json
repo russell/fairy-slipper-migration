@@ -3174,7 +3174,7 @@
     "/v1.1/{tenant_id}/job-binaries/{job_binaries_id}/data": [
       {
         "consumes": [], 
-        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:42:48 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
+        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\n::    HTTP/1.1 200 OK    Connection: keep-alive    Content-Length:\n161    Content-Type: text/html; charset=utf-8    Date: Sat, 28 Mar\n2015 02:42:48 GMT    A = load '$INPUT' using PigStorage(':') as\n(fruit: chararray);    B = foreach A generate\ncom.hadoopbook.pig.Trim(fruit);    store B into '$OUTPUT' USING\nPigStorage();", 
         "examples": {}, 
         "id": "job-binaries-data", 
         "method": "get", 
@@ -3432,7 +3432,7 @@
     "/v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}/data": [
       {
         "consumes": [], 
-        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:21:13 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
+        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\n::    HTTP/1.1 200 OK    Connection: keep-alive    Content-Length:\n161    Content-Type: text/html; charset=utf-8    Date: Sat, 28 Mar\n2015 02:21:13 GMT    A = load '$INPUT' using PigStorage(':') as\n(fruit: chararray);    B = foreach A generate\ncom.hadoopbook.pig.Trim(fruit);    store B into '$OUTPUT' USING\nPigStorage();", 
         "examples": {}, 
         "id": "job-binary-internals-data", 
         "method": "get", 

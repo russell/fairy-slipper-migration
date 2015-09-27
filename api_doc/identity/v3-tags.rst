@@ -77,9 +77,12 @@
    services. To do so, set ``type``to ``application/json``and specify
    policy rules as JSON strings in a ``blob``. For example:
    
-   "blob": {"default": false}Or:
+   ::
+      "blob": {           "default": false       }
+   Or:
    
-   "blob": {"foobar_user": ["role:compute-user"]}
+   ::
+      "blob": {           "foobar_user": [               "role:compute-user"           ]       }
 
 .. swagger:tag:: regions-v3
    :synopsis: Regions

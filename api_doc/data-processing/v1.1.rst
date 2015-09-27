@@ -366,11 +366,12 @@
    
    Example response:
    
-   HTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-
-   Type: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:21:13 GMT
-   A = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =
-   foreach A generate com.hadoopbook.pig.Trim(fruit); store B into
-   '$OUTPUT' USING PigStorage();
+   ::    HTTP/1.1 200 OK    Connection: keep-alive    Content-Length:
+   161    Content-Type: text/html; charset=utf-8    Date: Sat, 28 Mar
+   2015 02:21:13 GMT    A = load '$INPUT' using PigStorage(':') as
+   (fruit: chararray);    B = foreach A generate
+   com.hadoopbook.pig.Trim(fruit);    store B into '$OUTPUT' USING
+   PigStorage();
 
    :tag: jobbinary-internals
    :parameter tenant_id: The unique identifier of the tenant or
@@ -482,11 +483,12 @@
    
    Example response:
    
-   HTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-
-   Type: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:42:48 GMT
-   A = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =
-   foreach A generate com.hadoopbook.pig.Trim(fruit); store B into
-   '$OUTPUT' USING PigStorage();
+   ::    HTTP/1.1 200 OK    Connection: keep-alive    Content-Length:
+   161    Content-Type: text/html; charset=utf-8    Date: Sat, 28 Mar
+   2015 02:42:48 GMT    A = load '$INPUT' using PigStorage(':') as
+   (fruit: chararray);    B = foreach A generate
+   com.hadoopbook.pig.Trim(fruit);    store B into '$OUTPUT' USING
+   PigStorage();
 
    :tag: jobbinaries
    :parameter tenant_id: The unique identifier of the tenant or

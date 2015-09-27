@@ -95,7 +95,10 @@
    
    This example request lists floating IPs in JSON format:
    
-   GET /v2.0/floatingips Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   ::
+      GET /v2.0/floatingips
+      Accept: application/json
+   Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
    by using query string parameters. For information, see Filtering
    and Column Selection .
@@ -1345,7 +1348,9 @@
    
    This example removes an interface from a router:
    
-   PUT /v2.0/routers/{router_id}/remove_router_interface Accept: application/json
+   ::
+      PUT /v2.0/routers/{router_id}/remove_router_interface
+      Accept: application/json
 
    :requestexample: v2/examples/removeRouterInterface_req.json
    :responseexample 200: v2/examples/removeRouterInterface_resp_200.json
@@ -1672,7 +1677,11 @@
    format. This example also filters the result by the
    ``fixed_ip_address`` and ``floating_ip_address`` fields.
    
-   GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address & fields=floating_ip_address Accept: application/json
+   ::
+      GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address
+      &
+      fields=floating_ip_address
+      Accept: application/json
 
    :responseexample 200: v2/examples/showFloatingIp_resp_200.json
    :accepts: application/json
@@ -1697,7 +1706,10 @@
    
    This example updates a floating IP:
    
-   PUT /v2.0/floatingips/{floatingip_id} Accept: application/jsonDepending on the request body that you submit, this request
+   ::
+      PUT /v2.0/floatingips/{floatingip_id}
+      Accept: application/json
+   Depending on the request body that you submit, this request
    associates a port with or disassociates a port from a floating IP.
 
    :requestexample: v2/examples/updateFloatingIp_req.json
@@ -1719,7 +1731,9 @@
 
    This example deletes a floating IP:
    
-   DELETE /v2.0/floatingips/{floatingip_id} Accept: application/json
+   ::
+      DELETE /v2.0/floatingips/{floatingip_id}
+      Accept: application/json
 
    :tag: layer3
    :parameter floatingip_id: The UUID of the floating IP.
@@ -2139,7 +2153,10 @@
 
    This example request shows details for a router in JSON format:
    
-   GET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   ::
+      GET /v2.0/routers/{router_id}
+      Accept: application/json
+   Use the ``fields`` query parameter to control which fields are
    returned in the response body. For information, see Filtering and
    Column Selection .
 
@@ -2166,7 +2183,9 @@
    
    This example updates the external gateway information for a router:
    
-   PUT /v2.0/routers/{router_id} Accept: application/json
+   ::
+      PUT /v2.0/routers/{router_id}
+      Accept: application/json
 
    :requestexample: v2/examples/updateRouter_req.json
    :responseexample 200: v2/examples/updateRouter_resp_200.json
@@ -2191,7 +2210,9 @@
    
    This example deletes a router:
    
-   DELETE /v2.0/routers/{router_id} Accept: application/json
+   ::
+      DELETE /v2.0/routers/{router_id}
+      Accept: application/json
 
    :tag: layer3
    :parameter router_id: The UUID of the router.
@@ -2417,7 +2438,10 @@
    
    This example request lists routers in JSON format:
    
-   GET /v2.0/routers Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   ::
+      GET /v2.0/routers
+      Accept: application/json
+   Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
    by using query string parameters. For information, see Filtering
    and Column Selection .
@@ -2444,7 +2468,14 @@
    network must be passed in the ``external_gateway_info`` attribute
    in the request body, as follows:
    
-   { "router": { "external_gateway_info": { "network_id": "8ca37218-28ff-41cb-9b10-039601ea7e6b" } } }
+   .. code-block:: json
+      {
+         "router": {
+            "external_gateway_info": {
+               "network_id": "8ca37218-28ff-41cb-9b10-039601ea7e6b"
+            }
+         }
+      }
 
    :requestexample: v2/examples/createRouter_req.json
    :responseexample 201: v2/examples/createRouter_resp_201.json

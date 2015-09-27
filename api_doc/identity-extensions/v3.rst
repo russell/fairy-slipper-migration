@@ -196,7 +196,10 @@
    
    Example OAuth-specific object in a token:
    
-   "OS-OAUTH1": { "access_token_id": "cce0b8be7" }
+   .. code-block:: json
+      "OS-OAUTH1": {
+          "access_token_id": "cce0b8be7"
+      }
 
    :tag: oauth1
    :statuscode 200: 

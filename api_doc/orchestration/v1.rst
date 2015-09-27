@@ -250,7 +250,8 @@
    template type. Default type is ``cfn`` . The ``hot`` template type
    is supported. For example:
    
-   /v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn
+   ::
+      /v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn
 
    :responseexample 200: v1/examples/resource_type_template_resp_200.json
    :accepts: application/json
@@ -291,7 +292,8 @@
    The canonical URL is returned for only non-deleted stacks. To fetch
    the resource list for deleted stacks, use the following endpoint:
    
-   /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
+   ::
+      /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
 
    :tag: stacks
    :parameter stack_name: The name of a stack.
