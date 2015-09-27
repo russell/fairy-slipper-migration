@@ -1,0 +1,1123 @@
+.. http:get:: /v2/{tenant_id}/backups/detail
+   :title: List backups (detailed)
+   :synopsis: Lists detailed information for backups defined in Block Storage to which the tenant who submits the request has access.
+
+   
+
+   :responseexample 200: v2/examples/listBackupsDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query sort_key: Sorts by the requested image attribute. Accepted
+                    values are ``name`` , ``status`` ,
+                    ``container_format`` , ``disk_format`` , ``size``
+                    , ``id`` , ``created_at`` , and ``updated_at`` .
+                    Default is ``created_at`` . The API uses the
+                    natural sorting direction of the image attribute
+                    that is provided as the ``sort_key`` .
+   :query sort_dir: Sorts by one or more sets of attribute and sort
+                    direction combinations. If you omit the sort
+                    direction in a set, default is ``desc`` .
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/snapshots/detail
+   :title: List snapshots (detailed)
+   :synopsis: Lists detailed information for all Block Storage snapshots that the tenant who submits the request can access.
+
+   
+
+   :responseexample 200: v2/examples/getSnapshotsDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs/{qos_id}/disassociate_all
+   :title: Disassociate QoS specification from all associations
+   :synopsis: Disassociates a specified QoS specification from all associations.
+
+   
+
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/backups/{backup_id}/action
+   :title: Force-delete backup
+   :synopsis: Force-deletes a specified backup. Specify the ``os-force_delete`` action in the request body.
+
+   The backup and any backup data is deleted.
+   
+   The backup driver returns the ``405`` status code if it does not
+   support this operation.
+
+   :requestexample: v2/examples/forceDeleteBackup_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups-actions-v2
+   :requestschema: v2/forceDeleteBackup.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter backup_id: The unique identifier for a backup.
+   :statuscode 404: 
+   :statuscode 405: 
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/backups/{backup_id}
+   :title: Show backup details
+   :synopsis: Shows details for a specified backup.
+
+   
+
+   :responseexample 200: v2/examples/showBackup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter backup_id: The unique identifier for a backup.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/backups/{backup_id}
+   :title: Delete backup
+   :synopsis: Deletes a specified backup.
+
+   
+
+   :tag: ext-backups
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter backup_id: The unique identifier for a backup.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/snapshots
+   :title: Create snapshot
+   :synopsis: Creates a snapshot, which is a point-in-time complete copy of a volume. You can create a volume from the snapshot.
+
+   
+
+   :requestexample: v2/examples/createSnapshot_req.json
+   :responseexample 202: v2/examples/createSnapshot_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query snapshot: A partial representation of a snapshot used in the
+                    creation process.
+   :query volume_id: To create a snapshot from an existing volume,
+                     specify the ID of the existing volume.
+   :query force: [True/False] Indicate whether to snapshot, even if
+                 the volume is attached. Default==False.
+   :query name: Name of the snapshot. Default==None.
+   :query description: Description of snapshot. Default==None.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/snapshots
+   :title: List snapshots
+   :synopsis: Lists summary information for all Block Storage snapshots that the tenant who submits the request can access.
+
+   
+
+   :responseexample 200: v2/examples/getSnapshotsSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query sort_key: Sorts by the requested image attribute. Accepted
+                    values are ``name`` , ``status`` ,
+                    ``container_format`` , ``disk_format`` , ``size``
+                    , ``id`` , ``created_at`` , and ``updated_at`` .
+                    Default is ``created_at`` . The API uses the
+                    natural sorting direction of the image attribute
+                    that is provided as the ``sort_key`` .
+   :query sort_dir: Sorts by one or more sets of attribute and sort
+                    direction combinations. If you omit the sort
+                    direction in a set, default is ``desc`` .
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/os-quota-sets/{tenant_id}
+   :title: Show quotas
+   :synopsis: Shows quotas for a tenant.
+
+   
+
+   :responseexample 200: v2/examples/showQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :query usage: Set to ``usage=True`` to show quota usage. Default is
+                 ``False`` .
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/os-quota-sets/{tenant_id}
+   :title: Update quotas
+   :synopsis: Updates quotas for a tenant.
+
+   
+
+   :requestexample: v2/examples/updateQuota_req.json
+   :responseexample 200: v2/examples/updateQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :requestschema: v2/updateQuota.json
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/os-quota-sets/{tenant_id}
+   :title: Delete quotas
+   :synopsis: Deletes quotas for a tenant so the quotas revert to default values.
+
+   
+
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/capabilities/{hostname}
+   :title: Show back-end capabilities
+   :synopsis: Shows capabilities for a specified storage back end.
+
+   
+
+   :responseexample 200: v2/examples/getBackendCapabilities_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-backend-capabilities-v2
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter hostname: The name of the host that hosts the storage
+                        back end.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/snapshots/{snapshot_id}/metadata
+   :title: Show snapshot metadata
+   :synopsis: Shows the metadata for a specified snapshot.
+
+   
+
+   :responseexample 200: v2/examples/showSnapshotMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/snapshots/{snapshot_id}/metadata
+   :title: Update snapshot metadata
+   :synopsis: Updates the metadata for a specified snapshot.
+
+   
+
+   :requestexample: v2/examples/updateSnapshotMetadata_req.json
+   :responseexample 200: v2/examples/updateSnapshotMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :title: Show quotas for user
+   :synopsis: Enables an admin user to show quotas for a specified tenant and user.
+
+   
+
+   :responseexample 200: v2/examples/showQuotaUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :title: Update quotas for user
+   :synopsis: Updates quotas for a specified tenant/project and user.
+
+   
+
+   :requestexample: v2/examples/updateQuotaUser_req.json
+   :responseexample 200: v2/examples/updateQuotaUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :requestschema: v2/updateQuotaUser.json
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :title: Delete quotas for user
+   :synopsis: Deletes quotas for a user so that the quotas revert to default values.
+
+   
+
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/types/{volume_type_id}
+   :title: Update volume type
+   :synopsis: Updates a volume type.
+
+   
+
+   :requestexample: v2/examples/updateVolumeType_req.json
+   :responseexample 200: v2/examples/updateVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :requestschema: v2/updateVolumeType.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier for an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/types/{volume_type_id}
+   :title: Update extra specs for a volume type
+   :synopsis: Updates the extra specifications assigned to a volume type.
+
+   
+
+   :requestexample: v2/examples/updateVolumeTypeExtraSpecs_req.json
+   :responseexample 200: v2/examples/updateVolumeTypeExtraSpecs_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :requestschema: v2/updateVolumeTypeExtraSpecs.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier for an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/types/{volume_type_id}
+   :title: Show volume type information
+   :synopsis: Shows information about a specified volume type.
+
+   
+
+   :responseexample 200: v2/examples/getVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier for an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/types/{volume_type_id}
+   :title: Delete volume type
+   :synopsis: Deletes a specified volume type.
+
+   
+
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier for an existing
+                              volume type.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/types
+   :title: List volume types
+   :synopsis: Lists volume types.
+
+   
+
+   :responseexample 200: v2/examples/getVolumeTypes_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v2/{tenant_id}/types
+   :title: Create volume type
+   :synopsis: Creates a volume type.
+
+   
+
+   :requestexample: v2/examples/createVolumeType_req.json
+   :responseexample 200: v2/examples/createVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/volumes/detail
+   :title: List volumes (detailed)
+   :synopsis: Lists detailed information for all Block Storage volumes that the tenant who submits the request can access.
+
+   
+
+   :responseexample 200: v2/examples/getVolumesDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query sort: Comma-separated list of sort keys and optional sort
+                directions in the form of < key > [: < direction > ].
+                A valid direction is ``asc`` (ascending) or ``desc``
+                (descending).
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:post:: /v2/{tenant_id}/os-volume-manage
+   :title: Manage existing volume
+   :synopsis: Creates a Block Storage volume by using existing storage rather than allocating new storage.
+
+   The caller must specify a reference to an existing storage volume
+   in the ref parameter in the request. Although each storage driver
+   might interpret this reference differently, the driver should
+   accept a reference structure that contains either a source-volume-
+   id or source-volume-name element, if possible.
+   
+   The API chooses the size of the volume by rounding up the size of
+   the existing storage volume to the next gibibyte (GiB).
+
+   :requestexample: v2/examples/manageExisting_req.json
+   :responseexample 202: v2/examples/manageExisting_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-manage
+   :requestschema: v2/manageExisting.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /
+   :title: List API versions
+   :synopsis: Lists information about all Block Storage API versions.
+
+   
+
+   :responseexample 300: v2/examples/listVersions_resp_300.json
+   :responseexample 200: v2/examples/listVersions_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs/{qos_id}/associate
+   :title: Associate QoS specification with volume type
+   :synopsis: Associates a QoS specification with a specified volume type.
+
+   
+
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes
+   :title: Create private volume
+   :synopsis: Creates a private Block Storage volume.
+
+   
+
+   :requestexample: v2/examples/createVolumeTypeAccessExt_req.json
+   :responseexample 202: v2/examples/createVolumeTypeAccessExt_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-type-access
+   :requestschema: v2/createVolumeTypeAccessExt.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes
+   :title: Create volume
+   :synopsis: Creates a volume.
+
+   To create a bootable volume, include the ID of the image from which
+   you want to create the volume in the ``imageRef`` attribute in the
+   request body.
+   
+   Preconditions
+   
+   - You must have enough volume storage quota remaining to create a
+     volume of size requested.
+   
+   Asynchronous Postconditions
+   
+   - With correct permissions, you can see the volume status as
+     ``available`` through API calls.
+   
+   - With correct access, you can see the created volume in the storage
+     system that OpenStack Block Storage manages.
+   
+   Troubleshooting
+   
+   - If volume status remains ``creating`` or shows another error
+     status, the request failed. Ensure you meet the preconditions
+     then investigate the storage back end.
+   
+   - Volume is not created in the storage system which OpenStack Block
+     Storage manages.
+   
+   - The storage node needs enough free storage space to match the
+     specified size of the volume creation request.
+
+   :requestexample: v2/examples/createVolume_req.json
+   :responseexample 202: v2/examples/createVolume_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :requestschema: v2/createVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/volumes
+   :title: List volumes
+   :synopsis: Lists summary information for all Block Storage volumes that the tenant who submits the request can access.
+
+   
+
+   :responseexample 200: v2/examples/getVolumesSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query sort: Comma-separated list of sort keys and optional sort
+                directions in the form of < key > [: < direction > ].
+                A valid direction is ``asc`` (ascending) or ``desc``
+                (descending).
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/os-vol-image-meta
+   :title: Show image metadata for volume
+   :synopsis: Shows image metadata that is associated with a specified volume.
+
+   When the request is made, the caller must specify (in the ref
+   element) a reference to an existing storage volume. Each storage
+   driver may interpret the existing storage volume reference
+   differently, but should accept a reference structure containing
+   either a source-volume-id or source-volume-name element if
+   possible.
+
+   :requestexample: v2/examples/showImageMetadataForVolume_req.json
+   :responseexample 202: v2/examples/showImageMetadataForVolume_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-vol-image-meta-v2
+   :requestschema: v2/showImageMetadataForVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v2
+   :title: Show API version details
+   :synopsis: Shows details for Block Storage API v2.
+
+   
+
+   :responseexample 200: v2/examples/versionDetails_resp_200.json
+   :responseexample 203: v2/examples/versionDetails_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:get:: /v2/{tenant_id}/os-quota-sets/defaults
+   :title: Get default quotas
+   :synopsis: Gets default quotas for a tenant.
+
+   
+
+   :responseexample 200: v2/examples/getDefaults_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs/{qos_id}
+   :title: Show QoS specification details
+   :synopsis: Shows details for a specified QoS specification.
+
+   
+
+   :responseexample 200: v2/examples/showQoSDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2/{tenant_id}/qos-specs/{qos_id}
+   :title: Set or unset keys in QoS specification
+   :synopsis: Sets or unsets keys in a specified QoS specification.
+
+   
+
+   :requestexample: v2/examples/setQoSKey_req.json
+   :responseexample 200: v2/examples/setQoSKey_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: qos-v2-qos-specs
+   :requestschema: v2/setQoSKey.json
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/qos-specs/{qos_id}
+   :title: Delete QoS specification
+   :synopsis: Deletes a specified QoS specification.
+
+   
+
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :parameter qos_id: The unique ID of the QoS specification.
+   :parameter force: Optional flag that indicates whether to delete
+                     the specified QoS specification even if it is in-
+                     use.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/extensions
+   :title: List API extensions
+   :synopsis: Lists Block Storage API extensions.
+
+   
+
+   :responseexample 300: v2/examples/listExtensions-cinder-v2_resp_300.json
+   :responseexample 200: v2/examples/listExtensions-cinder-v2_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/volumes/{volume_id}
+   :title: Show volume information
+   :synopsis: Shows information about a specified volume.
+
+   Preconditions
+   
+   - The specified volume must exist.
+
+   :responseexample 200: v2/examples/getVolume_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/volumes/{volume_id}
+   :title: Update volume
+   :synopsis: Updates a volume.
+
+   
+
+   :requestexample: v2/examples/updateVolume_req.json
+   :responseexample 200: v2/examples/updateVolume_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/volumes/{volume_id}
+   :title: Delete volume
+   :synopsis: Deletes a specified volume.
+
+   Preconditions
+   
+   - Volume status must be ``available`` , ``in-use`` , ``error`` , or
+     ``error_restoring`` .
+   
+   - You cannot already have a snapshot related to the specified
+     volume.
+   
+   - You cannot delete a volume that is in a migration.
+   
+   Asynchronous Postconditions
+   
+   - The volume is deleted in volume index.
+   
+   - The volume managed by OpenStack Block Storage is deleted in
+     storage node.
+   
+   Troubleshooting
+   
+   - If volume status remains in ``deleting`` or becomes
+     ``error_deleting`` the request failed. Ensure you meet the
+     preconditions then investigate the storage back end.
+   
+   - The volume managed by OpenStack Block Storage is not deleted from
+     the storage system.
+
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs/{qos_id}/associations
+   :title: Get all associations for QoS specification
+   :synopsis: Gets all associations for a specified QoS specification.
+
+   
+
+   :responseexample 200: v2/examples/getQoSAssociations_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs/{qos_id}/disassociate
+   :title: Disassociate QoS specification from volume type
+   :synopsis: Disassociates a QoS specification from a specified volume type.
+
+   
+
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :parameter qos_id: The UUID for the QoS specification.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/backups/{backup_id}/restore
+   :title: Restore backup
+   :synopsis: Restores a Block Storage backup to an existing or new Block Storage volume.
+
+   You must specify either the volume ID or name. If you specify both
+   the volume ID and name, the ID takes priority.
+
+   :requestexample: v2/examples/restoreBackup_req.json
+   :responseexample 202: v2/examples/restoreBackup_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups
+   :requestschema: v2/restoreBackup.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter backup_id: The unique identifier for a backup.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/qos-specs
+   :title: Create QoS specification
+   :synopsis: Creates a QoS specification.
+
+   
+
+   :requestexample: v2/examples/createQoSSpec_req.json
+   :responseexample 202: v2/examples/createQoSSpec_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: qos-v2-qos-specs
+   :requestschema: v2/createQoSSpec.json
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/qos-specs
+   :title: List QoS specs
+   :synopsis: Lists quality of service (QoS) specifications.
+
+   
+
+   :responseexample 300: v2/examples/listQoSSpecs_resp_300.json
+   :responseexample 200: v2/examples/listQoSSpecs_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: qos-v2-qos-specs
+   :parameter tenant_id: The unique ID of the tenant or account.
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes/{volume_id}/action
+   :title: Extend volume
+   :synopsis: Extends the size of a specified volume to a new size requested in gibibytes (GiB). Specify the ``os-extend`` action in the request body.
+
+   Preconditions
+   
+   - Volume status must be ``available`` .
+   
+   - Sufficient amount of storage must exist to extend the volume.
+   
+   - The user quota must have sufficient volume storage.
+   
+   Troubleshooting
+   
+   - An ``error_extending`` volume status indicates that the request
+     failed. Ensure that you meet the preconditions and retry the
+     request. If the request fails again, investigate the storage back
+     end.
+
+   :requestexample: v2/examples/extendVolume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-api-v2-volumes-actions
+   :requestschema: v2/extendVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes/{volume_id}/action
+   :title: Reset volume statuses
+   :synopsis: Resets the status, attach status, and migration status for a specified volume. Specify the ``os-reset_status`` action in the request body.
+
+   
+
+   :requestexample: v2/examples/resetVolume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-api-v2-volumes-actions
+   :requestschema: v2/resetVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes/{volume_id}/action
+   :title: Set image metadata for volume
+   :synopsis: Sets the image metadata for a specified volume. Specify the ``os-set_image_metadata`` action in the request body.
+
+   
+
+   :requestexample: v2/examples/setVolumeimagemetadata_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-api-v2-volumes-actions
+   :requestschema: v2/setVolumeimagemetadata.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes/{volume_id}/action
+   :title: Remove image metadata from volume
+   :synopsis: Removes image metadata, by key, from a specified volume. Specify the ``os-unset_image_metadata`` action in the request body and the ``key`` for the metadata key and value pair that you want to remove.
+
+   
+
+   :requestexample: v2/examples/unsetVolumeimagemetadata_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-api-v2-volumes-actions
+   :requestschema: v2/unsetVolumeimagemetadata.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:post:: /v2/{tenant_id}/volumes/{volume_id}/action
+   :title: Attach volume
+   :synopsis: Attaches the specified volume to the specified server. Specify the ``os-attach`` action in the request body.
+
+   Preconditions
+   
+   - Volume status must be ``available`` .
+   
+   - You should set ``instance_uuid`` or ``host_name`` .
+
+   :requestexample: v2/examples/attachVolume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volume-api-v2-volumes-actions
+   :requestschema: v2/attachVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/snapshots/{snapshot_id}
+   :title: Show snapshot information
+   :synopsis: Shows information for a specified snapshot.
+
+   
+
+   :responseexample 200: v2/examples/getSnapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:put:: /v2/{tenant_id}/snapshots/{snapshot_id}
+   :title: Update snapshot
+   :synopsis: Updates a specified snapshot.
+
+   
+
+   :requestexample: v2/examples/updateSnapshot_req.json
+   :responseexample 200: v2/examples/updateSnapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/{tenant_id}/snapshots/{snapshot_id}
+   :title: Delete snapshot
+   :synopsis: Deletes a specified snapshot.
+
+   
+
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}
+   :title: Show quota details for user
+   :synopsis: Shows details for quotas for a specified tenant and user.
+
+   
+
+   :responseexample 200: v2/examples/showQuotaDetailUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:get:: /v2/{tenant_id}/limits
+   :title: Show absolute limits
+   :synopsis: Shows absolute limits for a tenant.
+
+   An absolute limit value of ``-1`` indicates that the absolute limit
+   for the item is infinite.
+
+   :responseexample 200: v2/examples/showAbsoluteLimits_resp_200.json
+   :responseexample 203: v2/examples/showAbsoluteLimits_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: limits
+   :parameter tenant_id: The ID for the tenant or project in a multi-
+                         tenancy cloud.
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:post:: /v2/{tenant_id}/backups
+   :title: Create backup
+   :synopsis: Creates a Block Storage backup from a volume.
+
+   
+
+   :requestexample: v2/examples/createBackup_req.json
+   :responseexample 202: v2/examples/createBackup_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups
+   :requestschema: v2/createBackup.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v2/{tenant_id}/backups
+   :title: List backups
+   :synopsis: Lists backups defined in Block Storage to which the tenant who submits the request has access.
+
+   
+
+   :responseexample 200: v2/examples/listBackups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ext-backups
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :query sort_key: Sorts by the requested image attribute. Accepted
+                    values are ``name`` , ``status`` ,
+                    ``container_format`` , ``disk_format`` , ``size``
+                    , ``id`` , ``created_at`` , and ``updated_at`` .
+                    Default is ``created_at`` . The API uses the
+                    natural sorting direction of the image attribute
+                    that is provided as the ``sort_key`` .
+   :query sort_dir: Sorts by one or more sets of attribute and sort
+                    direction combinations. If you omit the sort
+                    direction in a set, default is ``desc`` .
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+

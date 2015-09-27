@@ -1,0 +1,141 @@
+{
+  "file_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/metering-labels.wadl": "metering", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-layer3-ext.wadl": "layer3", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-lbaasv1.0-ext.wadl": "lbaas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-lbaasv2.0-ext.wadl": "lbaas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-multi-provider-ext.wadl": "network-multi-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-vlan-transparency-ext.wadl": "network-vlan-transparency", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-vpnaasv2.0-ext.wadl": "vpnaas"
+  }, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#createProviderNetwork": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#deleteProviderNetwork": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#listProviderNetworks": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#showProviderNetwork": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#updateProviderNetwork": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#getExtension": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#listExtensions": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#createPort": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#deletePort": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#listPorts": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#showPort": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#updatePort": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#listQuotas": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#resetQuota": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#showQuota": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#updateQuota": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-routers.wadl#updateRouter": "extraroute", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#createSubnetPool": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#listSubnetPools": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#removeSubnetPool": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#showSubnetPool": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#updateSubnetPool": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#createSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#createSecGroupRule": "security_group-ruless", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#deleteSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#deleteSecGroupRule": "security_group-ruless", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#getSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#getSecGroupRule": "security_group-ruless", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#listSecGroupRules": "security_group-ruless", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#listSecGroups": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#updateSecGroup": "security-groups"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#ProviderNetworks": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks-provider-ext.wadl#network_id": "network-provider", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#extension": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#extensions": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#Ports": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports-binding-ext.wadl#port_id": "port-binding", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#Quotas": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-quotas.wadl#tenant_id": "quotas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-routers.wadl#router_id": "extraroute", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#SubnetPools": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnetpools-ext.wadl#subnetpool_id": "subnetpools-ext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#rules-security-groups-id": "security_group-ruless", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#security_group_id": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#security_groups": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/security-groups.wadl#security_groups_rules": "security_group-ruless"
+  }, 
+  "service": "networking-extensions", 
+  "tags": [
+    {
+      "description": "Extensions", 
+      "name": "extensions", 
+      "summary": "Lists available Networking API v2.0 extensions and shows details\nfor a specified extension."
+    }, 
+    {
+      "description": "Quotas extension (quotas)", 
+      "name": "quotas", 
+      "summary": "Lists, shows information for, updates, and resets quotas."
+    }, 
+    {
+      "description": "Networks provider extended attributes (networks)", 
+      "name": "network-provider", 
+      "summary": "Lists, creates, shows information for, updates, and deletes\nnetworks."
+    }, 
+    {
+      "description": "Networks multiple provider extension (networks)", 
+      "name": "network-multi-provider", 
+      "summary": "Enables administrative users to define multiple physical bindings\nfor an OpenStack Networking network and list or show details for\nnetworks with multiple physical bindings.\n\nYou cannot update any ``provider`` attributes. If you try to do so,\nan error occurs.\n\nTo delete a network with multiple physical bindings, issue a normal\ndelete network request.\n\nTo define multiple physical bindings for a network, include a\n``segments`` list in the request body of a ``POST /v2.0/networks``\nrequest. Each element in the ``segments`` list has the same\nstructure as the provider network attributes. These attributes are\n``provider:network_type`` , ``provider:physical_network`` , and\n``provider:segmentation_id`` . The validation rules for these\nattributes are the same as for the Networks provider extended\nattributes . You cannot use both extensions at the same time.\n\nThe NSX and ML2 plug-ins support this extension. With the ML2 plug-\nin, you can specify multiple VLANs for a specified network, a VXLAN\ntunnel ID, and a VLAN."
+    }, 
+    {
+      "description": "VLAN transparency extension (networks)", 
+      "name": "network-vlan-transparency", 
+      "summary": "Enables plug-ins that support VLAN transparency to deliver VLAN-\ntransparent trunk networks. If the service does not support VLAN\ntransparency and a user requests a VLAN-transparent network, the\nplug-in refuses to create one and returns an appropriate error to\nthe user.\n\nYou cannot update the ``vlan-transparent`` attribute. If you try to\ndo so, an error occurs.\n\nTo delete a VLAN-transparent network, issue a normal delete network\nrequest.\n\nThe ML2 plug-in currently supports this extension. With the ML2\nplug-in, you can set the ``vlan-transparent`` attribute to either\n``true`` or ``false`` ."
+    }, 
+    {
+      "description": "Ports binding extended attributes (ports)", 
+      "name": "port-binding", 
+      "summary": "Lists, creates, shows information for, and updates ports."
+    }, 
+    {
+      "description": "Security groups (security-groups)", 
+      "name": "security-groups", 
+      "summary": "Lists, creates, shows information for, updates, and deletes\nsecurity groups."
+    }, 
+    {
+      "description": "Security group rules (security-group-rules)", 
+      "name": "security_group-ruless", 
+      "summary": "Lists, creates, shows information for, and deletes security group\nrules."
+    }, 
+    {
+      "description": "Layer-3 networking", 
+      "name": "layer3", 
+      "summary": "Routes packets between subnets, forwards packets from internal\nnetworks to external ones, and accesses instances from external\nnetworks through floating IPs.\n\nThis extension introduces these resources:\n\n- **router** . A logical entity for forwarding packets across\n  internal subnets and NATting them on external networks through an\n  appropriate external gateway.\n\n- **floatingip** . An external IP address that is mapped to a port\n  that is attached to an internal network."
+    }, 
+    {
+      "description": "Metering labels and rules", 
+      "name": "metering", 
+      "summary": "Creates, modifies, and deletes OpenStack Layer3 metering labels and\nrules."
+    }, 
+    {
+      "description": "Load-Balancer-as-a-Service (LBaaS) 1.0 (STABLE)", 
+      "name": "lbaas", 
+      "summary": "The LBaaS version 1.0 extension pairs with the Networking 2.0 API\nto enable OpenStack tenants to manage load balancers for their VMs.\nWith this extension, you can load-balance client traffic from one\nnetwork to application services, such as VMs, on the same network.\n\nUse this extension to create and manage virtual IP addresses\n(VIPs), pools, members of a pool, health monitors associated with a\npool, and view status of a resource.\n\nLoad balancer statuses\n\n+----------------+-----------------------------------------------------------------+\n| Status         | Description                                                     |\n+----------------+-----------------------------------------------------------------+\n| ACTIVE         | Resource is ready and active.                                   |\n+----------------+-----------------------------------------------------------------+\n| PENDING_CREATE | Resource is being created.                                      |\n+----------------+-----------------------------------------------------------------+\n| PENDING_UPDATE | Resource is being updated.                                      |\n+----------------+-----------------------------------------------------------------+\n| PENDING_DELETE | Resource is pending deletion.                                   |\n+----------------+-----------------------------------------------------------------+\n| INACTIVE       | Resource was created but is not active.                         |\n+----------------+-----------------------------------------------------------------+\n| ERROR          | Object within the service is not working. The ``error_details`` |\n|                | attribute provides an explanation for the error, its cause, and |\n|                | possibly a solution.                                            |\n+----------------+-----------------------------------------------------------------+"
+    }, 
+    {
+      "description": "Load-Balancer-as-a-Service (LBaaS) 2.0 (EXPERIMENTAL)", 
+      "name": "lbaas", 
+      "summary": "The LBaaS version 2.0 extension pairs with the Networking 2.0 API\nto enable OpenStack tenants to manage load balancers for their VMs.\nWith this extension you can load-balance client traffic from one\nnetwork to application services, such as VMs, on the same network.\n\nUse this extension to create and manage load balancers, listeners,\npools, members of a pool, and health monitors associated with a\npool and view status of a resource.\n\nLoad balancer statuses\n\n+----------------+-----------------------------------------------------------------+\n| Status         | Description                                                     |\n+----------------+-----------------------------------------------------------------+\n| ACTIVE         | Resource is ready and active.                                   |\n+----------------+-----------------------------------------------------------------+\n| PENDING_CREATE | Resource is being created.                                      |\n+----------------+-----------------------------------------------------------------+\n| PENDING_UPDATE | Resource is being updated.                                      |\n+----------------+-----------------------------------------------------------------+\n| PENDING_DELETE | Resource is pending deletion.                                   |\n+----------------+-----------------------------------------------------------------+\n| INACTIVE       | Resource was created but is not active.                         |\n+----------------+-----------------------------------------------------------------+\n| ERROR          | Object within the service is not working. The ``error_details`` |\n|                | attribute provides an explanation for the error, its cause, and |\n|                | possibly a solution.                                            |\n+----------------+-----------------------------------------------------------------+"
+    }, 
+    {
+      "description": "Subnet pools extension (subnetpools)", 
+      "name": "subnetpools-ext", 
+      "summary": "Manages subnet pools"
+    }, 
+    {
+      "description": "Virtual-Private-Network-as-a-Service (VPNaaS) 2.0 (CURRENT)", 
+      "name": "vpnaas", 
+      "summary": "The VPNaaS extension enables OpenStack tenants to extend private\nnetworks across the public telecommunication infrastructure.\n\nThis initial implementation of the VPNaaS extension provides:\n\n- Site-to-site VPN that connects two private networks.\n\n- Multiple VPN connections per tenant.\n\n- IKEv1 policy support with 3des, aes-128, aes-256, or aes-192\n  encryption.\n\n- IPSec policy support with 3des, aes-128, aes-192, or aes-256\n  encryption, sha1 authentication, ESP, AH, or AH-ESP transform\n  protocol, and tunnel or transport mode encapsulation.\n\n- Dead Peer Detection (DPD) with hold, clear, restart, disabled, or\n  restart-by-peer actions.\n\nThis extension introduces these resources:\n\n- ``service`` . A parent object that associates VPN with a specific\n  subnet and router.\n\n- ``ikepolicy`` . The Internet Key Exchange (IKE) policy that\n  identifies the authentication and encryption algorithm to use\n  during phase one and two negotiation of a VPN connection.\n\n- ``ipsecpolicy`` . The IP security policy that specifies the\n  authentication and encryption algorithm and encapsulation mode to\n  use for the established VPN connection.\n\n- ``ipsec-site-connection`` . Details for the site-to-site IPsec\n  connection, including the peer CIDRs, MTU, authentication mode,\n  peer address, DPD settings, and status."
+    }, 
+    {
+      "description": "Extra routes", 
+      "name": "extraroute", 
+      "summary": "Adds extra routes to the ``router`` resource.\n\nYou can update a router to add a set of next hop IPs and\ndestination CIDRs.\n\nThe next hop IP must be part of a subnet to which the router\ninterfaces are connected. You can configure the ``routes``\nattribute on only update operations."
+    }
+  ], 
+  "title": "Networking extensions", 
+  "version": "v2"
+}

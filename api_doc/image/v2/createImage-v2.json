@@ -1,0 +1,65 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name for the image. The name of an image is not unique to an Image\nservice node. The API cannot expect users to know the names of\nimages owned by others.", 
+      "format": ""
+    }, 
+    "tags": {
+      "required": false, 
+      "type": "object", 
+      "description": "Image tags.", 
+      "format": ""
+    }, 
+    "container_format": {
+      "required": false, 
+      "type": "string", 
+      "description": "Format of the container. A valid value is ``ami`` , ``ari`` ,\n``aki`` , ``bare`` , ``ovf`` , or ``ova`` .", 
+      "format": ""
+    }, 
+    "min_ram": {
+      "required": false, 
+      "type": "integer", 
+      "description": "Amount of RAM in MB that is required to boot the image.", 
+      "format": ""
+    }, 
+    "disk_format": {
+      "required": false, 
+      "type": "string", 
+      "description": "Format of the disk. A valid value is ``ami`` , ``ari`` , ``aki`` ,\n``vhd`` , ``vmdk`` , ``raw`` , ``qcow2`` , ``vdi`` , or ``iso`` .", 
+      "format": ""
+    }, 
+    "visibility": {
+      "required": false, 
+      "type": "string", 
+      "description": "Image visibility. Public or private. Default is public.", 
+      "format": ""
+    }, 
+    "properties": {
+      "required": false, 
+      "type": "object", 
+      "description": "Properties, if any, that are associated with the image.", 
+      "format": ""
+    }, 
+    "protected": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "If true, image is not deletable.", 
+      "format": ""
+    }, 
+    "min_disk": {
+      "required": false, 
+      "type": "integer", 
+      "description": "Amount of disk space in GB that is required to boot the image.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The image ID.", 
+      "format": ""
+    }
+  }
+}

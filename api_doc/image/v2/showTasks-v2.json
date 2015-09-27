@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "task_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The task ID.", 
+      "format": ""
+    }
+  }
+}

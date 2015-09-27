@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "os-unset_image_metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``os-unset_image_metadata`` action.", 
+      "format": ""
+    }, 
+    "key": {
+      "required": true, 
+      "type": "string", 
+      "description": "The metadata key name for the metadata that you want to remove.", 
+      "format": ""
+    }
+  }
+}

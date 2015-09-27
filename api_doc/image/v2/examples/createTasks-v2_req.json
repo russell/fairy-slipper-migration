@@ -1,0 +1,11 @@
+{
+  "input": {
+    "image_properties": {
+      "container_format": "ovf", 
+      "disk_format": "vhd"
+    }, 
+    "import_from_format": "qcow2", 
+    "import_from": "http://example.com"
+  }, 
+  "type": "import"
+}

@@ -515,7 +515,9 @@
    and sets up a volume of the specified size, which is the storage
    for the database instance.
    
-   Notes- You can create only one database instance per POST request.
+   **Notes**
+   
+   - You can create only one database instance per POST request.
    
    - You can create a database instance with one or more databases, and
      users associated to those databases.
@@ -605,7 +607,9 @@
    |                 |                       names must be specified.                      |                                    |          |
    +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
    
-   Notes- A user is granted all privileges on the specified databases.
+   **Notes**
+   
+   - A user is granted all privileges on the specified databases.
    
    - The following user name is reserved and cannot be used for
      creating users: root.

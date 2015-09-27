@@ -1,0 +1,22 @@
+{
+  "pool": {
+    "lb_algorithm": "ROUND_ROBIN", 
+    "protocol": "HTTP", 
+    "description": "simple pool", 
+    "admin_state_up": true, 
+    "tenant_id": "1a3e005cf9ce40308c900bcb08e5320c", 
+    "session_persistence": {
+      "cookie_name": "my_cookie", 
+      "type": "APP_COOKIE"
+    }, 
+    "healthmonitor_id": null, 
+    "listeners": [
+      {
+        "id": "39de4d56-d663-46e5-85a1-5b9d5fa17829"
+      }
+    ], 
+    "members": [], 
+    "id": "12ff63af-4127-4074-a251-bcb2ecc53ebe", 
+    "name": "pool1"
+  }
+}

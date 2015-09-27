@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The status of this image member.", 
+      "format": ""
+    }
+  }
+}

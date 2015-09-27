@@ -1,0 +1,17 @@
+{
+  "resource_type_associations": [
+    {
+      "created_at": "2014-09-19T16:13:33Z", 
+      "prefix": "hw_", 
+      "name": "OS::Glance::Image", 
+      "updated_at": "2014-09-19T16:13:33Z"
+    }, 
+    {
+      "created_at": "2014-09-19T16:09:13Z", 
+      "prefix": "hw_", 
+      "properties_target": "image", 
+      "name": "OS::Cinder::Volume", 
+      "updated_at": "2014-09-19T16:09:13Z"
+    }
+  ]
+}

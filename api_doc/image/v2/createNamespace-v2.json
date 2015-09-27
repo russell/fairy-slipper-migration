@@ -1,0 +1,53 @@
+{
+  "type": "object", 
+  "properties": {
+    "display_name": {
+      "required": false, 
+      "type": "string", 
+      "description": "User-friendly name that can be used in UI to display the namespace\nname.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Detailed description for the namespace.", 
+      "format": ""
+    }, 
+    "objects": {
+      "required": false, 
+      "type": "object", 
+      "description": "One or more object definitions in the namespace.", 
+      "format": ""
+    }, 
+    "namespace": {
+      "required": true, 
+      "type": "string", 
+      "description": "A namespace name that is unique across all users.", 
+      "format": ""
+    }, 
+    "visibility": {
+      "required": false, 
+      "type": "string", 
+      "description": "Namespace visibility. Valid value is public or private. Default is\nprivate.", 
+      "format": ""
+    }, 
+    "protected": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Namespace protection for deletion. Valid value is true or false.\nDefault is false.", 
+      "format": ""
+    }, 
+    "resource_type_associations": {
+      "required": false, 
+      "type": "object", 
+      "description": "One or more resource types that are associated with this namespace.", 
+      "format": ""
+    }, 
+    "properties": {
+      "required": false, 
+      "type": "object", 
+      "description": "One or more property definitions in the namespace.", 
+      "format": ""
+    }
+  }
+}

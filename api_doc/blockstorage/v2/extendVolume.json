@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "new_size": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The new size of the volume, in gibibytes (GiB).", 
+      "format": ""
+    }
+  }
+}

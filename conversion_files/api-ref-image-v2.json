@@ -1,0 +1,173 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#getImageMemberSchema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#getImageMembersSchema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#getImageSchema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#getImagesSchema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#addImageTag-v2": "image-tags", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#createImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#createImageMember-v2": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#createTasks-v2": "os-tasks-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#deactivateImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#deleteImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#deleteImageMember-v2": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#deleteImageTag-v2": "image-tags", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#getImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#getImageFile-v2": "image-data", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#getImageMember-v2": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#listImageMembers-v2": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#listImages-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#listTasks-v2": "os-tasks-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#listVersions-image-v2": "versions-images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#reactivateImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#showTasks-v2": "os-tasks-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#storeImageFile-v2": "image-data", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#updateImage-v2": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#updateImageMember-v2": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#createNamespace-v2": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#deleteNamespace-v2": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#getNamespace-v2": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#listNamespaces-v2": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#updateNamespace-v2": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#createObject-v2": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#deleteObject-v2": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#getObject-v2": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#listObjects-v2": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#updateObject-v2": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#createProperty-v2": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#deleteProperty-v2": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#getProperty-v2": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#listProperties-v2": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#updateProperty-v2": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#createResourceTypeAssoc-v2": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#deleteResourceTypeAssoc-v2": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#listResourceTypeAssocs-v2": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#listResourceTypes-v2": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefNamespaceSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefNamespacesSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefObjectSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefObjectsSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefPropertiesSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefPropertySchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefResTypeAssocSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefResTypeAssocsSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefTagSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#getMetadefTagsSchema": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#addTag-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#createTags-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#deleteAllTags-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#deleteTag-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#getTag-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#listTags-v2": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#updateTag-v2": "metadef-tag"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#Image-member-schema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#Image-members-schema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#Image-schema": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-schemas-v2.wadl#Image-schemas": "image-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#Images": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#Members": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#Tasks": "os-tasks-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#deactivate": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#file": "image-data", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#image_id": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#member_id": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#reactivate": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#tag": "image-tags", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#task_id": "os-tasks-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-image-v2.wadl#versions": "versions-images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#namespace": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-namespace-v2.wadl#namespaces": "metadef-namespace", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#object_name": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-object-v2.wadl#objects": "metadef-object", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#properties": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-property-v2.wadl#property_name": "metadef-property", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#name": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#resource_types": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-resourcetype-v2.wadl#resource_types_assoc": "metadef-resourcetype", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#namespace": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#namespaces": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#object": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#objects": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#properties": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#property": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#resource_type": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#resource_types": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#tag": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-schemas-v2.wadl#tags": "metadef-schemas", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#tag_name": "metadef-tag", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v2/os-metadef-tag-v2.wadl#tags": "metadef-tag"
+  }, 
+  "service": "image", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions-images", 
+      "summary": ""
+    }, 
+    {
+      "description": "Images", 
+      "name": "images", 
+      "summary": "Creates, lists, updates, and deletes images.\n\nImage operations show all fields in the response body. Any field\nwith no value is set to ``null`` value (JSON null data type).\n\nThe possible status values for images are:\n\nImage status\n\n+----------------+---------------------------------------------------------------------+\n| Status         | Description                                                         |\n+----------------+---------------------------------------------------------------------+\n| queued         | The Image service reserved an image ID for the image in the         |\n|                | registry but has not uploaded any image data.                       |\n+----------------+---------------------------------------------------------------------+\n| saving         | The Image service is currently uploading the raw data for the       |\n|                | image.                                                              |\n+----------------+---------------------------------------------------------------------+\n| active         | The image is active and fully available in the Image service.       |\n+----------------+---------------------------------------------------------------------+\n| killed         | An error occurred during the upload of image data.                  |\n+----------------+---------------------------------------------------------------------+\n| deleted        | The Image service retains information about the image but the image |\n|                | is no longer available for use.                                     |\n+----------------+---------------------------------------------------------------------+\n| pending_delete | Similar to the ``deleted`` status. An image in this state is not    |\n|                | recoverable.                                                        |\n+----------------+---------------------------------------------------------------------+"
+    }, 
+    {
+      "description": "Image data", 
+      "name": "image-data", 
+      "summary": "Uploads and downloads raw image data."
+    }, 
+    {
+      "description": "Image tags", 
+      "name": "image-tags", 
+      "summary": "Adds and deletes image tags."
+    }, 
+    {
+      "description": "Members", 
+      "name": "members", 
+      "summary": ""
+    }, 
+    {
+      "description": "Image schemas", 
+      "name": "image-schemas", 
+      "summary": "Gets a JSON-schema document that represents an images or image\nentity."
+    }, 
+    {
+      "description": "Metadata definition resource types", 
+      "name": "metadef-resourcetype", 
+      "summary": "Lists resource types. Also, creates, lists, and removes resource\ntype associations in a specified namespace. (Since API v2.0.)"
+    }, 
+    {
+      "description": "Metadata definition namespaces", 
+      "name": "metadef-namespace", 
+      "summary": "Creates, lists, gets details for, updates, and deletes metadata\ndefinition namespaces. Defines namespaces that can contain property\ndefinitions, object definitions, and resource type associations.\n(Since API v2.0.)"
+    }, 
+    {
+      "description": "Metadata definition properties", 
+      "name": "metadef-property", 
+      "summary": "Creates, lists, gets details for, updates, and deletes metadata\ndefinition properties. (Since API v2.0.)"
+    }, 
+    {
+      "description": "Metadata definition objects", 
+      "name": "metadef-object", 
+      "summary": "Creates, lists, gets details for, updates, and deletes metadata\ndefinition objects. (Since API v2.0.)"
+    }, 
+    {
+      "description": "Metadata definition tags", 
+      "name": "metadef-tag", 
+      "summary": "Creates, lists, gets details for, updates, and deletes metadata\ndefinition tags. (Since API v2.0.)"
+    }, 
+    {
+      "description": "Metadata definition schemas", 
+      "name": "metadef-schemas", 
+      "summary": "Gets a JSON-schema document that represents a metadata definition\nentity."
+    }, 
+    {
+      "description": "Tasks", 
+      "name": "os-tasks-v2", 
+      "summary": "Creates, lists, and gets details for tasks. (Since API v2.2.)"
+    }
+  ], 
+  "title": "Image service", 
+  "version": "v2"
+}

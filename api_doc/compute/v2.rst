@@ -421,7 +421,9 @@
    a list servers request. The server status is returned in the
    response body. The possible server status values are:
    
-   Server status values- ``ACTIVE`` . The server is active.
+   **Server status values**
+   
+   - ``ACTIVE`` . The server is active.
    
    - ``BUILDING`` . The server has not finished the original build
      process.

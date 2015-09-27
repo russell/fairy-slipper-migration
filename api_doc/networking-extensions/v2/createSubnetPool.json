@@ -1,0 +1,65 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "A name for the subnet pool.", 
+      "format": ""
+    }, 
+    "default_quota": {
+      "required": false, 
+      "type": "integer", 
+      "description": "A per-tenant quota on the prefix space that can be allocated from\nthe subnet pool for tenant subnets. Default is no quota is enforced\non allocations from the subnet pool. For IPv4 subnet pools,\n``default_quota`` is measured in units of /32. For IPv6 subnet\npools, ``default_quota`` is measured units of /64. All tenants that\nuse the subnet pool have the same prefix quota applied.", 
+      "format": ""
+    }, 
+    "tenant_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the tenant who owns the subnet pool. Only administrative\nusers can specify a tenant ID other than their own. You cannot\nchange this value through authorization policies.", 
+      "format": ""
+    }, 
+    "subnetpool": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``subnetpool`` object.", 
+      "format": ""
+    }, 
+    "prefixes": {
+      "required": true, 
+      "type": "object", 
+      "description": "A list of subnet prefixes to assign to the subnet pool. The API\nmerges adjacent prefixes and treats them as a single prefix.\n\nEach subnet prefix must be unique among all subnet prefixes in all\nsubnet pools that are associated with the specified address scope.", 
+      "format": ""
+    }, 
+    "min_prefixlen": {
+      "required": false, 
+      "type": "integer", 
+      "description": "The smallest prefix that can be allocated from a subnet pool. For\nIPv4 subnet pools, default is ``8`` . For IPv6 subnet pools,\ndefault is ``64`` .", 
+      "format": ""
+    }, 
+    "address_scope_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "An address scope to assign to the subnet pool.", 
+      "format": ""
+    }, 
+    "shared": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Admin-only. Indicates whether this subnet pool is shared across all\ntenants.", 
+      "format": ""
+    }, 
+    "default_prefixlen": {
+      "required": false, 
+      "type": "integer", 
+      "description": "The size of the prefix to allocate when the ``cidr`` or\n``prefixlen`` attributes are not specified when you create the\nsubnet. Default is ``min_prefixlen`` .", 
+      "format": ""
+    }, 
+    "max_prefixlen": {
+      "required": false, 
+      "type": "integer", 
+      "description": "The maximum prefix size that can be allocated from the subnet pool.\nFor IPv4 subnet pools, default is ``32`` . For IPv6 subnet pools,\ndefault is ``128`` .", 
+      "format": ""
+    }
+  }
+}

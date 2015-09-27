@@ -1,0 +1,13 @@
+{
+  "name": "Ubuntu 12.10", 
+  "tags": [
+    "ubuntu", 
+    "quantal"
+  ], 
+  "container_format": "bare", 
+  "min_ram": 0, 
+  "disk_format": "qcow2", 
+  "visibility": "private", 
+  "protected": false, 
+  "min_disk": 0
+}

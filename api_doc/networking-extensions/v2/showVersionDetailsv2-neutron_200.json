@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "location": {
+      "required": true, 
+      "type": "string", 
+      "description": "Full URL to a service or server.", 
+      "format": "uri"
+    }
+  }
+}
