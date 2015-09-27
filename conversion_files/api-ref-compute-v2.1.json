@@ -145,7 +145,7 @@
     {
       "description": "Servers shelve (servers, action)", 
       "name": "shelve", 
-      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve``action to shelve a server. Allassociated data and\nresources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve``action to restore a shelved instance.\n\nUse the ``shelveOffload``action to remove a shelvedinstance that\nyou no longer need."
+      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. Allassociated data\nand resources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelvedinstance that\nyou no longer need."
     }, 
     {
       "description": "Servers deferred delete (servers, action)", 
@@ -155,7 +155,7 @@
     {
       "description": "Servers evacuate (servers, action)", 
       "name": "evacuate", 
-      "summary": "Evacuates servers.\n\nSpecify the ``evacuate``action in the request body."
+      "summary": "Evacuates servers.\n\nSpecify the ``evacuate`` action in the request body."
     }, 
     {
       "description": "Servers diagnostics (servers, diagnostics)", 
@@ -185,7 +185,7 @@
     {
       "description": "Servers usage (servers, os-server-usage)", 
       "name": "server-usage", 
-      "summary": "Lists all servers and shows server details. Includes server\nusageinformation.\n\nShows ``OS-SRV-USG:launched_at``and ``OS-SRV-\nUSG:terminated_at``attributes in server responses."
+      "summary": "Lists all servers and shows server details. Includes server\nusageinformation.\n\nShows ``OS-SRV-USG:launched_at`` and ``OS-SRV-USG:terminated_at``\nattributes in server responses."
     }, 
     {
       "description": "Servers virtual interfaces (servers, os-virtual-interfaces)", 
@@ -230,7 +230,7 @@
     {
       "description": "Images", 
       "name": "compute_images-v2.1", 
-      "summary": "Lists, gets details for, and deletes images. Also sets, lists,gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create andrebuild\na server. By default, operators provide pre-builtoperating system\nimages. You can also create custom images. SeeCompute server\nactions.\n\nIf you set the image size policy in the ``policy.json``file, the\n``OS-EXT-IMG-SIZE:size``extended attribute isvisible."
+      "summary": "Lists, gets details for, and deletes images. Also sets, lists,gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create andrebuild\na server. By default, operators provide pre-builtoperating system\nimages. You can also create custom images. SeeCompute server\nactions.\n\nIf you set the image size policy in the ``policy.json`` file, the\n``OS-EXT-IMG-SIZE:size`` extended attribute isvisible."
     }, 
     {
       "description": "Image metadata", 
@@ -310,7 +310,7 @@
     {
       "description": "Floating IPs bulk (os-floating-ips-bulk)", 
       "name": "floating-ips-bulk", 
-      "summary": "Bulk-creates, deletes, and lists floating IPs. Default pool name is\n``nova``. To view available pools, use the ``os-floating-ip-\npools``extension."
+      "summary": "Bulk-creates, deletes, and lists floating IPs. Default pool name is\n``nova`` . To view available pools, use the ``os-floating-ip-\npools`` extension."
     }, 
     {
       "description": "Ping instances (os-fping)", 

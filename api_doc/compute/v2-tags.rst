@@ -8,7 +8,7 @@
 
    Gets rate and absolute limits.
    
-   An absolute limit value of ``-1``indicates that theabsolute limit
+   An absolute limit value of ``-1`` indicates that theabsolute limit
    for the item is infinite.
 
 .. swagger:tag:: extensions
@@ -26,7 +26,7 @@
      When you create a server, you can specify a passwordthrough the
      optionaladminPassattribute. The specified password must meet the
      complexityrequirements set by your OpenStack Compute provider.
-     Theserver might enter an ``ERROR``state if thecomplexity
+     Theserver might enter an ``ERROR`` state if thecomplexity
      requirements are not met. In this case, aclient might issue a
      change password action to reset theserver password.
      If you do not specify a password, a randomly generatedpassword is
@@ -40,7 +40,7 @@
      maximum sizefor each metadata key-value pair is 255 bytes. The
      maximum number of key-valuepairs that can be supplied per server
      is determined by the compute provider. Youcan query this value
-     through the ``maxServerMeta``absolutelimit.
+     through the ``maxServerMeta`` absolutelimit.
    
    - **Server networks**
      You can specify networks to which the server connects at launch
@@ -70,11 +70,11 @@
     - You can inject only text files. You cannot injectbinary or ZIP
       files into a new build.
    
-    - The ``maxPersonality``absolute limitdefines the maximum number of
+    - The ``maxPersonality`` absolute limitdefines the maximum number of
       file path andcontent pairs that you can supply. The
       computeprovider determines this value.
    
-    - The ``maxPersonalitySize``absolute limitis a byte limit that is
+    - The ``maxPersonalitySize`` absolute limitis a byte limit that is
       guaranteed to apply to allimages in the deployment. Providers
       can setadditional per-image personality limits.
    
@@ -82,8 +82,8 @@
       built and booted.
       During file injection, any existing files that matchspecified
       files are renamed to include the BAK extensionappended with a
-      time stamp. For example, if the ``/etc/passwd``file exists, it
-      is backed up as ``/etc/passwd.bak.1246036261.5785``.
+      time stamp. For example, if the ``/etc/passwd`` file exists, it
+      is backed up as ``/etc/passwd.bak.1246036261.5785`` .
       After file injection, only system administrators canaccess
       personality files. For example, on Linux, all fileshave root as
       the owner and the root group as the groupowner, and allow only

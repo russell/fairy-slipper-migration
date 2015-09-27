@@ -43,12 +43,12 @@
     {
       "description": "Meters", 
       "name": "meters", 
-      "summary": "Creates, lists all, and lists samples for meters. Computes andlists\nstatistics for samples in a specified time range.\n\nFor list operations, if you do not explicitly set the\n``limit``query parameter, a default limit is applied.The default\nlimit is the ``default_api_return_limit``configuration option\nvalue."
+      "summary": "Creates, lists all, and lists samples for meters. Computes andlists\nstatistics for samples in a specified time range.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied.The default limit is\nthe ``default_api_return_limit`` configuration option value."
     }, 
     {
       "description": "Samples", 
       "name": "samples", 
-      "summary": "Lists all samples and gets information for a specified sample.\n\nFor list operations, if you do not explicitly set the\n``limit``query parameter, a default limit is applied.The default\nlimit is the ``default_api_return_limit``configuration option\nvalue."
+      "summary": "Lists all samples and gets information for a specified sample.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied.The default limit is\nthe ``default_api_return_limit`` configuration option value."
     }, 
     {
       "description": "Resources", 
@@ -58,7 +58,7 @@
     {
       "description": "Capabilities", 
       "name": "capabilities", 
-      "summary": "Gets information for API and storage capabilities.\n\nThe Telemetry service enables you to store samples, events,and\nalarm definitions in supported database back ends. The\n``capabilities``resource enables you to list thecapabilities that a\ndatabase supports.\n\nThe ``capabilities``resource returns a flatteneddictionary of\ncapability properties, each with an associatedboolean value. A\nvalue of ``true``indicates that thecorresponding capability is\navailable in the back end.\n\nOptionally, you can configure separate database back ends\nforsamples, events, and alarm definitions. The\n``capabilities``response body shows a value of ``true``to indicate\nthat the samples, events, or alarmdefinitions database is ready to\nuse in a production environment."
+      "summary": "Gets information for API and storage capabilities.\n\nThe Telemetry service enables you to store samples, events,and\nalarm definitions in supported database back ends. The\n``capabilities`` resource enables you to list thecapabilities that\na database supports.\n\nThe ``capabilities`` resource returns a flatteneddictionary of\ncapability properties, each with an associatedboolean value. A\nvalue of ``true`` indicates that thecorresponding capability is\navailable in the back end.\n\nOptionally, you can configure separate database back ends\nforsamples, events, and alarm definitions. The ``capabilities``\nresponse body shows a value of ``true`` to indicate that the\nsamples, events, or alarmdefinitions database is ready to use in a\nproduction environment."
     }
   ], 
   "title": "Telemetry", 

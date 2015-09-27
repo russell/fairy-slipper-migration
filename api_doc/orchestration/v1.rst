@@ -251,6 +251,7 @@
    is supported. For example:
    
    ::
+   
       /v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn
 
    :responseexample 200: v1/examples/resource_type_template_resp_200.json
@@ -293,6 +294,7 @@
    the resource list for deleted stacks, use the following endpoint:
    
    ::
+   
       /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
 
    :tag: stacks

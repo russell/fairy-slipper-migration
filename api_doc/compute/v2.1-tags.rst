@@ -63,12 +63,12 @@
    
    Your cloud provider might bill you for a shelved server.
    
-   Use the ``shelve``action to shelve a server. Allassociated data and
-   resources are kept but anything still in memoryis not retained.
+   Use the ``shelve`` action to shelve a server. Allassociated data
+   and resources are kept but anything still in memoryis not retained.
    
-   Use the ``unshelve``action to restore a shelved instance.
+   Use the ``unshelve`` action to restore a shelved instance.
    
-   Use the ``shelveOffload``action to remove a shelvedinstance that
+   Use the ``shelveOffload`` action to remove a shelvedinstance that
    you no longer need.
 
 .. swagger:tag:: deferred-delete
@@ -81,7 +81,7 @@
 
    Evacuates servers.
    
-   Specify the ``evacuate``action in the request body.
+   Specify the ``evacuate`` action in the request body.
 
 .. swagger:tag:: diagnostics
    :synopsis: Servers diagnostics (servers, diagnostics)
@@ -121,8 +121,8 @@
    Lists all servers and shows server details. Includes server
    usageinformation.
    
-   Shows ``OS-SRV-USG:launched_at``and ``OS-SRV-
-   USG:terminated_at``attributes in server responses.
+   Shows ``OS-SRV-USG:launched_at`` and ``OS-SRV-USG:terminated_at``
+   attributes in server responses.
 
 .. swagger:tag:: virtual-interfaces
    :synopsis: Servers virtual interfaces (servers, os-virtual-interfaces)
@@ -176,8 +176,8 @@
    images. You can also create custom images. SeeCompute server
    actions.
    
-   If you set the image size policy in the ``policy.json``file, the
-   ``OS-EXT-IMG-SIZE:size``extended attribute isvisible.
+   If you set the image size policy in the ``policy.json`` file, the
+   ``OS-EXT-IMG-SIZE:size`` extended attribute isvisible.
 
 .. swagger:tag:: compute_image_metadata-v2.1
    :synopsis: Image metadata
@@ -275,8 +275,8 @@
    :synopsis: Floating IPs bulk (os-floating-ips-bulk)
 
    Bulk-creates, deletes, and lists floating IPs. Default pool name is
-   ``nova``. To view available pools, use the ``os-floating-ip-
-   pools``extension.
+   ``nova`` . To view available pools, use the ``os-floating-ip-
+   pools`` extension.
 
 .. swagger:tag:: fping
    :synopsis: Ping instances (os-fping)

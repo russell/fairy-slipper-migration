@@ -9,20 +9,18 @@
    Creates, lists all, and lists samples for meters. Computes andlists
    statistics for samples in a specified time range.
    
-   For list operations, if you do not explicitly set the
-   ``limit``query parameter, a default limit is applied.The default
-   limit is the ``default_api_return_limit``configuration option
-   value.
+   For list operations, if you do not explicitly set the ``limit``
+   query parameter, a default limit is applied.The default limit is
+   the ``default_api_return_limit`` configuration option value.
 
 .. swagger:tag:: samples
    :synopsis: Samples
 
    Lists all samples and gets information for a specified sample.
    
-   For list operations, if you do not explicitly set the
-   ``limit``query parameter, a default limit is applied.The default
-   limit is the ``default_api_return_limit``configuration option
-   value.
+   For list operations, if you do not explicitly set the ``limit``
+   query parameter, a default limit is applied.The default limit is
+   the ``default_api_return_limit`` configuration option value.
 
 .. swagger:tag:: resources
    :synopsis: Resources
@@ -36,17 +34,17 @@
    
    The Telemetry service enables you to store samples, events,and
    alarm definitions in supported database back ends. The
-   ``capabilities``resource enables you to list thecapabilities that a
-   database supports.
+   ``capabilities`` resource enables you to list thecapabilities that
+   a database supports.
    
-   The ``capabilities``resource returns a flatteneddictionary of
+   The ``capabilities`` resource returns a flatteneddictionary of
    capability properties, each with an associatedboolean value. A
-   value of ``true``indicates that thecorresponding capability is
+   value of ``true`` indicates that thecorresponding capability is
    available in the back end.
    
    Optionally, you can configure separate database back ends
-   forsamples, events, and alarm definitions. The
-   ``capabilities``response body shows a value of ``true``to indicate
-   that the samples, events, or alarmdefinitions database is ready to
-   use in a production environment.
+   forsamples, events, and alarm definitions. The ``capabilities``
+   response body shows a value of ``true`` to indicate that the
+   samples, events, or alarmdefinitions database is ready to use in a
+   production environment.
 

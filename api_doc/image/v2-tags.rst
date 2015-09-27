@@ -9,7 +9,7 @@
    Creates, lists, updates, and deletes images.
    
    Image operations show all fields in the response body. Any
-   fieldwith no value is set to ``null``value (JSON null datatype).
+   fieldwith no value is set to ``null`` value (JSON null datatype).
    
    The possible status values for images are:
    
@@ -30,7 +30,7 @@
    | deleted        | The Image service retains information about theimage but the image  |
    |                | is no longer available foruse.                                      |
    +----------------+---------------------------------------------------------------------+
-   | pending_delete | Similar to the ``deleted``status. Animage in this state is not      |
+   | pending_delete | Similar to the ``deleted`` status. Animage in this state is not     |
    |                | recoverable.                                                        |
    +----------------+---------------------------------------------------------------------+
 
