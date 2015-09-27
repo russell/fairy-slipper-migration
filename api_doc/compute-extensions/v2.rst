@@ -98,7 +98,6 @@
 
    
 
-   :responseexample 202: v2/examples/deleteVolume_resp_202.txt
    :tag: volume
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
@@ -4247,7 +4246,6 @@
    This operation is asynchronous. You must list snapshots repeatedly
    to determine whether the snapshot was deleted.
 
-   :responseexample 202: v2/examples/deleteSnapshot_resp_202.txt
    :tag: volume
    :parameter tenant_id: The unique identifier of the tenant or
                          account.

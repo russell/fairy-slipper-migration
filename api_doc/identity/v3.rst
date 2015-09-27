@@ -479,7 +479,6 @@
    returns the same response as when the subject token was issued by
    ``POST /auth/tokens`` .
 
-   :requestexample: v3/examples/validateTokens_req.txt
    :responseexample 200: v3/examples/validateTokens_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -509,7 +508,6 @@
    because the token is not valid. An HTTP ``204`` status code
    indicates that the ``X-Subject-Token`` is valid.
 
-   :requestexample: v3/examples/checkTokens_req.txt
    :tag: tokens
    :reqheader X-Auth-Token: A valid authentication token for an
                             administrative user.
@@ -533,7 +531,6 @@
    ``expires_at`` attribute value. An additional ``X -Auth-Token`` is
    not required.
 
-   :requestexample: v3/examples/revokeTokens_req.txt
    :tag: tokens
    :reqheader X-Auth-Token: A valid authentication token for an
                             administrative user.
@@ -1312,7 +1309,6 @@
 
    
 
-   :requestexample: v3/examples/listRevokedTokens_req.txt
    :responseexample 200: v3/examples/listRevokedTokens_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1462,7 +1458,6 @@
    can use to access the membership of the group.
 
    :responseexample 200: v3/examples/listRoleAssignments_resp_200.json
-   :responseexample 200: v3/examples/listRoleAssignments_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: roles

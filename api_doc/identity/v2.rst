@@ -69,7 +69,6 @@
 
    
 
-   :requestexample: v2/examples/listTenants_req.txt
    :responseexample 200: v2/examples/listTenants_resp_200.json
    :responseexample 203: v2/examples/listTenants_resp_203.json
    :accepts: application/json

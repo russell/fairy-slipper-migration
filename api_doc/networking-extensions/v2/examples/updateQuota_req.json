@@ -1,9 +1,0 @@
-{
-  "quota": {
-    "port": 30, 
-    "router": 50, 
-    "subnet": 40, 
-    "network": 10, 
-    "floatingip": 30
-  }
-}
