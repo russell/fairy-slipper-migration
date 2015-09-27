@@ -413,10 +413,10 @@
             "headers": {}
           }
         }, 
-        "summary": "Get version details", 
         "tags": [
           "admin-versions"
-        ]
+        ], 
+        "title": "Get version details"
       }
     ], 
     "/v2.0/extensions": [], 
@@ -425,7 +425,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information for a specified extension.\n\nSpecify the extension alias in the URI.", 
+        "description": "Specify the extension alias in the URI.", 
         "examples": {}, 
         "id": "admin-getExtension-v2.0", 
         "method": "get", 
@@ -514,10 +514,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get extension details", 
+        "summary": "Gets detailed information for a specified extension.", 
         "tags": [
           "admin-versions"
-        ]
+        ], 
+        "title": "Get extension details"
       }
     ], 
     "/v2.0/tenants": [
@@ -525,7 +526,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all tenants.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-listTenants", 
         "method": "get", 
@@ -607,16 +608,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List tenants", 
+        "summary": "Lists all tenants.", 
         "tags": [
           "admin-tenants"
-        ]
+        ], 
+        "title": "List tenants"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information about a specified tenant by name.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-getTenantByName", 
         "method": "get", 
@@ -689,10 +691,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get tenant information by name", 
+        "summary": "Gets detailed information about a specified tenant by name.", 
         "tags": [
           "admin-tenants"
-        ]
+        ], 
+        "title": "Get tenant information by name"
       }
     ], 
     "/v2.0/tenants/{tenantId}": [
@@ -700,7 +703,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information about a specified tenant by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-getTenantById", 
         "method": "get", 
@@ -773,10 +776,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get tenant information by ID", 
+        "summary": "Gets detailed information about a specified tenant by ID.", 
         "tags": [
           "admin-tenants"
-        ]
+        ], 
+        "title": "Get tenant information by ID"
       }
     ], 
     "/v2.0/tenants/{tenantId}/users/{userId}/roles": [
@@ -784,7 +788,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles for a specified user on a specified tenant. Excludes\nglobal roles.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-listRolesForUserOnTenant", 
         "method": "get", 
@@ -869,10 +873,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for user", 
+        "summary": "Lists roles for a specified user on a specified tenant. Excludes global roles.", 
         "tags": [
           "admin-tenants"
-        ]
+        ], 
+        "title": "List roles for user"
       }
     ], 
     "/v2.0/tokens": [
@@ -880,7 +885,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Authenticates and generates a token.\n\nA REST interface provides client authentication by using the POST\nmethod with ``v2.0/tokens`` as the path. Include a payload of\ncredentials in the body.\n\nThe Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request body has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
+        "description": "A REST interface provides client authentication by using the POST\nmethod with ``v2.0/tokens`` as the path. Include a payload of\ncredentials in the body.\n\nThe Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request body has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
         "examples": {
           "application/json": {
             "auth": {
@@ -1303,10 +1308,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Authenticate for admin API", 
+        "summary": "Authenticates and generates a token.", 
         "tags": [
           "admin-tokens"
-        ]
+        ], 
+        "title": "Authenticate for admin API"
       }
     ], 
     "/v2.0/tokens/{tokenId}": [
@@ -1314,7 +1320,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Validates a token and confirms that it belongs to a specified\ntenant.\n\nReturns the permissions relevant to a particular client. Valid\ntokens are in the ``/tokens/{tokenId}`` path. A user should expect\nan ``itemNotFound (404)`` fault for an token that is not valid.", 
+        "description": "Returns the permissions relevant to a particular client. Valid\ntokens are in the ``/tokens/{tokenId}`` path. A user should expect\nan ``itemNotFound (404)`` fault for an token that is not valid.", 
         "examples": {}, 
         "id": "admin-validateToken", 
         "method": "get", 
@@ -1427,14 +1433,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Validate token", 
+        "summary": "Validates a token and confirms that it belongs to a specified tenant.", 
         "tags": [
           "admin-tokens"
-        ]
+        ], 
+        "title": "Validate token"
       }, 
       {
         "consumes": [], 
-        "description": "Validates a token and confirms that it belongs to a specified\ntenant, for performance.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-checkToken", 
         "method": "head", 
@@ -1491,10 +1498,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Validate token (admin)", 
+        "summary": "Validates a token and confirms that it belongs to a specified tenant, for performance.", 
         "tags": [
           "admin-tokens"
-        ]
+        ], 
+        "title": "Validate token (admin)"
       }
     ], 
     "/v2.0/tokens/{tokenId}/endpoints": [
@@ -1502,7 +1510,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the endpoints associated with a specified token.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-listEndpointsForToken", 
         "method": "get", 
@@ -1803,10 +1811,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List endoints for token", 
+        "summary": "Lists the endpoints associated with a specified token.", 
         "tags": [
           "admin-tokens"
-        ]
+        ], 
+        "title": "List endoints for token"
       }
     ], 
     "/v2.0/users": [
@@ -1814,7 +1823,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -1898,16 +1907,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create user", 
+        "summary": "Creates a user.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "Create user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information about a specified user by user name.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-getUserByName", 
         "method": "get", 
@@ -1973,10 +1983,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get user information by name", 
+        "summary": "Gets detailed information about a specified user by user name.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "Get user information by name"
       }
     ], 
     "/v2.0/users/{userId}": [
@@ -1984,7 +1995,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -2068,14 +2079,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update user", 
+        "summary": "Updates a user.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "Update user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a user.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-deleteUser", 
         "method": "delete", 
@@ -2124,10 +2136,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete user", 
+        "summary": "Deletes a user.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "Delete user"
       }
     ], 
     "/v2.0/users/{user_id}": [
@@ -2135,7 +2148,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information about a specified user by user ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-getUserById", 
         "method": "get", 
@@ -2210,10 +2223,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get user information by ID", 
+        "summary": "Gets detailed information about a specified user by user ID.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "Get user information by ID"
       }
     ], 
     "/v2.0/users/{user_id}/roles": [
@@ -2221,7 +2235,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists global roles for a specified user. Excludes tenant roles.", 
+        "description": "", 
         "examples": {}, 
         "id": "admin-listUserGlobalRoles", 
         "method": "get", 
@@ -2298,10 +2312,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List user global roles", 
+        "summary": "Lists global roles for a specified user. Excludes tenant roles.", 
         "tags": [
           "admin-users"
-        ]
+        ], 
+        "title": "List user global roles"
       }
     ]
   }, 

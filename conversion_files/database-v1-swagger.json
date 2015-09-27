@@ -123,7 +123,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Database Service API versions.", 
+        "description": "", 
         "examples": {
           "text/plain": "GET / HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -196,10 +196,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List versions", 
+        "summary": "Lists information about all Database Service API versions.", 
         "tags": [
           "api-versions"
-        ]
+        ], 
+        "title": "List versions"
       }
     ], 
     "/v1.0": [
@@ -207,7 +208,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for the Database Service API v1.0.", 
+        "description": "", 
         "examples": {
           "text/plain": "GET /v1.0/ HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -280,10 +281,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show version details", 
+        "summary": "Shows details for the Database Service API v1.0.", 
         "tags": [
           "api-versions"
-        ]
+        ], 
+        "title": "Show version details"
       }
     ], 
     "/v1.0/{accountId}/configurations": [
@@ -291,7 +293,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a configuration group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "configuration": {
@@ -396,16 +398,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create configuration group", 
+        "summary": "Creates a configuration group.", 
         "tags": [
           "configurations"
-        ]
+        ], 
+        "title": "Create configuration group"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all configuration groups.\n\nThe list includes the associated datastore and datastore version\nfor each configuration group.", 
+        "description": "The list includes the associated datastore and datastore version\nfor each configuration group.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/configurations HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
         }, 
@@ -486,10 +489,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List configuration groups", 
+        "summary": "Lists all configuration groups.", 
         "tags": [
           "configurations"
-        ]
+        ], 
+        "title": "List configuration groups"
       }
     ], 
     "/v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters": [
@@ -497,7 +501,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the available configuration parameters for a specified\ndatastore version.\n\nParameter information includes the type, minimum and maximum\nvalues, and whether you must restart the instance after you change\na parameter value.", 
+        "description": "Parameter information includes the type, minimum and maximum\nvalues, and whether you must restart the instance after you change\na parameter value.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/datastores/versions/692d8418-7a8f-47f1-8060-59846c6e024f/parameters HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
         }, 
@@ -830,10 +834,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List configuration parameters", 
+        "summary": "Lists the available configuration parameters for a specified datastore version.", 
         "tags": [
           "datastores"
-        ]
+        ], 
+        "title": "List configuration parameters"
       }
     ], 
     "/v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters/{parameter_name}": [
@@ -841,7 +846,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Displays details for a configuration parameter associated with a\nspecified datastore version.\n\nDetails include the type, minimum and maximum values, and whether\nyou must restart the instance after you change the parameter value.", 
+        "description": "Details include the type, minimum and maximum values, and whether\nyou must restart the instance after you change the parameter value.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/datastores/versions/f8e67741-e767-4137-b394-3fb8a3fafd2f/parameters/connect_timeout HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
         }, 
@@ -932,10 +937,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show configuration parameter details", 
+        "summary": "Displays details for a configuration parameter associated with a specified datastore version.", 
         "tags": [
           "datastores"
-        ]
+        ], 
+        "title": "Show configuration parameter details"
       }
     ], 
     "/v1.0/{accountId}/datastores/{datastore_name}/versions": [
@@ -943,7 +949,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the available versions of a specified datastore.", 
+        "description": "", 
         "examples": {
           "text/plain": "GET /v1.0/1234/datastores/mysql/versions HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
         }, 
@@ -1036,10 +1042,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List datastore versions", 
+        "summary": "Lists the available versions of a specified datastore.", 
         "tags": [
           "datastores"
-        ]
+        ], 
+        "title": "List datastore versions"
       }
     ], 
     "/v1.0/{accountId}/flavors": [
@@ -1047,7 +1054,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information for all available flavors.\n\nThis operation lists information for all available flavors.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.", 
+        "description": "This operation lists information for all available flavors.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/flavors HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -1178,10 +1185,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List flavors", 
+        "summary": "Lists information for all available flavors.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List flavors"
       }
     ], 
     "/v1.0/{accountId}/flavors/{flavorId}": [
@@ -1189,7 +1197,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows flavor details.\n\nThis operation lists all information for the specified flavor ID\nwith details of the RAM.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.\n\nThe flavorId parameter should be an integer. If a floating point\nvalue is used for the flavorId parameter, the decimal portion is\ntruncated and the integer portion is used as the value of the\nflavorId.\n\nWriter: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.", 
+        "description": "This operation lists all information for the specified flavor ID\nwith details of the RAM.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.\n\nThe flavorId parameter should be an integer. If a floating point\nvalue is used for the flavorId parameter, the decimal portion is\ntruncated and the integer portion is used as the value of the\nflavorId.\n\nWriter: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/flavors/1 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -1281,10 +1289,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show flavor details", 
+        "summary": "Shows flavor details.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "Show flavor details"
       }
     ], 
     "/v1.0/{accountId}/instances": [
@@ -1292,7 +1301,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a database instance.\n\nThis operation asynchronously provisions a new database instance.\nThis call requires the user to specify a flavor and a volume size.\nThe service then provisions the instance with the requested flavor\nand sets up a volume of the specified size, which is the storage\nfor the database instance.\n\nNotes- You can create only one database instance per POST request.\n\n- You can create a database instance with one or more databases, and\n  users associated to those databases.\n\n- The default binding for the MySQL instance is port 3306.", 
+        "description": "This operation asynchronously provisions a new database instance.\nThis call requires the user to specify a flavor and a volume size.\nThe service then provisions the instance with the requested flavor\nand sets up a volume of the specified size, which is the storage\nfor the database instance.\n\nNotes- You can create only one database instance per POST request.\n\n- You can create a database instance with one or more databases, and\n  users associated to those databases.\n\n- The default binding for the MySQL instance is port 3306.", 
         "examples": {
           "application/json": {
             "instance": {
@@ -1434,16 +1443,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create database instance", 
+        "summary": "Creates a database instance.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Create database instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information, including status, for all database instances.\n\nLists status and information for all database instances.", 
+        "description": "Lists status and information for all database instances.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -1576,16 +1586,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List database instances", 
+        "summary": "Lists information, including status, for all database instances.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "List database instances"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}": [
       {
         "consumes": [], 
-        "description": "Deletes a specified database instance, including any associated\ndata.\n\nThis operation does not delete any read slaves.\n\nThis operation is not permitted when the instance state is either\n``REBUILDING`` or ``BUILDING`` .", 
+        "description": "This operation does not delete any read slaves.\n\nThis operation is not permitted when the instance state is either\n``REBUILDING`` or ``BUILDING`` .", 
         "examples": {
           "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -1658,16 +1669,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete database instance", 
+        "summary": "Deletes a specified database instance, including any associated data.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Delete database instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows database instance details.\n\nLists the status and details of the specified database instance.\n\nLists the volume size in gigabytes (GB) and the approximate GB\nused.\n\nAfter instance creation, the ``used`` value is greater than 0,\nwhich is expected and due to the automatic creation of non-empty\ntransaction logs for MySQL optimization. The ``used`` attribute is\n**not** returned in the response when the instance status is\n``BUILD`` , ``REBOOT`` , ``RESIZE`` , or ``ERROR`` .\n\nThe list operations return a DNS-resolvable host name that is\nassociated with the database instance rather than an IP address.\nBecause the host name always resolves to the correct IP address for\nthe database instance, you do not need to maintain the mapping.\nAlthough the IP address might change when you resize, migrate, or\nperform other operations, the host name always resolves to the\ncorrect database instance.", 
+        "description": "Lists the status and details of the specified database instance.\n\nLists the volume size in gigabytes (GB) and the approximate GB\nused.\n\nAfter instance creation, the ``used`` value is greater than 0,\nwhich is expected and due to the automatic creation of non-empty\ntransaction logs for MySQL optimization. The ``used`` attribute is\n**not** returned in the response when the instance status is\n``BUILD`` , ``REBOOT`` , ``RESIZE`` , or ``ERROR`` .\n\nThe list operations return a DNS-resolvable host name that is\nassociated with the database instance rather than an IP address.\nBecause the host name always resolves to the correct IP address for\nthe database instance, you do not need to maintain the mapping.\nAlthough the IP address might change when you resize, migrate, or\nperform other operations, the host name always resolves to the\ncorrect database instance.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -1779,16 +1791,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show database instance details", 
+        "summary": "Shows database instance details.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Show database instance details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the configuration defaults for a specified instance.", 
+        "description": "", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances/instance_1 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
         }, 
@@ -1906,16 +1919,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List configuration defaults", 
+        "summary": "Lists the configuration defaults for a specified instance.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "List configuration defaults"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Attaches a configuration group to a specified instance.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "instance": {
@@ -2008,16 +2022,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Attach configuration group", 
+        "summary": "Attaches a configuration group to a specified instance.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Attach configuration group"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Detaches a configuration group from a specified instance.\n\nWhen you pass in only an instance ID (no configuration ID), this\noperation detaches whatever configuration group was attached to the\nspecified instance.", 
+        "description": "When you pass in only an instance ID (no configuration ID), this\noperation detaches whatever configuration group was attached to the\nspecified instance.", 
         "examples": {
           "application/json": {
             "instance": {}
@@ -2108,10 +2123,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Detach configuration group", 
+        "summary": "Detaches a configuration group from a specified instance.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Detach configuration group"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/action": [
@@ -2119,7 +2135,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Restarts the database service for a specified instance.\n\nThe restart operation restarts only the MySQL instance. Restarting\nMySQL erases any dynamic configuration settings that you make in\nMySQL.\n\nThe MySQL service is unavailable until the instance restarts.\n\nIf the operation succeeds, it returns a 202 Accepted response.", 
+        "description": "The restart operation restarts only the MySQL instance. Restarting\nMySQL erases any dynamic configuration settings that you make in\nMySQL.\n\nThe MySQL service is unavailable until the instance restarts.\n\nIf the operation succeeds, it returns a 202 Accepted response.", 
         "examples": {
           "application/json": {
             "restart": {}
@@ -2201,16 +2217,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Restart instance", 
+        "summary": "Restarts the database service for a specified instance.", 
         "tags": [
           "database-instance-actions"
-        ]
+        ], 
+        "title": "Restart instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resizes the memory for an instance.\n\nIf you provide a valid ``flavorRef`` , this operation changes the\nmemory size of the instance, and restarts MySQL.", 
+        "description": "If you provide a valid ``flavorRef`` , this operation changes the\nmemory size of the instance, and restarts MySQL.", 
         "examples": {
           "application/json": {
             "resize": {
@@ -2294,16 +2311,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Resize instance", 
+        "summary": "Resizes the memory for an instance.", 
         "tags": [
           "database-instance-actions"
-        ]
+        ], 
+        "title": "Resize instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resizes the volume that is attached to an instance.\n\nYou can use this operation to increase but not decrease the volume\nsize. A valid volume size is an integer value in gigabytes (GB).\n\nYou cannot increase the volume to a size that is larger than the\nAPI volume size limit.\n\nIf this operation succeeds, it returns a 202 Accepted response.", 
+        "description": "You can use this operation to increase but not decrease the volume\nsize. A valid volume size is an integer value in gigabytes (GB).\n\nYou cannot increase the volume to a size that is larger than the\nAPI volume size limit.\n\nIf this operation succeeds, it returns a 202 Accepted response.", 
         "examples": {
           "application/json": {
             "resize": {
@@ -2389,10 +2407,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Resize instance volume", 
+        "summary": "Resizes the volume that is attached to an instance.", 
         "tags": [
           "database-instance-actions"
-        ]
+        ], 
+        "title": "Resize instance volume"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/databases": [
@@ -2400,7 +2419,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a database within a specified instance.\n\nThis operation creates a new database within the specified\ninstance.\n\nThe ``name`` of the database is a required attribute.\n\nThe following additional attributes can be specified for each\ndatabase: ``collate`` and ``character_set`` .\n\nRequired and optional attributes for creating a database\n\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    Field 1    |                                                      Field 2                                                      | Field 3  |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      Name     |                                                    Description                                                    | Required |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      name     | Specifies the database name for creating the database. See the request examples for the required xml/json format. |   Yes    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n| character_set |                       Set of symbols and encodings. The default character set is ``utf8`` .                       |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    collate    |  Set of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci`` . |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n\nSee the MySQL documentation for information about supported\ncharacter sets and collations at\nhttp://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html .\n\nThe following database names are reserved and cannot be used for\ncreating databases: lost+found, information_schema, and mysql.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names.\n\nValid characters in a database name\n\n+--------------------------------------------------------------------------------------------------+\n|                                             Field 1                                              |\n+--------------------------------------------------------------------------------------------------+\n|                                            Character                                             |\n+--------------------------------------------------------------------------------------------------+\n|                             Letters (upper and lower cases allowed)                              |\n+--------------------------------------------------------------------------------------------------+\n|                                             Numbers                                              |\n+--------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name |\n+--------------------------------------------------------------------------------------------------+\n|                           '_' is allowed anywhere in the database name                           |\n+--------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name\n\n+----------------+\n|    Field 1     |\n+----------------+\n|   Character    |\n+----------------+\n| Single quotes  |\n+----------------+\n| Double quotes  |\n+----------------+\n|  Back quotes   |\n+----------------+\n|   Semicolons   |\n+----------------+\n|     Commas     |\n+----------------+\n|  Backslashes   |\n+----------------+\n| Forwardslashes |\n+----------------+\n\nLength restrictions for database name\n\n+------------------------------+---------+\n|           Field 1            | Field 2 |\n+------------------------------+---------+\n|         Restriction          |  Value  |\n+------------------------------+---------+\n| Database-name maximum length |    64   |\n+------------------------------+---------+", 
+        "description": "This operation creates a new database within the specified\ninstance.\n\nThe ``name`` of the database is a required attribute.\n\nThe following additional attributes can be specified for each\ndatabase: ``collate`` and ``character_set`` .\n\nRequired and optional attributes for creating a database\n\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    Field 1    |                                                      Field 2                                                      | Field 3  |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      Name     |                                                    Description                                                    | Required |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      name     | Specifies the database name for creating the database. See the request examples for the required xml/json format. |   Yes    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n| character_set |                       Set of symbols and encodings. The default character set is ``utf8`` .                       |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    collate    |  Set of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci`` . |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n\nSee the MySQL documentation for information about supported\ncharacter sets and collations at\nhttp://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html .\n\nThe following database names are reserved and cannot be used for\ncreating databases: lost+found, information_schema, and mysql.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names.\n\nValid characters in a database name\n\n+--------------------------------------------------------------------------------------------------+\n|                                             Field 1                                              |\n+--------------------------------------------------------------------------------------------------+\n|                                            Character                                             |\n+--------------------------------------------------------------------------------------------------+\n|                             Letters (upper and lower cases allowed)                              |\n+--------------------------------------------------------------------------------------------------+\n|                                             Numbers                                              |\n+--------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name |\n+--------------------------------------------------------------------------------------------------+\n|                           '_' is allowed anywhere in the database name                           |\n+--------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name\n\n+----------------+\n|    Field 1     |\n+----------------+\n|   Character    |\n+----------------+\n| Single quotes  |\n+----------------+\n| Double quotes  |\n+----------------+\n|  Back quotes   |\n+----------------+\n|   Semicolons   |\n+----------------+\n|     Commas     |\n+----------------+\n|  Backslashes   |\n+----------------+\n| Forwardslashes |\n+----------------+\n\nLength restrictions for database name\n\n+------------------------------+---------+\n|           Field 1            | Field 2 |\n+------------------------------+---------+\n|         Restriction          |  Value  |\n+------------------------------+---------+\n| Database-name maximum length |    64   |\n+------------------------------+---------+", 
         "examples": {
           "application/json": {
             "databases": [
@@ -2487,16 +2506,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create database", 
+        "summary": "Creates a database within a specified instance.", 
         "tags": [
           "databases"
-        ]
+        ], 
+        "title": "Create database"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists databases for a specified instance.\n\nThis operation lists the databases for the specified instance.\n\nThis operation returns only the user-defined databases, not the\nsystem databases. The system databases (mysql, information_schema,\nlost+found) can only be viewed by a database administrator.", 
+        "description": "This operation lists the databases for the specified instance.\n\nThis operation returns only the user-defined databases, not the\nsystem databases. The system databases (mysql, information_schema,\nlost+found) can only be viewed by a database administrator.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/databases HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
         }, 
@@ -2590,16 +2610,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List instance databases", 
+        "summary": "Lists databases for a specified instance.", 
         "tags": [
           "databases"
-        ]
+        ], 
+        "title": "List instance databases"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/databases/{databaseName}": [
       {
         "consumes": [], 
-        "description": "Deletes a specified database.\n\nThis operation deletes the requested database within the specified\ndatabase instance. Note that all data associated with the database\nis also deleted.", 
+        "description": "This operation deletes the requested database within the specified\ndatabase instance. Note that all data associated with the database\nis also deleted.", 
         "examples": {
           "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/databases/exampledb HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -2680,10 +2701,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete database", 
+        "summary": "Deletes a specified database.", 
         "tags": [
           "databases"
-        ]
+        ], 
+        "title": "Delete database"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/root": [
@@ -2691,7 +2713,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables the root user for a specified database instance and returns\nthe root password.\n\nThis operation enables login from any host for the root user and\nprovides the user with a generated root password.\n\nChanges you make as a root user may cause detrimental effects to\nthe database instance and unpredictable behavior for API\noperations. When you enable the root user, you accept the\npossibility that we will not be able to support your database\ninstance. While enabling root does not prevent us from a \u201cbest\neffort\u201d approach to helping you if something goes wrong with your\ninstance, we cannot ensure that we will be able to assist you if\nyou change core MySQL settings. These changes can be (but are not\nlimited to) turning off binlogs, removing users that we use to\naccess your instance, and so forth.", 
+        "description": "This operation enables login from any host for the root user and\nprovides the user with a generated root password.\n\nChanges you make as a root user may cause detrimental effects to\nthe database instance and unpredictable behavior for API\noperations. When you enable the root user, you accept the\npossibility that we will not be able to support your database\ninstance. While enabling root does not prevent us from a \u201cbest\neffort\u201d approach to helping you if something goes wrong with your\ninstance, we cannot ensure that we will be able to assist you if\nyou change core MySQL settings. These changes can be (but are not\nlimited to) turning off binlogs, removing users that we use to\naccess your instance, and so forth.", 
         "examples": {
           "text/plain": "POST /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/root HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -2772,16 +2794,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Enable root user", 
+        "summary": "Enables the root user for a specified database instance and returns the root password.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Enable root user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows root-enabled status for a database instance.\n\nReturns true if root user is enabled for a specified database\ninstance or false otherwise.\n\nThis operation checks an active specified database instance to see\nif root access is enabled. It returns True if root user is enabled\nfor the specified database instance or False otherwise.", 
+        "description": "Returns true if root user is enabled for a specified database\ninstance or false otherwise.\n\nThis operation checks an active specified database instance to see\nif root access is enabled. It returns True if root user is enabled\nfor the specified database instance or False otherwise.", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/root HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
         }, 
@@ -2859,10 +2882,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show root-enabled status for database instance", 
+        "summary": "Shows root-enabled status for a database instance.", 
         "tags": [
           "database-instances"
-        ]
+        ], 
+        "title": "Show root-enabled status for database instance"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/users": [
@@ -2870,7 +2894,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a user for a specified database instance.\n\nThis operation asynchronously provisions a new user for the\nspecified database instance based on the configuration defined in\nthe request object. Once the request is validated and progress has\nstarted on the provisioning process, a 202 Accepted response object\nis returned.\n\nWriter: please add the following note back into the doc once the list User details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the \"List User details\" section of this document).If the corresponding request cannot be fulfilled due to\ninsufficient or invalid data, an HTTP 400 \"Bad Request\" error\nresponse is returned with information regarding the nature of the\nfailure. Failures in the validation process are non-recoverable and\nrequire the caller to correct the cause of the failure and POST the\nrequest again.\n\nThe following table lists the required attributes for creating\nuser. See the request examples for the required xml/json format:\n\nRequired attributes for creating a user\n\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     Field 1     |                               Field 2                               |              Field 3               | Field 4  |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|    Applies To   |                                 Name                                |            Description             | Required |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|       User      |                                 name                                | Name of the user for the database. |   Yes    |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     password    |                  User password for database access.                 |                Yes                 |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n| (database) name | Name of the database that the user can access. One or more database |                 No                 |          |\n|                 |                       names must be specified.                      |                                    |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n\nNotes- A user is granted all privileges on the specified databases.\n\n- The following user name is reserved and cannot be used for\n  creating users: root.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names, user names, and\npasswords.\n\nValid characters in a database name, user name, and password\n\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Field 1                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                         Character                                                         |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                          Letters (upper and lower cases allowed)                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Numbers                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name, user name, and password |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                           \"_\" is allowed anywhere in the database name, user name, and password                           |\n+---------------------------------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name, user name, and password\n\n+---------------------------------------------------------+\n|                         Field 1                         |\n+---------------------------------------------------------+\n|                        Character                        |\n+---------------------------------------------------------+\n|                      Single quotes                      |\n+---------------------------------------------------------+\n|                      Double quotes                      |\n+---------------------------------------------------------+\n|                       Back quotes                       |\n+---------------------------------------------------------+\n|                        Semicolons                       |\n+---------------------------------------------------------+\n|                          Commas                         |\n+---------------------------------------------------------+\n|                       Backslashes                       |\n+---------------------------------------------------------+\n|                      Forwardslashes                     |\n+---------------------------------------------------------+\n| Spaces at the front or end of the user name or password |\n+---------------------------------------------------------+\n\nLength restrictions for database name, user name, and password\n\n+------------------------------+-----------------------------+\n|           Field 1            |           Field 2           |\n+------------------------------+-----------------------------+\n|         Restriction          |            Value            |\n+------------------------------+-----------------------------+\n| Database name maximum length |              64             |\n+------------------------------+-----------------------------+\n|   User name maximum length   |              16             |\n+------------------------------+-----------------------------+\n|   Password maximum length    | unlimited (no restrictions) |\n+------------------------------+-----------------------------+", 
+        "description": "This operation asynchronously provisions a new user for the\nspecified database instance based on the configuration defined in\nthe request object. Once the request is validated and progress has\nstarted on the provisioning process, a 202 Accepted response object\nis returned.\n\nWriter: please add the following note back into the doc once the list User details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the \"List User details\" section of this document).If the corresponding request cannot be fulfilled due to\ninsufficient or invalid data, an HTTP 400 \"Bad Request\" error\nresponse is returned with information regarding the nature of the\nfailure. Failures in the validation process are non-recoverable and\nrequire the caller to correct the cause of the failure and POST the\nrequest again.\n\nThe following table lists the required attributes for creating\nuser. See the request examples for the required xml/json format:\n\nRequired attributes for creating a user\n\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     Field 1     |                               Field 2                               |              Field 3               | Field 4  |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|    Applies To   |                                 Name                                |            Description             | Required |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|       User      |                                 name                                | Name of the user for the database. |   Yes    |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     password    |                  User password for database access.                 |                Yes                 |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n| (database) name | Name of the database that the user can access. One or more database |                 No                 |          |\n|                 |                       names must be specified.                      |                                    |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n\nNotes- A user is granted all privileges on the specified databases.\n\n- The following user name is reserved and cannot be used for\n  creating users: root.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names, user names, and\npasswords.\n\nValid characters in a database name, user name, and password\n\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Field 1                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                         Character                                                         |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                          Letters (upper and lower cases allowed)                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Numbers                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name, user name, and password |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                           \"_\" is allowed anywhere in the database name, user name, and password                           |\n+---------------------------------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name, user name, and password\n\n+---------------------------------------------------------+\n|                         Field 1                         |\n+---------------------------------------------------------+\n|                        Character                        |\n+---------------------------------------------------------+\n|                      Single quotes                      |\n+---------------------------------------------------------+\n|                      Double quotes                      |\n+---------------------------------------------------------+\n|                       Back quotes                       |\n+---------------------------------------------------------+\n|                        Semicolons                       |\n+---------------------------------------------------------+\n|                          Commas                         |\n+---------------------------------------------------------+\n|                       Backslashes                       |\n+---------------------------------------------------------+\n|                      Forwardslashes                     |\n+---------------------------------------------------------+\n| Spaces at the front or end of the user name or password |\n+---------------------------------------------------------+\n\nLength restrictions for database name, user name, and password\n\n+------------------------------+-----------------------------+\n|           Field 1            |           Field 2           |\n+------------------------------+-----------------------------+\n|         Restriction          |            Value            |\n+------------------------------+-----------------------------+\n| Database name maximum length |              64             |\n+------------------------------+-----------------------------+\n|   User name maximum length   |              16             |\n+------------------------------+-----------------------------+\n|   Password maximum length    | unlimited (no restrictions) |\n+------------------------------+-----------------------------+", 
         "examples": {
           "application/json": {
             "users": [
@@ -2970,16 +2994,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create user", 
+        "summary": "Creates a user for a specified database instance.", 
         "tags": [
           "user-management"
-        ]
+        ], 
+        "title": "Create user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the users in a specified database instance.\n\nThis operation lists the users in the specified database instance,\nalong with the associated databases for that user.\n\nThis operation does not return the system users (database\nadministrators that administer the health of the database). Also,\nthis operation returns the \"root\" user only if \"root\" user has been\nenabled.\n\nThe following notes apply to MySQL users:\n\n- User names can be up to 16 characters long.\n\n- When you create accounts with INSERT, you must use FLUSH\n  PRIVILEGES to tell the server to reload the grant tables.\n\n- For additional information, See:\n  http://dev.mysql.com/doc/refman/5.1/en/user-account-\n  management.html", 
+        "description": "This operation lists the users in the specified database instance,\nalong with the associated databases for that user.\n\nThis operation does not return the system users (database\nadministrators that administer the health of the database). Also,\nthis operation returns the \"root\" user only if \"root\" user has been\nenabled.\n\nThe following notes apply to MySQL users:\n\n- User names can be up to 16 characters long.\n\n- When you create accounts with INSERT, you must use FLUSH\n  PRIVILEGES to tell the server to reload the grant tables.\n\n- For additional information, See:\n  http://dev.mysql.com/doc/refman/5.1/en/user-account-\n  management.html", 
         "examples": {
           "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -3077,16 +3102,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List database instance users", 
+        "summary": "Lists the users in a specified database instance.", 
         "tags": [
           "user-management"
-        ]
+        ], 
+        "title": "List database instance users"
       }
     ], 
     "/v1.0/{accountId}/instances/{instanceId}/users/{name}": [
       {
         "consumes": [], 
-        "description": "Deletes a specified user for a specified database instance.\n\nThis operation deletes the specified user for the specified\ndatabase instance.\n\nThere is a bug in a python library that Rackspace is using that may\ncause incorrect user deletions to occur if a period (.) is used in\nthe user name. In this case, the user name is truncated to remove\nthe portion of the name from the period to the end, leaving only\nthe portion from the beginning up to the period. For example, for a\nuser named \"my.userA\", the bug would truncate the user name to\n\"my\", and if the user \"my\" exists, that user will be incorrectly\ndeleted. To avoid the problem, do not use periods in user names.", 
+        "description": "This operation deletes the specified user for the specified\ndatabase instance.\n\nThere is a bug in a python library that Rackspace is using that may\ncause incorrect user deletions to occur if a period (.) is used in\nthe user name. In this case, the user name is truncated to remove\nthe portion of the name from the period to the end, leaving only\nthe portion from the beginning up to the period. For example, for a\nuser named \"my.userA\", the bug would truncate the user name to\n\"my\", and if the user \"my\" exists, that user will be incorrectly\ndeleted. To avoid the problem, do not use periods in user names.", 
         "examples": {
           "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users/testuser HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
         }, 
@@ -3167,10 +3193,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete user", 
+        "summary": "Deletes a specified user for a specified database instance.", 
         "tags": [
           "user-management"
-        ]
+        ], 
+        "title": "Delete user"
       }
     ]
   }, 

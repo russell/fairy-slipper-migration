@@ -178,7 +178,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Identity API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVersions-v2", 
         "method": "get", 
@@ -266,10 +266,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List versions", 
+        "summary": "Lists information about all Identity API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List versions"
       }
     ], 
     "/v2.0": [
@@ -277,7 +278,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for the Identity API v2.0.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVersionInfo-v2.0", 
         "method": "get", 
@@ -373,10 +374,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show version details", 
+        "summary": "Shows details for the Identity API v2.0.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Show version details"
       }
     ], 
     "/v2.0/extensions": [], 
@@ -385,7 +387,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed information for a specified extension.\n\nSpecify the extension alias in the URI.", 
+        "description": "Specify the extension alias in the URI.", 
         "examples": {}, 
         "id": "getExtension-v2.0", 
         "method": "get", 
@@ -474,10 +476,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get extension details", 
+        "summary": "Gets detailed information for a specified extension.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Get extension details"
       }
     ], 
     "/v2.0/tenants": [
@@ -485,7 +488,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists tenants to which the specified token has access.", 
+        "description": "", 
         "examples": {
           "text/plain": "GET /v2.0/tenants HTTP/1.1\nHost: identity.api.openstack.org\nContent-Type: application/json\nX-Auth-Token: fa8426a0-8eaf-4d22-8e13-7c1b16a9370c\nAccept: application/json\n"
         }, 
@@ -569,10 +572,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List tenants", 
+        "summary": "Lists tenants to which the specified token has access.", 
         "tags": [
           "identity-auth"
-        ]
+        ], 
+        "title": "List tenants"
       }
     ], 
     "/v2.0/tokens": [
@@ -580,7 +584,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Authenticates and generates a token.\n\nThe Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against Identity requires the X-Auth-Token\nheader. Clients obtain this token, along with the URL to other\nservice APIs, by first authenticating against Identity with valid\ncredentials.\n\nTo authenticate, you must provide either a user ID and password or\na token.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
+        "description": "The Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against Identity requires the X-Auth-Token\nheader. Clients obtain this token, along with the URL to other\nservice APIs, by first authenticating against Identity with valid\ncredentials.\n\nTo authenticate, you must provide either a user ID and password or\na token.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
         "examples": {
           "application/json": {
             "auth": {
@@ -1003,10 +1007,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Authenticate", 
+        "summary": "Authenticates and generates a token.", 
         "tags": [
           "identity-auth"
-        ]
+        ], 
+        "title": "Authenticate"
       }
     ]
   }, 

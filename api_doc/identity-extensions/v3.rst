@@ -1,8 +1,7 @@
 .. http:post:: /v1/groups/{name}
-   :synopsis: Create group
+   :title: Create group
+   :synopsis: Creates a group in the KDS.
 
-   Creates a group in the KDS.
-   
    Membership in groups is based on the party name. For example, a
    ``scheduler`` group implicitly includes any party name that starts
    with ``scheduler`` . For example, a member named
@@ -23,9 +22,10 @@
 
 
 .. http:delete:: /v1/groups/{name}
-   :synopsis: Delete group
+   :title: Delete group
+   :synopsis: Deletes a group from the KDS.
 
-   Deletes a group from the KDS.
+   
 
    :tag: kds
    :parameter name: The name of the group.
@@ -33,11 +33,9 @@
 
 
 .. http:put:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Assign role to group
+   :title: Assign role to group
+   :synopsis: Assigns a specified role to a specified group on projects in a subtree.
 
-   Assigns a specified role to a specified group on projects in a
-   subtree.
-   
    The inherited role assignment is anchored to a project and applied
    to its subtree in the projects hierarchy to both existing and
    future projects.
@@ -53,10 +51,10 @@
 
 
 .. http:head:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Check role for group
+   :title: Check role for group
+   :synopsis: Checks whether a specified group has a specified role assignment with the ``inherited_to_projects`` flag on a specified project.
 
-   Checks whether a specified group has a specified role assignment
-   with the ``inherited_to_projects`` flag on a specified project.
+   
 
    :tag: inherit
    :parameter group_id: The ID of the group.
@@ -66,10 +64,10 @@
 
 
 .. http:delete:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Revoke role from group
+   :title: Revoke role from group
+   :synopsis: Revokes an inherited role from a specified group on a specified project.
 
-   Revokes an inherited role from a specified group on a specified
-   project.
+   
 
    :tag: inherit
    :parameter group_id: The ID of the group.
@@ -79,9 +77,10 @@
 
 
 .. http:post:: /v3/OS-OAUTH1/consumers
-   :synopsis: Create consumer
+   :title: Create consumer
+   :synopsis: Enables a user to create a consumer.
 
-   Enables a user to create a consumer.
+   
 
    :requestexample: v3/examples/createConsumer_req.json
    :responseexample 201: v3/examples/createConsumer_resp_201.json
@@ -98,9 +97,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/consumers
-   :synopsis: List consumers
+   :title: List consumers
+   :synopsis: Lists consumers.
 
-   Lists consumers.
+   
 
    :responseexample 200: v3/examples/listConsumers_resp_200.json
    :accepts: application/json
@@ -117,9 +117,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}
-   :synopsis: Get authorized access token
+   :title: Get authorized access token
+   :synopsis: Gets an authorized access token.
 
-   Gets an authorized access token.
+   
 
    :responseexample 200: v3/examples/getAuthorizedAccessToken_resp_200.json
    :accepts: application/json
@@ -137,12 +138,10 @@
 
 
 .. http:delete:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}
-   :synopsis: Revoke access token
+   :title: Revoke access token
+   :synopsis: Enables a user to revoke an access token, which prevents the consumer from requesting new Identity Service API tokens. Also, revokes any Identity Service API tokens that were issued to the consumer through that access token.
 
-   Enables a user to revoke an access token, which prevents the
-   consumer from requesting new Identity Service API tokens. Also,
-   revokes any Identity Service API tokens that were issued to the
-   consumer through that access token.
+   
 
    :tag: oauth1
    :parameter user_id: The ID of the user.
@@ -151,11 +150,9 @@
 
 
 .. http:post:: /v3/OS-OAUTH1/access_token
-   :synopsis: Create access token
+   :title: Create access token
+   :synopsis: Enables a consumer to create an access token by exchanging a request token for an access token.
 
-   Enables a consumer to create an access token by exchanging a
-   request token for an access token.
-   
    After the user authorizes the request token, the consumer exchanges
    the authorized request token and OAuth verifier for an access
    token.
@@ -181,10 +178,9 @@
 
 
 .. http:post:: /v3/auth/tokens
-   :synopsis: Get an Identity Service token
+   :title: Get an Identity Service token
+   :synopsis: Enables a consumer to get an Identity Service authentication token.
 
-   Enables a consumer to get an Identity Service authentication token.
-   
    The token represents the delegated authorization and identity
    (impersonation) of the authorizing user. The roles and scope of the
    generated token match those that the consumer initially requested.
@@ -214,11 +210,9 @@
 
 
 .. http:get:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/inherited_to_projects
-   :synopsis: List roles for group
+   :title: List roles for group
+   :synopsis: Lists the inherited project roles for a specified group on a specified project.
 
-   Lists the inherited project roles for a specified group on a
-   specified project.
-   
    The list contains only those roles that are assigned to this
    project that were specified as being inherited to its subtree.
 
@@ -232,10 +226,9 @@
 
 
 .. http:get:: /v1/groups
-   :synopsis: Get group key
+   :title: Get group key
+   :synopsis: Gets the key for a group in the KDS.
 
-   Gets the key for a group in the KDS.
-   
    When a ticket is requested where the destination is a group, a
    group key is generated that is valid for a predetermined amount of
    time. Any member of the group can get the key as long as it is
@@ -256,10 +249,9 @@
 
 
 .. http:post:: /v1/keys/{name}
-   :synopsis: Create key
+   :title: Create key
+   :synopsis: Creates a long-term key in the KDS.
 
-   Creates a long-term key in the KDS.
-   
    The request body contains the key.
    
    The response shows the key name and generation value.
@@ -280,9 +272,10 @@
 
 
 .. http:delete:: /v1/keys/{name}
-   :synopsis: Delete key
+   :title: Delete key
+   :synopsis: Deletes a long-term key from the KDS.
 
-   Deletes a long-term key from the KDS.
+   
 
    :tag: kds
    :parameter name: The name of the group.
@@ -290,11 +283,9 @@
 
 
 .. http:put:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Assign role to user
+   :title: Assign role to user
+   :synopsis: Assigns a specified role to a specified user on projects in a subtree.
 
-   Assigns a specified role to a specified user on projects in a
-   subtree.
-   
    The inherited role assignment is anchored to a project and applied
    to its subtree in the projects hierarchy to both existing and
    future projects.
@@ -310,10 +301,10 @@
 
 
 .. http:head:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Check role for user
+   :title: Check role for user
+   :synopsis: Checks whether a specified user has a specified role assignment with the ``inherited_to_projects`` flag on a specified project.
 
-   Checks whether a specified user has a specified role assignment
-   with the ``inherited_to_projects`` flag on a specified project.
+   
 
    :tag: inherit
    :parameter user_id: The ID of the user.
@@ -323,10 +314,10 @@
 
 
 .. http:delete:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Revoke role from user
+   :title: Revoke role from user
+   :synopsis: Revokes an inherited role from a specified user a specified project.
 
-   Revokes an inherited role from a specified user a specified
-   project.
+   
 
    :tag: inherit
    :parameter user_id: The ID of the user.
@@ -336,9 +327,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens
-   :synopsis: List authorized access tokens
+   :title: List authorized access tokens
+   :synopsis: Lists authorized access tokens.
 
-   Lists authorized access tokens.
+   
 
    :responseexample 200: v3/examples/listAuthorizedAccessTokens_resp_200.json
    :accepts: application/json
@@ -355,11 +347,9 @@
 
 
 .. http:get:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/inherited_to_projects
-   :synopsis: List roles for user
+   :title: List roles for user
+   :synopsis: Lists the inherited project roles for a specified user on a specified project.
 
-   Lists the inherited project roles for a specified user on a
-   specified project.
-   
    The list contains only those roles that are assigned to this
    project that were specified as being inherited to its subtree.
 
@@ -373,11 +363,9 @@
 
 
 .. http:put:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Assign role to user owned by domain projects
+   :title: Assign role to user owned by domain projects
+   :synopsis: Assigns a specified role to a specified user on projects owned by a specified domain.
 
-   Assigns a specified role to a specified user on projects owned by a
-   specified domain.
-   
    The inherited role is applied to only the owned projects, both
    existing and future, and does not appear as a role in a domain-
    scoped token.
@@ -390,10 +378,10 @@
 
 
 .. http:head:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Check project role for user on domain
+   :title: Check project role for user on domain
+   :synopsis: Checks whether a specified user has an inherited project role on a specified domain.
 
-   Checks whether a specified user has an inherited project role on a
-   specified domain.
+   
 
    :tag: inherit
    :parameter user_id: The ID of the user.
@@ -403,10 +391,10 @@
 
 
 .. http:delete:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Revoke project role from user on domain
+   :title: Revoke project role from user on domain
+   :synopsis: Revokes an inherited project role from a specified user on a specified domain.
 
-   Revokes an inherited project role from a specified user on a
-   specified domain.
+   
 
    :tag: inherit
    :parameter user_id: The ID of the user.
@@ -416,10 +404,9 @@
 
 
 .. http:post:: /v3/OS-OAUTH1/request_token
-   :synopsis: Get unauthorized request token
+   :title: Get unauthorized request token
+   :synopsis: Enables a consumer to get an unauthorized request token.
 
-   Enables a consumer to get an unauthorized request token.
-   
    Supported signature methods: HMAC-SHA1.
    
    The consumer must provide all required OAuth parameters in the
@@ -436,11 +423,9 @@
 
 
 .. http:put:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Assign role to group on domain projects
+   :title: Assign role to group on domain projects
+   :synopsis: Assigns a specified role to a specified group on projects owned by a specified domain.
 
-   Assigns a specified role to a specified group on projects owned by
-   a specified domain.
-   
    The inherited role is applied to only the owned projects, both
    existing and future, and does not appear as a role in a domain-
    scoped token.
@@ -453,10 +438,10 @@
 
 
 .. http:head:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Check project role for group on domain
+   :title: Check project role for group on domain
+   :synopsis: Checks whether a specified group has an inherited project role on a specified domain.
 
-   Checks whether a specified group has an inherited project role on a
-   specified domain.
+   
 
    :tag: inherit
    :parameter group_id: The ID of the group.
@@ -466,10 +451,10 @@
 
 
 .. http:delete:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
-   :synopsis: Revoke project role from group on domain
+   :title: Revoke project role from group on domain
+   :synopsis: Revokes an inherited project role from a specified group on a specified domain.
 
-   Revokes an inherited project role from a specified group on a
-   specified domain.
+   
 
    :tag: inherit
    :parameter group_id: The ID of the group.
@@ -479,11 +464,9 @@
 
 
 .. http:post:: /v1/tickets
-   :synopsis: Generate ticket
+   :title: Generate ticket
+   :synopsis: Generates a ticket to facilitate messaging between a source and destination.
 
-   Generates a ticket to facilitate messaging between a source and
-   destination.
-   
    A generate ticket request contains metadata that you specify as a
    Base64-encoded JSON object and a signature.
    
@@ -505,9 +488,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles
-   :synopsis: List roles for an access token
+   :title: List roles for an access token
+   :synopsis: Lists associated roles for a specified access token.
 
-   Lists associated roles for a specified access token.
+   
 
    :tag: oauth1
    :parameter user_id: The ID of the user.
@@ -522,9 +506,10 @@
 
 
 .. http:post:: /v3/OS-TRUST/trust
-   :synopsis: Create trust
+   :title: Create trust
+   :synopsis: Creates a trust.
 
-   Creates a trust.
+   
 
    :requestexample: v3/examples/createTrust_req.json
    :responseexample 201: v3/examples/createTrust_resp_201.json
@@ -542,10 +527,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles/{role_id}
-   :synopsis: Get role information for an access token
+   :title: Get role information for an access token
+   :synopsis: Gets information about a specified role for a specified access token.
 
-   Gets information about a specified role for a specified access
-   token.
+   
 
    :tag: oauth1
    :parameter user_id: The ID of the user.
@@ -561,10 +546,9 @@
 
 
 .. http:get:: /v3/role_assignments
-   :synopsis: List role assignments
+   :title: List role assignments
+   :synopsis: Lists role assignments.
 
-   Lists role assignments.
-   
    The scope section in the list response is extended to allow the
    representation of role assignments that are inherited to projects.
    
@@ -632,11 +616,9 @@
 
 
 .. http:get:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects
-   :synopsis: List project roles for group on domain
+   :title: List project roles for group on domain
+   :synopsis: Lists the inherited project roles on a specified domain for a specified group.
 
-   Lists the inherited project roles on a specified domain for a
-   specified group.
-   
    The list contains only those role assignments to the domain that
    were specified as being inherited to projects within that domain.
 
@@ -650,9 +632,10 @@
 
 
 .. http:get:: /v3/OS-OAUTH1/consumers/{consumer_id}
-   :synopsis: Show consumer
+   :title: Show consumer
+   :synopsis: Shows information for a specified consumer.
 
-   Shows information for a specified consumer.
+   
 
    :responseexample 200: v3/examples/showConsumer_resp_200.json
    :accepts: application/json
@@ -670,10 +653,9 @@
 
 
 .. http:delete:: /v3/OS-OAUTH1/consumers/{consumer_id}
-   :synopsis: Delete consumer
+   :title: Delete consumer
+   :synopsis: Deletes a specified consumer.
 
-   Deletes a specified consumer.
-   
    When you delete a consumer, any associated request tokens, access
    tokens, and Identity API tokens are also deleted.
 
@@ -689,10 +671,9 @@
 
 
 .. http:patch:: /v3/OS-OAUTH1/consumers/{consumer_id}
-   :synopsis: Update consumer
+   :title: Update consumer
+   :synopsis: Updates the description for a specified consumer.
 
-   Updates the description for a specified consumer.
-   
    If you try to update any attribute other than description, the HTTP
    400 Bad Request error is returned.
 
@@ -712,11 +693,9 @@
 
 
 .. http:get:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/inherited_to_projects
-   :synopsis: List project roles for user on domain
+   :title: List project roles for user on domain
+   :synopsis: Lists the inherited project roles on a specified domain for a specified user.
 
-   Lists the inherited project roles on a specified domain for a
-   specified user.
-   
    The list contains only those role assignments to the domain that
    were specified as being inherited to projects within that domain.
 

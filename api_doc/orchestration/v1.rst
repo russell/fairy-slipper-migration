@@ -1,7 +1,8 @@
 .. http:get:: /v1/{tenant_id}/resource_types
-   :synopsis: List resource types
+   :title: List resource types
+   :synopsis: Lists the supported template resource types.
 
-   Lists the supported template resource types.
+   
 
    :responseexample 200: v1/examples/resource_type_list_resp_200.json
    :accepts: application/json
@@ -15,10 +16,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon
-   :synopsis: Abandon stack
+   :title: Abandon stack
+   :synopsis: Deletes a specified stack but leaves its resources intact, and returns data describing the stack and its resources.
 
-   Deletes a specified stack but leaves its resources intact, and
-   returns data describing the stack and its resources.
+   
 
    :responseexample 200: v1/examples/stack_abandon_resp_200.json
    :accepts: application/json
@@ -36,9 +37,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
-   :synopsis: Show snapshot
+   :title: Show snapshot
+   :synopsis: Shows details for a specified snapshot.
 
-   Shows details for a specified snapshot.
+   
 
    :responseexample 200: v1/examples/stack_show_snapshot_resp_200.json
    :accepts: application/json
@@ -53,9 +55,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
-   :synopsis: Delete snapshot
+   :title: Delete snapshot
+   :synopsis: Deletes a stack snapshot.
 
-   Deletes a stack snapshot.
+   
 
    :tag: stacks
    :parameter stack_name: The name of a stack.
@@ -67,9 +70,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/preview
-   :synopsis: Preview stack
+   :title: Preview stack
+   :synopsis: Previews a stack.
 
-   Previews a stack.
+   
 
    :requestexample: v1/examples/stack_preview_req.json
    :responseexample 200: v1/examples/stack_preview_resp_200.json
@@ -87,10 +91,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore
-   :synopsis: Restore snapshot
+   :title: Restore snapshot
+   :synopsis: Restores a stack snapshot. You can restore only active stacks from a snapshot. Deleted stacks must be recreated.
 
-   Restores a stack snapshot. You can restore only active stacks from
-   a snapshot. Deleted stacks must be recreated.
+   
 
    :tag: stacks
    :parameter stack_name: The name of a stack.
@@ -102,9 +106,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}
-   :synopsis: Show event details
+   :title: Show event details
+   :synopsis: Shows details for a specified event.
 
-   Shows details for a specified event.
+   
 
    :tag: stack-events
    :parameter resource_name: The name of a resource in the stack.
@@ -118,9 +123,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/events
-   :synopsis: Find stack events
+   :title: Find stack events
+   :synopsis: Finds the canonical URL for the event list of a specified stack.
 
-   Finds the canonical URL for the event list of a specified stack.
+   
 
    :tag: stack-events
    :parameter stack_name: The name of a stack.
@@ -130,9 +136,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/template_versions
-   :synopsis: List template versions
+   :title: List template versions
+   :synopsis: Lists all available template versions.
 
-   Lists all available template versions.
+   
 
    :tag: stack-templates
    :parameter tenant_id: The ID of the tenant. A tenant is also known
@@ -144,9 +151,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/software_deployments
-   :synopsis: List deployments
+   :title: List deployments
+   :synopsis: Lists all available software deployments.
 
-   Lists all available software deployments.
+   
 
    :responseexample 200: v1/examples/software_deployment_index_resp_200.json
    :accepts: application/json
@@ -162,9 +170,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/software_deployments
-   :synopsis: Create deployment
+   :title: Create deployment
+   :synopsis: Creates a software deployment.
 
-   Creates a software deployment.
+   
 
    :requestexample: v1/examples/software_deployment_create_req.json
    :responseexample 200: v1/examples/software_deployment_create_resp_200.json
@@ -178,10 +187,9 @@
 
 
 .. http:get:: /v1/{tenant_id}/software_deployments/metadata/{server_id}
-   :synopsis: Show server configuration metadata
+   :title: Show server configuration metadata
+   :synopsis: Shows the deployment configuration metadata for a specified server.
 
-   Shows the deployment configuration metadata for a specified server.
-   
    Use the ``group`` property to specify the configuration hook to
    which the pass the metadata item.
 
@@ -197,9 +205,10 @@
 
 
 .. http:get:: /
-   :synopsis: List versions
+   :title: List versions
+   :synopsis: Lists all Orchestration API versions.
 
-   Lists all Orchestration API versions.
+   
 
    :responseexample 200: v1/examples/getVersions-heat-v1_resp_200.json
    :accepts: application/json
@@ -209,9 +218,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/validate
-   :synopsis: Validate template
+   :title: Validate template
+   :synopsis: Validates a specified template.
 
-   Validates a specified template.
+   
 
    :requestexample: v1/examples/template_validate_req.json
    :responseexample 200: v1/examples/template_validate_resp_200.json
@@ -225,10 +235,9 @@
 
 
 .. http:get:: /v1/{tenant_id}/resource_types/{type_name}/template
-   :synopsis: Show resource template
+   :title: Show resource template
+   :synopsis: Shows the template representation for a specified resource type.
 
-   Shows the template representation for a specified resource type.
-   
    The returned template contains a single resource of the specified
    type. Each resource property is mapped to a template parameter and
    each resource attribute is mapped to a template output.
@@ -257,9 +266,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
-   :synopsis: Preview stack update
+   :title: Preview stack update
+   :synopsis: Preview an update for a specified stack
 
-   Preview an update for a specified stack
+   
 
    :requestexample: v1/examples/stack_update_preview_req.json
    :responseexample 200: v1/examples/stack_update_preview_resp_200.json
@@ -275,10 +285,9 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/resources
-   :synopsis: Find stack resources
+   :title: Find stack resources
+   :synopsis: Finds the canonical URL for the resource list of a specified stack.
 
-   Finds the canonical URL for the resource list of a specified stack.
-   
    The canonical URL is returned for only non-deleted stacks. To fetch
    the resource list for deleted stacks, use the following endpoint:
    
@@ -292,9 +301,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
-   :synopsis: Show stack details
+   :title: Show stack details
+   :synopsis: Shows details for a specified stack.
 
-   Shows details for a specified stack.
+   
 
    :responseexample 200: v1/examples/stack_show_resp_200.json
    :accepts: application/json
@@ -312,9 +322,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
-   :synopsis: Update stack
+   :title: Update stack
+   :synopsis: Updates a specified stack.
 
-   Updates a specified stack.
+   
 
    :requestexample: v1/examples/stack_update_req.json
    :accepts: application/json
@@ -333,9 +344,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
-   :synopsis: Delete stack
+   :title: Delete stack
+   :synopsis: Deletes a specified stack and any snapshots of that stack.
 
-   Deletes a specified stack and any snapshots of that stack.
+   
 
    :tag: stacks
    :parameter stack_name: The name of a stack.
@@ -350,9 +362,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/software_configs
-   :synopsis: Create configuration
+   :title: Create configuration
+   :synopsis: Creates a software configuration.
 
-   Creates a software configuration.
+   
 
    :requestexample: v1/examples/software_config_create_req.json
    :responseexample 200: v1/examples/software_config_create_resp_200.json
@@ -369,9 +382,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
-   :synopsis: Get stack template
+   :title: Get stack template
+   :synopsis: Gets a template for a specified stack.
 
-   Gets a template for a specified stack.
+   
 
    :responseexample 200: v1/examples/stack_template_resp_200.json
    :accepts: application/json
@@ -389,9 +403,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/software_deployments/{deployment_id}
-   :synopsis: Show deployment details
+   :title: Show deployment details
+   :synopsis: Shows details for a specified software deployment.
 
-   Shows details for a specified software deployment.
+   
 
    :responseexample 200: v1/examples/software_deployment_show_resp_200.json
    :accepts: application/json
@@ -404,9 +419,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/software_deployments/{deployment_id}
-   :synopsis: Update deployment
+   :title: Update deployment
+   :synopsis: Updates a specified software deployment.
 
-   Updates a specified software deployment.
+   
 
    :requestexample: v1/examples/software_deployment_update_req.json
    :responseexample 200: v1/examples/software_deployment_update_resp_200.json
@@ -421,9 +437,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/software_deployments/{deployment_id}
-   :synopsis: Delete deployment
+   :title: Delete deployment
+   :synopsis: Deletes a specified software deployment.
 
-   Deletes a specified software deployment.
+   
 
    :tag: software-config
    :parameter tenant_id: The ID of the tenant. A tenant is also known
@@ -433,13 +450,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/resource_types/{type_name}
-   :synopsis: Show resource schema
+   :title: Show resource schema
+   :synopsis: Shows the interface schema for a specified resource type. This schema describes the properties that can be set on the resource, their types, constraints, descriptions, and default values. Additionally, the resource attributes and their descriptions are provided.
 
-   Shows the interface schema for a specified resource type. This
-   schema describes the properties that can be set on the resource,
-   their types, constraints, descriptions, and default values.
-   Additionally, the resource attributes and their descriptions are
-   provided.
+   
 
    :responseexample 200: v1/examples/resource_type_get_resp_200.json
    :accepts: application/json
@@ -454,9 +468,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events
-   :synopsis: List stack events
+   :title: List stack events
+   :synopsis: Lists events for a specified stack.
 
-   Lists events for a specified stack.
+   
 
    :responseexample 200: v1/examples/stack_event_list_resp_200.json
    :accepts: application/json
@@ -513,9 +528,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
-   :synopsis: List resources
+   :title: List resources
+   :synopsis: Lists resources in a stack.
 
-   Lists resources in a stack.
+   
 
    :responseexample 200: v1/examples/resource_list_resp_200.json
    :accepts: application/json
@@ -536,9 +552,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}
-   :synopsis: Show resource data
+   :title: Show resource data
+   :synopsis: Shows data for a specified resource.
 
-   Shows data for a specified resource.
+   
 
    :responseexample 200: v1/examples/resource_show_resp_200.json
    :accepts: application/json
@@ -556,9 +573,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/software_configs/{config_id}
-   :synopsis: Show configuration details
+   :title: Show configuration details
+   :synopsis: Shows details for a software configuration.
 
-   Shows details for a software configuration.
+   
 
    :responseexample 200: v1/examples/software_config_show_resp_200.json
    :accepts: application/json
@@ -574,9 +592,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/software_configs/{config_id}
-   :synopsis: Delete config
+   :title: Delete config
+   :synopsis: Deletes a software configuration.
 
-   Deletes a software configuration.
+   
 
    :tag: software-config
    :parameter tenant_id: The ID of the tenant. A tenant is also known
@@ -586,9 +605,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata
-   :synopsis: Show resource metadata
+   :title: Show resource metadata
+   :synopsis: Shows metadata for a specified resource.
 
-   Shows metadata for a specified resource.
+   
 
    :responseexample 200: v1/examples/resource_metadata_resp_200.json
    :accepts: application/json
@@ -603,9 +623,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks
-   :synopsis: List stack data
+   :title: List stack data
+   :synopsis: Lists active stacks.
 
-   Lists active stacks.
+   
 
    :responseexample 200: v1/examples/stack_list_resp_200.json
    :accepts: application/json
@@ -689,9 +710,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks
-   :synopsis: Create stack
+   :title: Create stack
+   :synopsis: Creates a stack.
 
-   Creates a stack.
+   
 
    :requestexample: v1/examples/stack_create_req.json
    :responseexample 201: v1/examples/stack_create_resp_201.json
@@ -709,9 +731,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks
-   :synopsis: Adopt stack
+   :title: Adopt stack
+   :synopsis: Creates a stack from existing resources.
 
-   Creates a stack from existing resources.
+   
 
    :requestexample: v1/examples/stack_adopt_req.json
    :responseexample 201: v1/examples/stack_adopt_resp_201.json
@@ -729,11 +752,9 @@
 
 
 .. http:get:: /v1/{tenant_id}/services
-   :synopsis: Show orchestration engine status
+   :title: Show orchestration engine status
+   :synopsis: Enables administrative users to view details for all orchestration engines.
 
-   Enables administrative users to view details for all orchestration
-   engines.
-   
    Orchestration engine details include ``engine_id`` , topic name,
    last updated time, health status, and host name.
    
@@ -756,9 +777,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/build_info
-   :synopsis: Show build information
+   :title: Show build information
+   :synopsis: Shows build information for an Orchestration deployment.
 
-   Shows build information for an Orchestration deployment.
+   
 
    :responseexample 200: v1/examples/build_info_show_resp_200.json
    :accepts: application/json
@@ -770,9 +792,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events
-   :synopsis: List resource events
+   :title: List resource events
+   :synopsis: Lists events for a specified stack resource.
 
-   Lists events for a specified stack resource.
+   
 
    :responseexample 200: v1/examples/resource_event_list_resp_200.json
    :accepts: application/json
@@ -829,10 +852,9 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}
-   :synopsis: Find stack
+   :title: Find stack
+   :synopsis: Finds the canonical URL for a specified stack.
 
-   Finds the canonical URL for a specified stack.
-   
    Also works with verbs other than GET , so you can perform PUT and
    DELETE operations on a current stack. Set your client to follow
    redirects. Note that when redirecting, the request method should
@@ -855,10 +877,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
-   :synopsis: Snapshot stack
+   :title: Snapshot stack
+   :synopsis: Takes a snapshot of all the resources in the stack. All snapshots are deleted upon deletion of the stack.
 
-   Takes a snapshot of all the resources in the stack. All snapshots
-   are deleted upon deletion of the stack.
+   
 
    :requestexample: v1/examples/stack_snapshot_req.json
    :responseexample 200: v1/examples/stack_snapshot_resp_200.json
@@ -874,9 +896,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
-   :synopsis: List snapshots
+   :title: List snapshots
+   :synopsis: Lists the stack snapshots.
 
-   Lists the stack snapshots.
+   
 
    :responseexample 200: v1/examples/stack_list_snapshot_resp_200.json
    :accepts: application/json
@@ -890,10 +913,9 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal
-   :synopsis: Send a signal to a resource
+   :title: Send a signal to a resource
+   :synopsis: Sends a signal to a specified resource.
 
-   Sends a signal to a specified resource.
-   
    The contents of the request body depends on the resource to which
    you send a signal.
    
@@ -910,9 +932,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
-   :synopsis: Suspend stack
+   :title: Suspend stack
+   :synopsis: Suspends a stack.
 
-   Suspends a stack.
+   
 
    :requestexample: v1/examples/stack_action_suspend_req.json
    :accepts: application/json
@@ -927,9 +950,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
-   :synopsis: Resume stack
+   :title: Resume stack
+   :synopsis: Resumes a suspended stack.
 
-   Resumes a suspended stack.
+   
 
    :requestexample: v1/examples/stack_action_resume_req.json
    :accepts: application/json
@@ -944,9 +968,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
-   :synopsis: Cancel stack update
+   :title: Cancel stack update
+   :synopsis: Cancels a currently running update of a stack.
 
-   Cancels a currently running update of a stack.
+   
 
    :requestexample: v1/examples/stack_action_cancel_update_req.json
    :accepts: application/json
@@ -961,10 +986,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
-   :synopsis: Check stack resources
+   :title: Check stack resources
+   :synopsis: Checks whether the resources are in expected states for the specified stack.
 
-   Checks whether the resources are in expected states for the
-   specified stack.
+   
 
    :requestexample: v1/examples/stack_action_check_req.json
    :accepts: application/json

@@ -240,7 +240,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists alarms, based on the specified query.", 
+        "description": "", 
         "examples": {}, 
         "id": "listAlarms", 
         "method": "get", 
@@ -290,16 +290,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List alarms", 
+        "summary": "Lists alarms, based on the specified query.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "List alarms"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an alarm.", 
+        "description": "", 
         "examples": {}, 
         "id": "createAlarm", 
         "method": "post", 
@@ -347,10 +348,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create alarm", 
+        "summary": "Creates an alarm.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Create alarm"
       }
     ], 
     "/v2/alarms/{alarm_id}": [
@@ -358,7 +360,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified alarm, by alarm ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showAlarm", 
         "method": "get", 
@@ -406,16 +408,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show alarm", 
+        "summary": "Shows information for a specified alarm, by alarm ID.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Show alarm"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified alarm.", 
+        "description": "", 
         "examples": {}, 
         "id": "updateAlarm", 
         "method": "put", 
@@ -471,14 +474,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update alarm", 
+        "summary": "Updates a specified alarm.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Update alarm"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified alarm, by alarm ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteAlarm", 
         "method": "delete", 
@@ -499,16 +503,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete alarm", 
+        "summary": "Deletes a specified alarm, by alarm ID.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Delete alarm"
       }
     ], 
     "/v2/alarms/{alarm_id}/history": [
       {
         "consumes": [], 
-        "description": "Assembles and shows the history for a specified alarm, by alarm ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showAlarmHistory", 
         "method": "get", 
@@ -537,16 +542,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show alarm history", 
+        "summary": "Assembles and shows the history for a specified alarm, by alarm ID.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Show alarm history"
       }
     ], 
     "/v2/alarms/{alarm_id}/state": [
       {
         "consumes": [], 
-        "description": "Sets the state of a specified alarm.", 
+        "description": "", 
         "examples": {}, 
         "id": "updateAlarmState", 
         "method": "put", 
@@ -575,14 +581,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update alarm state", 
+        "summary": "Sets the state of a specified alarm.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Update alarm state"
       }, 
       {
         "consumes": [], 
-        "description": "Shows the state for a specified alarm, by alarm ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showAlarmState", 
         "method": "get", 
@@ -603,10 +610,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show alarm state", 
+        "summary": "Shows the state for a specified alarm, by alarm ID.", 
         "tags": [
           "alarms"
-        ]
+        ], 
+        "title": "Show alarm state"
       }
     ], 
     "/v2/capabilities": [
@@ -614,7 +622,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "A representation of the API and storage capabilities. Usually\nconstrained by restrictions imposed by the storage driver.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCapabilities", 
         "method": "get", 
@@ -673,10 +681,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List capabilities", 
+        "summary": "A representation of the API and storage capabilities. Usually constrained by restrictions imposed by the storage driver.", 
         "tags": [
           "capabilities"
-        ]
+        ], 
+        "title": "List capabilities"
       }
     ], 
     "/v2/meters": [
@@ -684,7 +693,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists meters, based on the data recorded so far.", 
+        "description": "", 
         "examples": {}, 
         "id": "listMeters", 
         "method": "get", 
@@ -736,10 +745,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List meters", 
+        "summary": "Lists meters, based on the data recorded so far.", 
         "tags": [
           "meters"
-        ]
+        ], 
+        "title": "List meters"
       }
     ], 
     "/v2/meters/{meter_name}": [
@@ -747,7 +757,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists samples for a specified meter, by meter name.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSamplesforMeter", 
         "method": "get", 
@@ -813,16 +823,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List samples for meter", 
+        "summary": "Lists samples for a specified meter, by meter name.", 
         "tags": [
           "meters"
-        ]
+        ], 
+        "title": "List samples for meter"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a list of samples to the specified meter, by meter name.", 
+        "description": "", 
         "examples": {}, 
         "id": "createMeter", 
         "method": "post", 
@@ -872,10 +883,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create meter", 
+        "summary": "Adds a list of samples to the specified meter, by meter name.", 
         "tags": [
           "meters"
-        ]
+        ], 
+        "title": "Create meter"
       }
     ], 
     "/v2/meters/{meter_name}/statistics": [
@@ -883,7 +895,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Computes and lists statistics for samples in a specified time\nrange.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSamplesStatistics", 
         "method": "get", 
@@ -963,10 +975,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show meter statistics", 
+        "summary": "Computes and lists statistics for samples in a specified time range.", 
         "tags": [
           "meters"
-        ]
+        ], 
+        "title": "Show meter statistics"
       }
     ], 
     "/v2/resources": [
@@ -974,7 +987,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists definitions for all resources.", 
+        "description": "", 
         "examples": {}, 
         "id": "listResources", 
         "method": "get", 
@@ -1021,10 +1034,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List resources", 
+        "summary": "Lists definitions for all resources.", 
         "tags": [
           "resources"
-        ]
+        ], 
+        "title": "List resources"
       }
     ], 
     "/v2/resources/{resource_id}": [
@@ -1032,7 +1046,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified resource, by resource ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showResource", 
         "method": "get", 
@@ -1077,10 +1091,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show resource information", 
+        "summary": "Shows information for a specified resource, by resource ID.", 
         "tags": [
           "resources"
-        ]
+        ], 
+        "title": "Show resource information"
       }
     ], 
     "/v2/samples": [
@@ -1088,7 +1103,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all known samples, based on the data recorded so far.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSamples", 
         "method": "get", 
@@ -1147,10 +1162,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List samples", 
+        "summary": "Lists all known samples, based on the data recorded so far.", 
         "tags": [
           "samples"
-        ]
+        ], 
+        "title": "List samples"
       }
     ], 
     "/v2/samples/{sample_id}": [
@@ -1158,7 +1174,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified sample, by sample ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showSample", 
         "method": "get", 
@@ -1199,10 +1215,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show sample", 
+        "summary": "Shows information for a specified sample, by sample ID.", 
         "tags": [
           "samples"
-        ]
+        ], 
+        "title": "Show sample"
       }
     ]
   }, 

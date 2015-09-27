@@ -1,7 +1,8 @@
 .. http:put:: /v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}
-   :synopsis: Grant roles to user on tenant
+   :title: Grant roles to user on tenant
+   :synopsis: Grants a specified role to a specified user for a specified tenant.
 
-   Grants a specified role to a specified user for a specified tenant.
+   
 
    :tag: ksadm-admin
    :parameter userId: The user ID.
@@ -19,10 +20,10 @@
 
 
 .. http:delete:: /v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}
-   :synopsis: Revoke role from user on tenant
+   :title: Revoke role from user on tenant
+   :synopsis: Revokes a specified role from a specified user for a specified tenant.
 
-   Revokes a specified role from a specified user for a specified
-   tenant.
+   
 
    :tag: ksadm-admin
    :parameter userId: The user ID.
@@ -39,9 +40,10 @@
 
 
 .. http:get:: /v2.0/services/{serviceId}
-   :synopsis: Shows service information by ID
+   :title: Shows service information by ID
+   :synopsis: Shows information for a specified service, by ID.
 
-   Shows information for a specified service, by ID.
+   
 
    :responseexample 200: v2/examples/showServiceByID_resp_200.json
    :responseexample 203: v2/examples/showServiceByID_resp_203.json
@@ -61,9 +63,10 @@
 
 
 .. http:delete:: /v2.0/services/{serviceId}
-   :synopsis: Delete service
+   :title: Delete service
+   :synopsis: Deletes a specified service.
 
-   Deletes a specified service.
+   
 
    :tag: ksadm-admin
    :parameter serviceId: The service ID.
@@ -78,9 +81,10 @@
 
 
 .. http:get:: /v2.0/OS-KSVALIDATE/token/endpoints
-   :synopsis: List endpoints for token
+   :title: List endpoints for token
+   :synopsis: Lists endpoints associated with a specific token.
 
-   Lists endpoints associated with a specific token.
+   
 
    :responseexample 200: v2/examples/listEndpointsForToken_resp_200.json
    :responseexample 203: v2/examples/listEndpointsForToken_resp_203.json
@@ -99,9 +103,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials/{type}
-   :synopsis: List credentials by type
+   :title: List credentials by type
+   :synopsis: Lists credentials by type.
 
-   Lists credentials by type.
+   
 
    :responseexample 200: v2/examples/listCredentialsByType_resp_200.json
    :responseexample 203: v2/examples/listCredentialsByType_resp_203.json
@@ -122,12 +127,9 @@
 
 
 .. http:get:: /v2.0/OS-KSVALIDATE/token/validate
-   :synopsis: Validate token
+   :title: Validate token
+   :synopsis: Checks that a token is valid and that it belongs to a specified tenant and service IDs. Returns the permissions for a particular client.
 
-   Checks that a token is valid and that it belongs to a specified
-   tenant and service IDs. Returns the permissions for a particular
-   client.
-   
    Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (
    ``404`` ) fault is returned for a token that is not valid.
    
@@ -154,11 +156,9 @@
 
 
 .. http:head:: /v2.0/OS-KSVALIDATE/token/validate
-   :synopsis: Check token
+   :title: Check token
+   :synopsis: Checks that a token is valid and that it belongs to a specified tenant and service IDs, for performance.
 
-   Checks that a token is valid and that it belongs to a specified
-   tenant and service IDs, for performance.
-   
    Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (
    ``404`` ) fault is returned for a token that is not valid.
    
@@ -181,9 +181,10 @@
 
 
 .. http:get:: /v2.0/tenants/{tenantId}/users
-   :synopsis: List users on a tenant
+   :title: List users on a tenant
+   :synopsis: Lists all users for a specified tenant.
 
-   Lists all users for a specified tenant.
+   
 
    :responseexample 200: v2/examples/listUsersForTenant_resp_200.json
    :responseexample 203: v2/examples/listUsersForTenant_resp_203.json
@@ -203,9 +204,10 @@
 
 
 .. http:put:: /v2.0/users/{userId}/OS-KSADM/enabled
-   :synopsis: Enable user
+   :title: Enable user
+   :synopsis: Enables a specified user.
 
-   Enables a specified user.
+   
 
    :requestexample: v2/examples/enableUser_req.json
    :responseexample 200: v2/examples/enableUser_resp_200.json
@@ -225,9 +227,10 @@
 
 
 .. http:get:: /v2.0/OS-KSADM/
-   :synopsis: List roles
+   :title: List roles
+   :synopsis: Lists all roles.
 
-   Lists all roles.
+   
 
    :responseexample 200: v2/examples/listRoles_resp_200.json
    :responseexample 203: v2/examples/listRoles_resp_203.json
@@ -246,9 +249,10 @@
 
 
 .. http:get:: /v2.0/users
-   :synopsis: List users
+   :title: List users
+   :synopsis: Lists all users.
 
-   Lists all users.
+   
 
    :responseexample 200: v2/examples/listUsers_resp_200.json
    :responseexample 203: v2/examples/listUsers_resp_203.json
@@ -267,9 +271,10 @@
 
 
 .. http:post:: /v2.0/users
-   :synopsis: Create user
+   :title: Create user
+   :synopsis: Creates a user.
 
-   Creates a user.
+   
 
    :requestexample: v2/examples/createUser_req.json
    :responseexample 201: v2/examples/createUser_resp_201.json
@@ -288,9 +293,10 @@
 
 
 .. http:get:: /v2.0/OS-KSADM/roles/{role_name}
-   :synopsis: Show role information by name
+   :title: Show role information by name
+   :synopsis: Shows information for a specified role, by name.
 
-   Shows information for a specified role, by name.
+   
 
    :responseexample 200: v2/examples/showRoleByName_resp_200.json
    :responseexample 203: v2/examples/showRoleByName_resp_203.json
@@ -310,9 +316,10 @@
 
 
 .. http:put:: /v2.0/users/{userId}/roles/OS-KSADM/{roleId}
-   :synopsis: Grant global role to user
+   :title: Grant global role to user
+   :synopsis: Grants a specified global role to a specified user.
 
-   Grants a specified global role to a specified user.
+   
 
    :tag: ksadm-admin
    :parameter userId: The user ID.
@@ -329,9 +336,10 @@
 
 
 .. http:delete:: /v2.0/users/{userId}/roles/OS-KSADM/{roleId}
-   :synopsis: Delete global role from user
+   :title: Delete global role from user
+   :synopsis: Deletes a specified global role from a specified user.
 
-   Deletes a specified global role from a specified user.
+   
 
    :tag: ksadm-admin
    :parameter userId: The user ID.
@@ -347,9 +355,10 @@
 
 
 .. http:post:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
-   :synopsis: Update user credentials
+   :title: Update user credentials
+   :synopsis: Updates credentials.
 
-   Updates credentials.
+   
 
    :requestexample: v2/examples/updateUserCredential_req.json
    :responseexample 200: v2/examples/updateUserCredential_resp_200.json
@@ -369,9 +378,10 @@
 
 
 .. http:delete:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
-   :synopsis: Revoke user credentials
+   :title: Revoke user credentials
+   :synopsis: Revokes user credentials.
 
-   Revokes user credentials.
+   
 
    :tag: kss3-admin
    :parameter userId: The user ID.
@@ -387,9 +397,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
-   :synopsis: Get user credentials
+   :title: Get user credentials
+   :synopsis: Gets user credentials.
 
-   Gets user credentials.
+   
 
    :responseexample 200: v2/examples/getUserCredential_resp_200.json
    :responseexample 203: v2/examples/getUserCredential_resp_203.json
@@ -409,9 +420,10 @@
 
 
 .. http:post:: /v2.0/users/{userId}/OS-KSADM/credentials
-   :synopsis: Grant credential to user
+   :title: Grant credential to user
+   :synopsis: Grants a specified credential to a specified user.
 
-   Grants a specified credential to a specified user.
+   
 
    :requestexample: v2/examples/grantCredentialToUser_req.json
    :responseexample 201: v2/examples/grantCredentialToUser_resp_201.json
@@ -431,9 +443,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials
-   :synopsis: List credentials
+   :title: List credentials
+   :synopsis: Lists credentials.
 
-   Lists credentials.
+   
 
    :responseexample 200: v2/examples/listCredentials_resp_200.json
    :responseexample 203: v2/examples/listCredentials_resp_203.json
@@ -453,9 +466,10 @@
 
 
 .. http:get:: /v2.0/services
-   :synopsis: List services
+   :title: List services
+   :synopsis: Lists all services.
 
-   Lists all services.
+   
 
    :responseexample 200: v2/examples/listServices_resp_200.json
    :responseexample 203: v2/examples/listServices_resp_203.json
@@ -474,9 +488,10 @@
 
 
 .. http:post:: /v2.0/services
-   :synopsis: Create service
+   :title: Create service
+   :synopsis: Creates a service.
 
-   Creates a service.
+   
 
    :requestexample: v2/examples/createService_req.json
    :responseexample 201: v2/examples/createService_resp_201.json
@@ -495,9 +510,10 @@
 
 
 .. http:get:: /v2.0/services/{serviceName}
-   :synopsis: Show service information by name
+   :title: Show service information by name
+   :synopsis: Shows information for a specified service, by name.
 
-   Shows information for a specified service, by name.
+   
 
    :responseexample 200: v2/examples/showServiceByName_resp_200.json
    :responseexample 203: v2/examples/showServiceByName_resp_203.json
@@ -516,9 +532,10 @@
 
 
 .. http:post:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
-   :synopsis: Update user credentials
+   :title: Update user credentials
+   :synopsis: Updates credentials for a specified user.
 
-   Updates credentials for a specified user.
+   
 
    :requestexample: v2/examples/updateUserCredential_req.json
    :responseexample 200: v2/examples/updateUserCredential_resp_200.json
@@ -538,9 +555,10 @@
 
 
 .. http:delete:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
-   :synopsis: Delete user credentials
+   :title: Delete user credentials
+   :synopsis: Deletes user credentials.
 
-   Deletes user credentials.
+   
 
    :tag: ksec2-admin
    :parameter userId: The user ID.
@@ -556,9 +574,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
-   :synopsis: Get user credentials
+   :title: Get user credentials
+   :synopsis: Gets user credentials.
 
-   Gets user credentials.
+   
 
    :responseexample 200: v2/examples/getUserCredential_resp_200.json
    :responseexample 203: v2/examples/getUserCredential_resp_203.json
@@ -578,9 +597,10 @@
 
 
 .. http:post:: /v2.0/OS-KSADM
-   :synopsis: Create role
+   :title: Create role
+   :synopsis: Creates a role.
 
-   Creates a role.
+   
 
    :requestexample: v2/examples/createRole_req.json
    :responseexample 201: v2/examples/createRole_resp_201.json
@@ -599,9 +619,10 @@
 
 
 .. http:post:: /v2.0/tenants
-   :synopsis: Create tenant
+   :title: Create tenant
+   :synopsis: Creates a specified tenant.
 
-   Creates a specified tenant.
+   
 
    :requestexample: v2/examples/createTenant_req.json
    :responseexample 201: v2/examples/createTenant_resp_201.json
@@ -619,9 +640,10 @@
 
 
 .. http:get:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
-   :synopsis: Get endpoint template
+   :title: Get endpoint template
+   :synopsis: Gets endpoint templates.
 
-   Gets endpoint templates.
+   
 
    :responseexample 200: v2/examples/getEndpointTemplate_resp_200.json
    :responseexample 203: v2/examples/getEndpointTemplate_resp_203.json
@@ -641,9 +663,10 @@
 
 
 .. http:put:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
-   :synopsis: Update endpoint template
+   :title: Update endpoint template
+   :synopsis: Updates endpoint template.
 
-   Updates endpoint template.
+   
 
    :requestexample: v2/examples/updateEndpointTemplate_req.json
    :responseexample 200: v2/examples/updateEndpointTemplate_resp_200.json
@@ -663,9 +686,10 @@
 
 
 .. http:delete:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
-   :synopsis: Delete endpoint template.
+   :title: Delete endpoint template.
+   :synopsis: Deletes an endpoint template.
 
-   Deletes an endpoint template.
+   
 
    :tag: kscatalog
    :parameter endpointTemplateId: The endpoint template ID.
@@ -680,9 +704,10 @@
 
 
 .. http:post:: /v2.0/users/{userId}/OS-KSS3/credentials
-   :synopsis: Grant credential to user
+   :title: Grant credential to user
+   :synopsis: Grants a specified credential to a specified user.
 
-   Grants a specified credential to a specified user.
+   
 
    :requestexample: v2/examples/grantCredentialToUser_req.json
    :responseexample 201: v2/examples/grantCredentialToUser_resp_201.json
@@ -702,9 +727,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials
-   :synopsis: List credentials
+   :title: List credentials
+   :synopsis: Lists credentials.
 
-   Lists credentials.
+   
 
    :responseexample 200: v2/examples/listCredentials_resp_200.json
    :responseexample 203: v2/examples/listCredentials_resp_203.json
@@ -724,9 +750,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/roles
-   :synopsis: List global roles for user
+   :title: List global roles for user
+   :synopsis: Lists global roles for a specified user.
 
-   Lists global roles for a specified user.
+   
 
    :responseexample 200: v2/examples/listUserRoles_resp_200.json
    :responseexample 203: v2/examples/listUserRoles_resp_203.json
@@ -746,9 +773,10 @@
 
 
 .. http:post:: /v2.0/tenants/{tenantId}
-   :synopsis: Update tenant
+   :title: Update tenant
+   :synopsis: Updates a specified tenant.
 
-   Updates a specified tenant.
+   
 
    :requestexample: v2/examples/updateTenant_req.json
    :responseexample 200: v2/examples/updateTenant_resp_200.json
@@ -768,9 +796,10 @@
 
 
 .. http:delete:: /v2.0/tenants/{tenantId}
-   :synopsis: Delete tenant
+   :title: Delete tenant
+   :synopsis: Deletes a specified tenant.
 
-   Deletes a specified tenant.
+   
 
    :tag: ksadm-admin
    :parameter tenantId: The tenant ID.
@@ -785,9 +814,10 @@
 
 
 .. http:post:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints
-   :synopsis: Create endpoint
+   :title: Create endpoint
+   :synopsis: Creates endpoint to a tenant.
 
-   Creates endpoint to a tenant.
+   
 
    :requestexample: v2/examples/createEndpoint_req.json
    :responseexample 201: v2/examples/createEndpoint_resp_201.json
@@ -807,9 +837,10 @@
 
 
 .. http:get:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints
-   :synopsis: List endpoints
+   :title: List endpoints
+   :synopsis: Lists endpoints for a tenant.
 
-   Lists endpoints for a tenant.
+   
 
    :responseexample 200: v2/examples/listEndpoints_resp_200.json
    :responseexample 203: v2/examples/listEndpoints_resp_203.json
@@ -829,9 +860,10 @@
 
 
 .. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials/{type}
-   :synopsis: List credentials by type
+   :title: List credentials by type
+   :synopsis: Lists credentials by type.
 
-   Lists credentials by type.
+   
 
    :responseexample 200: v2/examples/listCredentialsByType_resp_200.json
    :responseexample 203: v2/examples/listCredentialsByType_resp_203.json
@@ -852,9 +884,10 @@
 
 
 .. http:get:: /v2.0/OS-KSCATALOG/endpointTemplates
-   :synopsis: List endpoint templates
+   :title: List endpoint templates
+   :synopsis: Lists endpoint templates.
 
-   Lists endpoint templates.
+   
 
    :responseexample 200: v2/examples/listEndpointTemplates_resp_200.json
    :responseexample 203: v2/examples/listEndpointTemplates_resp_203.json
@@ -873,9 +906,10 @@
 
 
 .. http:post:: /v2.0/OS-KSCATALOG/endpointTemplates
-   :synopsis: Create endpoint template
+   :title: Create endpoint template
+   :synopsis: Creates endpoint template.
 
-   Creates endpoint template.
+   
 
    :requestexample: v2/examples/createEndpointTemplate_req.json
    :responseexample 201: v2/examples/createEndpointTemplate_resp_201.json
@@ -894,9 +928,10 @@
 
 
 .. http:get:: /v2.0/OS-KSADM/{roleId}
-   :synopsis: Show role information by ID
+   :title: Show role information by ID
+   :synopsis: Shows information for a specified role, by ID.
 
-   Shows information for a specified role, by ID.
+   
 
    :responseexample 200: v2/examples/showRoleByID_resp_200.json
    :responseexample 203: v2/examples/showRoleByID_resp_203.json
@@ -917,9 +952,10 @@
 
 
 .. http:delete:: /v2.0/OS-KSADM/{roleId}
-   :synopsis: Delete role
+   :title: Delete role
+   :synopsis: Deletes a specified role.
 
-   Deletes a specified role.
+   
 
    :tag: ksadm-admin
    :parameter roleId: The role ID.
@@ -934,9 +970,10 @@
 
 
 .. http:put:: /v2.0/users/{userId}
-   :synopsis: Update user
+   :title: Update user
+   :synopsis: Updates a specified user.
 
-   Updates a specified user.
+   
 
    :requestexample: v2/examples/updateUser_req.json
    :responseexample 200: v2/examples/updateUser_resp_200.json
@@ -956,9 +993,10 @@
 
 
 .. http:delete:: /v2.0/users/{userId}
-   :synopsis: Delete user
+   :title: Delete user
+   :synopsis: Deletes a specified user.
 
-   Deletes a specified user.
+   
 
    :tag: ksadm-admin
    :parameter userId: The user ID.
@@ -973,9 +1011,10 @@
 
 
 .. http:get:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints/{endpointId}
-   :synopsis: Get endpoint
+   :title: Get endpoint
+   :synopsis: Gets endpoint for a tenant.
 
-   Gets endpoint for a tenant.
+   
 
    :responseexample 200: v2/examples/getEndpoint_resp_200.json
    :responseexample 203: v2/examples/getEndpoint_resp_203.json
@@ -996,9 +1035,10 @@
 
 
 .. http:delete:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints/{endpointId}
-   :synopsis: Delete endpoint
+   :title: Delete endpoint
+   :synopsis: Deletes an endpoint from a tenant.
 
-   Deletes an endpoint from a tenant.
+   
 
    :tag: kscatalog
    :parameter tenantId: The tenant ID.

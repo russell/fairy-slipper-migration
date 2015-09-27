@@ -1666,7 +1666,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Block Storage API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersions", 
         "method": "get", 
@@ -1738,10 +1738,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Block Storage API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "/v2": [
@@ -1749,7 +1750,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for Block Storage API v2.", 
+        "description": "", 
         "examples": {}, 
         "id": "versionDetails", 
         "method": "get", 
@@ -1835,10 +1836,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show API version details", 
+        "summary": "Shows details for Block Storage API v2.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Show API version details"
       }
     ], 
     "/v2/{tenant_id}/backups": [
@@ -1846,7 +1848,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a Block Storage backup from a volume.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "backup": {
@@ -1905,16 +1907,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create backup", 
+        "summary": "Creates a Block Storage backup from a volume.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "Create backup"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists backups defined in Block Storage to which the tenant who\nsubmits the request has access.", 
+        "description": "", 
         "examples": {}, 
         "id": "listBackups", 
         "method": "get", 
@@ -2002,10 +2005,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List backups", 
+        "summary": "Lists backups defined in Block Storage to which the tenant who submits the request has access.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "List backups"
       }
     ], 
     "/v2/{tenant_id}/backups/detail": [
@@ -2013,7 +2017,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists detailed information for backups defined in Block Storage to\nwhich the tenant who submits the request has access.", 
+        "description": "", 
         "examples": {}, 
         "id": "listBackupsDetails", 
         "method": "get", 
@@ -2123,10 +2127,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List backups (detailed)", 
+        "summary": "Lists detailed information for backups defined in Block Storage to which the tenant who submits the request has access.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "List backups (detailed)"
       }
     ], 
     "/v2/{tenant_id}/backups/{backup_id}": [
@@ -2134,7 +2139,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified backup.", 
+        "description": "", 
         "examples": {}, 
         "id": "showBackup", 
         "method": "get", 
@@ -2193,14 +2198,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show backup details", 
+        "summary": "Shows details for a specified backup.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "Show backup details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified backup.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteBackup", 
         "method": "delete", 
@@ -2229,10 +2235,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete backup", 
+        "summary": "Deletes a specified backup.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "Delete backup"
       }
     ], 
     "/v2/{tenant_id}/backups/{backup_id}/action": [
@@ -2240,7 +2247,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Force-deletes a specified backup. Specify the ``os-force_delete``\naction in the request body.\n\nThe backup and any backup data is deleted.\n\nThe backup driver returns the ``405`` status code if it does not\nsupport this operation.", 
+        "description": "The backup and any backup data is deleted.\n\nThe backup driver returns the ``405`` status code if it does not\nsupport this operation.", 
         "examples": {
           "application/json": {
             "os-force_delete": {}
@@ -2292,10 +2299,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Force-delete backup", 
+        "summary": "Force-deletes a specified backup. Specify the ``os-force_delete`` action in the request body.", 
         "tags": [
           "ext-backups-actions-v2"
-        ]
+        ], 
+        "title": "Force-delete backup"
       }
     ], 
     "/v2/{tenant_id}/backups/{backup_id}/restore": [
@@ -2303,7 +2311,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Restores a Block Storage backup to an existing or new Block Storage\nvolume.\n\nYou must specify either the volume ID or name. If you specify both\nthe volume ID and name, the ID takes priority.", 
+        "description": "You must specify either the volume ID or name. If you specify both\nthe volume ID and name, the ID takes priority.", 
         "examples": {
           "application/json": {
             "restore": {
@@ -2357,10 +2365,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Restore backup", 
+        "summary": "Restores a Block Storage backup to an existing or new Block Storage volume.", 
         "tags": [
           "ext-backups"
-        ]
+        ], 
+        "title": "Restore backup"
       }
     ], 
     "/v2/{tenant_id}/capabilities/{hostname}": [
@@ -2368,7 +2377,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows capabilities for a specified storage back end.", 
+        "description": "", 
         "examples": {}, 
         "id": "getBackendCapabilities", 
         "method": "get", 
@@ -2433,10 +2442,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show back-end capabilities", 
+        "summary": "Shows capabilities for a specified storage back end.", 
         "tags": [
           "os-backend-capabilities-v2"
-        ]
+        ], 
+        "title": "Show back-end capabilities"
       }
     ], 
     "/v2/{tenant_id}/extensions": [
@@ -2444,7 +2454,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists Block Storage API extensions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listExtensions-cinder-v2", 
         "method": "get", 
@@ -2897,10 +2907,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List API extensions", 
+        "summary": "Lists Block Storage API extensions.", 
         "tags": [
           "extensions"
-        ]
+        ], 
+        "title": "List API extensions"
       }
     ], 
     "/v2/{tenant_id}/limits": [
@@ -2908,7 +2919,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows absolute limits for a tenant.\n\nAn absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite.", 
+        "description": "An absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite.", 
         "examples": {}, 
         "id": "showAbsoluteLimits", 
         "method": "get", 
@@ -2963,10 +2974,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show absolute limits", 
+        "summary": "Shows absolute limits for a tenant.", 
         "tags": [
           "limits"
-        ]
+        ], 
+        "title": "Show absolute limits"
       }
     ], 
     "/v2/{tenant_id}/os-quota-sets/defaults": [
@@ -2974,7 +2986,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets default quotas for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "getDefaults", 
         "method": "get", 
@@ -3005,10 +3017,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get default quotas", 
+        "summary": "Gets default quotas for a tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Get default quotas"
       }
     ], 
     "/v2/{tenant_id}/os-quota-sets/{tenant_id}": [
@@ -3016,7 +3029,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows quotas for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuota", 
         "method": "get", 
@@ -3055,16 +3068,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quotas", 
+        "summary": "Shows quotas for a tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Show quotas"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quotas for a tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -3108,14 +3122,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quotas", 
+        "summary": "Updates quotas for a tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Update quotas"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes quotas for a tenant so the quotas revert to default values.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteQuotas", 
         "method": "delete", 
@@ -3136,10 +3151,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quotas", 
+        "summary": "Deletes quotas for a tenant so the quotas revert to default values.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Delete quotas"
       }
     ], 
     "/v2/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}": [
@@ -3147,7 +3163,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for quotas for a specified tenant and user.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuotaDetailUser", 
         "method": "get", 
@@ -3184,10 +3200,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quota details for user", 
+        "summary": "Shows details for quotas for a specified tenant and user.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Show quota details for user"
       }
     ], 
     "/v2/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}": [
@@ -3195,7 +3212,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables an admin user to show quotas for a specified tenant and\nuser.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuotaUser", 
         "method": "get", 
@@ -3232,16 +3249,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quotas for user", 
+        "summary": "Enables an admin user to show quotas for a specified tenant and user.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Show quotas for user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quotas for a specified tenant/project and user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -3293,14 +3311,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quotas for user", 
+        "summary": "Updates quotas for a specified tenant/project and user.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Update quotas for user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes quotas for a user so that the quotas revert to default\nvalues.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteQuotasUser", 
         "method": "delete", 
@@ -3329,10 +3348,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quotas for user", 
+        "summary": "Deletes quotas for a user so that the quotas revert to default values.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Delete quotas for user"
       }
     ], 
     "/v2/{tenant_id}/os-vol-image-meta": [
@@ -3340,7 +3360,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows image metadata that is associated with a specified volume.\n\nWhen the request is made, the caller must specify (in the ref\nelement) a reference to an existing storage volume. Each storage\ndriver may interpret the existing storage volume reference\ndifferently, but should accept a reference structure containing\neither a source-volume-id or source-volume-name element if\npossible.", 
+        "description": "When the request is made, the caller must specify (in the ref\nelement) a reference to an existing storage volume. Each storage\ndriver may interpret the existing storage volume reference\ndifferently, but should accept a reference structure containing\neither a source-volume-id or source-volume-name element if\npossible.", 
         "examples": {
           "application/json": {
             "volume": {
@@ -3425,10 +3445,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image metadata for volume", 
+        "summary": "Shows image metadata that is associated with a specified volume.", 
         "tags": [
           "os-vol-image-meta-v2"
-        ]
+        ], 
+        "title": "Show image metadata for volume"
       }
     ], 
     "/v2/{tenant_id}/os-volume-manage": [
@@ -3436,7 +3457,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a Block Storage volume by using existing storage rather\nthan allocating new storage.\n\nThe caller must specify a reference to an existing storage volume\nin the ref parameter in the request. Although each storage driver\nmight interpret this reference differently, the driver should\naccept a reference structure that contains either a source-volume-\nid or source-volume-name element, if possible.\n\nThe API chooses the size of the volume by rounding up the size of\nthe existing storage volume to the next gibibyte (GiB).", 
+        "description": "The caller must specify a reference to an existing storage volume\nin the ref parameter in the request. Although each storage driver\nmight interpret this reference differently, the driver should\naccept a reference structure that contains either a source-volume-\nid or source-volume-name element, if possible.\n\nThe API chooses the size of the volume by rounding up the size of\nthe existing storage volume to the next gibibyte (GiB).", 
         "examples": {
           "application/json": {
             "volume": {
@@ -3521,10 +3542,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Manage existing volume", 
+        "summary": "Creates a Block Storage volume by using existing storage rather than allocating new storage.", 
         "tags": [
           "volume-manage"
-        ]
+        ], 
+        "title": "Manage existing volume"
       }
     ], 
     "/v2/{tenant_id}/qos-specs": [
@@ -3532,7 +3554,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a QoS specification.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "qos_specs": {
@@ -3594,16 +3616,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create QoS specification", 
+        "summary": "Creates a QoS specification.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Create QoS specification"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists quality of service (QoS) specifications.", 
+        "description": "", 
         "examples": {}, 
         "id": "listQoSSpecs", 
         "method": "get", 
@@ -3676,10 +3699,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List QoS specs", 
+        "summary": "Lists quality of service (QoS) specifications.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "List QoS specs"
       }
     ], 
     "/v2/{tenant_id}/qos-specs/{qos_id}": [
@@ -3687,7 +3711,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified QoS specification.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQoSDetails", 
         "method": "get", 
@@ -3768,16 +3792,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show QoS specification details", 
+        "summary": "Shows details for a specified QoS specification.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Show QoS specification details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Sets or unsets keys in a specified QoS specification.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "qos_specs": {
@@ -3829,14 +3854,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Set or unset keys in QoS specification", 
+        "summary": "Sets or unsets keys in a specified QoS specification.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Set or unset keys in QoS specification"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified QoS specification.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteQoSSpec", 
         "method": "delete", 
@@ -3881,16 +3907,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete QoS specification", 
+        "summary": "Deletes a specified QoS specification.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Delete QoS specification"
       }
     ], 
     "/v2/{tenant_id}/qos-specs/{qos_id}/associate": [
       {
         "consumes": [], 
-        "description": "Associates a QoS specification with a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "associateQoSSpec", 
         "method": "get", 
@@ -3919,10 +3946,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Associate QoS specification with volume type", 
+        "summary": "Associates a QoS specification with a specified volume type.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Associate QoS specification with volume type"
       }
     ], 
     "/v2/{tenant_id}/qos-specs/{qos_id}/associations": [
@@ -3930,7 +3958,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets all associations for a specified QoS specification.", 
+        "description": "", 
         "examples": {}, 
         "id": "getQoSAssociations", 
         "method": "get", 
@@ -3971,16 +3999,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get all associations for QoS specification", 
+        "summary": "Gets all associations for a specified QoS specification.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Get all associations for QoS specification"
       }
     ], 
     "/v2/{tenant_id}/qos-specs/{qos_id}/disassociate": [
       {
         "consumes": [], 
-        "description": "Disassociates a QoS specification from a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "disassociateQoSSpec", 
         "method": "get", 
@@ -4009,16 +4038,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate QoS specification from volume type", 
+        "summary": "Disassociates a QoS specification from a specified volume type.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Disassociate QoS specification from volume type"
       }
     ], 
     "/v2/{tenant_id}/qos-specs/{qos_id}/disassociate_all": [
       {
         "consumes": [], 
-        "description": "Disassociates a specified QoS specification from all associations.", 
+        "description": "", 
         "examples": {}, 
         "id": "disassociateQoSSpecAll", 
         "method": "get", 
@@ -4047,10 +4077,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate QoS specification from all associations", 
+        "summary": "Disassociates a specified QoS specification from all associations.", 
         "tags": [
           "qos-v2-qos-specs"
-        ]
+        ], 
+        "title": "Disassociate QoS specification from all associations"
       }
     ], 
     "/v2/{tenant_id}/snapshots": [
@@ -4058,7 +4089,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a snapshot, which is a point-in-time complete copy of a\nvolume. You can create a volume from the snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "snapshot": {
@@ -4143,16 +4174,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create snapshot", 
+        "summary": "Creates a snapshot, which is a point-in-time complete copy of a volume. You can create a volume from the snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Create snapshot"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists summary information for all Block Storage snapshots that the\ntenant who submits the request can access.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsSimple", 
         "method": "get", 
@@ -4232,10 +4264,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots", 
+        "summary": "Lists summary information for all Block Storage snapshots that the tenant who submits the request can access.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "List snapshots"
       }
     ], 
     "/v2/{tenant_id}/snapshots/detail": [
@@ -4243,7 +4276,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists detailed information for all Block Storage snapshots that the\ntenant who submits the request can access.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsDetail", 
         "method": "get", 
@@ -4295,10 +4328,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots (detailed)", 
+        "summary": "Lists detailed information for all Block Storage snapshots that the tenant who submits the request can access.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "List snapshots (detailed)"
       }
     ], 
     "/v2/{tenant_id}/snapshots/{snapshot_id}": [
@@ -4306,7 +4340,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshot", 
         "method": "get", 
@@ -4352,16 +4386,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot information", 
+        "summary": "Shows information for a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Show snapshot information"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "snapshot": {
@@ -4411,14 +4446,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update snapshot", 
+        "summary": "Updates a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Update snapshot"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteSnapshot", 
         "method": "delete", 
@@ -4447,10 +4483,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete snapshot", 
+        "summary": "Deletes a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Delete snapshot"
       }
     ], 
     "/v2/{tenant_id}/snapshots/{snapshot_id}/metadata": [
@@ -4458,7 +4495,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the metadata for a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "showSnapshotMetadata", 
         "method": "get", 
@@ -4506,16 +4543,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot metadata", 
+        "summary": "Shows the metadata for a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Show snapshot metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the metadata for a specified snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -4558,10 +4596,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update snapshot metadata", 
+        "summary": "Updates the metadata for a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Update snapshot metadata"
       }
     ], 
     "/v2/{tenant_id}/types": [
@@ -4569,7 +4608,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists volume types.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeTypes", 
         "method": "get", 
@@ -4609,16 +4648,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List volume types", 
+        "summary": "Lists volume types.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "List volume types"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -4660,10 +4700,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create volume type", 
+        "summary": "Creates a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Create volume type"
       }
     ], 
     "/v2/{tenant_id}/types/{volume_type_id}": [
@@ -4671,7 +4712,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -4730,16 +4771,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update volume type", 
+        "summary": "Updates a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Update volume type"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the extra specifications assigned to a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -4798,16 +4840,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update extra specs for a volume type", 
+        "summary": "Updates the extra specifications assigned to a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Update extra specs for a volume type"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information about a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeType", 
         "method": "get", 
@@ -4848,14 +4891,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume type information", 
+        "summary": "Shows information about a specified volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Show volume type information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteVolumeType", 
         "method": "delete", 
@@ -4884,10 +4928,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete volume type", 
+        "summary": "Deletes a specified volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Delete volume type"
       }
     ], 
     "/v2/{tenant_id}/volumes": [
@@ -4895,7 +4940,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a private Block Storage volume.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume": {
@@ -4961,16 +5006,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create private volume", 
+        "summary": "Creates a private Block Storage volume.", 
         "tags": [
           "volume-type-access"
-        ]
+        ], 
+        "title": "Create private volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a volume.\n\nTo create a bootable volume, include the ID of the image from which\nyou want to create the volume in the ``imageRef`` attribute in the\nrequest body.\n\nPreconditions\n\n- You must have enough volume storage quota remaining to create a\n  volume of size requested.\n\nAsynchronous Postconditions\n\n- With correct permissions, you can see the volume status as\n  ``available`` through API calls.\n\n- With correct access, you can see the created volume in the storage\n  system that OpenStack Block Storage manages.\n\nTroubleshooting\n\n- If volume status remains ``creating`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the storage back end.\n\n- Volume is not created in the storage system which OpenStack Block\n  Storage manages.\n\n- The storage node needs enough free storage space to match the\n  specified size of the volume creation request.", 
+        "description": "To create a bootable volume, include the ID of the image from which\nyou want to create the volume in the ``imageRef`` attribute in the\nrequest body.\n\nPreconditions\n\n- You must have enough volume storage quota remaining to create a\n  volume of size requested.\n\nAsynchronous Postconditions\n\n- With correct permissions, you can see the volume status as\n  ``available`` through API calls.\n\n- With correct access, you can see the created volume in the storage\n  system that OpenStack Block Storage manages.\n\nTroubleshooting\n\n- If volume status remains ``creating`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the storage back end.\n\n- Volume is not created in the storage system which OpenStack Block\n  Storage manages.\n\n- The storage node needs enough free storage space to match the\n  specified size of the volume creation request.", 
         "examples": {
           "application/json": {
             "volume": {
@@ -5057,16 +5103,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create volume", 
+        "summary": "Creates a volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Create volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists summary information for all Block Storage volumes that the\ntenant who submits the request can access.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesSimple", 
         "method": "get", 
@@ -5146,10 +5193,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volumes", 
+        "summary": "Lists summary information for all Block Storage volumes that the tenant who submits the request can access.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "List volumes"
       }
     ], 
     "/v2/{tenant_id}/volumes/detail": [
@@ -5157,7 +5205,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists detailed information for all Block Storage volumes that the\ntenant who submits the request can access.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesDetail", 
         "method": "get", 
@@ -5265,10 +5313,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volumes (detailed)", 
+        "summary": "Lists detailed information for all Block Storage volumes that the tenant who submits the request can access.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "List volumes (detailed)"
       }
     ], 
     "/v2/{tenant_id}/volumes/{volume_id}": [
@@ -5276,7 +5325,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information about a specified volume.\n\nPreconditions\n\n- The specified volume must exist.", 
+        "description": "Preconditions\n\n- The specified volume must exist.", 
         "examples": {}, 
         "id": "getVolume", 
         "method": "get", 
@@ -5339,16 +5388,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume information", 
+        "summary": "Shows information about a specified volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Show volume information"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a volume.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume": {
@@ -5415,14 +5465,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update volume", 
+        "summary": "Updates a volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Update volume"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified volume.\n\nPreconditions\n\n- Volume status must be ``available`` , ``in-use`` , ``error`` , or\n  ``error_restoring`` .\n\n- You cannot already have a snapshot related to the specified\n  volume.\n\n- You cannot delete a volume that is in a migration.\n\nAsynchronous Postconditions\n\n- The volume is deleted in volume index.\n\n- The volume managed by OpenStack Block Storage is deleted in\n  storage node.\n\nTroubleshooting\n\n- If volume status remains in ``deleting`` or becomes\n  ``error_deleting`` the request failed. Ensure you meet the\n  preconditions then investigate the storage back end.\n\n- The volume managed by OpenStack Block Storage is not deleted from\n  the storage system.", 
+        "description": "Preconditions\n\n- Volume status must be ``available`` , ``in-use`` , ``error`` , or\n  ``error_restoring`` .\n\n- You cannot already have a snapshot related to the specified\n  volume.\n\n- You cannot delete a volume that is in a migration.\n\nAsynchronous Postconditions\n\n- The volume is deleted in volume index.\n\n- The volume managed by OpenStack Block Storage is deleted in\n  storage node.\n\nTroubleshooting\n\n- If volume status remains in ``deleting`` or becomes\n  ``error_deleting`` the request failed. Ensure you meet the\n  preconditions then investigate the storage back end.\n\n- The volume managed by OpenStack Block Storage is not deleted from\n  the storage system.", 
         "examples": {}, 
         "id": "deleteVolume", 
         "method": "delete", 
@@ -5451,10 +5502,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete volume", 
+        "summary": "Deletes a specified volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Delete volume"
       }
     ], 
     "/v2/{tenant_id}/volumes/{volume_id}/action": [
@@ -5462,7 +5514,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Extends the size of a specified volume to a new size requested in\ngibibytes (GiB). Specify the ``os-extend`` action in the request\nbody.\n\nPreconditions\n\n- Volume status must be ``available`` .\n\n- Sufficient amount of storage must exist to extend the volume.\n\n- The user quota must have sufficient volume storage.\n\nTroubleshooting\n\n- An ``error_extending`` volume status indicates that the request\n  failed. Ensure that you meet the preconditions and retry the\n  request. If the request fails again, investigate the storage back\n  end.", 
+        "description": "Preconditions\n\n- Volume status must be ``available`` .\n\n- Sufficient amount of storage must exist to extend the volume.\n\n- The user quota must have sufficient volume storage.\n\nTroubleshooting\n\n- An ``error_extending`` volume status indicates that the request\n  failed. Ensure that you meet the preconditions and retry the\n  request. If the request fails again, investigate the storage back\n  end.", 
         "examples": {
           "application/json": {
             "os-extend": {
@@ -5508,16 +5560,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Extend volume", 
+        "summary": "Extends the size of a specified volume to a new size requested in gibibytes (GiB). Specify the ``os-extend`` action in the request body.", 
         "tags": [
           "volume-api-v2-volumes-actions"
-        ]
+        ], 
+        "title": "Extend volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resets the status, attach status, and migration status for a\nspecified volume. Specify the ``os-reset_status`` action in the\nrequest body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "os-reset_status": {
@@ -5565,16 +5618,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Reset volume statuses", 
+        "summary": "Resets the status, attach status, and migration status for a specified volume. Specify the ``os-reset_status`` action in the request body.", 
         "tags": [
           "volume-api-v2-volumes-actions"
-        ]
+        ], 
+        "title": "Reset volume statuses"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Sets the image metadata for a specified volume. Specify the ``os-\nset_image_metadata`` action in the request body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "os-set_image_metadata": {
@@ -5625,16 +5679,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Set image metadata for volume", 
+        "summary": "Sets the image metadata for a specified volume. Specify the ``os-set_image_metadata`` action in the request body.", 
         "tags": [
           "volume-api-v2-volumes-actions"
-        ]
+        ], 
+        "title": "Set image metadata for volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes image metadata, by key, from a specified volume. Specify\nthe ``os-unset_image_metadata`` action in the request body and the\n``key`` for the metadata key and value pair that you want to\nremove.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "os-unset_image_metadata": {
@@ -5680,16 +5735,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove image metadata from volume", 
+        "summary": "Removes image metadata, by key, from a specified volume. Specify the ``os-unset_image_metadata`` action in the request body and the ``key`` for the metadata key and value pair that you want to remove.", 
         "tags": [
           "volume-api-v2-volumes-actions"
-        ]
+        ], 
+        "title": "Remove image metadata from volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Attaches the specified volume to the specified server. Specify the\n``os-attach`` action in the request body.\n\nPreconditions\n\n- Volume status must be ``available`` .\n\n- You should set ``instance_uuid`` or ``host_name`` .", 
+        "description": "Preconditions\n\n- Volume status must be ``available`` .\n\n- You should set ``instance_uuid`` or ``host_name`` .", 
         "examples": {
           "application/json": {
             "os-attach": {
@@ -5737,10 +5793,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Attach volume", 
+        "summary": "Attaches the specified volume to the specified server. Specify the ``os-attach`` action in the request body.", 
         "tags": [
           "volume-api-v2-volumes-actions"
-        ]
+        ], 
+        "title": "Attach volume"
       }
     ]
   }, 

@@ -137,7 +137,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Image service API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersions-image-v1", 
         "method": "get", 
@@ -265,16 +265,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Image service API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "/v1/images": [
       {
         "consumes": [], 
-        "description": "Registers a virtual machine (VM) image.", 
+        "description": "", 
         "examples": {}, 
         "id": "createImage-v1", 
         "method": "post", 
@@ -296,16 +297,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create image", 
+        "summary": "Registers a virtual machine (VM) image.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Create image"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists public VM images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listImage-v1", 
         "method": "get", 
@@ -391,10 +393,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images", 
+        "summary": "Lists public VM images.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "List images"
       }
     ], 
     "/v1/images/detail": [
@@ -402,7 +405,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for available images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDetailImage-v1", 
         "method": "get", 
@@ -500,16 +503,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List image details", 
+        "summary": "Lists details for available images.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "List image details"
       }
     ], 
     "/v1/images/{image_id}": [
       {
         "consumes": [], 
-        "description": "Updates an image, uploads an image file, or updates metadata for an\nimage.", 
+        "description": "", 
         "examples": {}, 
         "id": "updateImage-v1", 
         "method": "put", 
@@ -530,16 +534,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update image", 
+        "summary": "Updates an image, uploads an image file, or updates metadata for an image.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Update image"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the image details as headers and the image binary in the body\nof the response.", 
+        "description": "", 
         "examples": {}, 
         "id": "getImage-v1", 
         "method": "get", 
@@ -593,14 +598,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image details and image binary", 
+        "summary": "Shows the image details as headers and the image binary in the body of the response.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Show image details and image binary"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes the specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteImage-v1", 
         "method": "delete", 
@@ -621,10 +627,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete image", 
+        "summary": "Deletes the specified image.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Delete image"
       }
     ], 
     "/v1/images/{image_id}/members": [
@@ -632,7 +639,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Replaces a membership list for an image.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "memberships": [
@@ -676,10 +683,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Replace member", 
+        "summary": "Replaces a membership list for an image.", 
         "tags": [
           "members"
-        ]
+        ], 
+        "title": "Replace member"
       }
     ], 
     "/v1/images/{image_id}/members/{owner_id}": [
@@ -687,7 +695,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a member to an image.\n\nIf you omit the request body, this call adds the membership to the\nimage, leaves the existing memberships unmodified, and sets the\n``can_share`` attribute to ``false`` for new memberships.", 
+        "description": "If you omit the request body, this call adds the membership to the\nimage, leaves the existing memberships unmodified, and sets the\n``can_share`` attribute to ``false`` for new memberships.", 
         "examples": {
           "application/json": {
             "members": [
@@ -740,14 +748,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Add member", 
+        "summary": "Adds a member to an image.", 
         "tags": [
           "members"
-        ]
+        ], 
+        "title": "Add member"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a member from an image.", 
+        "description": "", 
         "examples": {}, 
         "id": "removeMember-v1", 
         "method": "delete", 
@@ -785,10 +794,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove member", 
+        "summary": "Removes a member from an image.", 
         "tags": [
           "members"
-        ]
+        ], 
+        "title": "Remove member"
       }
     ], 
     "/v1/shared-images/{owner_id}": [
@@ -796,7 +806,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the VM images that are shared with a specified owner. The\nowner ID is the tenant ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSharedImages-v1", 
         "method": "get", 
@@ -831,10 +841,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List shared images", 
+        "summary": "Lists the VM images that are shared with a specified owner. The owner ID is the tenant ID.", 
         "tags": [
           "shared-images"
-        ]
+        ], 
+        "title": "List shared images"
       }
     ]
   }, 

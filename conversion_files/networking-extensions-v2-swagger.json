@@ -4557,10 +4557,10 @@
             "headers": {}
           }
         }, 
-        "summary": "List extensions", 
         "tags": [
           "extensions"
-        ]
+        ], 
+        "title": "List extensions"
       }
     ], 
     "/v2.0/extensions/{alias}": [
@@ -4639,10 +4639,10 @@
             "headers": {}
           }
         }, 
-        "summary": "Get extension details", 
         "tags": [
           "extensions"
-        ]
+        ], 
+        "title": "Get extension details"
       }
     ], 
     "/v2.0/floatingips": [
@@ -4650,7 +4650,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists floating IPs that are accessible to the tenant who submits\nthe request.\n\nDefault policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\nGET /v2.0/floatingips Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\nGET /v2.0/floatingips Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
         "examples": {}, 
         "id": "listFloatingIps", 
         "method": "get", 
@@ -4693,16 +4693,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List floating IPs", 
+        "summary": "Lists floating IPs that are accessible to the tenant who submits the request.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "List floating IPs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a floating IP, and, if you specify port information,\nassociates the floating IP with an internal port.\n\nTo associate the floating IP with an internal port, specify the\nport ID attribute in the request body. If you do not specify a port\nID in the request, you can issue a PUT request instead of a POST\nrequest.\n\nDefault policy settings enable only administrative users to set\nfloating IP addresses and some non-administrative users might\nrequire a floating IP address. If you do not specify a floating IP\naddress in the request, the API automatically allocates one.\n\nBy default, this operation associates the floating IP address with\na single fixed IP address that is configured on an OpenStack\nNetworking port. If a port has multiple IP addresses, you must\nspecify the ``fixed_ip_address`` attribute in the request body to\nassociate a specific fixed IP address with the floating IP address.\n\nYou can create floating IPs on external networks only.\n\nYou must configure an IP address with the internal OpenStack\nNetworking port that is associated with the floating IP address.\n\nError codes:\n\n- ``400`` The operation returns this error code for one of these\n  reasons:\n - The specified network is not external, such as\n   ``router:external=False`` .\n\n - The specified internal OpenStack Networking port is not associated\n   with the floating IP address.\n\n - The requested floating IP address does not fall in the subnet\n   range for the external network.\n\n - The specified fixed IP address is not valid.\n\n\n- ``401`` The operation is not authorized.\n\n- ``404`` The specified port ID is not valid.\n\n- ``409`` The operation returns this error code for one of these\n  reasons:\n - The requested floating IP address is already in use.\n\n - The internal OpenStack Networking port and specified fixed IP\n   address are already associated with another floating IP.", 
+        "description": "To associate the floating IP with an internal port, specify the\nport ID attribute in the request body. If you do not specify a port\nID in the request, you can issue a PUT request instead of a POST\nrequest.\n\nDefault policy settings enable only administrative users to set\nfloating IP addresses and some non-administrative users might\nrequire a floating IP address. If you do not specify a floating IP\naddress in the request, the API automatically allocates one.\n\nBy default, this operation associates the floating IP address with\na single fixed IP address that is configured on an OpenStack\nNetworking port. If a port has multiple IP addresses, you must\nspecify the ``fixed_ip_address`` attribute in the request body to\nassociate a specific fixed IP address with the floating IP address.\n\nYou can create floating IPs on external networks only.\n\nYou must configure an IP address with the internal OpenStack\nNetworking port that is associated with the floating IP address.\n\nError codes:\n\n- ``400`` The operation returns this error code for one of these\n  reasons:\n - The specified network is not external, such as\n   ``router:external=False`` .\n\n - The specified internal OpenStack Networking port is not associated\n   with the floating IP address.\n\n - The requested floating IP address does not fall in the subnet\n   range for the external network.\n\n - The specified fixed IP address is not valid.\n\n\n- ``401`` The operation is not authorized.\n\n- ``404`` The specified port ID is not valid.\n\n- ``409`` The operation returns this error code for one of these\n  reasons:\n - The requested floating IP address is already in use.\n\n - The internal OpenStack Networking port and specified fixed IP\n   address are already associated with another floating IP.", 
         "examples": {
           "application/json": {
             "floatingip": {
@@ -4752,10 +4753,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create floating IP", 
+        "summary": "Creates a floating IP, and, if you specify port information, associates the floating IP with an internal port.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Create floating IP"
       }
     ], 
     "/v2.0/floatingips/{floatingip_id}": [
@@ -4763,7 +4765,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified floating IP.\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\nGET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address & fields=floating_ip_address Accept: application/json", 
+        "description": "Use the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\nGET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address & fields=floating_ip_address Accept: application/json", 
         "examples": {}, 
         "id": "showFloatingIp", 
         "method": "get", 
@@ -4811,16 +4813,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show floating IP details", 
+        "summary": "Shows details for a specified floating IP.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Show floating IP details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a floating IP and its association with an internal port.\n\nThe association process is the same as the process for the create\nfloating IP operation.\n\nTo disassociate a floating IP from a port, set the ``port_id``\nattribute to null or omit it from the request body.\n\nThis example updates a floating IP:\n\nPUT /v2.0/floatingips/{floatingip_id} Accept: application/jsonDepending on the request body that you submit, this request\nassociates a port with or disassociates a port from a floating IP.", 
+        "description": "The association process is the same as the process for the create\nfloating IP operation.\n\nTo disassociate a floating IP from a port, set the ``port_id``\nattribute to null or omit it from the request body.\n\nThis example updates a floating IP:\n\nPUT /v2.0/floatingips/{floatingip_id} Accept: application/jsonDepending on the request body that you submit, this request\nassociates a port with or disassociates a port from a floating IP.", 
         "examples": {
           "application/json": {
             "floatingip": {
@@ -4878,14 +4881,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update floating IP", 
+        "summary": "Updates a floating IP and its association with an internal port.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Update floating IP"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a floating IP and, if present, its associated port.\n\nThis example deletes a floating IP:\n\nDELETE /v2.0/floatingips/{floatingip_id} Accept: application/json", 
+        "description": "This example deletes a floating IP:\n\nDELETE /v2.0/floatingips/{floatingip_id} Accept: application/json", 
         "examples": {}, 
         "id": "deleteFloatingIp", 
         "method": "delete", 
@@ -4914,10 +4918,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete floating IP", 
+        "summary": "Deletes a floating IP and, if present, its associated port.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Delete floating IP"
       }
     ], 
     "/v2.0/lb/health_monitors": [
@@ -4925,7 +4930,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists health monitors.", 
+        "description": "", 
         "examples": {}, 
         "id": "listHealthMonitors", 
         "method": "get", 
@@ -4985,16 +4990,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List health monitors", 
+        "summary": "Lists health monitors.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List health monitors"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a load balancer health monitor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "healthmonitor": {
@@ -5062,10 +5068,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create a load balancer health monitor", 
+        "summary": "Creates a load balancer health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create a load balancer health monitor"
       }
     ], 
     "/v2.0/lb/health_monitors/{health_monitor_id}": [
@@ -5073,7 +5080,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified health monitor.", 
+        "description": "", 
         "examples": {}, 
         "id": "showHealthMonitor", 
         "method": "get", 
@@ -5136,16 +5143,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show health monitor details", 
+        "summary": "Shows details for a specified health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show health monitor details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified load balancer health monitor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "health_monitor": {
@@ -5214,14 +5222,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update health monitor", 
+        "summary": "Updates a specified load balancer health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update health monitor"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified load balancer health monitor.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteHealthMonitor", 
         "method": "delete", 
@@ -5262,10 +5271,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete health monitor", 
+        "summary": "Deletes a specified load balancer health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Delete health monitor"
       }
     ], 
     "/v2.0/lb/members": [
@@ -5273,7 +5283,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists members.", 
+        "description": "", 
         "examples": {}, 
         "id": "listMembers", 
         "method": "get", 
@@ -5332,16 +5342,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List members", 
+        "summary": "Lists members.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List members"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a load balancer member.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "member": {
@@ -5397,10 +5408,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create a load balancer member", 
+        "summary": "Creates a load balancer member.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create a load balancer member"
       }
     ], 
     "/v2.0/lb/members/{member_id}": [
@@ -5408,7 +5420,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified member.", 
+        "description": "", 
         "examples": {}, 
         "id": "showMember", 
         "method": "get", 
@@ -5463,16 +5475,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show member details", 
+        "summary": "Shows details for a specified member.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show member details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified load balancer member.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "member": {
@@ -5535,14 +5548,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update member", 
+        "summary": "Updates a specified load balancer member.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update member"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified load balancer member.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteMember", 
         "method": "delete", 
@@ -5583,10 +5597,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete member", 
+        "summary": "Deletes a specified load balancer member.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Delete member"
       }
     ], 
     "/v2.0/lb/pools": [
@@ -5594,7 +5609,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists pools.", 
+        "description": "", 
         "examples": {}, 
         "id": "listPools", 
         "method": "get", 
@@ -5653,16 +5668,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List pools", 
+        "summary": "Lists pools.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List pools"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a load balancer pool.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "pool": {
@@ -5734,10 +5750,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create a load balancer pool", 
+        "summary": "Creates a load balancer pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create a load balancer pool"
       }
     ], 
     "/v2.0/lb/pools/{pool_id}": [
@@ -5745,7 +5762,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified pool.", 
+        "description": "", 
         "examples": {}, 
         "id": "showPool", 
         "method": "get", 
@@ -5807,16 +5824,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show pool details", 
+        "summary": "Shows details for a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show pool details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified load balancer pool.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "pool": {
@@ -5882,14 +5900,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update pool", 
+        "summary": "Updates a specified load balancer pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update pool"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified load balancer pool.", 
+        "description": "", 
         "examples": {}, 
         "id": "deletePool", 
         "method": "delete", 
@@ -5930,10 +5949,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete pool", 
+        "summary": "Deletes a specified load balancer pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Delete pool"
       }
     ], 
     "/v2.0/lb/pools/{pool_id}/health_monitors": [
@@ -5941,7 +5961,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Associates a health monitor with a specified pool.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "health_monitor": {
@@ -5994,16 +6014,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Associate health monitor with pool", 
+        "summary": "Associates a health monitor with a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Associate health monitor with pool"
       }
     ], 
     "/v2.0/lb/pools/{pool_id}/health_monitors/{health_monitor_id}": [
       {
         "consumes": [], 
-        "description": "Disassociates a specified health monitor from a pool.", 
+        "description": "", 
         "examples": {}, 
         "id": "disassociateHealthMonitor", 
         "method": "delete", 
@@ -6052,10 +6073,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate health monitor from pool", 
+        "summary": "Disassociates a specified health monitor from a pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Disassociate health monitor from pool"
       }
     ], 
     "/v2.0/lb/vips": [
@@ -6063,7 +6085,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists VIPs.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVIPs", 
         "method": "get", 
@@ -6113,16 +6135,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List VIPs", 
+        "summary": "Lists VIPs.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List VIPs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a load balancer VIP.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "vip": {
@@ -6189,10 +6212,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create a load balancer VIP", 
+        "summary": "Creates a load balancer VIP.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create a load balancer VIP"
       }
     ], 
     "/v2.0/lb/vips/{vip_id}": [
@@ -6200,7 +6224,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified VIP.", 
+        "description": "", 
         "examples": {}, 
         "id": "showVIP", 
         "method": "get", 
@@ -6273,16 +6297,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show VIP details", 
+        "summary": "Shows details for a specified VIP.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show VIP details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified load balancer VIP.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "vip": {
@@ -6349,14 +6374,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update VIP", 
+        "summary": "Updates a specified load balancer VIP.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update VIP"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified load balancer VIP.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteVIP", 
         "method": "delete", 
@@ -6397,10 +6423,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete VIP", 
+        "summary": "Deletes a specified load balancer VIP.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Delete VIP"
       }
     ], 
     "/v2.0/lbaas/health_monitors": [
@@ -6408,7 +6435,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a health monitor.\n\nThis operation provisions a new health monitor based on the\nconfiguration defined in the request object. After the request is\nvalidated and progress has started on the provisioning process, a\nresponse object is returned. The object contains a unique\nidentifier.\n\nThe caller of this operation must specify these health monitor\nattributes, at a minimum:\n\n- ``tenant_id`` . Only required if the caller has an administrative\n  role and wants to create a health monitor for another tenant.\n\n- ``type`` . The type of health monitor. Must be one of TCP, HTTP,\n  HTTPS\n\n- ``delay`` . The interval in seconds between health checks.\n\n- ``timeout`` . The time in seconds that a health check times out.\n\n- ``max_retries`` . Number of failed health checks before marked as\n  OFFLINE.\n\n- ``pool_id`` . The pool that this health monitor will monitor.\n\nSome attributes will receive default values if not specified in the\nrequest and are only useful when health monitor type of HTTP(S) is\nspecified:\n\n- ``http_method`` . The default is GET.\n\n- ``url_path`` . The default is ``/`` .\n\n- ``expected_codes`` . The expected http status codes to get from a\n  successful health check. Default is 200.\n\n- ``admin_state_up`` . The default is true.\n\nIf the request cannot be fulfilled due to insufficient data or data\nthat is not valid, an HTTP 400 (Bad Request) error response is\nreturned with information regarding the nature of the failure in\nthe response body. Failures in the validation process are non-\nrecoverable and require the caller to correct the cause of the\nfailure and POST the request again.\n\nYou can configure all documented features of the health monitor at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create health monitors on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\ndifferent than their own.\n\nTo update a health monitor, the load balancer to which it is being\nattached must have an ACTIVE provisioning status.\n\nExample: Create a health monitor", 
+        "description": "This operation provisions a new health monitor based on the\nconfiguration defined in the request object. After the request is\nvalidated and progress has started on the provisioning process, a\nresponse object is returned. The object contains a unique\nidentifier.\n\nThe caller of this operation must specify these health monitor\nattributes, at a minimum:\n\n- ``tenant_id`` . Only required if the caller has an administrative\n  role and wants to create a health monitor for another tenant.\n\n- ``type`` . The type of health monitor. Must be one of TCP, HTTP,\n  HTTPS\n\n- ``delay`` . The interval in seconds between health checks.\n\n- ``timeout`` . The time in seconds that a health check times out.\n\n- ``max_retries`` . Number of failed health checks before marked as\n  OFFLINE.\n\n- ``pool_id`` . The pool that this health monitor will monitor.\n\nSome attributes will receive default values if not specified in the\nrequest and are only useful when health monitor type of HTTP(S) is\nspecified:\n\n- ``http_method`` . The default is GET.\n\n- ``url_path`` . The default is ``/`` .\n\n- ``expected_codes`` . The expected http status codes to get from a\n  successful health check. Default is 200.\n\n- ``admin_state_up`` . The default is true.\n\nIf the request cannot be fulfilled due to insufficient data or data\nthat is not valid, an HTTP 400 (Bad Request) error response is\nreturned with information regarding the nature of the failure in\nthe response body. Failures in the validation process are non-\nrecoverable and require the caller to correct the cause of the\nfailure and POST the request again.\n\nYou can configure all documented features of the health monitor at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create health monitors on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\ndifferent than their own.\n\nTo update a health monitor, the load balancer to which it is being\nattached must have an ACTIVE provisioning status.\n\nExample: Create a health monitor", 
         "examples": {
           "application/json": {
             "healthmonitor": {
@@ -6490,16 +6517,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create health monitor", 
+        "summary": "Creates a health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create health monitor"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists health monitors.\n\nThis operation lists all health monitors associated with your\ntenant account.\n\nThis operation returns a list, which might be empty, each element\nin the list is a health monitor that can contain the following\nattributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``type``\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\n- ``pool_id``\n\n- ``pools``\n\nExample: List health monitors", 
+        "description": "This operation lists all health monitors associated with your\ntenant account.\n\nThis operation returns a list, which might be empty, each element\nin the list is a health monitor that can contain the following\nattributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``type``\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\n- ``pool_id``\n\n- ``pools``\n\nExample: List health monitors", 
         "examples": {}, 
         "id": "listHealthMonitors", 
         "method": "get", 
@@ -6547,10 +6575,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List health monitors", 
+        "summary": "Lists health monitors.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List health monitors"
       }
     ], 
     "/v2.0/lbaas/health_monitors/{health_monitor_id}": [
@@ -6558,7 +6587,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified health monitor.\n\nThis operation returns a health monitor object identified by\n``health_monitor_id`` . If the user is not an administrative user\nand the health monitor object does not belong to her tenant\naccount, the service returns the HTTP ``Forbidden (403)`` response\ncode.\n\nIf this operation succeeds, it returns a health monitor element\nthat can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``type``\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\n- ``pool_id``\n\n- ``pools``\n\nExample: Show health monitor details", 
+        "description": "This operation returns a health monitor object identified by\n``health_monitor_id`` . If the user is not an administrative user\nand the health monitor object does not belong to her tenant\naccount, the service returns the HTTP ``Forbidden (403)`` response\ncode.\n\nIf this operation succeeds, it returns a health monitor element\nthat can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``type``\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\n- ``pool_id``\n\n- ``pools``\n\nExample: Show health monitor details", 
         "examples": {}, 
         "id": "showHealthMonitor", 
         "method": "get", 
@@ -6620,16 +6649,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show health monitor details", 
+        "summary": "Shows details for a specified health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show health monitor details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified health monitor.\n\nThis operation updates the attributes of the specified health\nmonitor. Upon successful validation of the request, the service\nreturns the HTTP ``Accepted (202)`` response code.\n\nThe update operation enables you to change one or more health\nmonitor attributes:\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\nNote: The health monitor ID, ``tenant_id`` , ``pool_id`` , and type\nare immutable attributes and cannot be updated. If you specify an\nunsupported attribute, the service returns the HTTP ``Immutable\n(422)`` response code.", 
+        "description": "This operation updates the attributes of the specified health\nmonitor. Upon successful validation of the request, the service\nreturns the HTTP ``Accepted (202)`` response code.\n\nThe update operation enables you to change one or more health\nmonitor attributes:\n\n- ``delay``\n\n- ``timeout``\n\n- ``max_retries``\n\n- ``http_method``\n\n- ``url_path``\n\n- ``expected_codes``\n\n- ``admin_state_up``\n\nNote: The health monitor ID, ``tenant_id`` , ``pool_id`` , and type\nare immutable attributes and cannot be updated. If you specify an\nunsupported attribute, the service returns the HTTP ``Immutable\n(422)`` response code.", 
         "examples": {
           "application/json": {
             "healthmonitor": {
@@ -6705,14 +6735,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update health monitor", 
+        "summary": "Updates a specified health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update health monitor"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified health monitor.\n\nThis operation removes the specified health monitor and its\nassociated configuration from the tenant account. Any and all\nconfiguration data is immediately purged and cannot be recovered.\n\nYou cannot delete a health monitor if the attached load balancer\ndoes not have a ``provisioning_status`` value of ``ACTIVE`` .\n\nExample: Delete a health monitor", 
+        "description": "This operation removes the specified health monitor and its\nassociated configuration from the tenant account. Any and all\nconfiguration data is immediately purged and cannot be recovered.\n\nYou cannot delete a health monitor if the attached load balancer\ndoes not have a ``provisioning_status`` value of ``ACTIVE`` .\n\nExample: Delete a health monitor", 
         "examples": {}, 
         "id": "deleteHealthMonitor", 
         "method": "delete", 
@@ -6748,10 +6779,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove health monitor", 
+        "summary": "Removes a specified health monitor.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Remove health monitor"
       }
     ], 
     "/v2.0/lbaas/listeners": [
@@ -6759,7 +6791,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a listener.\n\nThis operation provisions a new listener based on the configuration\ndefined in the request object. After the request is validated and\nthe provisioning process begins, a response object is returned. The\nobject contains a unique identifier.\n\nAt a minimum, you must specify these listener attributes:\n\n- ``tenant_id`` . Required only if the caller has an administrative\n  role and wants to create a listener for another tenant.\n\n- ``loadbalancer_id`` . The load balancer on which this listener is\n  provisioned. A tenant can only create listeners on load balancers\n  authorized by policy. For example, her own load balancers.\n\n- ``description`` . The load balancer description.\n\n- ``protocol`` . The protocol for which the front end listens. Must\n  be TCP, HTTP, or HTTPS.\n\n- ``protocol_port`` . The port on which the front end listens. Must\n  be an integer from 1 to 65535.\n\n- ``default_tls_container_ref`` . The reference to a container that\n  holds TLS secrets. If you also specify ``sni_container_refs`` ,\n  this container is the default.\n\n- ``sni_container_refs`` . A list of references to containers that\n  hold TLS secrets that are used for Server Name Indication (SNI).\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\n- ``connection_limit`` . The default is ``-1`` , which indicates an\n  infinite limit.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nYou can configure all documented features of the listener at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create listeners on behalf of\nother tenants by specifying a ``tenant_id`` attribute different\nthan their own.\n\nA listener cannot be updated if the load balancer that it is\nattempting to be attached to does not have a\n``provisioning_status`` of ``ACTIVE`` .\n\nExample: Create a listener", 
+        "description": "This operation provisions a new listener based on the configuration\ndefined in the request object. After the request is validated and\nthe provisioning process begins, a response object is returned. The\nobject contains a unique identifier.\n\nAt a minimum, you must specify these listener attributes:\n\n- ``tenant_id`` . Required only if the caller has an administrative\n  role and wants to create a listener for another tenant.\n\n- ``loadbalancer_id`` . The load balancer on which this listener is\n  provisioned. A tenant can only create listeners on load balancers\n  authorized by policy. For example, her own load balancers.\n\n- ``description`` . The load balancer description.\n\n- ``protocol`` . The protocol for which the front end listens. Must\n  be TCP, HTTP, or HTTPS.\n\n- ``protocol_port`` . The port on which the front end listens. Must\n  be an integer from 1 to 65535.\n\n- ``default_tls_container_ref`` . The reference to a container that\n  holds TLS secrets. If you also specify ``sni_container_refs`` ,\n  this container is the default.\n\n- ``sni_container_refs`` . A list of references to containers that\n  hold TLS secrets that are used for Server Name Indication (SNI).\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\n- ``connection_limit`` . The default is ``-1`` , which indicates an\n  infinite limit.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nYou can configure all documented features of the listener at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create listeners on behalf of\nother tenants by specifying a ``tenant_id`` attribute different\nthan their own.\n\nA listener cannot be updated if the load balancer that it is\nattempting to be attached to does not have a\n``provisioning_status`` of ``ACTIVE`` .\n\nExample: Create a listener", 
         "examples": {
           "application/json": {
             "listener": {
@@ -6848,16 +6880,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create listener", 
+        "summary": "Creates a listener.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create listener"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists listeners.\n\nThis operation lists all listeners that are associated with your\ntenant account.\n\nThis operation returns a list, which might be empty. Each list\nelement is a listener that can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``protocol_port``\n\n- ``connection_limit``\n\n- ``default_pool_id``\n\n- ``admin_state_up``\n\n- ``loadbalancers``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: List listeners", 
+        "description": "This operation lists all listeners that are associated with your\ntenant account.\n\nThis operation returns a list, which might be empty. Each list\nelement is a listener that can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``protocol_port``\n\n- ``connection_limit``\n\n- ``default_pool_id``\n\n- ``admin_state_up``\n\n- ``loadbalancers``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: List listeners", 
         "examples": {}, 
         "id": "listListeners", 
         "method": "get", 
@@ -6909,10 +6942,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List listeners", 
+        "summary": "Lists listeners.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List listeners"
       }
     ], 
     "/v2.0/lbaas/listeners/{listener_id}": [
@@ -6920,7 +6954,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified listener.\n\nThis operation returns a listener object identified by\n``listener_id`` . If the user is not an administrative user and the\nlistener object does not belong to her tenant account, the call\nreturns the HTTP ``Forbidden(403)`` response code.\n\nIf this operation succeeds, it returns a listener element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``protocol_port``\n\n- ``connection_limit``\n\n- ``default_pool_id``\n\n- ``admin_state_up``\n\n- ``loadbalancers``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: Show listener details", 
+        "description": "This operation returns a listener object identified by\n``listener_id`` . If the user is not an administrative user and the\nlistener object does not belong to her tenant account, the call\nreturns the HTTP ``Forbidden(403)`` response code.\n\nIf this operation succeeds, it returns a listener element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``protocol_port``\n\n- ``connection_limit``\n\n- ``default_pool_id``\n\n- ``admin_state_up``\n\n- ``loadbalancers``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: Show listener details", 
         "examples": {}, 
         "id": "showListener", 
         "method": "get", 
@@ -6986,16 +7020,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show listener details", 
+        "summary": "Shows details for a specified listener.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show listener details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified listener.\n\nThis operation updates the attributes of a specified listener. Upon\nsuccessful validation of the request, the service returns the HTTP\n``Accepted (202)`` response code.\n\nThe update operation enables the caller to change one or more of\nthe following listener attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\n- ``connection_limit``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: Update a listener\n\nNote: You cannot update the ``listener_id`` , ``tenant_id`` ,\n``loadbalancer_id`` , ``loadbalancers`` , ``default_pool_id`` ,\n``protocol`` , and ``protocol_port`` listener attributes.\nAttempting to update an immutable attribute results in the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a listener if the load balancer to which\nthe listener is attached does not have a ``provisioning_status`` of\n``ACTIVE`` .", 
+        "description": "This operation updates the attributes of a specified listener. Upon\nsuccessful validation of the request, the service returns the HTTP\n``Accepted (202)`` response code.\n\nThe update operation enables the caller to change one or more of\nthe following listener attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\n- ``connection_limit``\n\n- ``default_tls_container_ref``\n\n- ``sni_container_refs``\n\nExample: Update a listener\n\nNote: You cannot update the ``listener_id`` , ``tenant_id`` ,\n``loadbalancer_id`` , ``loadbalancers`` , ``default_pool_id`` ,\n``protocol`` , and ``protocol_port`` listener attributes.\nAttempting to update an immutable attribute results in the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a listener if the load balancer to which\nthe listener is attached does not have a ``provisioning_status`` of\n``ACTIVE`` .", 
         "examples": {
           "application/json": {
             "listener": {
@@ -7077,14 +7112,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update listener", 
+        "summary": "Updates a specified listener.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update listener"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified listener.\n\nThis operation removes a specified listener and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nYou cannot delete a listener if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Delete a listener", 
+        "description": "This operation removes a specified listener and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nYou cannot delete a listener if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Delete a listener", 
         "examples": {}, 
         "id": "deleteListener", 
         "method": "delete", 
@@ -7120,10 +7156,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove listener", 
+        "summary": "Removes a specified listener.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Remove listener"
       }
     ], 
     "/v2.0/lbaas/loadbalancers": [
@@ -7131,7 +7168,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists load balancers.\n\nLists all load balancers that are associated with your tenant\naccount.\n\nThis operation returns a list, which might be empty. Each element\nin the list is a load balancer that can contain the following\nattributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``vip_subnet_id``\n\n- ``vip_address``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``provisioning_status``\n\n- ``operating_status``", 
+        "description": "Lists all load balancers that are associated with your tenant\naccount.\n\nThis operation returns a list, which might be empty. Each element\nin the list is a load balancer that can contain the following\nattributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``vip_subnet_id``\n\n- ``vip_address``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``provisioning_status``\n\n- ``operating_status``", 
         "examples": {}, 
         "id": "listLoadBalancers", 
         "method": "get", 
@@ -7178,16 +7215,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List load balancers", 
+        "summary": "Lists load balancers.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List load balancers"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a load balancer.\n\nThis operation provisions a new load balancer based on the\nconfiguration defined in the request object. After the request is\nvalidated and progress has started on the provisioning process, a\nresponse object is returned. The object contains a unique\nidentifier and the status of provisioning the load balancer.\n\nThe ``provisioning_status`` of the load balancer in the response\ncan have one of the following values: ``ACTIVE`` ,\n``PENDING_CREATE`` , or ``ERROR`` .\n\nIf the status is ``PENDING_CREATE`` , the caller can view the\nprogress of the provisioning operation by performing a GET on\n``/lbaas/loadbalancers/loadbalancer_id`` . When the status of the\nload balancer changes to ``ACTIVE`` , the load balancer was\nsuccessfully provisioned and is operational for traffic handling.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nYou can configure all documented features of the load balancer at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create load balancers on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\ndifferent than their own.\n\n**Example: Create a load balancer**\n\n- ``tenant_id`` . only required if the caller has an administrative\n  role and wants to create a load balancer for another tenant.\n\n- ``vip_subnet_id`` . The network on which to allocate the VIP\n  address for the load balancer. A tenant can only create load\n  balancer VIPs on networks that are authorized by the policy, such\n  as her own networks or shared or provider networks.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is true.\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\nIf the request cannot be fulfilled due to insufficient data or data\nthat is not valid, the service returns the HTTP ``BadRequest\n(400)`` response code with information about the failure in the\nresponse body. Validation errors require that you correct the error\nand submit the request again.\n\nYou can configure all documented features of the load balancer at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create load balancers on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\nthat is different than their own.\n\nA user can supply a ``vip_address`` field if she owns the subnet on\nwhich the load balancer's VIP will be created. If a ``vip_address``\nis not specified in the payload, the LBaaS service allocates one\nfrom the load balancer VIP's subnet.\n\nExample: Create a load balancer", 
+        "description": "This operation provisions a new load balancer based on the\nconfiguration defined in the request object. After the request is\nvalidated and progress has started on the provisioning process, a\nresponse object is returned. The object contains a unique\nidentifier and the status of provisioning the load balancer.\n\nThe ``provisioning_status`` of the load balancer in the response\ncan have one of the following values: ``ACTIVE`` ,\n``PENDING_CREATE`` , or ``ERROR`` .\n\nIf the status is ``PENDING_CREATE`` , the caller can view the\nprogress of the provisioning operation by performing a GET on\n``/lbaas/loadbalancers/loadbalancer_id`` . When the status of the\nload balancer changes to ``ACTIVE`` , the load balancer was\nsuccessfully provisioned and is operational for traffic handling.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nYou can configure all documented features of the load balancer at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create load balancers on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\ndifferent than their own.\n\n**Example: Create a load balancer**\n\n- ``tenant_id`` . only required if the caller has an administrative\n  role and wants to create a load balancer for another tenant.\n\n- ``vip_subnet_id`` . The network on which to allocate the VIP\n  address for the load balancer. A tenant can only create load\n  balancer VIPs on networks that are authorized by the policy, such\n  as her own networks or shared or provider networks.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is true.\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\nIf the request cannot be fulfilled due to insufficient data or data\nthat is not valid, the service returns the HTTP ``BadRequest\n(400)`` response code with information about the failure in the\nresponse body. Validation errors require that you correct the error\nand submit the request again.\n\nYou can configure all documented features of the load balancer at\ncreation time by specifying the additional elements or attributes\nin the request.\n\nUsers with an administrative role can create load balancers on\nbehalf of other tenants by specifying a ``tenant_id`` attribute\nthat is different than their own.\n\nA user can supply a ``vip_address`` field if she owns the subnet on\nwhich the load balancer's VIP will be created. If a ``vip_address``\nis not specified in the payload, the LBaaS service allocates one\nfrom the load balancer VIP's subnet.\n\nExample: Create a load balancer", 
         "examples": {
           "application/json": {
             "loadbalancer": {
@@ -7261,10 +7299,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create load balancer", 
+        "summary": "Creates a load balancer.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create load balancer"
       }
     ], 
     "/v2.0/lbaas/loadbalancers/{loadbalancer_id}": [
@@ -7272,7 +7311,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified load balancer.\n\nThis operation returns a load balancer object identified by\n``loadbalancer_id`` . If the user is not an administrative user and\nthe load balancer object does not belong to her tenant account, the\nservice returns the HTTP ``Forbidden (403)`` response code.\n\nIf this operation succeeds, it returns a load balancer element that\ncan contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``vip_subnet_id``\n\n- ``vip_address``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``provisioning_status``\n\n- ``operating_status``\n\n**Example: Show loadbalancer details**", 
+        "description": "This operation returns a load balancer object identified by\n``loadbalancer_id`` . If the user is not an administrative user and\nthe load balancer object does not belong to her tenant account, the\nservice returns the HTTP ``Forbidden (403)`` response code.\n\nIf this operation succeeds, it returns a load balancer element that\ncan contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``vip_subnet_id``\n\n- ``vip_address``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``provisioning_status``\n\n- ``operating_status``\n\n**Example: Show loadbalancer details**", 
         "examples": {}, 
         "id": "showLoadBalancer", 
         "method": "get", 
@@ -7327,16 +7366,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show load balancer details", 
+        "summary": "Shows details for a specified load balancer.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show load balancer details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified load balancer.\n\nThis operation updates the attributes of the specified load\nbalancer. Upon successful validation of the request, the service\nreturns the ``Accepted (202)`` response code. A caller should check\nthat the load balancer ``provisioning_status`` has changed to\n``ACTIVE`` to confirm that the update has taken effect. If the load\nbalancer ``provisioning_status`` is ``PENDING_UPDATE`` , the caller\ncan poll the load balancer object by using a GET operation to wait\nfor the changes to be applied.\n\nThe update operation enables you to change one or more of the\nfollowing load balancer attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\nThis operation returns the updated load balancer object. The\n``provisioning_status`` value can be ``ACTIVE`` ,\n``PENDING_UPDATE`` , or ``ERROR`` .", 
+        "description": "This operation updates the attributes of the specified load\nbalancer. Upon successful validation of the request, the service\nreturns the ``Accepted (202)`` response code. A caller should check\nthat the load balancer ``provisioning_status`` has changed to\n``ACTIVE`` to confirm that the update has taken effect. If the load\nbalancer ``provisioning_status`` is ``PENDING_UPDATE`` , the caller\ncan poll the load balancer object by using a GET operation to wait\nfor the changes to be applied.\n\nThe update operation enables you to change one or more of the\nfollowing load balancer attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\nThis operation returns the updated load balancer object. The\n``provisioning_status`` value can be ``ACTIVE`` ,\n``PENDING_UPDATE`` , or ``ERROR`` .", 
         "examples": {
           "application/json": {
             "loadbalancer": {
@@ -7403,14 +7443,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update load balancer", 
+        "summary": "Updates a specified load balancer.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update load balancer"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified load balancer.\n\nThis operation removes the specified load balancer and its\nassociated configuration from the tenant account. Any and all\nconfiguration data is immediately purged and cannot be recovered.\n\nExample: Delete a load balancer", 
+        "description": "This operation removes the specified load balancer and its\nassociated configuration from the tenant account. Any and all\nconfiguration data is immediately purged and cannot be recovered.\n\nExample: Delete a load balancer", 
         "examples": {}, 
         "id": "deleteLoadBalancer", 
         "method": "delete", 
@@ -7442,10 +7483,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove load balancer", 
+        "summary": "Removes a specified load balancer.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Remove load balancer"
       }
     ], 
     "/v2.0/lbaas/pools": [
@@ -7453,7 +7495,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a pool.\n\nThis operation provisions a new pool based on the configuration\ndefined in the request object. After the request is validated and\nprogress has started on the provisioning process, a response object\nis returned. The object contains a unique identifier.\n\nThe caller of this operation must specify these pool attributes, at\na minimum:\n\n- ``tenant_id`` . Required only if the caller has an administrative\n  role and wants to create a pool for another tenant.\n\n- ``protocol`` . The protocol for which this pool and its members\n  listen. A valid value is TCP, HTTP, or HTTPS.\n\n- ``lb_method`` . The load-balancer algorithm, which is round-robin,\n  least-connections, and so on, that is used to distribute traffic\n  to the pool members. This value, which must be supported, is\n  dependent on the load-balancer provider. The round-robin\n  algorithm must be supported.\n\n- ``protocol_port`` . The port on which the front end listens. Must\n  be an integer from 1 to 65535.\n\n- ``listener_id`` . The ID of the listener in which this pool\n  becomes the default pool. Each listener can have only one default\n  pool.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\n- ``session_persistence`` . The default is an empty dictionary.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nUsers can configure all documented features at creation time by\nproviding the additional elements or attributes in the request.\n\nUsers with an administrative role can create pools on behalf of\nother tenants by specifying a ``tenant_id`` attribute that is\ndifferent than their own.\n\nYou cannot update a pool if the load balancer to which it is\nattempting to be attached does not have a ``provisioning_status``\nof ``ACTIVE`` .\n\nExample: Create a pool", 
+        "description": "This operation provisions a new pool based on the configuration\ndefined in the request object. After the request is validated and\nprogress has started on the provisioning process, a response object\nis returned. The object contains a unique identifier.\n\nThe caller of this operation must specify these pool attributes, at\na minimum:\n\n- ``tenant_id`` . Required only if the caller has an administrative\n  role and wants to create a pool for another tenant.\n\n- ``protocol`` . The protocol for which this pool and its members\n  listen. A valid value is TCP, HTTP, or HTTPS.\n\n- ``lb_method`` . The load-balancer algorithm, which is round-robin,\n  least-connections, and so on, that is used to distribute traffic\n  to the pool members. This value, which must be supported, is\n  dependent on the load-balancer provider. The round-robin\n  algorithm must be supported.\n\n- ``protocol_port`` . The port on which the front end listens. Must\n  be an integer from 1 to 65535.\n\n- ``listener_id`` . The ID of the listener in which this pool\n  becomes the default pool. Each listener can have only one default\n  pool.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``name`` . The default is an empty string.\n\n- ``description`` . The default is an empty string.\n\n- ``session_persistence`` . The default is an empty dictionary.\n\nIf the request cannot be fulfilled due to insufficient or invalid\ndata, the service returns the HTTP ``Bad Request(400)`` response\ncode with information about the failure in the response body.\nValidation errors require that you correct the error and submit the\nrequest again.\n\nUsers can configure all documented features at creation time by\nproviding the additional elements or attributes in the request.\n\nUsers with an administrative role can create pools on behalf of\nother tenants by specifying a ``tenant_id`` attribute that is\ndifferent than their own.\n\nYou cannot update a pool if the load balancer to which it is\nattempting to be attached does not have a ``provisioning_status``\nof ``ACTIVE`` .\n\nExample: Create a pool", 
         "examples": {
           "application/json": {
             "pool": {
@@ -7539,16 +7581,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create pool", 
+        "summary": "Creates a pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Create pool"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists pools.\n\nThis operation lists all pools that are associated with your tenant\naccount.\n\nThis operation returns a response body that contains a list, which\nmight be empty. Each pool element in the list can contain the\nfollowing attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``lb_method``\n\n- ``session_persistence``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``members``\n\n- ``health_monitor_id``\n\nExample: List pools", 
+        "description": "This operation lists all pools that are associated with your tenant\naccount.\n\nThis operation returns a response body that contains a list, which\nmight be empty. Each pool element in the list can contain the\nfollowing attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``lb_method``\n\n- ``session_persistence``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``members``\n\n- ``health_monitor_id``\n\nExample: List pools", 
         "examples": {}, 
         "id": "listPools", 
         "method": "get", 
@@ -7595,10 +7638,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List pools", 
+        "summary": "Lists pools.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List pools"
       }
     ], 
     "/v2.0/lbaas/pools/{pool_id}": [
@@ -7606,7 +7650,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified pool.\n\nThis operation returns a pool object identified by ``pool_id`` . If\nthe user is not an administrative user and the pool object does not\nbelong to her tenant account, the call returns the HTTP\n``Forbidden(403)`` response code.\n\nIf this operation succeeds, it returns a ``pool`` element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``lb_method``\n\n- ``session_persistence``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``members``\n\n- ``health_monitor_id``\n\nExample: Show pool details", 
+        "description": "This operation returns a pool object identified by ``pool_id`` . If\nthe user is not an administrative user and the pool object does not\nbelong to her tenant account, the call returns the HTTP\n``Forbidden(403)`` response code.\n\nIf this operation succeeds, it returns a ``pool`` element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``name``\n\n- ``description``\n\n- ``protocol``\n\n- ``lb_method``\n\n- ``session_persistence``\n\n- ``admin_state_up``\n\n- ``listeners``\n\n- ``members``\n\n- ``health_monitor_id``\n\nExample: Show pool details", 
         "examples": {}, 
         "id": "showPool", 
         "method": "get", 
@@ -7667,16 +7711,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show pool details", 
+        "summary": "Shows details for a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show pool details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified pool.\n\nThis operation updates the attributes of the specified pool. Upon\nsuccessful validation of the request, the service returns the HTTP\n``Accepted (202)`` response code.\n\nThe update operation enables the caller to change one or more of\nthe following pool attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\n- ``lb_method``\n\n- ``session_persistence``\n\nNote: You cannot update the pool ID, ``tenant_id`` ,\n``listener_id`` , ``listeners`` , ``health_monitor_id`` ,\n``protocol`` , and ``members`` immutable attributes. If you try to\nupdate any of these attributes, the service returns the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a pool if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Update a pool", 
+        "description": "This operation updates the attributes of the specified pool. Upon\nsuccessful validation of the request, the service returns the HTTP\n``Accepted (202)`` response code.\n\nThe update operation enables the caller to change one or more of\nthe following pool attributes:\n\n- ``name``\n\n- ``description``\n\n- ``admin_state_up``\n\n- ``lb_method``\n\n- ``session_persistence``\n\nNote: You cannot update the pool ID, ``tenant_id`` ,\n``listener_id`` , ``listeners`` , ``health_monitor_id`` ,\n``protocol`` , and ``members`` immutable attributes. If you try to\nupdate any of these attributes, the service returns the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a pool if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Update a pool", 
         "examples": {
           "application/json": {
             "pool": {
@@ -7755,14 +7800,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update pool", 
+        "summary": "Updates a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update pool"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified pool.\n\nThis operation removes a specified pool and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nYou cannot delete a pool if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Delete a pool", 
+        "description": "This operation removes a specified pool and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nYou cannot delete a pool if the load balancer to which it is\nattached does not have a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Delete a pool", 
         "examples": {}, 
         "id": "deletePool", 
         "method": "delete", 
@@ -7798,10 +7844,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove pool", 
+        "summary": "Removes a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Remove pool"
       }
     ], 
     "/v2.0/lbaas/pools/{pool_id}/members": [
@@ -7809,7 +7856,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a member to a pool.\n\nThis operation provisions a new member and adds it to a pool based\non the configuration defined in the request object. After the\nrequest is validated and progress has started on the provisioning\nprocess, a response object is returned. The object contains a\nunique identifier.\n\nAt a minimum, you must specify the following pool attributes:\n\n- ``tenant_id`` . Only required if the caller has an administrative\n  role and wants to create a pool for another tenant.\n\n- ``address`` . The IP address of the member to receive traffic from\n  the load balancer.\n\n- ``protocol_port`` The port on which the member is listening to\n  receive traffic.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``weight`` . The default is ``1`` .\n\nIf you omit the ``subnet_id`` parameter, LBaaS uses the\n``vip_subnet_id`` parameter value for the subnet ID.\n\nIf the request fails due to incorrect data, the service returns the\nHTTP ``Bad Request (400)`` response code with information about the\nfailure in the response body. Validation errors require that you\ncorrect the error and submit the request again.\n\nTo configure all documented member features at creation time,\nspecify additional elements or attributes in the request.\n\nUsers with an administrative role can create members on behalf of\nother tenants by specifying a ``tenant_id`` attribute that is\ndifferent than their own.\n\nTo update a member, the load balancer must have a\n``provisioning_status`` of ``ACTIVE`` .", 
+        "description": "This operation provisions a new member and adds it to a pool based\non the configuration defined in the request object. After the\nrequest is validated and progress has started on the provisioning\nprocess, a response object is returned. The object contains a\nunique identifier.\n\nAt a minimum, you must specify the following pool attributes:\n\n- ``tenant_id`` . Only required if the caller has an administrative\n  role and wants to create a pool for another tenant.\n\n- ``address`` . The IP address of the member to receive traffic from\n  the load balancer.\n\n- ``protocol_port`` The port on which the member is listening to\n  receive traffic.\n\nSome attributes receive default values if not specified in the\nrequest:\n\n- ``admin_state_up`` . The default is ``true`` .\n\n- ``weight`` . The default is ``1`` .\n\nIf you omit the ``subnet_id`` parameter, LBaaS uses the\n``vip_subnet_id`` parameter value for the subnet ID.\n\nIf the request fails due to incorrect data, the service returns the\nHTTP ``Bad Request (400)`` response code with information about the\nfailure in the response body. Validation errors require that you\ncorrect the error and submit the request again.\n\nTo configure all documented member features at creation time,\nspecify additional elements or attributes in the request.\n\nUsers with an administrative role can create members on behalf of\nother tenants by specifying a ``tenant_id`` attribute that is\ndifferent than their own.\n\nTo update a member, the load balancer must have a\n``provisioning_status`` of ``ACTIVE`` .", 
         "examples": {
           "application/json": {
             "member": {
@@ -7879,16 +7926,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add member to pool", 
+        "summary": "Adds a member to a pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Add member to pool"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists members of a specified pool.\n\nLists all members that are associated with a pool that is\nassociated with your tenant account. The list of members includes\nonly members that belong to the pool object identified by\n``pool_id`` .\n\nThis operation returns a list, which might be empty. Each element\nin the list is a member that can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``address``\n\n- ``protocol_port``\n\n- ``weight``\n\n- ``subnet_id``\n\n- ``admin_state_up``\n\nExample: List pool members", 
+        "description": "Lists all members that are associated with a pool that is\nassociated with your tenant account. The list of members includes\nonly members that belong to the pool object identified by\n``pool_id`` .\n\nThis operation returns a list, which might be empty. Each element\nin the list is a member that can contain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``address``\n\n- ``protocol_port``\n\n- ``weight``\n\n- ``subnet_id``\n\n- ``admin_state_up``\n\nExample: List pool members", 
         "examples": {}, 
         "id": "listMembers", 
         "method": "get", 
@@ -7928,10 +7976,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List pool members", 
+        "summary": "Lists members of a specified pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "List pool members"
       }
     ], 
     "/v2.0/lbaas/pools/{pool_id}/members/{member_id}": [
@@ -7939,7 +7988,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified pool member.\n\nThis operation returns a member object identified by ``member_id``\nthat belongs to a pool object identified by ``pool_id`` . If the\nuser is not an administrative user and the pool or member object\ndoes not belong to her tenant account, the service returns the HTTP\n``Forbidden (403)`` response code.\n\nIf this operation succeeds, it returns a pool element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``address``\n\n- ``protocol_port``\n\n- ``weight``\n\n- ``subnet_id``\n\n- ``admin_state_up``\n\nExample: Show pool member details", 
+        "description": "This operation returns a member object identified by ``member_id``\nthat belongs to a pool object identified by ``pool_id`` . If the\nuser is not an administrative user and the pool or member object\ndoes not belong to her tenant account, the service returns the HTTP\n``Forbidden (403)`` response code.\n\nIf this operation succeeds, it returns a pool element that can\ncontain the following attributes:\n\n- ``id``\n\n- ``tenant_id``\n\n- ``address``\n\n- ``protocol_port``\n\n- ``weight``\n\n- ``subnet_id``\n\n- ``admin_state_up``\n\nExample: Show pool member details", 
         "examples": {}, 
         "id": "showMember", 
         "method": "get", 
@@ -7993,16 +8042,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show pool member details", 
+        "summary": "Shows details for a specified pool member.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Show pool member details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified member of a pool.\n\nThis operation updates the attributes of the specified pool. Upon\nsuccessful validation of the request, the service returns the HTTP\n``OK (200)`` response code.\n\nThe update operation enables you to change one or more of these\npool attributes:\n\n- ``weight``\n\n- ``admin_state_up``\n\nNote: You cannot update the member ID, ``tenant_id`` , ``address``\n, ``protocol_port`` , and ``subnet_id`` attributes. If you attempt\nto update any of these attributes, the service returns the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a member if the attached load balancer does\nnot have a ``provisioning_status`` of ``ACTIVE`` .", 
+        "description": "This operation updates the attributes of the specified pool. Upon\nsuccessful validation of the request, the service returns the HTTP\n``OK (200)`` response code.\n\nThe update operation enables you to change one or more of these\npool attributes:\n\n- ``weight``\n\n- ``admin_state_up``\n\nNote: You cannot update the member ID, ``tenant_id`` , ``address``\n, ``protocol_port`` , and ``subnet_id`` attributes. If you attempt\nto update any of these attributes, the service returns the HTTP\n``Immutable (422)`` response code.\n\nNote: You cannot update a member if the attached load balancer does\nnot have a ``provisioning_status`` of ``ACTIVE`` .", 
         "examples": {
           "application/json": {
             "member": {
@@ -8065,14 +8115,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update pool member", 
+        "summary": "Updates a specified member of a pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Update pool member"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a member from a pool.\n\nThis operation removes the specified member and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nA member cannot be deleted if the attached load balancer does not\nhave a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Remove a member from a pool", 
+        "description": "This operation removes the specified member and its associated\nconfiguration from the tenant account. Any and all configuration\ndata is immediately purged and cannot be recovered.\n\nA member cannot be deleted if the attached load balancer does not\nhave a ``provisioning_status`` of ``ACTIVE`` .\n\nExample: Remove a member from a pool", 
         "examples": {}, 
         "id": "deleteMember", 
         "method": "delete", 
@@ -8108,10 +8159,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove member from pool", 
+        "summary": "Removes a member from a pool.", 
         "tags": [
           "lbaas"
-        ]
+        ], 
+        "title": "Remove member from pool"
       }
     ], 
     "/v2.0/metering/metering-label-rules": [
@@ -8119,7 +8171,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists a summary of all l3 metering label rules belonging to the\nspecified tenant.\n\nThe list provides the unique ID for each metering label rule.\n\nThis operation does not require a request body. This operation\nreturns a response body.", 
+        "description": "The list provides the unique ID for each metering label rule.\n\nThis operation does not require a request body. This operation\nreturns a response body.", 
         "examples": {
           "text/plain": "GET /v2.0/metering/metering-label-rules HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8158,16 +8210,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List metering label rules", 
+        "summary": "Lists a summary of all l3 metering label rules belonging to the specified tenant.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "List metering label rules"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a l3 metering label rule.\n\nThis operation requires a request body.\n\nThis operation returns a response body.", 
+        "description": "This operation requires a request body.\n\nThis operation returns a response body.", 
         "examples": {
           "application/json": {
             "metering_label_rule": {
@@ -8225,10 +8278,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create metering label rule", 
+        "summary": "Creates a l3 metering label rule.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Create metering label rule"
       }
     ], 
     "/v2.0/metering/metering-label-rules/{metering-label-rule-id}": [
@@ -8236,7 +8290,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows detailed information for a specified metering label rule.\n\nThis operation does not require a request body.\n\nThis operation returns a response body, which contains the\nfollowing information about the metering label rule:\n\n- ``direction`` . Either ingress or egress.\n\n- ``excluded`` . Either True or False.\n\n- The ID for the specified metering label rule\n\n- The remote IP prefix\n\n- The metering label ID for the metering label with which the rule\n  is associated", 
+        "description": "This operation does not require a request body.\n\nThis operation returns a response body, which contains the\nfollowing information about the metering label rule:\n\n- ``direction`` . Either ingress or egress.\n\n- ``excluded`` . Either True or False.\n\n- The ID for the specified metering label rule\n\n- The remote IP prefix\n\n- The metering label ID for the metering label with which the rule\n  is associated", 
         "examples": {
           "text/plain": "GET /v2.0/metering/metering-label-rules/9536641a-7d14-4dc5-afaf-93a973ce0eb8 HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8279,14 +8333,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show metering label rule", 
+        "summary": "Shows detailed information for a specified metering label rule.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Show metering label rule"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified l3 metering label rule.\n\nThis operation does not require a request body.\n\nThis operation does not return a response body.", 
+        "description": "This operation does not require a request body.\n\nThis operation does not return a response body.", 
         "examples": {
           "text/plain": "DELETE /v2.0/metering/metering-labels/37b31179-71ee-4f0a-b130-0eeb28e7ede7 HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8319,10 +8374,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete metering label rule", 
+        "summary": "Deletes a specified l3 metering label rule.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Delete metering label rule"
       }
     ], 
     "/v2.0/metering/metering-labels": [
@@ -8330,7 +8386,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all l3 metering labels that belong to the specified tenant.\n\nThe list includes the unique ID for each metering labels.\n\nThis operation does not require a request body.\n\nThis operation returns a response body.", 
+        "description": "The list includes the unique ID for each metering labels.\n\nThis operation does not require a request body.\n\nThis operation returns a response body.", 
         "examples": {
           "text/plain": "GET /v2.0/metering/metering-labels HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8367,16 +8423,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List metering labels", 
+        "summary": "Lists all l3 metering labels that belong to the specified tenant.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "List metering labels"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a l3 metering label.\n\nThis operation requires a request body.\n\nThe following table describes the required and optional attributes\nin the request body:", 
+        "description": "This operation requires a request body.\n\nThe following table describes the required and optional attributes\nin the request body:", 
         "examples": {
           "application/json": {
             "metering_label": {
@@ -8424,10 +8481,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create metering label", 
+        "summary": "Creates a l3 metering label.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Create metering label"
       }
     ], 
     "/v2.0/metering/metering-labels/{metering_label_id}": [
@@ -8435,7 +8493,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified metering label.\n\nThis operation does not require a request body.\n\nThis operation returns a response body that contains the\ndescription, name, ID.", 
+        "description": "This operation does not require a request body.\n\nThis operation returns a response body that contains the\ndescription, name, ID.", 
         "examples": {
           "text/plain": "GET /v2.0/metering/metering-labels/a6700594-5b7a-4105-8bfe-723b346ce866 HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8477,14 +8535,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show metering label", 
+        "summary": "Shows information for a specified metering label.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Show metering label"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a l3 metering label.\n\nThis operation deletes a l3 metering label.\n\nThis operation does not require a request body. This operation does\nnot return a response body.", 
+        "description": "This operation deletes a l3 metering label.\n\nThis operation does not require a request body. This operation does\nnot return a response body.", 
         "examples": {
           "text/plain": "DELETE /v2.0/metering/metering-labels/a6700594-5b7a-4105-8bfe-723b346ce866 HTTP/1.1\nHost: controlnode:9696\nUser-Agent: python-neutronclient\nContent-Type: application/json\nAccept: application/json\nX-Auth-Token: c52a1b304fec4ca0ac85dc1741eec6e2\n"
         }, 
@@ -8517,10 +8576,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete metering label", 
+        "summary": "Deletes a l3 metering label.", 
         "tags": [
           "metering"
-        ]
+        ], 
+        "title": "Delete metering label"
       }
     ], 
     "/v2.0/networks": [
@@ -8528,7 +8588,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks that are accessible to the tenant who submits the\nrequest.", 
+        "description": "", 
         "examples": {}, 
         "id": "listProviderNetworks", 
         "method": "get", 
@@ -8563,16 +8623,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List networks", 
+        "summary": "Lists networks that are accessible to the tenant who submits the request.", 
         "tags": [
           "network-provider"
-        ]
+        ], 
+        "title": "List networks"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a network.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "network": {
@@ -8626,16 +8687,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create network", 
+        "summary": "Creates a network.", 
         "tags": [
           "network-provider"
-        ]
+        ], 
+        "title": "Create network"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks that are accessible to the tenant who submits the\nrequest. Networks with multiple segments include the ``segments``\nlist in the response.", 
+        "description": "", 
         "examples": {}, 
         "id": "listMultiNetworks", 
         "method": "get", 
@@ -8695,16 +8757,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List networks", 
+        "summary": "Lists networks that are accessible to the tenant who submits the request. Networks with multiple segments include the ``segments`` list in the response.", 
         "tags": [
           "network-multi-provider"
-        ]
+        ], 
+        "title": "List networks"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a network with multiple segment mappings.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "network": {
@@ -8768,16 +8831,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create network with multiple segment mappings", 
+        "summary": "Creates a network with multiple segment mappings.", 
         "tags": [
           "network-multi-provider"
-        ]
+        ], 
+        "title": "Create network with multiple segment mappings"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks. The response shows the VLAN transparency attribute.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVTNetworks", 
         "method": "get", 
@@ -8824,16 +8888,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List networks with VLAN transparency attribute", 
+        "summary": "Lists networks. The response shows the VLAN transparency attribute.", 
         "tags": [
           "network-vlan-transparency"
-        ]
+        ], 
+        "title": "List networks with VLAN transparency attribute"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a VLAN-transparent network.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "network": {
@@ -8877,10 +8942,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create VLAN-transparent network", 
+        "summary": "Creates a VLAN-transparent network.", 
         "tags": [
           "network-vlan-transparency"
-        ]
+        ], 
+        "title": "Create VLAN-transparent network"
       }
     ], 
     "/v2.0/networks/{network_id}": [
@@ -8888,7 +8954,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified network.", 
+        "description": "", 
         "examples": {}, 
         "id": "showProviderNetwork", 
         "method": "get", 
@@ -8936,16 +9002,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show network details", 
+        "summary": "Shows details for a specified network.", 
         "tags": [
           "network-provider"
-        ]
+        ], 
+        "title": "Show network details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified network.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "network": {
@@ -9004,14 +9071,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update network", 
+        "summary": "Updates a specified network.", 
         "tags": [
           "network-provider"
-        ]
+        ], 
+        "title": "Update network"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified network.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteProviderNetwork", 
         "method": "delete", 
@@ -9044,16 +9112,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete network", 
+        "summary": "Deletes a specified network.", 
         "tags": [
           "network-provider"
-        ]
+        ], 
+        "title": "Delete network"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified network with multiple segments.", 
+        "description": "", 
         "examples": {}, 
         "id": "showMultiNetwork", 
         "method": "get", 
@@ -9109,16 +9178,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show details for a network with multiple segments", 
+        "summary": "Shows details for a specified network with multiple segments.", 
         "tags": [
           "network-multi-provider"
-        ]
+        ], 
+        "title": "Show details for a network with multiple segments"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified VLAN-transparent network.", 
+        "description": "", 
         "examples": {}, 
         "id": "showVTNetwork", 
         "method": "get", 
@@ -9163,10 +9233,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show VLAN-transparent network details", 
+        "summary": "Shows details for a specified VLAN-transparent network.", 
         "tags": [
           "network-vlan-transparency"
-        ]
+        ], 
+        "title": "Show VLAN-transparent network details"
       }
     ], 
     "/v2.0/ports": [
@@ -9174,7 +9245,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists ports to which the tenant has access.", 
+        "description": "", 
         "examples": {}, 
         "id": "listPorts", 
         "method": "get", 
@@ -9255,16 +9326,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List ports", 
+        "summary": "Lists ports to which the tenant has access.", 
         "tags": [
           "port-binding"
-        ]
+        ], 
+        "title": "List ports"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a port on the specified network.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "port": {
@@ -9326,10 +9398,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create port", 
+        "summary": "Creates a port on the specified network.", 
         "tags": [
           "port-binding"
-        ]
+        ], 
+        "title": "Create port"
       }
     ], 
     "/v2.0/ports/{port_id}": [
@@ -9337,7 +9410,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for the specified port.", 
+        "description": "", 
         "examples": {}, 
         "id": "showPort", 
         "method": "get", 
@@ -9392,16 +9465,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show port", 
+        "summary": "Shows information for the specified port.", 
         "tags": [
           "port-binding"
-        ]
+        ], 
+        "title": "Show port"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the specified port.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "port": {
@@ -9472,14 +9546,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update port", 
+        "summary": "Updates the specified port.", 
         "tags": [
           "port-binding"
-        ]
+        ], 
+        "title": "Update port"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes the specified port.", 
+        "description": "", 
         "examples": {}, 
         "id": "deletePort", 
         "method": "delete", 
@@ -9512,10 +9587,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete port", 
+        "summary": "Deletes the specified port.", 
         "tags": [
           "port-binding"
-        ]
+        ], 
+        "title": "Delete port"
       }
     ], 
     "/v2.0/quotas": [
@@ -9523,7 +9599,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists quotas for tenants who have non-default quota values.", 
+        "description": "", 
         "examples": {}, 
         "id": "listQuotas", 
         "method": "get", 
@@ -9580,10 +9656,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List quotas", 
+        "summary": "Lists quotas for tenants who have non-default quota values.", 
         "tags": [
           "quotas"
-        ]
+        ], 
+        "title": "List quotas"
       }
     ], 
     "/v2.0/quotas/{tenant_id}": [
@@ -9591,7 +9668,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows quotas for a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuota", 
         "method": "get", 
@@ -9639,16 +9716,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quota", 
+        "summary": "Shows quotas for a specified tenant.", 
         "tags": [
           "quotas"
-        ]
+        ], 
+        "title": "Show quota"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quotas for a specified tenant. Use when non-default quotas\nare desired.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota": {
@@ -9703,14 +9781,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quota", 
+        "summary": "Updates quotas for a specified tenant. Use when non-default quotas are desired.", 
         "tags": [
           "quotas"
-        ]
+        ], 
+        "title": "Update quota"
       }, 
       {
         "consumes": [], 
-        "description": "Resets quotas to default values for a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "resetQuota", 
         "method": "delete", 
@@ -9743,10 +9822,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Reset quota", 
+        "summary": "Resets quotas to default values for a specified tenant.", 
         "tags": [
           "quotas"
-        ]
+        ], 
+        "title": "Reset quota"
       }
     ], 
     "/v2.0/routers": [
@@ -9754,7 +9834,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists logical routers that are accessible to the tenant who submits\nthe request.\n\nDefault policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\nGET /v2.0/routers Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\nGET /v2.0/routers Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
         "examples": {}, 
         "id": "listRouters", 
         "method": "get", 
@@ -9803,16 +9883,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List routers", 
+        "summary": "Lists logical routers that are accessible to the tenant who submits the request.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "List routers"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a logical router.\n\nThis operation creates a new logical router. When it is created, a\nlogical router does not have any internal interface; it is not\nassociated to any subnet. You can optionally specify an external\ngateway for a router at create time. The external gateway for the\nrouter must be plugged into an external network. An external\nnetwork has its extended field ``router:external`` set to ``true``\n. To specify an external gateway, the identifier of the external\nnetwork must be passed in the ``external_gateway_info`` attribute\nin the request body, as follows:\n\n{ \"router\": { \"external_gateway_info\": { \"network_id\": \"8ca37218-28ff-41cb-9b10-039601ea7e6b\" } } }", 
+        "description": "This operation creates a new logical router. When it is created, a\nlogical router does not have any internal interface; it is not\nassociated to any subnet. You can optionally specify an external\ngateway for a router at create time. The external gateway for the\nrouter must be plugged into an external network. An external\nnetwork has its extended field ``router:external`` set to ``true``\n. To specify an external gateway, the identifier of the external\nnetwork must be passed in the ``external_gateway_info`` attribute\nin the request body, as follows:\n\n{ \"router\": { \"external_gateway_info\": { \"network_id\": \"8ca37218-28ff-41cb-9b10-039601ea7e6b\" } } }", 
         "examples": {
           "application/json": {
             "router": {
@@ -9871,10 +9952,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create router", 
+        "summary": "Creates a logical router.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Create router"
       }
     ], 
     "/v2.0/routers/{router_id}": [
@@ -9882,7 +9964,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified router.\n\nThis example request shows details for a router in JSON format:\n\nGET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .", 
+        "description": "This example request shows details for a router in JSON format:\n\nGET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .", 
         "examples": {}, 
         "id": "showRouter", 
         "method": "get", 
@@ -9937,16 +10019,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show router details", 
+        "summary": "Shows details for a specified router.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Show router details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a logical router.\n\nYou can update the name, administrative state, and the external\ngateway. For more information about how to set the external gateway\nfor a router, see the create router operation. This operation does\nnot enable the update of router interfaces. To update a router, use\nthe add router interface and remove router interface operations.\n\nThis example updates the external gateway information for a router:\n\nPUT /v2.0/routers/{router_id} Accept: application/json", 
+        "description": "You can update the name, administrative state, and the external\ngateway. For more information about how to set the external gateway\nfor a router, see the create router operation. This operation does\nnot enable the update of router interfaces. To update a router, use\nthe add router interface and remove router interface operations.\n\nThis example updates the external gateway information for a router:\n\nPUT /v2.0/routers/{router_id} Accept: application/json", 
         "examples": {
           "application/json": {
             "router": {
@@ -10016,14 +10099,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update router", 
+        "summary": "Updates a logical router.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Update router"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a logical router and, if present, its external gateway\ninterface.\n\nThis operation fails if the router has attached interfaces.\n\nUse the remove router interface operation to remove all router\ninterfaces before you delete the router.\n\nThis example deletes a router:\n\nDELETE /v2.0/routers/{router_id} Accept: application/json", 
+        "description": "This operation fails if the router has attached interfaces.\n\nUse the remove router interface operation to remove all router\ninterfaces before you delete the router.\n\nThis example deletes a router:\n\nDELETE /v2.0/routers/{router_id} Accept: application/json", 
         "examples": {}, 
         "id": "deleteRouter", 
         "method": "delete", 
@@ -10056,16 +10140,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete router", 
+        "summary": "Deletes a logical router and, if present, its external gateway interface.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Delete router"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Configures extra routes on a specified router.\n\nThe next hop IP address must be a part of one of the subnets to\nwhich the router interfaces are connected. Otherwise, the server\nresponds with the ``400 Bad Request`` error code.\n\nWhen a validation error is detected, such as a format error of IP\naddress or CIDR, the server responds with the ``400 Bad Request``\nerror code.\n\nWhen Networking receives a request to delete the router interface\nfor subnets that are used by one or more routes, it responds with a\n``409 Conflict`` error code.", 
+        "description": "The next hop IP address must be a part of one of the subnets to\nwhich the router interfaces are connected. Otherwise, the server\nresponds with the ``400 Bad Request`` error code.\n\nWhen a validation error is detected, such as a format error of IP\naddress or CIDR, the server responds with the ``400 Bad Request``\nerror code.\n\nWhen Networking receives a request to delete the router interface\nfor subnets that are used by one or more routes, it responds with a\n``409 Conflict`` error code.", 
         "examples": {
           "application/json": {
             "router": {
@@ -10149,10 +10234,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update router", 
+        "summary": "Configures extra routes on a specified router.", 
         "tags": [
           "extraroute"
-        ]
+        ], 
+        "title": "Update router"
       }
     ], 
     "/v2.0/routers/{router_id}/add_router_interface": [
@@ -10160,7 +10246,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds an internal interface to a logical router.\n\nAttaches a subnet to an internal router interface.\n\nSpecify a subnet ID or port ID in the request body:\n\n- Subnet ID. The gateway IP address for the subnet is used to create\n  the router interface.\n\n- Port ID. The IP address associated with the port is used to create\n  the router interface.\n\nIf you specify both IDs, the operation returns a ``400 BadRequest``\nerror.\n\nIf the port is already used, the operation returns a\n``409Conflict`` error.\n\nThe port ID that is returned by this operation can be either:\n\n- The same ID that is passed in the request body.\n\n- The ID of a port that is created by this operation to attach the\n  specified subnet to the router.\n\nAfter you run this operation:\n\n- The device ID of this port is set to the router ID.\n\n- The ``device_owner`` attribute is set to\n  ``network:router_interface`` .", 
+        "description": "Attaches a subnet to an internal router interface.\n\nSpecify a subnet ID or port ID in the request body:\n\n- Subnet ID. The gateway IP address for the subnet is used to create\n  the router interface.\n\n- Port ID. The IP address associated with the port is used to create\n  the router interface.\n\nIf you specify both IDs, the operation returns a ``400 BadRequest``\nerror.\n\nIf the port is already used, the operation returns a\n``409Conflict`` error.\n\nThe port ID that is returned by this operation can be either:\n\n- The same ID that is passed in the request body.\n\n- The ID of a port that is created by this operation to attach the\n  specified subnet to the router.\n\nAfter you run this operation:\n\n- The device ID of this port is set to the router ID.\n\n- The ``device_owner`` attribute is set to\n  ``network:router_interface`` .", 
         "examples": {
           "application/json": {
             "subnet_id": "a2f1f29d-571b-4533-907f-5803ab96ead1"
@@ -10219,10 +10305,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Add interface to router", 
+        "summary": "Adds an internal interface to a logical router.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Add interface to router"
       }
     ], 
     "/v2.0/routers/{router_id}/remove_router_interface": [
@@ -10230,7 +10317,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes an internal interface from a logical router.\n\nThis operation removes an internal router interface, which detaches\na subnet from the router. You must specify either a subnet ID or\nport ID in the request body; this value is used to identify the\nrouter interface to remove.\n\nYou can also specify both a subnet ID and port ID. If you specify\nboth IDs, the subnet ID must correspond to the subnet ID of the\nfirst IP address on the port specified by the port ID. Otherwise,\nthe operation returns a ``409 Conflict`` error. The response\ncontains information about the affected router and interface.\n\nThe operation returns a ``404 Not Found`` if the router or the\nsubnet and port do not exist or are not visible to you. As a\nconsequence of this operation, the port connecting the router with\nthe subnet is removed from the subnet for the network.\n\nThis example removes an interface from a router:\n\nPUT /v2.0/routers/{router_id}/remove_router_interface Accept: application/json", 
+        "description": "This operation removes an internal router interface, which detaches\na subnet from the router. You must specify either a subnet ID or\nport ID in the request body; this value is used to identify the\nrouter interface to remove.\n\nYou can also specify both a subnet ID and port ID. If you specify\nboth IDs, the subnet ID must correspond to the subnet ID of the\nfirst IP address on the port specified by the port ID. Otherwise,\nthe operation returns a ``409 Conflict`` error. The response\ncontains information about the affected router and interface.\n\nThe operation returns a ``404 Not Found`` if the router or the\nsubnet and port do not exist or are not visible to you. As a\nconsequence of this operation, the port connecting the router with\nthe subnet is removed from the subnet for the network.\n\nThis example removes an interface from a router:\n\nPUT /v2.0/routers/{router_id}/remove_router_interface Accept: application/json", 
         "examples": {
           "application/json": {
             "subnet_id": "a2f1f29d-571b-4533-907f-5803ab96ead1"
@@ -10280,10 +10367,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove interface from router", 
+        "summary": "Removes an internal interface from a logical router.", 
         "tags": [
           "layer3"
-        ]
+        ], 
+        "title": "Remove interface from router"
       }
     ], 
     "/v2.0/security-group-rules": [
@@ -10291,7 +10379,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists a summary of all OpenStack Networking security group rules\nthat the specified tenant can access.\n\nThe list provides the unique ID for each security group rule.", 
+        "description": "The list provides the unique ID for each security group rule.", 
         "examples": {
           "text/plain": "GET /v2.0/security-group-rules/\nAccept: application/json"
         }, 
@@ -10364,16 +10452,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List security group rules", 
+        "summary": "Lists a summary of all OpenStack Networking security group rules that the specified tenant can access.", 
         "tags": [
           "security_group-ruless"
-        ]
+        ], 
+        "title": "List security group rules"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an OpenStack Networking security group rule.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group_rule": {
@@ -10430,10 +10519,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create security group rule", 
+        "summary": "Creates an OpenStack Networking security group rule.", 
         "tags": [
           "security_group-ruless"
-        ]
+        ], 
+        "title": "Create security group rule"
       }
     ], 
     "/v2.0/security-group-rules/{rules-security-groups-id}": [
@@ -10441,7 +10531,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows detailed information for a specified security group rule.\n\nThe response body contains the following information about the\nsecurity group rule:", 
+        "description": "The response body contains the following information about the\nsecurity group rule:", 
         "examples": {
           "text/plain": "GET /v2.0/security-group-rules/ 3c0e45ff-adaf-4124-b083-bf390e5482ff\nAccept: application/json"
         }, 
@@ -10489,14 +10579,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show security group rule", 
+        "summary": "Shows detailed information for a specified security group rule.", 
         "tags": [
           "security_group-ruless"
-        ]
+        ], 
+        "title": "Show security group rule"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified rule from an OpenStack Networking security\ngroup.", 
+        "description": "", 
         "examples": {
           "text/plain": "DELETE /v2.0/security-group-rules/fc3c327a-b5b5-4cd3-9577-52893289ce08\nContent-Type: application/json\nAccept: application/json"
         }, 
@@ -10529,10 +10620,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete security group rule", 
+        "summary": "Deletes a specified rule from an OpenStack Networking security group.", 
         "tags": [
           "security_group-ruless"
-        ]
+        ], 
+        "title": "Delete security group rule"
       }
     ], 
     "/v2.0/security-groups": [
@@ -10540,7 +10632,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists OpenStack Networking security groups to which the specified\ntenant has access.\n\nThe list shows the unique ID for and the rules that are associated\nwith each security group.", 
+        "description": "The list shows the unique ID for and the rules that are associated\nwith each security group.", 
         "examples": {
           "text/plain": "GET /v2.0/security-groups\nAccept: application/json"
         }, 
@@ -10621,16 +10713,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List security groups", 
+        "summary": "Lists OpenStack Networking security groups to which the specified tenant has access.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "List security groups"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an OpenStack Networking security group.\n\nThis operation creates a security group with default security group\nrules for the IPv4 and IPv6 ether types.", 
+        "description": "This operation creates a security group with default security group\nrules for the IPv4 and IPv6 ether types.", 
         "examples": {
           "application/json": {
             "security_group": {
@@ -10694,10 +10787,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create security group", 
+        "summary": "Creates an OpenStack Networking security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Create security group"
       }
     ], 
     "/v2.0/security-groups/{security_group_id}": [
@@ -10705,7 +10799,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified security group.\n\nThis operation returns a response body that contains the\ndescription, name, ID, and security group rules associated with the\nspecified security group and tenant ID.", 
+        "description": "This operation returns a response body that contains the\ndescription, name, ID, and security group rules associated with the\nspecified security group and tenant ID.", 
         "examples": {
           "text/plain": "GET /v2.0/security-groups/85cc3048-abc3-43cc-89b3-377341426ac5\nAccept: application/json"
         }, 
@@ -10797,16 +10891,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show security group", 
+        "summary": "Shows details for a specified security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Show security group"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified security group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group": {
@@ -10883,14 +10978,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update security group", 
+        "summary": "Updates a specified security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Update security group"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes an OpenStack Networking security group.\n\nThis operation deletes an OpenStack Networking security group and\nits associated security group rules, provided that a port is not\nassociated with the security group.\n\nThis operation does not require a request body. This operation does\nnot return a response body.", 
+        "description": "This operation deletes an OpenStack Networking security group and\nits associated security group rules, provided that a port is not\nassociated with the security group.\n\nThis operation does not require a request body. This operation does\nnot return a response body.", 
         "examples": {
           "text/plain": "DELETE /v2.0/security-groups/e470bdfc-4869-459b-a561-cb3377efae59\nContent-Type: application/json\nAccept: application/json"
         }, 
@@ -10927,10 +11023,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete security group", 
+        "summary": "Deletes an OpenStack Networking security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Delete security group"
       }
     ], 
     "/v2.0/subnetpools": [
@@ -10938,7 +11035,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists subnet pools to which the specified tenant has access.\n\nDefault policy settings returns exclusively subnet pools owned by\nthe tenant submitting the request, unless the request is submitted\nby a user with administrative rights.", 
+        "description": "Default policy settings returns exclusively subnet pools owned by\nthe tenant submitting the request, unless the request is submitted\nby a user with administrative rights.", 
         "examples": {}, 
         "id": "listSubnetPools", 
         "method": "get", 
@@ -10993,16 +11090,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List subnet pools", 
+        "summary": "Lists subnet pools to which the specified tenant has access.", 
         "tags": [
           "subnetpools-ext"
-        ]
+        ], 
+        "title": "List subnet pools"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a subnet pool.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "subnetpool": {
@@ -11075,10 +11173,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create subnet pool", 
+        "summary": "Creates a subnet pool.", 
         "tags": [
           "subnetpools-ext"
-        ]
+        ], 
+        "title": "Create subnet pool"
       }
     ], 
     "/v2.0/subnetpools/{subnetpool_id}": [
@@ -11086,7 +11185,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified subnet pool.\n\nUse the ``fields`` query parameter to filter the results.", 
+        "description": "Use the ``fields`` query parameter to filter the results.", 
         "examples": {}, 
         "id": "showSubnetPool", 
         "method": "get", 
@@ -11136,16 +11235,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show subnet pool", 
+        "summary": "Shows information for a specified subnet pool.", 
         "tags": [
           "subnetpools-ext"
-        ]
+        ], 
+        "title": "Show subnet pool"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified subnet pool.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "subnetpool": {
@@ -11226,14 +11326,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update subnet pool", 
+        "summary": "Updates a specified subnet pool.", 
         "tags": [
           "subnetpools-ext"
-        ]
+        ], 
+        "title": "Update subnet pool"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified subnet pool.\n\nThe operation fails if any subnets allocated from the subnet pool\nare still in use.", 
+        "description": "The operation fails if any subnets allocated from the subnet pool\nare still in use.", 
         "examples": {}, 
         "id": "removeSubnetPool", 
         "method": "delete", 
@@ -11262,10 +11363,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete subnet pool", 
+        "summary": "Deletes a specified subnet pool.", 
         "tags": [
           "subnetpools-ext"
-        ]
+        ], 
+        "title": "Delete subnet pool"
       }
     ], 
     "/v2.0/vpn/ikepolicies": [
@@ -11273,7 +11375,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an IKE policy.\n\nThe IKE policy is used for phases one and two negotiation of the\nVPN connection. You can specify both the authentication and\nencryption algorithms for connections.", 
+        "description": "The IKE policy is used for phases one and two negotiation of the\nVPN connection. You can specify both the authentication and\nencryption algorithms for connections.", 
         "examples": {
           "application/json": {
             "ikepolicy": {
@@ -11338,16 +11440,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create IKE policy", 
+        "summary": "Creates an IKE policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Create IKE policy"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IKE policies.\n\nThis operation lists all IKE policies.", 
+        "description": "This operation lists all IKE policies.", 
         "examples": {}, 
         "id": "listIKEPolicies", 
         "method": "get", 
@@ -11389,10 +11492,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List IKE policies", 
+        "summary": "Lists IKE policies.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "List IKE policies"
       }
     ], 
     "/v2.0/vpn/ikepolicies/{ikepolicy_id}": [
@@ -11400,7 +11504,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified IKE policy.\n\nShows the details for a specified IKE policy.", 
+        "description": "Shows the details for a specified IKE policy.", 
         "examples": {}, 
         "id": "showIKEPolicy", 
         "method": "get", 
@@ -11453,16 +11557,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show IKE policies", 
+        "summary": "Shows details for a specified IKE policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Show IKE policies"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates policy settings in a specified IKE policy.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "ikepolicy": {
@@ -11530,14 +11635,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update IKE policy", 
+        "summary": "Updates policy settings in a specified IKE policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Update IKE policy"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified IKE policy.\n\nRemoves the IKE policy specified in the request.", 
+        "description": "Removes the IKE policy specified in the request.", 
         "examples": {}, 
         "id": "deleteIKEPolicy", 
         "method": "delete", 
@@ -11570,10 +11676,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove IKE policy", 
+        "summary": "Removes a specified IKE policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Remove IKE policy"
       }
     ], 
     "/v2.0/vpn/ipsecpolicies": [
@@ -11581,7 +11688,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an IPSec policy.\n\nThe IP security policy specifies the authentication and encryption\nalgorithms and encapsulation mode to use for the established VPN\nconnection.", 
+        "description": "The IP security policy specifies the authentication and encryption\nalgorithms and encapsulation mode to use for the established VPN\nconnection.", 
         "examples": {
           "application/json": {
             "ipsecpolicy": {
@@ -11646,16 +11753,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create IPSec policy", 
+        "summary": "Creates an IPSec policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Create IPSec policy"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IPSec policies.\n\nThis operation lists all IPSec policies.", 
+        "description": "This operation lists all IPSec policies.", 
         "examples": {}, 
         "id": "listIPSecPolicies", 
         "method": "get", 
@@ -11697,10 +11805,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List IPSec policies", 
+        "summary": "Lists IPSec policies.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "List IPSec policies"
       }
     ], 
     "/v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}": [
@@ -11708,7 +11817,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified IPSec policy.\n\nShows details for a specified IPSec policy.", 
+        "description": "Shows details for a specified IPSec policy.", 
         "examples": {}, 
         "id": "showIPSecPolicy", 
         "method": "get", 
@@ -11761,16 +11870,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show IPSec policy", 
+        "summary": "Shows details for a specified IPSec policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Show IPSec policy"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates policy settings in a specified IPSec policy.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "ipsecpolicy": {
@@ -11838,14 +11948,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update IPSec policy", 
+        "summary": "Updates policy settings in a specified IPSec policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Update IPSec policy"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified IPSec policy.\n\nRemoves the IPSec policy specified in the request.", 
+        "description": "Removes the IPSec policy specified in the request.", 
         "examples": {}, 
         "id": "deleteIPSecPolicy", 
         "method": "delete", 
@@ -11878,10 +11989,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove IPSec policy", 
+        "summary": "Removes a specified IPSec policy.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Remove IPSec policy"
       }
     ], 
     "/v2.0/vpn/ipsecsiteconnections": [
@@ -11889,7 +12001,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an IPSec connection.\n\nCreates a site-to-site IPSec connection for a service.", 
+        "description": "Creates a site-to-site IPSec connection for a service.", 
         "examples": {
           "application/json": {
             "ipsec_site_connection": {
@@ -11973,16 +12085,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create IPSec connection", 
+        "summary": "Creates an IPSec connection.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Create IPSec connection"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IPSec connections.", 
+        "description": "", 
         "examples": {}, 
         "id": "listIPSecSiteConnections", 
         "method": "get", 
@@ -12035,10 +12148,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List IPSec connections", 
+        "summary": "Lists IPSec connections.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "List IPSec connections"
       }
     ], 
     "/v2.0/vpn/ipsecsiteconnections/{connection_id}": [
@@ -12046,7 +12160,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified IPSec connection.", 
+        "description": "", 
         "examples": {}, 
         "id": "showIPSecSiteConnection", 
         "method": "get", 
@@ -12110,16 +12224,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show IPSec connection", 
+        "summary": "Shows details for a specified IPSec connection.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Show IPSec connection"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates connection settings for a specified IPSec connection.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "ipsec_site_connection": {
@@ -12198,14 +12313,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update IPSec connection", 
+        "summary": "Updates connection settings for a specified IPSec connection.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Update IPSec connection"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified IPSec connection.\n\nRemoves the IPSec connection specified in the request.", 
+        "description": "Removes the IPSec connection specified in the request.", 
         "examples": {}, 
         "id": "deleteIPSecSiteConnection", 
         "method": "delete", 
@@ -12238,10 +12354,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove IPSec connection", 
+        "summary": "Removes a specified IPSec connection.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Remove IPSec connection"
       }
     ], 
     "/v2.0/vpn/vpnservices": [
@@ -12249,7 +12366,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists VPN services.\n\nThis operation lists all VPN services.\n\nThe list might be empty.", 
+        "description": "This operation lists all VPN services.\n\nThe list might be empty.", 
         "examples": {}, 
         "id": "listVPNServices", 
         "method": "get", 
@@ -12286,16 +12403,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List VPN services", 
+        "summary": "Lists VPN services.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "List VPN services"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a VPN service.\n\nCreates a VPN service object. The service is associated with a\nrouter and a local (private) subnet. After the service is created,\nit can contain multiple VPN connections.\n\nExample:", 
+        "description": "Creates a VPN service object. The service is associated with a\nrouter and a local (private) subnet. After the service is created,\nit can contain multiple VPN connections.\n\nExample:", 
         "examples": {
           "application/json": {
             "vpnservice": {
@@ -12349,10 +12467,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create VPN service", 
+        "summary": "Creates a VPN service.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Create VPN service"
       }
     ], 
     "/v2.0/vpn/vpnservices/{service_id}": [
@@ -12360,7 +12479,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified VPN service.\n\nShows details for a specified VPN service. If the user is not an\nadministrative user and the VPN service object does not belong to\nthe user's tenant account, a 403 (Forbidden) error is returned.", 
+        "description": "Shows details for a specified VPN service. If the user is not an\nadministrative user and the VPN service object does not belong to\nthe user's tenant account, a 403 (Forbidden) error is returned.", 
         "examples": {}, 
         "id": "showVPNService", 
         "method": "get", 
@@ -12408,16 +12527,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show VPN service details", 
+        "summary": "Shows details for a specified VPN service.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Show VPN service details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified VPN service.\n\nThis operation updates the attributes of a specified VPN service.\nTo update a service, the service status cannot be a ``PENDING_*``\nstatus.", 
+        "description": "This operation updates the attributes of a specified VPN service.\nTo update a service, the service status cannot be a ``PENDING_*``\nstatus.", 
         "examples": {
           "application/json": {
             "vpnservice": {
@@ -12480,14 +12600,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update VPN service", 
+        "summary": "Updates a specified VPN service.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Update VPN service"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified VPN service.\n\nThis operation removes a specified VPN service. If the service has\nconnections, the request is rejected.", 
+        "description": "This operation removes a specified VPN service. If the service has\nconnections, the request is rejected.", 
         "examples": {}, 
         "id": "deleteVPNService", 
         "method": "delete", 
@@ -12520,10 +12641,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove VPN service", 
+        "summary": "Removes a specified VPN service.", 
         "tags": [
           "vpnaas"
-        ]
+        ], 
+        "title": "Remove VPN service"
       }
     ]
   }, 

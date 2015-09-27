@@ -1,5 +1,6 @@
 .. http:get:: /v2.0
-   :synopsis: Get version details
+   :title: Get version details
+   :synopsis: 
 
    Gets detailed information about a specified version of the Identity
    API.
@@ -21,9 +22,10 @@
 
 
 .. http:get:: /v2.0/users/{user_id}/roles
-   :synopsis: List user global roles
+   :title: List user global roles
+   :synopsis: Lists global roles for a specified user. Excludes tenant roles.
 
-   Lists global roles for a specified user. Excludes tenant roles.
+   
 
    :responseexample 200: v2/examples/admin-listUserGlobalRoles_resp_200.json
    :responseexample 203: v2/examples/admin-listUserGlobalRoles_resp_203.json
@@ -43,9 +45,10 @@
 
 
 .. http:get:: /v2.0/tenants/{tenantId}
-   :synopsis: Get tenant information by ID
+   :title: Get tenant information by ID
+   :synopsis: Gets detailed information about a specified tenant by ID.
 
-   Gets detailed information about a specified tenant by ID.
+   
 
    :responseexample 200: v2/examples/admin-getTenantById_resp_200.json
    :responseexample 203: v2/examples/admin-getTenantById_resp_203.json
@@ -65,9 +68,10 @@
 
 
 .. http:post:: /v2.0/users
-   :synopsis: Create user
+   :title: Create user
+   :synopsis: Creates a user.
 
-   Creates a user.
+   
 
    :requestexample: v2/examples/admin-createUser_req.json
    :responseexample 201: v2/examples/admin-createUser_resp_201.json
@@ -89,9 +93,10 @@
 
 
 .. http:get:: /v2.0/users
-   :synopsis: Get user information by name
+   :title: Get user information by name
+   :synopsis: Gets detailed information about a specified user by user name.
 
-   Gets detailed information about a specified user by user name.
+   
 
    :responseexample 200: v2/examples/admin-getUserByName_resp_200.json
    :responseexample 203: v2/examples/admin-getUserByName_resp_203.json
@@ -110,10 +115,9 @@
 
 
 .. http:get:: /v2.0/extensions/{alias}
-   :synopsis: Get extension details
+   :title: Get extension details
+   :synopsis: Gets detailed information for a specified extension.
 
-   Gets detailed information for a specified extension.
-   
    Specify the extension alias in the URI.
 
    :responseexample 200: v2/examples/admin-getExtension-v2.0_resp_200.json
@@ -134,10 +138,10 @@
 
 
 .. http:get:: /v2.0/tenants/{tenantId}/users/{userId}/roles
-   :synopsis: List roles for user
+   :title: List roles for user
+   :synopsis: Lists roles for a specified user on a specified tenant. Excludes global roles.
 
-   Lists roles for a specified user on a specified tenant. Excludes
-   global roles.
+   
 
    :responseexample 200: v2/examples/admin-listRolesForUserOnTenant_resp_200.json
    :responseexample 203: v2/examples/admin-listRolesForUserOnTenant_resp_203.json
@@ -158,9 +162,10 @@
 
 
 .. http:get:: /v2.0/users/{user_id}
-   :synopsis: Get user information by ID
+   :title: Get user information by ID
+   :synopsis: Gets detailed information about a specified user by user ID.
 
-   Gets detailed information about a specified user by user ID.
+   
 
    :responseexample 200: v2/examples/admin-getUserById_resp_200.json
    :responseexample 203: v2/examples/admin-getUserById_resp_203.json
@@ -180,9 +185,10 @@
 
 
 .. http:get:: /v2.0/tokens/{tokenId}/endpoints
-   :synopsis: List endoints for token
+   :title: List endoints for token
+   :synopsis: Lists the endpoints associated with a specified token.
 
-   Lists the endpoints associated with a specified token.
+   
 
    :responseexample 200: v2/examples/admin-listEndpointsForToken_resp_200.json
    :responseexample 203: v2/examples/admin-listEndpointsForToken_resp_203.json
@@ -202,9 +208,10 @@
 
 
 .. http:get:: /v2.0/tenants
-   :synopsis: List tenants
+   :title: List tenants
+   :synopsis: Lists all tenants.
 
-   Lists all tenants.
+   
 
    :responseexample 200: v2/examples/admin-listTenants_resp_200.json
    :responseexample 203: v2/examples/admin-listTenants_resp_203.json
@@ -223,9 +230,10 @@
 
 
 .. http:get:: /v2.0/tenants
-   :synopsis: Get tenant information by name
+   :title: Get tenant information by name
+   :synopsis: Gets detailed information about a specified tenant by name.
 
-   Gets detailed information about a specified tenant by name.
+   
 
    :responseexample 200: v2/examples/admin-getTenantByName_resp_200.json
    :responseexample 203: v2/examples/admin-getTenantByName_resp_203.json
@@ -245,9 +253,10 @@
 
 
 .. http:put:: /v2.0/users/{userId}
-   :synopsis: Update user
+   :title: Update user
+   :synopsis: Updates a user.
 
-   Updates a user.
+   
 
    :requestexample: v2/examples/admin-updateUser_req.json
    :responseexample 201: v2/examples/admin-updateUser_resp_201.json
@@ -268,9 +277,10 @@
 
 
 .. http:delete:: /v2.0/users/{userId}
-   :synopsis: Delete user
+   :title: Delete user
+   :synopsis: Deletes a user.
 
-   Deletes a user.
+   
 
    :tag: admin-users
    :parameter userId: The user ID.
@@ -285,10 +295,9 @@
 
 
 .. http:post:: /v2.0/tokens
-   :synopsis: Authenticate for admin API
+   :title: Authenticate for admin API
+   :synopsis: Authenticates and generates a token.
 
-   Authenticates and generates a token.
-   
    A REST interface provides client authentication by using the POST
    method with ``v2.0/tokens`` as the path. Include a payload of
    credentials in the body.
@@ -331,11 +340,9 @@
 
 
 .. http:get:: /v2.0/tokens/{tokenId}
-   :synopsis: Validate token
+   :title: Validate token
+   :synopsis: Validates a token and confirms that it belongs to a specified tenant.
 
-   Validates a token and confirms that it belongs to a specified
-   tenant.
-   
    Returns the permissions relevant to a particular client. Valid
    tokens are in the ``/tokens/{tokenId}`` path. A user should expect
    an ``itemNotFound (404)`` fault for an token that is not valid.
@@ -358,10 +365,10 @@
 
 
 .. http:head:: /v2.0/tokens/{tokenId}
-   :synopsis: Validate token (admin)
+   :title: Validate token (admin)
+   :synopsis: Validates a token and confirms that it belongs to a specified tenant, for performance.
 
-   Validates a token and confirms that it belongs to a specified
-   tenant, for performance.
+   
 
    :tag: admin-tokens
    :parameter tokenId: Required. The token ID.

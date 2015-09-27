@@ -1544,7 +1544,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Identity API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVersions-identity-v3", 
         "method": "get", 
@@ -1632,10 +1632,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List versions", 
+        "summary": "Lists information about all Identity API versions.", 
         "tags": [
           "versions-identity"
-        ]
+        ], 
+        "title": "List versions"
       }
     ], 
     "/v3": [
@@ -1705,10 +1706,10 @@
             "headers": {}
           }
         }, 
-        "summary": "Show API version details", 
         "tags": [
           "versions-identity"
-        ]
+        ], 
+        "title": "Show API version details"
       }
     ], 
     "/v3/OS-PKI/revoked": [
@@ -1716,7 +1717,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists revoked PKI tokens.", 
+        "description": "", 
         "examples": {
           "text/plain": "Headers:\nX-Auth-Token: d3f677afe73e4027aedbb4f559cfe8e8\n"
         }, 
@@ -1794,10 +1795,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List revoked tokens", 
+        "summary": "Lists revoked PKI tokens.", 
         "tags": [
           "versions-identity"
-        ]
+        ], 
+        "title": "List revoked tokens"
       }
     ], 
     "/v3/auth/tokens": [
@@ -1805,7 +1807,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Authenticates and generates a token.\n\nEach REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nA REST interface provides client authentication by using the POST\nmethod with ``auth/tokens`` the path. The body of the request must\ninclude a payload of credentials including the authentication\nmethod and, optionally, the authorization scope. The scope includes\neither a project or domain. If you include both project and domain,\nthis call returns the HTTP ``Bad Request (400)`` status code\nbecause a token cannot be simultaneously scoped as both a project\nand domain.\n\nIf you do not include the optional scope and the authenticating\nuser has a defined default project (the ``default_project_id``\nattribute for the user), that default project is treated as the\npreferred authorization scope.\n\nIf no default project is defined, the token is issued without an\nexplicit scope of authorization.\n\nProvide one of the following sets of credentials to authenticate:\nUser ID and password, user name and password scoped by domain ID or\nname, user ID and password scoped by project ID or name with or\nwithout domain scope, or token.\n\nThe following examples demonstrate authentication requests with\ndifferent types of credentials.\n\nIf ``scope`` is included, ``project id`` uniquely identifies the\n``project`` . However, ``project name`` uniquely identifies the\n``project`` only when used in conjunction with a ``domain ID`` or a\n``domain name`` .\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the subject token has expired, this call returns the HTTP\n``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.\n\nAs the following example responses show, the response to an\nauthentication request returns the token ID in the ``X-Subject-\nToken`` header instead of in the token data.\n\nIf the call has no explicit authorization scope, the response does\nnot contain the ``catalog`` , ``project`` , ``domain`` , or\n``roles`` fields. However, the response still uniquely identifies\nthe user.\n\nA token scoped to a ``project`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nA token scoped to a ``domain`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nOptionally, the Identity API implementation might return an\n``authentication`` attribute to indicate the supported\nauthentication methods.\n\nFor authentication processes that require multiple round trips, The\nIdentity API implementation might return an HTTP ``Unauthorized\n(401)`` status code with additional information for the next\nauthentication step.\n\nThe following examples illustrate several possible HTTP\n``Unauthorized (401)`` authentication errors. Other errors, like\nHTTP ``Forbidden (403)`` , are also possible.", 
+        "description": "Each REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nA REST interface provides client authentication by using the POST\nmethod with ``auth/tokens`` the path. The body of the request must\ninclude a payload of credentials including the authentication\nmethod and, optionally, the authorization scope. The scope includes\neither a project or domain. If you include both project and domain,\nthis call returns the HTTP ``Bad Request (400)`` status code\nbecause a token cannot be simultaneously scoped as both a project\nand domain.\n\nIf you do not include the optional scope and the authenticating\nuser has a defined default project (the ``default_project_id``\nattribute for the user), that default project is treated as the\npreferred authorization scope.\n\nIf no default project is defined, the token is issued without an\nexplicit scope of authorization.\n\nProvide one of the following sets of credentials to authenticate:\nUser ID and password, user name and password scoped by domain ID or\nname, user ID and password scoped by project ID or name with or\nwithout domain scope, or token.\n\nThe following examples demonstrate authentication requests with\ndifferent types of credentials.\n\nIf ``scope`` is included, ``project id`` uniquely identifies the\n``project`` . However, ``project name`` uniquely identifies the\n``project`` only when used in conjunction with a ``domain ID`` or a\n``domain name`` .\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the subject token has expired, this call returns the HTTP\n``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.\n\nAs the following example responses show, the response to an\nauthentication request returns the token ID in the ``X-Subject-\nToken`` header instead of in the token data.\n\nIf the call has no explicit authorization scope, the response does\nnot contain the ``catalog`` , ``project`` , ``domain`` , or\n``roles`` fields. However, the response still uniquely identifies\nthe user.\n\nA token scoped to a ``project`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nA token scoped to a ``domain`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nOptionally, the Identity API implementation might return an\n``authentication`` attribute to indicate the supported\nauthentication methods.\n\nFor authentication processes that require multiple round trips, The\nIdentity API implementation might return an HTTP ``Unauthorized\n(401)`` status code with additional information for the next\nauthentication step.\n\nThe following examples illustrate several possible HTTP\n``Unauthorized (401)`` authentication errors. Other errors, like\nHTTP ``Forbidden (403)`` , are also possible.", 
         "examples": {
           "application/json": {
             "auth": {
@@ -1973,16 +1975,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Authenticate", 
+        "summary": "Authenticates and generates a token.", 
         "tags": [
           "tokens"
-        ]
+        ], 
+        "title": "Authenticate"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Validates a specified token.\n\nPass your own token in the ``X-Auth-Token`` header. Pass the token\nto be validated in the ``X-Subject-Token`` header. The Identity API\nreturns the same response as when the subject token was issued by\n``POST/auth/tokens`` .", 
+        "description": "Pass your own token in the ``X-Auth-Token`` header. Pass the token\nto be validated in the ``X-Subject-Token`` header. The Identity API\nreturns the same response as when the subject token was issued by\n``POST/auth/tokens`` .", 
         "examples": {
           "text/plain": "Headers:\nX-Auth-Token: 1dd7e3\nX-Subject-Token: c67580\n"
         }, 
@@ -2067,14 +2070,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Validate token", 
+        "summary": "Validates a specified token.", 
         "tags": [
           "tokens"
-        ]
+        ], 
+        "title": "Validate token"
       }, 
       {
         "consumes": [], 
-        "description": "Validates a specified token.\n\nThis call is similar to ``GET /auth/tokens`` but no response body\nis provided even in the ``X-Subject-Token`` header.\n\nThe Identity API returns the same response as when the subject\ntoken was issued by ``POST /auth/tokens`` even if an error occurs\nbecause the token is not valid. An HTTP ``204`` status code\nindicates that the ``X-Subject-Token`` is valid.", 
+        "description": "This call is similar to ``GET /auth/tokens`` but no response body\nis provided even in the ``X-Subject-Token`` header.\n\nThe Identity API returns the same response as when the subject\ntoken was issued by ``POST /auth/tokens`` even if an error occurs\nbecause the token is not valid. An HTTP ``204`` status code\nindicates that the ``X-Subject-Token`` is valid.", 
         "examples": {
           "text/plain": "Headers:\nX-Auth-Token: 1dd7e3\nX-Subject-Token: c67580\n"
         }, 
@@ -2133,14 +2137,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check token", 
+        "summary": "Validates a specified token.", 
         "tags": [
           "tokens"
-        ]
+        ], 
+        "title": "Check token"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a specified token.\n\nThis call is similar to ``HEAD /auth/tokens`` except that the ``X\n-Subject-Token`` token is immediately not valid, regardless of the\n``expires_at`` attribute value. An additional ``X -Auth-Token`` is\nnot required.", 
+        "description": "This call is similar to ``HEAD /auth/tokens`` except that the ``X\n-Subject-Token`` token is immediately not valid, regardless of the\n``expires_at`` attribute value. An additional ``X -Auth-Token`` is\nnot required.", 
         "examples": {
           "text/plain": "Headers:\nX-Auth-Token: 1dd7e3\nX-Subject-Token: c67580\n"
         }, 
@@ -2195,10 +2200,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke token", 
+        "summary": "Revokes a specified token.", 
         "tags": [
           "tokens"
-        ]
+        ], 
+        "title": "Revoke token"
       }
     ], 
     "/v3/credentials": [
@@ -2206,7 +2212,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCredentials", 
         "method": "get", 
@@ -2296,16 +2302,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List credentials", 
+        "summary": "Lists credentials.", 
         "tags": [
           "credentials"
-        ]
+        ], 
+        "title": "List credentials"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a credential.\n\nThe following example shows how to create an EC2-style credential.\nThe credential blob is a string that contains a JSON-serialized\ndictionary with the ``access`` and ``secret`` keys. This format is\nrequired when you specify the ``ec2`` type. To specify other\ncredentials such as ``access_key`` , change the type and contents\nof the data blob.", 
+        "description": "The following example shows how to create an EC2-style credential.\nThe credential blob is a string that contains a JSON-serialized\ndictionary with the ``access`` and ``secret`` keys. This format is\nrequired when you specify the ``ec2`` type. To specify other\ncredentials such as ``access_key`` , change the type and contents\nof the data blob.", 
         "examples": {
           "application/json": {
             "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
@@ -2365,10 +2372,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create credential", 
+        "summary": "Creates a credential.", 
         "tags": [
           "credentials"
-        ]
+        ], 
+        "title": "Create credential"
       }
     ], 
     "/v3/credentials/{credential_id}": [
@@ -2376,7 +2384,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified credential.", 
+        "description": "", 
         "examples": {}, 
         "id": "getCredential", 
         "method": "get", 
@@ -2438,16 +2446,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show credential details", 
+        "summary": "Shows details for a specified credential.", 
         "tags": [
           "credentials"
-        ]
+        ], 
+        "title": "Show credential details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified credential.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
@@ -2516,14 +2525,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update credential", 
+        "summary": "Updates a specified credential.", 
         "tags": [
           "credentials"
-        ]
+        ], 
+        "title": "Update credential"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified credential.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteCredential", 
         "method": "delete", 
@@ -2572,10 +2582,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete credential", 
+        "summary": "Deletes a specified credential.", 
         "tags": [
           "credentials"
-        ]
+        ], 
+        "title": "Delete credential"
       }
     ], 
     "/v3/domains": [
@@ -2583,7 +2594,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists domains.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDomains", 
         "method": "get", 
@@ -2681,16 +2692,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List domains", 
+        "summary": "Lists domains.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "List domains"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a domain.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "domain": {
@@ -2762,10 +2774,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create domain", 
+        "summary": "Creates a domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Create domain"
       }
     ], 
     "/v3/domains/{domain_id}": [
@@ -2773,7 +2786,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "getDomain", 
         "method": "get", 
@@ -2836,16 +2849,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show domain details", 
+        "summary": "Shows details for a specified domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Show domain details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified domain.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "domain": {
@@ -2925,14 +2939,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update domain", 
+        "summary": "Updates a specified domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Update domain"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified domain.\n\nTo minimize the risk of accidentally deleting a domain, you must\nfirst disable the domain by using the update domain method. If you\ntry to delete an enabled domain, this call returns an HTTP\n``Forbidden (403)`` status code.\n\nWhen you delete a domain, this call also deletes all entities owned\nby it, such as users, groups, and projects, and any credentials and\ngranted roles that relate to those entities.", 
+        "description": "To minimize the risk of accidentally deleting a domain, you must\nfirst disable the domain by using the update domain method. If you\ntry to delete an enabled domain, this call returns an HTTP\n``Forbidden (403)`` status code.\n\nWhen you delete a domain, this call also deletes all entities owned\nby it, such as users, groups, and projects, and any credentials and\ngranted roles that relate to those entities.", 
         "examples": {}, 
         "id": "deleteDomain", 
         "method": "delete", 
@@ -2981,10 +2996,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete domain", 
+        "summary": "Deletes a specified domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Delete domain"
       }
     ], 
     "/v3/domains/{domain_id}/groups/{group_id}/roles": [
@@ -2992,7 +3008,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles for a specified domain group.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDomainGroupRoles", 
         "method": "get", 
@@ -3075,16 +3091,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for domain group", 
+        "summary": "Lists roles for a specified domain group.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "List roles for domain group"
       }
     ], 
     "/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}": [
       {
         "consumes": [], 
-        "description": "Grants a specified role to a specified domain group.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantDomainGroupRole", 
         "method": "put", 
@@ -3149,14 +3166,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant role to domain group", 
+        "summary": "Grants a specified role to a specified domain group.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Grant role to domain group"
       }, 
       {
         "consumes": [], 
-        "description": "Validates that a specified group has a specified role on a domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkDomainGroupRole", 
         "method": "head", 
@@ -3221,14 +3239,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for domain group", 
+        "summary": "Validates that a specified group has a specified role on a domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Check role for domain group"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a role from a group on a domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeDomainGroupRole", 
         "method": "delete", 
@@ -3293,10 +3312,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from domain group", 
+        "summary": "Revokes a role from a group on a domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Revoke role from domain group"
       }
     ], 
     "/v3/domains/{domain_id}/users/{user_id}/roles": [
@@ -3304,7 +3324,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles for a user on a domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDomainUserRoles", 
         "method": "get", 
@@ -3387,16 +3407,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for domain user", 
+        "summary": "Lists roles for a user on a domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "List roles for domain user"
       }
     ], 
     "/v3/domains/{domain_id}/users/{user_id}/roles/{role_id}": [
       {
         "consumes": [], 
-        "description": "Grants a role to a specified domain user.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantDomainUserRole", 
         "method": "put", 
@@ -3461,14 +3482,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant role to domain user", 
+        "summary": "Grants a role to a specified domain user.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Grant role to domain user"
       }, 
       {
         "consumes": [], 
-        "description": "Validates that a specified user has a specified role on a domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkDomainUserRole", 
         "method": "head", 
@@ -3533,14 +3555,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for domain user", 
+        "summary": "Validates that a specified user has a specified role on a domain.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Check role for domain user"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a role from a specified domain user.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeDomainUserRole", 
         "method": "delete", 
@@ -3605,10 +3628,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from domain user", 
+        "summary": "Revokes a role from a specified domain user.", 
         "tags": [
           "domains"
-        ]
+        ], 
+        "title": "Revoke role from domain user"
       }
     ], 
     "/v3/endpoints": [
@@ -3616,7 +3640,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available endpoints.", 
+        "description": "", 
         "examples": {}, 
         "id": "listEndpoints", 
         "method": "get", 
@@ -3714,16 +3738,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List endpoints", 
+        "summary": "Lists available endpoints.", 
         "tags": [
           "endpoints"
-        ]
+        ], 
+        "title": "List endpoints"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an endpoint.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "endpoint": {
@@ -3799,10 +3824,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create endpoint", 
+        "summary": "Creates an endpoint.", 
         "tags": [
           "endpoints"
-        ]
+        ], 
+        "title": "Create endpoint"
       }
     ], 
     "/v3/endpoints/{endpoint_id}": [
@@ -3810,7 +3836,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified endpoint.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "endpoint": {
@@ -3894,14 +3920,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update endpoint", 
+        "summary": "Updates a specified endpoint.", 
         "tags": [
           "endpoints"
-        ]
+        ], 
+        "title": "Update endpoint"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified endpoint.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteEndpoint", 
         "method": "delete", 
@@ -3950,10 +3977,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete endpoint", 
+        "summary": "Deletes a specified endpoint.", 
         "tags": [
           "endpoints"
-        ]
+        ], 
+        "title": "Delete endpoint"
       }
     ], 
     "/v3/groups": [
@@ -3961,7 +3989,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists groups.", 
+        "description": "", 
         "examples": {}, 
         "id": "listGroups", 
         "method": "get", 
@@ -4040,16 +4068,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List groups", 
+        "summary": "Lists groups.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "List groups"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "group": {
@@ -4121,10 +4150,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create group", 
+        "summary": "Creates a group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Create group"
       }
     ], 
     "/v3/groups/{group_id}": [
@@ -4132,7 +4162,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "getGroup", 
         "method": "get", 
@@ -4195,16 +4225,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show group details", 
+        "summary": "Shows details for a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Show group details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified group.\n\nIf the back-end driver does not allow this functionality, this\noperation might return the HTTP ``Not Implemented(501)`` status\ncode.", 
+        "description": "If the back-end driver does not allow this functionality, this\noperation might return the HTTP ``Not Implemented(501)`` status\ncode.", 
         "examples": {
           "application/json": {
             "group": {
@@ -4274,14 +4305,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update group", 
+        "summary": "Updates a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Update group"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteGroup", 
         "method": "delete", 
@@ -4330,10 +4362,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete group", 
+        "summary": "Deletes a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Delete group"
       }
     ], 
     "/v3/groups/{group_id}/users": [
@@ -4341,7 +4374,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the users in a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "listGroupUsers", 
         "method": "get", 
@@ -4474,16 +4507,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List users in group", 
+        "summary": "Lists the users in a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "List users in group"
       }
     ], 
     "/v3/groups/{group_id}/users/{user_id}": [
       {
         "consumes": [], 
-        "description": "Assigns a specified user to a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "assignUserToGroup", 
         "method": "put", 
@@ -4540,14 +4574,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Assign user to group", 
+        "summary": "Assigns a specified user to a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Assign user to group"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified user from a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteGroupUser", 
         "method": "delete", 
@@ -4604,14 +4639,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove user from group", 
+        "summary": "Removes a specified user from a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Remove user from group"
       }, 
       {
         "consumes": [], 
-        "description": "Validates that a specified user is in a specified group.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkGroupUser", 
         "method": "head", 
@@ -4668,10 +4704,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Check user membership in group", 
+        "summary": "Validates that a specified user is in a specified group.", 
         "tags": [
           "groups"
-        ]
+        ], 
+        "title": "Check user membership in group"
       }
     ], 
     "/v3/policies": [
@@ -4679,7 +4716,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists policies.", 
+        "description": "", 
         "examples": {}, 
         "id": "listPolicies", 
         "method": "get", 
@@ -4777,16 +4814,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List policies", 
+        "summary": "Lists policies.", 
         "tags": [
           "policies"
-        ]
+        ], 
+        "title": "List policies"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a policy.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "blob": {
@@ -4862,10 +4900,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create policy", 
+        "summary": "Creates a policy.", 
         "tags": [
           "policies"
-        ]
+        ], 
+        "title": "Create policy"
       }
     ], 
     "/v3/policies/{policy_id}": [
@@ -4873,7 +4912,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified policy.", 
+        "description": "", 
         "examples": {}, 
         "id": "getPolicy", 
         "method": "get", 
@@ -4939,16 +4978,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show policy details", 
+        "summary": "Shows details for a specified policy.", 
         "tags": [
           "policies"
-        ]
+        ], 
+        "title": "Show policy details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified policy.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "blob": {
@@ -5025,14 +5065,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update policy", 
+        "summary": "Updates a specified policy.", 
         "tags": [
           "policies"
-        ]
+        ], 
+        "title": "Update policy"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified policy.", 
+        "description": "", 
         "examples": {}, 
         "id": "deletePolicy", 
         "method": "delete", 
@@ -5081,10 +5122,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete policy", 
+        "summary": "Deletes a specified policy.", 
         "tags": [
           "policies"
-        ]
+        ], 
+        "title": "Delete policy"
       }
     ], 
     "/v3/projects": [
@@ -5092,7 +5134,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists projects.", 
+        "description": "", 
         "examples": {}, 
         "id": "listProjects", 
         "method": "get", 
@@ -5213,16 +5255,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List projects", 
+        "summary": "Lists projects.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "List projects"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a project.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "project": {
@@ -5297,10 +5340,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create project", 
+        "summary": "Creates a project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Create project"
       }
     ], 
     "/v3/projects/{project_id}": [
@@ -5308,7 +5352,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified project.", 
+        "description": "", 
         "examples": {}, 
         "id": "getProject", 
         "method": "get", 
@@ -5372,16 +5416,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show project details", 
+        "summary": "Shows details for a specified project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Show project details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified project.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "project": {
@@ -5456,14 +5501,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update project", 
+        "summary": "Updates a specified project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Update project"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified project.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteProject", 
         "method": "delete", 
@@ -5512,10 +5558,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete project", 
+        "summary": "Deletes a specified project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Delete project"
       }
     ], 
     "/v3/projects/{project_id}/groups/{group_id}/roles": [
@@ -5523,7 +5570,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles for a specified project group.", 
+        "description": "", 
         "examples": {}, 
         "id": "listProjectGroupRoles", 
         "method": "get", 
@@ -5606,16 +5653,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for project group", 
+        "summary": "Lists roles for a specified project group.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "List roles for project group"
       }
     ], 
     "/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}": [
       {
         "consumes": [], 
-        "description": "Grants a specified role to a specified project group.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantProjectGroupRole", 
         "method": "put", 
@@ -5680,14 +5728,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant role to project group", 
+        "summary": "Grants a specified role to a specified project group.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Grant role to project group"
       }, 
       {
         "consumes": [], 
-        "description": "Validates that a specified project group has a specified role.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkProjectGroupRole", 
         "method": "head", 
@@ -5752,14 +5801,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for project group", 
+        "summary": "Validates that a specified project group has a specified role.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Check role for project group"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a specified role from a specified project group.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeProjectGroupRole", 
         "method": "delete", 
@@ -5824,10 +5874,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from project group", 
+        "summary": "Revokes a specified role from a specified project group.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Revoke role from project group"
       }
     ], 
     "/v3/projects/{project_id}/users/{user_id}/roles": [
@@ -5835,7 +5886,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles for a specified user in a project.", 
+        "description": "", 
         "examples": {}, 
         "id": "listProjectUserRoles", 
         "method": "get", 
@@ -5918,16 +5969,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for project user", 
+        "summary": "Lists roles for a specified user in a project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "List roles for project user"
       }
     ], 
     "/v3/projects/{project_id}/users/{user_id}/roles/{role_id}": [
       {
         "consumes": [], 
-        "description": "Grants a role to a specified user in a project.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantProjectUserRole", 
         "method": "put", 
@@ -5992,14 +6044,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant role to project user", 
+        "summary": "Grants a role to a specified user in a project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Grant role to project user"
       }, 
       {
         "consumes": [], 
-        "description": "Validates that a specified user has a specified role in a project.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkProjectUserRole", 
         "method": "head", 
@@ -6064,14 +6117,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for project user", 
+        "summary": "Validates that a specified user has a specified role in a project.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Check role for project user"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a role from a specified project user.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeProjectUserRole", 
         "method": "delete", 
@@ -6136,10 +6190,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from project user", 
+        "summary": "Revokes a role from a specified project user.", 
         "tags": [
           "projects"
-        ]
+        ], 
+        "title": "Revoke role from project user"
       }
     ], 
     "/v3/regions": [
@@ -6147,7 +6202,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a region.\n\nIf you try to add a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.\n\nIf you try to add a region with a parent region ID that would form\na circular relationship, this call returns the HTTP ``Conflict\n(409)`` status code.", 
+        "description": "If you try to add a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.\n\nIf you try to add a region with a parent region ID that would form\na circular relationship, this call returns the HTTP ``Conflict\n(409)`` status code.", 
         "examples": {
           "application/json": {
             "region": {
@@ -6218,16 +6273,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create region", 
+        "summary": "Creates a region.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "Create region"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists regions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listRegions", 
         "method": "get", 
@@ -6297,10 +6353,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List regions", 
+        "summary": "Lists regions.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "List regions"
       }
     ], 
     "/v3/regions/{region_id}": [
@@ -6308,7 +6365,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified region, by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "getRegion", 
         "method": "get", 
@@ -6371,16 +6428,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show region details", 
+        "summary": "Shows details for a specified region, by ID.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "Show region details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified region.\n\nIf you try to update a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.", 
+        "description": "If you try to update a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.", 
         "examples": {
           "application/json": {
             "region": {
@@ -6459,14 +6517,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update region", 
+        "summary": "Updates a specified region.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "Update region"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified region.\n\nIf you try to delete a region that has child regions, this call\nreturns the HTTP ``Conflict (409)`` status code.", 
+        "description": "If you try to delete a region that has child regions, this call\nreturns the HTTP ``Conflict (409)`` status code.", 
         "examples": {}, 
         "id": "deleteRegion", 
         "method": "delete", 
@@ -6515,10 +6574,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete region", 
+        "summary": "Deletes a specified region.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "Delete region"
       }
     ], 
     "/v3/regions/{user_defined_region_id}": [
@@ -6526,7 +6586,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a region with a user-defined region ID.\n\nThe user-defined region ID must be unique to the OpenStack\ndeployment. If not, this call returns the HTTP ``Conflict(409)``\nstatus code. You must URL-encode the user-defined region ID if it\ncontains characters that are not allowed in an URI.\n\nIf you try to add a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.\n\nIf you try to add a region with a parent region ID that would form\na circular relationship, this call returns the HTTP ``Conflict\n(409)`` status code.", 
+        "description": "The user-defined region ID must be unique to the OpenStack\ndeployment. If not, this call returns the HTTP ``Conflict(409)``\nstatus code. You must URL-encode the user-defined region ID if it\ncontains characters that are not allowed in an URI.\n\nIf you try to add a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found(404)`` status code.\n\nIf you try to add a region with a parent region ID that would form\na circular relationship, this call returns the HTTP ``Conflict\n(409)`` status code.", 
         "examples": {
           "application/json": {
             "region": {
@@ -6605,10 +6665,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create region with user-defined ID", 
+        "summary": "Creates a region with a user-defined region ID.", 
         "tags": [
           "regions-v3"
-        ]
+        ], 
+        "title": "Create region with user-defined ID"
       }
     ], 
     "/v3/role_assignments": [
@@ -6616,7 +6677,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists role assignments.\n\nBecause the role assignments list can be long, use the query\nparameters to filter the list.\n\nSome typical examples are:\n\n``GET /role_assignments?user.id={user_id}`` lists role assignments\nfor the specified user.\n\n``GET/role_assignments?scope.project.id={project_id}`` lists role\nassignments for the specified project.\n\nEach role assignment entity in the collection contains a link to\nthe assignment that created this entity.\n\nUse the ``effective`` query parameter to list effective assignments\nat the user, project, and domain level. This parameter allows for\nthe effects of group membership. The group role assignment entities\nthemselves are not returned in the collection. This represents the\neffective role assignments that would be included in a scoped\ntoken. You can use the other query parameters with the\n``effective`` parameter.\n\nFor example, to determine what a user can actually do, issue the\n``GET/role_assignments?user.id={user_id}&effective`` request.\n\nTo return the equivalent set of role assignments that would be\nincluded in the token response of a project-scoped token, issue the\n``GET /role_assignments?user.id={user_id}&scope.project.id={project\n_id}&effective`` request.\n\nIn the response, the ``links`` entity section for entities that are\nincluded by virtue of group members also contains a URL that you\ncan use to access the membership of the group.", 
+        "description": "Because the role assignments list can be long, use the query\nparameters to filter the list.\n\nSome typical examples are:\n\n``GET /role_assignments?user.id={user_id}`` lists role assignments\nfor the specified user.\n\n``GET/role_assignments?scope.project.id={project_id}`` lists role\nassignments for the specified project.\n\nEach role assignment entity in the collection contains a link to\nthe assignment that created this entity.\n\nUse the ``effective`` query parameter to list effective assignments\nat the user, project, and domain level. This parameter allows for\nthe effects of group membership. The group role assignment entities\nthemselves are not returned in the collection. This represents the\neffective role assignments that would be included in a scoped\ntoken. You can use the other query parameters with the\n``effective`` parameter.\n\nFor example, to determine what a user can actually do, issue the\n``GET/role_assignments?user.id={user_id}&effective`` request.\n\nTo return the equivalent set of role assignments that would be\nincluded in the token response of a project-scoped token, issue the\n``GET /role_assignments?user.id={user_id}&scope.project.id={project\n_id}&effective`` request.\n\nIn the response, the ``links`` entity section for entities that are\nincluded by virtue of group members also contains a URL that you\ncan use to access the membership of the group.", 
         "examples": {}, 
         "id": "listRoleAssignments", 
         "method": "get", 
@@ -6702,10 +6763,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List role assignments", 
+        "summary": "Lists role assignments.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "List role assignments"
       }
     ], 
     "/v3/roles": [
@@ -6713,7 +6775,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists roles.", 
+        "description": "", 
         "examples": {}, 
         "id": "listRoles", 
         "method": "get", 
@@ -6804,16 +6866,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles", 
+        "summary": "Lists roles.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "List roles"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a role.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "role": {
@@ -6879,10 +6942,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create role", 
+        "summary": "Creates a role.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "Create role"
       }
     ], 
     "/v3/roles/{role_id}": [
@@ -6890,7 +6954,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified role.", 
+        "description": "", 
         "examples": {}, 
         "id": "getRole", 
         "method": "get", 
@@ -6949,16 +7013,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show role details", 
+        "summary": "Shows details for a specified role.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "Show role details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified role.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "role": {
@@ -7023,14 +7088,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update role", 
+        "summary": "Updates a specified role.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "Update role"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified role.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteRole", 
         "method": "delete", 
@@ -7079,10 +7145,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete role", 
+        "summary": "Deletes a specified role.", 
         "tags": [
           "roles"
-        ]
+        ], 
+        "title": "Delete role"
       }
     ], 
     "/v3/services": [
@@ -7090,7 +7157,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists services.", 
+        "description": "", 
         "examples": {}, 
         "id": "listServices", 
         "method": "get", 
@@ -7185,16 +7252,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List services", 
+        "summary": "Lists services.", 
         "tags": [
           "service-catalog"
-        ]
+        ], 
+        "title": "List services"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "service": {
@@ -7263,10 +7331,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create service", 
+        "summary": "Creates a service.", 
         "tags": [
           "service-catalog"
-        ]
+        ], 
+        "title": "Create service"
       }
     ], 
     "/v3/services/{service_id}": [
@@ -7274,7 +7343,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified service.", 
+        "description": "", 
         "examples": {}, 
         "id": "getService", 
         "method": "get", 
@@ -7338,16 +7407,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show service details", 
+        "summary": "Shows details for a specified service.", 
         "tags": [
           "service-catalog"
-        ]
+        ], 
+        "title": "Show service details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "type": "volume"
@@ -7418,14 +7488,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update service", 
+        "summary": "Updates a specified service.", 
         "tags": [
           "service-catalog"
-        ]
+        ], 
+        "title": "Update service"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified service.\n\nIf you try to delete a service when endpoints exist, this call\neither deletes all associated endpoints or fails until all\nendpoints are deleted.", 
+        "description": "If you try to delete a service when endpoints exist, this call\neither deletes all associated endpoints or fails until all\nendpoints are deleted.", 
         "examples": {}, 
         "id": "deleteService", 
         "method": "delete", 
@@ -7474,10 +7545,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete service", 
+        "summary": "Deletes a specified service.", 
         "tags": [
           "service-catalog"
-        ]
+        ], 
+        "title": "Delete service"
       }
     ], 
     "/v3/users": [
@@ -7485,7 +7557,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists users.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUsers", 
         "method": "get", 
@@ -7602,16 +7674,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List users", 
+        "summary": "Lists users.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "List users"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -7690,10 +7763,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create user", 
+        "summary": "Creates a user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "Create user"
       }
     ], 
     "/v3/users/{user_id}": [
@@ -7701,7 +7775,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "getUser", 
         "method": "get", 
@@ -7767,16 +7841,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show user details", 
+        "summary": "Shows details for a specified user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "Show user details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the password for or enables or disables a specified user.\n\nIf the back-end driver does not allow this functionality, this call\nmight return the HTTP ``Not Implemented (501)`` status code.", 
+        "description": "If the back-end driver does not allow this functionality, this call\nmight return the HTTP ``Not Implemented (501)`` status code.", 
         "examples": {
           "application/json": {
             "user": {
@@ -7851,14 +7926,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update user", 
+        "summary": "Updates the password for or enables or disables a specified user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "Update user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteUser", 
         "method": "delete", 
@@ -7907,10 +7983,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete user", 
+        "summary": "Deletes a specified user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "Delete user"
       }
     ], 
     "/v3/users/{user_id}/groups": [
@@ -7918,7 +7995,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists groups for a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUserGroups", 
         "method": "get", 
@@ -7997,10 +8074,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List groups for user", 
+        "summary": "Lists groups for a specified user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "List groups for user"
       }
     ], 
     "/v3/users/{user_id}/projects": [
@@ -8008,7 +8086,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "List projects for a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUserProjects", 
         "method": "get", 
@@ -8091,10 +8169,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List projects for user", 
+        "summary": "List projects for a specified user.", 
         "tags": [
           "users"
-        ]
+        ], 
+        "title": "List projects for user"
       }
     ]
   }, 

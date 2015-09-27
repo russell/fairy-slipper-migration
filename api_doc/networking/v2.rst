@@ -1,7 +1,8 @@
 .. http:get:: /v2.0
-   :synopsis: Show API v2.0 details
+   :title: Show API v2.0 details
+   :synopsis: Shows details for Networking API v2.0.
 
-   Shows details for Networking API v2.0.
+   
 
    :responseexample 200: v2/examples/showVersionDetailsv2-neutron_resp_200.json
    :responseexample 203: v2/examples/showVersionDetailsv2-neutron_resp_203.json
@@ -13,10 +14,9 @@
 
 
 .. http:get:: /v2.0/networks/{network_id}
-   :synopsis: Show network
+   :title: Show network
+   :synopsis: Shows information for a specified network.
 
-   Shows information for a specified network.
-   
    You can control which response parameters are returned by using the
    fields query parameter. For information, see Filtering and column
    selection .
@@ -36,9 +36,10 @@
 
 
 .. http:put:: /v2.0/networks/{network_id}
-   :synopsis: Update network
+   :title: Update network
+   :synopsis: Updates a specified network.
 
-   Updates a specified network.
+   
 
    :requestexample: v2/examples/updateNetwork_req.json
    :responseexample 200: v2/examples/updateNetwork_resp_200.json
@@ -54,9 +55,10 @@
 
 
 .. http:delete:: /v2.0/networks/{network_id}
-   :synopsis: Delete network
+   :title: Delete network
+   :synopsis: Deletes a specified network and its associated resources.
 
-   Deletes a specified network and its associated resources.
+   
 
    :tag: networks
    :parameter network_id: The UUID for the network of interest to you.
@@ -67,10 +69,9 @@
 
 
 .. http:get:: /v2.0/subnets
-   :synopsis: List subnets
+   :title: List subnets
+   :synopsis: Lists subnets to which the specified tenant has access.
 
-   Lists subnets to which the specified tenant has access.
-   
    Default policy settings returns exclusively subnets owned by the
    tenant submitting the request, unless the request is submitted by a
    user with administrative rights. You can control which attributes
@@ -86,10 +87,9 @@
 
 
 .. http:post:: /v2.0/subnets
-   :synopsis: Create subnet
+   :title: Create subnet
+   :synopsis: Creates a subnet on a specified network.
 
-   Creates a subnet on a specified network.
-   
    OpenStack Networking does not try to derive the correct IP version
    from the specified CIDR. If you do not specify the ``gateway_ip``
    attribute, OpenStack Networking allocates an address from the CIDR
@@ -132,11 +132,9 @@
 
 
 .. http:post:: /v2.0/subnets
-   :synopsis: Bulk create subnet
+   :title: Bulk create subnet
+   :synopsis: Creates multiple subnets in a single request. Specify a list of subnets in the request body.
 
-   Creates multiple subnets in a single request. Specify a list of
-   subnets in the request body.
-   
    The bulk create operation is always atomic. Either all or no
    subnets in the request body are created.
 
@@ -154,9 +152,10 @@
 
 
 .. http:get:: /v2.0/ports/{port_id}
-   :synopsis: Show port
+   :title: Show port
+   :synopsis: Shows information for a specified port.
 
-   Shows information for a specified port.
+   
 
    :responseexample 200: v2/examples/showPort_resp_200.json
    :accepts: application/json
@@ -169,10 +168,9 @@
 
 
 .. http:put:: /v2.0/ports/{port_id}
-   :synopsis: Update port
+   :title: Update port
+   :synopsis: Updates a specified port.
 
-   Updates a specified port.
-   
    You can update information for a port, such as its symbolic name
    and associated IPs. When you update IPs for a port, any previously
    associated IPs are removed, returned to the respective subnets
@@ -206,10 +204,9 @@
 
 
 .. http:delete:: /v2.0/ports/{port_id}
-   :synopsis: Delete port
+   :title: Delete port
+   :synopsis: Deletes a specified port.
 
-   Deletes a specified port.
-   
    Any IP addresses that are associated with the port are returned to
    the respective subnets allocation pools.
 
@@ -222,7 +219,8 @@
 
 
 .. http:get:: /v2.0/extensions/{alias}
-   :synopsis: Get extension details
+   :title: Get extension details
+   :synopsis: 
 
    Gets detailed information for a specified extension.
 
@@ -243,7 +241,8 @@
 
 
 .. http:get:: /v2.0/extensions
-   :synopsis: List extensions
+   :title: List extensions
+   :synopsis: 
 
    Lists available Networking API extensions.
 
@@ -263,10 +262,9 @@
 
 
 .. http:get:: /v2.0/ports
-   :synopsis: List ports
+   :title: List ports
+   :synopsis: Lists ports to which the tenant has access.
 
-   Lists ports to which the tenant has access.
-   
    Default policy settings return only those ports that are owned by
    the tenant who submits the request, unless the request is submitted
    by a user with administrative rights. Users can control which
@@ -283,10 +281,9 @@
 
 
 .. http:post:: /v2.0/ports
-   :synopsis: Create port
+   :title: Create port
+   :synopsis: Creates a port on a specified network.
 
-   Creates a port on a specified network.
-   
    You must specify the ``network_id`` attribute in the request body
    to define the network where the port is to be created.
 
@@ -304,11 +301,9 @@
 
 
 .. http:post:: /v2.0/ports
-   :synopsis: Bulk create ports
+   :title: Bulk create ports
+   :synopsis: Creates multiple ports in a single request. Specify a list of ports in the request body.
 
-   Creates multiple ports in a single request. Specify a list of ports
-   in the request body.
-   
    Guarantees the atomic completion of the bulk operation.
 
    :requestexample: v2/examples/bulkCreatePorts_req.json
@@ -326,9 +321,10 @@
 
 
 .. http:get:: /
-   :synopsis: List API versions
+   :title: List API versions
+   :synopsis: Lists information about all Networking API versions.
 
-   Lists information about all Networking API versions.
+   
 
    :responseexample 300: v2/examples/listVersionsv2-neutron_resp_300.json
    :responseexample 200: v2/examples/listVersionsv2-neutron_resp_200.json
@@ -340,10 +336,9 @@
 
 
 .. http:get:: /v2.0/networks
-   :synopsis: List networks
+   :title: List networks
+   :synopsis: Lists networks to which the specified tenant has access.
 
-   Lists networks to which the specified tenant has access.
-   
    You can control which response parameters are returned by using the
    fields query parameter. For information, see Filtering and column
    selection .
@@ -357,10 +352,9 @@
 
 
 .. http:post:: /v2.0/networks
-   :synopsis: Create network
+   :title: Create network
+   :synopsis: Creates a network.
 
-   Creates a network.
-   
    A request body is optional. An administrative user can specify
    another tenant ID, which is the tenant who owns the network, in the
    request body.
@@ -376,10 +370,9 @@
 
 
 .. http:post:: /v2.0/networks
-   :synopsis: Bulk create networks
+   :title: Bulk create networks
+   :synopsis: Creates multiple networks in a single request.
 
-   Creates multiple networks in a single request.
-   
    In the request body, specify a list of networks.
    
    The bulk create operation is always atomic. Either all or no
@@ -396,10 +389,9 @@
 
 
 .. http:get:: /v2.0/subnets/{subnet_id}
-   :synopsis: Show subnet
+   :title: Show subnet
+   :synopsis: Shows information for a specified subnet.
 
-   Shows information for a specified subnet.
-   
    Use the fields query parameter to filter the results.
 
    :responseexample 200: v2/examples/showSubnet_resp_200.json
@@ -413,10 +405,9 @@
 
 
 .. http:put:: /v2.0/subnets/{subnet_id}
-   :synopsis: Update subnet
+   :title: Update subnet
+   :synopsis: Updates a specified subnet.
 
-   Updates a specified subnet.
-   
    Some attributes, such as IP version (ip_version), and CIDR (cidr)
    cannot be updated. Attempting to update these attributes results in
    a ``400 BadRequest`` error.
@@ -435,10 +426,9 @@
 
 
 .. http:delete:: /v2.0/subnets/{subnet_id}
-   :synopsis: Delete subnet
+   :title: Delete subnet
+   :synopsis: Deletes a specified subnet.
 
-   Deletes a specified subnet.
-   
    The operation fails if subnet IP addresses are still allocated.
 
    :tag: subnets

@@ -1,8 +1,7 @@
 .. http:post:: /v2.0/vpn/ikepolicies
-   :synopsis: Create IKE policy
+   :title: Create IKE policy
+   :synopsis: Creates an IKE policy.
 
-   Creates an IKE policy.
-   
    The IKE policy is used for phases one and two negotiation of the
    VPN connection. You can specify both the authentication and
    encryption algorithms for connections.
@@ -19,10 +18,9 @@
 
 
 .. http:get:: /v2.0/vpn/ikepolicies
-   :synopsis: List IKE policies
+   :title: List IKE policies
+   :synopsis: Lists IKE policies.
 
-   Lists IKE policies.
-   
    This operation lists all IKE policies.
 
    :responseexample 200: v2/examples/listIKEPolicies_resp_200.json
@@ -35,10 +33,9 @@
 
 
 .. http:get:: /v2.0/subnetpools/{subnetpool_id}
-   :synopsis: Show subnet pool
+   :title: Show subnet pool
+   :synopsis: Shows information for a specified subnet pool.
 
-   Shows information for a specified subnet pool.
-   
    Use the ``fields`` query parameter to filter the results.
 
    :responseexample 200: v2/examples/showSubnetPool_resp_200.json
@@ -53,9 +50,10 @@
 
 
 .. http:put:: /v2.0/subnetpools/{subnetpool_id}
-   :synopsis: Update subnet pool
+   :title: Update subnet pool
+   :synopsis: Updates a specified subnet pool.
 
-   Updates a specified subnet pool.
+   
 
    :requestexample: v2/examples/updateSubnetPool_req.json
    :responseexample 200: v2/examples/updateSubnetPool_resp_200.json
@@ -73,10 +71,9 @@
 
 
 .. http:delete:: /v2.0/subnetpools/{subnetpool_id}
-   :synopsis: Delete subnet pool
+   :title: Delete subnet pool
+   :synopsis: Deletes a specified subnet pool.
 
-   Deletes a specified subnet pool.
-   
    The operation fails if any subnets allocated from the subnet pool
    are still in use.
 
@@ -89,11 +86,9 @@
 
 
 .. http:get:: /v2.0/floatingips
-   :synopsis: List floating IPs
+   :title: List floating IPs
+   :synopsis: Lists floating IPs that are accessible to the tenant who submits the request.
 
-   Lists floating IPs that are accessible to the tenant who submits
-   the request.
-   
    Default policy settings return only those floating IPs that are
    owned by the tenant who submits the request, unless an admin user
    submits the request.
@@ -114,11 +109,9 @@
 
 
 .. http:post:: /v2.0/floatingips
-   :synopsis: Create floating IP
+   :title: Create floating IP
+   :synopsis: Creates a floating IP, and, if you specify port information, associates the floating IP with an internal port.
 
-   Creates a floating IP, and, if you specify port information,
-   associates the floating IP with an internal port.
-   
    To associate the floating IP with an internal port, specify the
    port ID attribute in the request body. If you do not specify a port
    ID in the request, you can issue a PUT request instead of a POST
@@ -180,9 +173,10 @@
 
 
 .. http:get:: /v2.0/lb/members
-   :synopsis: List members
+   :title: List members
+   :synopsis: Lists members.
 
-   Lists members.
+   
 
    :responseexample 200: v2/examples/listMembers_resp_200.json
    :accepts: application/json
@@ -197,9 +191,10 @@
 
 
 .. http:post:: /v2.0/lb/members
-   :synopsis: Create a load balancer member
+   :title: Create a load balancer member
+   :synopsis: Creates a load balancer member.
 
-   Creates a load balancer member.
+   
 
    :requestexample: v2/examples/createMember_req.json
    :responseexample 201: v2/examples/createMember_resp_201.json
@@ -215,9 +210,10 @@
 
 
 .. http:get:: /v2.0/quotas
-   :synopsis: List quotas
+   :title: List quotas
+   :synopsis: Lists quotas for tenants who have non-default quota values.
 
-   Lists quotas for tenants who have non-default quota values.
+   
 
    :responseexample 200: v2/examples/listQuotas_resp_200.json
    :accepts: application/json
@@ -229,10 +225,9 @@
 
 
 .. http:get:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
-   :synopsis: Show IKE policies
+   :title: Show IKE policies
+   :synopsis: Shows details for a specified IKE policy.
 
-   Shows details for a specified IKE policy.
-   
    Shows the details for a specified IKE policy.
 
    :responseexample 200: v2/examples/showIKEPolicy_resp_200.json
@@ -247,9 +242,10 @@
 
 
 .. http:put:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
-   :synopsis: Update IKE policy
+   :title: Update IKE policy
+   :synopsis: Updates policy settings in a specified IKE policy.
 
-   Updates policy settings in a specified IKE policy.
+   
 
    :requestexample: v2/examples/updateIKEPolicy_req.json
    :responseexample 200: v2/examples/updateIKEPolicy_resp_200.json
@@ -265,10 +261,9 @@
 
 
 .. http:delete:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
-   :synopsis: Remove IKE policy
+   :title: Remove IKE policy
+   :synopsis: Removes a specified IKE policy.
 
-   Removes a specified IKE policy.
-   
    Removes the IKE policy specified in the request.
 
    :tag: vpnaas
@@ -280,10 +275,9 @@
 
 
 .. http:get:: /v2.0/security-group-rules/{rules-security-groups-id}
-   :synopsis: Show security group rule
+   :title: Show security group rule
+   :synopsis: Shows detailed information for a specified security group rule.
 
-   Shows detailed information for a specified security group rule.
-   
    The response body contains the following information about the
    security group rule:
 
@@ -299,10 +293,10 @@
 
 
 .. http:delete:: /v2.0/security-group-rules/{rules-security-groups-id}
-   :synopsis: Delete security group rule
+   :title: Delete security group rule
+   :synopsis: Deletes a specified rule from an OpenStack Networking security group.
 
-   Deletes a specified rule from an OpenStack Networking security
-   group.
+   
 
    :tag: security_group-ruless
    :parameter rules-security-groups-id: The unique identifier of the
@@ -313,10 +307,9 @@
 
 
 .. http:get:: /v2.0/lbaas/listeners/{listener_id}
-   :synopsis: Show listener details
+   :title: Show listener details
+   :synopsis: Shows details for a specified listener.
 
-   Shows details for a specified listener.
-   
    This operation returns a listener object identified by
    ``listener_id`` . If the user is not an administrative user and the
    listener object does not belong to her tenant account, the call
@@ -366,10 +359,9 @@
 
 
 .. http:put:: /v2.0/lbaas/listeners/{listener_id}
-   :synopsis: Update listener
+   :title: Update listener
+   :synopsis: Updates a specified listener.
 
-   Updates a specified listener.
-   
    This operation updates the attributes of a specified listener. Upon
    successful validation of the request, the service returns the HTTP
    ``Accepted (202)`` response code.
@@ -416,10 +408,9 @@
 
 
 .. http:delete:: /v2.0/lbaas/listeners/{listener_id}
-   :synopsis: Remove listener
+   :title: Remove listener
+   :synopsis: Removes a specified listener.
 
-   Removes a specified listener.
-   
    This operation removes a specified listener and its associated
    configuration from the tenant account. Any and all configuration
    data is immediately purged and cannot be recovered.
@@ -440,10 +431,9 @@
 
 
 .. http:get:: /v2.0/lbaas/health_monitors/{health_monitor_id}
-   :synopsis: Show health monitor details
+   :title: Show health monitor details
+   :synopsis: Shows details for a specified health monitor.
 
-   Shows details for a specified health monitor.
-   
    This operation returns a health monitor object identified by
    ``health_monitor_id`` . If the user is not an administrative user
    and the health monitor object does not belong to her tenant
@@ -494,10 +484,9 @@
 
 
 .. http:put:: /v2.0/lbaas/health_monitors/{health_monitor_id}
-   :synopsis: Update health monitor
+   :title: Update health monitor
+   :synopsis: Updates a specified health monitor.
 
-   Updates a specified health monitor.
-   
    This operation updates the attributes of the specified health
    monitor. Upon successful validation of the request, the service
    returns the HTTP ``Accepted (202)`` response code.
@@ -539,10 +528,9 @@
 
 
 .. http:delete:: /v2.0/lbaas/health_monitors/{health_monitor_id}
-   :synopsis: Remove health monitor
+   :title: Remove health monitor
+   :synopsis: Removes a specified health monitor.
 
-   Removes a specified health monitor.
-   
    This operation removes the specified health monitor and its
    associated configuration from the tenant account. Any and all
    configuration data is immediately purged and cannot be recovered.
@@ -563,9 +551,10 @@
 
 
 .. http:get:: /v2.0/lb/members/{member_id}
-   :synopsis: Show member details
+   :title: Show member details
+   :synopsis: Shows details for a specified member.
 
-   Shows details for a specified member.
+   
 
    :responseexample 200: v2/examples/showMember_resp_200.json
    :accepts: application/json
@@ -581,9 +570,10 @@
 
 
 .. http:put:: /v2.0/lb/members/{member_id}
-   :synopsis: Update member
+   :title: Update member
+   :synopsis: Updates a specified load balancer member.
 
-   Updates a specified load balancer member.
+   
 
    :requestexample: v2/examples/updateMember_req.json
    :responseexample 200: v2/examples/updateMember_resp_200.json
@@ -600,9 +590,10 @@
 
 
 .. http:delete:: /v2.0/lb/members/{member_id}
-   :synopsis: Delete member
+   :title: Delete member
+   :synopsis: Deletes a specified load balancer member.
 
-   Deletes a specified load balancer member.
+   
 
    :tag: lbaas
    :parameter member_id: The UUID for the member.
@@ -615,10 +606,9 @@
 
 
 .. http:get:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
-   :synopsis: Show pool member details
+   :title: Show pool member details
+   :synopsis: Shows details for a specified pool member.
 
-   Shows details for a specified pool member.
-   
    This operation returns a member object identified by ``member_id``
    that belongs to a pool object identified by ``pool_id`` . If the
    user is not an administrative user and the pool or member object
@@ -659,10 +649,9 @@
 
 
 .. http:put:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
-   :synopsis: Update pool member
+   :title: Update pool member
+   :synopsis: Updates a specified member of a pool.
 
-   Updates a specified member of a pool.
-   
    This operation updates the attributes of the specified pool. Upon
    successful validation of the request, the service returns the HTTP
    ``OK (200)`` response code.
@@ -697,10 +686,9 @@
 
 
 .. http:delete:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
-   :synopsis: Remove member from pool
+   :title: Remove member from pool
+   :synopsis: Removes a member from a pool.
 
-   Removes a member from a pool.
-   
    This operation removes the specified member and its associated
    configuration from the tenant account. Any and all configuration
    data is immediately purged and cannot be recovered.
@@ -721,10 +709,9 @@
 
 
 .. http:get:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
-   :synopsis: Show load balancer details
+   :title: Show load balancer details
+   :synopsis: Shows details for a specified load balancer.
 
-   Shows details for a specified load balancer.
-   
    This operation returns a load balancer object identified by
    ``loadbalancer_id`` . If the user is not an administrative user and
    the load balancer object does not belong to her tenant account, the
@@ -770,10 +757,9 @@
 
 
 .. http:put:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
-   :synopsis: Update load balancer
+   :title: Update load balancer
+   :synopsis: Updates a specified load balancer.
 
-   Updates a specified load balancer.
-   
    This operation updates the attributes of the specified load
    balancer. Upon successful validation of the request, the service
    returns the ``Accepted (202)`` response code. A caller should check
@@ -811,10 +797,9 @@
 
 
 .. http:delete:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
-   :synopsis: Remove load balancer
+   :title: Remove load balancer
+   :synopsis: Removes a specified load balancer.
 
-   Removes a specified load balancer.
-   
    This operation removes the specified load balancer and its
    associated configuration from the tenant account. Any and all
    configuration data is immediately purged and cannot be recovered.
@@ -831,10 +816,9 @@
 
 
 .. http:put:: /v2.0/routers/{router_id}/add_router_interface
-   :synopsis: Add interface to router
+   :title: Add interface to router
+   :synopsis: Adds an internal interface to a logical router.
 
-   Adds an internal interface to a logical router.
-   
    Attaches a subnet to an internal router interface.
    
    Specify a subnet ID or port ID in the request body:
@@ -880,10 +864,9 @@
 
 
 .. http:get:: /v2.0/metering/metering-labels
-   :synopsis: List metering labels
+   :title: List metering labels
+   :synopsis: Lists all l3 metering labels that belong to the specified tenant.
 
-   Lists all l3 metering labels that belong to the specified tenant.
-   
    The list includes the unique ID for each metering labels.
    
    This operation does not require a request body.
@@ -899,10 +882,9 @@
 
 
 .. http:post:: /v2.0/metering/metering-labels
-   :synopsis: Create metering label
+   :title: Create metering label
+   :synopsis: Creates a l3 metering label.
 
-   Creates a l3 metering label.
-   
    This operation requires a request body.
    
    The following table describes the required and optional attributes
@@ -920,9 +902,10 @@
 
 
 .. http:get:: /v2.0/lb/vips/{vip_id}
-   :synopsis: Show VIP details
+   :title: Show VIP details
+   :synopsis: Shows details for a specified VIP.
 
-   Shows details for a specified VIP.
+   
 
    :responseexample 200: v2/examples/showVIP_resp_200.json
    :accepts: application/json
@@ -940,9 +923,10 @@
 
 
 .. http:put:: /v2.0/lb/vips/{vip_id}
-   :synopsis: Update VIP
+   :title: Update VIP
+   :synopsis: Updates a specified load balancer VIP.
 
-   Updates a specified load balancer VIP.
+   
 
    :requestexample: v2/examples/updateVIP_req.json
    :responseexample 200: v2/examples/updateVIP_resp_200.json
@@ -959,9 +943,10 @@
 
 
 .. http:delete:: /v2.0/lb/vips/{vip_id}
-   :synopsis: Delete VIP
+   :title: Delete VIP
+   :synopsis: Deletes a specified load balancer VIP.
 
-   Deletes a specified load balancer VIP.
+   
 
    :tag: lbaas
    :parameter vip_id: The UUID for the VIP.
@@ -974,10 +959,9 @@
 
 
 .. http:get:: /v2.0/lbaas/loadbalancers
-   :synopsis: List load balancers
+   :title: List load balancers
+   :synopsis: Lists load balancers.
 
-   Lists load balancers.
-   
    Lists all load balancers that are associated with your tenant
    account.
    
@@ -1016,10 +1000,9 @@
 
 
 .. http:post:: /v2.0/lbaas/loadbalancers
-   :synopsis: Create load balancer
+   :title: Create load balancer
+   :synopsis: Creates a load balancer.
 
-   Creates a load balancer.
-   
    This operation provisions a new load balancer based on the
    configuration defined in the request object. After the request is
    validated and progress has started on the provisioning process, a
@@ -1106,9 +1089,10 @@
 
 
 .. http:get:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
-   :synopsis: Show IPSec connection
+   :title: Show IPSec connection
+   :synopsis: Shows details for a specified IPSec connection.
 
-   Shows details for a specified IPSec connection.
+   
 
    :responseexample 200: v2/examples/showIPSecSiteConnection_resp_200.json
    :accepts: application/json
@@ -1123,9 +1107,10 @@
 
 
 .. http:put:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
-   :synopsis: Update IPSec connection
+   :title: Update IPSec connection
+   :synopsis: Updates connection settings for a specified IPSec connection.
 
-   Updates connection settings for a specified IPSec connection.
+   
 
    :requestexample: v2/examples/updateIPSecSiteConnection_req.json
    :responseexample 200: v2/examples/updateIPSecSiteConnection_resp_200.json
@@ -1142,10 +1127,9 @@
 
 
 .. http:delete:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
-   :synopsis: Remove IPSec connection
+   :title: Remove IPSec connection
+   :synopsis: Removes a specified IPSec connection.
 
-   Removes a specified IPSec connection.
-   
    Removes the IPSec connection specified in the request.
 
    :tag: vpnaas
@@ -1158,9 +1142,10 @@
 
 
 .. http:get:: /v2.0/ports/{port_id}
-   :synopsis: Show port
+   :title: Show port
+   :synopsis: Shows information for the specified port.
 
-   Shows information for the specified port.
+   
 
    :responseexample 200: v2/examples/showPort_resp_200.json
    :accepts: application/json
@@ -1171,9 +1156,10 @@
 
 
 .. http:put:: /v2.0/ports/{port_id}
-   :synopsis: Update port
+   :title: Update port
+   :synopsis: Updates the specified port.
 
-   Updates the specified port.
+   
 
    :requestexample: v2/examples/updatePort_req.json
    :responseexample 200: v2/examples/updatePort_resp_200.json
@@ -1188,9 +1174,10 @@
 
 
 .. http:delete:: /v2.0/ports/{port_id}
-   :synopsis: Delete port
+   :title: Delete port
+   :synopsis: Deletes the specified port.
 
-   Deletes the specified port.
+   
 
    :tag: port-binding
    :parameter port_id: The UUID for the port of interest to you.
@@ -1201,10 +1188,9 @@
 
 
 .. http:get:: /v2.0/subnetpools
-   :synopsis: List subnet pools
+   :title: List subnet pools
+   :synopsis: Lists subnet pools to which the specified tenant has access.
 
-   Lists subnet pools to which the specified tenant has access.
-   
    Default policy settings returns exclusively subnet pools owned by
    the tenant submitting the request, unless the request is submitted
    by a user with administrative rights.
@@ -1218,9 +1204,10 @@
 
 
 .. http:post:: /v2.0/subnetpools
-   :synopsis: Create subnet pool
+   :title: Create subnet pool
+   :synopsis: Creates a subnet pool.
 
-   Creates a subnet pool.
+   
 
    :requestexample: v2/examples/createSubnetPool_req.json
    :responseexample 201: v2/examples/createSubnetPool_resp_201.json
@@ -1236,10 +1223,9 @@
 
 
 .. http:get:: /v2.0/security-groups/{security_group_id}
-   :synopsis: Show security group
+   :title: Show security group
+   :synopsis: Shows details for a specified security group.
 
-   Shows details for a specified security group.
-   
    This operation returns a response body that contains the
    description, name, ID, and security group rules associated with the
    specified security group and tenant ID.
@@ -1256,9 +1242,10 @@
 
 
 .. http:put:: /v2.0/security-groups/{security_group_id}
-   :synopsis: Update security group
+   :title: Update security group
+   :synopsis: Updates a specified security group.
 
-   Updates a specified security group.
+   
 
    :requestexample: v2/examples/updateSecGroup_req.json
    :responseexample 200: v2/examples/updateSecGroup_resp_200.json
@@ -1279,10 +1266,9 @@
 
 
 .. http:delete:: /v2.0/security-groups/{security_group_id}
-   :synopsis: Delete security group
+   :title: Delete security group
+   :synopsis: Deletes an OpenStack Networking security group.
 
-   Deletes an OpenStack Networking security group.
-   
    This operation deletes an OpenStack Networking security group and
    its associated security group rules, provided that a port is not
    associated with the security group.
@@ -1300,10 +1286,9 @@
 
 
 .. http:get:: /v2.0/vpn/vpnservices
-   :synopsis: List VPN services
+   :title: List VPN services
+   :synopsis: Lists VPN services.
 
-   Lists VPN services.
-   
    This operation lists all VPN services.
    
    The list might be empty.
@@ -1318,10 +1303,9 @@
 
 
 .. http:post:: /v2.0/vpn/vpnservices
-   :synopsis: Create VPN service
+   :title: Create VPN service
+   :synopsis: Creates a VPN service.
 
-   Creates a VPN service.
-   
    Creates a VPN service object. The service is associated with a
    router and a local (private) subnet. After the service is created,
    it can contain multiple VPN connections.
@@ -1340,10 +1324,9 @@
 
 
 .. http:put:: /v2.0/routers/{router_id}/remove_router_interface
-   :synopsis: Remove interface from router
+   :title: Remove interface from router
+   :synopsis: Removes an internal interface from a logical router.
 
-   Removes an internal interface from a logical router.
-   
    This operation removes an internal router interface, which detaches
    a subnet from the router. You must specify either a subnet ID or
    port ID in the request body; this value is used to identify the
@@ -1378,9 +1361,10 @@
 
 
 .. http:get:: /v2.0/lb/health_monitors/{health_monitor_id}
-   :synopsis: Show health monitor details
+   :title: Show health monitor details
+   :synopsis: Shows details for a specified health monitor.
 
-   Shows details for a specified health monitor.
+   
 
    :responseexample 200: v2/examples/showHealthMonitor_resp_200.json
    :accepts: application/json
@@ -1396,9 +1380,10 @@
 
 
 .. http:put:: /v2.0/lb/health_monitors/{health_monitor_id}
-   :synopsis: Update health monitor
+   :title: Update health monitor
+   :synopsis: Updates a specified load balancer health monitor.
 
-   Updates a specified load balancer health monitor.
+   
 
    :requestexample: v2/examples/updateHealthMonitor_req.json
    :responseexample 200: v2/examples/updateHealthMonitor_resp_200.json
@@ -1415,9 +1400,10 @@
 
 
 .. http:delete:: /v2.0/lb/health_monitors/{health_monitor_id}
-   :synopsis: Delete health monitor
+   :title: Delete health monitor
+   :synopsis: Deletes a specified load balancer health monitor.
 
-   Deletes a specified load balancer health monitor.
+   
 
    :tag: lbaas
    :parameter health_monitor_id: The UUID for the health monitor.
@@ -1430,11 +1416,9 @@
 
 
 .. http:get:: /v2.0/security-groups
-   :synopsis: List security groups
+   :title: List security groups
+   :synopsis: Lists OpenStack Networking security groups to which the specified tenant has access.
 
-   Lists OpenStack Networking security groups to which the specified
-   tenant has access.
-   
    The list shows the unique ID for and the rules that are associated
    with each security group.
 
@@ -1447,10 +1431,9 @@
 
 
 .. http:post:: /v2.0/security-groups
-   :synopsis: Create security group
+   :title: Create security group
+   :synopsis: Creates an OpenStack Networking security group.
 
-   Creates an OpenStack Networking security group.
-   
    This operation creates a security group with default security group
    rules for the IPv4 and IPv6 ether types.
 
@@ -1465,9 +1448,10 @@
 
 
 .. http:get:: /v2.0/networks/{network_id}
-   :synopsis: Show network details
+   :title: Show network details
+   :synopsis: Shows details for a specified network.
 
-   Shows details for a specified network.
+   
 
    :responseexample 200: v2/examples/showProviderNetwork_resp_200.json
    :accepts: application/json
@@ -1480,9 +1464,10 @@
 
 
 .. http:put:: /v2.0/networks/{network_id}
-   :synopsis: Update network
+   :title: Update network
+   :synopsis: Updates a specified network.
 
-   Updates a specified network.
+   
 
    :requestexample: v2/examples/updateProviderNetwork_req.json
    :responseexample 200: v2/examples/updateProviderNetwork_resp_200.json
@@ -1497,9 +1482,10 @@
 
 
 .. http:delete:: /v2.0/networks/{network_id}
-   :synopsis: Delete network
+   :title: Delete network
+   :synopsis: Deletes a specified network.
 
-   Deletes a specified network.
+   
 
    :tag: network-provider
    :parameter network_id: The UUID for the network of interest to you.
@@ -1510,9 +1496,10 @@
 
 
 .. http:get:: /v2.0/networks/{network_id}
-   :synopsis: Show details for a network with multiple segments
+   :title: Show details for a network with multiple segments
+   :synopsis: Shows details for a specified network with multiple segments.
 
-   Shows details for a specified network with multiple segments.
+   
 
    :responseexample 200: v2/examples/showMultiNetwork_resp_200.json
    :accepts: application/json
@@ -1525,9 +1512,10 @@
 
 
 .. http:get:: /v2.0/networks/{network_id}
-   :synopsis: Show VLAN-transparent network details
+   :title: Show VLAN-transparent network details
+   :synopsis: Shows details for a specified VLAN-transparent network.
 
-   Shows details for a specified VLAN-transparent network.
+   
 
    :responseexample 200: v2/examples/showVTNetwork_resp_200.json
    :accepts: application/json
@@ -1540,10 +1528,9 @@
 
 
 .. http:post:: /v2.0/vpn/ipsecsiteconnections
-   :synopsis: Create IPSec connection
+   :title: Create IPSec connection
+   :synopsis: Creates an IPSec connection.
 
-   Creates an IPSec connection.
-   
    Creates a site-to-site IPSec connection for a service.
 
    :requestexample: v2/examples/createIPSecSiteConnection_req.json
@@ -1558,9 +1545,10 @@
 
 
 .. http:get:: /v2.0/vpn/ipsecsiteconnections
-   :synopsis: List IPSec connections
+   :title: List IPSec connections
+   :synopsis: Lists IPSec connections.
 
-   Lists IPSec connections.
+   
 
    :responseexample 200: v2/examples/listIPSecSiteConnections_resp_200.json
    :accepts: application/json
@@ -1572,9 +1560,10 @@
 
 
 .. http:get:: /v2.0/quotas/{tenant_id}
-   :synopsis: Show quota
+   :title: Show quota
+   :synopsis: Shows quotas for a specified tenant.
 
-   Shows quotas for a specified tenant.
+   
 
    :responseexample 200: v2/examples/showQuota_resp_200.json
    :accepts: application/json
@@ -1588,10 +1577,10 @@
 
 
 .. http:put:: /v2.0/quotas/{tenant_id}
-   :synopsis: Update quota
+   :title: Update quota
+   :synopsis: Updates quotas for a specified tenant. Use when non-default quotas are desired.
 
-   Updates quotas for a specified tenant. Use when non-default quotas
-   are desired.
+   
 
    :requestexample: v2/examples/updateQuota_req.json
    :responseexample 200: v2/examples/updateQuota_resp_200.json
@@ -1606,9 +1595,10 @@
 
 
 .. http:delete:: /v2.0/quotas/{tenant_id}
-   :synopsis: Reset quota
+   :title: Reset quota
+   :synopsis: Resets quotas to default values for a specified tenant.
 
-   Resets quotas to default values for a specified tenant.
+   
 
    :tag: quotas
    :parameter tenant_id: The tenant ID.
@@ -1619,9 +1609,10 @@
 
 
 .. http:post:: /v2.0/lb/pools/{pool_id}/health_monitors
-   :synopsis: Associate health monitor with pool
+   :title: Associate health monitor with pool
+   :synopsis: Associates a health monitor with a specified pool.
 
-   Associates a health monitor with a specified pool.
+   
 
    :requestexample: v2/examples/associateHealthMonitor_req.json
    :responseexample 201: v2/examples/associateHealthMonitor_resp_201.json
@@ -1638,11 +1629,9 @@
 
 
 .. http:get:: /v2.0/security-group-rules
-   :synopsis: List security group rules
+   :title: List security group rules
+   :synopsis: Lists a summary of all OpenStack Networking security group rules that the specified tenant can access.
 
-   Lists a summary of all OpenStack Networking security group rules
-   that the specified tenant can access.
-   
    The list provides the unique ID for each security group rule.
 
    :responseexample 200: v2/examples/listSecGroupRules_resp_200.json
@@ -1654,9 +1643,10 @@
 
 
 .. http:post:: /v2.0/security-group-rules
-   :synopsis: Create security group rule
+   :title: Create security group rule
+   :synopsis: Creates an OpenStack Networking security group rule.
 
-   Creates an OpenStack Networking security group rule.
+   
 
    :requestexample: v2/examples/createSecGroupRule_req.json
    :responseexample 201: v2/examples/createSecGroupRule_resp_201.json
@@ -1671,10 +1661,9 @@
 
 
 .. http:get:: /v2.0/floatingips/{floatingip_id}
-   :synopsis: Show floating IP details
+   :title: Show floating IP details
+   :synopsis: Shows details for a specified floating IP.
 
-   Shows details for a specified floating IP.
-   
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. For information, see Filtering and
    Column Selection .
@@ -1697,10 +1686,9 @@
 
 
 .. http:put:: /v2.0/floatingips/{floatingip_id}
-   :synopsis: Update floating IP
+   :title: Update floating IP
+   :synopsis: Updates a floating IP and its association with an internal port.
 
-   Updates a floating IP and its association with an internal port.
-   
    The association process is the same as the process for the create
    floating IP operation.
    
@@ -1726,10 +1714,9 @@
 
 
 .. http:delete:: /v2.0/floatingips/{floatingip_id}
-   :synopsis: Delete floating IP
+   :title: Delete floating IP
+   :synopsis: Deletes a floating IP and, if present, its associated port.
 
-   Deletes a floating IP and, if present, its associated port.
-   
    This example deletes a floating IP:
    
    DELETE /v2.0/floatingips/{floatingip_id} Accept: application/json
@@ -1742,11 +1729,9 @@
 
 
 .. http:get:: /v2.0/metering/metering-label-rules
-   :synopsis: List metering label rules
+   :title: List metering label rules
+   :synopsis: Lists a summary of all l3 metering label rules belonging to the specified tenant.
 
-   Lists a summary of all l3 metering label rules belonging to the
-   specified tenant.
-   
    The list provides the unique ID for each metering label rule.
    
    This operation does not require a request body. This operation
@@ -1761,10 +1746,9 @@
 
 
 .. http:post:: /v2.0/metering/metering-label-rules
-   :synopsis: Create metering label rule
+   :title: Create metering label rule
+   :synopsis: Creates a l3 metering label rule.
 
-   Creates a l3 metering label rule.
-   
    This operation requires a request body.
    
    This operation returns a response body.
@@ -1783,7 +1767,8 @@
 
 
 .. http:get:: /v2.0/extensions
-   :synopsis: List extensions
+   :title: List extensions
+   :synopsis: 
 
    Lists available Networking API extensions.
 
@@ -1803,10 +1788,9 @@
 
 
 .. http:get:: /v2.0/metering/metering-labels/{metering_label_id}
-   :synopsis: Show metering label
+   :title: Show metering label
+   :synopsis: Shows information for a specified metering label.
 
-   Shows information for a specified metering label.
-   
    This operation does not require a request body.
    
    This operation returns a response body that contains the
@@ -1824,10 +1808,9 @@
 
 
 .. http:delete:: /v2.0/metering/metering-labels/{metering_label_id}
-   :synopsis: Delete metering label
+   :title: Delete metering label
+   :synopsis: Deletes a l3 metering label.
 
-   Deletes a l3 metering label.
-   
    This operation deletes a l3 metering label.
    
    This operation does not require a request body. This operation does
@@ -1842,10 +1825,9 @@
 
 
 .. http:get:: /v2.0/lbaas/pools/{pool_id}
-   :synopsis: Show pool details
+   :title: Show pool details
+   :synopsis: Shows details for a specified pool.
 
-   Shows details for a specified pool.
-   
    This operation returns a pool object identified by ``pool_id`` . If
    the user is not an administrative user and the pool object does not
    belong to her tenant account, the call returns the HTTP
@@ -1893,10 +1875,9 @@
 
 
 .. http:put:: /v2.0/lbaas/pools/{pool_id}
-   :synopsis: Update pool
+   :title: Update pool
+   :synopsis: Updates a specified pool.
 
-   Updates a specified pool.
-   
    This operation updates the attributes of the specified pool. Upon
    successful validation of the request, the service returns the HTTP
    ``Accepted (202)`` response code.
@@ -1940,10 +1921,9 @@
 
 
 .. http:delete:: /v2.0/lbaas/pools/{pool_id}
-   :synopsis: Remove pool
+   :title: Remove pool
+   :synopsis: Removes a specified pool.
 
-   Removes a specified pool.
-   
    This operation removes a specified pool and its associated
    configuration from the tenant account. Any and all configuration
    data is immediately purged and cannot be recovered.
@@ -1964,9 +1944,10 @@
 
 
 .. http:get:: /v2.0/ports
-   :synopsis: List ports
+   :title: List ports
+   :synopsis: Lists ports to which the tenant has access.
 
-   Lists ports to which the tenant has access.
+   
 
    :responseexample 200: v2/examples/listPorts_resp_200.json
    :accepts: application/json
@@ -1977,9 +1958,10 @@
 
 
 .. http:post:: /v2.0/ports
-   :synopsis: Create port
+   :title: Create port
+   :synopsis: Creates a port on the specified network.
 
-   Creates a port on the specified network.
+   
 
    :requestexample: v2/examples/createPort_req.json
    :responseexample 201: v2/examples/createPort_resp_201.json
@@ -1993,9 +1975,10 @@
 
 
 .. http:get:: /v2.0/lb/vips
-   :synopsis: List VIPs
+   :title: List VIPs
+   :synopsis: Lists VIPs.
 
-   Lists VIPs.
+   
 
    :responseexample 200: v2/examples/listVIPs_resp_200.json
    :accepts: application/json
@@ -2008,9 +1991,10 @@
 
 
 .. http:post:: /v2.0/lb/vips
-   :synopsis: Create a load balancer VIP
+   :title: Create a load balancer VIP
+   :synopsis: Creates a load balancer VIP.
 
-   Creates a load balancer VIP.
+   
 
    :requestexample: v2/examples/createVIP_req.json
    :responseexample 201: v2/examples/createVIP_resp_201.json
@@ -2027,10 +2011,9 @@
 
 
 .. http:post:: /v2.0/lbaas/health_monitors
-   :synopsis: Create health monitor
+   :title: Create health monitor
+   :synopsis: Creates a health monitor.
 
-   Creates a health monitor.
-   
    This operation provisions a new health monitor based on the
    configuration defined in the request object. After the request is
    validated and progress has started on the provisioning process, a
@@ -2104,10 +2087,9 @@
 
 
 .. http:get:: /v2.0/lbaas/health_monitors
-   :synopsis: List health monitors
+   :title: List health monitors
+   :synopsis: Lists health monitors.
 
-   Lists health monitors.
-   
    This operation lists all health monitors associated with your
    tenant account.
    
@@ -2152,10 +2134,9 @@
 
 
 .. http:get:: /v2.0/routers/{router_id}
-   :synopsis: Show router details
+   :title: Show router details
+   :synopsis: Shows details for a specified router.
 
-   Shows details for a specified router.
-   
    This example request shows details for a router in JSON format:
    
    GET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are
@@ -2174,10 +2155,9 @@
 
 
 .. http:put:: /v2.0/routers/{router_id}
-   :synopsis: Update router
+   :title: Update router
+   :synopsis: Updates a logical router.
 
-   Updates a logical router.
-   
    You can update the name, administrative state, and the external
    gateway. For more information about how to set the external gateway
    for a router, see the create router operation. This operation does
@@ -2201,11 +2181,9 @@
 
 
 .. http:delete:: /v2.0/routers/{router_id}
-   :synopsis: Delete router
+   :title: Delete router
+   :synopsis: Deletes a logical router and, if present, its external gateway interface.
 
-   Deletes a logical router and, if present, its external gateway
-   interface.
-   
    This operation fails if the router has attached interfaces.
    
    Use the remove router interface operation to remove all router
@@ -2224,10 +2202,9 @@
 
 
 .. http:put:: /v2.0/routers/{router_id}
-   :synopsis: Update router
+   :title: Update router
+   :synopsis: Configures extra routes on a specified router.
 
-   Configures extra routes on a specified router.
-   
    The next hop IP address must be a part of one of the subnets to
    which the router interfaces are connected. Otherwise, the server
    responds with the ``400 Bad Request`` error code.
@@ -2255,10 +2232,9 @@
 
 
 .. http:post:: /v2.0/lbaas/listeners
-   :synopsis: Create listener
+   :title: Create listener
+   :synopsis: Creates a listener.
 
-   Creates a listener.
-   
    This operation provisions a new listener based on the configuration
    defined in the request object. After the request is validated and
    the provisioning process begins, a response object is returned. The
@@ -2336,10 +2312,9 @@
 
 
 .. http:get:: /v2.0/lbaas/listeners
-   :synopsis: List listeners
+   :title: List listeners
+   :synopsis: Lists listeners.
 
-   Lists listeners.
-   
    This operation lists all listeners that are associated with your
    tenant account.
    
@@ -2383,10 +2358,9 @@
 
 
 .. http:get:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
-   :synopsis: Show IPSec policy
+   :title: Show IPSec policy
+   :synopsis: Shows details for a specified IPSec policy.
 
-   Shows details for a specified IPSec policy.
-   
    Shows details for a specified IPSec policy.
 
    :responseexample 200: v2/examples/showIPSecPolicy_resp_200.json
@@ -2401,9 +2375,10 @@
 
 
 .. http:put:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
-   :synopsis: Update IPSec policy
+   :title: Update IPSec policy
+   :synopsis: Updates policy settings in a specified IPSec policy.
 
-   Updates policy settings in a specified IPSec policy.
+   
 
    :requestexample: v2/examples/updateIPSecPolicy_req.json
    :responseexample 200: v2/examples/updateIPSecPolicy_resp_200.json
@@ -2419,10 +2394,9 @@
 
 
 .. http:delete:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
-   :synopsis: Remove IPSec policy
+   :title: Remove IPSec policy
+   :synopsis: Removes a specified IPSec policy.
 
-   Removes a specified IPSec policy.
-   
    Removes the IPSec policy specified in the request.
 
    :tag: vpnaas
@@ -2434,11 +2408,9 @@
 
 
 .. http:get:: /v2.0/routers
-   :synopsis: List routers
+   :title: List routers
+   :synopsis: Lists logical routers that are accessible to the tenant who submits the request.
 
-   Lists logical routers that are accessible to the tenant who submits
-   the request.
-   
    Default policy settings return only those routers that are owned by
    the tenant who submits the request, unless an admin user submits
    the request.
@@ -2459,10 +2431,9 @@
 
 
 .. http:post:: /v2.0/routers
-   :synopsis: Create router
+   :title: Create router
+   :synopsis: Creates a logical router.
 
-   Creates a logical router.
-   
    This operation creates a new logical router. When it is created, a
    logical router does not have any internal interface; it is not
    associated to any subnet. You can optionally specify an external
@@ -2486,10 +2457,9 @@
 
 
 .. http:post:: /v2.0/lbaas/pools/{pool_id}/members
-   :synopsis: Add member to pool
+   :title: Add member to pool
+   :synopsis: Adds a member to a pool.
 
-   Adds a member to a pool.
-   
    This operation provisions a new member and adds it to a pool based
    on the configuration defined in the request object. After the
    request is validated and progress has started on the provisioning
@@ -2548,10 +2518,9 @@
 
 
 .. http:get:: /v2.0/lbaas/pools/{pool_id}/members
-   :synopsis: List pool members
+   :title: List pool members
+   :synopsis: Lists members of a specified pool.
 
-   Lists members of a specified pool.
-   
    Lists all members that are associated with a pool that is
    associated with your tenant account. The list of members includes
    only members that belong to the pool object identified by
@@ -2587,10 +2556,9 @@
 
 
 .. http:get:: /v2.0/metering/metering-label-rules/{metering-label-rule-id}
-   :synopsis: Show metering label rule
+   :title: Show metering label rule
+   :synopsis: Shows detailed information for a specified metering label rule.
 
-   Shows detailed information for a specified metering label rule.
-   
    This operation does not require a request body.
    
    This operation returns a response body, which contains the
@@ -2619,10 +2587,9 @@
 
 
 .. http:delete:: /v2.0/metering/metering-label-rules/{metering-label-rule-id}
-   :synopsis: Delete metering label rule
+   :title: Delete metering label rule
+   :synopsis: Deletes a specified l3 metering label rule.
 
-   Deletes a specified l3 metering label rule.
-   
    This operation does not require a request body.
    
    This operation does not return a response body.
@@ -2636,10 +2603,9 @@
 
 
 .. http:post:: /v2.0/lbaas/pools
-   :synopsis: Create pool
+   :title: Create pool
+   :synopsis: Creates a pool.
 
-   Creates a pool.
-   
    This operation provisions a new pool based on the configuration
    defined in the request object. After the request is validated and
    progress has started on the provisioning process, a response object
@@ -2713,10 +2679,9 @@
 
 
 .. http:get:: /v2.0/lbaas/pools
-   :synopsis: List pools
+   :title: List pools
+   :synopsis: Lists pools.
 
-   Lists pools.
-   
    This operation lists all pools that are associated with your tenant
    account.
    
@@ -2759,9 +2724,10 @@
 
 
 .. http:delete:: /v2.0/lb/pools/{pool_id}/health_monitors/{health_monitor_id}
-   :synopsis: Disassociate health monitor from pool
+   :title: Disassociate health monitor from pool
+   :synopsis: Disassociates a specified health monitor from a pool.
 
-   Disassociates a specified health monitor from a pool.
+   
 
    :tag: lbaas
    :parameter health_monitor_id: The UUID for the health monitor.
@@ -2775,7 +2741,8 @@
 
 
 .. http:get:: /v2.0/extensions/{alias}
-   :synopsis: Get extension details
+   :title: Get extension details
+   :synopsis: 
 
    Gets detailed information for a specified extension.
 
@@ -2796,9 +2763,10 @@
 
 
 .. http:get:: /v2.0/lb/pools
-   :synopsis: List pools
+   :title: List pools
+   :synopsis: Lists pools.
 
-   Lists pools.
+   
 
    :responseexample 200: v2/examples/listPools_resp_200.json
    :accepts: application/json
@@ -2813,9 +2781,10 @@
 
 
 .. http:post:: /v2.0/lb/pools
-   :synopsis: Create a load balancer pool
+   :title: Create a load balancer pool
+   :synopsis: Creates a load balancer pool.
 
-   Creates a load balancer pool.
+   
 
    :requestexample: v2/examples/createPool_req.json
    :responseexample 201: v2/examples/createPool_resp_201.json
@@ -2831,10 +2800,9 @@
 
 
 .. http:get:: /v2.0/vpn/vpnservices/{service_id}
-   :synopsis: Show VPN service details
+   :title: Show VPN service details
+   :synopsis: Shows details for a specified VPN service.
 
-   Shows details for a specified VPN service.
-   
    Shows details for a specified VPN service. If the user is not an
    administrative user and the VPN service object does not belong to
    the user's tenant account, a 403 (Forbidden) error is returned.
@@ -2851,10 +2819,9 @@
 
 
 .. http:put:: /v2.0/vpn/vpnservices/{service_id}
-   :synopsis: Update VPN service
+   :title: Update VPN service
+   :synopsis: Updates a specified VPN service.
 
-   Updates a specified VPN service.
-   
    This operation updates the attributes of a specified VPN service.
    To update a service, the service status cannot be a ``PENDING_*``
    status.
@@ -2873,10 +2840,9 @@
 
 
 .. http:delete:: /v2.0/vpn/vpnservices/{service_id}
-   :synopsis: Remove VPN service
+   :title: Remove VPN service
+   :synopsis: Removes a specified VPN service.
 
-   Removes a specified VPN service.
-   
    This operation removes a specified VPN service. If the service has
    connections, the request is rejected.
 
@@ -2889,10 +2855,9 @@
 
 
 .. http:post:: /v2.0/vpn/ipsecpolicies
-   :synopsis: Create IPSec policy
+   :title: Create IPSec policy
+   :synopsis: Creates an IPSec policy.
 
-   Creates an IPSec policy.
-   
    The IP security policy specifies the authentication and encryption
    algorithms and encapsulation mode to use for the established VPN
    connection.
@@ -2909,10 +2874,9 @@
 
 
 .. http:get:: /v2.0/vpn/ipsecpolicies
-   :synopsis: List IPSec policies
+   :title: List IPSec policies
+   :synopsis: Lists IPSec policies.
 
-   Lists IPSec policies.
-   
    This operation lists all IPSec policies.
 
    :responseexample 200: v2/examples/listIPSecPolicies_resp_200.json
@@ -2925,9 +2889,10 @@
 
 
 .. http:get:: /v2.0/lb/health_monitors
-   :synopsis: List health monitors
+   :title: List health monitors
+   :synopsis: Lists health monitors.
 
-   Lists health monitors.
+   
 
    :responseexample 200: v2/examples/listHealthMonitors_resp_200.json
    :accepts: application/json
@@ -2942,9 +2907,10 @@
 
 
 .. http:post:: /v2.0/lb/health_monitors
-   :synopsis: Create a load balancer health monitor
+   :title: Create a load balancer health monitor
+   :synopsis: Creates a load balancer health monitor.
 
-   Creates a load balancer health monitor.
+   
 
    :requestexample: v2/examples/createHealthMonitor_req.json
    :responseexample 201: v2/examples/createHealthMonitor_resp_201.json
@@ -2960,10 +2926,10 @@
 
 
 .. http:get:: /v2.0/networks
-   :synopsis: List networks
+   :title: List networks
+   :synopsis: Lists networks that are accessible to the tenant who submits the request.
 
-   Lists networks that are accessible to the tenant who submits the
-   request.
+   
 
    :responseexample 200: v2/examples/listProviderNetworks_resp_200.json
    :accepts: application/json
@@ -2974,9 +2940,10 @@
 
 
 .. http:post:: /v2.0/networks
-   :synopsis: Create network
+   :title: Create network
+   :synopsis: Creates a network.
 
-   Creates a network.
+   
 
    :requestexample: v2/examples/createProviderNetwork_req.json
    :responseexample 201: v2/examples/createProviderNetwork_resp_201.json
@@ -2989,11 +2956,10 @@
 
 
 .. http:get:: /v2.0/networks
-   :synopsis: List networks
+   :title: List networks
+   :synopsis: Lists networks that are accessible to the tenant who submits the request. Networks with multiple segments include the ``segments`` list in the response.
 
-   Lists networks that are accessible to the tenant who submits the
-   request. Networks with multiple segments include the ``segments``
-   list in the response.
+   
 
    :responseexample 200: v2/examples/listMultiNetworks_resp_200.json
    :accepts: application/json
@@ -3004,9 +2970,10 @@
 
 
 .. http:post:: /v2.0/networks
-   :synopsis: Create network with multiple segment mappings
+   :title: Create network with multiple segment mappings
+   :synopsis: Creates a network with multiple segment mappings.
 
-   Creates a network with multiple segment mappings.
+   
 
    :requestexample: v2/examples/createMultiNetwork_req.json
    :responseexample 201: v2/examples/createMultiNetwork_resp_201.json
@@ -3019,9 +2986,10 @@
 
 
 .. http:get:: /v2.0/networks
-   :synopsis: List networks with VLAN transparency attribute
+   :title: List networks with VLAN transparency attribute
+   :synopsis: Lists networks. The response shows the VLAN transparency attribute.
 
-   Lists networks. The response shows the VLAN transparency attribute.
+   
 
    :responseexample 200: v2/examples/listVTNetworks_resp_200.json
    :accepts: application/json
@@ -3032,9 +3000,10 @@
 
 
 .. http:post:: /v2.0/networks
-   :synopsis: Create VLAN-transparent network
+   :title: Create VLAN-transparent network
+   :synopsis: Creates a VLAN-transparent network.
 
-   Creates a VLAN-transparent network.
+   
 
    :requestexample: v2/examples/createVTNetwork_req.json
    :responseexample 201: v2/examples/createVTNetwork_resp_201.json
@@ -3047,9 +3016,10 @@
 
 
 .. http:get:: /v2.0/lb/pools/{pool_id}
-   :synopsis: Show pool details
+   :title: Show pool details
+   :synopsis: Shows details for a specified pool.
 
-   Shows details for a specified pool.
+   
 
    :responseexample 200: v2/examples/showPool_resp_200.json
    :accepts: application/json
@@ -3065,9 +3035,10 @@
 
 
 .. http:put:: /v2.0/lb/pools/{pool_id}
-   :synopsis: Update pool
+   :title: Update pool
+   :synopsis: Updates a specified load balancer pool.
 
-   Updates a specified load balancer pool.
+   
 
    :requestexample: v2/examples/updatePool_req.json
    :responseexample 200: v2/examples/updatePool_resp_200.json
@@ -3084,9 +3055,10 @@
 
 
 .. http:delete:: /v2.0/lb/pools/{pool_id}
-   :synopsis: Delete pool
+   :title: Delete pool
+   :synopsis: Deletes a specified load balancer pool.
 
-   Deletes a specified load balancer pool.
+   
 
    :tag: lbaas
    :parameter pool_id: The UUID for the pool.

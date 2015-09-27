@@ -234,7 +234,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets the key for a group in the KDS.\n\nWhen a ticket is requested where the destination is a group, a\ngroup key is generated that is valid for a predetermined amount of\ntime. Any member of the group can get the key as long as it is\nstill valid. Group keys are necessary to verify signatures and\ndecrypt messages that have a group name as the target.", 
+        "description": "When a ticket is requested where the destination is a group, a\ngroup key is generated that is valid for a predetermined amount of\ntime. Any member of the group can get the key as long as it is\nstill valid. Group keys are necessary to verify signatures and\ndecrypt messages that have a group name as the target.", 
         "examples": {}, 
         "id": "getGroupKey", 
         "method": "get", 
@@ -276,10 +276,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get group key", 
+        "summary": "Gets the key for a group in the KDS.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Get group key"
       }
     ], 
     "/v1/groups/{name}": [
@@ -287,7 +288,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a group in the KDS.\n\nMembership in groups is based on the party name. For example, a\n``scheduler`` group implicitly includes any party name that starts\nwith ``scheduler`` . For example, a member named\n``scheduler.host.example.com`` .", 
+        "description": "Membership in groups is based on the party name. For example, a\n``scheduler`` group implicitly includes any party name that starts\nwith ``scheduler`` . For example, a member named\n``scheduler.host.example.com`` .", 
         "examples": {}, 
         "id": "createGroup", 
         "method": "post", 
@@ -338,14 +339,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create group", 
+        "summary": "Creates a group in the KDS.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Create group"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a group from the KDS.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteGroup", 
         "method": "delete", 
@@ -366,10 +368,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete group", 
+        "summary": "Deletes a group from the KDS.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Delete group"
       }
     ], 
     "/v1/keys/{name}": [
@@ -377,7 +380,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a long-term key in the KDS.\n\nThe request body contains the key.\n\nThe response shows the key name and generation value.", 
+        "description": "The request body contains the key.\n\nThe response shows the key name and generation value.", 
         "examples": {
           "application/json": {
             "key": "TXkgcHJlY2lvdXNzcy4u..."
@@ -433,14 +436,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create key", 
+        "summary": "Creates a long-term key in the KDS.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Create key"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a long-term key from the KDS.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteKey", 
         "method": "delete", 
@@ -461,10 +465,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete key", 
+        "summary": "Deletes a long-term key from the KDS.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Delete key"
       }
     ], 
     "/v1/tickets": [
@@ -472,7 +477,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Generates a ticket to facilitate messaging between a source and\ndestination.\n\nA generate ticket request contains metadata that you specify as a\nBase64-encoded JSON object and a signature.\n\nThe response shows the metadata, encrypted ticket, and signature.", 
+        "description": "A generate ticket request contains metadata that you specify as a\nBase64-encoded JSON object and a signature.\n\nThe response shows the metadata, encrypted ticket, and signature.", 
         "examples": {
           "application/json": {
             "metadata": "Zhn8yhasf8hihkf...", 
@@ -532,10 +537,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Generate ticket", 
+        "summary": "Generates a ticket to facilitate messaging between a source and destination.", 
         "tags": [
           "kds"
-        ]
+        ], 
+        "title": "Generate ticket"
       }
     ], 
     "/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects": [
@@ -543,7 +549,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the inherited project roles on a specified domain for a\nspecified group.\n\nThe list contains only those role assignments to the domain that\nwere specified as being inherited to projects within that domain.", 
+        "description": "The list contains only those role assignments to the domain that\nwere specified as being inherited to projects within that domain.", 
         "examples": {}, 
         "id": "listRolesForGroup-domain", 
         "method": "get", 
@@ -598,16 +604,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List project roles for group on domain", 
+        "summary": "Lists the inherited project roles on a specified domain for a specified group.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "List project roles for group on domain"
       }
     ], 
     "/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects": [
       {
         "consumes": [], 
-        "description": "Assigns a specified role to a specified group on projects owned by\na specified domain.\n\nThe inherited role is applied to only the owned projects, both\nexisting and future, and does not appear as a role in a domain-\nscoped token.", 
+        "description": "The inherited role is applied to only the owned projects, both\nexisting and future, and does not appear as a role in a domain-\nscoped token.", 
         "examples": {}, 
         "id": "assignRoleToGroup-domain", 
         "method": "put", 
@@ -644,14 +651,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Assign role to group on domain projects", 
+        "summary": "Assigns a specified role to a specified group on projects owned by a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Assign role to group on domain projects"
       }, 
       {
         "consumes": [], 
-        "description": "Checks whether a specified group has an inherited project role on a\nspecified domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkRoleForGroup-domain", 
         "method": "head", 
@@ -688,14 +696,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check project role for group on domain", 
+        "summary": "Checks whether a specified group has an inherited project role on a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Check project role for group on domain"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes an inherited project role from a specified group on a\nspecified domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeRoleFromGroup-domain", 
         "method": "delete", 
@@ -732,10 +741,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke project role from group on domain", 
+        "summary": "Revokes an inherited project role from a specified group on a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Revoke project role from group on domain"
       }
     ], 
     "/v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/inherited_to_projects": [
@@ -743,7 +753,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the inherited project roles on a specified domain for a\nspecified user.\n\nThe list contains only those role assignments to the domain that\nwere specified as being inherited to projects within that domain.", 
+        "description": "The list contains only those role assignments to the domain that\nwere specified as being inherited to projects within that domain.", 
         "examples": {}, 
         "id": "listRolesForUser-domain", 
         "method": "get", 
@@ -798,16 +808,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List project roles for user on domain", 
+        "summary": "Lists the inherited project roles on a specified domain for a specified user.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "List project roles for user on domain"
       }
     ], 
     "/v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects": [
       {
         "consumes": [], 
-        "description": "Assigns a specified role to a specified user on projects owned by a\nspecified domain.\n\nThe inherited role is applied to only the owned projects, both\nexisting and future, and does not appear as a role in a domain-\nscoped token.", 
+        "description": "The inherited role is applied to only the owned projects, both\nexisting and future, and does not appear as a role in a domain-\nscoped token.", 
         "examples": {}, 
         "id": "assignRoleToUser-domain", 
         "method": "put", 
@@ -844,14 +855,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Assign role to user owned by domain projects", 
+        "summary": "Assigns a specified role to a specified user on projects owned by a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Assign role to user owned by domain projects"
       }, 
       {
         "consumes": [], 
-        "description": "Checks whether a specified user has an inherited project role on a\nspecified domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkRoleForUser-domain", 
         "method": "head", 
@@ -888,14 +900,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check project role for user on domain", 
+        "summary": "Checks whether a specified user has an inherited project role on a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Check project role for user on domain"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes an inherited project role from a specified user on a\nspecified domain.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeRoleFromUser-domain", 
         "method": "delete", 
@@ -932,10 +945,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke project role from user on domain", 
+        "summary": "Revokes an inherited project role from a specified user on a specified domain.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Revoke project role from user on domain"
       }
     ], 
     "/v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/inherited_to_projects": [
@@ -943,7 +957,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the inherited project roles for a specified group on a\nspecified project.\n\nThe list contains only those roles that are assigned to this\nproject that were specified as being inherited to its subtree.", 
+        "description": "The list contains only those roles that are assigned to this\nproject that were specified as being inherited to its subtree.", 
         "examples": {}, 
         "id": "listRolesForGroup", 
         "method": "get", 
@@ -998,16 +1012,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for group", 
+        "summary": "Lists the inherited project roles for a specified group on a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "List roles for group"
       }
     ], 
     "/v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects": [
       {
         "consumes": [], 
-        "description": "Assigns a specified role to a specified group on projects in a\nsubtree.\n\nThe inherited role assignment is anchored to a project and applied\nto its subtree in the projects hierarchy to both existing and\nfuture projects.\n\nA group can have both a regular, non-inherited role assignment and\nan inherited role assignment on the same project.", 
+        "description": "The inherited role assignment is anchored to a project and applied\nto its subtree in the projects hierarchy to both existing and\nfuture projects.\n\nA group can have both a regular, non-inherited role assignment and\nan inherited role assignment on the same project.", 
         "examples": {}, 
         "id": "assignRoleToGroup", 
         "method": "put", 
@@ -1044,14 +1059,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Assign role to group", 
+        "summary": "Assigns a specified role to a specified group on projects in a subtree.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Assign role to group"
       }, 
       {
         "consumes": [], 
-        "description": "Checks whether a specified group has a specified role assignment\nwith the ``inherited_to_projects`` flag on a specified project.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkRoleForGroup", 
         "method": "head", 
@@ -1088,14 +1104,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for group", 
+        "summary": "Checks whether a specified group has a specified role assignment with the ``inherited_to_projects`` flag on a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Check role for group"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes an inherited role from a specified group on a specified\nproject.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeRoleFromGroup", 
         "method": "delete", 
@@ -1132,10 +1149,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from group", 
+        "summary": "Revokes an inherited role from a specified group on a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Revoke role from group"
       }
     ], 
     "/v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/inherited_to_projects": [
@@ -1143,7 +1161,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the inherited project roles for a specified user on a\nspecified project.\n\nThe list contains only those roles that are assigned to this\nproject that were specified as being inherited to its subtree.", 
+        "description": "The list contains only those roles that are assigned to this\nproject that were specified as being inherited to its subtree.", 
         "examples": {}, 
         "id": "listRolesForUser", 
         "method": "get", 
@@ -1198,16 +1216,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for user", 
+        "summary": "Lists the inherited project roles for a specified user on a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "List roles for user"
       }
     ], 
     "/v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects": [
       {
         "consumes": [], 
-        "description": "Assigns a specified role to a specified user on projects in a\nsubtree.\n\nThe inherited role assignment is anchored to a project and applied\nto its subtree in the projects hierarchy to both existing and\nfuture projects.\n\nA user can have both a regular, non-inherited role assignment and\nan inherited role assignment on the same project.", 
+        "description": "The inherited role assignment is anchored to a project and applied\nto its subtree in the projects hierarchy to both existing and\nfuture projects.\n\nA user can have both a regular, non-inherited role assignment and\nan inherited role assignment on the same project.", 
         "examples": {}, 
         "id": "assignRoleToUser", 
         "method": "put", 
@@ -1244,14 +1263,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Assign role to user", 
+        "summary": "Assigns a specified role to a specified user on projects in a subtree.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Assign role to user"
       }, 
       {
         "consumes": [], 
-        "description": "Checks whether a specified user has a specified role assignment\nwith the ``inherited_to_projects`` flag on a specified project.", 
+        "description": "", 
         "examples": {}, 
         "id": "checkRoleForUser", 
         "method": "head", 
@@ -1288,14 +1308,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Check role for user", 
+        "summary": "Checks whether a specified user has a specified role assignment with the ``inherited_to_projects`` flag on a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Check role for user"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes an inherited role from a specified user a specified\nproject.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeRoleFromUser", 
         "method": "delete", 
@@ -1332,16 +1353,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from user", 
+        "summary": "Revokes an inherited role from a specified user a specified project.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "Revoke role from user"
       }
     ], 
     "/v3/OS-OAUTH1/access_token": [
       {
         "consumes": [], 
-        "description": "Enables a consumer to create an access token by exchanging a\nrequest token for an access token.\n\nAfter the user authorizes the request token, the consumer exchanges\nthe authorized request token and OAuth verifier for an access\ntoken.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .\n\nSupported signature methods: HMAC-SHA1.\n\nYou must provide all required OAuth parameters in the request. See\nConsumer Obtains a Request Token .", 
+        "description": "After the user authorizes the request token, the consumer exchanges\nthe authorized request token and OAuth verifier for an access\ntoken.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .\n\nSupported signature methods: HMAC-SHA1.\n\nYou must provide all required OAuth parameters in the request. See\nConsumer Obtains a Request Token .", 
         "examples": {}, 
         "id": "createAccessToken", 
         "method": "post", 
@@ -1379,10 +1401,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create access token", 
+        "summary": "Enables a consumer to create an access token by exchanging a request token for an access token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Create access token"
       }
     ], 
     "/v3/OS-OAUTH1/consumers": [
@@ -1390,7 +1413,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables a user to create a consumer.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "consumer": {
@@ -1445,16 +1468,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create consumer", 
+        "summary": "Enables a user to create a consumer.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Create consumer"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists consumers.", 
+        "description": "", 
         "examples": {}, 
         "id": "listConsumers", 
         "method": "get", 
@@ -1519,10 +1543,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List consumers", 
+        "summary": "Lists consumers.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "List consumers"
       }
     ], 
     "/v3/OS-OAUTH1/consumers/{consumer_id}": [
@@ -1530,7 +1555,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified consumer.", 
+        "description": "", 
         "examples": {}, 
         "id": "showConsumer", 
         "method": "get", 
@@ -1591,14 +1616,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show consumer", 
+        "summary": "Shows information for a specified consumer.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Show consumer"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified consumer.\n\nWhen you delete a consumer, any associated request tokens, access\ntokens, and Identity API tokens are also deleted.", 
+        "description": "When you delete a consumer, any associated request tokens, access\ntokens, and Identity API tokens are also deleted.", 
         "examples": {}, 
         "id": "deleteConsumer", 
         "method": "delete", 
@@ -1643,16 +1669,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete consumer", 
+        "summary": "Deletes a specified consumer.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Delete consumer"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the description for a specified consumer.\n\nIf you try to update any attribute other than description, the HTTP\n400 Bad Request error is returned.", 
+        "description": "If you try to update any attribute other than description, the HTTP\n400 Bad Request error is returned.", 
         "examples": {
           "application/json": {
             "consumer": {
@@ -1715,16 +1742,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update consumer", 
+        "summary": "Updates the description for a specified consumer.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Update consumer"
       }
     ], 
     "/v3/OS-OAUTH1/request_token": [
       {
         "consumes": [], 
-        "description": "Enables a consumer to get an unauthorized request token.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .", 
+        "description": "Supported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .", 
         "examples": {}, 
         "id": "getUnauthorizedRequestToken", 
         "method": "post", 
@@ -1762,10 +1790,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get unauthorized request token", 
+        "summary": "Enables a consumer to get an unauthorized request token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Get unauthorized request token"
       }
     ], 
     "/v3/OS-OAUTH1/users/{user_id}/access_tokens": [
@@ -1773,7 +1802,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists authorized access tokens.", 
+        "description": "", 
         "examples": {}, 
         "id": "listAuthorizedAccessTokens", 
         "method": "get", 
@@ -1841,10 +1870,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List authorized access tokens", 
+        "summary": "Lists authorized access tokens.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "List authorized access tokens"
       }
     ], 
     "/v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}": [
@@ -1852,7 +1882,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets an authorized access token.", 
+        "description": "", 
         "examples": {}, 
         "id": "getAuthorizedAccessToken", 
         "method": "get", 
@@ -1921,14 +1951,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Get authorized access token", 
+        "summary": "Gets an authorized access token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Get authorized access token"
       }, 
       {
         "consumes": [], 
-        "description": "Enables a user to revoke an access token, which prevents the\nconsumer from requesting new Identity Service API tokens. Also,\nrevokes any Identity Service API tokens that were issued to the\nconsumer through that access token.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeAccessToken", 
         "method": "delete", 
@@ -1957,16 +1988,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke access token", 
+        "summary": "Enables a user to revoke an access token, which prevents the consumer from requesting new Identity Service API tokens. Also, revokes any Identity Service API tokens that were issued to the consumer through that access token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Revoke access token"
       }
     ], 
     "/v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles": [
       {
         "consumes": [], 
-        "description": "Lists associated roles for a specified access token.", 
+        "description": "", 
         "examples": {}, 
         "id": "listRolesOfAccessToken", 
         "method": "get", 
@@ -2019,16 +2051,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles for an access token", 
+        "summary": "Lists associated roles for a specified access token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "List roles for an access token"
       }
     ], 
     "/v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles/{role_id}": [
       {
         "consumes": [], 
-        "description": "Gets information about a specified role for a specified access\ntoken.", 
+        "description": "", 
         "examples": {}, 
         "id": "getRoleOfAccessToken", 
         "method": "get", 
@@ -2089,10 +2122,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get role information for an access token", 
+        "summary": "Gets information about a specified role for a specified access token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Get role information for an access token"
       }
     ], 
     "/v3/OS-TRUST/trust": [
@@ -2100,7 +2134,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a trust.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "trust": {
@@ -2192,16 +2226,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create trust", 
+        "summary": "Creates a trust.", 
         "tags": [
           "trust"
-        ]
+        ], 
+        "title": "Create trust"
       }
     ], 
     "/v3/auth/tokens": [
       {
         "consumes": [], 
-        "description": "Enables a consumer to get an Identity Service authentication token.\n\nThe token represents the delegated authorization and identity\n(impersonation) of the authorizing user. The roles and scope of the\ngenerated token match those that the consumer initially requested.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide required OAuth parameters in the request.\nSee Consumer Obtains a Request Token .\n\nThe returned token is scoped to the requested project and with the\nrequested roles. In addition to the standard token response, the\ntoken has an OAuth-specific object.\n\nExample OAuth-specific object in a token:\n\n\"OS-OAUTH1\": { \"access_token_id\": \"cce0b8be7\" }", 
+        "description": "The token represents the delegated authorization and identity\n(impersonation) of the authorizing user. The roles and scope of the\ngenerated token match those that the consumer initially requested.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide required OAuth parameters in the request.\nSee Consumer Obtains a Request Token .\n\nThe returned token is scoped to the requested project and with the\nrequested roles. In addition to the standard token response, the\ntoken has an OAuth-specific object.\n\nExample OAuth-specific object in a token:\n\n\"OS-OAUTH1\": { \"access_token_id\": \"cce0b8be7\" }", 
         "examples": {}, 
         "id": "authenticate", 
         "method": "post", 
@@ -2241,10 +2276,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get an Identity Service token", 
+        "summary": "Enables a consumer to get an Identity Service authentication token.", 
         "tags": [
           "oauth1"
-        ]
+        ], 
+        "title": "Get an Identity Service token"
       }
     ], 
     "/v3/role_assignments": [
@@ -2252,7 +2288,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists role assignments.\n\nThe scope section in the list response is extended to allow the\nrepresentation of role assignments that are inherited to projects.\n\nThe list of all role assignments can be long. To filter the list,\nuse the query parameters.\n\nSome typical examples are:\n\n``GET /role_assignments?user.id={user_id}`` lists all role\nassignments for the specified user.\n\n``GET/role_assignments?scope.project.id={project_id}`` lists all\nrole assignments for the specified project.\n\nEach role assignment entity in the collection contains a link to\nthe assignment that created this entity.\n\nUse the ``effective`` query parameter to list effective assignments\nat the user, project, and domain level. This parameter allows for\nthe effects of group membership as well as inheritance from the\nparent domain or project, for role assignments that were made using\nOS-INHERIT assignment APIs.\n\nThe group role assignment entities themselves are not returned in\nthe collection. Because, like group membership, the effects of\ninheritance have already been allowed for, the role assignment\nentities themselves that specify the inheritance are not returned\nin the collection. This represents the effective role assignments\nthat would be included in a scoped token. You can use the other\nquery parameters with the ``effective`` parameter.\n\nFor example, to determine what a user can actually do, issue this\nrequest: ``GET/role_assignments?user.id={user_id}&effective``\n\nTo return the equivalent set of role assignments that would be\nincluded in the token response of a project-scoped token, issue: ``\nGET/role_assignments?user.id={user_id}&scope.project.id={project_id\n}&effective``\n\nIn the response, the entity ``links`` section for entities that are\nincluded by virtue of group members also contains a url that you\ncan use to access the membership of the group.\n\nAn additional ``scope.OS-INHERIT:inherited_to query`` filter\nenables filtering based on role assignments that are inherited. The\n``scope.OS-INHERIT:inherited_to`` value of ``projects`` is\ncurrently supported. This value indicates that this role is\ninherited to all projects of the owning domain or parent project.\n\nAn example response for an API call with the query string effective\nspecified follows:", 
+        "description": "The scope section in the list response is extended to allow the\nrepresentation of role assignments that are inherited to projects.\n\nThe list of all role assignments can be long. To filter the list,\nuse the query parameters.\n\nSome typical examples are:\n\n``GET /role_assignments?user.id={user_id}`` lists all role\nassignments for the specified user.\n\n``GET/role_assignments?scope.project.id={project_id}`` lists all\nrole assignments for the specified project.\n\nEach role assignment entity in the collection contains a link to\nthe assignment that created this entity.\n\nUse the ``effective`` query parameter to list effective assignments\nat the user, project, and domain level. This parameter allows for\nthe effects of group membership as well as inheritance from the\nparent domain or project, for role assignments that were made using\nOS-INHERIT assignment APIs.\n\nThe group role assignment entities themselves are not returned in\nthe collection. Because, like group membership, the effects of\ninheritance have already been allowed for, the role assignment\nentities themselves that specify the inheritance are not returned\nin the collection. This represents the effective role assignments\nthat would be included in a scoped token. You can use the other\nquery parameters with the ``effective`` parameter.\n\nFor example, to determine what a user can actually do, issue this\nrequest: ``GET/role_assignments?user.id={user_id}&effective``\n\nTo return the equivalent set of role assignments that would be\nincluded in the token response of a project-scoped token, issue: ``\nGET/role_assignments?user.id={user_id}&scope.project.id={project_id\n}&effective``\n\nIn the response, the entity ``links`` section for entities that are\nincluded by virtue of group members also contains a url that you\ncan use to access the membership of the group.\n\nAn additional ``scope.OS-INHERIT:inherited_to query`` filter\nenables filtering based on role assignments that are inherited. The\n``scope.OS-INHERIT:inherited_to`` value of ``projects`` is\ncurrently supported. This value indicates that this role is\ninherited to all projects of the owning domain or parent project.\n\nAn example response for an API call with the query string effective\nspecified follows:", 
         "examples": {}, 
         "id": "listRoleAssignments", 
         "method": "get", 
@@ -2337,10 +2373,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List role assignments", 
+        "summary": "Lists role assignments.", 
         "tags": [
           "inherit"
-        ]
+        ], 
+        "title": "List role assignments"
       }
     ]
   }, 

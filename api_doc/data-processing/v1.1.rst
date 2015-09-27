@@ -1,7 +1,8 @@
 .. http:post:: /v1.1/{tenant_id}/jobs/{job_id}/execute
-   :synopsis: Run job
+   :title: Run job
+   :synopsis: Runs a specified job.
 
-   Runs a specified job.
+   
 
    :requestexample: v1.1/examples/jobExecute_req.json
    :responseexample 202: v1.1/examples/jobExecute_resp_202.json
@@ -15,10 +16,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}/refresh-status
-   :synopsis: Refresh job execution status
+   :title: Refresh job execution status
+   :synopsis: Refreshes the status of and shows information for a specified job execution.
 
-   Refreshes the status of and shows information for a specified job
-   execution.
+   
 
    :responseexample 200: v1.1/examples/job-executions-refresh_resp_200.json
    :accepts: application/json
@@ -32,10 +33,9 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/job-binary-internals/{name}
-   :synopsis: Create job binary internal
+   :title: Create job binary internal
+   :synopsis: Creates a job binary internal.
 
-   Creates a job binary internal.
-   
    Job binary internals are objects that represent data processing
    applications and libraries that are stored in the internal
    database.
@@ -54,9 +54,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/node-group-templates
-   :synopsis: List node group templates
+   :title: List node group templates
+   :synopsis: Lists available node group templates.
 
-   Lists available node group templates.
+   
 
    :responseexample 200: v1.1/examples/node-group-templates-list_resp_200.json
    :accepts: application/json
@@ -68,9 +69,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/node-group-templates
-   :synopsis: Create node group template
+   :title: Create node group template
+   :synopsis: Creates a node group template.
 
-   Creates a node group template.
+   
 
    :requestexample: v1.1/examples/node-group-templates-create_req.json
    :responseexample 202: v1.1/examples/node-group-templates-create_resp_202.json
@@ -83,9 +85,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
-   :synopsis: Show cluster template
+   :title: Show cluster template
+   :synopsis: Shows the cluster template.
 
-   Shows the cluster template.
+   
 
    :responseexample 200: v1.1/examples/cluster-templates-show_resp_200.json
    :accepts: application/json
@@ -99,9 +102,10 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
-   :synopsis: Update cluster templates
+   :title: Update cluster templates
+   :synopsis: Updates the cluster template.
 
-   Updates the cluster template.
+   
 
    :requestexample: v1.1/examples/cluster-templates-update_req.json
    :responseexample 202: v1.1/examples/cluster-templates-update_resp_202.json
@@ -116,9 +120,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
-   :synopsis: Delete cluster template
+   :title: Delete cluster template
+   :synopsis: Deletes the cluster template.
 
-   Deletes the cluster template.
+   
 
    :tag: clustertemplate
    :parameter tenant_id: The unique identifier of the tenant or
@@ -129,9 +134,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-executions
-   :synopsis: List job executions
+   :title: List job executions
+   :synopsis: Lists available job executions.
 
-   Lists available job executions.
+   
 
    :responseexample 200: v1.1/examples/job-executions-list_resp_200.json
    :accepts: application/json
@@ -143,9 +149,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/clusters
-   :synopsis: List available clusters
+   :title: List available clusters
+   :synopsis: Lists available clusters.
 
-   Lists available clusters.
+   
 
    :responseexample 200: v1.1/examples/clusters-list_resp_200.json
    :accepts: application/json
@@ -157,9 +164,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/clusters
-   :synopsis: Create cluster
+   :title: Create cluster
+   :synopsis: Creates a cluster.
 
-   Creates a cluster.
+   
 
    :requestexample: v1.1/examples/clusters-create_req.json
    :responseexample 202: v1.1/examples/clusters-create_resp_202.json
@@ -172,9 +180,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/images/{image_id}/tag
-   :synopsis: Add tags to image
+   :title: Add tags to image
+   :synopsis: Adds tags to a specified image.
 
-   Adds tags to a specified image.
+   
 
    :requestexample: v1.1/examples/addTags_req.json
    :responseexample 202: v1.1/examples/addTags_resp_202.json
@@ -189,9 +198,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/data-sources/{data_source_id}
-   :synopsis: Show data source details
+   :title: Show data source details
+   :synopsis: Shows details for a specified data source.
 
-   Shows details for a specified data source.
+   
 
    :responseexample 200: v1.1/examples/dataSourceInfo_resp_200.json
    :accepts: application/json
@@ -205,9 +215,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/data-sources/{data_source_id}
-   :synopsis: Delete data source
+   :title: Delete data source
+   :synopsis: Deletes a specified data source.
 
-   Deletes a specified data source.
+   
 
    :tag: datasources
    :parameter tenant_id: The unique identifier of the tenant or
@@ -218,9 +229,10 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/data-sources/{data_source_id}
-   :synopsis: Update data source
+   :title: Update data source
+   :synopsis: Updates a specified data source.
 
-   Updates a specified data source.
+   
 
    :requestexample: v1.1/examples/dataSourceUpdate_req.json
    :responseexample 202: v1.1/examples/dataSourceUpdate_resp_202.json
@@ -235,9 +247,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
-   :synopsis: Show job execution details
+   :title: Show job execution details
+   :synopsis: Shows details for a specified job execution, by ID.
 
-   Shows details for a specified job execution, by ID.
+   
 
    :responseexample 200: v1.1/examples/job-executions-show_resp_200.json
    :accepts: application/json
@@ -251,9 +264,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
-   :synopsis: Delete job execution
+   :title: Delete job execution
+   :synopsis: Deletes a specified job execution.
 
-   Deletes a specified job execution.
+   
 
    :tag: job-executions
    :parameter tenant_id: The unique identifier of the tenant or
@@ -264,9 +278,10 @@
 
 
 .. http:patch:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
-   :synopsis: Update job execution
+   :title: Update job execution
+   :synopsis: Updates a specified job execution.
 
-   Updates a specified job execution.
+   
 
    :requestexample: v1.1/examples/job-executions-update_req.json
    :responseexample 202: v1.1/examples/job-executions-update_resp_202.json
@@ -281,9 +296,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/jobs
-   :synopsis: List jobs
+   :title: List jobs
+   :synopsis: Lists all jobs.
 
-   Lists all jobs.
+   
 
    :responseexample 200: v1.1/examples/jobsList_resp_200.json
    :accepts: application/json
@@ -295,9 +311,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/jobs
-   :synopsis: Create job
+   :title: Create job
+   :synopsis: Creates a job object.
 
-   Creates a job object.
+   
 
    :requestexample: v1.1/examples/jobCreate_req.json
    :responseexample 202: v1.1/examples/jobCreate_resp_202.json
@@ -310,9 +327,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binaries
-   :synopsis: List job binaries
+   :title: List job binaries
+   :synopsis: Lists the available job binaries.
 
-   Lists the available job binaries.
+   
 
    :responseexample 200: v1.1/examples/job-binaries-list_resp_200.json
    :accepts: application/json
@@ -324,9 +342,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/job-binaries
-   :synopsis: Create job binary
+   :title: Create job binary
+   :synopsis: Creates a job binary.
 
-   Creates a job binary.
+   
 
    :requestexample: v1.1/examples/job-binaries-create_req.json
    :responseexample 202: v1.1/examples/job-binaries-create_resp_202.json
@@ -339,10 +358,9 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}/data
-   :synopsis: Get job binary internal data
+   :title: Get job binary internal data
+   :synopsis: Gets data for a specified job binary internal.
 
-   Gets data for a specified job binary internal.
-   
    The response body shows the job binary raw data and the response
    headers show the data length.
    
@@ -363,9 +381,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/images/{image_id}
-   :synopsis: Show image details
+   :title: Show image details
+   :synopsis: Shows details about a specified image.
 
-   Shows details about a specified image.
+   
 
    :responseexample 200: v1.1/examples/imageInfo_resp_200.json
    :accepts: application/json
@@ -378,9 +397,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/images/{image_id}
-   :synopsis: Register image
+   :title: Register image
+   :synopsis: Registers a specified image in the image registry.
 
-   Registers a specified image in the image registry.
+   
 
    :requestexample: v1.1/examples/imageReg_req.json
    :responseexample 202: v1.1/examples/imageReg_resp_202.json
@@ -395,9 +415,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/images/{image_id}
-   :synopsis: Unregister image
+   :title: Unregister image
+   :synopsis: Removes a specified image from the image registry.
 
-   Removes a specified image from the image registry.
+   
 
    :tag: imageregistry
    :parameter tenant_id: The unique identifier of the tenant or
@@ -407,9 +428,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
-   :synopsis: Show job binary details
+   :title: Show job binary details
+   :synopsis: Shows details for a specified job binary.
 
-   Shows details for a specified job binary.
+   
 
    :responseexample 200: v1.1/examples/job-binaries-show_resp_200.json
    :accepts: application/json
@@ -422,9 +444,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
-   :synopsis: Delete job binary
+   :title: Delete job binary
+   :synopsis: Deletes a specified job binary.
 
-   Deletes a specified job binary.
+   
 
    :tag: jobbinaries
    :parameter tenant_id: The unique identifier of the tenant or
@@ -434,9 +457,10 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
-   :synopsis: Update job binary
+   :title: Update job binary
+   :synopsis: Updates a specified job binary.
 
-   Updates a specified job binary.
+   
 
    :requestexample: v1.1/examples/job-binaries-update_req.json
    :responseexample 202: v1.1/examples/job-binaries-update_resp_202.json
@@ -450,10 +474,9 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}/data
-   :synopsis: Get job binary data
+   :title: Get job binary data
+   :synopsis: Gets data for a specified job binary.
 
-   Gets data for a specified job binary.
-   
    The response body shows the job binary raw data and the response
    headers show the data length.
    
@@ -473,9 +496,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/clusters/{cluster_id}
-   :synopsis: Show details of a cluster
+   :title: Show details of a cluster
+   :synopsis: Shows cluster by ID.
 
-   Shows cluster by ID.
+   
 
    :responseexample 200: v1.1/examples/clusters-get_resp_200.json
    :accepts: application/json
@@ -488,9 +512,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/clusters/{cluster_id}
-   :synopsis: Delete a cluster
+   :title: Delete a cluster
+   :synopsis: Deletes a cluster.
 
-   Deletes a cluster.
+   
 
    :tag: clusters
    :parameter tenant_id: The unique identifier of the tenant or
@@ -500,9 +525,10 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/clusters/{cluster_id}
-   :synopsis: Scale cluster
+   :title: Scale cluster
+   :synopsis: Scales a cluster.
 
-   Scales a cluster.
+   
 
    :requestexample: v1.1/examples/clusters-scale_req.json
    :responseexample 202: v1.1/examples/clusters-scale_resp_202.json
@@ -516,9 +542,10 @@
 
 
 .. http:patch:: /v1.1/{tenant_id}/clusters/{cluster_id}
-   :synopsis: Update cluster
+   :title: Update cluster
+   :synopsis: Updates a specified cluster.
 
-   Updates a specified cluster.
+   
 
    :requestexample: v1.1/examples/clusters-update_req.json
    :responseexample 202: v1.1/examples/clusters-update_resp_202.json
@@ -532,9 +559,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/clusters/{cluster_id}
-   :synopsis: Show progress
+   :title: Show progress
+   :synopsis: Shows provisioning progress of cluster.
 
-   Shows provisioning progress of cluster.
+   
 
    :responseexample 200: v1.1/examples/show-progress_resp_200.json
    :accepts: application/json
@@ -547,9 +575,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/plugins/{plugin_name}
-   :synopsis: Show plugin information
+   :title: Show plugin information
+   :synopsis: Shows information for a specified plugin.
 
-   Shows information for a specified plugin.
+   
 
    :responseexample 200: v1.1/examples/pluginsget_resp_200.json
    :accepts: application/json
@@ -562,9 +591,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/images/{image_id}/untag
-   :synopsis: Remove tags from image
+   :title: Remove tags from image
+   :synopsis: Removes tags from a specified image.
 
-   Removes tags from a specified image.
+   
 
    :requestexample: v1.1/examples/removeTags_req.json
    :responseexample 202: v1.1/examples/removeTags_resp_202.json
@@ -579,9 +609,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-types
-   :synopsis: List job types
+   :title: List job types
+   :synopsis: Lists job types filtered by specified filter parameters.
 
-   Lists job types filtered by specified filter parameters.
+   
 
    :responseexample 200: v1.1/examples/jobTypesList_resp_200.json
    :accepts: application/json
@@ -597,9 +628,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
-   :synopsis: Show node group template details
+   :title: Show node group template details
+   :synopsis: Shows a specified node group template, by ID.
 
-   Shows a specified node group template, by ID.
+   
 
    :responseexample 200: v1.1/examples/node-group-templates-get_resp_200.json
    :accepts: application/json
@@ -613,9 +645,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
-   :synopsis: Delete node group template
+   :title: Delete node group template
+   :synopsis: Deletes a specified node group template.
 
-   Deletes a specified node group template.
+   
 
    :tag: node-group-template
    :parameter tenant_id: The unique identifier of the tenant or
@@ -626,9 +659,10 @@
 
 
 .. http:put:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
-   :synopsis: Update node group template
+   :title: Update node group template
+   :synopsis: Updates a specified node group template.
 
-   Updates a specified node group template.
+   
 
    :requestexample: v1.1/examples/node-group-templates-update_req.json
    :responseexample 202: v1.1/examples/node-group-templates-update_resp_202.json
@@ -643,9 +677,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/plugins
-   :synopsis: List plugins
+   :title: List plugins
+   :synopsis: Lists all registered plugins.
 
-   Lists all registered plugins.
+   
 
    :responseexample 200: v1.1/examples/pluginslist_resp_200.json
    :accepts: application/json
@@ -657,9 +692,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/images
-   :synopsis: List images
+   :title: List images
+   :synopsis: Lists all images registered in the image registry.
 
-   Lists all images registered in the image registry.
+   
 
    :responseexample 200: v1.1/examples/imageslist_resp_200.json
    :accepts: application/json
@@ -672,9 +708,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
-   :synopsis: Show job binary internal details
+   :title: Show job binary internal details
+   :synopsis: Shows details for a specified job binary internal.
 
-   Shows details for a specified job binary internal.
+   
 
    :responseexample 200: v1.1/examples/job-binary-internals-show_resp_200.json
    :accepts: application/json
@@ -688,9 +725,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
-   :synopsis: Delete job binary internal
+   :title: Delete job binary internal
+   :synopsis: Deletes a specified job binary internal.
 
-   Deletes a specified job binary internal.
+   
 
    :tag: jobbinary-internals
    :parameter tenant_id: The unique identifier of the tenant or
@@ -701,9 +739,10 @@
 
 
 .. http:patch:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
-   :synopsis: Update job binary internal
+   :title: Update job binary internal
+   :synopsis: Updates a specified job binary internal.
 
-   Updates a specified job binary internal.
+   
 
    :requestexample: v1.1/examples/job-binary-internals-update_req.json
    :responseexample 202: v1.1/examples/job-binary-internals-update_resp_202.json
@@ -718,9 +757,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-binary-internals
-   :synopsis: List job binary internals
+   :title: List job binary internals
+   :synopsis: Lists the available job binary internals.
 
-   Lists the available job binary internals.
+   
 
    :responseexample 200: v1.1/examples/job-binary-internals-list_resp_200.json
    :accepts: application/json
@@ -732,9 +772,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/jobs/{job_id}
-   :synopsis: Show job details
+   :title: Show job details
+   :synopsis: Shows details for a specified job.
 
-   Shows details for a specified job.
+   
 
    :responseexample 200: v1.1/examples/jobInfo_resp_200.json
    :accepts: application/json
@@ -747,9 +788,10 @@
 
 
 .. http:delete:: /v1.1/{tenant_id}/jobs/{job_id}
-   :synopsis: Remove job
+   :title: Remove job
+   :synopsis: Removes a specified job.
 
-   Removes a specified job.
+   
 
    :tag: jobs
    :parameter tenant_id: The unique identifier of the tenant or
@@ -759,9 +801,10 @@
 
 
 .. http:patch:: /v1.1/{tenant_id}/jobs/{job_id}
-   :synopsis: Update job object
+   :title: Update job object
+   :synopsis: Updates a specified job object.
 
-   Updates a specified job object.
+   
 
    :requestexample: v1.1/examples/jobUpdate_req.json
    :responseexample 202: v1.1/examples/jobUpdate_resp_202.json
@@ -775,9 +818,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}/cancel
-   :synopsis: Cancel job execution
+   :title: Cancel job execution
+   :synopsis: Cancels a specified job execution.
 
-   Cancels a specified job execution.
+   
 
    :responseexample 200: v1.1/examples/job-executions-cancel_resp_200.json
    :accepts: application/json
@@ -791,9 +835,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/data-sources
-   :synopsis: List data sources
+   :title: List data sources
+   :synopsis: Lists all data sources.
 
-   Lists all data sources.
+   
 
    :responseexample 200: v1.1/examples/dataSourcesList_resp_200.json
    :accepts: application/json
@@ -805,9 +850,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/data-sources
-   :synopsis: Create data source
+   :title: Create data source
+   :synopsis: Creates a data source.
 
-   Creates a data source.
+   
 
    :requestexample: v1.1/examples/dataSourcesCreate_req.json
    :responseexample 202: v1.1/examples/dataSourcesCreate_resp_202.json
@@ -820,9 +866,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/cluster-templates
-   :synopsis: List available cluster templates
+   :title: List available cluster templates
+   :synopsis: Lists available cluster templates.
 
-   Lists available cluster templates.
+   
 
    :responseexample 200: v1.1/examples/cluster-templates-list_resp_200.json
    :accepts: application/json
@@ -834,9 +881,10 @@
 
 
 .. http:post:: /v1.1/{tenant_id}/cluster-templates
-   :synopsis: Create cluster templates
+   :title: Create cluster templates
+   :synopsis: Creates a cluster template.
 
-   Creates a cluster template.
+   
 
    :requestexample: v1.1/examples/cluster-templates-create_req.json
    :responseexample 202: v1.1/examples/cluster-templates-create_resp_202.json
@@ -849,9 +897,10 @@
 
 
 .. http:get:: /v1.1/{tenant_id}/plugins/{plugin_name}/{version}
-   :synopsis: Show detailed plugin information
+   :title: Show detailed plugin information
+   :synopsis: Shows detailed information for a specified plugin.
 
-   Shows detailed information for a specified plugin.
+   
 
    :responseexample 200: v1.1/examples/pluginsgetversion_resp_200.json
    :accepts: application/json

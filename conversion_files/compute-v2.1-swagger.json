@@ -1223,7 +1223,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Compute API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersionsv2.1", 
         "method": "get", 
@@ -1317,10 +1317,11 @@
             }
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Compute API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "//v2.1/images": [
@@ -1328,7 +1329,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IDs, names, and links for available images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listImages", 
         "method": "get", 
@@ -1713,10 +1714,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images", 
+        "summary": "Lists IDs, names, and links for available images.", 
         "tags": [
           "compute_images-v2.1"
-        ]
+        ], 
+        "title": "List images"
       }
     ], 
     "//v2.1/images/detail": [
@@ -1724,7 +1726,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all details for available images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDetailImages", 
         "method": "get", 
@@ -2263,10 +2265,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images details", 
+        "summary": "Lists all details for available images.", 
         "tags": [
           "compute_images-v2.1"
-        ]
+        ], 
+        "title": "List images details"
       }
     ], 
     "//v2.1/images/{image_id}": [
@@ -2274,7 +2277,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets details for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "getImage", 
         "method": "get", 
@@ -2409,14 +2412,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Get image details", 
+        "summary": "Gets details for a specified image.", 
         "tags": [
           "compute_images-v2.1"
-        ]
+        ], 
+        "title": "Get image details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteImage", 
         "method": "delete", 
@@ -2461,10 +2465,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete image", 
+        "summary": "Deletes a specified image.", 
         "tags": [
           "compute_images-v2.1"
-        ]
+        ], 
+        "title": "Delete image"
       }
     ], 
     "//v2.1/images/{image_id}/metadata": [
@@ -2472,7 +2477,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows metadata for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "showImageMetadata", 
         "method": "get", 
@@ -2555,16 +2560,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image metadata", 
+        "summary": "Shows metadata for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Show image metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates metadata items by key for a specified image.\n\nReplaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "Replaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -2636,16 +2642,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update image metadata items", 
+        "summary": "Updates metadata items by key for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Update image metadata items"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces metadata for a specified image.\n\nReplaces items that match the specified keys. If you omit a key\nthat already exists, this key retains its value.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "Replaces items that match the specified keys. If you omit a key\nthat already exists, this key retains its value.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -2714,10 +2721,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or replace image metadata", 
+        "summary": "Creates or replaces metadata for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Create or replace image metadata"
       }
     ], 
     "//v2.1/images/{image_id}/metadata/{key}": [
@@ -2725,7 +2733,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a metadata item by key for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "getImageMetadataItem", 
         "method": "get", 
@@ -2816,16 +2824,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image metadata item details", 
+        "summary": "Shows details for a metadata item by key for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Show image metadata item details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or updates a metadata item by key for a specified image.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "If this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -2902,14 +2911,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update image metadata item", 
+        "summary": "Creates or updates a metadata item by key for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Create or update image metadata item"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a metadata item by key for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteImageMetadataItem", 
         "method": "delete", 
@@ -2966,10 +2976,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete image metadata item", 
+        "summary": "Deletes a metadata item by key for a specified image.", 
         "tags": [
           "compute_image_metadata-v2.1"
-        ]
+        ], 
+        "title": "Delete image metadata item"
       }
     ], 
     "/v2.1/extensions": [
@@ -2977,7 +2988,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available extensions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listExtensions", 
         "method": "get", 
@@ -3031,10 +3042,11 @@
             }
           }
         }, 
-        "summary": "List extensions", 
+        "summary": "Lists available extensions.", 
         "tags": [
           "extensions-v2.1"
-        ]
+        ], 
+        "title": "List extensions"
       }
     ], 
     "/v2.1/extensions/{alias}": [
@@ -3042,7 +3054,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details about a specified extension.\n\nExtensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
+        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
         "examples": {}, 
         "id": "getExtension", 
         "method": "get", 
@@ -3105,10 +3117,11 @@
             }
           }
         }, 
-        "summary": "Get extension", 
+        "summary": "Shows details about a specified extension.", 
         "tags": [
           "extensions-v2.1"
-        ]
+        ], 
+        "title": "Get extension"
       }
     ], 
     "/v2.1/os-simple-tenant-usage": [
@@ -3116,7 +3129,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists usage information for all tenants.", 
+        "description": "", 
         "examples": {}, 
         "id": "retrievetenantusage", 
         "method": "get", 
@@ -3151,10 +3164,11 @@
             }
           }
         }, 
-        "summary": "List tenant usage for all tenants", 
+        "summary": "Lists usage information for all tenants.", 
         "tags": [
           "os-simple-tenant-usage-v2.1"
-        ]
+        ], 
+        "title": "List tenant usage for all tenants"
       }
     ], 
     "/v2.1/os-simple-tenant-usage/{tenant_id}": [
@@ -3162,7 +3176,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows usage details for a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "retrievetenantall", 
         "method": "get", 
@@ -3220,10 +3234,11 @@
             }
           }
         }, 
-        "summary": "Show usage details for tenant", 
+        "summary": "Shows usage details for a specified tenant.", 
         "tags": [
           "os-simple-tenant-usage-v2.1"
-        ]
+        ], 
+        "title": "Show usage details for tenant"
       }
     ], 
     "/v2.1/servers": [
@@ -3231,7 +3246,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a server with scheduler hints that are passed directly to\nthe scheduler.\n\nThe ``os:scheduler_hints`` parameter can be set at boot time. For\ndetails, see Scheduling .", 
+        "description": "The ``os:scheduler_hints`` parameter can be set at boot time. For\ndetails, see Scheduling .", 
         "examples": {
           "application/json": {
             "os:scheduler_hints": {
@@ -3307,10 +3322,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create server with scheduler hints", 
+        "summary": "Creates a server with scheduler hints that are passed directly to the scheduler.", 
         "tags": [
           "os-scheduler-hints-v2.1"
-        ]
+        ], 
+        "title": "Create server with scheduler hints"
       }
     ], 
     "/v2.1/{tenant_id}/flavors": [
@@ -3318,7 +3334,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists flavors.", 
+        "description": "", 
         "examples": {}, 
         "id": "getflavorbrief", 
         "method": "get", 
@@ -3423,10 +3439,11 @@
             }
           }
         }, 
-        "summary": "List flavors", 
+        "summary": "Lists flavors.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List flavors"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/detail": [
@@ -3434,7 +3451,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists flavors with details.", 
+        "description": "", 
         "examples": {}, 
         "id": "returnflavorall", 
         "method": "get", 
@@ -3574,10 +3591,11 @@
             }
           }
         }, 
-        "summary": "List flavors with details", 
+        "summary": "Lists flavors with details.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List flavors with details"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-access": [
@@ -3585,7 +3603,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a flavor with access list.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor": {
@@ -3643,16 +3661,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create flavor with access list", 
+        "summary": "Creates a flavor with access list.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "Create flavor with access list"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists flavors with access list information.", 
+        "description": "", 
         "examples": {}, 
         "id": "list-flavor-accesslist", 
         "method": "get", 
@@ -3691,10 +3710,11 @@
             }
           }
         }, 
-        "summary": "List flavors with access list", 
+        "summary": "Lists flavors with access list information.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "List flavors with access list"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-access/detail": [
@@ -3702,7 +3722,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists flavors with details. Includes access list information.", 
+        "description": "", 
         "examples": {}, 
         "id": "list-flavor-accesslist-detail", 
         "method": "get", 
@@ -3842,10 +3862,11 @@
             }
           }
         }, 
-        "summary": "List flavors with details and access list", 
+        "summary": "Lists flavors with details. Includes access list information.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "List flavors with details and access list"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}": [
@@ -3853,7 +3874,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified flavor. Includes access list\ninformation.", 
+        "description": "", 
         "examples": {}, 
         "id": "show-flavor-accesslist", 
         "method": "get", 
@@ -3915,10 +3936,11 @@
             }
           }
         }, 
-        "summary": "Show flavor details with access list", 
+        "summary": "Shows details for a specified flavor. Includes access list information.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "Show flavor details with access list"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}/action": [
@@ -3926,7 +3948,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds flavor access to a specified tenant and flavor.\n\nSpecify the ``add_tenant_access`` action and the ``tenant_id`` in\nthe request body.", 
+        "description": "Specify the ``add_tenant_access`` action and the ``tenant_id`` in\nthe request body.", 
         "examples": {
           "application/json": {
             "addTenantAccess": {
@@ -3972,16 +3994,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add flavor access to tenant", 
+        "summary": "Adds flavor access to a specified tenant and flavor.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "Add flavor access to tenant"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes the specified flavor access from a specified tenant and\nflavor.\n\nSpecify the ``remove_tenant_access`` action and the ``tenant_id``\nin the request body.", 
+        "description": "Specify the ``remove_tenant_access`` action and the ``tenant_id``\nin the request body.", 
         "examples": {
           "application/json": {
             "removeTenantAccess": {
@@ -4022,10 +4045,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove flavor access from tenant", 
+        "summary": "Removes the specified flavor access from a specified tenant and flavor.", 
         "tags": [
           "flavor-access"
-        ]
+        ], 
+        "title": "Remove flavor access from tenant"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}": [
@@ -4033,7 +4057,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates and updates flavor extra specs.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "extra_specs": {
@@ -4078,16 +4102,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update flavor extra specs", 
+        "summary": "Creates and updates flavor extra specs.", 
         "tags": [
           "flavor-extra-specs"
-        ]
+        ], 
+        "title": "Create or update flavor extra specs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists extra specs for a specified flavor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "extra_specs": {
@@ -4139,10 +4164,11 @@
             }
           }
         }, 
-        "summary": "Show flavor extra specs", 
+        "summary": "Lists extra specs for a specified flavor.", 
         "tags": [
           "flavor-extra-specs"
-        ]
+        ], 
+        "title": "Show flavor extra specs"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}": [
@@ -4150,7 +4176,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows an extra spec for specified flavor, by key.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "extra_specs": {
@@ -4207,16 +4233,17 @@
             }
           }
         }, 
-        "summary": "Show flavor extra specs", 
+        "summary": "Shows an extra spec for specified flavor, by key.", 
         "tags": [
           "flavor-extra-specs"
-        ]
+        ], 
+        "title": "Show flavor extra specs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified extra spec value, by key, for a specified\nflavor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "key1": "new_value1"
@@ -4263,10 +4290,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update flavor extra spec", 
+        "summary": "Updates a specified extra spec value, by key, for a specified flavor.", 
         "tags": [
           "flavor-extra-specs"
-        ]
+        ], 
+        "title": "Update flavor extra spec"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-manage": [
@@ -4274,7 +4302,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a flavor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor": {
@@ -4331,10 +4359,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create flavor", 
+        "summary": "Creates a flavor.", 
         "tags": [
           "flavor-manage"
-        ]
+        ], 
+        "title": "Create flavor"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-manage/{flavor_id}": [
@@ -4342,7 +4371,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Deletes a flavor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor": {
@@ -4383,10 +4412,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete flavor", 
+        "summary": "Deletes a flavor.", 
         "tags": [
           "flavor-manage"
-        ]
+        ], 
+        "title": "Delete flavor"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-rxtx": [
@@ -4394,7 +4424,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a flavor.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor": {
@@ -4453,10 +4483,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create flavor", 
+        "summary": "Creates a flavor.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "Create flavor"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-rxtx/detail": [
@@ -4464,7 +4495,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists flavors with details.", 
+        "description": "", 
         "examples": {}, 
         "id": "returnallflavor", 
         "method": "get", 
@@ -4609,10 +4640,11 @@
             }
           }
         }, 
-        "summary": "List flavors with details", 
+        "summary": "Lists flavors with details.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List flavors with details"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/os-flavor-rxtx/{flavor_id}": [
@@ -4620,7 +4652,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified flavor.", 
+        "description": "", 
         "examples": {}, 
         "id": "returndata", 
         "method": "get", 
@@ -4683,10 +4715,11 @@
             }
           }
         }, 
-        "summary": "Show flavor details", 
+        "summary": "Shows details for a specified flavor.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "Show flavor details"
       }
     ], 
     "/v2.1/{tenant_id}/flavors/{flavor_id}": [
@@ -4694,7 +4727,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified flavor.", 
+        "description": "", 
         "examples": {}, 
         "id": "getflavorid", 
         "method": "get", 
@@ -4756,10 +4789,11 @@
             }
           }
         }, 
-        "summary": "Show flavor details", 
+        "summary": "Shows details for a specified flavor.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "Show flavor details"
       }
     ], 
     "/v2.1/{tenant_id}/limits": [
@@ -4767,7 +4801,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows global and rate limit information.", 
+        "description": "", 
         "examples": {}, 
         "id": "getlimits", 
         "method": "get", 
@@ -4824,10 +4858,11 @@
             }
           }
         }, 
-        "summary": "Show global and rate limits", 
+        "summary": "Shows global and rate limit information.", 
         "tags": [
           "limits"
-        ]
+        ], 
+        "title": "Show global and rate limits"
       }
     ], 
     "/v2.1/{tenant_id}/os-agents": [
@@ -4835,7 +4870,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an agent build.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "agent": {
@@ -4881,16 +4916,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create agent build", 
+        "summary": "Creates an agent build.", 
         "tags": [
           "agents"
-        ]
+        ], 
+        "title": "Create agent build"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists agent builds.", 
+        "description": "", 
         "examples": {}, 
         "id": "listbuilds", 
         "method": "get", 
@@ -4934,14 +4970,15 @@
             }
           }
         }, 
-        "summary": "List agent builds", 
+        "summary": "Lists agent builds.", 
         "tags": [
           "agents"
-        ]
+        ], 
+        "title": "List agent builds"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes an existing agent build.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteBuild", 
         "method": "delete", 
@@ -4962,10 +4999,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete agent build", 
+        "summary": "Deletes an existing agent build.", 
         "tags": [
           "agents"
-        ]
+        ], 
+        "title": "Delete agent build"
       }
     ], 
     "/v2.1/{tenant_id}/os-agents/{id}": [
@@ -4973,7 +5011,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates an agent build.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "para": {
@@ -5030,10 +5068,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update agent build", 
+        "summary": "Updates an agent build.", 
         "tags": [
           "agents"
-        ]
+        ], 
+        "title": "Update agent build"
       }
     ], 
     "/v2.1/{tenant_id}/os-aggregates": [
@@ -5041,7 +5080,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a specified aggregate in a specified availability zone.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "aggregate": {
@@ -5083,16 +5122,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create aggregate", 
+        "summary": "Creates a specified aggregate in a specified availability zone.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Create aggregate"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists aggregates id, name, and availability_zone for an aggregate.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "aggregate": {
@@ -5147,10 +5187,11 @@
             }
           }
         }, 
-        "summary": "List aggregates", 
+        "summary": "Lists aggregates id, name, and availability_zone for an aggregate.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "List aggregates"
       }
     ], 
     "/v2.1/{tenant_id}/os-aggregates/{aggregate_id}": [
@@ -5158,7 +5199,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the details of an aggregate, hosts and metadata included.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "aggregate": {
@@ -5219,16 +5260,17 @@
             }
           }
         }, 
-        "summary": "Show aggregate details", 
+        "summary": "Shows the details of an aggregate, hosts and metadata included.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Show aggregate details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates either or both the name and availability zone for a\nspecified aggregate.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "aggregate": {
@@ -5289,10 +5331,11 @@
             }
           }
         }, 
-        "summary": "Update aggregate", 
+        "summary": "Updates either or both the name and availability zone for a specified aggregate.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Update aggregate"
       }
     ], 
     "/v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action": [
@@ -5300,7 +5343,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a host to the specified aggregate.\n\nSpecify the ``add_host`` action in the request body.", 
+        "description": "Specify the ``add_host`` action in the request body.", 
         "examples": {
           "application/json": {
             "add_host": {
@@ -5355,16 +5398,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add host", 
+        "summary": "Adds a host to the specified aggregate.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Add host"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces metadata for an aggregate.\n\nSpecify the ``add_metadata`` action in the request body.", 
+        "description": "Specify the ``add_metadata`` action in the request body.", 
         "examples": {
           "application/json": {
             "set_metadata": {
@@ -5420,16 +5464,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update aggregate metadata", 
+        "summary": "Creates or replaces metadata for an aggregate.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Create or update aggregate metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes a host from a specified aggregate.\n\nSpecify the ``remove_host`` action in the request body.", 
+        "description": "Specify the ``remove_host`` action in the request body.", 
         "examples": {
           "application/json": {
             "remove_host": {
@@ -5482,10 +5527,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove host", 
+        "summary": "Removes a host from a specified aggregate.", 
         "tags": [
           "aggregates"
-        ]
+        ], 
+        "title": "Remove host"
       }
     ], 
     "/v2.1/{tenant_id}/os-assisted-volume-snapshots": [
@@ -5493,7 +5539,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an assisted volume snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "snapshot": {
@@ -5543,16 +5589,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create assisted volume snapshots", 
+        "summary": "Creates an assisted volume snapshot.", 
         "tags": [
           "os-assisted-volume-snapshots-v2.1"
-        ]
+        ], 
+        "title": "Create assisted volume snapshots"
       }
     ], 
     "/v2.1/{tenant_id}/os-assisted-volume-snapshots/{snapshot_id}": [
       {
         "consumes": [], 
-        "description": "Deletes an assisted volume snapshot.\n\nTo make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\nDELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
+        "description": "To make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\nDELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
         "examples": {}, 
         "id": "deletesnapshots", 
         "method": "delete", 
@@ -5589,10 +5636,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete assisted volume snapshot", 
+        "summary": "Deletes an assisted volume snapshot.", 
         "tags": [
           "os-assisted-volume-snapshots-v2.1"
-        ]
+        ], 
+        "title": "Delete assisted volume snapshot"
       }
     ], 
     "/v2.1/{tenant_id}/os-availability-zone": [
@@ -5600,7 +5648,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets availability zone information.", 
+        "description": "", 
         "examples": {}, 
         "id": "getAvailabilityZone", 
         "method": "get", 
@@ -5635,10 +5683,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get availability zone information", 
+        "summary": "Gets availability zone information.", 
         "tags": [
           "availability-zone"
-        ]
+        ], 
+        "title": "Get availability zone information"
       }
     ], 
     "/v2.1/{tenant_id}/os-availability-zone/detail": [
@@ -5646,7 +5695,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets detailed availability zone information.", 
+        "description": "", 
         "examples": {}, 
         "id": "getAvailabilityZoneDetails", 
         "method": "get", 
@@ -5724,10 +5773,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get detailed availability zone information", 
+        "summary": "Gets detailed availability zone information.", 
         "tags": [
           "availability-zone"
-        ]
+        ], 
+        "title": "Get detailed availability zone information"
       }
     ], 
     "/v2.1/{tenant_id}/os-cells": [
@@ -5735,7 +5785,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists cells with details.\n\nWhen cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
+        "description": "When cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
         "examples": {}, 
         "id": "returnallcell", 
         "method": "get", 
@@ -5773,16 +5823,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List cells with details", 
+        "summary": "Lists cells with details.", 
         "tags": [
           "cells"
-        ]
+        ], 
+        "title": "List cells with details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists cells.\n\nWhen cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
+        "description": "When cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
         "examples": {}, 
         "id": "listcell", 
         "method": "get", 
@@ -5856,10 +5907,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List cells", 
+        "summary": "Lists cells.", 
         "tags": [
           "cells"
-        ]
+        ], 
+        "title": "List cells"
       }
     ], 
     "/v2.1/{tenant_id}/os-cells/{cell_id}": [
@@ -5867,7 +5919,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows data for a specified cell.\n\nWhen cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
+        "description": "When cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
         "examples": {}, 
         "id": "datacell", 
         "method": "get", 
@@ -5919,10 +5971,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show cell data", 
+        "summary": "Shows data for a specified cell.", 
         "tags": [
           "cells"
-        ]
+        ], 
+        "title": "Show cell data"
       }
     ], 
     "/v2.1/{tenant_id}/os-cells/{cell_id}/capacities": [
@@ -5930,7 +5983,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows capacities for a specified cell.\n\nWhen cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
+        "description": "When cells are not enabled, the cells API calls return a ``501\nNotImplemented`` error.", 
         "examples": {}, 
         "id": "cellcapacity", 
         "method": "get", 
@@ -5992,10 +6045,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show cell capacities", 
+        "summary": "Shows capacities for a specified cell.", 
         "tags": [
           "cells"
-        ]
+        ], 
+        "title": "Show cell capacities"
       }
     ], 
     "/v2.1/{tenant_id}/os-certificates": [
@@ -6003,7 +6057,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a certificate.", 
+        "description": "", 
         "examples": {}, 
         "id": "createcertificate", 
         "method": "post", 
@@ -6033,10 +6087,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create certificate", 
+        "summary": "Creates a certificate.", 
         "tags": [
           "certificates"
-        ]
+        ], 
+        "title": "Create certificate"
       }
     ], 
     "/v2.1/{tenant_id}/os-certificates/{certificate_id}": [
@@ -6044,7 +6099,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified certificate.", 
+        "description": "", 
         "examples": {}, 
         "id": "returncertificate", 
         "method": "get", 
@@ -6089,10 +6144,11 @@
             }
           }
         }, 
-        "summary": "Show certificate details", 
+        "summary": "Shows details for a specified certificate.", 
         "tags": [
           "certificates"
-        ]
+        ], 
+        "title": "Show certificate details"
       }
     ], 
     "/v2.1/{tenant_id}/os-cloudpipe": [
@@ -6100,7 +6156,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists cloudpipes.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCloudpipes", 
         "method": "get", 
@@ -6161,16 +6217,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List cloudpipes", 
+        "summary": "Lists cloudpipes.", 
         "tags": [
           "os-cloudpipe-v2.1"
-        ]
+        ], 
+        "title": "List cloudpipes"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a cloudpipe.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "cloudpipe": {
@@ -6236,10 +6293,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create cloudpipe", 
+        "summary": "Creates a cloudpipe.", 
         "tags": [
           "os-cloudpipe-v2.1"
-        ]
+        ], 
+        "title": "Create cloudpipe"
       }
     ], 
     "/v2.1/{tenant_id}/os-cloudpipe/configure-project": [
@@ -6247,7 +6305,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the virtual private network (VPN) IP address and port for a\nspecified cloudpipe instance.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "configure_project": {
@@ -6310,10 +6368,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update cloudpipe", 
+        "summary": "Updates the virtual private network (VPN) IP address and port for a specified cloudpipe instance.", 
         "tags": [
           "os-cloudpipe-v2.1"
-        ]
+        ], 
+        "title": "Update cloudpipe"
       }
     ], 
     "/v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}": [
@@ -6321,7 +6380,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified fixed IP address.", 
+        "description": "", 
         "examples": {}, 
         "id": "showIP", 
         "method": "get", 
@@ -6385,10 +6444,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show fixed IP information", 
+        "summary": "Shows information for a specified fixed IP address.", 
         "tags": [
           "os-fixed-ips-v2.1"
-        ]
+        ], 
+        "title": "Show fixed IP information"
       }
     ], 
     "/v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}/action": [
@@ -6396,7 +6456,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Reserves or releases a fixed IP.\n\nTo reserve a fixed IP address, specify ``reserve`` in the request\nbody. To release a fixed IP address, specify ``unreserve`` in the\nrequest body.", 
+        "description": "To reserve a fixed IP address, specify ``reserve`` in the request\nbody. To release a fixed IP address, specify ``unreserve`` in the\nrequest body.", 
         "examples": {
           "application/json": {
             "reserve": null
@@ -6455,10 +6515,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Reserve or release a fixed IP", 
+        "summary": "Reserves or releases a fixed IP.", 
         "tags": [
           "os-fixed-ips-v2.1"
-        ]
+        ], 
+        "title": "Reserve or release a fixed IP"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ip-dns": [
@@ -6466,7 +6527,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists registered DNS domains published by the DNS drivers.", 
+        "description": "", 
         "examples": {}, 
         "id": "ListDomains", 
         "method": "get", 
@@ -6500,10 +6561,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List DNS domains", 
+        "summary": "Lists registered DNS domains published by the DNS drivers.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "List DNS domains"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ip-dns/{domain}": [
@@ -6511,7 +6573,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or updates a DNS domain.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "domain_entry": {
@@ -6558,14 +6620,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update DNS domain", 
+        "summary": "Creates or updates a DNS domain.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "Create or update DNS domain"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a DNS domain and all associated host entries.", 
+        "description": "", 
         "examples": {}, 
         "id": "DeleteDomain", 
         "method": "delete", 
@@ -6594,10 +6657,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete DNS domain", 
+        "summary": "Deletes a DNS domain and all associated host entries.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "Delete DNS domain"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{ip}": [
@@ -6605,7 +6669,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists DNS entries for a specified domain and IP.", 
+        "description": "", 
         "examples": {}, 
         "id": "FindEntriesbyIP", 
         "method": "get", 
@@ -6656,10 +6720,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List DNS entries", 
+        "summary": "Lists DNS entries for a specified domain and IP.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "List DNS entries"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}": [
@@ -6667,7 +6732,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or updates a DNS entry.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "dns_entry": {
@@ -6723,16 +6788,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update DNS entry", 
+        "summary": "Creates or updates a DNS entry.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "Create or update DNS entry"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Finds a unique DNS entry for a specified domain and name.", 
+        "description": "", 
         "examples": {}, 
         "id": "FindUniqueEntry", 
         "method": "get", 
@@ -6781,14 +6847,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Find unique DNS entry", 
+        "summary": "Finds a unique DNS entry for a specified domain and name.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "Find unique DNS entry"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified DNS entry.", 
+        "description": "", 
         "examples": {}, 
         "id": "DeleteEntry", 
         "method": "delete", 
@@ -6825,10 +6892,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete DNS entry", 
+        "summary": "Deletes a specified DNS entry.", 
         "tags": [
           "floating-ip-dns"
-        ]
+        ], 
+        "title": "Delete DNS entry"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ip-pools": [
@@ -6836,7 +6904,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists floating IP pools.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "listFloatingIpPools", 
         "method": "get", 
@@ -6870,10 +6938,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List floating IP pools", 
+        "summary": "Lists floating IP pools.", 
         "tags": [
           "floating-ip-pools"
-        ]
+        ], 
+        "title": "List floating IP pools"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ips": [
@@ -6881,7 +6950,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists floating IP addresses associated with the tenant or account.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "ListFloatingIPs", 
         "method": "get", 
@@ -6923,16 +6992,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List floating IPs", 
+        "summary": "Lists floating IP addresses associated with the tenant or account.", 
         "tags": [
           "floating-ips"
-        ]
+        ], 
+        "title": "List floating IPs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Allocates a new floating IP address to a tenant or account.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "pool": "nova"
@@ -6982,10 +7052,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Allocate floating IP", 
+        "summary": "Allocates a new floating IP address to a tenant or account.", 
         "tags": [
           "floating-ips"
-        ]
+        ], 
+        "title": "Allocate floating IP"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ips-bulk": [
@@ -6993,7 +7064,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all floating IPs.", 
+        "description": "", 
         "examples": {}, 
         "id": "ListFloatingIPsBulk", 
         "method": "get", 
@@ -7045,16 +7116,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List floating IPs", 
+        "summary": "Lists all floating IPs.", 
         "tags": [
           "floating-ips-bulk"
-        ]
+        ], 
+        "title": "List floating IPs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Bulk-creates floating IPs.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "floating_ips_bulk_create": {
@@ -7102,10 +7174,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create floating IPs", 
+        "summary": "Bulk-creates floating IPs.", 
         "tags": [
           "floating-ips-bulk"
-        ]
+        ], 
+        "title": "Create floating IPs"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ips-bulk/delete": [
@@ -7113,7 +7186,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Bulk-deletes floating IPs.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "ip_range": "192.168.1.0/24"
@@ -7153,10 +7226,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Bulk-delete floating IPs", 
+        "summary": "Bulk-deletes floating IPs.", 
         "tags": [
           "floating-ips-bulk"
-        ]
+        ], 
+        "title": "Bulk-delete floating IPs"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ips-bulk/{host_name}": [
@@ -7164,7 +7238,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all floating IPs for a specified host.", 
+        "description": "", 
         "examples": {}, 
         "id": "ListFloatingIPsBulkbyHost", 
         "method": "get", 
@@ -7208,16 +7282,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List floating IPs by host", 
+        "summary": "Lists all floating IPs for a specified host.", 
         "tags": [
           "floating-ips-bulk"
-        ]
+        ], 
+        "title": "List floating IPs by host"
       }
     ], 
     "/v2.1/{tenant_id}/os-floating-ips/{id}": [
       {
         "consumes": [], 
-        "description": "Deallocates a specified floating IP address.\n\nYou can use this call to deallocate and delete only manually-\nallocated floating IP addresses. You must manually deallocate auto-\nallocated floating IP addresses before you can delete them.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "You can use this call to deallocate and delete only manually-\nallocated floating IP addresses. You must manually deallocate auto-\nallocated floating IP addresses before you can delete them.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "DeallocateFloatingIP", 
         "method": "delete", 
@@ -7246,10 +7321,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Deallocate floating IP", 
+        "summary": "Deallocates a specified floating IP address.", 
         "tags": [
           "floating-ips"
-        ]
+        ], 
+        "title": "Deallocate floating IP"
       }
     ], 
     "/v2.1/{tenant_id}/os-fping": [
@@ -7257,7 +7333,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Run the fping utility to ping all or specified instances and report\nwhich ones are alive.\n\nSpecify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\nGET /os-fping?all_tenants=1Specify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\nGET /os-fping?all_tenants=1 & include=uuid1,uuid2 & exclude=uuid3,uuid4Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\nGET /os-fping?all_tenants=1Specify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\nGET /os-fping?all_tenants=1 & include=uuid1,uuid2 & exclude=uuid3,uuid4Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "list-fping", 
         "method": "get", 
@@ -7314,10 +7390,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Ping instances", 
+        "summary": "Run the fping utility to ping all or specified instances and report which ones are alive.", 
         "tags": [
           "fping"
-        ]
+        ], 
+        "title": "Ping instances"
       }
     ], 
     "/v2.1/{tenant_id}/os-fping/{id}": [
@@ -7325,7 +7402,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Run the fping utility to ping a specified instance and report\nwhether it is alive.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "show-fping", 
         "method": "get", 
@@ -7364,10 +7441,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Ping an instance", 
+        "summary": "Run the fping utility to ping a specified instance and report whether it is alive.", 
         "tags": [
           "fping"
-        ]
+        ], 
+        "title": "Ping an instance"
       }
     ], 
     "/v2.1/{tenant_id}/os-hosts": [
@@ -7375,7 +7453,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists hosts.", 
+        "description": "", 
         "examples": {}, 
         "id": "listallhosts", 
         "method": "get", 
@@ -7445,10 +7523,11 @@
             }
           }
         }, 
-        "summary": "List hosts", 
+        "summary": "Lists hosts.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "List hosts"
       }
     ], 
     "/v2.1/{tenant_id}/os-hosts/{host_name}": [
@@ -7456,7 +7535,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified host.", 
+        "description": "", 
         "examples": {}, 
         "id": "showinfo", 
         "method": "get", 
@@ -7526,16 +7605,17 @@
             }
           }
         }, 
-        "summary": "Show host details", 
+        "summary": "Shows details for a specified host.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "Show host details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables or puts a specified host in maintenance mode.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "maintenance_mode": "disable", 
@@ -7577,10 +7657,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Enable host", 
+        "summary": "Enables or puts a specified host in maintenance mode.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "Enable host"
       }
     ], 
     "/v2.1/{tenant_id}/os-hosts/{host_name}/reboot": [
@@ -7588,7 +7669,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Reboots a host.", 
+        "description": "", 
         "examples": {}, 
         "id": "reboothost", 
         "method": "get", 
@@ -7631,10 +7712,11 @@
             }
           }
         }, 
-        "summary": "Reboot host", 
+        "summary": "Reboots a host.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "Reboot host"
       }
     ], 
     "/v2.1/{tenant_id}/os-hosts/{host_name}/shutdown": [
@@ -7642,7 +7724,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shuts down a specified host.", 
+        "description": "", 
         "examples": {}, 
         "id": "shutdownhost", 
         "method": "get", 
@@ -7685,10 +7767,11 @@
             }
           }
         }, 
-        "summary": "Shut down host", 
+        "summary": "Shuts down a specified host.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "Shut down host"
       }
     ], 
     "/v2.1/{tenant_id}/os-hosts/{host_name}/startup": [
@@ -7696,7 +7779,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Starts a specified host.", 
+        "description": "", 
         "examples": {}, 
         "id": "startshost", 
         "method": "get", 
@@ -7739,10 +7822,11 @@
             }
           }
         }, 
-        "summary": "Start host", 
+        "summary": "Starts a specified host.", 
         "tags": [
           "hosts"
-        ]
+        ], 
+        "title": "Start host"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors": [
@@ -7750,7 +7834,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists hypervisors.", 
+        "description": "", 
         "examples": {}, 
         "id": "listhypervisors", 
         "method": "get", 
@@ -7791,10 +7875,11 @@
             }
           }
         }, 
-        "summary": "List hypervisors", 
+        "summary": "Lists hypervisors.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "List hypervisors"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors/os-pci": [
@@ -7802,7 +7887,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists hypervisors. Includes PCI device statistics.", 
+        "description": "", 
         "examples": {}, 
         "id": "listHypervisorsPciDetails", 
         "method": "get", 
@@ -7873,10 +7958,11 @@
             }
           }
         }, 
-        "summary": "List hypervisors with PCI statistics", 
+        "summary": "Lists hypervisors. Includes PCI device statistics.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "List hypervisors with PCI statistics"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors/statistics": [
@@ -7884,7 +7970,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows statistics for all hypervisors.", 
+        "description": "", 
         "examples": {}, 
         "id": "showhypervisorstatistics", 
         "method": "get", 
@@ -7931,10 +8017,11 @@
             }
           }
         }, 
-        "summary": "Show hypervisor statistics", 
+        "summary": "Shows statistics for all hypervisors.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "Show hypervisor statistics"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/os-pci": [
@@ -7942,7 +8029,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified hypervisor. Includes PCI device\nstatistics.", 
+        "description": "", 
         "examples": {}, 
         "id": "showHypervisorsPci", 
         "method": "get", 
@@ -8019,10 +8106,11 @@
             }
           }
         }, 
-        "summary": "Show hypervisor with PCI statistics", 
+        "summary": "Shows information for a specified hypervisor. Includes PCI device statistics.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "Show hypervisor with PCI statistics"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}": [
@@ -8030,7 +8118,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified hypervisor.", 
+        "description": "", 
         "examples": {}, 
         "id": "showhypervisordetails", 
         "method": "get", 
@@ -8097,10 +8185,11 @@
             }
           }
         }, 
-        "summary": "Show hypervisor details", 
+        "summary": "Shows details for a specified hypervisor.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "Show hypervisor details"
       }
     ], 
     "/v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}/uptime": [
@@ -8108,7 +8197,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the uptime for a specified hypervisor.", 
+        "description": "", 
         "examples": {}, 
         "id": "showhypervisoruptime", 
         "method": "get", 
@@ -8156,10 +8245,11 @@
             }
           }
         }, 
-        "summary": "Show hypervisor uptime", 
+        "summary": "Shows the uptime for a specified hypervisor.", 
         "tags": [
           "hypervisors"
-        ]
+        ], 
+        "title": "Show hypervisor uptime"
       }
     ], 
     "/v2.1/{tenant_id}/os-instance-usage-audit-log": [
@@ -8167,7 +8257,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists usage audits for a specified instance.", 
+        "description": "", 
         "examples": {}, 
         "id": "listusageaudits", 
         "method": "get", 
@@ -8215,10 +8305,11 @@
             }
           }
         }, 
-        "summary": "List usage audits for an instance", 
+        "summary": "Lists usage audits for a specified instance.", 
         "tags": [
           "instance-usage-audit-log"
-        ]
+        ], 
+        "title": "List usage audits for an instance"
       }
     ], 
     "/v2.1/{tenant_id}/os-instance-usage-audit-log/{before_timestamp}": [
@@ -8226,7 +8317,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists usage audits that occurred before a specified time.", 
+        "description": "", 
         "examples": {}, 
         "id": "listinstanceusage", 
         "method": "get", 
@@ -8282,10 +8373,11 @@
             }
           }
         }, 
-        "summary": "List usage audits before specified time", 
+        "summary": "Lists usage audits that occurred before a specified time.", 
         "tags": [
           "instance-usage-audit-log"
-        ]
+        ], 
+        "title": "List usage audits before specified time"
       }
     ], 
     "/v2.1/{tenant_id}/os-keypairs": [
@@ -8293,7 +8385,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists keypairs that are associated with the account.", 
+        "description": "", 
         "examples": {}, 
         "id": "getKeypair", 
         "method": "get", 
@@ -8337,16 +8429,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List keypairs", 
+        "summary": "Lists keypairs that are associated with the account.", 
         "tags": [
           "keypairs"
-        ]
+        ], 
+        "title": "List keypairs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Generates or imports a keypair.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "keypair": {
@@ -8405,10 +8498,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or import keypair", 
+        "summary": "Generates or imports a keypair.", 
         "tags": [
           "keypairs"
-        ]
+        ], 
+        "title": "Create or import keypair"
       }
     ], 
     "/v2.1/{tenant_id}/os-keypairs/{keypair_name}": [
@@ -8416,7 +8510,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows a keypair that is associated with the account.", 
+        "description": "", 
         "examples": {}, 
         "id": "showKeypair", 
         "method": "get", 
@@ -8462,14 +8556,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show keypair information", 
+        "summary": "Shows a keypair that is associated with the account.", 
         "tags": [
           "keypairs"
-        ]
+        ], 
+        "title": "Show keypair information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified keypair.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteKeypair", 
         "method": "delete", 
@@ -8498,10 +8593,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete keypair", 
+        "summary": "Deletes a specified keypair.", 
         "tags": [
           "keypairs"
-        ]
+        ], 
+        "title": "Delete keypair"
       }
     ], 
     "/v2.1/{tenant_id}/os-migrations": [
@@ -8509,7 +8605,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists in-progress migrations.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "returnmigrations", 
         "method": "get", 
@@ -8572,10 +8668,11 @@
             }
           }
         }, 
-        "summary": "List migrations", 
+        "summary": "Lists in-progress migrations.", 
         "tags": [
           "migrations"
-        ]
+        ], 
+        "title": "List migrations"
       }
     ], 
     "/v2.1/{tenant_id}/os-networks": [
@@ -8583,7 +8680,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks that are available to the project.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "ListNetworks", 
         "method": "get", 
@@ -8679,16 +8776,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List networks", 
+        "summary": "Lists networks that are available to the project.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "List networks"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "network": {
@@ -8761,10 +8859,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create network", 
+        "summary": "Creates a network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Create network"
       }
     ], 
     "/v2.1/{tenant_id}/os-networks/add": [
@@ -8772,7 +8871,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a specified network to a project.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "id": "1"
@@ -8799,10 +8898,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Add network", 
+        "summary": "Adds a specified network to a project.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Add network"
       }
     ], 
     "/v2.1/{tenant_id}/os-networks/{id}": [
@@ -8810,7 +8910,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "GetNetwork", 
         "method": "get", 
@@ -8878,14 +8978,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show network information", 
+        "summary": "Shows information for a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Show network information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "DeleteNetwork", 
         "method": "delete", 
@@ -8914,10 +9015,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete network", 
+        "summary": "Deletes a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Delete network"
       }
     ], 
     "/v2.1/{tenant_id}/os-networks/{id}/action": [
@@ -8925,7 +9027,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Disassociates a specified network from a project so that the\nnetwork can be reused.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "disassociate": null
@@ -8960,16 +9062,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate network", 
+        "summary": "Disassociates a specified network from a project so that the network can be reused.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Disassociate network"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Disassociates the project from a specified network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "disassociate_project": null
@@ -9004,16 +9107,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate project", 
+        "summary": "Disassociates the project from a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Disassociate project"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Disassociates the host from a specified network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "disassociate_host": null
@@ -9048,16 +9152,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Disassociate host", 
+        "summary": "Disassociates the host from a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Disassociate host"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Associates a specified network with a host.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "associate_host": "testHost"
@@ -9092,10 +9197,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Associate host", 
+        "summary": "Associates a specified network with a host.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Associate host"
       }
     ], 
     "/v2.1/{tenant_id}/os-pci": [
@@ -9103,7 +9209,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists PCI devices.", 
+        "description": "", 
         "examples": {}, 
         "id": "listPciDevices", 
         "method": "get", 
@@ -9154,10 +9260,11 @@
             }
           }
         }, 
-        "summary": "List PCI devices", 
+        "summary": "Lists PCI devices.", 
         "tags": [
           "os-pci-v2.1"
-        ]
+        ], 
+        "title": "List PCI devices"
       }
     ], 
     "/v2.1/{tenant_id}/os-pci/detail": [
@@ -9165,7 +9272,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists PCI devices with extra information.", 
+        "description": "", 
         "examples": {}, 
         "id": "listPciDevicesDetail", 
         "method": "get", 
@@ -9232,10 +9339,11 @@
             }
           }
         }, 
-        "summary": "List PCI devices with extra information", 
+        "summary": "Lists PCI devices with extra information.", 
         "tags": [
           "os-pci-v2.1"
-        ]
+        ], 
+        "title": "List PCI devices with extra information"
       }
     ], 
     "/v2.1/{tenant_id}/os-pci/{pci_id}": [
@@ -9243,7 +9351,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified PCI device. Includes extra\ninformation.", 
+        "description": "", 
         "examples": {}, 
         "id": "showPciDevicePool", 
         "method": "get", 
@@ -9300,10 +9408,11 @@
             }
           }
         }, 
-        "summary": "Show PCI device with extra information", 
+        "summary": "Shows information for a specified PCI device. Includes extra information.", 
         "tags": [
           "os-pci-v2.1"
-        ]
+        ], 
+        "title": "Show PCI device with extra information"
       }
     ], 
     "/v2.1/{tenant_id}/os-quota-class-sets/{class_id}": [
@@ -9311,7 +9420,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the quota for a specified class.", 
+        "description": "", 
         "examples": {}, 
         "id": "showquota", 
         "method": "get", 
@@ -9367,16 +9476,17 @@
             }
           }
         }, 
-        "summary": "Show quota", 
+        "summary": "Shows the quota for a specified class.", 
         "tags": [
           "quota-class-sets"
-        ]
+        ], 
+        "title": "Show quota"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quota for a specified class.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_class_set": {
@@ -9440,16 +9550,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quota", 
+        "summary": "Updates quota for a specified class.", 
         "tags": [
           "quota-class-sets"
-        ]
+        ], 
+        "title": "Update quota"
       }
     ], 
     "/v2.1/{tenant_id}/os-quota-sets": [
       {
         "consumes": [], 
-        "description": "Deletes a quota for tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "deletequota", 
         "method": "delete", 
@@ -9470,16 +9581,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quota for tenant", 
+        "summary": "Deletes a quota for tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Delete quota for tenant"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Force-updates quota for tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -9528,16 +9640,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Force-update quota", 
+        "summary": "Force-updates quota for tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Force-update quota"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quota for tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -9585,16 +9698,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quota", 
+        "summary": "Updates quota for tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Update quota"
       }
     ], 
     "/v2.1/{tenant_id}/os-quota-sets/": [
       {
         "consumes": [], 
-        "description": "Deletes quota for a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "deletequotauser", 
         "method": "delete", 
@@ -9615,16 +9729,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quota for user", 
+        "summary": "Deletes quota for a specified user.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Delete quota for user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quota for user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -9673,10 +9788,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quota for user", 
+        "summary": "Updates quota for user.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Update quota for user"
       }
     ], 
     "/v2.1/{tenant_id}/os-quota-sets/defaults": [
@@ -9684,7 +9800,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows default quotas for tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "showdefaultquotas", 
         "method": "get", 
@@ -9727,10 +9843,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show default quotas", 
+        "summary": "Shows default quotas for tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Show default quotas"
       }
     ], 
     "/v2.1/{tenant_id}/os-quota-sets/detail": [
@@ -9738,7 +9855,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists quotas with details for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDetailQuotas", 
         "method": "get", 
@@ -9788,10 +9905,11 @@
             }
           }
         }, 
-        "summary": "Show quotas (detailed)", 
+        "summary": "Lists quotas with details for a tenant.", 
         "tags": [
           "quota-sets"
-        ]
+        ], 
+        "title": "Show quotas (detailed)"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-group-default-rules": [
@@ -9799,7 +9917,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists default security group rules.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSecGroupDefaultRules", 
         "method": "get", 
@@ -9860,16 +9978,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List default security group rules", 
+        "summary": "Lists default security group rules.", 
         "tags": [
           "os-security-group-default-rules-v2.1"
-        ]
+        ], 
+        "title": "List default security group rules"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a default security group rule.\n\nYou must specify an IP protocol ( ``ip_protocol`` ) value if you\nspecify a source ( ``from_port`` ) or destination ( ``to_port`` )\nport value. Otherwise, the operation returns the ``Bad request\n(400)Source/destination port requires a protocol`` error.", 
+        "description": "You must specify an IP protocol ( ``ip_protocol`` ) value if you\nspecify a source ( ``from_port`` ) or destination ( ``to_port`` )\nport value. Otherwise, the operation returns the ``Bad request\n(400)Source/destination port requires a protocol`` error.", 
         "examples": {
           "application/json": {
             "security_group_default_rule": {
@@ -9946,10 +10065,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create default security group rule", 
+        "summary": "Creates a default security group rule.", 
         "tags": [
           "os-security-group-default-rules-v2.1"
-        ]
+        ], 
+        "title": "Create default security group rule"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-group-default-rules/{security_group_default_rule_id}": [
@@ -9957,7 +10077,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified security group rule.", 
+        "description": "", 
         "examples": {}, 
         "id": "showSecGroupDefaultRule", 
         "method": "get", 
@@ -10024,14 +10144,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show default security group rule information", 
+        "summary": "Shows information for a specified security group rule.", 
         "tags": [
           "os-security-group-default-rules-v2.1"
-        ]
+        ], 
+        "title": "Show default security group rule information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified security group rule.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteSecGroupDefaultRule", 
         "method": "delete", 
@@ -10084,10 +10205,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete default security group rule", 
+        "summary": "Deletes a specified security group rule.", 
         "tags": [
           "os-security-group-default-rules-v2.1"
-        ]
+        ], 
+        "title": "Delete default security group rule"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-group-rules": [
@@ -10095,7 +10217,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a rule for a specified security group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group_rule": {
@@ -10151,16 +10273,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create security group rule", 
+        "summary": "Creates a rule for a specified security group.", 
         "tags": [
           "os-security-group-rules-v2.1"
-        ]
+        ], 
+        "title": "Create security group rule"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-group-rules/{security_group_rule_id}": [
       {
         "consumes": [], 
-        "description": "Deletes a specified security group rule.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteSecGroupRule", 
         "method": "delete", 
@@ -10189,10 +10312,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete security group rule", 
+        "summary": "Deletes a specified security group rule.", 
         "tags": [
           "os-security-group-rules-v2.1"
-        ]
+        ], 
+        "title": "Delete security group rule"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-groups": [
@@ -10200,7 +10324,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists security groups.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSecGroups", 
         "method": "get", 
@@ -10235,16 +10359,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List security groups", 
+        "summary": "Lists security groups.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "List security groups"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a security group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group": {
@@ -10293,10 +10418,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create security group", 
+        "summary": "Creates a security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Create security group"
       }
     ], 
     "/v2.1/{tenant_id}/os-security-groups/{security_group_id}": [
@@ -10304,7 +10430,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified security group.", 
+        "description": "", 
         "examples": {}, 
         "id": "showSecGroup", 
         "method": "get", 
@@ -10345,16 +10471,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show security group information", 
+        "summary": "Shows information for a specified security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Show security group information"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a security group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group": {
@@ -10411,14 +10538,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update security group", 
+        "summary": "Updates a security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Update security group"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified security group.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteSecGroup", 
         "method": "delete", 
@@ -10447,10 +10575,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete security group", 
+        "summary": "Deletes a specified security group.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "Delete security group"
       }
     ], 
     "/v2.1/{tenant_id}/os-server-external-events": [
@@ -10458,7 +10587,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates events.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "events": [
@@ -10513,10 +10642,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create events", 
+        "summary": "Creates events.", 
         "tags": [
           "os-server-external-events-v2.1"
-        ]
+        ], 
+        "title": "Create events"
       }
     ], 
     "/v2.1/{tenant_id}/os-server-groups": [
@@ -10524,7 +10654,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a server group.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "server_group": {
@@ -10577,16 +10707,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create server group", 
+        "summary": "Creates a server group.", 
         "tags": [
           "server-groups"
-        ]
+        ], 
+        "title": "Create server group"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists server groups.", 
+        "description": "", 
         "examples": {}, 
         "id": "listServerGroups", 
         "method": "get", 
@@ -10623,10 +10754,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List server groups", 
+        "summary": "Lists server groups.", 
         "tags": [
           "server-groups"
-        ]
+        ], 
+        "title": "List server groups"
       }
     ], 
     "/v2.1/{tenant_id}/os-server-groups/{ServerGroup_id}": [
@@ -10634,7 +10766,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified server group.", 
+        "description": "", 
         "examples": {}, 
         "id": "showServerGroup", 
         "method": "get", 
@@ -10677,14 +10809,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show server group details", 
+        "summary": "Shows details for a specified server group.", 
         "tags": [
           "server-groups"
-        ]
+        ], 
+        "title": "Show server group details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified server group.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteServerGroup", 
         "method": "delete", 
@@ -10737,10 +10870,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete server group", 
+        "summary": "Deletes a specified server group.", 
         "tags": [
           "server-groups"
-        ]
+        ], 
+        "title": "Delete server group"
       }
     ], 
     "/v2.1/{tenant_id}/os-services": [
@@ -10748,7 +10882,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all services.", 
+        "description": "", 
         "examples": {}, 
         "id": "listServices", 
         "method": "get", 
@@ -10816,16 +10950,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List services", 
+        "summary": "Lists all services.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "List services"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Deletes a specified service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "binary": "nova-compute", 
@@ -10857,10 +10992,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete service", 
+        "summary": "Deletes a specified service.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "Delete service"
       }
     ], 
     "/v2.1/{tenant_id}/os-services/detail": [
@@ -10868,7 +11004,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists disabled services. If information exists, includes reasons\nwhy services were disabled.", 
+        "description": "", 
         "examples": {}, 
         "id": "getDisableReasonDetail", 
         "method": "get", 
@@ -10936,10 +11072,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List disabled services", 
+        "summary": "Lists disabled services. If information exists, includes reasons why services were disabled.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "List disabled services"
       }
     ], 
     "/v2.1/{tenant_id}/os-services/disable": [
@@ -10947,7 +11084,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Disables scheduling for a service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "binary": "nova-compute", 
@@ -10983,10 +11120,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Disable scheduling for a service", 
+        "summary": "Disables scheduling for a service.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "Disable scheduling for a service"
       }
     ], 
     "/v2.1/{tenant_id}/os-services/disable-log-reason": [
@@ -10994,7 +11132,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Logs information to the service table about why a service was\ndisabled.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "binary": "nova-compute", 
@@ -11041,10 +11179,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Log disabled service information", 
+        "summary": "Logs information to the service table about why a service was disabled.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "Log disabled service information"
       }
     ], 
     "/v2.1/{tenant_id}/os-services/enable": [
@@ -11052,7 +11191,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables scheduling for a service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "binary": "nova-compute", 
@@ -11088,10 +11227,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Enable scheduling for a service", 
+        "summary": "Enables scheduling for a service.", 
         "tags": [
           "services"
-        ]
+        ], 
+        "title": "Enable scheduling for a service"
       }
     ], 
     "/v2.1/{tenant_id}/os-snapshots": [
@@ -11099,7 +11239,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "snapshot": {
@@ -11179,16 +11319,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create snapshot", 
+        "summary": "Creates a snapshot.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Create snapshot"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists snapshots.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsSimple", 
         "method": "get", 
@@ -11267,10 +11408,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots", 
+        "summary": "Lists snapshots.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "List snapshots"
       }
     ], 
     "/v2.1/{tenant_id}/os-snapshots/detail": [
@@ -11278,7 +11420,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for all snapshots.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsDetail", 
         "method": "get", 
@@ -11357,10 +11499,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List details for snapshots", 
+        "summary": "Lists details for all snapshots.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "List details for snapshots"
       }
     ], 
     "/v2.1/{tenant_id}/os-snapshots/{snapshot_id}": [
@@ -11368,7 +11511,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshot", 
         "method": "get", 
@@ -11435,14 +11578,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot", 
+        "summary": "Shows information for a specified snapshot.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Show snapshot"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified snapshot from the account.\n\nThis operation is asynchronous. You must list snapshots repeatedly\nto determine whether the snapshot was deleted.", 
+        "description": "This operation is asynchronous. You must list snapshots repeatedly\nto determine whether the snapshot was deleted.", 
         "examples": {}, 
         "id": "deleteSnapshot", 
         "method": "delete", 
@@ -11497,10 +11641,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete snapshot", 
+        "summary": "Deletes a specified snapshot from the account.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Delete snapshot"
       }
     ], 
     "/v2.1/{tenant_id}/os-tenant-networks": [
@@ -11508,7 +11653,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists project networks.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "listProjectNetworks", 
         "method": "get", 
@@ -11546,16 +11691,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List project networks", 
+        "summary": "Lists project networks.", 
         "tags": [
           "tenant-networks"
-        ]
+        ], 
+        "title": "List project networks"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a project network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "network": {
@@ -11596,10 +11742,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create project network", 
+        "summary": "Creates a project network.", 
         "tags": [
           "tenant-networks"
-        ]
+        ], 
+        "title": "Create project network"
       }
     ], 
     "/v2.1/{tenant_id}/os-tenant-networks/{id}": [
@@ -11607,7 +11754,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified project network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "GetProjectNetwork", 
         "method": "get", 
@@ -11646,14 +11793,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show project network information", 
+        "summary": "Shows information for a specified project network.", 
         "tags": [
           "tenant-networks"
-        ]
+        ], 
+        "title": "Show project network information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified project network.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "DeleteProjectNetwork", 
         "method": "delete", 
@@ -11682,10 +11830,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete project network", 
+        "summary": "Deletes a specified project network.", 
         "tags": [
           "tenant-networks"
-        ]
+        ], 
+        "title": "Delete project network"
       }
     ], 
     "/v2.1/{tenant_id}/os-volume-types": [
@@ -11693,7 +11842,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists volume types.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeTypes", 
         "method": "get", 
@@ -11757,10 +11906,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volume types", 
+        "summary": "Lists volume types.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "List volume types"
       }
     ], 
     "/v2.1/{tenant_id}/os-volume-types/{volume_type_id}": [
@@ -11768,7 +11918,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeType", 
         "method": "get", 
@@ -11833,10 +11983,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume type", 
+        "summary": "Shows information for a specified volume type.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Show volume type"
       }
     ], 
     "/v2.1/{tenant_id}/os-volumes": [
@@ -11844,7 +11995,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a volume.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume": {
@@ -11931,16 +12082,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create volume", 
+        "summary": "Creates a volume.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Create volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the volumes associated with the account.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesSimple", 
         "method": "get", 
@@ -12018,10 +12170,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volumes", 
+        "summary": "Lists the volumes associated with the account.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "List volumes"
       }
     ], 
     "/v2.1/{tenant_id}/os-volumes/detail": [
@@ -12029,7 +12182,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for all volumes.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesDetail", 
         "method": "get", 
@@ -12107,10 +12260,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List details for volumes", 
+        "summary": "Lists details for all volumes.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "List details for volumes"
       }
     ], 
     "/v2.1/{tenant_id}/os-volumes/{volume_id}": [
@@ -12118,7 +12272,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified volume.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolume", 
         "method": "get", 
@@ -12191,14 +12345,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume information", 
+        "summary": "Shows information for a specified volume.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Show volume information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified volume.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteVolume", 
         "method": "delete", 
@@ -12253,10 +12408,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete volume", 
+        "summary": "Deletes a specified volume.", 
         "tags": [
           "os-volumes"
-        ]
+        ], 
+        "title": "Delete volume"
       }
     ], 
     "/v2.1/{tenant_id}/servers": [
@@ -12264,7 +12420,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates one or more servers with an optional reservation ID.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "server": {
@@ -12305,16 +12461,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create multiple servers", 
+        "summary": "Creates one or more servers with an optional reservation ID.", 
         "tags": [
           "multiple-create"
-        ]
+        ], 
+        "title": "Create multiple servers"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a server with a block device mapping.\n\nTo define the block device mapping, you can include either a\n``block_device_mapping`` or ``block_device_mapping_v2`` object in\nthe request body. The ``block_device_mapping_v2`` object is\npreferred.", 
+        "description": "To define the block device mapping, you can include either a\n``block_device_mapping`` or ``block_device_mapping_v2`` object in\nthe request body. The ``block_device_mapping_v2`` object is\npreferred.", 
         "examples": {
           "application/json": {
             "server": {
@@ -12453,10 +12610,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create server with block device mapping", 
+        "summary": "Creates a server with a block device mapping.", 
         "tags": [
           "os-block-device-mapping-v2.1"
-        ]
+        ], 
+        "title": "Create server with block device mapping"
       }
     ], 
     "/v2.1/{tenant_id}/servers/detail": [
@@ -12464,7 +12622,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists server details. Includes configuration drive information.", 
+        "description": "", 
         "examples": {}, 
         "id": "returnlist", 
         "method": "get", 
@@ -12553,16 +12711,17 @@
             }
           }
         }, 
-        "summary": "List servers with configuration drive", 
+        "summary": "Lists server details. Includes configuration drive information.", 
         "tags": [
           "config-drive"
-        ]
+        ], 
+        "title": "List servers with configuration drive"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists servers. Includes server usage details.", 
+        "description": "", 
         "examples": {}, 
         "id": "listServersWithDetails", 
         "method": "get", 
@@ -12670,10 +12829,11 @@
             }
           }
         }, 
-        "summary": "List servers with details", 
+        "summary": "Lists servers. Includes server usage details.", 
         "tags": [
           "server-usage"
-        ]
+        ], 
+        "title": "List servers with details"
       }
     ], 
     "/v2.1/{tenant_id}/servers/os-server-actions/{server_id}": [
@@ -12681,7 +12841,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists actions for a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "returnactionlist", 
         "method": "get", 
@@ -12742,10 +12902,11 @@
             }
           }
         }, 
-        "summary": "List actions for server", 
+        "summary": "Lists actions for a specified server.", 
         "tags": [
           "os-server-actions-add-v2.1"
-        ]
+        ], 
+        "title": "List actions for server"
       }
     ], 
     "/v2.1/{tenant_id}/servers/os-server-actions/{server_id}/{request_id}": [
@@ -12753,7 +12914,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified action and specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "returninstancedata", 
         "method": "get", 
@@ -12819,10 +12980,11 @@
             }
           }
         }, 
-        "summary": "Show server action details", 
+        "summary": "Shows details for a specified action and specified server.", 
         "tags": [
           "os-server-actions-add-v2.1"
-        ]
+        ], 
+        "title": "Show server action details"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}": [
@@ -12830,7 +12992,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified server. Includes configuration drive\ninformation.", 
+        "description": "", 
         "examples": {}, 
         "id": "returnserver", 
         "method": "get", 
@@ -12925,16 +13087,17 @@
             }
           }
         }, 
-        "summary": "Show server details with configuration drive", 
+        "summary": "Shows details for a specified server. Includes configuration drive information.", 
         "tags": [
           "config-drive"
-        ]
+        ], 
+        "title": "Show server details with configuration drive"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified server. Includes server usage\ninformation.", 
+        "description": "", 
         "examples": {}, 
         "id": "showServer", 
         "method": "get", 
@@ -13032,10 +13195,11 @@
             }
           }
         }, 
-        "summary": "Show server details", 
+        "summary": "Shows details for a specified server. Includes server usage information.", 
         "tags": [
           "server-usage"
-        ]
+        ], 
+        "title": "Show server details"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/action": [
@@ -13043,7 +13207,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shelves a running server.\n\nSpecify the ``shelve`` action in the request body.\n\nAll associated data and resources are kept but anything still in\nmemory is not retained. To restore a shelved instance, use the\n``unshelve`` action. To remove a shelved instance, use the\n``shelveOffload`` action.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` ,\n  or ``SUSPENDED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to shelve the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve a server, its status changes to\n  ``SHELVED`` and the image status is ``ACTIVE`` . The server\n  instance data appears on the compute node that the Compute\n  service manages.\n\n- If you boot the server from volumes or set the\n  ``shelved_offload_time`` option to 0, the Compute service\n  automatically deletes the instance on compute nodes and changes\n  the server status to ``SHELVED_OFFLOADED`` .\n\nTroubleshooting\n\n- If the server status does not change to ``SHELVED`` or\n  ``SHELVED_OFFLOADED`` , the shelve operation failed. Ensure that\n  you meet the preconditions and run the request again. If the\n  request fails again, investigate whether another operation is\n  running that causes a race condition.", 
+        "description": "Specify the ``shelve`` action in the request body.\n\nAll associated data and resources are kept but anything still in\nmemory is not retained. To restore a shelved instance, use the\n``unshelve`` action. To remove a shelved instance, use the\n``shelveOffload`` action.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` ,\n  or ``SUSPENDED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to shelve the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve a server, its status changes to\n  ``SHELVED`` and the image status is ``ACTIVE`` . The server\n  instance data appears on the compute node that the Compute\n  service manages.\n\n- If you boot the server from volumes or set the\n  ``shelved_offload_time`` option to 0, the Compute service\n  automatically deletes the instance on compute nodes and changes\n  the server status to ``SHELVED_OFFLOADED`` .\n\nTroubleshooting\n\n- If the server status does not change to ``SHELVED`` or\n  ``SHELVED_OFFLOADED`` , the shelve operation failed. Ensure that\n  you meet the preconditions and run the request again. If the\n  request fails again, investigate whether another operation is\n  running that causes a race condition.", 
         "examples": {
           "application/json": {
             "shelve": null
@@ -13087,16 +13251,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Shelve server", 
+        "summary": "Shelves a running server.", 
         "tags": [
           "shelve"
-        ]
+        ], 
+        "title": "Shelve server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes an instance from the server.\n\nSpecify the ``shelveOffload`` action in the request body.\n\nData and resource associations are deleted. If an instance is no\nlonger needed, you can remove that instance from the hypervisor to\nminimize resource usage.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``SHELVED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to shelve-offload the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve-offload a server, its status changes\n  to ``SHELVED_OFFLOADED`` . The server instance data appears on\n  the compute node.\n\nTroubleshooting\n\n- If the server status does not change to ``SHELVED_OFFLOADED`` ,\n  the shelve-offload operation failed. Ensure that you meet the\n  preconditions and run the request again. If the request fails\n  again, investigate whether another operation is running that\n  causes a race condition.", 
+        "description": "Specify the ``shelveOffload`` action in the request body.\n\nData and resource associations are deleted. If an instance is no\nlonger needed, you can remove that instance from the hypervisor to\nminimize resource usage.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``SHELVED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to shelve-offload the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve-offload a server, its status changes\n  to ``SHELVED_OFFLOADED`` . The server instance data appears on\n  the compute node.\n\nTroubleshooting\n\n- If the server status does not change to ``SHELVED_OFFLOADED`` ,\n  the shelve-offload operation failed. Ensure that you meet the\n  preconditions and run the request again. If the request fails\n  again, investigate whether another operation is running that\n  causes a race condition.", 
         "examples": {
           "application/json": {
             "shelveOffload": null
@@ -13140,16 +13305,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove shelved instance", 
+        "summary": "Removes an instance from the server.", 
         "tags": [
           "shelve"
-        ]
+        ], 
+        "title": "Remove shelved instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Restores a shelved server.\n\nSpecify the ``unshelve`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``SHELVED`` or ``SHELVED_OFFLOADED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to unshelve the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve a server, its status changes to\n  ``ACTIVE`` . The server appears on the compute node.\n\n- The shelved image is deleted from the list of images returned by\n  an API call.\n\nTroubleshooting\n\n- If the server status does not change to ``ACTIVE`` , the unshelve\n  operation failed. Ensure that you meet the preconditions and run\n  the request again. If the request fails again, investigate\n  whether another operation is running that causes a race\n  condition.", 
+        "description": "Specify the ``unshelve`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.\n\nPreconditions\n\n- The server status must be ``SHELVED`` or ``SHELVED_OFFLOADED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to unshelve the server.\n\nAsynchronous Postconditions\n\n- After you successfully shelve a server, its status changes to\n  ``ACTIVE`` . The server appears on the compute node.\n\n- The shelved image is deleted from the list of images returned by\n  an API call.\n\nTroubleshooting\n\n- If the server status does not change to ``ACTIVE`` , the unshelve\n  operation failed. Ensure that you meet the preconditions and run\n  the request again. If the request fails again, investigate\n  whether another operation is running that causes a race\n  condition.", 
         "examples": {
           "application/json": {
             "unshelve": null
@@ -13193,16 +13359,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Restore shelved server", 
+        "summary": "Restores a shelved server.", 
         "tags": [
           "shelve"
-        ]
+        ], 
+        "title": "Restore shelved server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Force deletes an instance before deferred cleanup.\n\nSpecify the ``forceDelete`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``forceDelete`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "forceDelete": null
@@ -13237,16 +13404,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Force delete instance", 
+        "summary": "Force deletes an instance before deferred cleanup.", 
         "tags": [
           "deferred-delete"
-        ]
+        ], 
+        "title": "Force delete instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Restores a previously soft-deleted instance. You cannot use this\nmethod to restore deleted instances.\n\nSpecify the ``restore`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``restore`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "restore": null
@@ -13281,16 +13449,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Restore soft-deleted instance", 
+        "summary": "Restores a previously soft-deleted instance. You cannot use this method to restore deleted instances.", 
         "tags": [
           "deferred-delete"
-        ]
+        ], 
+        "title": "Restore soft-deleted instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets console output for a server instance.\n\nSpecify the ``os-getConsoleOutput`` action in the request body.", 
+        "description": "Specify the ``os-getConsoleOutput`` action in the request body.", 
         "examples": {
           "application/json": {
             "os-getConsoleOutput": {
@@ -13340,16 +13509,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get console output for an instance", 
+        "summary": "Gets console output for a server instance.", 
         "tags": [
           "console-output"
-        ]
+        ], 
+        "title": "Get console output for an instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Reboots the specified server. Specify the ``reboot`` action in the\nrequest body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "reboot": {
@@ -13422,16 +13592,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Reboot server", 
+        "summary": "Reboots the specified server. Specify the ``reboot`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Reboot server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Rebuilds the specified server. Specify the ``rebuild`` action in\nthe request body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "rebuild": {
@@ -13563,16 +13734,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Rebuild server", 
+        "summary": "Rebuilds the specified server. Specify the ``rebuild`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Rebuild server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Rebuilds the specified server with preserve ephemeral option.\nSpecify the ``rebuild`` action in the request body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "rebuild": {
@@ -13709,16 +13881,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Rebuild server with preserve ephemeral", 
+        "summary": "Rebuilds the specified server with preserve ephemeral option. Specify the ``rebuild`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Rebuild server with preserve ephemeral"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resizes the specified server. Specify the ``resize`` action in the\nrequest body.\n\nA successfully resized server shows a ``VERIFY_RESIZE`` status,\n``RESIZED`` VM status, and ``finished`` migration status. If you\nset the ``auto_confirm`` option of the Compute service to ``True``\n, the Compute service automatically confirms the resize operation.\n\nPreconditions\n\n- You can only resize a server when its status is ``ACTIVE`` or\n  ``SHUTOFF`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to resize the server.", 
+        "description": "A successfully resized server shows a ``VERIFY_RESIZE`` status,\n``RESIZED`` VM status, and ``finished`` migration status. If you\nset the ``auto_confirm`` option of the Compute service to ``True``\n, the Compute service automatically confirms the resize operation.\n\nPreconditions\n\n- You can only resize a server when its status is ``ACTIVE`` or\n  ``SHUTOFF`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to resize the server.", 
         "examples": {
           "application/json": {
             "resize": {
@@ -13787,16 +13960,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Resize server", 
+        "summary": "Resizes the specified server. Specify the ``resize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Resize server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Confirms a pending resize action. Specify the ``confirmResize``\naction in the request body.\n\nAfter you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully confirming resize operation shows a status of\n``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``confirmed`` .\nYou can also see the resized server in the compute node that\nOpenStack Compute manages.\n\nPreconditions\n\n- You can only confirm the resized server where the status is\n  ``VERIFY_RESIZED`` , the vm_status is ``RESIZED`` , and the\n  migration_status is ``finished`` or ``confirming`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to confirm the server.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end or ask your cloud provider.", 
+        "description": "After you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully confirming resize operation shows a status of\n``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``confirmed`` .\nYou can also see the resized server in the compute node that\nOpenStack Compute manages.\n\nPreconditions\n\n- You can only confirm the resized server where the status is\n  ``VERIFY_RESIZED`` , the vm_status is ``RESIZED`` , and the\n  migration_status is ``finished`` or ``confirming`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to confirm the server.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end or ask your cloud provider.", 
         "examples": {
           "application/json": {
             "confirmResize": null
@@ -13863,16 +14037,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Confirm resized server", 
+        "summary": "Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Confirm resized server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Cancels and reverts a pending resize action. Specify the\n``revertResize`` action in the request body.\n\nAfter you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully reverting resize operation shows a status of\n``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``reverted`` .\nYou can also see the reverted server in the compute node that\nOpenStack Compute manages.\n\nPreconditions\n\n- You can only confirm the resized server where the status is\n  ``VERIFY_RESIZE`` and the vm_status is ``RESIZED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to revert the resizing.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end.\n\n- The specified server is not reverted in the compute node that\n  OpenStack Compute manages.", 
+        "description": "After you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully reverting resize operation shows a status of\n``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``reverted`` .\nYou can also see the reverted server in the compute node that\nOpenStack Compute manages.\n\nPreconditions\n\n- You can only confirm the resized server where the status is\n  ``VERIFY_RESIZE`` and the vm_status is ``RESIZED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to revert the resizing.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end.\n\n- The specified server is not reverted in the compute node that\n  OpenStack Compute manages.", 
         "examples": {
           "application/json": {
             "revertResize": null
@@ -13939,16 +14114,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Revert resized server", 
+        "summary": "Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Revert resized server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an image. Specify the ``createImage`` action in the request\nbody.\n\nAfter you make this request, you typically must keep polling the\nstatus of the created image to determine whether the request\nsucceeded.\n\nIf the operation succeeds, the created image has a status of\n``available`` and the server status returns to the original status.\nYou can also see the new image in the image back end that OpenStack\nImage service manages.\n\nPreconditions\n\n- The specified server must exist.\n\n- You can only create a new image from the server when its status is\n  ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` , or ``SUSPENDED`` .\n\n- The connection to the Image service is valid.\n\nTroubleshooting\n\n- If the image status remains uploading or shows another error\n  status, the request failed. Ensure you meet the preconditions and\n  run the request again. If the request fails again, investigate\n  the image back end.\n\n- If the server status does not go back to an original server's\n  status, the request failed. Ensure you meet the preconditions, or\n  check if there is another operation that causes race conditions\n  for the server, then run the request again. If the request fails\n  again, investigate the compute back end or ask your cloud\n  provider.\n\n- If the request fails due to an error on OpenStack Compute service,\n  the image is purged from the image store that OpenStack Image\n  service manages. Ensure you meet the preconditions and run the\n  request again. If the request fails again, investigate OpenStack\n  Compute service or ask your cloud provider.", 
+        "description": "After you make this request, you typically must keep polling the\nstatus of the created image to determine whether the request\nsucceeded.\n\nIf the operation succeeds, the created image has a status of\n``available`` and the server status returns to the original status.\nYou can also see the new image in the image back end that OpenStack\nImage service manages.\n\nPreconditions\n\n- The specified server must exist.\n\n- You can only create a new image from the server when its status is\n  ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` , or ``SUSPENDED`` .\n\n- The connection to the Image service is valid.\n\nTroubleshooting\n\n- If the image status remains uploading or shows another error\n  status, the request failed. Ensure you meet the preconditions and\n  run the request again. If the request fails again, investigate\n  the image back end.\n\n- If the server status does not go back to an original server's\n  status, the request failed. Ensure you meet the preconditions, or\n  check if there is another operation that causes race conditions\n  for the server, then run the request again. If the request fails\n  again, investigate the compute back end or ask your cloud\n  provider.\n\n- If the request fails due to an error on OpenStack Compute service,\n  the image is purged from the image store that OpenStack Image\n  service manages. Ensure you meet the preconditions and run the\n  request again. If the request fails again, investigate OpenStack\n  Compute service or ask your cloud provider.", 
         "examples": {
           "application/json": {
             "createImage": {
@@ -14020,16 +14196,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create image", 
+        "summary": "Creates an image. Specify the ``createImage`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Create image"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Starts a stopped server and changes its status to ``ACTIVE`` .\n\nPreconditions\n\n- The server status must be ``SHUTOFF`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to start the server.\n\nAsynchronous Postconditions\n\n- After you successfully start a server, its status changes to\n  ``ACTIVE`` . The server appears on the compute node that the\n  Compute service manages.\n\nTroubleshooting\n\n- If the server status does not change to ``ACTIVE`` , the start\n  operation failed. Ensure that you meet the preconditions and run\n  the request again. If the request fails again, investigate\n  whether another operation is running that causes a race\n  condition.", 
+        "description": "Preconditions\n\n- The server status must be ``SHUTOFF`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to start the server.\n\nAsynchronous Postconditions\n\n- After you successfully start a server, its status changes to\n  ``ACTIVE`` . The server appears on the compute node that the\n  Compute service manages.\n\nTroubleshooting\n\n- If the server status does not change to ``ACTIVE`` , the start\n  operation failed. Ensure that you meet the preconditions and run\n  the request again. If the request fails again, investigate\n  whether another operation is running that causes a race\n  condition.", 
         "examples": {
           "application/json": {
             "os-start": null
@@ -14073,16 +14250,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Start server", 
+        "summary": "Starts a stopped server and changes its status to ``ACTIVE`` .", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Start server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Stops a running server and changes its status to ``SHUTOFF`` .\n\nPreconditions\n\n- The server status must be ``ACTIVE`` or ``ERROR`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to stop the server.\n\nAsynchronous Postconditions\n\n- After you successfully stop a server, its status changes to\n  ``SHUTOFF`` . The server instance data appears only on the\n  compute node that Compute service manages.", 
+        "description": "Preconditions\n\n- The server status must be ``ACTIVE`` or ``ERROR`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to stop the server.\n\nAsynchronous Postconditions\n\n- After you successfully stop a server, its status changes to\n  ``SHUTOFF`` . The server instance data appears only on the\n  compute node that Compute service manages.", 
         "examples": {
           "application/json": {
             "os-stop": null
@@ -14126,16 +14304,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Stop server", 
+        "summary": "Stops a running server and changes its status to ``SHUTOFF`` .", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Stop server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Attaches a specified volume. Specify the ``attach`` action in the\nrequest body.\n\nIf the attach operation succeeds, the volume status is ``in-use`` .\n\nPreconditions\n\n- The specified server must exist.\n\n- You can only attach a volume to the server when its status is\n  ``available`` .\n\n- The connection to the Block storage service is valid.\n\nTroubleshooting\n\n- If the request fails due to an OpenStack Compute service error,\n  ensure you meet the preconditions and run the request again. If\n  the request fails again, investigate OpenStack Compute service or\n  ask your cloud provider.", 
+        "description": "If the attach operation succeeds, the volume status is ``in-use`` .\n\nPreconditions\n\n- The specified server must exist.\n\n- You can only attach a volume to the server when its status is\n  ``available`` .\n\n- The connection to the Block storage service is valid.\n\nTroubleshooting\n\n- If the request fails due to an OpenStack Compute service error,\n  ensure you meet the preconditions and run the request again. If\n  the request fails again, investigate OpenStack Compute service or\n  ask your cloud provider.", 
         "examples": {
           "application/json": {
             "attach": {
@@ -14216,16 +14395,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Attach volume", 
+        "summary": "Attaches a specified volume. Specify the ``attach`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Attach volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Puts a server in rescue mode and changes its status to ``RESCUE`` .\n\nIf you specify the ``rescue_image_ref`` extended attribute, the\nspecified image is used to rescue the instance. If you omit an\nimage reference, the base image reference is used by default.\n\nAsynchronous Postconditions\n\n- After you successfully rescue a server and make a\n  ``GET/v2.1/\u200b{tenant_id}\u200b/servers/\u200b{server_id}\u200b`` request, its\n  status changes to ``UNRESCUE`` .", 
+        "description": "If you specify the ``rescue_image_ref`` extended attribute, the\nspecified image is used to rescue the instance. If you omit an\nimage reference, the base image reference is used by default.\n\nAsynchronous Postconditions\n\n- After you successfully rescue a server and make a\n  ``GET/v2.1/\u200b{tenant_id}\u200b/servers/\u200b{server_id}\u200b`` request, its\n  status changes to ``UNRESCUE`` .", 
         "examples": {
           "application/json": {
             "rescue": {
@@ -14276,16 +14456,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Rescue server", 
+        "summary": "Puts a server in rescue mode and changes its status to ``RESCUE`` .", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Rescue server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Unrescues a specified server. Changes status to ``ACTIVE`` .\n\nPreconditions\n\n- The specified server must exist.\n\n- You can only unrescue a server when its status is ``RESCUE`` .\n\nAsynchronous Postconditions\n\n- After you successfully unrescue a server and make a\n  ``GET/v2.1/\u200b{tenant_id}\u200b/servers/\u200b{server_id}\u200b`` request, its\n  status changes to ``ACTIVE`` .", 
+        "description": "Preconditions\n\n- The specified server must exist.\n\n- You can only unrescue a server when its status is ``RESCUE`` .\n\nAsynchronous Postconditions\n\n- After you successfully unrescue a server and make a\n  ``GET/v2.1/\u200b{tenant_id}\u200b/servers/\u200b{server_id}\u200b`` request, its\n  status changes to ``ACTIVE`` .", 
         "examples": {
           "application/json": {
             "unrescue": null
@@ -14329,16 +14510,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Unrescue server", 
+        "summary": "Unrescues a specified server. Changes status to ``ACTIVE`` .", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Unrescue server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets text console output.\n\nSpecify the ``get_spice_console`` action in the request body.", 
+        "description": "Specify the ``get_spice_console`` action in the request body.", 
         "examples": {
           "application/json": {
             "os-getSPICEConsole": {
@@ -14382,16 +14564,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get output for spice", 
+        "summary": "Gets text console output.", 
         "tags": [
           "remote-consoles"
-        ]
+        ], 
+        "title": "Get output for spice"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets text console output for VNC.\n\nSpecify the ``get_vnc_console`` action in the request body.", 
+        "description": "Specify the ``get_vnc_console`` action in the request body.", 
         "examples": {
           "application/json": {
             "os-getVNCConsole": {
@@ -14435,16 +14618,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get console output", 
+        "summary": "Gets text console output for VNC.", 
         "tags": [
           "remote-consoles"
-        ]
+        ], 
+        "title": "Get console output"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Changes the admin password.\n\nSpecify the ``changePassword`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``changePassword`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "changePassword": {
@@ -14481,16 +14665,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Change admin password", 
+        "summary": "Changes the admin password.", 
         "tags": [
           "admin-password"
-        ]
+        ], 
+        "title": "Change admin password"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Evacuates a server from a failed host to a new one.\n\nSpecify the ``evacuate`` action in the request body.", 
+        "description": "Specify the ``evacuate`` action in the request body.", 
         "examples": {
           "application/json": {
             "evacuate": {
@@ -14542,16 +14727,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Evacuate server", 
+        "summary": "Evacuates a server from a failed host to a new one.", 
         "tags": [
           "evacuate"
-        ]
+        ], 
+        "title": "Evacuate server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds an IP to a specified network on an instance.\n\nSpecify the ``addFixedIp`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``addFixedIp`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "addFixedIp": {
@@ -14588,16 +14774,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add IP to instance", 
+        "summary": "Adds an IP to a specified network on an instance.", 
         "tags": [
           "multinic"
-        ]
+        ], 
+        "title": "Add IP to instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes an IP from a specified instance.\n\nSpecify the ``remove_fixed_ip`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``remove_fixed_ip`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "removeFixedIp": {
@@ -14634,16 +14821,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove IP from instance", 
+        "summary": "Removes an IP from a specified instance.", 
         "tags": [
           "multinic"
-        ]
+        ], 
+        "title": "Remove IP from instance"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Changes the admin password.\n\nSpecify the ``changePassword`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``changePassword`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "changePassword": {
@@ -14680,16 +14868,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Change admin password", 
+        "summary": "Changes the admin password.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Change admin password"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Backs up a server instance.\n\nSpecify the ``createBackup`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``createBackup`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "createBackup": {
@@ -14728,16 +14917,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Back up server", 
+        "summary": "Backs up a server instance.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Back up server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Injects network information into a server.\n\nSpecify the ``injectNetworkInfo`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``injectNetworkInfo`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "injectNetworkInfo": null
@@ -14772,16 +14962,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Inject network information", 
+        "summary": "Injects network information into a server.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Inject network information"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Live-migrates a server to a new host without rebooting.\n\nSpecify the ``os-migrateLive`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``os-migrateLive`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "os-migrateLive": {
@@ -14820,16 +15011,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Live migrate to new host", 
+        "summary": "Live-migrates a server to a new host without rebooting.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Live migrate to new host"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Locks a server instance.\n\nSpecify the ``lock`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``lock`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "lock": null
@@ -14864,16 +15056,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Lock server", 
+        "summary": "Locks a server instance.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Lock server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Migrates a server to a host. The scheduler chooses the host.\n\nSpecify the ``migrate`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``migrate`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "migrate": null
@@ -14908,16 +15101,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Migrate server", 
+        "summary": "Migrates a server to a host. The scheduler chooses the host.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Migrate server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Pauses a server. Changes its status to PAUSED.\n\nSpecify the ``pause`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``pause`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "pause": null
@@ -14952,16 +15146,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Pause server", 
+        "summary": "Pauses a server. Changes its status to PAUSED.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Pause server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resets networking on a server.\n\nSpecify the ``resetNetwork`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``resetNetwork`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "resetNetwork": null
@@ -14996,16 +15191,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Reset server networking", 
+        "summary": "Resets networking on a server.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Reset server networking"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resets the state of a server to a specified state.\n\nSpecify the ``os-resetState`` action and the ``state`` in the\nrequest body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``os-resetState`` action and the ``state`` in the\nrequest body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "os-resetState": {
@@ -15042,16 +15238,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Reset server state", 
+        "summary": "Resets the state of a server to a specified state.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Reset server state"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resumes a SUSPENDED server and changes its status to ACTIVE.\n\nSpecify the ``resume`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``resume`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "resume": null
@@ -15086,16 +15283,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Resume server", 
+        "summary": "Resumes a SUSPENDED server and changes its status to ACTIVE.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Resume server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Suspends a server and changes its status to SUSPENDED.\n\nSpecify the ``suspend`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``suspend`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "suspend": null
@@ -15130,16 +15328,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Suspend server", 
+        "summary": "Suspends a server and changes its status to SUSPENDED.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Suspend server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Unlocks a server instance.\n\nSpecify the ``unlock`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``unlock`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "unlock": null
@@ -15174,16 +15373,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Unlock server", 
+        "summary": "Unlocks a server instance.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Unlock server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Unpauses a PAUSED server and changes its status to ACTIVE.\n\nSpecify the ``unpause`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``unpause`` action in the request body.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "unpause": null
@@ -15218,10 +15418,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Unpause server", 
+        "summary": "Unpauses a PAUSED server and changes its status to ACTIVE.", 
         "tags": [
           "admin-actions"
-        ]
+        ], 
+        "title": "Unpause server"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/diagnostics": [
@@ -15229,7 +15430,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets basic usage data for a specified server.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "getDiagnostics", 
         "method": "get", 
@@ -15278,10 +15479,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get server diagnostics", 
+        "summary": "Gets basic usage data for a specified server.", 
         "tags": [
           "diagnostics"
-        ]
+        ], 
+        "title": "Get server diagnostics"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/ips": [
@@ -15289,7 +15491,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IP addresses that are assigned to an instance.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "list-ips", 
         "method": "get", 
@@ -15331,10 +15533,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List IPs", 
+        "summary": "Lists IP addresses that are assigned to an instance.", 
         "tags": [
           "server-ips"
-        ]
+        ], 
+        "title": "List IPs"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/ips/{network_label}": [
@@ -15342,7 +15545,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows IP addresses details for a specified network label of a\nspecified server instance.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "show-ip", 
         "method": "get", 
@@ -15390,10 +15593,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show IP details", 
+        "summary": "Shows IP addresses details for a specified network label of a specified server instance.", 
         "tags": [
           "server-ips"
-        ]
+        ], 
+        "title": "Show IP details"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/metadata": [
@@ -15401,7 +15605,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all metadata for a specified server.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "listServerMetadata", 
         "method": "get", 
@@ -15462,16 +15666,17 @@
             }
           }
         }, 
-        "summary": "List all metadata", 
+        "summary": "Lists all metadata for a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "List all metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates one or more metadata items for a specified server.\n\nReplaces metadata items that match the specified keys. Does not\nmodify items that are not specified in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Replaces metadata items that match the specified keys. Does not\nmodify items that are not specified in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -15514,16 +15719,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update metadata items", 
+        "summary": "Updates one or more metadata items for a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "Update metadata items"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces one or more specified metadata items for a\nspecified server.\n\nCreates any metadata items that do not already exist in the server.\nRemoves and completely replaces any metadata items that already\nexist in the server with the metadata items in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Creates any metadata items that do not already exist in the server.\nRemoves and completely replaces any metadata items that already\nexist in the server with the metadata items in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -15566,10 +15772,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or replace metadata items", 
+        "summary": "Creates or replaces one or more specified metadata items for a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "Create or replace metadata items"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/metadata/{key}": [
@@ -15577,7 +15784,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified metadata item, by key, for a\nspecified server.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "getServerMetadataItem", 
         "method": "get", 
@@ -15646,16 +15853,17 @@
             }
           }
         }, 
-        "summary": "Show metadata item details", 
+        "summary": "Shows details for a specified metadata item, by key, for a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "Show metadata item details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces a specified metadata item, by key, for a\nspecified server.\n\nCreates a metadata item that does not already exist in the server.\nRemoves and completely replaces a metadata item that already exists\nin the server with the metadata item in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Creates a metadata item that does not already exist in the server.\nRemoves and completely replaces a metadata item that already exists\nin the server with the metadata item in the request.\n\nIf this operation exceeds the quota for metadata items, the API\nthrows an ``overLimit (413)`` fault.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {
           "application/json": {
             "meta": {
@@ -15706,14 +15914,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update metadata item", 
+        "summary": "Creates or replaces a specified metadata item, by key, for a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "Create or update metadata item"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified metadata item, by key, from a specified server.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "deleteServerMetadataItem", 
         "method": "delete", 
@@ -15750,10 +15959,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete metadata item", 
+        "summary": "Deletes a specified metadata item, by key, from a specified server.", 
         "tags": [
           "server-metadata-v2.1"
-        ]
+        ], 
+        "title": "Delete metadata item"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes": [
@@ -15761,7 +15971,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds a bare metal node to a specified server.\n\nPreconditions\n\n- You can add a bare metal node to a server with an ``ACTIVE`` ,\n  ``PAUSED`` , ``SHUTOFF`` , ``VERIFY_RESIZE`` , or\n  ``SOFT_DELETED`` status.\n\n- You can add a bare metal node to a server with a status that is\n  not locked.", 
+        "description": "Preconditions\n\n- You can add a bare metal node to a server with an ``ACTIVE`` ,\n  ``PAUSED`` , ``SHUTOFF`` , ``VERIFY_RESIZE`` , or\n  ``SOFT_DELETED`` status.\n\n- You can add a bare metal node to a server with a status that is\n  not locked.", 
         "examples": {
           "application/json": {
             "node": {
@@ -15864,16 +16074,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add bare metal node", 
+        "summary": "Adds a bare metal node to a specified server.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "Add bare metal node"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the bare metal nodes that are associated with a specified\nserver.", 
+        "description": "", 
         "examples": {}, 
         "id": "listBaremetalNodes", 
         "method": "get", 
@@ -15964,10 +16175,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List bare metal nodes", 
+        "summary": "Lists the bare metal nodes that are associated with a specified server.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "List bare metal nodes"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/action": [
@@ -15975,7 +16187,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds an interface to a bare metal node that is associated with a\nspecified server.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "add_interface": {
@@ -16053,16 +16265,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Add interface to bare metal node", 
+        "summary": "Adds an interface to a bare metal node that is associated with a specified server.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "Add interface to bare metal node"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Deletes an interface from a bare metal node that is associated with\na specified server.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "remove_interface": {
@@ -16127,16 +16340,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete interface from bare metal node", 
+        "summary": "Deletes an interface from a bare metal node that is associated with a specified server.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "Delete interface from bare metal node"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}": [
       {
         "consumes": [], 
-        "description": "Deletes a bare metal node from a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteBaremetalNode", 
         "method": "delete", 
@@ -16168,16 +16382,17 @@
         ], 
         "produces": [], 
         "responses": {}, 
-        "summary": "Delete bare metal node", 
+        "summary": "Deletes a bare metal node from a specified server.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "Delete bare metal node"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified bare metal node.\n\nPreconditions\n\n- The specified bare metal node must be associated with the server.", 
+        "description": "Preconditions\n\n- The specified bare metal node must be associated with the server.", 
         "examples": {}, 
         "id": "showBaremetalNodeDetails", 
         "method": "get", 
@@ -16274,10 +16489,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show bare metal node details", 
+        "summary": "Shows details for a specified bare metal node.", 
         "tags": [
           "os-baremetal-nodes-v2.1"
-        ]
+        ], 
+        "title": "Show bare metal node details"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-console-auth-token": [
@@ -16285,7 +16501,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the authentication token for a specified console for a\nspecified server instance.\n\nThis feature is available for ``rdp-html5`` console type only.", 
+        "description": "This feature is available for ``rdp-html5`` console type only.", 
         "examples": {}, 
         "id": "getConsoleAuth", 
         "method": "get", 
@@ -16325,16 +16541,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show console authentication token", 
+        "summary": "Shows the authentication token for a specified console for a specified server instance.", 
         "tags": [
           "os-consoles-v2.1"
-        ]
+        ], 
+        "title": "Show console authentication token"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-consoles": [
       {
         "consumes": [], 
-        "description": "Creates a console for a specified server instance.", 
+        "description": "", 
         "examples": {}, 
         "id": "createConsole", 
         "method": "post", 
@@ -16363,16 +16580,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create console for server", 
+        "summary": "Creates a console for a specified server instance.", 
         "tags": [
           "os-consoles-v2.1"
-        ]
+        ], 
+        "title": "Create console for server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all consoles for a specified server instance.", 
+        "description": "", 
         "examples": {}, 
         "id": "listConsoles", 
         "method": "get", 
@@ -16414,10 +16632,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Lists consoles for server", 
+        "summary": "Lists all consoles for a specified server instance.", 
         "tags": [
           "os-consoles-v2.1"
-        ]
+        ], 
+        "title": "Lists consoles for server"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-consoles/{console_id}": [
@@ -16425,7 +16644,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified console for a specified server\ninstance.", 
+        "description": "", 
         "examples": {}, 
         "id": "getConsole", 
         "method": "get", 
@@ -16475,14 +16694,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show console details", 
+        "summary": "Shows details for a specified console for a specified server instance.", 
         "tags": [
           "os-consoles-v2.1"
-        ]
+        ], 
+        "title": "Show console details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified console for a specified server instance.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteConsole", 
         "method": "delete", 
@@ -16519,10 +16739,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete console", 
+        "summary": "Deletes a specified console for a specified server instance.", 
         "tags": [
           "os-consoles-v2.1"
-        ]
+        ], 
+        "title": "Delete console"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-security-groups": [
@@ -16530,7 +16751,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists security groups for a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "listSecGroupsByServer", 
         "method": "get", 
@@ -16573,10 +16794,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List security groups by server", 
+        "summary": "Lists security groups for a specified server.", 
         "tags": [
           "security-groups"
-        ]
+        ], 
+        "title": "List security groups by server"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-server-password": [
@@ -16584,7 +16806,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets the administrative password for a specified server.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "getPassword", 
         "method": "get", 
@@ -16619,10 +16841,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get server password", 
+        "summary": "Gets the administrative password for a specified server.", 
         "tags": [
           "server-password"
-        ]
+        ], 
+        "title": "Get server password"
       }
     ], 
     "/v2.1/{tenant_id}/servers/{server_id}/os-virtual-interfaces": [
@@ -16630,7 +16853,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the virtual interfaces for a specified instance.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Change these\npermissions through the ``policy.json`` file.", 
+        "description": "Policy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Change these\npermissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "getVirtualInterfaces", 
         "method": "get", 
@@ -16671,10 +16894,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List virtual interfaces", 
+        "summary": "Lists the virtual interfaces for a specified instance.", 
         "tags": [
           "virtual-interfaces"
-        ]
+        ], 
+        "title": "List virtual interfaces"
       }
     ]
   }, 

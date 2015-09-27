@@ -1,8 +1,7 @@
 .. http:put:: /v1/images/{image_id}/members/{owner_id}
-   :synopsis: Add member
+   :title: Add member
+   :synopsis: Adds a member to an image.
 
-   Adds a member to an image.
-   
    If you omit the request body, this call adds the membership to the
    image, leaves the existing memberships unmodified, and sets the
    ``can_share`` attribute to ``false`` for new memberships.
@@ -19,9 +18,10 @@
 
 
 .. http:delete:: /v1/images/{image_id}/members/{owner_id}
-   :synopsis: Remove member
+   :title: Remove member
+   :synopsis: Removes a member from an image.
 
-   Removes a member from an image.
+   
 
    :tag: members
    :requestschema: v1/removeMember-v1.json
@@ -32,9 +32,10 @@
 
 
 .. http:put:: /v1/images/{image_id}/members
-   :synopsis: Replace member
+   :title: Replace member
+   :synopsis: Replaces a membership list for an image.
 
-   Replaces a membership list for an image.
+   
 
    :requestexample: v1/examples/replaceMember-v1_req.json
    :accepts: application/json
@@ -47,10 +48,10 @@
 
 
 .. http:get:: /v1/shared-images/{owner_id}
-   :synopsis: List shared images
+   :title: List shared images
+   :synopsis: Lists the VM images that are shared with a specified owner. The owner ID is the tenant ID.
 
-   Lists the VM images that are shared with a specified owner. The
-   owner ID is the tenant ID.
+   
 
    :responseexample 200: v1/examples/getSharedImages-v1_resp_200.json
    :accepts: application/json
@@ -61,9 +62,10 @@
 
 
 .. http:post:: /v1/images
-   :synopsis: Create image
+   :title: Create image
+   :synopsis: Registers a virtual machine (VM) image.
 
-   Registers a virtual machine (VM) image.
+   
 
    :tag: images
    :requestschema: v1/createImage-v1.json
@@ -71,9 +73,10 @@
 
 
 .. http:get:: /v1/images
-   :synopsis: List images
+   :title: List images
+   :synopsis: Lists public VM images.
 
-   Lists public VM images.
+   
 
    :responseexample 200: v1/examples/listImage-v1_resp_200.json
    :accepts: application/json
@@ -103,9 +106,10 @@
 
 
 .. http:get:: /
-   :synopsis: List API versions
+   :title: List API versions
+   :synopsis: Lists information about all Image service API versions.
 
-   Lists information about all Image service API versions.
+   
 
    :responseexample 300: v1/examples/listVersions-image-v1_resp_300.json
    :responseexample 200: v1/examples/listVersions-image-v1_resp_200.json
@@ -117,10 +121,10 @@
 
 
 .. http:put:: /v1/images/{image_id}
-   :synopsis: Update image
+   :title: Update image
+   :synopsis: Updates an image, uploads an image file, or updates metadata for an image.
 
-   Updates an image, uploads an image file, or updates metadata for an
-   image.
+   
 
    :tag: images
    :parameter image_id: Image ID stored through the image API.
@@ -129,10 +133,10 @@
 
 
 .. http:get:: /v1/images/{image_id}
-   :synopsis: Show image details and image binary
+   :title: Show image details and image binary
+   :synopsis: Shows the image details as headers and the image binary in the body of the response.
 
-   Shows the image details as headers and the image binary in the body
-   of the response.
+   
 
    :responseexample 200: v1/examples/getImage-v1_resp_200.json
    :accepts: application/json
@@ -145,9 +149,10 @@
 
 
 .. http:delete:: /v1/images/{image_id}
-   :synopsis: Delete image
+   :title: Delete image
+   :synopsis: Deletes the specified image.
 
-   Deletes the specified image.
+   
 
    :tag: images
    :parameter image_id: Image ID stored through the image API.
@@ -156,9 +161,10 @@
 
 
 .. http:get:: /v1/images/detail
-   :synopsis: List image details
+   :title: List image details
+   :synopsis: Lists details for available images.
 
-   Lists details for available images.
+   
 
    :responseexample 200: v1/examples/listDetailImage-v1_resp_200.json
    :accepts: application/json

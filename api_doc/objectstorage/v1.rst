@@ -1,8 +1,8 @@
 .. http:get:: /info
-   :synopsis: List activated capabilities
+   :title: List activated capabilities
+   :synopsis: Lists the activated capabilities for this version of the OpenStack Object Storage API.
 
-   Lists the activated capabilities for this version of the OpenStack
-   Object Storage API.
+   
 
    :responseexample 200: v1/examples/infoDiscoverability_resp_200.json
    :accepts: application/json
@@ -12,10 +12,9 @@
 
 
 .. http:get:: /v1/{account}/{container}/{object}
-   :synopsis: Get object content and metadata
+   :title: Get object content and metadata
+   :synopsis: Downloads the object content and gets the object metadata.
 
-   Downloads the object content and gets the object metadata.
-   
    This operation returns the object metadata in the response headers
    and the object content in the response body.
    
@@ -65,12 +64,9 @@
 
 
 .. http:put:: /v1/{account}/{container}/{object}
-   :synopsis: Create or replace object
+   :title: Create or replace object
+   :synopsis: Creates an object with specified data content and metadata, or replaces an existing object with specified data content and metadata.
 
-   Creates an object with specified data content and metadata, or
-   replaces an existing object with specified data content and
-   metadata.
-   
    The PUT operation always creates an object. If you use this
    operation on an existing object, you replace the existing object
    and metadata rather than modifying the object. Consequently, this
@@ -133,10 +129,9 @@
 
 
 .. http:copy:: /v1/{account}/{container}/{object}
-   :synopsis: Copy object
+   :title: Copy object
+   :synopsis: Copies an object to another object in the object store.
 
-   Copies an object to another object in the object store.
-   
    You can copy an object to a new object with the same name. Copying
    to the same name is an alternative to using POST to add metadata to
    an object. With POST , you must specify all the metadata. With COPY
@@ -211,10 +206,9 @@
 
 
 .. http:delete:: /v1/{account}/{container}/{object}
-   :synopsis: Delete object
+   :title: Delete object
+   :synopsis: Permanently deletes an object from the object store.
 
-   Permanently deletes an object from the object store.
-   
    You can use the COPY method to copy the object to a new location.
    Then, use the DELETE method to delete the original object.
    
@@ -257,10 +251,9 @@
 
 
 .. http:head:: /v1/{account}/{container}/{object}
-   :synopsis: Show object metadata
+   :title: Show object metadata
+   :synopsis: Shows object metadata.
 
-   Shows object metadata.
-   
    If the ``Content-Length`` response header is non-zero, the example
    cURL command stalls after it prints the response headers because it
    is waiting for a response body. However, the Object Storage system
@@ -297,10 +290,9 @@
 
 
 .. http:post:: /v1/{account}/{container}/{object}
-   :synopsis: Create or update object metadata
+   :title: Create or update object metadata
+   :synopsis: Creates or updates object metadata.
 
-   Creates or updates object metadata.
-   
    To create or update custom metadata, use the ``X-Object-
    Meta-{name}`` header, where ``{name}`` is the name of the metadata
    item.
@@ -371,10 +363,9 @@
 
 
 .. http:get:: /v1/endpoints
-   :synopsis: List endpoints
+   :title: List endpoints
+   :synopsis: Lists endpoints for an object, account, or container.
 
-   Lists endpoints for an object, account, or container.
-   
    When the cloud provider has enabled middleware to list the
    endpoints path, software that needs data location information can
    use this call to avoid network overhead. The cloud provider can
@@ -392,11 +383,9 @@
 
 
 .. http:get:: /v1/{account}/{container}
-   :synopsis: Show container details and list objects
+   :title: Show container details and list objects
+   :synopsis: Shows details for a specified container and lists objects, sorted by name, in the container.
 
-   Shows details for a specified container and lists objects, sorted
-   by name, in the container.
-   
    Specify query parameters in the request to filter the list and
    return a subset of object names. Omit query parameters to return
    the complete list of object names that are stored in the container,
@@ -490,10 +479,9 @@
 
 
 .. http:put:: /v1/{account}/{container}
-   :synopsis: Create container
+   :title: Create container
+   :synopsis: Creates a container.
 
-   Creates a container.
-   
    You do not need to check whether a container already exists before
    issuing a PUT operation because the operation is idempotent: It
    creates a container or updates an existing container, as
@@ -531,10 +519,9 @@
 
 
 .. http:post:: /v1/{account}/{container}
-   :synopsis: Create, update, or delete container metadata
+   :title: Create, update, or delete container metadata
+   :synopsis: Creates, updates, or deletes custom metadata for a container.
 
-   Creates, updates, or deletes custom metadata for a container.
-   
    To create, update, or delete a custom metadata item, use the ``X
    -Container-Meta-{name}`` header, where ``{name}`` is the name of
    the metadata item.
@@ -602,11 +589,9 @@
 
 
 .. http:head:: /v1/{account}/{container}
-   :synopsis: Show container metadata
+   :title: Show container metadata
+   :synopsis: Shows container metadata, including the number of objects and the total bytes of all objects stored in the container.
 
-   Shows container metadata, including the number of objects and the
-   total bytes of all objects stored in the container.
-   
    Show container metadata request:
    
    ``curl -i$publicURL/marktwain -X HEAD -H "X-Auth-Token:$token"``
@@ -636,10 +621,9 @@
 
 
 .. http:delete:: /v1/{account}/{container}
-   :synopsis: Delete container
+   :title: Delete container
+   :synopsis: Deletes an empty container.
 
-   Deletes an empty container.
-   
    This operation fails unless the container is empty. An empty
    container has no objects.
    
@@ -685,11 +669,9 @@
 
 
 .. http:get:: /v1/{account}
-   :synopsis: Show account details and list containers
+   :title: Show account details and list containers
+   :synopsis: Shows details for a specified account and lists containers, sorted by name, in the account.
 
-   Shows details for a specified account and lists containers, sorted
-   by name, in the account.
-   
    The sort order for the name is based on a binary comparison, a
    single built-in collating sequence that compares string data by
    using the SQLite memcmp() function, regardless of text encoding.
@@ -776,10 +758,9 @@
 
 
 .. http:post:: /v1/{account}
-   :synopsis: Create, update, or delete account metadata
+   :title: Create, update, or delete account metadata
+   :synopsis: Creates, updates, or deletes account metadata.
 
-   Creates, updates, or deletes account metadata.
-   
    To create, update, or delete metadata, use the ``X-Account-
    Meta-{name}`` header, where ``{name}`` is the name of the metadata
    item.
@@ -837,10 +818,9 @@
 
 
 .. http:head:: /v1/{account}
-   :synopsis: Show account metadata
+   :title: Show account metadata
+   :synopsis: Shows metadata for a specified account.
 
-   Shows metadata for a specified account.
-   
    Metadata for the account includes:
    
    - Number of containers

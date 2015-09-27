@@ -1284,7 +1284,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Block Storage API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersionsv1", 
         "method": "get", 
@@ -1356,10 +1356,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Block Storage API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "/v1": [
@@ -1367,7 +1368,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for Block Storage API v1.", 
+        "description": "", 
         "examples": {}, 
         "id": "showVersionDetailsv1", 
         "method": "get", 
@@ -1453,10 +1454,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show API v1 details", 
+        "summary": "Shows details for Block Storage API v1.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Show API v1 details"
       }
     ], 
     "/v1/{tenant_id}/os-quota-sets/defaults": [
@@ -1464,7 +1466,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets default quotas for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "getDefaults", 
         "method": "get", 
@@ -1505,10 +1507,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get default quotas", 
+        "summary": "Gets default quotas for a tenant.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Get default quotas"
       }
     ], 
     "/v1/{tenant_id}/os-quota-sets/{tenant_id}": [
@@ -1516,7 +1519,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows quotas for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuota", 
         "method": "get", 
@@ -1565,16 +1568,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quotas", 
+        "summary": "Shows quotas for a tenant.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Show quotas"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quotas for a tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -1629,14 +1633,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quotas", 
+        "summary": "Updates quotas for a tenant.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Update quotas"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes quotas for a tenant so the quotas revert to default values.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteQuotas", 
         "method": "delete", 
@@ -1657,10 +1662,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quotas", 
+        "summary": "Deletes quotas for a tenant so the quotas revert to default values.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Delete quotas"
       }
     ], 
     "/v1/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}": [
@@ -1668,7 +1674,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for quotas for a specified tenant and user.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuotaDetailUser", 
         "method": "get", 
@@ -1764,10 +1770,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quota details for user", 
+        "summary": "Shows details for quotas for a specified tenant and user.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Show quota details for user"
       }
     ], 
     "/v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}": [
@@ -1775,7 +1782,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables an admin user to show quotas for a specified tenant and\nuser.", 
+        "description": "", 
         "examples": {}, 
         "id": "showQuotaUser", 
         "method": "get", 
@@ -1824,16 +1831,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show quotas for user", 
+        "summary": "Enables an admin user to show quotas for a specified tenant and user.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Show quotas for user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates quotas for a specified tenant/project and user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "quota_set": {
@@ -1897,14 +1905,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update quotas for user", 
+        "summary": "Updates quotas for a specified tenant/project and user.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Update quotas for user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes quotas for a user so that the quotas revert to default\nvalues.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteQuotasUser", 
         "method": "delete", 
@@ -1933,10 +1942,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete quotas for user", 
+        "summary": "Deletes quotas for a user so that the quotas revert to default values.", 
         "tags": [
           "os-quota-sets-v1"
-        ]
+        ], 
+        "title": "Delete quotas for user"
       }
     ], 
     "/v1/{tenant_id}/snapshots": [
@@ -1944,7 +1954,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "snapshot": {
@@ -1997,16 +2007,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create snapshot", 
+        "summary": "Creates a snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Create snapshot"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists simple snapshot entities.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsSimple", 
         "method": "get", 
@@ -2056,10 +2067,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots", 
+        "summary": "Lists simple snapshot entities.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "List snapshots"
       }
     ], 
     "/v1/{tenant_id}/snapshots/detail": [
@@ -2067,7 +2079,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for snapshot entities.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshotsDetail", 
         "method": "get", 
@@ -2117,10 +2129,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots (detailed)", 
+        "summary": "Lists details for snapshot entities.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "List snapshots (detailed)"
       }
     ], 
     "/v1/{tenant_id}/snapshots/{snapshot_id}": [
@@ -2128,7 +2141,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information about a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "getSnapshot", 
         "method": "get", 
@@ -2171,14 +2184,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot information", 
+        "summary": "Shows information about a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Show snapshot information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteSnapshot", 
         "method": "delete", 
@@ -2207,10 +2221,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete snapshot", 
+        "summary": "Deletes a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Delete snapshot"
       }
     ], 
     "/v1/{tenant_id}/snapshots/{snapshot_id}/metadata": [
@@ -2218,7 +2233,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the metadata for a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "showSnapshotMetadata", 
         "method": "get", 
@@ -2266,16 +2281,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot metadata", 
+        "summary": "Shows the metadata for a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Show snapshot metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the metadata for a specified snapshot.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -2327,10 +2343,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update snapshot metadata", 
+        "summary": "Updates the metadata for a specified snapshot.", 
         "tags": [
           "snapshots"
-        ]
+        ], 
+        "title": "Update snapshot metadata"
       }
     ], 
     "/v1/{tenant_id}/types": [
@@ -2338,7 +2355,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists volume types.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeTypes", 
         "method": "get", 
@@ -2378,16 +2395,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List volume types", 
+        "summary": "Lists volume types.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "List volume types"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -2438,10 +2456,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create volume type", 
+        "summary": "Creates a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Create volume type"
       }
     ], 
     "/v1/{tenant_id}/types/{volume_type_id}": [
@@ -2449,7 +2468,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -2508,16 +2527,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update volume type", 
+        "summary": "Updates a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Update volume type"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the extra specifications assigned to a volume type.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume_type": {
@@ -2576,16 +2596,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update extra specs for a volume type", 
+        "summary": "Updates the extra specifications assigned to a volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Update extra specs for a volume type"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information about a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumeType", 
         "method": "get", 
@@ -2626,14 +2647,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume type information", 
+        "summary": "Shows information about a specified volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Show volume type information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified volume type.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteVolumeType", 
         "method": "delete", 
@@ -2662,10 +2684,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete volume type", 
+        "summary": "Deletes a specified volume type.", 
         "tags": [
           "types"
-        ]
+        ], 
+        "title": "Delete volume type"
       }
     ], 
     "/v1/{tenant_id}/volumes": [
@@ -2673,7 +2696,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a volume.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "volume": {
@@ -2746,16 +2769,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create volume", 
+        "summary": "Creates a volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Create volume"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists simple volume entities.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesSimple", 
         "method": "get", 
@@ -2820,10 +2844,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volumes", 
+        "summary": "Lists simple volume entities.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "List volumes"
       }
     ], 
     "/v1/{tenant_id}/volumes/detail": [
@@ -2831,7 +2856,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for volume entities.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolumesDetail", 
         "method": "get", 
@@ -2896,10 +2921,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List volumes (detailed)", 
+        "summary": "Lists details for volume entities.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "List volumes (detailed)"
       }
     ], 
     "/v1/{tenant_id}/volumes/{volume_id}": [
@@ -2907,7 +2933,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information about a specified volume.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVolume", 
         "method": "get", 
@@ -2966,14 +2992,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show volume information", 
+        "summary": "Shows information about a specified volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Show volume information"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified volume.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteVolume", 
         "method": "delete", 
@@ -3002,10 +3029,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete volume", 
+        "summary": "Deletes a specified volume.", 
         "tags": [
           "volumes"
-        ]
+        ], 
+        "title": "Delete volume"
       }
     ]
   }, 

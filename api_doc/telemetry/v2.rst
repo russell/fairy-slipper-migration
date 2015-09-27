@@ -1,7 +1,8 @@
 .. http:get:: /v2/alarms/{alarm_id}
-   :synopsis: Show alarm
+   :title: Show alarm
+   :synopsis: Shows information for a specified alarm, by alarm ID.
 
-   Shows information for a specified alarm, by alarm ID.
+   
 
    :responseexample 200: v2/examples/showAlarm_resp_200.json
    :accepts: application/json
@@ -12,9 +13,10 @@
 
 
 .. http:put:: /v2/alarms/{alarm_id}
-   :synopsis: Update alarm
+   :title: Update alarm
+   :synopsis: Updates a specified alarm.
 
-   Updates a specified alarm.
+   
 
    :responseexample 200: v2/examples/updateAlarm_resp_200.json
    :accepts: application/json
@@ -26,9 +28,10 @@
 
 
 .. http:delete:: /v2/alarms/{alarm_id}
-   :synopsis: Delete alarm
+   :title: Delete alarm
+   :synopsis: Deletes a specified alarm, by alarm ID.
 
-   Deletes a specified alarm, by alarm ID.
+   
 
    :tag: alarms
    :parameter alarm_id: The UUID of the alarm.
@@ -36,10 +39,10 @@
 
 
 .. http:get:: /v2/capabilities
-   :synopsis: List capabilities
+   :title: List capabilities
+   :synopsis: A representation of the API and storage capabilities. Usually constrained by restrictions imposed by the storage driver.
 
-   A representation of the API and storage capabilities. Usually
-   constrained by restrictions imposed by the storage driver.
+   
 
    :responseexample 200: v2/examples/listCapabilities_resp_200.json
    :accepts: application/json
@@ -49,9 +52,10 @@
 
 
 .. http:put:: /v2/alarms/{alarm_id}/state
-   :synopsis: Update alarm state
+   :title: Update alarm state
+   :synopsis: Sets the state of a specified alarm.
 
-   Sets the state of a specified alarm.
+   
 
    :tag: alarms
    :parameter alarm_id: The UUID of the alarm.
@@ -61,9 +65,10 @@
 
 
 .. http:get:: /v2/alarms/{alarm_id}/state
-   :synopsis: Show alarm state
+   :title: Show alarm state
+   :synopsis: Shows the state for a specified alarm, by alarm ID.
 
-   Shows the state for a specified alarm, by alarm ID.
+   
 
    :tag: alarms
    :parameter alarm_id: The UUID of the alarm.
@@ -71,9 +76,10 @@
 
 
 .. http:get:: /v2/alarms
-   :synopsis: List alarms
+   :title: List alarms
+   :synopsis: Lists alarms, based on the specified query.
 
-   Lists alarms, based on the specified query.
+   
 
    :responseexample 200: v2/examples/listAlarms_resp_200.json
    :accepts: application/json
@@ -84,9 +90,10 @@
 
 
 .. http:post:: /v2/alarms
-   :synopsis: Create alarm
+   :title: Create alarm
+   :synopsis: Creates an alarm.
 
-   Creates an alarm.
+   
 
    :responseexample 200: v2/examples/createAlarm_resp_200.json
    :accepts: application/json
@@ -97,9 +104,10 @@
 
 
 .. http:get:: /v2/samples/{sample_id}
-   :synopsis: Show sample
+   :title: Show sample
+   :synopsis: Shows information for a specified sample, by sample ID.
 
-   Shows information for a specified sample, by sample ID.
+   
 
    :responseexample 200: v2/examples/showSample_resp_200.json
    :accepts: application/json
@@ -110,9 +118,10 @@
 
 
 .. http:get:: /v2/samples
-   :synopsis: List samples
+   :title: List samples
+   :synopsis: Lists all known samples, based on the data recorded so far.
 
-   Lists all known samples, based on the data recorded so far.
+   
 
    :responseexample 200: v2/examples/listSamples_resp_200.json
    :accepts: application/json
@@ -134,10 +143,10 @@
 
 
 .. http:get:: /v2/meters/{meter_name}/statistics
-   :synopsis: Show meter statistics
+   :title: Show meter statistics
+   :synopsis: Computes and lists statistics for samples in a specified time range.
 
-   Computes and lists statistics for samples in a specified time
-   range.
+   
 
    :responseexample 200: v2/examples/listSamplesStatistics_resp_200.json
    :accepts: application/json
@@ -163,9 +172,10 @@
 
 
 .. http:get:: /v2/resources
-   :synopsis: List resources
+   :title: List resources
+   :synopsis: Lists definitions for all resources.
 
-   Lists definitions for all resources.
+   
 
    :responseexample 200: v2/examples/listResources_resp_200.json
    :accepts: application/json
@@ -176,9 +186,10 @@
 
 
 .. http:get:: /v2/resources/{resource_id}
-   :synopsis: Show resource information
+   :title: Show resource information
+   :synopsis: Shows information for a specified resource, by resource ID.
 
-   Shows information for a specified resource, by resource ID.
+   
 
    :responseexample 200: v2/examples/showResource_resp_200.json
    :accepts: application/json
@@ -189,9 +200,10 @@
 
 
 .. http:get:: /v2/alarms/{alarm_id}/history
-   :synopsis: Show alarm history
+   :title: Show alarm history
+   :synopsis: Assembles and shows the history for a specified alarm, by alarm ID.
 
-   Assembles and shows the history for a specified alarm, by alarm ID.
+   
 
    :tag: alarms
    :parameter alarm_id: The UUID of the alarm.
@@ -200,9 +212,10 @@
 
 
 .. http:get:: /v2/meters
-   :synopsis: List meters
+   :title: List meters
+   :synopsis: Lists meters, based on the data recorded so far.
 
-   Lists meters, based on the data recorded so far.
+   
 
    :responseexample 200: v2/examples/listMeters_resp_200.json
    :accepts: application/json
@@ -224,9 +237,10 @@
 
 
 .. http:get:: /v2/meters/{meter_name}
-   :synopsis: List samples for meter
+   :title: List samples for meter
+   :synopsis: Lists samples for a specified meter, by meter name.
 
-   Lists samples for a specified meter, by meter name.
+   
 
    :responseexample 200: v2/examples/listSamplesforMeter_resp_200.json
    :accepts: application/json
@@ -249,9 +263,10 @@
 
 
 .. http:post:: /v2/meters/{meter_name}
-   :synopsis: Create meter
+   :title: Create meter
+   :synopsis: Adds a list of samples to the specified meter, by meter name.
 
-   Adds a list of samples to the specified meter, by meter name.
+   
 
    :responseexample 200: v2/examples/createMeter_resp_200.json
    :accepts: application/json

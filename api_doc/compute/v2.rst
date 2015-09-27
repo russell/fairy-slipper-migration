@@ -1,7 +1,8 @@
 .. http:get:: //v2/{tenant_id}/images
-   :synopsis: List images
+   :title: List images
+   :synopsis: Lists IDs, names, and links for available images.
 
-   Lists IDs, names, and links for available images.
+   
 
    :responseexample 200: v2/examples/listImages_resp_200.json
    :responseexample 203: v2/examples/listImages_resp_203.json
@@ -64,9 +65,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: Show server metadata
+   :title: Show server metadata
+   :synopsis: Shows metadata for a specified server.
 
-   Shows metadata for a specified server.
+   
 
    :responseexample 200: v2/examples/showServerMetadata_resp_200.json
    :responseexample 203: v2/examples/showServerMetadata_resp_203.json
@@ -87,10 +89,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: Update server metadata items
+   :title: Update server metadata items
+   :synopsis: Updates metadata items by key for a specified server.
 
-   Updates metadata items by key for a specified server.
-   
    Replaces items that match the specified keys and does not modify
    items not specified in the request.
    
@@ -117,10 +118,9 @@
 
 
 .. http:put:: //v2/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: Create or replace server metadata items
+   :title: Create or replace server metadata items
+   :synopsis: Creates or replaces metadata items for a specified server.
 
-   Creates or replaces metadata items for a specified server.
-   
    All existing metadata items are removed and completely replaced by
    the metadata items in the request.
    
@@ -147,10 +147,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/detail
-   :synopsis: List details for servers
+   :title: List details for servers
+   :synopsis: Lists details for all servers.
 
-   Lists details for all servers.
-   
    The compute provisioning algorithm has an anti-affinity property
    that attempts to spread customer VMs across hosts. Under certain
    situations, VMs from the same customer might be placed on the same
@@ -228,10 +227,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/{server_id}/ips/{network_label}
-   :synopsis: List addresses by network
+   :title: List addresses by network
+   :synopsis: Lists addresses for a specified tenant, server, and network.
 
-   Lists addresses for a specified tenant, server, and network.
-   
    Specify the tenant ID, server ID, and network label in the request
    URI.
 
@@ -257,9 +255,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/images/{image_id}/metadata
-   :synopsis: Show image metadata
+   :title: Show image metadata
+   :synopsis: Shows metadata for a specified image.
 
-   Shows metadata for a specified image.
+   
 
    :responseexample 200: v2/examples/showImageMetadata_resp_200.json
    :responseexample 203: v2/examples/showImageMetadata_resp_203.json
@@ -280,10 +279,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/images/{image_id}/metadata
-   :synopsis: Update image metadata items
+   :title: Update image metadata items
+   :synopsis: Updates metadata items by key for a specified image.
 
-   Updates metadata items by key for a specified image.
-   
    Replaces items that match the specified keys and does not modify
    items not specified in the request.
    
@@ -310,10 +308,9 @@
 
 
 .. http:put:: //v2/{tenant_id}/images/{image_id}/metadata
-   :synopsis: Create or replace image metadata
+   :title: Create or replace image metadata
+   :synopsis: Creates or replaces metadata for a specified image.
 
-   Creates or replaces metadata for a specified image.
-   
    Replaces items that match the specified keys. If you omit a key
    that already exists, this key retains its value.
    
@@ -340,10 +337,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers
-   :synopsis: Create server
+   :title: Create server
+   :synopsis: Creates a server.
 
-   Creates a server.
-   
    The progress of this operation depends on the location of the
    requested image, network I/O, host load, selected flavor, and other
    factors.
@@ -417,10 +413,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers
-   :synopsis: List servers
+   :title: List servers
+   :synopsis: Lists IDs, names, and links for all servers.
 
-   Lists IDs, names, and links for all servers.
-   
    Servers contain a status attribute that indicates the current
    server state. You can filter on the server status when you complete
    a list servers request. The server status is returned in the
@@ -550,10 +545,10 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Change password
+   :title: Change password
+   :synopsis: Changes the password for a server. Specify the ``changePassword`` action in the request body.
 
-   Changes the password for a server. Specify the ``changePassword``
-   action in the request body.
+   
 
    :requestexample: v2/examples/changePassword_req.json
    :accepts: application/json
@@ -574,10 +569,10 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Reboot server
+   :title: Reboot server
+   :synopsis: Reboots the specified server. Specify the ``reboot`` action in the request body.
 
-   Reboots the specified server. Specify the ``reboot`` action in the
-   request body.
+   
 
    :requestexample: v2/examples/rebootServer_req.json
    :accepts: application/json
@@ -600,10 +595,10 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Rebuild server
+   :title: Rebuild server
+   :synopsis: Rebuilds the specified server. Specify the ``rebuild`` action in the request body.
 
-   Rebuilds the specified server. Specify the ``rebuild`` action in
-   the request body.
+   
 
    :requestexample: v2/examples/rebuildServer_req.json
    :responseexample 202: v2/examples/rebuildServer_resp_202.json
@@ -625,11 +620,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Resize server
+   :title: Resize server
+   :synopsis: Resizes the specified server. Specify the ``resize`` action in the request body.
 
-   Resizes the specified server. Specify the ``resize`` action in the
-   request body.
-   
    A successfully resized server shows the ``VERIFY_RESIZE`` status,
    ``RESIZED`` VM status, and ``finished`` migration status. If you
    set the ``auto_confirm`` option of the Compute service to ``True``
@@ -661,11 +654,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Confirm resized server
+   :title: Confirm resized server
+   :synopsis: Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.
 
-   Confirms a pending resize action. Specify the ``confirmResize``
-   action in the request body.
-   
    After you make this request, you typically must keep polling the
    server status to determine whether the request succeeded. A
    successfully confirming resize operation shows ``ACTIVE`` status
@@ -709,11 +700,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Revert resized server
+   :title: Revert resized server
+   :synopsis: Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.
 
-   Cancels and reverts a pending resize action. Specify the
-   ``revertResize`` action in the request body.
-   
    After you make this request, you typically must keep polling the
    server status to determine whether the request succeeded. A
    successfully reverting resize operation shows ``ACTIVE`` status and
@@ -759,11 +748,10 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Associate security          group with server
+   :title: Associate security          group with server
+   :synopsis: Associates a specified security group with a server. Specify the ``security_group`` action and the name of the security group in the request body.
 
-   Associates a specified security group with a server. Specify the
-   ``security_group`` action and the name of the security group in the
-   request body.
+   
 
    :requestexample: v2/examples/associateSecGroup_req.json
    :accepts: application/json
@@ -784,11 +772,9 @@
 
 
 .. http:post:: //v2/{tenant_id}/servers/{server_id}/action
-   :synopsis: Create image
+   :title: Create image
+   :synopsis: Creates an image. Specify the ``createImage`` action in the request body.
 
-   Creates an image. Specify the ``createImage`` action in the request
-   body.
-   
    After you make this request, you typically must keep polling the
    created image's status to determine whether the request succeeded.
    A successfully creating image operation shows the ``available``
@@ -846,9 +832,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :synopsis: Show image metadata item details
+   :title: Show image metadata item details
+   :synopsis: Shows details for a metadata item by key for a specified image.
 
-   Shows details for a metadata item by key for a specified image.
+   
 
    :responseexample 200: v2/examples/getImageMetadataItem_resp_200.json
    :responseexample 203: v2/examples/getImageMetadataItem_resp_203.json
@@ -870,10 +857,9 @@
 
 
 .. http:put:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :synopsis: Create or update image metadata item
+   :title: Create or update image metadata item
+   :synopsis: Creates or updates a metadata item by key for a specified image.
 
-   Creates or updates a metadata item by key for a specified image.
-   
    If this operation exceeds the metadata items quota, the API throws
    an ``overLimit (413)`` fault.
 
@@ -898,9 +884,10 @@
 
 
 .. http:delete:: //v2/{tenant_id}/images/{image_id}/metadata/{key}
-   :synopsis: Delete image metadata item
+   :title: Delete image metadata item
+   :synopsis: Deletes a metadata item by key for a specified image.
 
-   Deletes a metadata item by key for a specified image.
+   
 
    :tag: image-metadata
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -918,10 +905,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/{server_id}/ips
-   :synopsis: List addresses
+   :title: List addresses
+   :synopsis: Lists networks and addresses for a specified tenant and server.
 
-   Lists networks and addresses for a specified tenant and server.
-   
    Specify the tenant ID and server ID in the URI.
 
    :responseexample 200: v2/examples/getServerAddresses_resp_200.json
@@ -944,9 +930,10 @@
 
 
 .. http:get:: /
-   :synopsis: List API versions
+   :title: List API versions
+   :synopsis: Lists information about all Compute API versions.
 
-   Lists information about all Compute API versions.
+   
 
    :responseexample 200: v2/examples/listVersionsv2_resp_200.json
    :responseexample 300: v2/examples/listVersionsv2_resp_300.json
@@ -965,10 +952,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/limits
-   :synopsis: List limits
+   :title: List limits
+   :synopsis: Lists the current absolute and rate limits for a specified project.
 
-   Lists the current absolute and rate limits for a specified project.
-   
    An absolute limit value of ``-1`` indicates that the absolute limit
    for the item is infinite.
 
@@ -989,9 +975,10 @@
 
 
 .. http:get:: //v2/extensions
-   :synopsis: List extensions
+   :title: List extensions
+   :synopsis: Lists available extensions.
 
-   Lists available extensions.
+   
 
    :responseexample 200: v2/examples/listExtensionsv2_resp_200.json
    :responseexample 203: v2/examples/listExtensionsv2_resp_203.json
@@ -1009,9 +996,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/images/{image_id}
-   :synopsis: Get image details
+   :title: Get image details
+   :synopsis: Gets details for a specified image.
 
-   Gets details for a specified image.
+   
 
    :responseexample 200: v2/examples/getImage_resp_200.json
    :responseexample 203: v2/examples/getImage_resp_203.json
@@ -1032,9 +1020,10 @@
 
 
 .. http:delete:: //v2/{tenant_id}/images/{image_id}
-   :synopsis: Delete image
+   :title: Delete image
+   :synopsis: Deletes a specified image.
 
-   Deletes a specified image.
+   
 
    :tag: images
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -1050,9 +1039,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/flavors/detail
-   :synopsis: List details for flavors
+   :title: List details for flavors
+   :synopsis: Lists all details for available flavors.
 
-   Lists all details for available flavors.
+   
 
    :responseexample 200: v2/examples/listDetailFlavors_resp_200.json
    :responseexample 203: v2/examples/listDetailFlavors_resp_203.json
@@ -1086,9 +1076,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/flavors
-   :synopsis: List flavors
+   :title: List flavors
+   :synopsis: Lists IDs, names, and links for available flavors.
 
-   Lists IDs, names, and links for available flavors.
+   
 
    :responseexample 200: v2/examples/listFlavors_resp_200.json
    :responseexample 203: v2/examples/listFlavors_resp_203.json
@@ -1122,9 +1113,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/flavors/{flavor_id}
-   :synopsis: Get flavor details
+   :title: Get flavor details
+   :synopsis: Gets details for a specified flavor.
 
-   Gets details for a specified flavor.
+   
 
    :responseexample 200: v2/examples/getFlavor_resp_200.json
    :responseexample 203: v2/examples/getFlavor_resp_203.json
@@ -1146,10 +1138,9 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/{server_id}
-   :synopsis: Get server details
+   :title: Get server details
+   :synopsis: Gets details for a specified server.
 
-   Gets details for a specified server.
-   
    Preconditions
    
    - The specified server must exist.
@@ -1173,10 +1164,9 @@
 
 
 .. http:put:: //v2/{tenant_id}/servers/{server_id}
-   :synopsis: Update server
+   :title: Update server
+   :synopsis: Updates the editable attributes of the specified server.
 
-   Updates the editable attributes of the specified server.
-   
    Preconditions
    
    - The specified server must exist.
@@ -1202,10 +1192,9 @@
 
 
 .. http:delete:: //v2/{tenant_id}/servers/{server_id}
-   :synopsis: Delete server
+   :title: Delete server
+   :synopsis: Deletes a specified server.
 
-   Deletes a specified server.
-   
    Preconditions
    
    - The specified server must exist.
@@ -1257,10 +1246,9 @@
 
 
 .. http:get:: //v2/extensions/{alias}
-   :synopsis: Get extension
+   :title: Get extension
+   :synopsis: Gets details about the specified extension.
 
-   Gets details about the specified extension.
-   
    Extensions introduce features and vendor-specific functionality to
    the API without requiring a version change.
 
@@ -1283,9 +1271,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/images/detail
-   :synopsis: List images details
+   :title: List images details
+   :synopsis: Lists all details for available images.
 
-   Lists all details for available images.
+   
 
    :responseexample 200: v2/examples/listDetailImages_resp_200.json
    :responseexample 203: v2/examples/listDetailImages_resp_203.json
@@ -1348,9 +1337,10 @@
 
 
 .. http:get:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Show server metadata item details
+   :title: Show server metadata item details
+   :synopsis: Shows details for a metadata item by key for a specified server.
 
-   Shows details for a metadata item by key for a specified server.
+   
 
    :responseexample 200: v2/examples/getServerMetadataItem_resp_200.json
    :responseexample 203: v2/examples/getServerMetadataItem_resp_203.json
@@ -1372,10 +1362,9 @@
 
 
 .. http:put:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Create or update server metadata item
+   :title: Create or update server metadata item
+   :synopsis: Sets a metadata item by key for a specified server.
 
-   Sets a metadata item by key for a specified server.
-   
    If this operation exceeds the metadata items quota, the API throws
    an ``overLimit (413)`` fault.
 
@@ -1400,9 +1389,10 @@
 
 
 .. http:delete:: //v2/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Delete server metadata item
+   :title: Delete server metadata item
+   :synopsis: Deletes a metadata item by key for a specified server.
 
-   Deletes a metadata item by key for a specified server.
+   
 
    :tag: server-metadata
    :parameter server_id: The UUID for the server.

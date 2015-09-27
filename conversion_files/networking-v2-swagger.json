@@ -30,7 +30,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Networking API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersionsv2-neutron", 
         "method": "get", 
@@ -78,10 +78,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Networking API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "/v2.0": [
@@ -89,7 +90,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for Networking API v2.0.", 
+        "description": "", 
         "examples": {}, 
         "id": "showVersionDetailsv2-neutron", 
         "method": "get", 
@@ -177,10 +178,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show API v2.0 details", 
+        "summary": "Shows details for Networking API v2.0.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Show API v2.0 details"
       }
     ], 
     "/v2.0/extensions": [
@@ -478,10 +480,10 @@
             "headers": {}
           }
         }, 
-        "summary": "List extensions", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List extensions"
       }
     ], 
     "/v2.0/extensions/{alias}": [
@@ -560,10 +562,10 @@
             "headers": {}
           }
         }, 
-        "summary": "Get extension details", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "Get extension details"
       }
     ], 
     "/v2.0/networks": [
@@ -571,7 +573,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks to which the specified tenant has access.\n\nYou can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .", 
+        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .", 
         "examples": {}, 
         "id": "listNetworks", 
         "method": "get", 
@@ -624,16 +626,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List networks", 
+        "summary": "Lists networks to which the specified tenant has access.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "List networks"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a network.\n\nA request body is optional. An administrative user can specify\nanother tenant ID, which is the tenant who owns the network, in the\nrequest body.", 
+        "description": "A request body is optional. An administrative user can specify\nanother tenant ID, which is the tenant who owns the network, in the\nrequest body.", 
         "examples": {
           "application/json": {
             "network": {
@@ -687,16 +690,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create network", 
+        "summary": "Creates a network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Create network"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates multiple networks in a single request.\n\nIn the request body, specify a list of networks.\n\nThe bulk create operation is always atomic. Either all or no\nnetworks in the request body are created.", 
+        "description": "In the request body, specify a list of networks.\n\nThe bulk create operation is always atomic. Either all or no\nnetworks in the request body are created.", 
         "examples": {
           "application/json": {
             "networks": [
@@ -760,10 +764,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Bulk create networks", 
+        "summary": "Creates multiple networks in a single request.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Bulk create networks"
       }
     ], 
     "/v2.0/networks/{network_id}": [
@@ -771,7 +776,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified network.\n\nYou can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .\n\nIn addition to the following response parameters, the response\nmight show extension response parameters. For information, see\nNetworks multiple provider extension (networks) .", 
+        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .\n\nIn addition to the following response parameters, the response\nmight show extension response parameters. For information, see\nNetworks multiple provider extension (networks) .", 
         "examples": {}, 
         "id": "showNetwork", 
         "method": "get", 
@@ -819,16 +824,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show network", 
+        "summary": "Shows information for a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Show network"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified network.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "network": {
@@ -891,14 +897,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update network", 
+        "summary": "Updates a specified network.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Update network"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified network and its associated resources.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteNetwork", 
         "method": "delete", 
@@ -931,10 +938,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete network", 
+        "summary": "Deletes a specified network and its associated resources.", 
         "tags": [
           "networks"
-        ]
+        ], 
+        "title": "Delete network"
       }
     ], 
     "/v2.0/ports": [
@@ -942,7 +950,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists ports to which the tenant has access.\n\nDefault policy settings return only those ports that are owned by\nthe tenant who submits the request, unless the request is submitted\nby a user with administrative rights. Users can control which\nattributes are returned by using the fields query parameter.\nAdditionally, you can filter results by using query string\nparameters. For information, see Filtering and Column Selection .", 
+        "description": "Default policy settings return only those ports that are owned by\nthe tenant who submits the request, unless the request is submitted\nby a user with administrative rights. Users can control which\nattributes are returned by using the fields query parameter.\nAdditionally, you can filter results by using query string\nparameters. For information, see Filtering and Column Selection .", 
         "examples": {}, 
         "id": "listPorts", 
         "method": "get", 
@@ -1005,16 +1013,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List ports", 
+        "summary": "Lists ports to which the tenant has access.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "List ports"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a port on a specified network.\n\nYou must specify the ``network_id`` attribute in the request body\nto define the network where the port is to be created.", 
+        "description": "You must specify the ``network_id`` attribute in the request body\nto define the network where the port is to be created.", 
         "examples": {
           "application/json": {
             "port": {
@@ -1080,16 +1089,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create port", 
+        "summary": "Creates a port on a specified network.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "Create port"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates multiple ports in a single request. Specify a list of ports\nin the request body.\n\nGuarantees the atomic completion of the bulk operation.", 
+        "description": "Guarantees the atomic completion of the bulk operation.", 
         "examples": {
           "application/json": {
             "ports": [
@@ -1189,10 +1199,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Bulk create ports", 
+        "summary": "Creates multiple ports in a single request. Specify a list of ports in the request body.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "Bulk create ports"
       }
     ], 
     "/v2.0/ports/{port_id}": [
@@ -1200,7 +1211,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified port.", 
+        "description": "", 
         "examples": {}, 
         "id": "showPort", 
         "method": "get", 
@@ -1254,16 +1265,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show port", 
+        "summary": "Shows information for a specified port.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "Show port"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified port.\n\nYou can update information for a port, such as its symbolic name\nand associated IPs. When you update IPs for a port, any previously\nassociated IPs are removed, returned to the respective subnets\nallocation pools, and replaced by the IPs specified in the body for\nthe update request. Therefore, this operation replaces the\n``fixed_ip`` attribute when it is specified in the request body. If\nthe updated IP addresses are not valid or are already in use, the\noperation fails and the existing IP addresses are not removed from\nthe port.\n\nWhen you update security groups for a port and the operation\nsucceeds, any associated security groups are removed and replaced\nby the security groups specified in the body for the update\nrequest. Therefore, this operation replaces the ``security_groups``\nattribute when you specify it in the request body. However, if the\nspecified security groups are not valid, the operation fails and\nthe existing security groups are not removed from the port.", 
+        "description": "You can update information for a port, such as its symbolic name\nand associated IPs. When you update IPs for a port, any previously\nassociated IPs are removed, returned to the respective subnets\nallocation pools, and replaced by the IPs specified in the body for\nthe update request. Therefore, this operation replaces the\n``fixed_ip`` attribute when it is specified in the request body. If\nthe updated IP addresses are not valid or are already in use, the\noperation fails and the existing IP addresses are not removed from\nthe port.\n\nWhen you update security groups for a port and the operation\nsucceeds, any associated security groups are removed and replaced\nby the security groups specified in the body for the update\nrequest. Therefore, this operation replaces the ``security_groups``\nattribute when you specify it in the request body. However, if the\nspecified security groups are not valid, the operation fails and\nthe existing security groups are not removed from the port.", 
         "examples": {
           "application/json": {
             "port": {
@@ -1345,14 +1357,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update port", 
+        "summary": "Updates a specified port.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "Update port"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified port.\n\nAny IP addresses that are associated with the port are returned to\nthe respective subnets allocation pools.", 
+        "description": "Any IP addresses that are associated with the port are returned to\nthe respective subnets allocation pools.", 
         "examples": {}, 
         "id": "removePort", 
         "method": "delete", 
@@ -1385,10 +1398,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete port", 
+        "summary": "Deletes a specified port.", 
         "tags": [
           "ports"
-        ]
+        ], 
+        "title": "Delete port"
       }
     ], 
     "/v2.0/subnets": [
@@ -1396,7 +1410,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists subnets to which the specified tenant has access.\n\nDefault policy settings returns exclusively subnets owned by the\ntenant submitting the request, unless the request is submitted by a\nuser with administrative rights. You can control which attributes\nare returned by using the fields query parameter. You can filter\nresults by using query string parameters.", 
+        "description": "Default policy settings returns exclusively subnets owned by the\ntenant submitting the request, unless the request is submitted by a\nuser with administrative rights. You can control which attributes\nare returned by using the fields query parameter. You can filter\nresults by using query string parameters.", 
         "examples": {}, 
         "id": "listSubnets", 
         "method": "get", 
@@ -1455,16 +1469,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List subnets", 
+        "summary": "Lists subnets to which the specified tenant has access.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "List subnets"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a subnet on a specified network.\n\nOpenStack Networking does not try to derive the correct IP version\nfrom the specified CIDR. If you do not specify the ``gateway_ip``\nattribute, OpenStack Networking allocates an address from the CIDR\nfor the gateway for the subnet.\n\nTo specify a subnet without a gateway, set the ``gateway_ip``\nattribute to ``null`` in the request body. If you do not specify\nthe ``allocation_pools`` attribute, OpenStack Networking\nautomatically allocates pools for covering all IP addresses in the\nCIDR, excluding the address reserved for the subnet gateway.\nOtherwise, you can explicitly specify allocation pools as shown in\nthe following example.\n\nWhen you specify both the ``allocation_pools`` and ``gateway_ip``\nattributes, you must ensure that the gateway IP does not overlap\nwith the specified allocation pools; otherwise a 409 Conflict error\noccurs.\n\nA subnet can have one or more name servers and host routes. Hosts\nin this subnet use the specified name servers. Devices with IP\naddresses from this subnet, not including the local subnet route,\nuse the specified host routes.\n\nSpecify the ``ipv6_ra_mode`` and ``ipv6_address_mode`` attributes\nto create subnets that support IPv6 configurations, such as\nStateless Address Autoconfiguration (SLAAC), DHCPv6 Stateful, and\nDHCPv6 Stateless configurations.", 
+        "description": "OpenStack Networking does not try to derive the correct IP version\nfrom the specified CIDR. If you do not specify the ``gateway_ip``\nattribute, OpenStack Networking allocates an address from the CIDR\nfor the gateway for the subnet.\n\nTo specify a subnet without a gateway, set the ``gateway_ip``\nattribute to ``null`` in the request body. If you do not specify\nthe ``allocation_pools`` attribute, OpenStack Networking\nautomatically allocates pools for covering all IP addresses in the\nCIDR, excluding the address reserved for the subnet gateway.\nOtherwise, you can explicitly specify allocation pools as shown in\nthe following example.\n\nWhen you specify both the ``allocation_pools`` and ``gateway_ip``\nattributes, you must ensure that the gateway IP does not overlap\nwith the specified allocation pools; otherwise a 409 Conflict error\noccurs.\n\nA subnet can have one or more name servers and host routes. Hosts\nin this subnet use the specified name servers. Devices with IP\naddresses from this subnet, not including the local subnet route,\nuse the specified host routes.\n\nSpecify the ``ipv6_ra_mode`` and ``ipv6_address_mode`` attributes\nto create subnets that support IPv6 configurations, such as\nStateless Address Autoconfiguration (SLAAC), DHCPv6 Stateful, and\nDHCPv6 Stateless configurations.", 
         "examples": {
           "application/json": {
             "subnet": {
@@ -1527,16 +1542,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create subnet", 
+        "summary": "Creates a subnet on a specified network.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "Create subnet"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates multiple subnets in a single request. Specify a list of\nsubnets in the request body.\n\nThe bulk create operation is always atomic. Either all or no\nsubnets in the request body are created.", 
+        "description": "The bulk create operation is always atomic. Either all or no\nsubnets in the request body are created.", 
         "examples": {
           "application/json": {
             "subnets": [
@@ -1626,10 +1642,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Bulk create subnet", 
+        "summary": "Creates multiple subnets in a single request. Specify a list of subnets in the request body.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "Bulk create subnet"
       }
     ], 
     "/v2.0/subnets/{subnet_id}": [
@@ -1637,7 +1654,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified subnet.\n\nUse the fields query parameter to filter the results.", 
+        "description": "Use the fields query parameter to filter the results.", 
         "examples": {}, 
         "id": "showSubnet", 
         "method": "get", 
@@ -1689,16 +1706,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show subnet", 
+        "summary": "Shows information for a specified subnet.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "Show subnet"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified subnet.\n\nSome attributes, such as IP version (ip_version), and CIDR (cidr)\ncannot be updated. Attempting to update these attributes results in\na ``400 BadRequest`` error.", 
+        "description": "Some attributes, such as IP version (ip_version), and CIDR (cidr)\ncannot be updated. Attempting to update these attributes results in\na ``400 BadRequest`` error.", 
         "examples": {
           "application/json": {
             "subnet": {
@@ -1764,14 +1782,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update subnet", 
+        "summary": "Updates a specified subnet.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "Update subnet"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified subnet.\n\nThe operation fails if subnet IP addresses are still allocated.", 
+        "description": "The operation fails if subnet IP addresses are still allocated.", 
         "examples": {}, 
         "id": "removeSubnet", 
         "method": "delete", 
@@ -1804,10 +1823,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete subnet", 
+        "summary": "Deletes a specified subnet.", 
         "tags": [
           "subnets"
-        ]
+        ], 
+        "title": "Delete subnet"
       }
     ]
   }, 

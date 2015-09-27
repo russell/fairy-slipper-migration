@@ -1,7 +1,8 @@
 .. http:get:: /v2.0
-   :synopsis: Show version details
+   :title: Show version details
+   :synopsis: Shows details for the Identity API v2.0.
 
-   Shows details for the Identity API v2.0.
+   
 
    :responseexample 200: v2/examples/getVersionInfo-v2.0_resp_200.json
    :responseexample 203: v2/examples/getVersionInfo-v2.0_resp_203.json
@@ -20,10 +21,9 @@
 
 
 .. http:get:: /v2.0/extensions/{alias}
-   :synopsis: Get extension details
+   :title: Get extension details
+   :synopsis: Gets detailed information for a specified extension.
 
-   Gets detailed information for a specified extension.
-   
    Specify the extension alias in the URI.
 
    :responseexample 200: v2/examples/getExtension-v2.0_resp_200.json
@@ -44,9 +44,10 @@
 
 
 .. http:get:: /
-   :synopsis: List versions
+   :title: List versions
+   :synopsis: Lists information about all Identity API versions.
 
-   Lists information about all Identity API versions.
+   
 
    :responseexample 200: v2/examples/getVersions-v2_resp_200.json
    :accepts: application/json
@@ -63,9 +64,10 @@
 
 
 .. http:get:: /v2.0/tenants
-   :synopsis: List tenants
+   :title: List tenants
+   :synopsis: Lists tenants to which the specified token has access.
 
-   Lists tenants to which the specified token has access.
+   
 
    :responseexample 200: v2/examples/listTenants_resp_200.json
    :responseexample 203: v2/examples/listTenants_resp_203.json
@@ -84,10 +86,9 @@
 
 
 .. http:post:: /v2.0/tokens
-   :synopsis: Authenticate
+   :title: Authenticate
+   :synopsis: Authenticates and generates a token.
 
-   Authenticates and generates a token.
-   
    The Identity API is a RESTful web service. It is the entry point to
    all service APIs. To access the Identity API, you must know its
    URL.

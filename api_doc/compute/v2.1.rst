@@ -1,9 +1,7 @@
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-console-auth-token
-   :synopsis: Show console authentication token
+   :title: Show console authentication token
+   :synopsis: Shows the authentication token for a specified console for a specified server instance.
 
-   Shows the authentication token for a specified console for a
-   specified server instance.
-   
    This feature is available for ``rdp-html5`` console type only.
 
    :responseexample 200: v2.1/examples/getConsoleAuth_resp_200.json
@@ -16,10 +14,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cells/{cell_id}
-   :synopsis: Show cell data
+   :title: Show cell data
+   :synopsis: Shows data for a specified cell.
 
-   Shows data for a specified cell.
-   
    When cells are not enabled, the cells API calls return a ``501
    NotImplemented`` error.
 
@@ -34,9 +31,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers
-   :synopsis: Create multiple servers
+   :title: Create multiple servers
+   :synopsis: Creates one or more servers with an optional reservation ID.
 
-   Creates one or more servers with an optional reservation ID.
+   
 
    :requestexample: v2.1/examples/createServer_req.json
    :responseexample 202: v2.1/examples/createServer_resp_202.json
@@ -48,10 +46,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers
-   :synopsis: Create server with block device mapping
+   :title: Create server with block device mapping
+   :synopsis: Creates a server with a block device mapping.
 
-   Creates a server with a block device mapping.
-   
    To define the block device mapping, you can include either a
    ``block_device_mapping`` or ``block_device_mapping_v2`` object in
    the request body. The ``block_device_mapping_v2`` object is
@@ -83,10 +80,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cells/{cell_id}/capacities
-   :synopsis: Show cell capacities
+   :title: Show cell capacities
+   :synopsis: Shows capacities for a specified cell.
 
-   Shows capacities for a specified cell.
-   
    When cells are not enabled, the cells API calls return a ``501
    NotImplemented`` error.
 
@@ -101,10 +97,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-networks/{id}
-   :synopsis: Show network information
+   :title: Show network information
+   :synopsis: Shows information for a specified network.
 
-   Shows information for a specified network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -119,10 +114,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-networks/{id}
-   :synopsis: Delete network
+   :title: Delete network
+   :synopsis: Deletes a specified network.
 
-   Deletes a specified network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -134,9 +128,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volumes/detail
-   :synopsis: List details for volumes
+   :title: List details for volumes
+   :synopsis: Lists details for all volumes.
 
-   Lists details for all volumes.
+   
 
    :responseexample 200: v2.1/examples/getVolumesDetail_resp_200.json
    :accepts: application/json
@@ -154,9 +149,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-pci
-   :synopsis: List PCI devices
+   :title: List PCI devices
+   :synopsis: Lists PCI devices.
 
-   Lists PCI devices.
+   
 
    :responseexample 200: v2.1/examples/listPciDevices_resp_200.json
    :accepts: application/json
@@ -167,9 +163,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-agents
-   :synopsis: Create agent build
+   :title: Create agent build
+   :synopsis: Creates an agent build.
 
-   Creates an agent build.
+   
 
    :requestexample: v2.1/examples/agentbuild_req.json
    :responseexample 201: v2.1/examples/agentbuild_resp_201.json
@@ -181,9 +178,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-agents
-   :synopsis: List agent builds
+   :title: List agent builds
+   :synopsis: Lists agent builds.
 
-   Lists agent builds.
+   
 
    :responseexample 200: v2.1/examples/listbuilds_resp_200.json
    :accepts: application/json
@@ -194,9 +192,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-agents
-   :synopsis: Delete agent build
+   :title: Delete agent build
+   :synopsis: Deletes an existing agent build.
 
-   Deletes an existing agent build.
+   
 
    :tag: agents
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -204,9 +203,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ips-bulk
-   :synopsis: List floating IPs
+   :title: List floating IPs
+   :synopsis: Lists all floating IPs.
 
-   Lists all floating IPs.
+   
 
    :responseexample 200: v2.1/examples/ListFloatingIPsBulk_resp_200.json
    :accepts: application/json
@@ -217,9 +217,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-floating-ips-bulk
-   :synopsis: Create floating IPs
+   :title: Create floating IPs
+   :synopsis: Bulk-creates floating IPs.
 
-   Bulk-creates floating IPs.
+   
 
    :requestexample: v2.1/examples/CreateFloatingIPsBulk_req.json
    :responseexample 200: v2.1/examples/CreateFloatingIPsBulk_resp_200.json
@@ -232,9 +233,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}
-   :synopsis: Create or update DNS domain
+   :title: Create or update DNS domain
+   :synopsis: Creates or updates a DNS domain.
 
-   Creates or updates a DNS domain.
+   
 
    :requestexample: v2.1/examples/CreateDomain_req.json
    :responseexample 200: v2.1/examples/CreateDomain_resp_200.json
@@ -248,9 +250,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}
-   :synopsis: Delete DNS domain
+   :title: Delete DNS domain
+   :synopsis: Deletes a DNS domain and all associated host entries.
 
-   Deletes a DNS domain and all associated host entries.
+   
 
    :tag: floating-ip-dns
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -260,9 +263,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}
-   :synopsis: Show flavor extra specs
+   :title: Show flavor extra specs
+   :synopsis: Shows an extra spec for specified flavor, by key.
 
-   Shows an extra spec for specified flavor, by key.
+   
 
    :requestexample: v2.1/examples/showflavor_req.json
    :responseexample 200: v2.1/examples/showflavor_resp_200.json
@@ -277,10 +281,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}
-   :synopsis: Update flavor extra spec
+   :title: Update flavor extra spec
+   :synopsis: Updates a specified extra spec value, by key, for a specified flavor.
 
-   Updates a specified extra spec value, by key, for a specified
-   flavor.
+   
 
    :requestexample: v2.1/examples/updateflavorspec_req.json
    :responseexample 200: v2.1/examples/updateflavorspec_resp_200.json
@@ -295,9 +299,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-security-group-default-rules/{security_group_default_rule_id}
-   :synopsis: Show default security group rule information
+   :title: Show default security group rule information
+   :synopsis: Shows information for a specified security group rule.
 
-   Shows information for a specified security group rule.
+   
 
    :responseexample 200: v2.1/examples/showSecGroupDefaultRule_resp_200.json
    :accepts: application/json
@@ -317,9 +322,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-security-group-default-rules/{security_group_default_rule_id}
-   :synopsis: Delete default security group rule
+   :title: Delete default security group rule
+   :synopsis: Deletes a specified security group rule.
 
-   Deletes a specified security group rule.
+   
 
    :tag: os-security-group-default-rules-v2.1
    :parameter tenant_id: The unique identifier of the tenant or
@@ -336,9 +342,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-volumes
-   :synopsis: Create volume
+   :title: Create volume
+   :synopsis: Creates a volume.
 
-   Creates a volume.
+   
 
    :requestexample: v2.1/examples/createVolume_req.json
    :responseexample 201: v2.1/examples/createVolume_resp_201.json
@@ -358,9 +365,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volumes
-   :synopsis: List volumes
+   :title: List volumes
+   :synopsis: Lists the volumes associated with the account.
 
-   Lists the volumes associated with the account.
+   
 
    :responseexample 200: v2.1/examples/getVolumesSimple_resp_200.json
    :accepts: application/json
@@ -378,9 +386,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-instance-usage-audit-log
-   :synopsis: List usage audits for an instance
+   :title: List usage audits for an instance
+   :synopsis: Lists usage audits for a specified instance.
 
-   Lists usage audits for a specified instance.
+   
 
    :responseexample 200: v2.1/examples/listusageaudits_resp_200.json
    :accepts: application/json
@@ -391,9 +400,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors
-   :synopsis: List hypervisors
+   :title: List hypervisors
+   :synopsis: Lists hypervisors.
 
-   Lists hypervisors.
+   
 
    :responseexample 200: v2.1/examples/listhypervisors_resp_200.json
    :accepts: application/json
@@ -404,10 +414,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-migrations
-   :synopsis: List migrations
+   :title: List migrations
+   :synopsis: Lists in-progress migrations.
 
-   Lists in-progress migrations.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -421,9 +430,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/startup
-   :synopsis: Start host
+   :title: Start host
+   :synopsis: Starts a specified host.
 
-   Starts a specified host.
+   
 
    :responseexample 200: v2.1/examples/startshost_resp_200.json
    :accepts: application/json
@@ -435,10 +445,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: List all metadata
+   :title: List all metadata
+   :synopsis: Lists all metadata for a specified server.
 
-   Lists all metadata for a specified server.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -455,10 +464,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: Update metadata items
+   :title: Update metadata items
+   :synopsis: Updates one or more metadata items for a specified server.
 
-   Updates one or more metadata items for a specified server.
-   
    Replaces metadata items that match the specified keys. Does not
    modify items that are not specified in the request.
    
@@ -480,11 +488,9 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata
-   :synopsis: Create or replace metadata items
+   :title: Create or replace metadata items
+   :synopsis: Creates or replaces one or more specified metadata items for a specified server.
 
-   Creates or replaces one or more specified metadata items for a
-   specified server.
-   
    Creates any metadata items that do not already exist in the server.
    Removes and completely replaces any metadata items that already
    exist in the server with the metadata items in the request.
@@ -507,10 +513,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-services/detail
-   :synopsis: List disabled services
+   :title: List disabled services
+   :synopsis: Lists disabled services. If information exists, includes reasons why services were disabled.
 
-   Lists disabled services. If information exists, includes reasons
-   why services were disabled.
+   
 
    :responseexample 200: v2.1/examples/getDisableReasonDetail_resp_200.json
    :accepts: application/json
@@ -521,9 +527,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/shutdown
-   :synopsis: Shut down host
+   :title: Shut down host
+   :synopsis: Shuts down a specified host.
 
-   Shuts down a specified host.
+   
 
    :responseexample 200: v2.1/examples/shutdownhost_resp_200.json
    :accepts: application/json
@@ -535,10 +542,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-tenant-networks
-   :synopsis: List project networks
+   :title: List project networks
+   :synopsis: Lists project networks.
 
-   Lists project networks.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -552,10 +558,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-tenant-networks
-   :synopsis: Create project network
+   :title: Create project network
+   :synopsis: Creates a project network.
 
-   Creates a project network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -570,9 +575,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-quota-sets
-   :synopsis: Delete quota for tenant
+   :title: Delete quota for tenant
+   :synopsis: Deletes a quota for tenant.
 
-   Deletes a quota for tenant.
+   
 
    :tag: quota-sets
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -580,9 +586,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-quota-sets
-   :synopsis: Force-update quota
+   :title: Force-update quota
+   :synopsis: Force-updates quota for tenant.
 
-   Force-updates quota for tenant.
+   
 
    :requestexample: v2.1/examples/forceupdatequota_req.json
    :responseexample 200: v2.1/examples/forceupdatequota_resp_200.json
@@ -594,9 +601,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-quota-sets
-   :synopsis: Update quota
+   :title: Update quota
+   :synopsis: Updates quota for tenant.
 
-   Updates quota for tenant.
+   
 
    :requestexample: v2.1/examples/updatesquotatenant_req.json
    :responseexample 200: v2.1/examples/updatesquotatenant_resp_200.json
@@ -608,10 +616,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
-   :synopsis: Add host
+   :title: Add host
+   :synopsis: Adds a host to the specified aggregate.
 
-   Adds a host to the specified aggregate.
-   
    Specify the ``add_host`` action in the request body.
 
    :requestexample: v2.1/examples/addhost_req.json
@@ -625,10 +632,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
-   :synopsis: Create or update aggregate metadata
+   :title: Create or update aggregate metadata
+   :synopsis: Creates or replaces metadata for an aggregate.
 
-   Creates or replaces metadata for an aggregate.
-   
    Specify the ``add_metadata`` action in the request body.
 
    :requestexample: v2.1/examples/aggregatemetadata_req.json
@@ -642,10 +648,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
-   :synopsis: Remove host
+   :title: Remove host
+   :synopsis: Removes a host from a specified aggregate.
 
-   Removes a host from a specified aggregate.
-   
    Specify the ``remove_host`` action in the request body.
 
    :requestexample: v2.1/examples/removeaggregate_req.json
@@ -659,9 +664,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/limits
-   :synopsis: Show global and rate limits
+   :title: Show global and rate limits
+   :synopsis: Shows global and rate limit information.
 
-   Shows global and rate limit information.
+   
 
    :responseexample 200: v2.1/examples/getlimits_resp_200.json
    :accepts: application/json
@@ -672,9 +678,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/detail
-   :synopsis: List flavors with details
+   :title: List flavors with details
+   :synopsis: Lists flavors with details.
 
-   Lists flavors with details.
+   
 
    :responseexample 200: v2.1/examples/returnflavorall_resp_200.json
    :accepts: application/json
@@ -685,9 +692,10 @@
 
 
 .. http:get:: //v2.1/images/{image_id}
-   :synopsis: Get image details
+   :title: Get image details
+   :synopsis: Gets details for a specified image.
 
-   Gets details for a specified image.
+   
 
    :responseexample 200: v2.1/examples/getImage_resp_200.json
    :responseexample 203: v2.1/examples/getImage_resp_203.json
@@ -706,9 +714,10 @@
 
 
 .. http:delete:: //v2.1/images/{image_id}
-   :synopsis: Delete image
+   :title: Delete image
+   :synopsis: Deletes a specified image.
 
-   Deletes a specified image.
+   
 
    :tag: compute_images-v2.1
    :parameter image_id: The UUID for the image.
@@ -722,9 +731,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-snapshots/detail
-   :synopsis: List details for snapshots
+   :title: List details for snapshots
+   :synopsis: Lists details for all snapshots.
 
-   Lists details for all snapshots.
+   
 
    :responseexample 200: v2.1/examples/getSnapshotsDetail_resp_200.json
    :accepts: application/json
@@ -742,10 +752,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}/action
-   :synopsis: Reserve or release a fixed IP
+   :title: Reserve or release a fixed IP
+   :synopsis: Reserves or releases a fixed IP.
 
-   Reserves or releases a fixed IP.
-   
    To reserve a fixed IP address, specify ``reserve`` in the request
    body. To release a fixed IP address, specify ``unreserve`` in the
    request body.
@@ -767,9 +776,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-snapshots
-   :synopsis: Create snapshot
+   :title: Create snapshot
+   :synopsis: Creates a snapshot.
 
-   Creates a snapshot.
+   
 
    :requestexample: v2.1/examples/createSnapshot_req.json
    :responseexample 201: v2.1/examples/createSnapshot_resp_201.json
@@ -789,9 +799,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-snapshots
-   :synopsis: List snapshots
+   :title: List snapshots
+   :synopsis: Lists snapshots.
 
-   Lists snapshots.
+   
 
    :responseexample 200: v2.1/examples/getSnapshotsSimple_resp_200.json
    :accepts: application/json
@@ -809,9 +820,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access/detail
-   :synopsis: List flavors with details and access list
+   :title: List flavors with details and access list
+   :synopsis: Lists flavors with details. Includes access list information.
 
-   Lists flavors with details. Includes access list information.
+   
 
    :responseexample 200: v2.1/examples/list-flavor-accesslist-detail_resp_200.json
    :accepts: application/json
@@ -822,11 +834,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Show metadata item details
+   :title: Show metadata item details
+   :synopsis: Shows details for a specified metadata item, by key, for a specified server.
 
-   Shows details for a specified metadata item, by key, for a
-   specified server.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -844,11 +854,9 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Create or update metadata item
+   :title: Create or update metadata item
+   :synopsis: Creates or replaces a specified metadata item, by key, for a specified server.
 
-   Creates or replaces a specified metadata item, by key, for a
-   specified server.
-   
    Creates a metadata item that does not already exist in the server.
    Removes and completely replaces a metadata item that already exists
    in the server with the metadata item in the request.
@@ -872,10 +880,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
-   :synopsis: Delete metadata item
+   :title: Delete metadata item
+   :synopsis: Deletes a specified metadata item, by key, from a specified server.
 
-   Deletes a specified metadata item, by key, from a specified server.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -888,10 +895,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes
-   :synopsis: Add bare metal node
+   :title: Add bare metal node
+   :synopsis: Adds a bare metal node to a specified server.
 
-   Adds a bare metal node to a specified server.
-   
    Preconditions
    
    - You can add a bare metal node to a server with an ``ACTIVE`` ,
@@ -921,10 +927,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes
-   :synopsis: List bare metal nodes
+   :title: List bare metal nodes
+   :synopsis: Lists the bare metal nodes that are associated with a specified server.
 
-   Lists the bare metal nodes that are associated with a specified
-   server.
+   
 
    :responseexample 202: v2.1/examples/listBaremetalNodes_resp_202.json
    :accepts: application/json
@@ -945,9 +951,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-security-group-rules/{security_group_rule_id}
-   :synopsis: Delete security group rule
+   :title: Delete security group rule
+   :synopsis: Deletes a specified security group rule.
 
-   Deletes a specified security group rule.
+   
 
    :tag: os-security-group-rules-v2.1
    :parameter tenant_id: The ID of the tenant.
@@ -957,9 +964,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}/uptime
-   :synopsis: Show hypervisor uptime
+   :title: Show hypervisor uptime
+   :synopsis: Shows the uptime for a specified hypervisor.
 
-   Shows the uptime for a specified hypervisor.
+   
 
    :responseexample 200: v2.1/examples/showhypervisoruptime_resp_200.json
    :accepts: application/json
@@ -971,9 +979,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-security-groups
-   :synopsis: List security groups
+   :title: List security groups
+   :synopsis: Lists security groups.
 
-   Lists security groups.
+   
 
    :responseexample 200: v2.1/examples/listSecGroups_resp_200.json
    :accepts: application/json
@@ -984,9 +993,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-security-groups
-   :synopsis: Create security group
+   :title: Create security group
+   :synopsis: Creates a security group.
 
-   Creates a security group.
+   
 
    :requestexample: v2.1/examples/createSecGroup_req.json
    :responseexample 200: v2.1/examples/createSecGroup_resp_200.json
@@ -999,9 +1009,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}
-   :synopsis: Show aggregate details
+   :title: Show aggregate details
+   :synopsis: Shows the details of an aggregate, hosts and metadata included.
 
-   Shows the details of an aggregate, hosts and metadata included.
+   
 
    :requestexample: v2.1/examples/showaggregate_req.json
    :responseexample 200: v2.1/examples/showaggregate_resp_200.json
@@ -1014,10 +1025,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}
-   :synopsis: Update aggregate
+   :title: Update aggregate
+   :synopsis: Updates either or both the name and availability zone for a specified aggregate.
 
-   Updates either or both the name and availability zone for a
-   specified aggregate.
+   
 
    :requestexample: v2.1/examples/updateaggregate_req.json
    :responseexample 200: v2.1/examples/updateaggregate_resp_200.json
@@ -1030,9 +1041,10 @@
 
 
 .. http:get:: /
-   :synopsis: List API versions
+   :title: List API versions
+   :synopsis: Lists information about all Compute API versions.
 
-   Lists information about all Compute API versions.
+   
 
    :responseexample 300: v2.1/examples/listVersionsv2.1_resp_300.json
    :responseexample 200: v2.1/examples/listVersionsv2.1_resp_200.json
@@ -1044,9 +1056,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors
-   :synopsis: List flavors
+   :title: List flavors
+   :synopsis: Lists flavors.
 
-   Lists flavors.
+   
 
    :responseexample 200: v2.1/examples/getflavorbrief_resp_200.json
    :accepts: application/json
@@ -1057,9 +1070,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}
-   :synopsis: Create or update flavor extra specs
+   :title: Create or update flavor extra specs
+   :synopsis: Creates and updates flavor extra specs.
 
-   Creates and updates flavor extra specs.
+   
 
    :requestexample: v2.1/examples/updateflavor_req.json
    :responseexample 201: v2.1/examples/updateflavor_resp_201.json
@@ -1072,9 +1086,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}
-   :synopsis: Show flavor extra specs
+   :title: Show flavor extra specs
+   :synopsis: Lists extra specs for a specified flavor.
 
-   Lists extra specs for a specified flavor.
+   
 
    :requestexample: v2.1/examples/listflavor_req.json
    :responseexample 200: v2.1/examples/listflavor_resp_200.json
@@ -1087,9 +1102,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-certificates
-   :synopsis: Create certificate
+   :title: Create certificate
+   :synopsis: Creates a certificate.
 
-   Creates a certificate.
+   
 
    :responseexample 201: v2.1/examples/createcertificate_resp_201.json
    :accepts: application/json
@@ -1100,9 +1116,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cloudpipe
-   :synopsis: List cloudpipes
+   :title: List cloudpipes
+   :synopsis: Lists cloudpipes.
 
-   Lists cloudpipes.
+   
 
    :responseexample 200: v2.1/examples/listCloudpipes_resp_200.json
    :accepts: application/json
@@ -1120,9 +1137,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-cloudpipe
-   :synopsis: Create cloudpipe
+   :title: Create cloudpipe
+   :synopsis: Creates a cloudpipe.
 
-   Creates a cloudpipe.
+   
 
    :requestexample: v2.1/examples/createCloudpipe_req.json
    :responseexample 200: v2.1/examples/createCloudpipe_resp_200.json
@@ -1142,9 +1160,10 @@
 
 
 .. http:get:: //v2.1/images/{image_id}/metadata
-   :synopsis: Show image metadata
+   :title: Show image metadata
+   :synopsis: Shows metadata for a specified image.
 
-   Shows metadata for a specified image.
+   
 
    :responseexample 200: v2.1/examples/showImageMetadata_resp_200.json
    :responseexample 203: v2.1/examples/showImageMetadata_resp_203.json
@@ -1163,10 +1182,9 @@
 
 
 .. http:post:: //v2.1/images/{image_id}/metadata
-   :synopsis: Update image metadata items
+   :title: Update image metadata items
+   :synopsis: Updates metadata items by key for a specified image.
 
-   Updates metadata items by key for a specified image.
-   
    Replaces items that match the specified keys and does not modify
    items not specified in the request.
    
@@ -1191,10 +1209,9 @@
 
 
 .. http:put:: //v2.1/images/{image_id}/metadata
-   :synopsis: Create or replace image metadata
+   :title: Create or replace image metadata
+   :synopsis: Creates or replaces metadata for a specified image.
 
-   Creates or replaces metadata for a specified image.
-   
    Replaces items that match the specified keys. If you omit a key
    that already exists, this key retains its value.
    
@@ -1219,10 +1236,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-pci/{pci_id}
-   :synopsis: Show PCI device with extra information
+   :title: Show PCI device with extra information
+   :synopsis: Shows information for a specified PCI device. Includes extra information.
 
-   Shows information for a specified PCI device. Includes extra
-   information.
+   
 
    :responseexample 200: v2.1/examples/showPciDevicePool_resp_200.json
    :accepts: application/json
@@ -1234,9 +1251,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles
-   :synopsis: Create console for server
+   :title: Create console for server
+   :synopsis: Creates a console for a specified server instance.
 
-   Creates a console for a specified server instance.
+   
 
    :tag: os-consoles-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -1245,9 +1263,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles
-   :synopsis: Lists consoles for server
+   :title: Lists consoles for server
+   :synopsis: Lists all consoles for a specified server instance.
 
-   Lists all consoles for a specified server instance.
+   
 
    :responseexample 200: v2.1/examples/listConsoles_resp_200.json
    :accepts: application/json
@@ -1259,10 +1278,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cells
-   :synopsis: List cells with details
+   :title: List cells with details
+   :synopsis: Lists cells with details.
 
-   Lists cells with details.
-   
    When cells are not enabled, the cells API calls return a ``501
    NotImplemented`` error.
 
@@ -1276,10 +1294,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cells
-   :synopsis: List cells
+   :title: List cells
+   :synopsis: Lists cells.
 
-   Lists cells.
-   
    When cells are not enabled, the cells API calls return a ``501
    NotImplemented`` error.
 
@@ -1293,9 +1310,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-services
-   :synopsis: List services
+   :title: List services
+   :synopsis: Lists all services.
 
-   Lists all services.
+   
 
    :responseexample 200: v2.1/examples/listServices_resp_200.json
    :accepts: application/json
@@ -1306,9 +1324,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-services
-   :synopsis: Delete service
+   :title: Delete service
+   :synopsis: Deletes a specified service.
 
-   Deletes a specified service.
+   
 
    :requestexample: v2.1/examples/deleteService_req.json
    :accepts: application/json
@@ -1320,9 +1339,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns
-   :synopsis: List DNS domains
+   :title: List DNS domains
+   :synopsis: Lists registered DNS domains published by the DNS drivers.
 
-   Lists registered DNS domains published by the DNS drivers.
+   
 
    :responseexample 200: v2.1/examples/ListDomains_resp_200.json
    :accepts: application/json
@@ -1333,9 +1353,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-manage
-   :synopsis: Create flavor
+   :title: Create flavor
+   :synopsis: Creates a flavor.
 
-   Creates a flavor.
+   
 
    :requestexample: v2.1/examples/create-flavors_req.json
    :responseexample 201: v2.1/examples/create-flavors_resp_201.json
@@ -1347,9 +1368,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-instance-usage-audit-log/{before_timestamp}
-   :synopsis: List usage audits before specified time
+   :title: List usage audits before specified time
+   :synopsis: Lists usage audits that occurred before a specified time.
 
-   Lists usage audits that occurred before a specified time.
+   
 
    :responseexample 200: v2.1/examples/listinstanceusage_resp_200.json
    :accepts: application/json
@@ -1369,9 +1391,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-availability-zone
-   :synopsis: Get availability zone information
+   :title: Get availability zone information
+   :synopsis: Gets availability zone information.
 
-   Gets availability zone information.
+   
 
    :responseexample 200: v2.1/examples/getAvailabilityZone_resp_200.json
    :accepts: application/json
@@ -1382,10 +1405,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-networks
-   :synopsis: List networks
+   :title: List networks
+   :synopsis: Lists networks that are available to the project.
 
-   Lists networks that are available to the project.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -1399,10 +1421,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks
-   :synopsis: Create network
+   :title: Create network
+   :synopsis: Creates a network.
 
-   Creates a network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -1417,9 +1438,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ips-bulk/{host_name}
-   :synopsis: List floating IPs by host
+   :title: List floating IPs by host
+   :synopsis: Lists all floating IPs for a specified host.
 
-   Lists all floating IPs for a specified host.
+   
 
    :responseexample 200: v2.1/examples/ListFloatingIPsBulkbyHost_resp_200.json
    :accepts: application/json
@@ -1431,10 +1453,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks/add
-   :synopsis: Add network
+   :title: Add network
+   :synopsis: Adds a specified network to a project.
 
-   Adds a specified network to a project.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -1448,9 +1469,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/os-pci
-   :synopsis: List hypervisors with PCI statistics
+   :title: List hypervisors with PCI statistics
+   :synopsis: Lists hypervisors. Includes PCI device statistics.
 
-   Lists hypervisors. Includes PCI device statistics.
+   
 
    :responseexample 200: v2.1/examples/listHypervisorsPciDetails_resp_200.json
    :accepts: application/json
@@ -1461,9 +1483,10 @@
 
 
 .. http:get:: /v2.1/os-simple-tenant-usage/{tenant_id}
-   :synopsis: Show usage details for tenant
+   :title: Show usage details for tenant
+   :synopsis: Shows usage details for a specified tenant.
 
-   Shows usage details for a specified tenant.
+   
 
    :responseexample 200: v2.1/examples/retrievetenantall_resp_200.json
    :accepts: application/json
@@ -1474,9 +1497,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volume-types/{volume_type_id}
-   :synopsis: Show volume type
+   :title: Show volume type
+   :synopsis: Shows information for a specified volume type.
 
-   Shows information for a specified volume type.
+   
 
    :responseexample 200: v2.1/examples/getVolumeType_resp_200.json
    :accepts: application/json
@@ -1495,9 +1519,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
-   :synopsis: Show security group information
+   :title: Show security group information
+   :synopsis: Shows information for a specified security group.
 
-   Shows information for a specified security group.
+   
 
    :responseexample 200: v2.1/examples/showSecGroup_resp_200.json
    :accepts: application/json
@@ -1509,9 +1534,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
-   :synopsis: Update security group
+   :title: Update security group
+   :synopsis: Updates a security group.
 
-   Updates a security group.
+   
 
    :requestexample: v2.1/examples/updateSecGroup_req.json
    :responseexample 200: v2.1/examples/updateSecGroup_resp_200.json
@@ -1525,9 +1551,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
-   :synopsis: Delete security group
+   :title: Delete security group
+   :synopsis: Deletes a specified security group.
 
-   Deletes a specified security group.
+   
 
    :tag: security-groups
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -1536,11 +1563,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-fping
-   :synopsis: Ping instances
+   :title: Ping instances
+   :synopsis: Run the fping utility to ping all or specified instances and report which ones are alive.
 
-   Run the fping utility to ping all or specified instances and report
-   which ones are alive.
-   
    Specify the ``all_tenants=1`` query parameter to ping instances for
    all tenants. For example:
    
@@ -1566,9 +1591,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/os-server-actions/{server_id}
-   :synopsis: List actions for server
+   :title: List actions for server
+   :synopsis: Lists actions for a specified server.
 
-   Lists actions for a specified server.
+   
 
    :responseexample 200: v2.1/examples/returnactionlist_resp_200.json
    :accepts: application/json
@@ -1580,9 +1606,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-certificates/{certificate_id}
-   :synopsis: Show certificate details
+   :title: Show certificate details
+   :synopsis: Shows details for a specified certificate.
 
-   Shows details for a specified certificate.
+   
 
    :responseexample 200: v2.1/examples/returncertificate_resp_200.json
    :accepts: application/json
@@ -1594,9 +1621,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-quota-sets/detail
-   :synopsis: Show quotas (detailed)
+   :title: Show quotas (detailed)
+   :synopsis: Lists quotas with details for a tenant.
 
-   Lists quotas with details for a tenant.
+   
 
    :responseexample 200: v2.1/examples/listDetailQuotas_resp_200.json
    :accepts: application/json
@@ -1607,10 +1635,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Shelve server
+   :title: Shelve server
+   :synopsis: Shelves a running server.
 
-   Shelves a running server.
-   
    Specify the ``shelve`` action in the request body.
    
    All associated data and resources are kept but anything still in
@@ -1661,10 +1688,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Remove shelved instance
+   :title: Remove shelved instance
+   :synopsis: Removes an instance from the server.
 
-   Removes an instance from the server.
-   
    Specify the ``shelveOffload`` action in the request body.
    
    Data and resource associations are deleted. If an instance is no
@@ -1707,10 +1733,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Restore shelved server
+   :title: Restore shelved server
+   :synopsis: Restores a shelved server.
 
-   Restores a shelved server.
-   
    Specify the ``unshelve`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -1751,10 +1776,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Force delete instance
+   :title: Force delete instance
+   :synopsis: Force deletes an instance before deferred cleanup.
 
-   Force deletes an instance before deferred cleanup.
-   
    Specify the ``forceDelete`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -1771,11 +1795,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Restore soft-deleted instance
+   :title: Restore soft-deleted instance
+   :synopsis: Restores a previously soft-deleted instance. You cannot use this method to restore deleted instances.
 
-   Restores a previously soft-deleted instance. You cannot use this
-   method to restore deleted instances.
-   
    Specify the ``restore`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -1792,10 +1814,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Get console output for an instance
+   :title: Get console output for an instance
+   :synopsis: Gets console output for a server instance.
 
-   Gets console output for a server instance.
-   
    Specify the ``os-getConsoleOutput`` action in the request body.
 
    :requestexample: v2.1/examples/getConsoleOutput_req.json
@@ -1810,10 +1831,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Reboot server
+   :title: Reboot server
+   :synopsis: Reboots the specified server. Specify the ``reboot`` action in the request body.
 
-   Reboots the specified server. Specify the ``reboot`` action in the
-   request body.
+   
 
    :requestexample: v2.1/examples/rebootServer_req.json
    :accepts: application/json
@@ -1834,10 +1855,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Rebuild server
+   :title: Rebuild server
+   :synopsis: Rebuilds the specified server. Specify the ``rebuild`` action in the request body.
 
-   Rebuilds the specified server. Specify the ``rebuild`` action in
-   the request body.
+   
 
    :requestexample: v2.1/examples/rebuildServer_req.json
    :responseexample 202: v2.1/examples/rebuildServer_resp_202.json
@@ -1858,10 +1879,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Rebuild server with preserve ephemeral
+   :title: Rebuild server with preserve ephemeral
+   :synopsis: Rebuilds the specified server with preserve ephemeral option. Specify the ``rebuild`` action in the request body.
 
-   Rebuilds the specified server with preserve ephemeral option.
-   Specify the ``rebuild`` action in the request body.
+   
 
    :requestexample: v2.1/examples/rebuildServer-preserve-ephemeral_req.json
    :responseexample 202: v2.1/examples/rebuildServer-preserve-ephemeral_resp_202.json
@@ -1882,11 +1903,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Resize server
+   :title: Resize server
+   :synopsis: Resizes the specified server. Specify the ``resize`` action in the request body.
 
-   Resizes the specified server. Specify the ``resize`` action in the
-   request body.
-   
    A successfully resized server shows a ``VERIFY_RESIZE`` status,
    ``RESIZED`` VM status, and ``finished`` migration status. If you
    set the ``auto_confirm`` option of the Compute service to ``True``
@@ -1918,11 +1937,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Confirm resized server
+   :title: Confirm resized server
+   :synopsis: Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.
 
-   Confirms a pending resize action. Specify the ``confirmResize``
-   action in the request body.
-   
    After you make this request, you typically must keep polling the
    server status to determine whether the request succeeded. A
    successfully confirming resize operation shows a status of
@@ -1964,11 +1981,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Revert resized server
+   :title: Revert resized server
+   :synopsis: Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.
 
-   Cancels and reverts a pending resize action. Specify the
-   ``revertResize`` action in the request body.
-   
    After you make this request, you typically must keep polling the
    server status to determine whether the request succeeded. A
    successfully reverting resize operation shows a status of
@@ -2012,11 +2027,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Create image
+   :title: Create image
+   :synopsis: Creates an image. Specify the ``createImage`` action in the request body.
 
-   Creates an image. Specify the ``createImage`` action in the request
-   body.
-   
    After you make this request, you typically must keep polling the
    status of the created image to determine whether the request
    succeeded.
@@ -2073,10 +2086,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Start server
+   :title: Start server
+   :synopsis: Starts a stopped server and changes its status to ``ACTIVE`` .
 
-   Starts a stopped server and changes its status to ``ACTIVE`` .
-   
    Preconditions
    
    - The server status must be ``SHUTOFF`` .
@@ -2109,10 +2121,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Stop server
+   :title: Stop server
+   :synopsis: Stops a running server and changes its status to ``SHUTOFF`` .
 
-   Stops a running server and changes its status to ``SHUTOFF`` .
-   
    Preconditions
    
    - The server status must be ``ACTIVE`` or ``ERROR`` .
@@ -2137,11 +2148,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Attach volume
+   :title: Attach volume
+   :synopsis: Attaches a specified volume. Specify the ``attach`` action in the request body.
 
-   Attaches a specified volume. Specify the ``attach`` action in the
-   request body.
-   
    If the attach operation succeeds, the volume status is ``in-use`` .
    
    Preconditions
@@ -2179,10 +2188,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Rescue server
+   :title: Rescue server
+   :synopsis: Puts a server in rescue mode and changes its status to ``RESCUE`` .
 
-   Puts a server in rescue mode and changes its status to ``RESCUE`` .
-   
    If you specify the ``rescue_image_ref`` extended attribute, the
    specified image is used to rescue the instance. If you omit an
    image reference, the base image reference is used by default.
@@ -2205,10 +2213,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Unrescue server
+   :title: Unrescue server
+   :synopsis: Unrescues a specified server. Changes status to ``ACTIVE`` .
 
-   Unrescues a specified server. Changes status to ``ACTIVE`` .
-   
    Preconditions
    
    - The specified server must exist.
@@ -2232,10 +2239,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Get output for spice
+   :title: Get output for spice
+   :synopsis: Gets text console output.
 
-   Gets text console output.
-   
    Specify the ``get_spice_console`` action in the request body.
 
    :requestexample: v2.1/examples/getoutputspice_req.json
@@ -2249,10 +2255,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Get console output
+   :title: Get console output
+   :synopsis: Gets text console output for VNC.
 
-   Gets text console output for VNC.
-   
    Specify the ``get_vnc_console`` action in the request body.
 
    :requestexample: v2.1/examples/getoutputvnc_req.json
@@ -2266,10 +2271,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Change admin password
+   :title: Change admin password
+   :synopsis: Changes the admin password.
 
-   Changes the admin password.
-   
    Specify the ``changePassword`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2286,10 +2290,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Evacuate server
+   :title: Evacuate server
+   :synopsis: Evacuates a server from a failed host to a new one.
 
-   Evacuates a server from a failed host to a new one.
-   
    Specify the ``evacuate`` action in the request body.
 
    :requestexample: v2.1/examples/evacuateserver_req.json
@@ -2304,10 +2307,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Add IP to instance
+   :title: Add IP to instance
+   :synopsis: Adds an IP to a specified network on an instance.
 
-   Adds an IP to a specified network on an instance.
-   
    Specify the ``addFixedIp`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2324,10 +2326,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Remove IP from instance
+   :title: Remove IP from instance
+   :synopsis: Removes an IP from a specified instance.
 
-   Removes an IP from a specified instance.
-   
    Specify the ``remove_fixed_ip`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2344,10 +2345,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Change admin password
+   :title: Change admin password
+   :synopsis: Changes the admin password.
 
-   Changes the admin password.
-   
    Specify the ``changePassword`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2364,10 +2364,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Back up server
+   :title: Back up server
+   :synopsis: Backs up a server instance.
 
-   Backs up a server instance.
-   
    Specify the ``createBackup`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2384,10 +2383,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Inject network information
+   :title: Inject network information
+   :synopsis: Injects network information into a server.
 
-   Injects network information into a server.
-   
    Specify the ``injectNetworkInfo`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2404,10 +2402,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Live migrate to new host
+   :title: Live migrate to new host
+   :synopsis: Live-migrates a server to a new host without rebooting.
 
-   Live-migrates a server to a new host without rebooting.
-   
    Specify the ``os-migrateLive`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2424,10 +2421,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Lock server
+   :title: Lock server
+   :synopsis: Locks a server instance.
 
-   Locks a server instance.
-   
    Specify the ``lock`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2444,10 +2440,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Migrate server
+   :title: Migrate server
+   :synopsis: Migrates a server to a host. The scheduler chooses the host.
 
-   Migrates a server to a host. The scheduler chooses the host.
-   
    Specify the ``migrate`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2464,10 +2459,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Pause server
+   :title: Pause server
+   :synopsis: Pauses a server. Changes its status to PAUSED.
 
-   Pauses a server. Changes its status to PAUSED.
-   
    Specify the ``pause`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2484,10 +2478,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Reset server networking
+   :title: Reset server networking
+   :synopsis: Resets networking on a server.
 
-   Resets networking on a server.
-   
    Specify the ``resetNetwork`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2504,10 +2497,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Reset server state
+   :title: Reset server state
+   :synopsis: Resets the state of a server to a specified state.
 
-   Resets the state of a server to a specified state.
-   
    Specify the ``os-resetState`` action and the ``state`` in the
    request body.
    
@@ -2525,10 +2517,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Resume server
+   :title: Resume server
+   :synopsis: Resumes a SUSPENDED server and changes its status to ACTIVE.
 
-   Resumes a SUSPENDED server and changes its status to ACTIVE.
-   
    Specify the ``resume`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2545,10 +2536,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Suspend server
+   :title: Suspend server
+   :synopsis: Suspends a server and changes its status to SUSPENDED.
 
-   Suspends a server and changes its status to SUSPENDED.
-   
    Specify the ``suspend`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2565,10 +2555,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Unlock server
+   :title: Unlock server
+   :synopsis: Unlocks a server instance.
 
-   Unlocks a server instance.
-   
    Specify the ``unlock`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2585,10 +2574,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
-   :synopsis: Unpause server
+   :title: Unpause server
+   :synopsis: Unpauses a PAUSED server and changes its status to ACTIVE.
 
-   Unpauses a PAUSED server and changes its status to ACTIVE.
-   
    Specify the ``unpause`` action in the request body.
    
    Policy defaults enable only users with the administrative role or
@@ -2605,10 +2593,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-assisted-volume-snapshots/{snapshot_id}
-   :synopsis: Delete assisted volume snapshot
+   :title: Delete assisted volume snapshot
+   :synopsis: Deletes an assisted volume snapshot.
 
-   Deletes an assisted volume snapshot.
-   
    To make this request, add the ``delete_info`` query parameter to
    the URI, as follows:
    
@@ -2626,9 +2613,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx/{flavor_id}
-   :synopsis: Show flavor details
+   :title: Show flavor details
+   :synopsis: Shows details for a specified flavor.
 
-   Shows details for a specified flavor.
+   
 
    :responseexample 200: v2.1/examples/returndata_resp_200.json
    :accepts: application/json
@@ -2640,11 +2628,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/ips/{network_label}
-   :synopsis: Show IP details
+   :title: Show IP details
+   :synopsis: Shows IP addresses details for a specified network label of a specified server instance.
 
-   Shows IP addresses details for a specified network label of a
-   specified server instance.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -2661,9 +2647,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-security-group-rules
-   :synopsis: Create security group rule
+   :title: Create security group rule
+   :synopsis: Creates a rule for a specified security group.
 
-   Creates a rule for a specified security group.
+   
 
    :requestexample: v2.1/examples/createSecGroupRule_req.json
    :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.json
@@ -2676,9 +2663,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-server-groups
-   :synopsis: Create server group
+   :title: Create server group
+   :synopsis: Creates a server group.
 
-   Creates a server group.
+   
 
    :requestexample: v2.1/examples/createServerGroup_req.json
    :responseexample 200: v2.1/examples/createServerGroup_resp_200.json
@@ -2691,9 +2679,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-server-groups
-   :synopsis: List server groups
+   :title: List server groups
+   :synopsis: Lists server groups.
 
-   Lists server groups.
+   
 
    :responseexample 200: v2.1/examples/listServerGroups_resp_200.json
    :accepts: application/json
@@ -2704,9 +2693,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-security-group-default-rules
-   :synopsis: List default security group rules
+   :title: List default security group rules
+   :synopsis: Lists default security group rules.
 
-   Lists default security group rules.
+   
 
    :responseexample 200: v2.1/examples/listSecGroupDefaultRules_resp_200.json
    :accepts: application/json
@@ -2724,10 +2714,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-security-group-default-rules
-   :synopsis: Create default security group rule
+   :title: Create default security group rule
+   :synopsis: Creates a default security group rule.
 
-   Creates a default security group rule.
-   
    You must specify an IP protocol ( ``ip_protocol`` ) value if you
    specify a source ( ``from_port`` ) or destination ( ``to_port`` )
    port value. Otherwise, the operation returns the ``Bad request
@@ -2751,10 +2740,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ip-pools
-   :synopsis: List floating IP pools
+   :title: List floating IP pools
+   :synopsis: Lists floating IP pools.
 
-   Lists floating IP pools.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -2768,9 +2756,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/flavors/os-flavor-manage/{flavor_id}
-   :synopsis: Delete flavor
+   :title: Delete flavor
+   :synopsis: Deletes a flavor.
 
-   Deletes a flavor.
+   
 
    :requestexample: v2.1/examples/delete-flavors_req.json
    :accepts: application/json
@@ -2782,9 +2771,10 @@
 
 
 .. http:get:: /v2.1/extensions
-   :synopsis: List extensions
+   :title: List extensions
+   :synopsis: Lists available extensions.
 
-   Lists available extensions.
+   
 
    :responseexample 200: v2.1/examples/listExtensions_resp_200.json
    :responseexample 203: v2.1/examples/listExtensions_resp_203.json
@@ -2796,9 +2786,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-assisted-volume-snapshots
-   :synopsis: Create assisted volume snapshots
+   :title: Create assisted volume snapshots
+   :synopsis: Creates an assisted volume snapshot.
 
-   Creates an assisted volume snapshot.
+   
 
    :requestexample: v2.1/examples/createsnapshots_req.json
    :responseexample 200: v2.1/examples/createsnapshots_resp_200.json
@@ -2811,9 +2802,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-quota-sets/
-   :synopsis: Delete quota for user
+   :title: Delete quota for user
+   :synopsis: Deletes quota for a specified user.
 
-   Deletes quota for a specified user.
+   
 
    :tag: quota-sets
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -2821,9 +2813,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-quota-sets/
-   :synopsis: Update quota for user
+   :title: Update quota for user
+   :synopsis: Updates quota for user.
 
-   Updates quota for user.
+   
 
    :requestexample: v2.1/examples/updatesquotauser_req.json
    :responseexample 200: v2.1/examples/updatesquotauser_resp_200.json
@@ -2835,10 +2828,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}
-   :synopsis: Show server details with configuration drive
+   :title: Show server details with configuration drive
+   :synopsis: Shows details for a specified server. Includes configuration drive information.
 
-   Shows details for a specified server. Includes configuration drive
-   information.
+   
 
    :responseexample 200: v2.1/examples/returnserver_resp_200.json
    :accepts: application/json
@@ -2850,10 +2843,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}
-   :synopsis: Show server details
+   :title: Show server details
+   :synopsis: Shows details for a specified server. Includes server usage information.
 
-   Shows details for a specified server. Includes server usage
-   information.
+   
 
    :responseexample 200: v2.1/examples/showServer_resp_200.json
    :accepts: application/json
@@ -2865,9 +2858,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-security-groups
-   :synopsis: List security groups by server
+   :title: List security groups by server
+   :synopsis: Lists security groups for a specified server.
 
-   Lists security groups for a specified server.
+   
 
    :responseexample 200: v2.1/examples/listSecGroupsByServer_resp_200.json
    :accepts: application/json
@@ -2879,10 +2873,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-virtual-interfaces
-   :synopsis: List virtual interfaces
+   :title: List virtual interfaces
+   :synopsis: Lists the virtual interfaces for a specified instance.
 
-   Lists the virtual interfaces for a specified instance.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Change these
    permissions through the ``policy.json`` file.
@@ -2897,10 +2890,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-cloudpipe/configure-project
-   :synopsis: Update cloudpipe
+   :title: Update cloudpipe
+   :synopsis: Updates the virtual private network (VPN) IP address and port for a specified cloudpipe instance.
 
-   Updates the virtual private network (VPN) IP address and port for a
-   specified cloudpipe instance.
+   
 
    :requestexample: v2.1/examples/updateCloudpipe_req.json
    :accepts: application/json
@@ -2919,10 +2912,9 @@
 
 
 .. http:get:: /v2.1/extensions/{alias}
-   :synopsis: Get extension
+   :title: Get extension
+   :synopsis: Shows details about a specified extension.
 
-   Shows details about a specified extension.
-   
    Extensions introduce features and vendor-specific functionality to
    the API without requiring a version change.
 
@@ -2938,9 +2930,10 @@
 
 
 .. http:get:: //v2.1/images/detail
-   :synopsis: List images details
+   :title: List images details
+   :synopsis: Lists all details for available images.
 
-   Lists all details for available images.
+   
 
    :responseexample 200: v2.1/examples/listDetailImages_resp_200.json
    :responseexample 203: v2.1/examples/listDetailImages_resp_203.json
@@ -2995,9 +2988,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volumes/{volume_id}
-   :synopsis: Show volume information
+   :title: Show volume information
+   :synopsis: Shows information for a specified volume.
 
-   Shows information for a specified volume.
+   
 
    :responseexample 200: v2.1/examples/getVolume_resp_200.json
    :accepts: application/json
@@ -3016,9 +3010,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-volumes/{volume_id}
-   :synopsis: Delete volume
+   :title: Delete volume
+   :synopsis: Deletes a specified volume.
 
-   Deletes a specified volume.
+   
 
    :tag: os-volumes
    :parameter tenant_id: The unique identifier of the tenant or
@@ -3034,9 +3029,10 @@
 
 
 .. http:get:: //v2.1/images
-   :synopsis: List images
+   :title: List images
+   :synopsis: Lists IDs, names, and links for available images.
 
-   Lists IDs, names, and links for available images.
+   
 
    :responseexample 200: v2.1/examples/listImages_resp_200.json
    :responseexample 203: v2.1/examples/listImages_resp_203.json
@@ -3091,10 +3087,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/action
-   :synopsis: Add interface to bare metal node
+   :title: Add interface to bare metal node
+   :synopsis: Adds an interface to a bare metal node that is associated with a specified server.
 
-   Adds an interface to a bare metal node that is associated with a
-   specified server.
+   
 
    :requestexample: v2.1/examples/addInterfaceToBaremetalNode_req.json
    :responseexample 202: v2.1/examples/addInterfaceToBaremetalNode_resp_202.json
@@ -3116,10 +3112,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/action
-   :synopsis: Delete interface from bare metal node
+   :title: Delete interface from bare metal node
+   :synopsis: Deletes an interface from a bare metal node that is associated with a specified server.
 
-   Deletes an interface from a bare metal node that is associated with
-   a specified server.
+   
 
    :requestexample: v2.1/examples/deleteInterfaceFromBaremetalNode_req.json
    :accepts: application/json
@@ -3139,9 +3135,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-services/enable
-   :synopsis: Enable scheduling for a service
+   :title: Enable scheduling for a service
+   :synopsis: Enables scheduling for a service.
 
-   Enables scheduling for a service.
+   
 
    :requestexample: v2.1/examples/enableScheduling_req.json
    :responseexample 200: v2.1/examples/enableScheduling_resp_200.json
@@ -3153,9 +3150,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx
-   :synopsis: Create flavor
+   :title: Create flavor
+   :synopsis: Creates a flavor.
 
-   Creates a flavor.
+   
 
    :requestexample: v2.1/examples/createflavor_req.json
    :responseexample 200: v2.1/examples/createflavor_resp_200.json
@@ -3167,9 +3165,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-server-groups/{ServerGroup_id}
-   :synopsis: Show server group details
+   :title: Show server group details
+   :synopsis: Shows details for a specified server group.
 
-   Shows details for a specified server group.
+   
 
    :responseexample 200: v2.1/examples/showServerGroup_resp_200.json
    :accepts: application/json
@@ -3181,9 +3180,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-server-groups/{ServerGroup_id}
-   :synopsis: Delete server group
+   :title: Delete server group
+   :synopsis: Deletes a specified server group.
 
-   Deletes a specified server group.
+   
 
    :tag: server-groups
    :parameter ServerGroup_id: The server group ID.
@@ -3198,10 +3198,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-tenant-networks/{id}
-   :synopsis: Show project network information
+   :title: Show project network information
+   :synopsis: Shows information for a specified project network.
 
-   Shows information for a specified project network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3216,10 +3215,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-tenant-networks/{id}
-   :synopsis: Delete project network
+   :title: Delete project network
+   :synopsis: Deletes a specified project network.
 
-   Deletes a specified project network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3231,9 +3229,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hosts
-   :synopsis: List hosts
+   :title: List hosts
+   :synopsis: Lists hosts.
 
-   Lists hosts.
+   
 
    :responseexample 200: v2.1/examples/listallhosts_resp_200.json
    :accepts: application/json
@@ -3244,9 +3243,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-quota-class-sets/{class_id}
-   :synopsis: Show quota
+   :title: Show quota
+   :synopsis: Shows the quota for a specified class.
 
-   Shows the quota for a specified class.
+   
 
    :responseexample 200: v2.1/examples/showquota_resp_200.json
    :accepts: application/json
@@ -3258,9 +3258,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-quota-class-sets/{class_id}
-   :synopsis: Update quota
+   :title: Update quota
+   :synopsis: Updates quota for a specified class.
 
-   Updates quota for a specified class.
+   
 
    :requestexample: v2.1/examples/updatequota_req.json
    :responseexample 200: v2.1/examples/updatequota_resp_200.json
@@ -3273,10 +3274,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}/action
-   :synopsis: Add flavor access to tenant
+   :title: Add flavor access to tenant
+   :synopsis: Adds flavor access to a specified tenant and flavor.
 
-   Adds flavor access to a specified tenant and flavor.
-   
    Specify the ``add_tenant_access`` action and the ``tenant_id`` in
    the request body.
 
@@ -3291,11 +3291,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}/action
-   :synopsis: Remove flavor access from tenant
+   :title: Remove flavor access from tenant
+   :synopsis: Removes the specified flavor access from a specified tenant and flavor.
 
-   Removes the specified flavor access from a specified tenant and
-   flavor.
-   
    Specify the ``remove_tenant_access`` action and the ``tenant_id``
    in the request body.
 
@@ -3310,9 +3308,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-agents/{id}
-   :synopsis: Update agent build
+   :title: Update agent build
+   :synopsis: Updates an agent build.
 
-   Updates an agent build.
+   
 
    :requestexample: v2.1/examples/updatebuild_req.json
    :responseexample 200: v2.1/examples/updatebuild_resp_200.json
@@ -3326,9 +3325,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-keypairs/{keypair_name}
-   :synopsis: Show keypair information
+   :title: Show keypair information
+   :synopsis: Shows a keypair that is associated with the account.
 
-   Shows a keypair that is associated with the account.
+   
 
    :responseexample 200: v2.1/examples/showKeypair_resp_200.json
    :accepts: application/json
@@ -3340,9 +3340,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-keypairs/{keypair_name}
-   :synopsis: Delete keypair
+   :title: Delete keypair
+   :synopsis: Deletes a specified keypair.
 
-   Deletes a specified keypair.
+   
 
    :tag: keypairs
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -3351,9 +3352,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/statistics
-   :synopsis: Show hypervisor statistics
+   :title: Show hypervisor statistics
+   :synopsis: Shows statistics for all hypervisors.
 
-   Shows statistics for all hypervisors.
+   
 
    :responseexample 200: v2.1/examples/showhypervisorstatistics_resp_200.json
    :accepts: application/json
@@ -3364,9 +3366,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/os-server-actions/{server_id}/{request_id}
-   :synopsis: Show server action details
+   :title: Show server action details
+   :synopsis: Shows details for a specified action and specified server.
 
-   Shows details for a specified action and specified server.
+   
 
    :responseexample 200: v2.1/examples/returninstancedata_resp_200.json
    :accepts: application/json
@@ -3378,9 +3381,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-volume-types
-   :synopsis: List volume types
+   :title: List volume types
+   :synopsis: Lists volume types.
 
-   Lists volume types.
+   
 
    :responseexample 200: v2.1/examples/getVolumeTypes_resp_200.json
    :accepts: application/json
@@ -3398,11 +3402,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-fping/{id}
-   :synopsis: Ping an instance
+   :title: Ping an instance
+   :synopsis: Run the fping utility to ping a specified instance and report whether it is alive.
 
-   Run the fping utility to ping a specified instance and report
-   whether it is alive.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3417,9 +3419,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/{flavor_id}
-   :synopsis: Show flavor details
+   :title: Show flavor details
+   :synopsis: Shows details for a specified flavor.
 
-   Shows details for a specified flavor.
+   
 
    :responseexample 200: v2.1/examples/getflavorid_resp_200.json
    :accepts: application/json
@@ -3431,10 +3434,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/diagnostics
-   :synopsis: Get server diagnostics
+   :title: Get server diagnostics
+   :synopsis: Gets basic usage data for a specified server.
 
-   Gets basic usage data for a specified server.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3449,9 +3451,10 @@
 
 
 .. http:get:: //v2.1/images/{image_id}/metadata/{key}
-   :synopsis: Show image metadata item details
+   :title: Show image metadata item details
+   :synopsis: Shows details for a metadata item by key for a specified image.
 
-   Shows details for a metadata item by key for a specified image.
+   
 
    :responseexample 200: v2.1/examples/getImageMetadataItem_resp_200.json
    :responseexample 203: v2.1/examples/getImageMetadataItem_resp_203.json
@@ -3471,10 +3474,9 @@
 
 
 .. http:put:: //v2.1/images/{image_id}/metadata/{key}
-   :synopsis: Create or update image metadata item
+   :title: Create or update image metadata item
+   :synopsis: Creates or updates a metadata item by key for a specified image.
 
-   Creates or updates a metadata item by key for a specified image.
-   
    If this operation exceeds the metadata items quota, the API throws
    an ``overLimit (413)`` fault.
 
@@ -3497,9 +3499,10 @@
 
 
 .. http:delete:: //v2.1/images/{image_id}/metadata/{key}
-   :synopsis: Delete image metadata item
+   :title: Delete image metadata item
+   :synopsis: Deletes a metadata item by key for a specified image.
 
-   Deletes a metadata item by key for a specified image.
+   
 
    :tag: compute_image_metadata-v2.1
    :parameter image_id: The UUID for the image.
@@ -3515,9 +3518,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
-   :synopsis: Delete bare metal node
+   :title: Delete bare metal node
+   :synopsis: Deletes a bare metal node from a specified server.
 
-   Deletes a bare metal node from a specified server.
+   
 
    :tag: os-baremetal-nodes-v2.1
    :parameter tenant_id: The ID for the tenant or account in a multi-
@@ -3527,10 +3531,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
-   :synopsis: Show bare metal node details
+   :title: Show bare metal node details
+   :synopsis: Shows details for a specified bare metal node.
 
-   Shows details for a specified bare metal node.
-   
    Preconditions
    
    - The specified bare metal node must be associated with the server.
@@ -3555,9 +3558,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-availability-zone/detail
-   :synopsis: Get detailed availability zone information
+   :title: Get detailed availability zone information
+   :synopsis: Gets detailed availability zone information.
 
-   Gets detailed availability zone information.
+   
 
    :responseexample 200: v2.1/examples/getAvailabilityZoneDetails_resp_200.json
    :accepts: application/json
@@ -3568,11 +3572,9 @@
 
 
 .. http:post:: /v2.1/servers
-   :synopsis: Create server with scheduler hints
+   :title: Create server with scheduler hints
+   :synopsis: Creates a server with scheduler hints that are passed directly to the scheduler.
 
-   Creates a server with scheduler hints that are passed directly to
-   the scheduler.
-   
    The ``os:scheduler_hints`` parameter can be set at boot time. For
    details, see Scheduling .
 
@@ -3593,9 +3595,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-server-external-events
-   :synopsis: Create events
+   :title: Create events
+   :synopsis: Creates events.
 
-   Creates events.
+   
 
    :requestexample: v2.1/examples/createevents_req.json
    :responseexample 200: v2.1/examples/createevents_resp_200.json
@@ -3608,9 +3611,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-services/disable
-   :synopsis: Disable scheduling for a service
+   :title: Disable scheduling for a service
+   :synopsis: Disables scheduling for a service.
 
-   Disables scheduling for a service.
+   
 
    :requestexample: v2.1/examples/disableScheduling_req.json
    :responseexample 200: v2.1/examples/disableScheduling_resp_200.json
@@ -3622,9 +3626,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-quota-sets/defaults
-   :synopsis: Show default quotas
+   :title: Show default quotas
+   :synopsis: Shows default quotas for tenant.
 
-   Shows default quotas for tenant.
+   
 
    :responseexample 200: v2.1/examples/showdefaultquotas_resp_200.json
    :accepts: application/json
@@ -3635,9 +3640,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-pci/detail
-   :synopsis: List PCI devices with extra information
+   :title: List PCI devices with extra information
+   :synopsis: Lists PCI devices with extra information.
 
-   Lists PCI devices with extra information.
+   
 
    :responseexample 200: v2.1/examples/listPciDevicesDetail_resp_200.json
    :accepts: application/json
@@ -3648,9 +3654,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-floating-ips-bulk/delete
-   :synopsis: Bulk-delete floating IPs
+   :title: Bulk-delete floating IPs
+   :synopsis: Bulk-deletes floating IPs.
 
-   Bulk-deletes floating IPs.
+   
 
    :requestexample: v2.1/examples/DeleteFloatingIPBulk_req.json
    :responseexample 200: v2.1/examples/DeleteFloatingIPBulk_resp_200.json
@@ -3663,9 +3670,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{ip}
-   :synopsis: List DNS entries
+   :title: List DNS entries
+   :synopsis: Lists DNS entries for a specified domain and IP.
 
-   Lists DNS entries for a specified domain and IP.
+   
 
    :responseexample 200: v2.1/examples/FindEntriesbyIP_resp_200.json
    :accepts: application/json
@@ -3679,10 +3687,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ips
-   :synopsis: List floating IPs
+   :title: List floating IPs
+   :synopsis: Lists floating IP addresses associated with the tenant or account.
 
-   Lists floating IP addresses associated with the tenant or account.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3696,10 +3703,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-floating-ips
-   :synopsis: Allocate floating IP
+   :title: Allocate floating IP
+   :synopsis: Allocates a new floating IP address to a tenant or account.
 
-   Allocates a new floating IP address to a tenant or account.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -3716,9 +3722,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access
-   :synopsis: Create flavor with access list
+   :title: Create flavor with access list
+   :synopsis: Creates a flavor with access list.
 
-   Creates a flavor with access list.
+   
 
    :requestexample: v2.1/examples/create-flavor-accesslist_req.json
    :responseexample 200: v2.1/examples/create-flavor-accesslist_resp_200.json
@@ -3730,9 +3737,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access
-   :synopsis: List flavors with access list
+   :title: List flavors with access list
+   :synopsis: Lists flavors with access list information.
 
-   Lists flavors with access list information.
+   
 
    :responseexample 200: v2.1/examples/list-flavor-accesslist_resp_200.json
    :accepts: application/json
@@ -3743,10 +3751,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles/{console_id}
-   :synopsis: Show console details
+   :title: Show console details
+   :synopsis: Shows details for a specified console for a specified server instance.
 
-   Shows details for a specified console for a specified server
-   instance.
+   
 
    :responseexample 200: v2.1/examples/getConsole_resp_200.json
    :accepts: application/json
@@ -3759,9 +3767,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles/{console_id}
-   :synopsis: Delete console
+   :title: Delete console
+   :synopsis: Deletes a specified console for a specified server instance.
 
-   Deletes a specified console for a specified server instance.
+   
 
    :tag: os-consoles-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -3771,9 +3780,10 @@
 
 
 .. http:get:: /v2.1/os-simple-tenant-usage
-   :synopsis: List tenant usage for all tenants
+   :title: List tenant usage for all tenants
+   :synopsis: Lists usage information for all tenants.
 
-   Lists usage information for all tenants.
+   
 
    :responseexample 200: v2.1/examples/retrievetenantusage_resp_200.json
    :accepts: application/json
@@ -3783,9 +3793,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-snapshots/{snapshot_id}
-   :synopsis: Show snapshot
+   :title: Show snapshot
+   :synopsis: Shows information for a specified snapshot.
 
-   Shows information for a specified snapshot.
+   
 
    :responseexample 200: v2.1/examples/getSnapshot_resp_200.json
    :accepts: application/json
@@ -3804,10 +3815,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-snapshots/{snapshot_id}
-   :synopsis: Delete snapshot
+   :title: Delete snapshot
+   :synopsis: Deletes a specified snapshot from the account.
 
-   Deletes a specified snapshot from the account.
-   
    This operation is asynchronous. You must list snapshots repeatedly
    to determine whether the snapshot was deleted.
 
@@ -3825,10 +3835,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/os-pci
-   :synopsis: Show hypervisor with PCI statistics
+   :title: Show hypervisor with PCI statistics
+   :synopsis: Shows information for a specified hypervisor. Includes PCI device statistics.
 
-   Shows information for a specified hypervisor. Includes PCI device
-   statistics.
+   
 
    :responseexample 200: v2.1/examples/showHypervisorsPci_resp_200.json
    :accepts: application/json
@@ -3840,9 +3850,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}
-   :synopsis: Show fixed IP information
+   :title: Show fixed IP information
+   :synopsis: Shows information for a specified fixed IP address.
 
-   Shows information for a specified fixed IP address.
+   
 
    :responseexample 200: v2.1/examples/showIP_resp_200.json
    :accepts: application/json
@@ -3861,10 +3872,9 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-floating-ips/{id}
-   :synopsis: Deallocate floating IP
+   :title: Deallocate floating IP
+   :synopsis: Deallocates a specified floating IP address.
 
-   Deallocates a specified floating IP address.
-   
    You can use this call to deallocate and delete only manually-
    allocated floating IP addresses. You must manually deallocate auto-
    allocated floating IP addresses before you can delete them.
@@ -3880,9 +3890,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-keypairs
-   :synopsis: List keypairs
+   :title: List keypairs
+   :synopsis: Lists keypairs that are associated with the account.
 
-   Lists keypairs that are associated with the account.
+   
 
    :responseexample 200: v2.1/examples/getKeypair_resp_200.json
    :accepts: application/json
@@ -3894,9 +3905,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-keypairs
-   :synopsis: Create or import keypair
+   :title: Create or import keypair
+   :synopsis: Generates or imports a keypair.
 
-   Generates or imports a keypair.
+   
 
    :requestexample: v2.1/examples/createKeypair_req.json
    :responseexample 201: v2.1/examples/createKeypair_resp_201.json
@@ -3910,9 +3922,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}
-   :synopsis: Show hypervisor details
+   :title: Show hypervisor details
+   :synopsis: Shows details for a specified hypervisor.
 
-   Shows details for a specified hypervisor.
+   
 
    :responseexample 200: v2.1/examples/showhypervisordetails_resp_200.json
    :accepts: application/json
@@ -3924,9 +3937,10 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-aggregates
-   :synopsis: Create aggregate
+   :title: Create aggregate
+   :synopsis: Creates a specified aggregate in a specified availability zone.
 
-   Creates a specified aggregate in a specified availability zone.
+   
 
    :requestexample: v2.1/examples/createaggregate_req.json
    :responseexample 201: v2.1/examples/createaggregate_resp_201.json
@@ -3938,9 +3952,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-aggregates
-   :synopsis: List aggregates
+   :title: List aggregates
+   :synopsis: Lists aggregates id, name, and availability_zone for an aggregate.
 
-   Lists aggregates id, name, and availability_zone for an aggregate.
+   
 
    :requestexample: v2.1/examples/listaggregate_req.json
    :responseexample 200: v2.1/examples/listaggregate_resp_200.json
@@ -3952,9 +3967,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
-   :synopsis: Create or update DNS entry
+   :title: Create or update DNS entry
+   :synopsis: Creates or updates a DNS entry.
 
-   Creates or updates a DNS entry.
+   
 
    :requestexample: v2.1/examples/CreateEntry_req.json
    :responseexample 200: v2.1/examples/CreateEntry_resp_200.json
@@ -3969,9 +3985,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
-   :synopsis: Find unique DNS entry
+   :title: Find unique DNS entry
+   :synopsis: Finds a unique DNS entry for a specified domain and name.
 
-   Finds a unique DNS entry for a specified domain and name.
+   
 
    :responseexample 200: v2.1/examples/FindUniqueEntry_resp_200.json
    :accepts: application/json
@@ -3985,9 +4002,10 @@
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
-   :synopsis: Delete DNS entry
+   :title: Delete DNS entry
+   :synopsis: Deletes a specified DNS entry.
 
-   Deletes a specified DNS entry.
+   
 
    :tag: floating-ip-dns
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -3998,11 +4016,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
-   :synopsis: Disassociate network
+   :title: Disassociate network
+   :synopsis: Disassociates a specified network from a project so that the network can be reused.
 
-   Disassociates a specified network from a project so that the
-   network can be reused.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4017,10 +4033,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
-   :synopsis: Disassociate project
+   :title: Disassociate project
+   :synopsis: Disassociates the project from a specified network.
 
-   Disassociates the project from a specified network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4035,10 +4050,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
-   :synopsis: Disassociate host
+   :title: Disassociate host
+   :synopsis: Disassociates the host from a specified network.
 
-   Disassociates the host from a specified network.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4053,10 +4067,9 @@
 
 
 .. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
-   :synopsis: Associate host
+   :title: Associate host
+   :synopsis: Associates a specified network with a host.
 
-   Associates a specified network with a host.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4071,9 +4084,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}
-   :synopsis: Show host details
+   :title: Show host details
+   :synopsis: Shows details for a specified host.
 
-   Shows details for a specified host.
+   
 
    :responseexample 200: v2.1/examples/showinfo_resp_200.json
    :accepts: application/json
@@ -4085,9 +4099,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-hosts/{host_name}
-   :synopsis: Enable host
+   :title: Enable host
+   :synopsis: Enables or puts a specified host in maintenance mode.
 
-   Enables or puts a specified host in maintenance mode.
+   
 
    :requestexample: v2.1/examples/enablehost_req.json
    :responseexample 200: v2.1/examples/enablehost_resp_200.json
@@ -4100,10 +4115,10 @@
 
 
 .. http:put:: /v2.1/{tenant_id}/os-services/disable-log-reason
-   :synopsis: Log disabled service information
+   :title: Log disabled service information
+   :synopsis: Logs information to the service table about why a service was disabled.
 
-   Logs information to the service table about why a service was
-   disabled.
+   
 
    :requestexample: v2.1/examples/disableLogReason_req.json
    :responseexample 200: v2.1/examples/disableLogReason_resp_200.json
@@ -4116,10 +4131,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-server-password
-   :synopsis: Get server password
+   :title: Get server password
+   :synopsis: Gets the administrative password for a specified server.
 
-   Gets the administrative password for a specified server.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4134,10 +4148,9 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/ips
-   :synopsis: List IPs
+   :title: List IPs
+   :synopsis: Lists IP addresses that are assigned to an instance.
 
-   Lists IP addresses that are assigned to an instance.
-   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -4152,10 +4165,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}
-   :synopsis: Show flavor details with access list
+   :title: Show flavor details with access list
+   :synopsis: Shows details for a specified flavor. Includes access list information.
 
-   Shows details for a specified flavor. Includes access list
-   information.
+   
 
    :responseexample 200: v2.1/examples/show-flavor-accesslist_resp_200.json
    :accepts: application/json
@@ -4167,9 +4180,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/detail
-   :synopsis: List servers with configuration drive
+   :title: List servers with configuration drive
+   :synopsis: Lists server details. Includes configuration drive information.
 
-   Lists server details. Includes configuration drive information.
+   
 
    :responseexample 200: v2.1/examples/returnlist_resp_200.json
    :accepts: application/json
@@ -4180,9 +4194,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/detail
-   :synopsis: List servers with details
+   :title: List servers with details
+   :synopsis: Lists servers. Includes server usage details.
 
-   Lists servers. Includes server usage details.
+   
 
    :responseexample 200: v2.1/examples/listServersWithDetails_resp_200.json
    :accepts: application/json
@@ -4206,9 +4221,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx/detail
-   :synopsis: List flavors with details
+   :title: List flavors with details
+   :synopsis: Lists flavors with details.
 
-   Lists flavors with details.
+   
 
    :responseexample 200: v2.1/examples/returnallflavor_resp_200.json
    :accepts: application/json
@@ -4219,9 +4235,10 @@
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/reboot
-   :synopsis: Reboot host
+   :title: Reboot host
+   :synopsis: Reboots a host.
 
-   Reboots a host.
+   
 
    :responseexample 200: v2.1/examples/reboothost_resp_200.json
    :accepts: application/json

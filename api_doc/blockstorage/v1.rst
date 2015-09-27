@@ -1,7 +1,8 @@
 .. http:get:: /v1/{tenant_id}/snapshots/{snapshot_id}
-   :synopsis: Show snapshot information
+   :title: Show snapshot information
+   :synopsis: Shows information about a specified snapshot.
 
-   Shows information about a specified snapshot.
+   
 
    :responseexample 200: v1/examples/getSnapshot_resp_200.json
    :accepts: application/json
@@ -15,9 +16,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/snapshots/{snapshot_id}
-   :synopsis: Delete snapshot
+   :title: Delete snapshot
+   :synopsis: Deletes a specified snapshot.
 
-   Deletes a specified snapshot.
+   
 
    :tag: snapshots
    :parameter tenant_id: The unique identifier of the tenant or
@@ -28,9 +30,10 @@
 
 
 .. http:get:: /v1
-   :synopsis: Show API v1 details
+   :title: Show API v1 details
+   :synopsis: Shows details for Block Storage API v1.
 
-   Shows details for Block Storage API v1.
+   
 
    :responseexample 200: v1/examples/showVersionDetailsv1_resp_200.json
    :responseexample 203: v1/examples/showVersionDetailsv1_resp_203.json
@@ -42,9 +45,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}
-   :synopsis: Show quota details for user
+   :title: Show quota details for user
+   :synopsis: Shows details for quotas for a specified tenant and user.
 
-   Shows details for quotas for a specified tenant and user.
+   
 
    :responseexample 200: v1/examples/showQuotaDetailUser_resp_200.json
    :accepts: application/json
@@ -60,9 +64,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/types
-   :synopsis: List volume types
+   :title: List volume types
+   :synopsis: Lists volume types.
 
-   Lists volume types.
+   
 
    :responseexample 200: v1/examples/getVolumeTypes_resp_200.json
    :accepts: application/json
@@ -74,9 +79,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/types
-   :synopsis: Create volume type
+   :title: Create volume type
+   :synopsis: Creates a volume type.
 
-   Creates a volume type.
+   
 
    :requestexample: v1/examples/createVolumeType_req.json
    :responseexample 200: v1/examples/createVolumeType_resp_200.json
@@ -90,9 +96,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/volumes/detail
-   :synopsis: List volumes (detailed)
+   :title: List volumes (detailed)
+   :synopsis: Lists details for volume entities.
 
-   Lists details for volume entities.
+   
 
    :responseexample 200: v1/examples/getVolumesDetail_resp_200.json
    :accepts: application/json
@@ -104,9 +111,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/volumes
-   :synopsis: Create volume
+   :title: Create volume
+   :synopsis: Creates a volume.
 
-   Creates a volume.
+   
 
    :requestexample: v1/examples/createVolume_req.json
    :responseexample 201: v1/examples/createVolume_resp_201.json
@@ -120,9 +128,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/volumes
-   :synopsis: List volumes
+   :title: List volumes
+   :synopsis: Lists simple volume entities.
 
-   Lists simple volume entities.
+   
 
    :responseexample 200: v1/examples/getVolumesSimple_resp_200.json
    :accepts: application/json
@@ -134,9 +143,10 @@
 
 
 .. http:get:: /
-   :synopsis: List API versions
+   :title: List API versions
+   :synopsis: Lists information about all Block Storage API versions.
 
-   Lists information about all Block Storage API versions.
+   
 
    :responseexample 300: v1/examples/listVersionsv1_resp_300.json
    :responseexample 200: v1/examples/listVersionsv1_resp_200.json
@@ -148,9 +158,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/snapshots/detail
-   :synopsis: List snapshots (detailed)
+   :title: List snapshots (detailed)
+   :synopsis: Lists details for snapshot entities.
 
-   Lists details for snapshot entities.
+   
 
    :responseexample 200: v1/examples/getSnapshotsDetail_resp_200.json
    :accepts: application/json
@@ -162,9 +173,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/snapshots
-   :synopsis: Create snapshot
+   :title: Create snapshot
+   :synopsis: Creates a snapshot.
 
-   Creates a snapshot.
+   
 
    :requestexample: v1/examples/createSnapshot_req.json
    :responseexample 201: v1/examples/createSnapshot_resp_201.json
@@ -178,9 +190,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/snapshots
-   :synopsis: List snapshots
+   :title: List snapshots
+   :synopsis: Lists simple snapshot entities.
 
-   Lists simple snapshot entities.
+   
 
    :responseexample 200: v1/examples/getSnapshotsSimple_resp_200.json
    :accepts: application/json
@@ -192,9 +205,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/os-quota-sets/defaults
-   :synopsis: Get default quotas
+   :title: Get default quotas
+   :synopsis: Gets default quotas for a tenant.
 
-   Gets default quotas for a tenant.
+   
 
    :responseexample 200: v1/examples/getDefaults_resp_200.json
    :accepts: application/json
@@ -208,9 +222,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
-   :synopsis: Show quotas
+   :title: Show quotas
+   :synopsis: Shows quotas for a tenant.
 
-   Shows quotas for a tenant.
+   
 
    :responseexample 200: v1/examples/showQuota_resp_200.json
    :accepts: application/json
@@ -226,9 +241,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
-   :synopsis: Update quotas
+   :title: Update quotas
+   :synopsis: Updates quotas for a tenant.
 
-   Updates quotas for a tenant.
+   
 
    :requestexample: v1/examples/updateQuota_req.json
    :responseexample 200: v1/examples/updateQuota_resp_200.json
@@ -244,9 +260,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
-   :synopsis: Delete quotas
+   :title: Delete quotas
+   :synopsis: Deletes quotas for a tenant so the quotas revert to default values.
 
-   Deletes quotas for a tenant so the quotas revert to default values.
+   
 
    :tag: os-quota-sets-v1
    :parameter tenant_id: The ID for the tenant for which you want to
@@ -257,10 +274,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
-   :synopsis: Show quotas for user
+   :title: Show quotas for user
+   :synopsis: Enables an admin user to show quotas for a specified tenant and user.
 
-   Enables an admin user to show quotas for a specified tenant and
-   user.
+   
 
    :responseexample 200: v1/examples/showQuotaUser_resp_200.json
    :accepts: application/json
@@ -276,9 +293,10 @@
 
 
 .. http:post:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
-   :synopsis: Update quotas for user
+   :title: Update quotas for user
+   :synopsis: Updates quotas for a specified tenant/project and user.
 
-   Updates quotas for a specified tenant/project and user.
+   
 
    :requestexample: v1/examples/updateQuotaUser_req.json
    :responseexample 200: v1/examples/updateQuotaUser_resp_200.json
@@ -296,10 +314,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
-   :synopsis: Delete quotas for user
+   :title: Delete quotas for user
+   :synopsis: Deletes quotas for a user so that the quotas revert to default values.
 
-   Deletes quotas for a user so that the quotas revert to default
-   values.
+   
 
    :tag: os-quota-sets-v1
    :parameter tenant_id: The ID for the tenant for which you want to
@@ -312,9 +330,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/types/{volume_type_id}
-   :synopsis: Update volume type
+   :title: Update volume type
+   :synopsis: Updates a volume type.
 
-   Updates a volume type.
+   
 
    :requestexample: v1/examples/updateVolumeType_req.json
    :responseexample 200: v1/examples/updateVolumeType_resp_200.json
@@ -330,9 +349,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/types/{volume_type_id}
-   :synopsis: Update extra specs for a volume type
+   :title: Update extra specs for a volume type
+   :synopsis: Updates the extra specifications assigned to a volume type.
 
-   Updates the extra specifications assigned to a volume type.
+   
 
    :requestexample: v1/examples/updateVolumeTypeExtraSpecs_req.json
    :responseexample 200: v1/examples/updateVolumeTypeExtraSpecs_resp_200.json
@@ -348,9 +368,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/types/{volume_type_id}
-   :synopsis: Show volume type information
+   :title: Show volume type information
+   :synopsis: Shows information about a specified volume type.
 
-   Shows information about a specified volume type.
+   
 
    :responseexample 200: v1/examples/getVolumeType_resp_200.json
    :accepts: application/json
@@ -364,9 +385,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/types/{volume_type_id}
-   :synopsis: Delete volume type
+   :title: Delete volume type
+   :synopsis: Deletes a specified volume type.
 
-   Deletes a specified volume type.
+   
 
    :tag: types
    :parameter tenant_id: The unique identifier of the tenant or
@@ -377,9 +399,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
-   :synopsis: Show snapshot metadata
+   :title: Show snapshot metadata
+   :synopsis: Shows the metadata for a specified snapshot.
 
-   Shows the metadata for a specified snapshot.
+   
 
    :responseexample 200: v1/examples/showSnapshotMetadata_resp_200.json
    :accepts: application/json
@@ -393,9 +416,10 @@
 
 
 .. http:put:: /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
-   :synopsis: Update snapshot metadata
+   :title: Update snapshot metadata
+   :synopsis: Updates the metadata for a specified snapshot.
 
-   Updates the metadata for a specified snapshot.
+   
 
    :requestexample: v1/examples/updateSnapshotMetadata_req.json
    :responseexample 200: v1/examples/updateSnapshotMetadata_resp_200.json
@@ -411,9 +435,10 @@
 
 
 .. http:get:: /v1/{tenant_id}/volumes/{volume_id}
-   :synopsis: Show volume information
+   :title: Show volume information
+   :synopsis: Shows information about a specified volume.
 
-   Shows information about a specified volume.
+   
 
    :responseexample 200: v1/examples/getVolume_resp_200.json
    :accepts: application/json
@@ -426,9 +451,10 @@
 
 
 .. http:delete:: /v1/{tenant_id}/volumes/{volume_id}
-   :synopsis: Delete volume
+   :title: Delete volume
+   :synopsis: Deletes a specified volume.
 
-   Deletes a specified volume.
+   
 
    :tag: volumes
    :parameter tenant_id: The unique identifier of the tenant or

@@ -69,7 +69,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available cluster templates.", 
+        "description": "", 
         "examples": {}, 
         "id": "cluster-templates-list", 
         "method": "get", 
@@ -227,16 +227,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List available cluster templates", 
+        "summary": "Lists available cluster templates.", 
         "tags": [
           "clustertemplate"
-        ]
+        ], 
+        "title": "List available cluster templates"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a cluster template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "hadoop_version": "2.7.1", 
@@ -359,10 +360,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create cluster templates", 
+        "summary": "Creates a cluster template.", 
         "tags": [
           "clustertemplate"
-        ]
+        ], 
+        "title": "Create cluster templates"
       }
     ], 
     "/v1.1/{tenant_id}/cluster-templates/{cluster_template_id}": [
@@ -370,7 +372,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the cluster template.", 
+        "description": "", 
         "examples": {}, 
         "id": "cluster-templates-show", 
         "method": "get", 
@@ -536,16 +538,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show cluster template", 
+        "summary": "Shows the cluster template.", 
         "tags": [
           "clustertemplate"
-        ]
+        ], 
+        "title": "Show cluster template"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the cluster template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "cluster_configs": {
@@ -655,14 +658,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update cluster templates", 
+        "summary": "Updates the cluster template.", 
         "tags": [
           "clustertemplate"
-        ]
+        ], 
+        "title": "Update cluster templates"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes the cluster template.", 
+        "description": "", 
         "examples": {}, 
         "id": "cluster-templates-delete", 
         "method": "delete", 
@@ -691,10 +695,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete cluster template", 
+        "summary": "Deletes the cluster template.", 
         "tags": [
           "clustertemplate"
-        ]
+        ], 
+        "title": "Delete cluster template"
       }
     ], 
     "/v1.1/{tenant_id}/clusters": [
@@ -702,7 +707,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available clusters.", 
+        "description": "", 
         "examples": {}, 
         "id": "clusters-list", 
         "method": "get", 
@@ -1052,16 +1057,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List available clusters", 
+        "summary": "Lists available clusters.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "List available clusters"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a cluster.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "cluster_template_id": "57c92a7c-5c6a-42ea-9c6f-9f40a5aa4b36", 
@@ -1222,10 +1228,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create cluster", 
+        "summary": "Creates a cluster.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "Create cluster"
       }
     ], 
     "/v1.1/{tenant_id}/clusters/{cluster_id}": [
@@ -1233,7 +1240,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows cluster by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "clusters-get", 
         "method": "get", 
@@ -1392,14 +1399,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show details of a cluster", 
+        "summary": "Shows cluster by ID.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "Show details of a cluster"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a cluster.", 
+        "description": "", 
         "examples": {}, 
         "id": "clusters-delete", 
         "method": "delete", 
@@ -1428,16 +1436,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete a cluster", 
+        "summary": "Deletes a cluster.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "Delete a cluster"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Scales a cluster.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "add_node_groups": [
@@ -1854,16 +1863,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Scale cluster", 
+        "summary": "Scales a cluster.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "Scale cluster"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified cluster.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "is_public": true, 
@@ -2027,16 +2037,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update cluster", 
+        "summary": "Updates a specified cluster.", 
         "tags": [
           "clusters"
-        ]
+        ], 
+        "title": "Update cluster"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows provisioning progress of cluster.", 
+        "description": "", 
         "examples": {}, 
         "id": "show-progress", 
         "method": "get", 
@@ -2140,10 +2151,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show progress", 
+        "summary": "Shows provisioning progress of cluster.", 
         "tags": [
           "event-log"
-        ]
+        ], 
+        "title": "Show progress"
       }
     ], 
     "/v1.1/{tenant_id}/data-sources": [
@@ -2151,7 +2163,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all data sources.", 
+        "description": "", 
         "examples": {}, 
         "id": "dataSourcesList", 
         "method": "get", 
@@ -2203,16 +2215,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List data sources", 
+        "summary": "Lists all data sources.", 
         "tags": [
           "datasources"
-        ]
+        ], 
+        "title": "List data sources"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a data source.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is hdfs input", 
@@ -2257,10 +2270,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create data source", 
+        "summary": "Creates a data source.", 
         "tags": [
           "datasources"
-        ]
+        ], 
+        "title": "Create data source"
       }
     ], 
     "/v1.1/{tenant_id}/data-sources/{data_source_id}": [
@@ -2268,7 +2282,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified data source.", 
+        "description": "", 
         "examples": {}, 
         "id": "dataSourceInfo", 
         "method": "get", 
@@ -2314,14 +2328,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show data source details", 
+        "summary": "Shows details for a specified data source.", 
         "tags": [
           "datasources"
-        ]
+        ], 
+        "title": "Show data source details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified data source.", 
+        "description": "", 
         "examples": {}, 
         "id": "dataSourceDelete", 
         "method": "delete", 
@@ -2350,16 +2365,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete data source", 
+        "summary": "Deletes a specified data source.", 
         "tags": [
           "datasources"
-        ]
+        ], 
+        "title": "Delete data source"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified data source.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is public input", 
@@ -2410,10 +2426,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update data source", 
+        "summary": "Updates a specified data source.", 
         "tags": [
           "datasources"
-        ]
+        ], 
+        "title": "Update data source"
       }
     ], 
     "/v1.1/{tenant_id}/images": [
@@ -2421,7 +2438,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all images registered in the image registry.", 
+        "description": "", 
         "examples": {}, 
         "id": "imageslist", 
         "method": "get", 
@@ -2502,10 +2519,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images", 
+        "summary": "Lists all images registered in the image registry.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "List images"
       }
     ], 
     "/v1.1/{tenant_id}/images/{image_id}": [
@@ -2513,7 +2531,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details about a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "imageInfo", 
         "method": "get", 
@@ -2569,16 +2587,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image details", 
+        "summary": "Shows details about a specified image.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "Show image details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Registers a specified image in the image registry.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "Ubuntu image for Hadoop 2.7.1", 
@@ -2649,14 +2668,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Register image", 
+        "summary": "Registers a specified image in the image registry.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "Register image"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified image from the image registry.", 
+        "description": "", 
         "examples": {}, 
         "id": "imageUnreg", 
         "method": "delete", 
@@ -2685,10 +2705,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Unregister image", 
+        "summary": "Removes a specified image from the image registry.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "Unregister image"
       }
     ], 
     "/v1.1/{tenant_id}/images/{image_id}/tag": [
@@ -2696,7 +2717,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Adds tags to a specified image.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "tags": [
@@ -2772,10 +2793,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Add tags to image", 
+        "summary": "Adds tags to a specified image.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "Add tags to image"
       }
     ], 
     "/v1.1/{tenant_id}/images/{image_id}/untag": [
@@ -2783,7 +2805,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Removes tags from a specified image.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "tags": [
@@ -2857,10 +2879,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove tags from image", 
+        "summary": "Removes tags from a specified image.", 
         "tags": [
           "imageregistry"
-        ]
+        ], 
+        "title": "Remove tags from image"
       }
     ], 
     "/v1.1/{tenant_id}/job-binaries": [
@@ -2868,7 +2891,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the available job binaries.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binaries-list", 
         "method": "get", 
@@ -2929,16 +2952,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List job binaries", 
+        "summary": "Lists the available job binaries.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "List job binaries"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a job binary.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is a job binary", 
@@ -2985,10 +3009,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create job binary", 
+        "summary": "Creates a job binary.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "Create job binary"
       }
     ], 
     "/v1.1/{tenant_id}/job-binaries/{job_binaries_id}": [
@@ -2996,7 +3021,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified job binary.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binaries-show", 
         "method": "get", 
@@ -3041,14 +3066,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show job binary details", 
+        "summary": "Shows details for a specified job binary.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "Show job binary details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified job binary.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binaries-delete", 
         "method": "delete", 
@@ -3077,16 +3103,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete job binary", 
+        "summary": "Deletes a specified job binary.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "Delete job binary"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified job binary.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is a new job binary", 
@@ -3137,16 +3164,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update job binary", 
+        "summary": "Updates a specified job binary.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "Update job binary"
       }
     ], 
     "/v1.1/{tenant_id}/job-binaries/{job_binaries_id}/data": [
       {
         "consumes": [], 
-        "description": "Gets data for a specified job binary.\n\nThe response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:42:48 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
+        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:42:48 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
         "examples": {}, 
         "id": "job-binaries-data", 
         "method": "get", 
@@ -3182,10 +3210,11 @@
             }
           }
         }, 
-        "summary": "Get job binary data", 
+        "summary": "Gets data for a specified job binary.", 
         "tags": [
           "jobbinaries"
-        ]
+        ], 
+        "title": "Get job binary data"
       }
     ], 
     "/v1.1/{tenant_id}/job-binary-internals": [
@@ -3193,7 +3222,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the available job binary internals.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binary-internals-list", 
         "method": "get", 
@@ -3241,10 +3270,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List job binary internals", 
+        "summary": "Lists the available job binary internals.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "List job binary internals"
       }
     ], 
     "/v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}": [
@@ -3252,7 +3282,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified job binary internal.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binary-internals-show", 
         "method": "get", 
@@ -3296,14 +3326,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show job binary internal details", 
+        "summary": "Shows details for a specified job binary internal.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "Show job binary internal details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified job binary internal.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-binary-internals-delete", 
         "method": "delete", 
@@ -3332,16 +3363,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete job binary internal", 
+        "summary": "Deletes a specified job binary internal.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "Delete job binary internal"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified job binary internal.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "is_public": true, 
@@ -3390,16 +3422,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update job binary internal", 
+        "summary": "Updates a specified job binary internal.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "Update job binary internal"
       }
     ], 
     "/v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}/data": [
       {
         "consumes": [], 
-        "description": "Gets data for a specified job binary internal.\n\nThe response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:21:13 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
+        "description": "The response body shows the job binary raw data and the response\nheaders show the data length.\n\nExample response:\n\nHTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-\nType: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:21:13 GMT\nA = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =\nforeach A generate com.hadoopbook.pig.Trim(fruit); store B into\n'$OUTPUT' USING PigStorage();", 
         "examples": {}, 
         "id": "job-binary-internals-data", 
         "method": "get", 
@@ -3435,10 +3468,11 @@
             }
           }
         }, 
-        "summary": "Get job binary internal data", 
+        "summary": "Gets data for a specified job binary internal.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "Get job binary internal data"
       }
     ], 
     "/v1.1/{tenant_id}/job-binary-internals/{name}": [
@@ -3446,7 +3480,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a job binary internal.\n\nJob binary internals are objects that represent data processing\napplications and libraries that are stored in the internal\ndatabase.\n\nSpecify the file contents (raw data or script text) in the request\nbody. Specify the file name in the URI.", 
+        "description": "Job binary internals are objects that represent data processing\napplications and libraries that are stored in the internal\ndatabase.\n\nSpecify the file contents (raw data or script text) in the request\nbody. Specify the file name in the URI.", 
         "examples": {}, 
         "id": "job-binary-internals-create", 
         "method": "put", 
@@ -3490,10 +3524,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create job binary internal", 
+        "summary": "Creates a job binary internal.", 
         "tags": [
           "jobbinary-internals"
-        ]
+        ], 
+        "title": "Create job binary internal"
       }
     ], 
     "/v1.1/{tenant_id}/job-executions": [
@@ -3501,7 +3536,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available job executions.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-executions-list", 
         "method": "get", 
@@ -3647,10 +3682,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List job executions", 
+        "summary": "Lists available job executions.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "List job executions"
       }
     ], 
     "/v1.1/{tenant_id}/job-executions/{job_execution_id}": [
@@ -3658,7 +3694,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified job execution, by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-executions-show", 
         "method": "get", 
@@ -3810,14 +3846,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show job execution details", 
+        "summary": "Shows details for a specified job execution, by ID.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "Show job execution details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified job execution.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-executions-delete", 
         "method": "delete", 
@@ -3846,16 +3883,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete job execution", 
+        "summary": "Deletes a specified job execution.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "Delete job execution"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified job execution.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "is_public": true
@@ -4011,10 +4049,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update job execution", 
+        "summary": "Updates a specified job execution.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "Update job execution"
       }
     ], 
     "/v1.1/{tenant_id}/job-executions/{job_execution_id}/cancel": [
@@ -4022,7 +4061,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Cancels a specified job execution.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-executions-cancel", 
         "method": "get", 
@@ -4174,10 +4213,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Cancel job execution", 
+        "summary": "Cancels a specified job execution.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "Cancel job execution"
       }
     ], 
     "/v1.1/{tenant_id}/job-executions/{job_execution_id}/refresh-status": [
@@ -4185,7 +4225,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Refreshes the status of and shows information for a specified job\nexecution.", 
+        "description": "", 
         "examples": {}, 
         "id": "job-executions-refresh", 
         "method": "get", 
@@ -4337,10 +4377,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Refresh job execution status", 
+        "summary": "Refreshes the status of and shows information for a specified job execution.", 
         "tags": [
           "job-executions"
-        ]
+        ], 
+        "title": "Refresh job execution status"
       }
     ], 
     "/v1.1/{tenant_id}/job-types": [
@@ -4348,7 +4389,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists job types filtered by specified filter parameters.", 
+        "description": "", 
         "examples": {}, 
         "id": "jobTypesList", 
         "method": "get", 
@@ -4613,10 +4654,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List job types", 
+        "summary": "Lists job types filtered by specified filter parameters.", 
         "tags": [
           "job-types"
-        ]
+        ], 
+        "title": "List job types"
       }
     ], 
     "/v1.1/{tenant_id}/jobs": [
@@ -4624,7 +4666,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all jobs.", 
+        "description": "", 
         "examples": {}, 
         "id": "jobsList", 
         "method": "get", 
@@ -4710,16 +4752,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List jobs", 
+        "summary": "Lists all jobs.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "List jobs"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a job object.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is pig job example", 
@@ -4790,10 +4833,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create job", 
+        "summary": "Creates a job object.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "Create job"
       }
     ], 
     "/v1.1/{tenant_id}/jobs/{job_id}": [
@@ -4801,7 +4845,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified job.", 
+        "description": "", 
         "examples": {}, 
         "id": "jobInfo", 
         "method": "get", 
@@ -4859,14 +4903,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show job details", 
+        "summary": "Shows details for a specified job.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "Show job details"
       }, 
       {
         "consumes": [], 
-        "description": "Removes a specified job.", 
+        "description": "", 
         "examples": {}, 
         "id": "jobDelete", 
         "method": "delete", 
@@ -4895,16 +4940,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Remove job", 
+        "summary": "Removes a specified job.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "Remove job"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified job object.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "description": "This is public pig job example", 
@@ -4967,10 +5013,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update job object", 
+        "summary": "Updates a specified job object.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "Update job object"
       }
     ], 
     "/v1.1/{tenant_id}/jobs/{job_id}/execute": [
@@ -4978,7 +5025,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Runs a specified job.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "cluster_id": "811e1134-666f-4c48-bc92-afb5b10c9d8c", 
@@ -5060,10 +5107,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Run job", 
+        "summary": "Runs a specified job.", 
         "tags": [
           "jobs"
-        ]
+        ], 
+        "title": "Run job"
       }
     ], 
     "/v1.1/{tenant_id}/node-group-templates": [
@@ -5071,7 +5119,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available node group templates.", 
+        "description": "", 
         "examples": {}, 
         "id": "node-group-templates-list", 
         "method": "get", 
@@ -5167,16 +5215,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List node group templates", 
+        "summary": "Lists available node group templates.", 
         "tags": [
           "node-group-template"
-        ]
+        ], 
+        "title": "List node group templates"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a node group template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor_id": "2", 
@@ -5247,10 +5296,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create node group template", 
+        "summary": "Creates a node group template.", 
         "tags": [
           "node-group-template"
-        ]
+        ], 
+        "title": "Create node group template"
       }
     ], 
     "/v1.1/{tenant_id}/node-group-templates/{node_group_template_id}": [
@@ -5258,7 +5308,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows a specified node group template, by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "node-group-templates-get", 
         "method": "get", 
@@ -5327,14 +5377,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show node group template details", 
+        "summary": "Shows a specified node group template, by ID.", 
         "tags": [
           "node-group-template"
-        ]
+        ], 
+        "title": "Show node group template details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified node group template.", 
+        "description": "", 
         "examples": {}, 
         "id": "node-group-templates-delete", 
         "method": "delete", 
@@ -5363,16 +5414,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete node group template", 
+        "summary": "Deletes a specified node group template.", 
         "tags": [
           "node-group-template"
-        ]
+        ], 
+        "title": "Delete node group template"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified node group template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "flavor_id": "2", 
@@ -5445,10 +5497,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Update node group template", 
+        "summary": "Updates a specified node group template.", 
         "tags": [
           "node-group-template"
-        ]
+        ], 
+        "title": "Update node group template"
       }
     ], 
     "/v1.1/{tenant_id}/plugins": [
@@ -5456,7 +5509,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all registered plugins.", 
+        "description": "", 
         "examples": {}, 
         "id": "pluginslist", 
         "method": "get", 
@@ -5521,10 +5574,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List plugins", 
+        "summary": "Lists all registered plugins.", 
         "tags": [
           "plugins"
-        ]
+        ], 
+        "title": "List plugins"
       }
     ], 
     "/v1.1/{tenant_id}/plugins/{plugin_name}": [
@@ -5532,7 +5586,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified plugin.", 
+        "description": "", 
         "examples": {}, 
         "id": "pluginsget", 
         "method": "get", 
@@ -5576,10 +5630,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show plugin information", 
+        "summary": "Shows information for a specified plugin.", 
         "tags": [
           "plugins"
-        ]
+        ], 
+        "title": "Show plugin information"
       }
     ], 
     "/v1.1/{tenant_id}/plugins/{plugin_name}/{version}": [
@@ -5587,7 +5642,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows detailed information for a specified plugin.", 
+        "description": "", 
         "examples": {}, 
         "id": "pluginsgetversion", 
         "method": "get", 
@@ -5719,10 +5774,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show detailed plugin information", 
+        "summary": "Shows detailed information for a specified plugin.", 
         "tags": [
           "plugins"
-        ]
+        ], 
+        "title": "Show detailed plugin information"
       }
     ]
   }, 

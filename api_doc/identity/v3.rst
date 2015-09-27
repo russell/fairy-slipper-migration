@@ -1,7 +1,8 @@
 .. http:get:: /v3/projects
-   :synopsis: List projects
+   :title: List projects
+   :synopsis: Lists projects.
 
-   Lists projects.
+   
 
    :responseexample 200: v3/examples/listProjects_resp_200.json
    :accepts: application/json
@@ -26,9 +27,10 @@
 
 
 .. http:post:: /v3/projects
-   :synopsis: Create project
+   :title: Create project
+   :synopsis: Creates a project.
 
-   Creates a project.
+   
 
    :requestexample: v3/examples/createProject_req.json
    :responseexample 201: v3/examples/createProject_resp_201.json
@@ -47,9 +49,10 @@
 
 
 .. http:get:: /v3/policies
-   :synopsis: List policies
+   :title: List policies
+   :synopsis: Lists policies.
 
-   Lists policies.
+   
 
    :responseexample 200: v3/examples/listPolicies_resp_200.json
    :accepts: application/json
@@ -71,9 +74,10 @@
 
 
 .. http:post:: /v3/policies
-   :synopsis: Create policy
+   :title: Create policy
+   :synopsis: Creates a policy.
 
-   Creates a policy.
+   
 
    :requestexample: v3/examples/createPolicy_req.json
    :responseexample 201: v3/examples/createPolicy_resp_201.json
@@ -92,9 +96,10 @@
 
 
 .. http:get:: /v3/projects/{project_id}
-   :synopsis: Show project details
+   :title: Show project details
+   :synopsis: Shows details for a specified project.
 
-   Shows details for a specified project.
+   
 
    :responseexample 200: v3/examples/getProject_resp_200.json
    :accepts: application/json
@@ -112,9 +117,10 @@
 
 
 .. http:patch:: /v3/projects/{project_id}
-   :synopsis: Update project
+   :title: Update project
+   :synopsis: Updates a specified project.
 
-   Updates a specified project.
+   
 
    :requestexample: v3/examples/updateProject_req.json
    :responseexample 200: v3/examples/updateProject_resp_200.json
@@ -133,9 +139,10 @@
 
 
 .. http:delete:: /v3/projects/{project_id}
-   :synopsis: Delete project
+   :title: Delete project
+   :synopsis: Deletes a specified project.
 
-   Deletes a specified project.
+   
 
    :tag: projects
    :parameter project_id: Filters on the UUID for a project.
@@ -150,9 +157,10 @@
 
 
 .. http:get:: /v3/users
-   :synopsis: List users
+   :title: List users
+   :synopsis: Lists users.
 
-   Lists users.
+   
 
    :responseexample 200: v3/examples/listUsers_resp_200.json
    :accepts: application/json
@@ -176,9 +184,10 @@
 
 
 .. http:post:: /v3/users
-   :synopsis: Create user
+   :title: Create user
+   :synopsis: Creates a user.
 
-   Creates a user.
+   
 
    :requestexample: v3/examples/createUser_req.json
    :responseexample 201: v3/examples/createUser_resp_201.json
@@ -197,9 +206,10 @@
 
 
 .. http:put:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Grant role to project group
+   :title: Grant role to project group
+   :synopsis: Grants a specified role to a specified project group.
 
-   Grants a specified role to a specified project group.
+   
 
    :tag: projects
    :parameter role_id: The role ID.
@@ -216,9 +226,10 @@
 
 
 .. http:head:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Check role for project group
+   :title: Check role for project group
+   :synopsis: Validates that a specified project group has a specified role.
 
-   Validates that a specified project group has a specified role.
+   
 
    :tag: projects
    :parameter role_id: The role ID.
@@ -235,9 +246,10 @@
 
 
 .. http:delete:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Revoke role from project group
+   :title: Revoke role from project group
+   :synopsis: Revokes a specified role from a specified project group.
 
-   Revokes a specified role from a specified project group.
+   
 
    :tag: projects
    :parameter role_id: The role ID.
@@ -254,9 +266,10 @@
 
 
 .. http:get:: /
-   :synopsis: List versions
+   :title: List versions
+   :synopsis: Lists information about all Identity API versions.
 
-   Lists information about all Identity API versions.
+   
 
    :responseexample 200: v3/examples/getVersions-identity-v3_resp_200.json
    :accepts: application/json
@@ -273,9 +286,10 @@
 
 
 .. http:get:: /v3/users/{user_id}
-   :synopsis: Show user details
+   :title: Show user details
+   :synopsis: Shows details for a specified user.
 
-   Shows details for a specified user.
+   
 
    :responseexample 200: v3/examples/getUser_resp_200.json
    :accepts: application/json
@@ -293,10 +307,9 @@
 
 
 .. http:patch:: /v3/users/{user_id}
-   :synopsis: Update user
+   :title: Update user
+   :synopsis: Updates the password for or enables or disables a specified user.
 
-   Updates the password for or enables or disables a specified user.
-   
    If the back-end driver does not allow this functionality, this call
    might return the HTTP ``Not Implemented (501)`` status code.
 
@@ -317,9 +330,10 @@
 
 
 .. http:delete:: /v3/users/{user_id}
-   :synopsis: Delete user
+   :title: Delete user
+   :synopsis: Deletes a specified user.
 
-   Deletes a specified user.
+   
 
    :tag: users
    :parameter user_id: The user ID.
@@ -334,9 +348,10 @@
 
 
 .. http:get:: /v3/groups/{group_id}/users
-   :synopsis: List users in group
+   :title: List users in group
+   :synopsis: Lists the users in a specified group.
 
-   Lists the users in a specified group.
+   
 
    :responseexample 200: v3/examples/listGroupUsers_resp_200.json
    :accepts: application/json
@@ -362,10 +377,9 @@
 
 
 .. http:post:: /v3/auth/tokens
-   :synopsis: Authenticate
+   :title: Authenticate
+   :synopsis: Authenticates and generates a token.
 
-   Authenticates and generates a token.
-   
    Each REST request against the Identity Service requires the ``X
    -Auth-Token`` header. Clients obtain this token and the URL
    endpoints for other service APIs by supplying their valid
@@ -457,10 +471,9 @@
 
 
 .. http:get:: /v3/auth/tokens
-   :synopsis: Validate token
+   :title: Validate token
+   :synopsis: Validates a specified token.
 
-   Validates a specified token.
-   
    Pass your own token in the ``X-Auth-Token`` header. Pass the token
    to be validated in the ``X-Subject-Token`` header. The Identity API
    returns the same response as when the subject token was issued by
@@ -484,10 +497,9 @@
 
 
 .. http:head:: /v3/auth/tokens
-   :synopsis: Check token
+   :title: Check token
+   :synopsis: Validates a specified token.
 
-   Validates a specified token.
-   
    This call is similar to ``GET /auth/tokens`` but no response body
    is provided even in the ``X-Subject-Token`` header.
    
@@ -511,10 +523,9 @@
 
 
 .. http:delete:: /v3/auth/tokens
-   :synopsis: Revoke token
+   :title: Revoke token
+   :synopsis: Revokes a specified token.
 
-   Revokes a specified token.
-   
    This call is similar to ``HEAD /auth/tokens`` except that the ``X
    -Subject-Token`` token is immediately not valid, regardless of the
    ``expires_at`` attribute value. An additional ``X -Auth-Token`` is
@@ -534,9 +545,10 @@
 
 
 .. http:put:: /v3/groups/{group_id}/users/{user_id}
-   :synopsis: Assign user to group
+   :title: Assign user to group
+   :synopsis: Assigns a specified user to a specified group.
 
-   Assigns a specified user to a specified group.
+   
 
    :tag: groups
    :parameter user_id: The user ID.
@@ -552,9 +564,10 @@
 
 
 .. http:delete:: /v3/groups/{group_id}/users/{user_id}
-   :synopsis: Remove user from group
+   :title: Remove user from group
+   :synopsis: Removes a specified user from a specified group.
 
-   Removes a specified user from a specified group.
+   
 
    :tag: groups
    :parameter user_id: The user ID.
@@ -570,9 +583,10 @@
 
 
 .. http:head:: /v3/groups/{group_id}/users/{user_id}
-   :synopsis: Check user membership in group
+   :title: Check user membership in group
+   :synopsis: Validates that a specified user is in a specified group.
 
-   Validates that a specified user is in a specified group.
+   
 
    :tag: groups
    :parameter user_id: The user ID.
@@ -588,9 +602,10 @@
 
 
 .. http:get:: /v3/services
-   :synopsis: List services
+   :title: List services
+   :synopsis: Lists services.
 
-   Lists services.
+   
 
    :responseexample 200: v3/examples/listServices_resp_200.json
    :accepts: application/json
@@ -612,9 +627,10 @@
 
 
 .. http:post:: /v3/services
-   :synopsis: Create service
+   :title: Create service
+   :synopsis: Creates a service.
 
-   Creates a service.
+   
 
    :requestexample: v3/examples/createService_req.json
    :responseexample 201: v3/examples/createService_resp_201.json
@@ -633,9 +649,10 @@
 
 
 .. http:get:: /v3/regions/{region_id}
-   :synopsis: Show region details
+   :title: Show region details
+   :synopsis: Shows details for a specified region, by ID.
 
-   Shows details for a specified region, by ID.
+   
 
    :responseexample 200: v3/examples/getRegion_resp_200.json
    :accepts: application/json
@@ -653,10 +670,9 @@
 
 
 .. http:patch:: /v3/regions/{region_id}
-   :synopsis: Update region
+   :title: Update region
+   :synopsis: Updates a specified region.
 
-   Updates a specified region.
-   
    If you try to update a region with a parent region ID that does not
    exist, this call returns the HTTP ``Not Found(404)`` status code.
 
@@ -678,10 +694,9 @@
 
 
 .. http:delete:: /v3/regions/{region_id}
-   :synopsis: Delete region
+   :title: Delete region
+   :synopsis: Deletes a specified region.
 
-   Deletes a specified region.
-   
    If you try to delete a region that has child regions, this call
    returns the HTTP ``Conflict (409)`` status code.
 
@@ -698,9 +713,10 @@
 
 
 .. http:get:: /v3/roles
-   :synopsis: List roles
+   :title: List roles
+   :synopsis: Lists roles.
 
-   Lists roles.
+   
 
    :responseexample 200: v3/examples/listRoles_resp_200.json
    :accepts: application/json
@@ -721,9 +737,10 @@
 
 
 .. http:post:: /v3/roles
-   :synopsis: Create role
+   :title: Create role
+   :synopsis: Creates a role.
 
-   Creates a role.
+   
 
    :requestexample: v3/examples/createRole_req.json
    :responseexample 201: v3/examples/createRole_resp_201.json
@@ -742,9 +759,10 @@
 
 
 .. http:put:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Grant role to project user
+   :title: Grant role to project user
+   :synopsis: Grants a role to a specified user in a project.
 
-   Grants a role to a specified user in a project.
+   
 
    :tag: projects
    :parameter user_id: The user ID.
@@ -761,9 +779,10 @@
 
 
 .. http:head:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Check role for project user
+   :title: Check role for project user
+   :synopsis: Validates that a specified user has a specified role in a project.
 
-   Validates that a specified user has a specified role in a project.
+   
 
    :tag: projects
    :parameter user_id: The user ID.
@@ -780,9 +799,10 @@
 
 
 .. http:delete:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Revoke role from project user
+   :title: Revoke role from project user
+   :synopsis: Revokes a role from a specified project user.
 
-   Revokes a role from a specified project user.
+   
 
    :tag: projects
    :parameter user_id: The user ID.
@@ -799,9 +819,10 @@
 
 
 .. http:get:: /v3/users/{user_id}/groups
-   :synopsis: List groups for user
+   :title: List groups for user
+   :synopsis: Lists groups for a specified user.
 
-   Lists groups for a specified user.
+   
 
    :responseexample 200: v3/examples/listUserGroups_resp_200.json
    :accepts: application/json
@@ -819,9 +840,10 @@
 
 
 .. http:get:: /v3/projects/{project_id}/users/{user_id}/roles
-   :synopsis: List roles for project user
+   :title: List roles for project user
+   :synopsis: Lists roles for a specified user in a project.
 
-   Lists roles for a specified user in a project.
+   
 
    :responseexample 200: v3/examples/listProjectUserRoles_resp_200.json
    :accepts: application/json
@@ -840,9 +862,10 @@
 
 
 .. http:get:: /v3/credentials
-   :synopsis: List credentials
+   :title: List credentials
+   :synopsis: Lists credentials.
 
-   Lists credentials.
+   
 
    :responseexample 200: v3/examples/listCredentials_resp_200.json
    :accepts: application/json
@@ -863,10 +886,9 @@
 
 
 .. http:post:: /v3/credentials
-   :synopsis: Create credential
+   :title: Create credential
+   :synopsis: Creates a credential.
 
-   Creates a credential.
-   
    The following example shows how to create an EC2-style credential.
    The credential blob is a string that contains a JSON-serialized
    dictionary with the ``access`` and ``secret`` keys. This format is
@@ -890,9 +912,10 @@
 
 
 .. http:get:: /v3/endpoints
-   :synopsis: List endpoints
+   :title: List endpoints
+   :synopsis: Lists available endpoints.
 
-   Lists available endpoints.
+   
 
    :responseexample 200: v3/examples/listEndpoints_resp_200.json
    :accepts: application/json
@@ -914,9 +937,10 @@
 
 
 .. http:post:: /v3/endpoints
-   :synopsis: Create endpoint
+   :title: Create endpoint
+   :synopsis: Creates an endpoint.
 
-   Creates an endpoint.
+   
 
    :requestexample: v3/examples/createEndpoint_req.json
    :responseexample 201: v3/examples/createEndpoint_resp_201.json
@@ -935,9 +959,10 @@
 
 
 .. http:get:: /v3/projects/{project_id}/groups/{group_id}/roles
-   :synopsis: List roles for project group
+   :title: List roles for project group
+   :synopsis: Lists roles for a specified project group.
 
-   Lists roles for a specified project group.
+   
 
    :responseexample 200: v3/examples/listProjectGroupRoles_resp_200.json
    :accepts: application/json
@@ -956,9 +981,10 @@
 
 
 .. http:get:: /v3/policies/{policy_id}
-   :synopsis: Show policy details
+   :title: Show policy details
+   :synopsis: Shows details for a specified policy.
 
-   Shows details for a specified policy.
+   
 
    :responseexample 200: v3/examples/getPolicy_resp_200.json
    :accepts: application/json
@@ -976,9 +1002,10 @@
 
 
 .. http:patch:: /v3/policies/{policy_id}
-   :synopsis: Update policy
+   :title: Update policy
+   :synopsis: Updates a specified policy.
 
-   Updates a specified policy.
+   
 
    :requestexample: v3/examples/updatePolicy_req.json
    :responseexample 200: v3/examples/updatePolicy_resp_200.json
@@ -997,9 +1024,10 @@
 
 
 .. http:delete:: /v3/policies/{policy_id}
-   :synopsis: Delete policy
+   :title: Delete policy
+   :synopsis: Deletes a specified policy.
 
-   Deletes a specified policy.
+   
 
    :tag: policies
    :parameter policy_id: The policy ID.
@@ -1014,7 +1042,8 @@
 
 
 .. http:get:: /v3
-   :synopsis: Show API version details
+   :title: Show API version details
+   :synopsis: 
 
    Shows details for the Identity API v3.
 
@@ -1033,9 +1062,10 @@
 
 
 .. http:put:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Grant role to domain group
+   :title: Grant role to domain group
+   :synopsis: Grants a specified role to a specified domain group.
 
-   Grants a specified role to a specified domain group.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1052,9 +1082,10 @@
 
 
 .. http:head:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Check role for domain group
+   :title: Check role for domain group
+   :synopsis: Validates that a specified group has a specified role on a domain.
 
-   Validates that a specified group has a specified role on a domain.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1071,9 +1102,10 @@
 
 
 .. http:delete:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-   :synopsis: Revoke role from domain group
+   :title: Revoke role from domain group
+   :synopsis: Revokes a role from a group on a domain.
 
-   Revokes a role from a group on a domain.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1090,9 +1122,10 @@
 
 
 .. http:get:: /v3/groups/{group_id}
-   :synopsis: Show group details
+   :title: Show group details
+   :synopsis: Shows details for a specified group.
 
-   Shows details for a specified group.
+   
 
    :responseexample 200: v3/examples/getGroup_resp_200.json
    :accepts: application/json
@@ -1110,10 +1143,9 @@
 
 
 .. http:patch:: /v3/groups/{group_id}
-   :synopsis: Update group
+   :title: Update group
+   :synopsis: Updates a specified group.
 
-   Updates a specified group.
-   
    If the back-end driver does not allow this functionality, this
    operation might return the HTTP ``Not Implemented(501)`` status
    code.
@@ -1135,9 +1167,10 @@
 
 
 .. http:delete:: /v3/groups/{group_id}
-   :synopsis: Delete group
+   :title: Delete group
+   :synopsis: Deletes a specified group.
 
-   Deletes a specified group.
+   
 
    :tag: groups
    :parameter group_id: The group ID.
@@ -1152,10 +1185,9 @@
 
 
 .. http:post:: /v3/regions
-   :synopsis: Create region
+   :title: Create region
+   :synopsis: Creates a region.
 
-   Creates a region.
-   
    If you try to add a region with a parent region ID that does not
    exist, this call returns the HTTP ``Not Found(404)`` status code.
    
@@ -1180,9 +1212,10 @@
 
 
 .. http:get:: /v3/regions
-   :synopsis: List regions
+   :title: List regions
+   :synopsis: Lists regions.
 
-   Lists regions.
+   
 
    :responseexample 200: v3/examples/listRegions_resp_200.json
    :accepts: application/json
@@ -1201,9 +1234,10 @@
 
 
 .. http:get:: /v3/domains
-   :synopsis: List domains
+   :title: List domains
+   :synopsis: Lists domains.
 
-   Lists domains.
+   
 
    :responseexample 200: v3/examples/listDomains_resp_200.json
    :accepts: application/json
@@ -1226,9 +1260,10 @@
 
 
 .. http:post:: /v3/domains
-   :synopsis: Create domain
+   :title: Create domain
+   :synopsis: Creates a domain.
 
-   Creates a domain.
+   
 
    :requestexample: v3/examples/createDomain_req.json
    :responseexample 201: v3/examples/createDomain_resp_201.json
@@ -1247,9 +1282,10 @@
 
 
 .. http:get:: /v3/domains/{domain_id}/users/{user_id}/roles
-   :synopsis: List roles for domain user
+   :title: List roles for domain user
+   :synopsis: Lists roles for a user on a domain.
 
-   Lists roles for a user on a domain.
+   
 
    :responseexample 200: v3/examples/listDomainUserRoles_resp_200.json
    :accepts: application/json
@@ -1268,9 +1304,10 @@
 
 
 .. http:get:: /v3/OS-PKI/revoked
-   :synopsis: List revoked tokens
+   :title: List revoked tokens
+   :synopsis: Lists revoked PKI tokens.
 
-   Lists revoked PKI tokens.
+   
 
    :responseexample 200: v3/examples/listRevokedTokens_resp_200.json
    :accepts: application/json
@@ -1290,9 +1327,10 @@
 
 
 .. http:put:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Grant role to domain user
+   :title: Grant role to domain user
+   :synopsis: Grants a role to a specified domain user.
 
-   Grants a role to a specified domain user.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1309,9 +1347,10 @@
 
 
 .. http:head:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Check role for domain user
+   :title: Check role for domain user
+   :synopsis: Validates that a specified user has a specified role on a domain.
 
-   Validates that a specified user has a specified role on a domain.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1328,9 +1367,10 @@
 
 
 .. http:delete:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-   :synopsis: Revoke role from domain user
+   :title: Revoke role from domain user
+   :synopsis: Revokes a role from a specified domain user.
 
-   Revokes a role from a specified domain user.
+   
 
    :tag: domains
    :parameter domain_id: Filters on domain_id.
@@ -1347,10 +1387,9 @@
 
 
 .. http:put:: /v3/regions/{user_defined_region_id}
-   :synopsis: Create region with user-defined ID
+   :title: Create region with user-defined ID
+   :synopsis: Creates a region with a user-defined region ID.
 
-   Creates a region with a user-defined region ID.
-   
    The user-defined region ID must be unique to the OpenStack
    deployment. If not, this call returns the HTTP ``Conflict(409)``
    status code. You must URL-encode the user-defined region ID if it
@@ -1381,10 +1420,9 @@
 
 
 .. http:get:: /v3/role_assignments
-   :synopsis: List role assignments
+   :title: List role assignments
+   :synopsis: Lists role assignments.
 
-   Lists role assignments.
-   
    Because the role assignments list can be long, use the query
    parameters to filter the list.
    
@@ -1434,9 +1472,10 @@
 
 
 .. http:get:: /v3/domains/{domain_id}
-   :synopsis: Show domain details
+   :title: Show domain details
+   :synopsis: Shows details for a specified domain.
 
-   Shows details for a specified domain.
+   
 
    :responseexample 200: v3/examples/getDomain_resp_200.json
    :accepts: application/json
@@ -1454,9 +1493,10 @@
 
 
 .. http:patch:: /v3/domains/{domain_id}
-   :synopsis: Update domain
+   :title: Update domain
+   :synopsis: Updates a specified domain.
 
-   Updates a specified domain.
+   
 
    :requestexample: v3/examples/updateDomain_req.json
    :responseexample 200: v3/examples/updateDomain_resp_200.json
@@ -1476,10 +1516,9 @@
 
 
 .. http:delete:: /v3/domains/{domain_id}
-   :synopsis: Delete domain
+   :title: Delete domain
+   :synopsis: Deletes a specified domain.
 
-   Deletes a specified domain.
-   
    To minimize the risk of accidentally deleting a domain, you must
    first disable the domain by using the update domain method. If you
    try to delete an enabled domain, this call returns an HTTP
@@ -1502,9 +1541,10 @@
 
 
 .. http:get:: /v3/services/{service_id}
-   :synopsis: Show service details
+   :title: Show service details
+   :synopsis: Shows details for a specified service.
 
-   Shows details for a specified service.
+   
 
    :responseexample 200: v3/examples/getService_resp_200.json
    :accepts: application/json
@@ -1522,9 +1562,10 @@
 
 
 .. http:patch:: /v3/services/{service_id}
-   :synopsis: Update service
+   :title: Update service
+   :synopsis: Updates a specified service.
 
-   Updates a specified service.
+   
 
    :requestexample: v3/examples/updateService_req.json
    :responseexample 200: v3/examples/updateService_resp_200.json
@@ -1544,10 +1585,9 @@
 
 
 .. http:delete:: /v3/services/{service_id}
-   :synopsis: Delete service
+   :title: Delete service
+   :synopsis: Deletes a specified service.
 
-   Deletes a specified service.
-   
    If you try to delete a service when endpoints exist, this call
    either deletes all associated endpoints or fails until all
    endpoints are deleted.
@@ -1565,9 +1605,10 @@
 
 
 .. http:patch:: /v3/endpoints/{endpoint_id}
-   :synopsis: Update endpoint
+   :title: Update endpoint
+   :synopsis: Updates a specified endpoint.
 
-   Updates a specified endpoint.
+   
 
    :requestexample: v3/examples/updateEndpoint_req.json
    :responseexample 200: v3/examples/updateEndpoint_resp_200.json
@@ -1587,9 +1628,10 @@
 
 
 .. http:delete:: /v3/endpoints/{endpoint_id}
-   :synopsis: Delete endpoint
+   :title: Delete endpoint
+   :synopsis: Deletes a specified endpoint.
 
-   Deletes a specified endpoint.
+   
 
    :tag: endpoints
    :parameter endpoint_id: The endpoint ID.
@@ -1604,9 +1646,10 @@
 
 
 .. http:get:: /v3/roles/{role_id}
-   :synopsis: Show role details
+   :title: Show role details
+   :synopsis: Shows details for a specified role.
 
-   Shows details for a specified role.
+   
 
    :responseexample 200: v3/examples/getRole_resp_200.json
    :accepts: application/json
@@ -1624,9 +1667,10 @@
 
 
 .. http:patch:: /v3/roles/{role_id}
-   :synopsis: Update role
+   :title: Update role
+   :synopsis: Updates a specified role.
 
-   Updates a specified role.
+   
 
    :requestexample: v3/examples/updateRole_req.json
    :responseexample 200: v3/examples/updateRole_resp_200.json
@@ -1645,9 +1689,10 @@
 
 
 .. http:delete:: /v3/roles/{role_id}
-   :synopsis: Delete role
+   :title: Delete role
+   :synopsis: Deletes a specified role.
 
-   Deletes a specified role.
+   
 
    :tag: roles
    :parameter role_id: The role ID.
@@ -1662,9 +1707,10 @@
 
 
 .. http:get:: /v3/domains/{domain_id}/groups/{group_id}/roles
-   :synopsis: List roles for domain group
+   :title: List roles for domain group
+   :synopsis: Lists roles for a specified domain group.
 
-   Lists roles for a specified domain group.
+   
 
    :responseexample 200: v3/examples/listDomainGroupRoles_resp_200.json
    :accepts: application/json
@@ -1683,9 +1729,10 @@
 
 
 .. http:get:: /v3/credentials/{credential_id}
-   :synopsis: Show credential details
+   :title: Show credential details
+   :synopsis: Shows details for a specified credential.
 
-   Shows details for a specified credential.
+   
 
    :responseexample 200: v3/examples/getCredential_resp_200.json
    :accepts: application/json
@@ -1703,9 +1750,10 @@
 
 
 .. http:patch:: /v3/credentials/{credential_id}
-   :synopsis: Update credential
+   :title: Update credential
+   :synopsis: Updates a specified credential.
 
-   Updates a specified credential.
+   
 
    :requestexample: v3/examples/updateCredential_req.json
    :responseexample 200: v3/examples/updateCredential_resp_200.json
@@ -1724,9 +1772,10 @@
 
 
 .. http:delete:: /v3/credentials/{credential_id}
-   :synopsis: Delete credential
+   :title: Delete credential
+   :synopsis: Deletes a specified credential.
 
-   Deletes a specified credential.
+   
 
    :tag: credentials
    :parameter credential_id: The credential ID.
@@ -1741,9 +1790,10 @@
 
 
 .. http:get:: /v3/groups
-   :synopsis: List groups
+   :title: List groups
+   :synopsis: Lists groups.
 
-   Lists groups.
+   
 
    :responseexample 200: v3/examples/listGroups_resp_200.json
    :accepts: application/json
@@ -1760,9 +1810,10 @@
 
 
 .. http:post:: /v3/groups
-   :synopsis: Create group
+   :title: Create group
+   :synopsis: Creates a group.
 
-   Creates a group.
+   
 
    :requestexample: v3/examples/createGroup_req.json
    :responseexample 201: v3/examples/createGroup_resp_201.json
@@ -1781,9 +1832,10 @@
 
 
 .. http:get:: /v3/users/{user_id}/projects
-   :synopsis: List projects for user
+   :title: List projects for user
+   :synopsis: List projects for a specified user.
 
-   List projects for a specified user.
+   
 
    :responseexample 200: v3/examples/listUserProjects_resp_200.json
    :accepts: application/json

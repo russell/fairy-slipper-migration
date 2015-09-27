@@ -626,7 +626,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all Orchestration API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "getVersions-heat-v1", 
         "method": "get", 
@@ -655,10 +655,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List versions", 
+        "summary": "Lists all Orchestration API versions.", 
         "tags": [
           "heat-versions"
-        ]
+        ], 
+        "title": "List versions"
       }
     ], 
     "/v1/{tenant_id}/build_info": [
@@ -666,7 +667,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows build information for an Orchestration deployment.", 
+        "description": "", 
         "examples": {}, 
         "id": "build_info_show", 
         "method": "get", 
@@ -698,10 +699,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show build information", 
+        "summary": "Shows build information for an Orchestration deployment.", 
         "tags": [
           "build-info"
-        ]
+        ], 
+        "title": "Show build information"
       }
     ], 
     "/v1/{tenant_id}/resource_types": [
@@ -709,7 +711,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the supported template resource types.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_type_list", 
         "method": "get", 
@@ -802,10 +804,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List resource types", 
+        "summary": "Lists the supported template resource types.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "List resource types"
       }
     ], 
     "/v1/{tenant_id}/resource_types/{type_name}": [
@@ -813,7 +816,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the interface schema for a specified resource type. This\nschema describes the properties that can be set on the resource,\ntheir types, constraints, descriptions, and default values.\nAdditionally, the resource attributes and their descriptions are\nprovided.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_type_get", 
         "method": "get", 
@@ -883,10 +886,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show resource schema", 
+        "summary": "Shows the interface schema for a specified resource type. This schema describes the properties that can be set on the resource, their types, constraints, descriptions, and default values. Additionally, the resource attributes and their descriptions are provided.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "Show resource schema"
       }
     ], 
     "/v1/{tenant_id}/resource_types/{type_name}/template": [
@@ -894,7 +898,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the template representation for a specified resource type.\n\nThe returned template contains a single resource of the specified\ntype. Each resource property is mapped to a template parameter and\neach resource attribute is mapped to a template output.\n\nYou can use these templates as a starting place for creating\ncustomized, template-based resources or as examples of usi ng the\nparticular resource in another template.\n\nUse the ``template_type`` query parameter to specify the resource\ntemplate type. Default type is ``cfn`` . The ``hot`` template type\nis supported. For example:\n\n/v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn", 
+        "description": "The returned template contains a single resource of the specified\ntype. Each resource property is mapped to a template parameter and\neach resource attribute is mapped to a template output.\n\nYou can use these templates as a starting place for creating\ncustomized, template-based resources or as examples of usi ng the\nparticular resource in another template.\n\nUse the ``template_type`` query parameter to specify the resource\ntemplate type. Default type is ``cfn`` . The ``hot`` template type\nis supported. For example:\n\n/v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn", 
         "examples": {}, 
         "id": "resource_type_template", 
         "method": "get", 
@@ -988,10 +992,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show resource template", 
+        "summary": "Shows the template representation for a specified resource type.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "Show resource template"
       }
     ], 
     "/v1/{tenant_id}/services": [
@@ -999,7 +1004,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables administrative users to view details for all orchestration\nengines.\n\nOrchestration engine details include ``engine_id`` , topic name,\nlast updated time, health status, and host name.\n\nTroubleshooting\n\n- A ``503`` error code indicates that the heat engines are not\n  operational. Run the heat-manage service list command or contact\n  your cloud provider to determine why the heat engines are not\n  operational.", 
+        "description": "Orchestration engine details include ``engine_id`` , topic name,\nlast updated time, health status, and host name.\n\nTroubleshooting\n\n- A ``503`` error code indicates that the heat engines are not\n  operational. Run the heat-manage service list command or contact\n  your cloud provider to determine why the heat engines are not\n  operational.", 
         "examples": {}, 
         "id": "service_status_list", 
         "method": "get", 
@@ -1061,10 +1066,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show orchestration engine status", 
+        "summary": "Enables administrative users to view details for all orchestration engines.", 
         "tags": [
           "service-status"
-        ]
+        ], 
+        "title": "Show orchestration engine status"
       }
     ], 
     "/v1/{tenant_id}/software_configs": [
@@ -1072,7 +1078,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a software configuration.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
@@ -1178,10 +1184,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create configuration", 
+        "summary": "Creates a software configuration.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Create configuration"
       }
     ], 
     "/v1/{tenant_id}/software_configs/{config_id}": [
@@ -1189,7 +1196,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a software configuration.", 
+        "description": "", 
         "examples": {}, 
         "id": "software_config_show", 
         "method": "get", 
@@ -1265,14 +1272,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show configuration details", 
+        "summary": "Shows details for a software configuration.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Show configuration details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a software configuration.", 
+        "description": "", 
         "examples": {}, 
         "id": "software_config_delete", 
         "method": "delete", 
@@ -1301,10 +1309,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete config", 
+        "summary": "Deletes a software configuration.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Delete config"
       }
     ], 
     "/v1/{tenant_id}/software_deployments": [
@@ -1312,7 +1321,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all available software deployments.", 
+        "description": "", 
         "examples": {}, 
         "id": "software_deployment_index", 
         "method": "get", 
@@ -1373,16 +1382,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List deployments", 
+        "summary": "Lists all available software deployments.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "List deployments"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a software deployment.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "action": "CREATE", 
@@ -1438,10 +1448,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create deployment", 
+        "summary": "Creates a software deployment.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Create deployment"
       }
     ], 
     "/v1/{tenant_id}/software_deployments/metadata/{server_id}": [
@@ -1449,7 +1460,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows the deployment configuration metadata for a specified server.\n\nUse the ``group`` property to specify the configuration hook to\nwhich the pass the metadata item.", 
+        "description": "Use the ``group`` property to specify the configuration hook to\nwhich the pass the metadata item.", 
         "examples": {}, 
         "id": "software_deployment_metadata", 
         "method": "get", 
@@ -1611,10 +1622,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show server configuration metadata", 
+        "summary": "Shows the deployment configuration metadata for a specified server.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Show server configuration metadata"
       }
     ], 
     "/v1/{tenant_id}/software_deployments/{deployment_id}": [
@@ -1622,7 +1634,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified software deployment.", 
+        "description": "", 
         "examples": {}, 
         "id": "software_deployment_show", 
         "method": "get", 
@@ -1668,16 +1680,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show deployment details", 
+        "summary": "Shows details for a specified software deployment.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Show deployment details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified software deployment.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "output_values": {
@@ -1748,14 +1761,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update deployment", 
+        "summary": "Updates a specified software deployment.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Update deployment"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified software deployment.", 
+        "description": "", 
         "examples": {}, 
         "id": "software_deployment_delete", 
         "method": "delete", 
@@ -1784,10 +1798,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete deployment", 
+        "summary": "Deletes a specified software deployment.", 
         "tags": [
           "software-config"
-        ]
+        ], 
+        "title": "Delete deployment"
       }
     ], 
     "/v1/{tenant_id}/stacks": [
@@ -1795,7 +1810,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists active stacks.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_list", 
         "method": "get", 
@@ -2003,16 +2018,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List stack data", 
+        "summary": "Lists active stacks.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "List stack data"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "disable_rollback": true, 
@@ -2105,16 +2121,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create stack", 
+        "summary": "Creates a stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Create stack"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a stack from existing resources.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "adopt_stack_data": {
@@ -2238,10 +2255,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Adopt stack", 
+        "summary": "Creates a stack from existing resources.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Adopt stack"
       }
     ], 
     "/v1/{tenant_id}/stacks/preview": [
@@ -2249,7 +2267,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Previews a stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "disable_rollback": true, 
@@ -2499,10 +2517,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Preview stack", 
+        "summary": "Previews a stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Preview stack"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}": [
@@ -2510,7 +2529,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Finds the canonical URL for a specified stack.\n\nAlso works with verbs other than GET , so you can perform PUT and\nDELETE operations on a current stack. Set your client to follow\nredirects. Note that when redirecting, the request method should\nnot change, as defined in RFC2626. However, in many clients the\ndefault behavior is to change the method to GET when you receive a\n302 because this behavior is ubiquitous in web browsers.", 
+        "description": "Also works with verbs other than GET , so you can perform PUT and\nDELETE operations on a current stack. Set your client to follow\nredirects. Note that when redirecting, the request method should\nnot change, as defined in RFC2626. However, in many clients the\ndefault behavior is to change the method to GET when you receive a\n302 because this behavior is ubiquitous in web browsers.", 
         "examples": {}, 
         "id": "stack_find", 
         "method": "get", 
@@ -2585,16 +2604,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Find stack", 
+        "summary": "Finds the canonical URL for a specified stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Find stack"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/events": [
       {
         "consumes": [], 
-        "description": "Finds the canonical URL for the event list of a specified stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_events_find", 
         "method": "get", 
@@ -2623,16 +2643,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Find stack events", 
+        "summary": "Finds the canonical URL for the event list of a specified stack.", 
         "tags": [
           "stack-events"
-        ]
+        ], 
+        "title": "Find stack events"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/resources": [
       {
         "consumes": [], 
-        "description": "Finds the canonical URL for the resource list of a specified stack.\n\nThe canonical URL is returned for only non-deleted stacks. To fetch\nthe resource list for deleted stacks, use the following endpoint:\n\n/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources", 
+        "description": "The canonical URL is returned for only non-deleted stacks. To fetch\nthe resource list for deleted stacks, use the following endpoint:\n\n/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources", 
         "examples": {}, 
         "id": "stack_resources_find", 
         "method": "get", 
@@ -2661,10 +2682,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Find stack resources", 
+        "summary": "Finds the canonical URL for the resource list of a specified stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Find stack resources"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}": [
@@ -2672,7 +2694,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_show", 
         "method": "get", 
@@ -2760,16 +2782,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show stack details", 
+        "summary": "Shows details for a specified stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Show stack details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "parameters": {
@@ -2862,14 +2885,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update stack", 
+        "summary": "Updates a specified stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Update stack"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified stack and any snapshots of that stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_delete", 
         "method": "delete", 
@@ -2922,10 +2946,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete stack", 
+        "summary": "Deletes a specified stack and any snapshots of that stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Delete stack"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon": [
@@ -2933,7 +2958,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Deletes a specified stack but leaves its resources intact, and\nreturns data describing the stack and its resources.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_abandon", 
         "method": "delete", 
@@ -3058,10 +3083,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Abandon stack", 
+        "summary": "Deletes a specified stack but leaves its resources intact, and returns data describing the stack and its resources.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Abandon stack"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions": [
@@ -3069,7 +3095,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Suspends a stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "suspend": null
@@ -3121,16 +3147,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Suspend stack", 
+        "summary": "Suspends a stack.", 
         "tags": [
           "stack-actions"
-        ]
+        ], 
+        "title": "Suspend stack"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resumes a suspended stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "resume": null
@@ -3182,16 +3209,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Resume stack", 
+        "summary": "Resumes a suspended stack.", 
         "tags": [
           "stack-actions"
-        ]
+        ], 
+        "title": "Resume stack"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Cancels a currently running update of a stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "cancel_update": null
@@ -3243,16 +3271,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Cancel stack update", 
+        "summary": "Cancels a currently running update of a stack.", 
         "tags": [
           "stack-actions"
-        ]
+        ], 
+        "title": "Cancel stack update"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Checks whether the resources are in expected states for the\nspecified stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "check": null
@@ -3304,10 +3333,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Check stack resources", 
+        "summary": "Checks whether the resources are in expected states for the specified stack.", 
         "tags": [
           "stack-actions"
-        ]
+        ], 
+        "title": "Check stack resources"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events": [
@@ -3315,7 +3345,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists events for a specified stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_event_list", 
         "method": "get", 
@@ -3485,10 +3515,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List stack events", 
+        "summary": "Lists events for a specified stack.", 
         "tags": [
           "stack-events"
-        ]
+        ], 
+        "title": "List stack events"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview": [
@@ -3496,7 +3527,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Preview an update for a specified stack", 
+        "description": "", 
         "examples": {
           "application/json": {
             "parameters": {
@@ -3641,10 +3672,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Preview stack update", 
+        "summary": "Preview an update for a specified stack", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Preview stack update"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources": [
@@ -3652,7 +3684,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists resources in a stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_list", 
         "method": "get", 
@@ -3745,10 +3777,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List resources", 
+        "summary": "Lists resources in a stack.", 
         "tags": [
           "stack-resources"
-        ]
+        ], 
+        "title": "List resources"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}": [
@@ -3756,7 +3789,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows data for a specified resource.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_show", 
         "method": "get", 
@@ -3843,10 +3876,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show resource data", 
+        "summary": "Shows data for a specified resource.", 
         "tags": [
           "stack-resources"
-        ]
+        ], 
+        "title": "Show resource data"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events": [
@@ -3854,7 +3888,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists events for a specified stack resource.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_event_list", 
         "method": "get", 
@@ -4028,16 +4062,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List resource events", 
+        "summary": "Lists events for a specified stack resource.", 
         "tags": [
           "stack-events"
-        ]
+        ], 
+        "title": "List resource events"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}": [
       {
         "consumes": [], 
-        "description": "Shows details for a specified event.", 
+        "description": "", 
         "examples": {}, 
         "id": "event_show", 
         "method": "get", 
@@ -4090,10 +4125,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show event details", 
+        "summary": "Shows details for a specified event.", 
         "tags": [
           "stack-events"
-        ]
+        ], 
+        "title": "Show event details"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata": [
@@ -4101,7 +4137,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows metadata for a specified resource.", 
+        "description": "", 
         "examples": {}, 
         "id": "resource_metadata", 
         "method": "get", 
@@ -4155,16 +4191,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show resource metadata", 
+        "summary": "Shows metadata for a specified resource.", 
         "tags": [
           "stack-resources"
-        ]
+        ], 
+        "title": "Show resource metadata"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal": [
       {
         "consumes": [], 
-        "description": "Sends a signal to a specified resource.\n\nThe contents of the request body depends on the resource to which\nyou send a signal.\n\nSome resources cannot receive signals. If you send them a signal,\nthey return a 400 error code.", 
+        "description": "The contents of the request body depends on the resource to which\nyou send a signal.\n\nSome resources cannot receive signals. If you send them a signal,\nthey return a 400 error code.", 
         "examples": {}, 
         "id": "resource_signal", 
         "method": "post", 
@@ -4209,10 +4246,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Send a signal to a resource", 
+        "summary": "Sends a signal to a specified resource.", 
         "tags": [
           "stack-resources"
-        ]
+        ], 
+        "title": "Send a signal to a resource"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots": [
@@ -4220,7 +4258,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Takes a snapshot of all the resources in the stack. All snapshots\nare deleted upon deletion of the stack.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "name": "vol_snapshot"
@@ -4281,16 +4319,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Snapshot stack", 
+        "summary": "Takes a snapshot of all the resources in the stack. All snapshots are deleted upon deletion of the stack.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Snapshot stack"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the stack snapshots.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_list_snapshot", 
         "method": "get", 
@@ -4342,10 +4381,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List snapshots", 
+        "summary": "Lists the stack snapshots.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "List snapshots"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}": [
@@ -4353,7 +4393,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a specified snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_show_snapshot", 
         "method": "get", 
@@ -4448,14 +4488,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show snapshot", 
+        "summary": "Shows details for a specified snapshot.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Show snapshot"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a stack snapshot.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_delete_snapshot", 
         "method": "delete", 
@@ -4500,16 +4541,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete snapshot", 
+        "summary": "Deletes a stack snapshot.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Delete snapshot"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore": [
       {
         "consumes": [], 
-        "description": "Restores a stack snapshot. You can restore only active stacks from\na snapshot. Deleted stacks must be recreated.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_restore_snapshot", 
         "method": "post", 
@@ -4554,10 +4596,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Restore snapshot", 
+        "summary": "Restores a stack snapshot. You can restore only active stacks from a snapshot. Deleted stacks must be recreated.", 
         "tags": [
           "stacks"
-        ]
+        ], 
+        "title": "Restore snapshot"
       }
     ], 
     "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template": [
@@ -4565,7 +4608,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets a template for a specified stack.", 
+        "description": "", 
         "examples": {}, 
         "id": "stack_template", 
         "method": "get", 
@@ -4649,16 +4692,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get stack template", 
+        "summary": "Gets a template for a specified stack.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "Get stack template"
       }
     ], 
     "/v1/{tenant_id}/template_versions": [
       {
         "consumes": [], 
-        "description": "Lists all available template versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "template_version_list", 
         "method": "get", 
@@ -4691,10 +4735,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List template versions", 
+        "summary": "Lists all available template versions.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "List template versions"
       }
     ], 
     "/v1/{tenant_id}/validate": [
@@ -4702,7 +4747,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Validates a specified template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "template_url": "/PATH_TO_HEAT_TEMPLATES/WordPress_Single_Instance.template"
@@ -4780,10 +4825,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Validate template", 
+        "summary": "Validates a specified template.", 
         "tags": [
           "stack-templates"
-        ]
+        ], 
+        "title": "Validate template"
       }
     ]
   }, 

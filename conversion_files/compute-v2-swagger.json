@@ -684,7 +684,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists information about all Compute API versions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listVersionsv2", 
         "method": "get", 
@@ -806,10 +806,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List API versions", 
+        "summary": "Lists information about all Compute API versions.", 
         "tags": [
           "versions"
-        ]
+        ], 
+        "title": "List API versions"
       }
     ], 
     "//v2/extensions": [
@@ -817,7 +818,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists available extensions.", 
+        "description": "", 
         "examples": {}, 
         "id": "listExtensionsv2", 
         "method": "get", 
@@ -2227,10 +2228,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List extensions", 
+        "summary": "Lists available extensions.", 
         "tags": [
           "extensions"
-        ]
+        ], 
+        "title": "List extensions"
       }
     ], 
     "//v2/extensions/{alias}": [
@@ -2238,7 +2240,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets details about the specified extension.\n\nExtensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
+        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
         "examples": {}, 
         "id": "getExtensionv2", 
         "method": "get", 
@@ -2329,10 +2331,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get extension", 
+        "summary": "Gets details about the specified extension.", 
         "tags": [
           "extensions"
-        ]
+        ], 
+        "title": "Get extension"
       }
     ], 
     "//v2/{tenant_id}/flavors": [
@@ -2340,7 +2343,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IDs, names, and links for available flavors.", 
+        "description": "", 
         "examples": {}, 
         "id": "listFlavors", 
         "method": "get", 
@@ -2587,10 +2590,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List flavors", 
+        "summary": "Lists IDs, names, and links for available flavors.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List flavors"
       }
     ], 
     "//v2/{tenant_id}/flavors/detail": [
@@ -2598,7 +2602,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all details for available flavors.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDetailFlavors", 
         "method": "get", 
@@ -2845,10 +2849,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List details for flavors", 
+        "summary": "Lists all details for available flavors.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "List details for flavors"
       }
     ], 
     "//v2/{tenant_id}/flavors/{flavor_id}": [
@@ -2856,7 +2861,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets details for a specified flavor.", 
+        "description": "", 
         "examples": {}, 
         "id": "getFlavor", 
         "method": "get", 
@@ -2973,10 +2978,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get flavor details", 
+        "summary": "Gets details for a specified flavor.", 
         "tags": [
           "flavors"
-        ]
+        ], 
+        "title": "Get flavor details"
       }
     ], 
     "//v2/{tenant_id}/images": [
@@ -2984,7 +2990,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IDs, names, and links for available images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listImages", 
         "method": "get", 
@@ -3381,10 +3387,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images", 
+        "summary": "Lists IDs, names, and links for available images.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "List images"
       }
     ], 
     "//v2/{tenant_id}/images/detail": [
@@ -3392,7 +3399,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all details for available images.", 
+        "description": "", 
         "examples": {}, 
         "id": "listDetailImages", 
         "method": "get", 
@@ -3939,10 +3946,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List images details", 
+        "summary": "Lists all details for available images.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "List images details"
       }
     ], 
     "//v2/{tenant_id}/images/{image_id}": [
@@ -3950,7 +3958,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets details for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "getImage", 
         "method": "get", 
@@ -4095,14 +4103,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Get image details", 
+        "summary": "Gets details for a specified image.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Get image details"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteImage", 
         "method": "delete", 
@@ -4159,10 +4168,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete image", 
+        "summary": "Deletes a specified image.", 
         "tags": [
           "images"
-        ]
+        ], 
+        "title": "Delete image"
       }
     ], 
     "//v2/{tenant_id}/images/{image_id}/metadata": [
@@ -4170,7 +4180,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows metadata for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "showImageMetadata", 
         "method": "get", 
@@ -4265,16 +4275,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image metadata", 
+        "summary": "Shows metadata for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Show image metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates metadata items by key for a specified image.\n\nReplaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "Replaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -4358,16 +4369,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update image metadata items", 
+        "summary": "Updates metadata items by key for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Update image metadata items"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces metadata for a specified image.\n\nReplaces items that match the specified keys. If you omit a key\nthat already exists, this key retains its value.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "Replaces items that match the specified keys. If you omit a key\nthat already exists, this key retains its value.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -4448,10 +4460,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or replace image metadata", 
+        "summary": "Creates or replaces metadata for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Create or replace image metadata"
       }
     ], 
     "//v2/{tenant_id}/images/{image_id}/metadata/{key}": [
@@ -4459,7 +4472,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a metadata item by key for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "getImageMetadataItem", 
         "method": "get", 
@@ -4562,16 +4575,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show image metadata item details", 
+        "summary": "Shows details for a metadata item by key for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Show image metadata item details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or updates a metadata item by key for a specified image.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "If this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -4660,14 +4674,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update image metadata item", 
+        "summary": "Creates or updates a metadata item by key for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Create or update image metadata item"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a metadata item by key for a specified image.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteImageMetadataItem", 
         "method": "delete", 
@@ -4736,10 +4751,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete image metadata item", 
+        "summary": "Deletes a metadata item by key for a specified image.", 
         "tags": [
           "image-metadata"
-        ]
+        ], 
+        "title": "Delete image metadata item"
       }
     ], 
     "//v2/{tenant_id}/limits": [
@@ -4747,7 +4763,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists the current absolute and rate limits for a specified project.\n\nAn absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite.", 
+        "description": "An absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite.", 
         "examples": {}, 
         "id": "listLimits", 
         "method": "get", 
@@ -4988,10 +5004,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List limits", 
+        "summary": "Lists the current absolute and rate limits for a specified project.", 
         "tags": [
           "limits"
-        ]
+        ], 
+        "title": "List limits"
       }
     ], 
     "//v2/{tenant_id}/servers": [
@@ -4999,7 +5016,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a server.\n\nThe progress of this operation depends on the location of the\nrequested image, network I/O, host load, selected flavor, and other\nfactors.\n\nIssue a ``GET /servers/{id}`` request to check the progress of the\nrequest, which returns a progress attribute with a from 0 to 100%\ncomplete value. The ``Location`` header returns the full URL to the\nnewly created server and is available as a ``self`` and\n``bookmark`` link in the server representation.\n\nWhen you create a server, only the server ID, its links, and the\nadmin password are guaranteed to be returned in the response. You\ncan get additional attributes through subsequent GET requests on\nthe server.\n\nInclude the ``block-device-mapping-v2`` parameter in the create\nrequest body to boot a server from a volume.\n\nInclude the ``key_name`` parameter in the create request body to\nadd a keypair to the server when you create it. To create a\nkeypair, make a create keypair request.\n\nPreconditions\n\n- The user must have sufficient server quota to create the number of\n  servers requested.\n\n- The connection to the Image service is valid.\n\nAsynchronous postconditions\n\n- With correct permissions, you can see the server status as\n  ``ACTIVE`` through API calls.\n\n- With correct access, you can see the created server in the compute\n  node that OpenStack Compute manages.\n\nTroubleshooting\n\n- If the server status remains ``BUILDING`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the compute node.\n\n- The server is not created in the compute node that OpenStack\n  Compute manages.\n\n- The compute node needs enough free resource to match the specified\n  resource of the server creation request.\n\n- Ensure that the scheduler selection filter can fulfill the request\n  with the available compute nodes that match the selection\n  criteria of the filter.", 
+        "description": "The progress of this operation depends on the location of the\nrequested image, network I/O, host load, selected flavor, and other\nfactors.\n\nIssue a ``GET /servers/{id}`` request to check the progress of the\nrequest, which returns a progress attribute with a from 0 to 100%\ncomplete value. The ``Location`` header returns the full URL to the\nnewly created server and is available as a ``self`` and\n``bookmark`` link in the server representation.\n\nWhen you create a server, only the server ID, its links, and the\nadmin password are guaranteed to be returned in the response. You\ncan get additional attributes through subsequent GET requests on\nthe server.\n\nInclude the ``block-device-mapping-v2`` parameter in the create\nrequest body to boot a server from a volume.\n\nInclude the ``key_name`` parameter in the create request body to\nadd a keypair to the server when you create it. To create a\nkeypair, make a create keypair request.\n\nPreconditions\n\n- The user must have sufficient server quota to create the number of\n  servers requested.\n\n- The connection to the Image service is valid.\n\nAsynchronous postconditions\n\n- With correct permissions, you can see the server status as\n  ``ACTIVE`` through API calls.\n\n- With correct access, you can see the created server in the compute\n  node that OpenStack Compute manages.\n\nTroubleshooting\n\n- If the server status remains ``BUILDING`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the compute node.\n\n- The server is not created in the compute node that OpenStack\n  Compute manages.\n\n- The compute node needs enough free resource to match the specified\n  resource of the server creation request.\n\n- Ensure that the scheduler selection filter can fulfill the request\n  with the available compute nodes that match the selection\n  criteria of the filter.", 
         "examples": {
           "application/json": {
             "server": {
@@ -5113,16 +5130,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create server", 
+        "summary": "Creates a server.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "Create server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists IDs, names, and links for all servers.\n\nServers contain a status attribute that indicates the current\nserver state. You can filter on the server status when you complete\na list servers request. The server status is returned in the\nresponse body. The possible server status values are:\n\nServer status values- ``ACTIVE`` . The server is active.\n\n- ``BUILDING`` . The server has not finished the original build\n  process.\n\n- ``DELETED`` . The server is permanently deleted.\n\n- ``ERROR`` . The server is in error.\n\n- ``HARD_REBOOT`` . The server is hard rebooting. This is equivalent\n  to pulling the power plug on a physical server, plugging it back\n  in, and rebooting it.\n\n- ``PASSWORD`` . The password is being reset on the server.\n\n- ``PAUSED`` . In a paused state, the state of the server is stored\n  in RAM. A paused server continues to run in frozen state.\n\n- ``REBOOT`` . The server is in a soft reboot state. A reboot\n  command was passed to the operating system.\n\n- ``REBUILD`` . The server is currently being rebuilt from an image.\n\n- ``RESCUED`` . The server is in rescue mode. A rescue image is\n  running with the original server image attached.\n\n- ``RESIZED`` . Server is performing the differential copy of data\n  that changed during its initial copy. Server is down for this\n  stage.\n\n- ``REVERT_RESIZE`` . The resize or migration of a server failed for\n  some reason. The destination server is being cleaned up and the\n  original source server is restarting.\n\n- ``SOFT_DELETED`` . The server is marked as deleted but the disk\n  images are still available to restore.\n\n- ``STOPPED`` . The server is powered off and the disk image still\n  persists.\n\n- ``SUSPENDED`` . The server is suspended, either by request or\n  necessity. This status appears for only the following\n  hypervisors: XenServer/XCP, KVM, and ESXi. Administrative users\n  may suspend an instance if it is infrequently used or to perform\n  system maintenance. When you suspend an instance, its VM state is\n  stored on disk, all memory is written to disk, and the virtual\n  machine is stopped. Suspending an instance is similar to placing\n  a device in hibernation; memory and vCPUs become available to\n  create other instances.\n\n- ``UNKNOWN`` . The state of the server is unknown. Contact your\n  cloud provider.\n\n- ``VERIFY_RESIZE`` . System is awaiting confirmation that the\n  server is operational after a move or resize.", 
+        "description": "Servers contain a status attribute that indicates the current\nserver state. You can filter on the server status when you complete\na list servers request. The server status is returned in the\nresponse body. The possible server status values are:\n\nServer status values- ``ACTIVE`` . The server is active.\n\n- ``BUILDING`` . The server has not finished the original build\n  process.\n\n- ``DELETED`` . The server is permanently deleted.\n\n- ``ERROR`` . The server is in error.\n\n- ``HARD_REBOOT`` . The server is hard rebooting. This is equivalent\n  to pulling the power plug on a physical server, plugging it back\n  in, and rebooting it.\n\n- ``PASSWORD`` . The password is being reset on the server.\n\n- ``PAUSED`` . In a paused state, the state of the server is stored\n  in RAM. A paused server continues to run in frozen state.\n\n- ``REBOOT`` . The server is in a soft reboot state. A reboot\n  command was passed to the operating system.\n\n- ``REBUILD`` . The server is currently being rebuilt from an image.\n\n- ``RESCUED`` . The server is in rescue mode. A rescue image is\n  running with the original server image attached.\n\n- ``RESIZED`` . Server is performing the differential copy of data\n  that changed during its initial copy. Server is down for this\n  stage.\n\n- ``REVERT_RESIZE`` . The resize or migration of a server failed for\n  some reason. The destination server is being cleaned up and the\n  original source server is restarting.\n\n- ``SOFT_DELETED`` . The server is marked as deleted but the disk\n  images are still available to restore.\n\n- ``STOPPED`` . The server is powered off and the disk image still\n  persists.\n\n- ``SUSPENDED`` . The server is suspended, either by request or\n  necessity. This status appears for only the following\n  hypervisors: XenServer/XCP, KVM, and ESXi. Administrative users\n  may suspend an instance if it is infrequently used or to perform\n  system maintenance. When you suspend an instance, its VM state is\n  stored on disk, all memory is written to disk, and the virtual\n  machine is stopped. Suspending an instance is similar to placing\n  a device in hibernation; memory and vCPUs become available to\n  create other instances.\n\n- ``UNKNOWN`` . The state of the server is unknown. Contact your\n  cloud provider.\n\n- ``VERIFY_RESIZE`` . System is awaiting confirmation that the\n  server is operational after a move or resize.", 
         "examples": {}, 
         "id": "listServers", 
         "method": "get", 
@@ -5289,10 +5307,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List servers", 
+        "summary": "Lists IDs, names, and links for all servers.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "List servers"
       }
     ], 
     "//v2/{tenant_id}/servers/detail": [
@@ -5300,7 +5319,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists details for all servers.\n\nThe compute provisioning algorithm has an anti-affinity property\nthat attempts to spread customer VMs across hosts. Under certain\nsituations, VMs from the same customer might be placed on the same\nhost. The hostId property shows the host that your server runs on\nand can be used to determine this scenario if it is relevant to\nyour application.\n\nHostId is unique **peraccount** and is not globally unique.", 
+        "description": "The compute provisioning algorithm has an anti-affinity property\nthat attempts to spread customer VMs across hosts. Under certain\nsituations, VMs from the same customer might be placed on the same\nhost. The hostId property shows the host that your server runs on\nand can be used to determine this scenario if it is relevant to\nyour application.\n\nHostId is unique **peraccount** and is not globally unique.", 
         "examples": {}, 
         "id": "listDetailServers", 
         "method": "get", 
@@ -5543,10 +5562,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List details for servers", 
+        "summary": "Lists details for all servers.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "List details for servers"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}": [
@@ -5554,7 +5574,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets details for a specified server.\n\nPreconditions\n\n- The specified server must exist.", 
+        "description": "Preconditions\n\n- The specified server must exist.", 
         "examples": {}, 
         "id": "getServer", 
         "method": "get", 
@@ -5741,16 +5761,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get server details", 
+        "summary": "Gets details for a specified server.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "Get server details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates the editable attributes of the specified server.\n\nPreconditions\n\n- The specified server must exist.", 
+        "description": "Preconditions\n\n- The specified server must exist.", 
         "examples": {
           "application/json": {
             "server": {
@@ -5912,14 +5933,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update server", 
+        "summary": "Updates the editable attributes of the specified server.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "Update server"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified server.\n\nPreconditions\n\n- The specified server must exist.\n\n- Anyone can delete a server when the server's status is not locked.\n\n- You can delete a server which status is not locked.\n\n- If the specified server is locked, you need to have administrator\n  privileges to delete the server.\n\nAsynchronous postconditions\n\n- With correct permissions, you can see the specified server status\n  as ``DELETED`` through API calls.\n\n- The port attached to the specified server is deleted.\n\n- The server is deleted from the list of servers returned by an API\n  call.\n\n- The server managed by OpenStack Compute is deleted on the compute\n  node.\n\nTroubleshooting\n\n- If server status remains in ``deleting`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the compute back end.\n\n- The request returns the HTTP 409 status code when the server is\n  locked even if you have a correct permissions. Ensure you meet\n  the preconditions then investigate the server status.\n\n- The server managed by OpenStack Compute is not deleted from the\n  compute node.", 
+        "description": "Preconditions\n\n- The specified server must exist.\n\n- Anyone can delete a server when the server's status is not locked.\n\n- You can delete a server which status is not locked.\n\n- If the specified server is locked, you need to have administrator\n  privileges to delete the server.\n\nAsynchronous postconditions\n\n- With correct permissions, you can see the specified server status\n  as ``DELETED`` through API calls.\n\n- The port attached to the specified server is deleted.\n\n- The server is deleted from the list of servers returned by an API\n  call.\n\n- The server managed by OpenStack Compute is deleted on the compute\n  node.\n\nTroubleshooting\n\n- If server status remains in ``deleting`` or shows another error\n  status, the request failed. Ensure you meet the preconditions\n  then investigate the compute back end.\n\n- The request returns the HTTP 409 status code when the server is\n  locked even if you have a correct permissions. Ensure you meet\n  the preconditions then investigate the server status.\n\n- The server managed by OpenStack Compute is not deleted from the\n  compute node.", 
         "examples": {}, 
         "id": "deleteServer", 
         "method": "delete", 
@@ -5976,10 +5998,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete server", 
+        "summary": "Deletes a specified server.", 
         "tags": [
           "servers"
-        ]
+        ], 
+        "title": "Delete server"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}/action": [
@@ -5987,7 +6010,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Changes the password for a server. Specify the ``changePassword``\naction in the request body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "changePassword": {
@@ -6060,16 +6083,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Change password", 
+        "summary": "Changes the password for a server. Specify the ``changePassword`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Change password"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Reboots the specified server. Specify the ``reboot`` action in the\nrequest body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "reboot": {
@@ -6155,16 +6179,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Reboot server", 
+        "summary": "Reboots the specified server. Specify the ``reboot`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Reboot server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Rebuilds the specified server. Specify the ``rebuild`` action in\nthe request body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "rebuild": {
@@ -6313,16 +6338,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Rebuild server", 
+        "summary": "Rebuilds the specified server. Specify the ``rebuild`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Rebuild server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Resizes the specified server. Specify the ``resize`` action in the\nrequest body.\n\nA successfully resized server shows the ``VERIFY_RESIZE`` status,\n``RESIZED`` VM status, and ``finished`` migration status. If you\nset the ``auto_confirm`` option of the Compute service to ``True``\n, the Compute service automatically confirms the resize operation.\n\nPreconditions\n\n- You can only resize a server when its status is ``ACTIVE`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to resize the server.", 
+        "description": "A successfully resized server shows the ``VERIFY_RESIZE`` status,\n``RESIZED`` VM status, and ``finished`` migration status. If you\nset the ``auto_confirm`` option of the Compute service to ``True``\n, the Compute service automatically confirms the resize operation.\n\nPreconditions\n\n- You can only resize a server when its status is ``ACTIVE`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to resize the server.", 
         "examples": {
           "application/json": {
             "resize": {
@@ -6395,16 +6421,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Resize server", 
+        "summary": "Resizes the specified server. Specify the ``resize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Resize server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Confirms a pending resize action. Specify the ``confirmResize``\naction in the request body.\n\nAfter you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully confirming resize operation shows ``ACTIVE`` status\nand ``confirmed`` migration status. You can also see the resized\nserver in the compute node that OpenStack Compute manages.\n\nPreconditions\n\nTo confirm a pending resize action, these preconditions must be\nmet:\n\n- Server status is ``VERIFY_RESIZED`` , VM status is ``RESIZED`` ,\n  and migration status is ``finished`` or ``confirming`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to confirm the server.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end or ask your cloud provider.", 
+        "description": "After you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully confirming resize operation shows ``ACTIVE`` status\nand ``confirmed`` migration status. You can also see the resized\nserver in the compute node that OpenStack Compute manages.\n\nPreconditions\n\nTo confirm a pending resize action, these preconditions must be\nmet:\n\n- Server status is ``VERIFY_RESIZED`` , VM status is ``RESIZED`` ,\n  and migration status is ``finished`` or ``confirming`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to confirm the server.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end or ask your cloud provider.", 
         "examples": {
           "application/json": {
             "confirmResize": null
@@ -6475,16 +6502,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Confirm resized server", 
+        "summary": "Confirms a pending resize action. Specify the ``confirmResize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Confirm resized server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Cancels and reverts a pending resize action. Specify the\n``revertResize`` action in the request body.\n\nAfter you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully reverting resize operation shows ``ACTIVE`` status and\n``reverted`` migration status. You can also see the reverted server\nin the compute node that OpenStack Compute manages.\n\nPreconditions\n\nTo cancel and revert a pending resize action, these preconditions\nmust be met:\n\n- Server status is ``VERIFY_RESIZE`` and VM status is ``RESIZED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to revert the resizing.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end.\n\n- The specified server is not reverted in the compute node that\n  OpenStack Compute manages.", 
+        "description": "After you make this request, you typically must keep polling the\nserver status to determine whether the request succeeded. A\nsuccessfully reverting resize operation shows ``ACTIVE`` status and\n``reverted`` migration status. You can also see the reverted server\nin the compute node that OpenStack Compute manages.\n\nPreconditions\n\nTo cancel and revert a pending resize action, these preconditions\nmust be met:\n\n- Server status is ``VERIFY_RESIZE`` and VM status is ``RESIZED`` .\n\n- If the specified server is locked, you must have administrator\n  privileges to revert the resizing.\n\nTroubleshooting\n\n- If the specified server status remains ``RESIZED`` , the request\n  failed. Ensure you meet the preconditions and run the request\n  again. If the request fails again, investigate the compute back\n  end.\n\n- The specified server is not reverted in the compute node that\n  OpenStack Compute manages.", 
         "examples": {
           "application/json": {
             "revertResize": null
@@ -6555,16 +6583,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Revert resized server", 
+        "summary": "Cancels and reverts a pending resize action. Specify the ``revertResize`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Revert resized server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Associates a specified security group with a server. Specify the\n``security_group`` action and the name of the security group in the\nrequest body.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "security_group": {
@@ -6637,16 +6666,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Associate security          group with server", 
+        "summary": "Associates a specified security group with a server. Specify the ``security_group`` action and the name of the security group in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Associate security          group with server"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates an image. Specify the ``createImage`` action in the request\nbody.\n\nAfter you make this request, you typically must keep polling the\ncreated image's status to determine whether the request succeeded.\nA successfully creating image operation shows the ``available``\nimage status and the server status reverts to its original status.\nYou can also see the new image in the image back end that OpenStack\nImage service manages.\n\nPreconditions\n\nTo create an image, these preconditions must be met:\n\n- The specified server must exist.\n\n- The server status is ``ACTIVE`` , ``PAUSED`` , or ``SUSPENDED`` .\n\n- The connection to the Image service is valid.\n\nTroubleshooting\n\n- If the image status remains uploading or shows another error\n  status, the request failed. Ensure you meet the preconditions and\n  run the request again. If the request fails again, investigate\n  the image back end.\n\n- If the server status does not go back to an original server's\n  status, the request failed. Ensure you meet the preconditions, or\n  check if there is another operation that causes race conditions\n  for the server, then run the request again. If the request fails\n  again, investigate the compute back end or ask your cloud\n  provider.\n\n- If the request fails due to an error on OpenStack Compute service,\n  the image is purged from the image store that OpenStack Image\n  service manages. Ensure you meet the preconditions and run the\n  request again. If the request fails again, investigate OpenStack\n  Compute service or ask your cloud provider.", 
+        "description": "After you make this request, you typically must keep polling the\ncreated image's status to determine whether the request succeeded.\nA successfully creating image operation shows the ``available``\nimage status and the server status reverts to its original status.\nYou can also see the new image in the image back end that OpenStack\nImage service manages.\n\nPreconditions\n\nTo create an image, these preconditions must be met:\n\n- The specified server must exist.\n\n- The server status is ``ACTIVE`` , ``PAUSED`` , or ``SUSPENDED`` .\n\n- The connection to the Image service is valid.\n\nTroubleshooting\n\n- If the image status remains uploading or shows another error\n  status, the request failed. Ensure you meet the preconditions and\n  run the request again. If the request fails again, investigate\n  the image back end.\n\n- If the server status does not go back to an original server's\n  status, the request failed. Ensure you meet the preconditions, or\n  check if there is another operation that causes race conditions\n  for the server, then run the request again. If the request fails\n  again, investigate the compute back end or ask your cloud\n  provider.\n\n- If the request fails due to an error on OpenStack Compute service,\n  the image is purged from the image store that OpenStack Image\n  service manages. Ensure you meet the preconditions and run the\n  request again. If the request fails again, investigate OpenStack\n  Compute service or ask your cloud provider.", 
         "examples": {
           "application/json": {
             "createImage": {
@@ -6738,10 +6768,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create image", 
+        "summary": "Creates an image. Specify the ``createImage`` action in the request body.", 
         "tags": [
           "server-actions"
-        ]
+        ], 
+        "title": "Create image"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}/ips": [
@@ -6749,7 +6780,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists networks and addresses for a specified tenant and server.\n\nSpecify the tenant ID and server ID in the URI.", 
+        "description": "Specify the tenant ID and server ID in the URI.", 
         "examples": {}, 
         "id": "getServerAddresses", 
         "method": "get", 
@@ -6896,10 +6927,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List addresses", 
+        "summary": "Lists networks and addresses for a specified tenant and server.", 
         "tags": [
           "server-addresses"
-        ]
+        ], 
+        "title": "List addresses"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}/ips/{network_label}": [
@@ -6907,7 +6939,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists addresses for a specified tenant, server, and network.\n\nSpecify the tenant ID, server ID, and network label in the request\nURI.", 
+        "description": "Specify the tenant ID, server ID, and network label in the request\nURI.", 
         "examples": {}, 
         "id": "getNetworkAddresses", 
         "method": "get", 
@@ -7038,10 +7070,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List addresses by network", 
+        "summary": "Lists addresses for a specified tenant, server, and network.", 
         "tags": [
           "server-addresses"
-        ]
+        ], 
+        "title": "List addresses by network"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}/metadata": [
@@ -7049,7 +7082,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows metadata for a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "showServerMetadata", 
         "method": "get", 
@@ -7138,16 +7171,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show server metadata", 
+        "summary": "Shows metadata for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Show server metadata"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates metadata items by key for a specified server.\n\nReplaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "Replaces items that match the specified keys and does not modify\nitems not specified in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -7226,16 +7260,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Update server metadata items", 
+        "summary": "Updates metadata items by key for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Update server metadata items"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates or replaces metadata items for a specified server.\n\nAll existing metadata items are removed and completely replaced by\nthe metadata items in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "All existing metadata items are removed and completely replaced by\nthe metadata items in the request.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -7314,10 +7349,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or replace server metadata items", 
+        "summary": "Creates or replaces metadata items for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Create or replace server metadata items"
       }
     ], 
     "//v2/{tenant_id}/servers/{server_id}/metadata/{key}": [
@@ -7325,7 +7361,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows details for a metadata item by key for a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "getServerMetadataItem", 
         "method": "get", 
@@ -7422,16 +7458,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Show server metadata item details", 
+        "summary": "Shows details for a metadata item by key for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Show server metadata item details"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Sets a metadata item by key for a specified server.\n\nIf this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
+        "description": "If this operation exceeds the metadata items quota, the API throws\nan ``overLimit (413)`` fault.", 
         "examples": {
           "application/json": {
             "metadata": {
@@ -7518,14 +7555,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Create or update server metadata item", 
+        "summary": "Sets a metadata item by key for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Create or update server metadata item"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a metadata item by key for a specified server.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteServerMetadataItem", 
         "method": "delete", 
@@ -7594,10 +7632,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete server metadata item", 
+        "summary": "Deletes a metadata item by key for a specified server.", 
         "tags": [
           "server-metadata"
-        ]
+        ], 
+        "title": "Delete server metadata item"
       }
     ]
   }, 

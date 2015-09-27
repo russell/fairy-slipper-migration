@@ -100,7 +100,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a role.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "role": {
@@ -169,10 +169,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create role", 
+        "summary": "Creates a role.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Create role"
       }
     ], 
     "/v2.0/OS-KSADM/": [
@@ -180,7 +181,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all roles.", 
+        "description": "", 
         "examples": {}, 
         "id": "listRoles", 
         "method": "get", 
@@ -248,10 +249,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List roles", 
+        "summary": "Lists all roles.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "List roles"
       }
     ], 
     "/v2.0/OS-KSADM/roles/{role_name}": [
@@ -259,7 +261,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified role, by name.", 
+        "description": "", 
         "examples": {}, 
         "id": "showRoleByName", 
         "method": "get", 
@@ -339,10 +341,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show role information by name", 
+        "summary": "Shows information for a specified role, by name.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Show role information by name"
       }
     ], 
     "/v2.0/OS-KSADM/{roleId}": [
@@ -350,7 +353,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified role, by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showRoleByID", 
         "method": "get", 
@@ -439,14 +442,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Show role information by ID", 
+        "summary": "Shows information for a specified role, by ID.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Show role information by ID"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified role.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteRole", 
         "method": "delete", 
@@ -495,10 +499,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete role", 
+        "summary": "Deletes a specified role.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Delete role"
       }
     ], 
     "/v2.0/OS-KSCATALOG/endpointTemplates": [
@@ -506,7 +511,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists endpoint templates.", 
+        "description": "", 
         "examples": {}, 
         "id": "listEndpointTemplates", 
         "method": "get", 
@@ -672,16 +677,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List endpoint templates", 
+        "summary": "Lists endpoint templates.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "List endpoint templates"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates endpoint template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSCATALOG:endpointTemplate": {
@@ -764,10 +770,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create endpoint template", 
+        "summary": "Creates endpoint template.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Create endpoint template"
       }
     ], 
     "/v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}": [
@@ -775,7 +782,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets endpoint templates.", 
+        "description": "", 
         "examples": {}, 
         "id": "getEndpointTemplate", 
         "method": "get", 
@@ -860,16 +867,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Get endpoint template", 
+        "summary": "Gets endpoint templates.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Get endpoint template"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates endpoint template.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSCATALOG:endpointTemplate": {
@@ -954,14 +962,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update endpoint template", 
+        "summary": "Updates endpoint template.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Update endpoint template"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes an endpoint template.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteEndpointTemplate", 
         "method": "delete", 
@@ -1010,10 +1019,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete endpoint template.", 
+        "summary": "Deletes an endpoint template.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Delete endpoint template."
       }
     ], 
     "/v2.0/OS-KSVALIDATE/token/endpoints": [
@@ -1021,7 +1031,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists endpoints associated with a specific token.", 
+        "description": "", 
         "examples": {}, 
         "id": "listEndpointsForToken", 
         "method": "get", 
@@ -1199,10 +1209,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List endpoints for token", 
+        "summary": "Lists endpoints associated with a specific token.", 
         "tags": [
           "ksvalidate"
-        ]
+        ], 
+        "title": "List endpoints for token"
       }
     ], 
     "/v2.0/OS-KSVALIDATE/token/validate": [
@@ -1210,7 +1221,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Checks that a token is valid and that it belongs to a specified\ntenant and service IDs. Returns the permissions for a particular\nclient.\n\nBehavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (\n``404`` ) fault is returned for a token that is not valid.\n\nThis extension might decrypt ``X-Subject-Token`` header and\ninternally call the normal validation for Identity, passing in all\nheaders and query parameters. It should therefore support all\nexisting calls on ``/tokens/{tokenId}`` , including extensions such\nas HP-IDM.", 
+        "description": "Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (\n``404`` ) fault is returned for a token that is not valid.\n\nThis extension might decrypt ``X-Subject-Token`` header and\ninternally call the normal validation for Identity, passing in all\nheaders and query parameters. It should therefore support all\nexisting calls on ``/tokens/{tokenId}`` , including extensions such\nas HP-IDM.", 
         "examples": {}, 
         "id": "validateToken", 
         "method": "get", 
@@ -1314,14 +1325,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Validate token", 
+        "summary": "Checks that a token is valid and that it belongs to a specified tenant and service IDs. Returns the permissions for a particular client.", 
         "tags": [
           "ksvalidate"
-        ]
+        ], 
+        "title": "Validate token"
       }, 
       {
         "consumes": [], 
-        "description": "Checks that a token is valid and that it belongs to a specified\ntenant and service IDs, for performance.\n\nBehavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (\n``404`` ) fault is returned for a token that is not valid.\n\nThis extension might decrypt ``X-Subject-Token`` header and\ninternally call the normal validation for Identity, passing in all\nheaders and query parameters. It should therefore support all\nexisting calls on ``/tokens/{tokenId}`` , including extensions such\nas HP-IDM.", 
+        "description": "Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (\n``404`` ) fault is returned for a token that is not valid.\n\nThis extension might decrypt ``X-Subject-Token`` header and\ninternally call the normal validation for Identity, passing in all\nheaders and query parameters. It should therefore support all\nexisting calls on ``/tokens/{tokenId}`` , including extensions such\nas HP-IDM.", 
         "examples": {}, 
         "id": "checkToken", 
         "method": "head", 
@@ -1365,10 +1377,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Check token", 
+        "summary": "Checks that a token is valid and that it belongs to a specified tenant and service IDs, for performance.", 
         "tags": [
           "ksvalidate"
-        ]
+        ], 
+        "title": "Check token"
       }
     ], 
     "/v2.0/services": [
@@ -1376,7 +1389,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all services.", 
+        "description": "", 
         "examples": {}, 
         "id": "listServices", 
         "method": "get", 
@@ -1458,16 +1471,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List services", 
+        "summary": "Lists all services.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "List services"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a service.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSADM:service": {
@@ -1538,10 +1552,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create service", 
+        "summary": "Creates a service.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Create service"
       }
     ], 
     "/v2.0/services/{serviceId}": [
@@ -1549,7 +1564,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified service, by ID.", 
+        "description": "", 
         "examples": {}, 
         "id": "showServiceByID", 
         "method": "get", 
@@ -1622,14 +1637,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Shows service information by ID", 
+        "summary": "Shows information for a specified service, by ID.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Shows service information by ID"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified service.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteService", 
         "method": "delete", 
@@ -1678,10 +1694,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete service", 
+        "summary": "Deletes a specified service.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Delete service"
       }
     ], 
     "/v2.0/services/{serviceName}": [
@@ -1689,7 +1706,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Shows information for a specified service, by name.", 
+        "description": "", 
         "examples": {}, 
         "id": "showServiceByName", 
         "method": "get", 
@@ -1753,10 +1770,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Show service information by name", 
+        "summary": "Shows information for a specified service, by name.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Show service information by name"
       }
     ], 
     "/v2.0/tenants": [
@@ -1764,7 +1782,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a specified tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "tenant": {
@@ -1823,10 +1841,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create tenant", 
+        "summary": "Creates a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Create tenant"
       }
     ], 
     "/v2.0/tenants/{tenantId}": [
@@ -1834,7 +1853,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "tenant": {
@@ -1907,14 +1926,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update tenant", 
+        "summary": "Updates a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Update tenant"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteTenant", 
         "method": "delete", 
@@ -1963,10 +1983,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete tenant", 
+        "summary": "Deletes a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Delete tenant"
       }
     ], 
     "/v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints": [
@@ -1974,7 +1995,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates endpoint to a tenant.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSCATALOG:endpointTemplate": {
@@ -2057,16 +2078,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Create endpoint", 
+        "summary": "Creates endpoint to a tenant.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Create endpoint"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists endpoints for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "listEndpoints", 
         "method": "get", 
@@ -2253,10 +2275,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List endpoints", 
+        "summary": "Lists endpoints for a tenant.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "List endpoints"
       }
     ], 
     "/v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints/{endpointId}": [
@@ -2264,7 +2287,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets endpoint for a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "getEndpoint", 
         "method": "get", 
@@ -2357,14 +2380,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Get endpoint", 
+        "summary": "Gets endpoint for a tenant.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Get endpoint"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes an endpoint from a tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteEndpoint", 
         "method": "delete", 
@@ -2421,10 +2445,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete endpoint", 
+        "summary": "Deletes an endpoint from a tenant.", 
         "tags": [
           "kscatalog"
-        ]
+        ], 
+        "title": "Delete endpoint"
       }
     ], 
     "/v2.0/tenants/{tenantId}/users": [
@@ -2432,7 +2457,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all users for a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUsersForTenant", 
         "method": "get", 
@@ -2523,16 +2548,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List users on a tenant", 
+        "summary": "Lists all users for a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "List users on a tenant"
       }
     ], 
     "/v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}": [
       {
         "consumes": [], 
-        "description": "Grants a specified role to a specified user for a specified tenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantRoleToUserOnTenant", 
         "method": "put", 
@@ -2601,14 +2627,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant roles to user on tenant", 
+        "summary": "Grants a specified role to a specified user for a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Grant roles to user on tenant"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes a specified role from a specified user for a specified\ntenant.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeRoleFromUserOnTenant", 
         "method": "delete", 
@@ -2673,10 +2700,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke role from user on tenant", 
+        "summary": "Revokes a specified role from a specified user for a specified tenant.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Revoke role from user on tenant"
       }
     ], 
     "/v2.0/users": [
@@ -2684,7 +2712,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists all users.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUsers", 
         "method": "get", 
@@ -2766,16 +2794,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List users", 
+        "summary": "Lists all users.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "List users"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Creates a user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -2839,10 +2868,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Create user", 
+        "summary": "Creates a user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Create user"
       }
     ], 
     "/v2.0/users/{userId}": [
@@ -2850,7 +2880,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates a specified user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -2923,14 +2953,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update user", 
+        "summary": "Updates a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Update user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteUser", 
         "method": "delete", 
@@ -2979,10 +3010,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete user", 
+        "summary": "Deletes a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Delete user"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSADM/credentials": [
@@ -2990,7 +3022,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Grants a specified credential to a specified user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSEC2-ec2Credentials": {
@@ -3061,16 +3093,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant credential to user", 
+        "summary": "Grants a specified credential to a specified user.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "Grant credential to user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCredentials", 
         "method": "get", 
@@ -3163,10 +3196,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List credentials", 
+        "summary": "Lists credentials.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "List credentials"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials": [
@@ -3174,7 +3208,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates credentials for a specified user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSEC2-ec2Credentials": {
@@ -3245,14 +3279,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update user credentials", 
+        "summary": "Updates credentials for a specified user.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "Update user credentials"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes user credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "deleteUserCredential", 
         "method": "delete", 
@@ -3305,16 +3340,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete user credentials", 
+        "summary": "Deletes user credentials.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "Delete user credentials"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets user credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "getUserCredential", 
         "method": "get", 
@@ -3385,10 +3421,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get user credentials", 
+        "summary": "Gets user credentials.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "Get user credentials"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials/{type}": [
@@ -3396,7 +3433,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists credentials by type.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCredentialsByType", 
         "method": "get", 
@@ -3483,10 +3520,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List credentials by type", 
+        "summary": "Lists credentials by type.", 
         "tags": [
           "ksec2-admin"
-        ]
+        ], 
+        "title": "List credentials by type"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSADM/enabled": [
@@ -3494,7 +3532,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Enables a specified user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "user": {
@@ -3564,10 +3602,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Enable user", 
+        "summary": "Enables a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Enable user"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSS3/credentials": [
@@ -3575,7 +3614,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Grants a specified credential to a specified user.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSS3:s3Credentials": {
@@ -3646,16 +3685,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant credential to user", 
+        "summary": "Grants a specified credential to a specified user.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "Grant credential to user"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCredentials", 
         "method": "get", 
@@ -3748,10 +3788,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List credentials", 
+        "summary": "Lists credentials.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "List credentials"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSS3/credentials/s3credentials": [
@@ -3759,7 +3800,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Updates credentials.", 
+        "description": "", 
         "examples": {
           "application/json": {
             "OS-KSS3:s3Credentials": {
@@ -3830,14 +3871,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Update user credentials", 
+        "summary": "Updates credentials.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "Update user credentials"
       }, 
       {
         "consumes": [], 
-        "description": "Revokes user credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeUserCredentials", 
         "method": "delete", 
@@ -3890,16 +3932,17 @@
             "headers": {}
           }
         }, 
-        "summary": "Revoke user credentials", 
+        "summary": "Revokes user credentials.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "Revoke user credentials"
       }, 
       {
         "consumes": [
           "application/json"
         ], 
-        "description": "Gets user credentials.", 
+        "description": "", 
         "examples": {}, 
         "id": "getUserCredential", 
         "method": "get", 
@@ -3970,10 +4013,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Get user credentials", 
+        "summary": "Gets user credentials.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "Get user credentials"
       }
     ], 
     "/v2.0/users/{userId}/OS-KSS3/credentials/s3credentials/{type}": [
@@ -3981,7 +4025,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists credentials by type.", 
+        "description": "", 
         "examples": {}, 
         "id": "listCredentialsByType", 
         "method": "get", 
@@ -4082,10 +4126,11 @@
             "headers": {}
           }
         }, 
-        "summary": "List credentials by type", 
+        "summary": "Lists credentials by type.", 
         "tags": [
           "kss3-admin"
-        ]
+        ], 
+        "title": "List credentials by type"
       }
     ], 
     "/v2.0/users/{userId}/roles": [
@@ -4093,7 +4138,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Lists global roles for a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "listUserRoles", 
         "method": "get", 
@@ -4174,16 +4219,17 @@
             "headers": {}
           }
         }, 
-        "summary": "List global roles for user", 
+        "summary": "Lists global roles for a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "List global roles for user"
       }
     ], 
     "/v2.0/users/{userId}/roles/OS-KSADM/{roleId}": [
       {
         "consumes": [], 
-        "description": "Grants a specified global role to a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "grantGlobalRoleToUser", 
         "method": "put", 
@@ -4244,14 +4290,15 @@
             "headers": {}
           }
         }, 
-        "summary": "Grant global role to user", 
+        "summary": "Grants a specified global role to a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Grant global role to user"
       }, 
       {
         "consumes": [], 
-        "description": "Deletes a specified global role from a specified user.", 
+        "description": "", 
         "examples": {}, 
         "id": "revokeGlobalRoleFromUser", 
         "method": "delete", 
@@ -4308,10 +4355,11 @@
             "headers": {}
           }
         }, 
-        "summary": "Delete global role from user", 
+        "summary": "Deletes a specified global role from a specified user.", 
         "tags": [
           "ksadm-admin"
-        ]
+        ], 
+        "title": "Delete global role from user"
       }
     ]
   }, 
