@@ -168,6 +168,6 @@
       "summary": "Creates, lists, and gets details for tasks. (Since API v2.2.)"
     }
   ], 
-  "title": "Image service API", 
+  "title": "Image service", 
   "version": "v2"
 }

@@ -617,7 +617,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "orchestration", 
-    "title": "Orchestration API", 
+    "title": "Orchestration", 
     "version": "v1"
   }, 
   "paths": {

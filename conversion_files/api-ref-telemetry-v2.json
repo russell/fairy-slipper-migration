@@ -61,6 +61,6 @@
       "summary": "Gets information for API and storage capabilities.\n\nThe Telemetry service enables you to store samples, events, and\nalarm definitions in supported database back ends. The\n``capabilities`` resource enables you to list the capabilities that\na database supports.\n\nThe ``capabilities`` resource returns a flattened dictionary of\ncapability properties, each with an associated boolean value. A\nvalue of ``true`` indicates that the corresponding capability is\navailable in the back end.\n\nOptionally, you can configure separate database back ends for\nsamples, events, and alarm definitions. The ``capabilities``\nresponse body shows a value of ``true`` to indicate that the\nsamples, events, or alarm definitions database is ready to use in a\nproduction environment."
     }
   ], 
-  "title": "Telemetry API", 
+  "title": "Telemetry", 
   "version": "v2"
 }

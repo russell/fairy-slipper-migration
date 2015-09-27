@@ -1657,7 +1657,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "blockstorage", 
-    "title": "Block Storage API", 
+    "title": "Block Storage", 
     "version": "v2"
   }, 
   "paths": {

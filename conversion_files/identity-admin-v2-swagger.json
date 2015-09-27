@@ -308,7 +308,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "identity-admin", 
-    "title": "Identity Admin API", 
+    "title": "Identity Admin", 
     "version": "v2"
   }, 
   "paths": {

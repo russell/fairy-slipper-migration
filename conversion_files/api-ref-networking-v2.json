@@ -42,6 +42,6 @@
       "summary": "Lists, shows information for, creates, updates, and deletes ports."
     }
   ], 
-  "title": "Networking API", 
+  "title": "Networking", 
   "version": "v2"
 }

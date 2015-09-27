@@ -128,7 +128,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "image", 
-    "title": "Image service API", 
+    "title": "Image service", 
     "version": "v1"
   }, 
   "paths": {

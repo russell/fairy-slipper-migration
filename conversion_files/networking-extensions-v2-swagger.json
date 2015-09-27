@@ -4256,7 +4256,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "networking-extensions", 
-    "title": "Networking API", 
+    "title": "Networking extensions", 
     "version": "v2"
   }, 
   "paths": {

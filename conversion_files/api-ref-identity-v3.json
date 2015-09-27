@@ -171,6 +171,6 @@
       "summary": "Manages regions.\n\nA region is a general division of an OpenStack deployment. You can\nassociate zero or more sub-regions with a region to create a tree-\nlike structured hierarchy.\n\nAlthough a region does not have a geographical connotation, a\ndeployment can use a geographical name for a region, such as ``us-\neast`` ."
     }
   ], 
-  "title": "Identity API", 
+  "title": "Identity", 
   "version": "v3"
 }

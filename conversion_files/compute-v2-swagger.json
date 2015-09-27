@@ -675,7 +675,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "compute", 
-    "title": "Compute API", 
+    "title": "Compute", 
     "version": "v2"
   }, 
   "paths": {

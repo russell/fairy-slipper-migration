@@ -53,6 +53,6 @@
       "summary": "Creates, replaces, shows details for, and deletes objects. Copies\nobjects from another object with a new or different name. Updates\nobject metadata."
     }
   ], 
-  "title": "Object Storage API", 
+  "title": "Object Storage", 
   "version": "v1"
 }

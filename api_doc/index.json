@@ -6,7 +6,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Identity API"
+    "title": "Identity"
   }, 
   "database/v1/": {
     "version": "v1", 
@@ -15,7 +15,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Database Service API"
+    "title": "Database Service"
   }, 
   "identity/v3/": {
     "version": "v3", 
@@ -24,7 +24,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Identity API"
+    "title": "Identity"
   }, 
   "compute/v2.1/": {
     "version": "v2.1", 
@@ -33,7 +33,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Compute API"
+    "title": "Compute"
   }, 
   "compute-extensions/v2/": {
     "version": "v2", 
@@ -42,7 +42,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "compute-extensions", 
-    "title": "Compute API"
+    "title": "Compute extensions"
   }, 
   "orchestration/v1/": {
     "version": "v1", 
@@ -51,7 +51,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Orchestration API"
+    "title": "Orchestration"
   }, 
   "networking/v2/": {
     "version": "v2", 
@@ -60,7 +60,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "networking", 
-    "title": "Networking API"
+    "title": "Networking"
   }, 
   "data-processing/v1.1/": {
     "version": "v1.1", 
@@ -69,7 +69,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Data Processing API"
+    "title": "Data Processing"
   }, 
   "telemetry/v2/": {
     "version": "v2", 
@@ -78,7 +78,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "telemetry", 
-    "title": "Telemetry API"
+    "title": "Telemetry"
   }, 
   "identity-admin/v2/": {
     "version": "v2", 
@@ -87,7 +87,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "identity-admin", 
-    "title": "Identity Admin API"
+    "title": "Identity Admin"
   }, 
   "blockstorage/v1/": {
     "version": "v1", 
@@ -96,7 +96,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "blockstorage", 
-    "title": "Block Storage API"
+    "title": "Block Storage"
   }, 
   "networking-extensions/v2/": {
     "version": "v2", 
@@ -105,7 +105,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "networking-extensions", 
-    "title": "Networking API"
+    "title": "Networking extensions"
   }, 
   "identity-extensions/v2/": {
     "version": "v2", 
@@ -114,7 +114,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Identity API"
+    "title": "Identity extensions"
   }, 
   "identity-extensions/v3/": {
     "version": "v3", 
@@ -123,7 +123,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "identity-extensions", 
-    "title": "Identity API"
+    "title": "Identity extensions"
   }, 
   "blockstorage/v2/": {
     "version": "v2", 
@@ -132,7 +132,7 @@
       "name": "Apache 2.0"
     }, 
     "service": "blockstorage", 
-    "title": "Block Storage API"
+    "title": "Block Storage"
   }, 
   "objectstorage/v1/": {
     "version": "v1", 
@@ -141,7 +141,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Object Storage API"
+    "title": "Object Storage"
   }, 
   "compute/v2/": {
     "version": "v2", 
@@ -150,7 +150,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
       "name": "Apache 2.0"
     }, 
-    "title": "Compute API"
+    "title": "Compute"
   }, 
   "image/v1/": {
     "version": "v1", 
@@ -159,6 +159,6 @@
       "name": "Apache 2.0"
     }, 
     "service": "image", 
-    "title": "Image service API"
+    "title": "Image service"
   }
 }

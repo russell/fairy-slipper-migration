@@ -91,7 +91,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "identity-extensions", 
-    "title": "Identity API", 
+    "title": "Identity extensions", 
     "version": "v2"
   }, 
   "paths": {

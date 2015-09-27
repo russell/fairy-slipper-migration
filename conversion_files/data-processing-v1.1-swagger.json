@@ -60,7 +60,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "data-processing", 
-    "title": "Data Processing API", 
+    "title": "Data Processing", 
     "version": "v1.1"
   }, 
   "paths": {

@@ -154,6 +154,6 @@
       "summary": "Each plugin that supports EDP also supports specific job types.\nDifferent versions of a plugin might actually support different job\ntypes. Configuration options vary by plugin, version, and job type.\n\nThe job types provide information about which plugins support which\njob types and how to configure the job types."
     }
   ], 
-  "title": "Data Processing API", 
+  "title": "Data Processing", 
   "version": "v1.1"
 }

@@ -114,7 +114,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "database", 
-    "title": "Database Service API", 
+    "title": "Database Service", 
     "version": "v1"
   }, 
   "paths": {

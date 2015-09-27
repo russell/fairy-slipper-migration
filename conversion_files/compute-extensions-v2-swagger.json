@@ -4151,7 +4151,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "compute-extensions", 
-    "title": "Compute API", 
+    "title": "Compute extensions", 
     "version": "v2"
   }, 
   "paths": {

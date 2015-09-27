@@ -73,6 +73,6 @@
       "summary": "Administrators only, depending on policy settings.\n\nShows, updates, and deletes quotas for a tenant."
     }
   ], 
-  "title": "Block Storage API", 
+  "title": "Block Storage", 
   "version": "v1"
 }

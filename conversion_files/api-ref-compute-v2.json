@@ -115,6 +115,6 @@
       "summary": "Shows details for, sets, updates, and deletes image metadata or\nmetadata items."
     }
   ], 
-  "title": "Compute API", 
+  "title": "Compute", 
   "version": "v2"
 }

@@ -231,7 +231,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "telemetry", 
-    "title": "Telemetry API", 
+    "title": "Telemetry", 
     "version": "v2"
   }, 
   "paths": {

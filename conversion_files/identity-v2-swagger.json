@@ -169,7 +169,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "identity", 
-    "title": "Identity API", 
+    "title": "Identity", 
     "version": "v2"
   }, 
   "paths": {

@@ -408,6 +408,6 @@
       "summary": "Manages volumes and snapshots for use with the Compute API."
     }
   ], 
-  "title": "Compute API", 
+  "title": "Compute", 
   "version": "v2.1"
 }

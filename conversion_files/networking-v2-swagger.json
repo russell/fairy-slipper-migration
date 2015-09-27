@@ -21,7 +21,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "networking", 
-    "title": "Networking API", 
+    "title": "Networking", 
     "version": "v2"
   }, 
   "paths": {

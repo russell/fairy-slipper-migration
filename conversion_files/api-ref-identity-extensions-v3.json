@@ -41,6 +41,6 @@
       "summary": "Creates a trust.\n\nA trust is an OpenStack Identity extension that enables delegation\nand, optionally, impersonation through ``keystone`` . A trust\nextension defines a relationship between a trustor and trustee. A\ntrustor is the user who delegates a limited set of their own rights\nto another user. A trustee is the user whose trust is being\ndelegated to, for a limited time.\n\nThe trust can eventually enable the trustee to impersonate the\ntrustor. For security reasons, some safety measures are added. For\nexample, if a trustor loses a given role, any trusts and the\nrelated tokens that the user issued with that role are\nautomatically revoked.\n\nFor more information, see Use trusts ."
     }
   ], 
-  "title": "Identity API", 
+  "title": "Identity extensions", 
   "version": "v3"
 }

@@ -68,7 +68,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }, 
     "service": "objectstorage", 
-    "title": "Object Storage API", 
+    "title": "Object Storage", 
     "version": "v1"
   }, 
   "paths": {

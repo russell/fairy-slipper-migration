@@ -167,6 +167,6 @@
       "summary": "Shows image metadata that is associated with a specified volume."
     }
   ], 
-  "title": "Block Storage API", 
+  "title": "Block Storage", 
   "version": "v2"
 }

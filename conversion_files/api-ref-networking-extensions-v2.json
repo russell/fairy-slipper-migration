@@ -136,6 +136,6 @@
       "summary": "Adds extra routes to the ``router`` resource.\n\nYou can update a router to add a set of next hop IPs and\ndestination CIDRs.\n\nThe next hop IP must be part of a subnet to which the router\ninterfaces are connected. You can configure the ``routes``\nattribute on only update operations."
     }
   ], 
-  "title": "Networking API", 
+  "title": "Networking extensions", 
   "version": "v2"
 }

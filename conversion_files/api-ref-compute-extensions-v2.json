@@ -403,6 +403,6 @@
       "summary": "Manages volumes and snapshots for use with the Compute API."
     }
   ], 
-  "title": "Compute API", 
+  "title": "Compute extensions", 
   "version": "v2"
 }
