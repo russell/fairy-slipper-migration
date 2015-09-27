@@ -16,7 +16,9 @@
    limited to) turning off binlogs, removing users that we use to
    access your instance, and so forth.
 
+   :requestexample: v1/examples/createRoot_req.txt
    :responseexample 200: v1/examples/createRoot_resp_200.json
+   :responseexample 200: v1/examples/createRoot_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -48,7 +50,9 @@
    if root access is enabled. It returns True if root user is enabled
    for the specified database instance or False otherwise.
 
+   :requestexample: v1/examples/isRootEnabled_req.txt
    :responseexample 200: v1/examples/isRootEnabled_resp_200.json
+   :responseexample 200: v1/examples/isRootEnabled_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -77,6 +81,8 @@
    database instance. Note that all data associated with the database
    is also deleted.
 
+   :requestexample: v1/examples/deleteDatabase_req.txt
+   :responseexample 202: v1/examples/deleteDatabase_resp_202.txt
    :tag: databases
    :parameter instanceId: The instance ID for the specified database
                           instance.
@@ -112,6 +118,8 @@
    "my", and if the user "my" exists, that user will be incorrectly
    deleted. To avoid the problem, do not use periods in user names.
 
+   :requestexample: v1/examples/deleteUser_req.txt
+   :responseexample 202: v1/examples/deleteUser_resp_202.txt
    :tag: user-management
    :parameter name: The name for the specified user.
    :parameter instanceId: The instance ID for the specified database
@@ -140,6 +148,8 @@
    This operation is not permitted when the instance state is either
    ``REBUILDING`` or ``BUILDING`` .
 
+   :requestexample: v1/examples/deleteInstance_req.txt
+   :responseexample 422: v1/examples/deleteInstance_resp_422.txt
    :tag: database-instances
    :parameter instanceId: The instance ID for the specified database
                           instance.
@@ -181,7 +191,9 @@
    perform other operations, the host name always resolves to the
    correct database instance.
 
+   :requestexample: v1/examples/getInstanceById_req.txt
    :responseexample 200: v1/examples/getInstanceById_resp_200.json
+   :responseexample 200: v1/examples/getInstanceById_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -208,7 +220,9 @@
 
    
 
+   :requestexample: v1/examples/listConfigDefaults_req.txt
    :responseexample 200: v1/examples/listConfigDefaults_resp_200.json
+   :responseexample 200: v1/examples/listConfigDefaults_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -236,6 +250,8 @@
    
 
    :requestexample: v1/examples/attachConfigGroup_req.json
+   :requestexample: v1/examples/attachConfigGroup_req.txt
+   :responseexample 202: v1/examples/attachConfigGroup_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -267,6 +283,8 @@
    specified instance.
 
    :requestexample: v1/examples/detachConfigGroup_req.json
+   :requestexample: v1/examples/detachConfigGroup_req.txt
+   :responseexample 202: v1/examples/detachConfigGroup_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -296,7 +314,9 @@
    Details include the type, minimum and maximum values, and whether
    you must restart the instance after you change the parameter value.
 
+   :requestexample: v1/examples/showParameterDetails_req.txt
    :responseexample 200: v1/examples/showParameterDetails_resp_200.json
+   :responseexample 200: v1/examples/showParameterDetails_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: datastores
@@ -335,7 +355,9 @@
    
    Writer: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.
 
+   :requestexample: v1/examples/getFlavorById_req.txt
    :responseexample 200: v1/examples/getFlavorById_resp_200.json
+   :responseexample 200: v1/examples/getFlavorById_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: flavors
@@ -361,7 +383,9 @@
 
    
 
+   :requestexample: v1/examples/getVersions_req.txt
    :responseexample 200: v1/examples/getVersions_resp_200.json
+   :responseexample 200: v1/examples/getVersions_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: api-versions
@@ -391,6 +415,8 @@
    If the operation succeeds, it returns a 202 Accepted response.
 
    :requestexample: v1/examples/restartInstance_req.json
+   :requestexample: v1/examples/restartInstance_req.txt
+   :responseexample 202: v1/examples/restartInstance_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instance-actions
@@ -420,6 +446,8 @@
    memory size of the instance, and restarts MySQL.
 
    :requestexample: v1/examples/resizeInstance_req.json
+   :requestexample: v1/examples/resizeInstance_req.txt
+   :responseexample 202: v1/examples/resizeInstance_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instance-actions
@@ -454,6 +482,8 @@
    If this operation succeeds, it returns a 202 Accepted response.
 
    :requestexample: v1/examples/resizeVolume_req.json
+   :requestexample: v1/examples/resizeVolume_req.txt
+   :responseexample 202: v1/examples/resizeVolume_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instance-actions
@@ -493,7 +523,9 @@
    - The default binding for the MySQL instance is port 3306.
 
    :requestexample: v1/examples/createInstance_req.json
+   :requestexample: v1/examples/createInstance_req.txt
    :responseexample 200: v1/examples/createInstance_resp_200.json
+   :responseexample 200: v1/examples/createInstance_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -519,7 +551,9 @@
 
    Lists status and information for all database instances.
 
+   :requestexample: v1/examples/getInstance_req.txt
    :responseexample 200: v1/examples/getInstance_resp_200.json
+   :responseexample 200: v1/examples/getInstance_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: database-instances
@@ -637,6 +671,8 @@
    +------------------------------+-----------------------------+
 
    :requestexample: v1/examples/createUser_req.json
+   :requestexample: v1/examples/createUser_req.txt
+   :responseexample 202: v1/examples/createUser_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: user-management
@@ -680,7 +716,9 @@
      http://dev.mysql.com/doc/refman/5.1/en/user-account-
      management.html
 
+   :requestexample: v1/examples/getUsers_req.txt
    :responseexample 200: v1/examples/getUsers_resp_200.json
+   :responseexample 200: v1/examples/getUsers_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: user-management
@@ -707,7 +745,9 @@
 
    
 
+   :requestexample: v1/examples/listDatastoreVersions_req.txt
    :responseexample 200: v1/examples/listDatastoreVersions_resp_200.json
+   :responseexample 200: v1/examples/listDatastoreVersions_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: datastores
@@ -735,7 +775,9 @@
    
 
    :requestexample: v1/examples/createConfigGroup_req.json
+   :requestexample: v1/examples/createConfigGroup_req.txt
    :responseexample 200: v1/examples/createConfigGroup_resp_200.json
+   :responseexample 200: v1/examples/createConfigGroup_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: configurations
@@ -762,7 +804,9 @@
    The list includes the associated datastore and datastore version
    for each configuration group.
 
+   :requestexample: v1/examples/listConfigGroups_req.txt
    :responseexample 200: v1/examples/listConfigGroups_resp_200.json
+   :responseexample 200: v1/examples/listConfigGroups_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: configurations
@@ -790,7 +834,9 @@
    This resource is identical to the flavors found in the OpenStack
    Nova API, but without the disk property.
 
+   :requestexample: v1/examples/getFlavors_req.txt
    :responseexample 200: v1/examples/getFlavors_resp_200.json
+   :responseexample 200: v1/examples/getFlavors_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: flavors
@@ -817,7 +863,9 @@
    values, and whether you must restart the instance after you change
    a parameter value.
 
+   :requestexample: v1/examples/listParameters_req.txt
    :responseexample 200: v1/examples/listParameters_resp_200.json
+   :responseexample 200: v1/examples/listParameters_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: datastores
@@ -922,6 +970,8 @@
    +------------------------------+---------+
 
    :requestexample: v1/examples/createDatabase_req.json
+   :requestexample: v1/examples/createDatabase_req.txt
+   :responseexample 202: v1/examples/createDatabase_resp_202.txt
    :accepts: application/json
    :produces: application/json
    :tag: databases
@@ -952,7 +1002,9 @@
    system databases. The system databases (mysql, information_schema,
    lost+found) can only be viewed by a database administrator.
 
+   :requestexample: v1/examples/getDatabases_req.txt
    :responseexample 200: v1/examples/getDatabases_resp_200.json
+   :responseexample 200: v1/examples/getDatabases_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: databases
@@ -979,7 +1031,9 @@
 
    
 
+   :requestexample: v1/examples/getVersionInfo_req.txt
    :responseexample 200: v1/examples/getVersionInfo_resp_200.json
+   :responseexample 200: v1/examples/getVersionInfo_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: api-versions

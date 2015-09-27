@@ -286,6 +286,7 @@
    The response body contains the following information about the
    security group rule:
 
+   :requestexample: v2/examples/getSecGroupRule_req.txt
    :responseexample 200: v2/examples/getSecGroupRule_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -303,6 +304,8 @@
 
    
 
+   :requestexample: v2/examples/deleteSecGroupRule_req.txt
+   :responseexample 204: v2/examples/deleteSecGroupRule_resp_204.txt
    :tag: security_group-ruless
    :parameter rules-security-groups-id: The unique identifier of the
                                         security group rule.
@@ -878,6 +881,7 @@
    
    This operation returns a response body.
 
+   :requestexample: v2/examples/listMeteringLabels_req.txt
    :responseexample 200: v2/examples/listMeteringLabels_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1235,6 +1239,7 @@
    description, name, ID, and security group rules associated with the
    specified security group and tenant ID.
 
+   :requestexample: v2/examples/getSecGroup_req.txt
    :responseexample 200: v2/examples/getSecGroup_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1281,6 +1286,8 @@
    This operation does not require a request body. This operation does
    not return a response body.
 
+   :requestexample: v2/examples/deleteSecGroup_req.txt
+   :responseexample 204: v2/examples/deleteSecGroup_resp_204.txt
    :tag: security-groups
    :parameter security_group_id: The unique identifier of the security
                                  group.
@@ -1430,6 +1437,7 @@
    The list shows the unique ID for and the rules that are associated
    with each security group.
 
+   :requestexample: v2/examples/listSecGroups_req.txt
    :responseexample 200: v2/examples/listSecGroups_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1642,6 +1650,7 @@
 
    The list provides the unique ID for each security group rule.
 
+   :requestexample: v2/examples/listSecGroupRules_req.txt
    :responseexample 200: v2/examples/listSecGroupRules_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1758,6 +1767,7 @@
    This operation does not require a request body. This operation
    returns a response body.
 
+   :requestexample: v2/examples/listMeteringLabelRules_req.txt
    :responseexample 200: v2/examples/listMeteringLabelRules_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1817,6 +1827,7 @@
    This operation returns a response body that contains the
    description, name, ID.
 
+   :requestexample: v2/examples/getMeteringLabel_req.txt
    :responseexample 200: v2/examples/getMeteringLabel_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -1837,6 +1848,8 @@
    This operation does not require a request body. This operation does
    not return a response body.
 
+   :requestexample: v2/examples/deleteMeteringLabel_req.txt
+   :responseexample 204: v2/examples/deleteMeteringLabel_resp_204.txt
    :tag: metering
    :parameter metering_label_id: The unique identifier of the metering
                                  label.
@@ -2620,6 +2633,7 @@
    - The metering label ID for the metering label with which the rule
      is associated
 
+   :requestexample: v2/examples/getMeteringLabelRule_req.txt
    :responseexample 200: v2/examples/getMeteringLabelRule_resp_200.json
    :accepts: application/json
    :produces: application/json
@@ -2639,6 +2653,8 @@
    
    This operation does not return a response body.
 
+   :requestexample: v2/examples/deleteMeteringLabelRule_req.txt
+   :responseexample 204: v2/examples/deleteMeteringLabelRule_resp_204.txt
    :tag: metering
    :parameter metering-label-rule-id: The unique identifier of
                                       metering label rule.
