@@ -4,7 +4,7 @@
     "routes": {
       "required": false, 
       "type": "object", 
-      "description": "List of dictionary pairs in this format:\n\n::\n\n   [\n     {\n       \"nexthop\":\"IPADDRESS\",\n       \"destination\":\"CIDR\"\n     }\n   ]", 
+      "description": "List of dictionary pairs in this format:\n\n::\n   [\n     {\n       \"nexthop\":\"IPADDRESS\",\n       \"destination\":\"CIDR\"\n     }\n   ]", 
       "format": ""
     }, 
     "next_hop": {

@@ -88,7 +88,7 @@
     {
       "description": "General API information", 
       "name": "general-info", 
-      "summary": "Authenticated calls that target a known URI but that use anHTTP\nmethod that the implementation does not support return a\n``405Method Not Allowed`` error code. In addition, the HTTP\n``OPTIONS`` method is supported for each known URI. Inboth cases,\nthe ``Allow`` response header indicates theHTTP methods that are\nsupported for the resource."
+      "summary": "Authenticated calls that target a known URI but that use anHTTP\nmethod that the implementation does not support return a\n``405Method Not Allowed``error code. In addition, the HTTP\n``OPTIONS``method is supported for each known URI. Inboth cases,\nthe ``Allow``response header indicates theHTTP methods that are\nsupported for the resource."
     }, 
     {
       "description": "API versions", 

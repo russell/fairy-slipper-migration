@@ -22,7 +22,7 @@
                          empty list is returned.  For example, issue a
                          GET request against the following endpoint to
                          list all servers that have changed since Mon,
-                         24 Jan 2015 17:08:00 UTC:  ::     GET
+                         24 Jan 2015 17:08:00 UTC:  ::    GET
                          /v2/010101/servers?changes-
                          since=2015-01-24T17:08:00Z To enable you to
                          keep track of changes, this filter also
@@ -31,7 +31,7 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
+                         format is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
@@ -177,7 +177,7 @@
                          empty list is returned.  For example, issue a
                          GET request against the following endpoint to
                          list all servers that have changed since Mon,
-                         24 Jan 2015 17:08:00 UTC:  ::     GET
+                         24 Jan 2015 17:08:00 UTC:  ::    GET
                          /v2/010101/servers?changes-
                          since=2015-01-24T17:08:00Z To enable you to
                          keep track of changes, this filter also
@@ -186,7 +186,7 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
+                         format is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
@@ -495,7 +495,7 @@
                          empty list is returned.  For example, issue a
                          GET request against the following endpoint to
                          list all servers that have changed since Mon,
-                         24 Jan 2015 17:08:00 UTC:  ::     GET
+                         24 Jan 2015 17:08:00 UTC:  ::    GET
                          /v2/010101/servers?changes-
                          since=2015-01-24T17:08:00Z To enable you to
                          keep track of changes, this filter also
@@ -504,7 +504,7 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
+                         format is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
@@ -1294,7 +1294,7 @@
                          empty list is returned.  For example, issue a
                          GET request against the following endpoint to
                          list all servers that have changed since Mon,
-                         24 Jan 2015 17:08:00 UTC:  ::     GET
+                         24 Jan 2015 17:08:00 UTC:  ::    GET
                          /v2/010101/servers?changes-
                          since=2015-01-24T17:08:00Z To enable you to
                          keep track of changes, this filter also
@@ -1303,7 +1303,7 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
+                         format is ISO 8601 :  ::    CCYY-MM-
                          DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,

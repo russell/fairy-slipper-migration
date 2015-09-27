@@ -346,7 +346,6 @@
    the value to add. For example:
    
    .. code-block:: json
-   
       {
          "op": "add",
          "path": "/a/b/c",
@@ -864,7 +863,6 @@
    sort the results:
    
    .. code-block:: json
-   
       GET /v2/images?sort_key=name
       &
       sort_dir=asc
@@ -875,7 +873,6 @@
    To specify the ``sort`` query parameter to sort the results:
    
    .. code-block:: json
-   
       GET /v2/images?sort=name:asc,status:desc
 
    :responseexample 200: v2/examples/listImages-v2_resp_200.json
@@ -933,7 +930,7 @@
    :query sort: Sorts by one or more attribute and sort direction
                 combinations. You can also set multiple sort keys and
                 directions. Default direction is ``desc`` .  For
-                example:  .. code-block:: json     GET
+                example:  .. code-block:: json    GET
                 /v2/images?sort=name:asc,status:desc
    :query tag: Image tag. For example, ``?tag="cirros"`` .
    :statuscode 200: 

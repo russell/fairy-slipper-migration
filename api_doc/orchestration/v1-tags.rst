@@ -3,9 +3,9 @@
 
    Authenticated calls that target a known URI but that use anHTTP
    method that the implementation does not support return a
-   ``405Method Not Allowed`` error code. In addition, the HTTP
-   ``OPTIONS`` method is supported for each known URI. Inboth cases,
-   the ``Allow`` response header indicates theHTTP methods that are
+   ``405Method Not Allowed``error code. In addition, the HTTP
+   ``OPTIONS``method is supported for each known URI. Inboth cases,
+   the ``Allow``response header indicates theHTTP methods that are
    supported for the resource.
 
 .. swagger:tag:: heat-versions

@@ -1335,7 +1335,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -1732,7 +1732,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -5599,7 +5599,7 @@
     "/v2.1/{tenant_id}/os-assisted-volume-snapshots/{snapshot_id}": [
       {
         "consumes": [], 
-        "description": "To make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\n.. code-block:: json\n\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
+        "description": "To make this request, add the ``delete_info`` query parameter to\nthe URI, as follows:\n\n.. code-block:: json\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
         "examples": {}, 
         "id": "deletesnapshots", 
         "method": "delete", 
@@ -5621,7 +5621,7 @@
             "type": "string"
           }, 
           {
-            "description": "Information for snapshot deletion. Include the ID of the associated\nvolume. For example:\n\n.. code-block:: json\n\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
+            "description": "Information for snapshot deletion. Include the ID of the associated\nvolume. For example:\n\n.. code-block:: json\n   DELETE /os-assisted-volume-snapshots?delete_info='{\"volume_id\": \"521752a6-acf6-4b2d-bc7a-119f9148cd8c\"}'", 
             "format": "", 
             "in": "query", 
             "name": "delete_info", 
@@ -7333,7 +7333,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Specify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\n.. code-block:: json\n\n   GET /os-fping?all_tenants=1\nSpecify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\n.. code-block:: json\n\n   GET /os-fping?all_tenants=1\n   &\n   include=uuid1,uuid2\n   &\n   exclude=uuid3,uuid4\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+        "description": "Specify the ``all_tenants=1`` query parameter to ping instances for\nall tenants. For example:\n\n.. code-block:: json\n   GET /os-fping?all_tenants=1\nSpecify the ``include`` and ``exclude`` query parameters to filter\nthe results. For example:\n\n.. code-block:: json\n   GET /os-fping?all_tenants=1\n   &\n   include=uuid1,uuid2\n   &\n   exclude=uuid3,uuid4\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
         "examples": {}, 
         "id": "list-fping", 
         "method": "get", 
@@ -8331,7 +8331,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "before_timestamp", 
@@ -16954,7 +16954,7 @@
     {
       "description": "Servers shelve (servers, action)", 
       "name": "shelve", 
-      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. Allassociated data\nand resources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelvedinstance that\nyou no longer need."
+      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve``action to shelve a server. Allassociated data and\nresources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve``action to restore a shelved instance.\n\nUse the ``shelveOffload``action to remove a shelvedinstance that\nyou no longer need."
     }, 
     {
       "description": "Servers deferred delete (servers, action)", 
@@ -16964,7 +16964,7 @@
     {
       "description": "Servers evacuate (servers, action)", 
       "name": "evacuate", 
-      "summary": "Evacuates servers.\n\nSpecify the ``evacuate`` action in the request body."
+      "summary": "Evacuates servers.\n\nSpecify the ``evacuate``action in the request body."
     }, 
     {
       "description": "Servers diagnostics (servers, diagnostics)", 
@@ -16994,7 +16994,7 @@
     {
       "description": "Servers usage (servers, os-server-usage)", 
       "name": "server-usage", 
-      "summary": "Lists all servers and shows server details. Includes server\nusageinformation.\n\nShows ``OS-SRV-USG:launched_at`` and ``OS-SRV-USG:terminated_at``\nattributes in server responses."
+      "summary": "Lists all servers and shows server details. Includes server\nusageinformation.\n\nShows ``OS-SRV-USG:launched_at``and ``OS-SRV-\nUSG:terminated_at``attributes in server responses."
     }, 
     {
       "description": "Servers virtual interfaces (servers, os-virtual-interfaces)", 
@@ -17039,7 +17039,7 @@
     {
       "description": "Images", 
       "name": "compute_images-v2.1", 
-      "summary": "Lists, gets details for, and deletes images. Also sets, lists,gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create andrebuild\na server. By default, operators provide pre-builtoperating system\nimages. You can also create custom images. SeeCompute server\nactions.\n\nIf you set the image size policy in the ``policy.json`` file, the\n``OS-EXT-IMG-SIZE:size`` extended attribute isvisible."
+      "summary": "Lists, gets details for, and deletes images. Also sets, lists,gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create andrebuild\na server. By default, operators provide pre-builtoperating system\nimages. You can also create custom images. SeeCompute server\nactions.\n\nIf you set the image size policy in the ``policy.json``file, the\n``OS-EXT-IMG-SIZE:size``extended attribute isvisible."
     }, 
     {
       "description": "Image metadata", 
@@ -17119,7 +17119,7 @@
     {
       "description": "Floating IPs bulk (os-floating-ips-bulk)", 
       "name": "floating-ips-bulk", 
-      "summary": "Bulk-creates, deletes, and lists floating IPs. Default pool name is\n``nova`` . To view available pools, use the ``os-floating-ip-\npools`` extension."
+      "summary": "Bulk-creates, deletes, and lists floating IPs. Default pool name is\n``nova``. To view available pools, use the ``os-floating-ip-\npools``extension."
     }, 
     {
       "description": "Ping instances (os-fping)", 

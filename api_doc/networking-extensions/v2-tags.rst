@@ -22,20 +22,21 @@
    for an OpenStackNetworking network and list or show details for
    networks with multiple physicalbindings.
    
-   You cannot update any ``provider`` attributes. If you try to do so,
+   You cannot update any ``provider``attributes. If you try to do so,
    anerror occurs.
    
    To delete a network with multiple physical bindings, issue a normal
    delete networkrequest.
    
    To define multiple physical bindings for a network, include a
-   ``segments`` list in the request body of a ``POST/v2.0/networks``
-   request. Each element in the ``segments`` listhas the same
-   structure as the provider network attributes. These attributes are
-   ``provider:network_type`` , ``provider:physical_network`` , and
-   ``provider:segmentation_id`` . The validation rules for
-   theseattributes are the same as for theNetworks provider extended
-   attributes. You cannot use both extensions at thesame time.
+   ``segments``list in the request body of a
+   ``POST/v2.0/networks``request. Each element in the
+   ``segments``listhas the same structure as the provider network
+   attributes. These attributes are ``provider:network_type``,
+   ``provider:physical_network``, and ``provider:segmentation_id``.
+   The validation rules for theseattributes are the same as for
+   theNetworks provider extended attributes. You cannot use both
+   extensions at thesame time.
    
    The NSX and ML2 plug-ins support this extension. With the ML2 plug-
    in, you can specifymultiple VLANs for a specified network, a VXLAN
@@ -50,15 +51,15 @@
    theplug-in refuses to create one and returns an appropriateerror to
    the user.
    
-   You cannot update the ``vlan-transparent`` attribute. Ifyou try to
+   You cannot update the ``vlan-transparent``attribute. Ifyou try to
    do so, an error occurs.
    
    To delete a VLAN-transparent network, issue a normal deletenetwork
    request.
    
    The ML2 plug-in currently supports this extension. With the
-   ML2plug-in, you can set the ``vlan-transparent`` attributeto either
-   ``true`` or ``false`` .
+   ML2plug-in, you can set the ``vlan-transparent``attributeto either
+   ``true``or ``false``.
 
 .. swagger:tag:: port-binding
    :synopsis: Ports binding extended attributes (ports)
@@ -113,23 +114,23 @@
    
    Load balancer statuses
    
-   +----------------+-----------------------------------------------------------------+
-   | Status         | Description                                                     |
-   +----------------+-----------------------------------------------------------------+
-   | ACTIVE         | Resource is ready and active.                                   |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_CREATE | Resource is being created.                                      |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_UPDATE | Resource is being updated.                                      |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_DELETE | Resource is pending deletion.                                   |
-   +----------------+-----------------------------------------------------------------+
-   | INACTIVE       | Resource was created but is not active.                         |
-   +----------------+-----------------------------------------------------------------+
-   | ERROR          | Object within the service is not working. The ``error_details`` |
-   |                | attribute provides anexplanation for the error, its cause,      |
-   |                | andpossibly a solution.                                         |
-   +----------------+-----------------------------------------------------------------+
+   +----------------+------------------------------------------------------------------+
+   | Status         | Description                                                      |
+   +----------------+------------------------------------------------------------------+
+   | ACTIVE         | Resource is ready and active.                                    |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_CREATE | Resource is being created.                                       |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_UPDATE | Resource is being updated.                                       |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_DELETE | Resource is pending deletion.                                    |
+   +----------------+------------------------------------------------------------------+
+   | INACTIVE       | Resource was created but is not active.                          |
+   +----------------+------------------------------------------------------------------+
+   | ERROR          | Object within the service is not working. The                    |
+   |                | ``error_details``attribute provides anexplanation for the error, |
+   |                | its cause, andpossibly a solution.                               |
+   +----------------+------------------------------------------------------------------+
 
 .. swagger:tag:: lbaas
    :synopsis: Load-Balancer-as-a-Service (LBaaS) 2.0 (EXPERIMENTAL)
@@ -145,23 +146,23 @@
    
    Load balancer statuses
    
-   +----------------+-----------------------------------------------------------------+
-   | Status         | Description                                                     |
-   +----------------+-----------------------------------------------------------------+
-   | ACTIVE         | Resource is ready and active.                                   |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_CREATE | Resource is being created.                                      |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_UPDATE | Resource is being updated.                                      |
-   +----------------+-----------------------------------------------------------------+
-   | PENDING_DELETE | Resource is pending deletion.                                   |
-   +----------------+-----------------------------------------------------------------+
-   | INACTIVE       | Resource was created but is not active.                         |
-   +----------------+-----------------------------------------------------------------+
-   | ERROR          | Object within the service is not working. The ``error_details`` |
-   |                | attribute provides anexplanation for the error, its cause, and  |
-   |                | possibly asolution.                                             |
-   +----------------+-----------------------------------------------------------------+
+   +----------------+------------------------------------------------------------------+
+   | Status         | Description                                                      |
+   +----------------+------------------------------------------------------------------+
+   | ACTIVE         | Resource is ready and active.                                    |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_CREATE | Resource is being created.                                       |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_UPDATE | Resource is being updated.                                       |
+   +----------------+------------------------------------------------------------------+
+   | PENDING_DELETE | Resource is pending deletion.                                    |
+   +----------------+------------------------------------------------------------------+
+   | INACTIVE       | Resource was created but is not active.                          |
+   +----------------+------------------------------------------------------------------+
+   | ERROR          | Object within the service is not working. The                    |
+   |                | ``error_details``attribute provides anexplanation for the error, |
+   |                | its cause, and possibly asolution.                               |
+   +----------------+------------------------------------------------------------------+
 
 .. swagger:tag:: subnetpools-ext
    :synopsis: Subnet pools extension (subnetpools)
@@ -192,30 +193,30 @@
    
    This extension introduces these resources:
    
-   - ``service`` . A parent object that associates VPN with a
+   - ``service``. A parent object that associates VPN with a
      specificsubnet and router.
    
-   - ``ikepolicy`` . The InternetKey Exchange (IKE) policy that
+   - ``ikepolicy``. The InternetKey Exchange (IKE) policy that
      identifies theauthentication and encryption algorithm to use
      duringphase one and two negotiation of a VPN connection.
    
-   - ``ipsecpolicy`` . The IP security policy thatspecifies the
+   - ``ipsecpolicy``. The IP security policy thatspecifies the
      authentication and encryption algorithm andencapsulation mode to
      use for the established VPNconnection.
    
-   - ``ipsec-site-connection`` . Details forthe site-to-site IPsec
+   - ``ipsec-site-connection``. Details forthe site-to-site IPsec
      connection, including the peerCIDRs, MTU, authentication mode,
      peer address, DPDsettings, and status.
 
 .. swagger:tag:: extraroute
    :synopsis: Extra routes
 
-   Adds extra routes to the ``router`` resource.
+   Adds extra routes to the ``router``resource.
    
    You can update a router to add a set of next hop IPs and
    destinationCIDRs.
    
    The next hop IP must be part of a subnet towhich the router
-   interfaces are connected. You canconfigure the ``routes`` attribute
+   interfaces are connected. You canconfigure the ``routes``attribute
    on onlyupdate operations.
 
