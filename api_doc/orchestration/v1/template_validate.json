@@ -16,7 +16,7 @@
     "template": {
       "required": false, 
       "type": "string", 
-      "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n.. code-block:: json\n   \"template\": {\n       \"heat_template_version\": \"2013-05-23\",\n       ...}\nThis parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+      "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n.. code-block:: json\n\n   \"template\": {\n       \"heat_template_version\": \"2013-05-23\",\n       ...}\nThis parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
       "format": ""
     }
   }
