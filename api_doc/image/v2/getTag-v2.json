@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "namespace": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``namespace`` is unique across all users.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the ``tag`` .", 
+      "format": ""
+    }
+  }
+}

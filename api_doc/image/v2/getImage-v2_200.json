@@ -1,0 +1,137 @@
+{
+  "type": "object", 
+  "properties": {
+    "container_format": {
+      "required": true, 
+      "type": "string", 
+      "description": "The container format of image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "min_ram": {
+      "required": true, 
+      "type": "string", 
+      "description": "The minimum amount of RAM in MB that is required to boot the image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "updated_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "file": {
+      "required": true, 
+      "type": "string", 
+      "description": "URL for the virtual machine image file.", 
+      "format": ""
+    }, 
+    "owner": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the owner, or tenant, of the image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The unique ID for the image.", 
+      "format": ""
+    }, 
+    "size": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The size of the image data, in bytes.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "self": {
+      "required": true, 
+      "type": "string", 
+      "description": "URL for the virtual machine image.", 
+      "format": ""
+    }, 
+    "disk_format": {
+      "required": true, 
+      "type": "string", 
+      "description": "The disk format of the image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "direct_url": {
+      "required": true, 
+      "type": "string", 
+      "description": "URL to access the image file kept in external store. It appears\nwhen you set the ``show_multiple_locations`` option to ``True`` in\nthe Image service ' s configuration file.", 
+      "format": ""
+    }, 
+    "schema": {
+      "required": true, 
+      "type": "string", 
+      "description": "URL for schema of the virtual machine image.", 
+      "format": ""
+    }, 
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The image status.", 
+      "format": ""
+    }, 
+    "tags": {
+      "required": true, 
+      "type": "object", 
+      "description": "Image tags.", 
+      "format": ""
+    }, 
+    "visibility": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "The image visibility.", 
+      "format": ""
+    }, 
+    "min_disk": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The minimum disk size in GB that is required to boot the image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "properties": {
+      "required": true, 
+      "type": "object", 
+      "description": "Properties, if any, that are associated with the image.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the image.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "url": {
+      "required": true, 
+      "type": "string", 
+      "description": "URL to access the image file kept in external store. It appears\nwhen you set the ``show_multiple_locations`` option to ``True`` in\nthe Image service ' s configuration file.", 
+      "format": ""
+    }, 
+    "checksum": {
+      "required": true, 
+      "type": "string", 
+      "description": "Hash of the image data used. The Image service uses this value for\nverification.\n\nIf this field has no value, its value is ``null`` (JSON null data\ntype).", 
+      "format": ""
+    }, 
+    "created_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "protected": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the image can be deleted.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": true, 
+      "type": "object", 
+      "description": "The location metadata.", 
+      "format": ""
+    }
+  }
+}

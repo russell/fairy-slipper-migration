@@ -1,0 +1,113 @@
+{
+  "type": "object", 
+  "properties": {
+    "additionalItems": {
+      "required": false, 
+      "type": "object", 
+      "description": "If you use tuple-typing , describes extra items. If the value of\n``items`` is an array and the instance is longer than the list of\nschemas in ``items`` , the schema in this property describes the\nadditional items.\n\nIf this value is false, the instance cannot be longer than the\nnumber of schemas listed in ``items`` .\n\nA value of true indicates an empty schema, or anything goes.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Property description.", 
+      "format": ""
+    }, 
+    "title": {
+      "required": true, 
+      "type": "string", 
+      "description": "Property title.", 
+      "format": ""
+    }, 
+    "default": {
+      "required": false, 
+      "type": "string", 
+      "description": "Default property description.", 
+      "format": ""
+    }, 
+    "items": {
+      "required": false, 
+      "type": "object", 
+      "description": "specifies schema for the items in an array.", 
+      "format": ""
+    }, 
+    "operators": {
+      "required": false, 
+      "type": "string", 
+      "description": "Operators property description.", 
+      "format": ""
+    }, 
+    "enum": {
+      "required": false, 
+      "type": "string", 
+      "description": "Enumeration of property values.", 
+      "format": ""
+    }, 
+    "maximum": {
+      "required": false, 
+      "type": "object", 
+      "description": "Maximum allowed numerical value.", 
+      "format": ""
+    }, 
+    "minItems": {
+      "required": false, 
+      "type": "object", 
+      "description": "Minimum length of an array.", 
+      "format": ""
+    }, 
+    "readonly": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Indicates whether this is a read-only property.", 
+      "format": ""
+    }, 
+    "minimum": {
+      "required": false, 
+      "type": "integer", 
+      "description": "Minimum allowed numerical value.", 
+      "format": ""
+    }, 
+    "maxItems": {
+      "required": false, 
+      "type": "object", 
+      "description": "Maximum length of an array.", 
+      "format": ""
+    }, 
+    "maxLength": {
+      "required": false, 
+      "type": "object", 
+      "description": "Maximum allowed string length.", 
+      "format": ""
+    }, 
+    "uniqueItems": {
+      "required": false, 
+      "type": "object", 
+      "description": "whether all the values in the array must be distinct.", 
+      "format": ""
+    }, 
+    "pattern": {
+      "required": false, 
+      "type": "object", 
+      "description": "A regular expression (ECMA 262) that a string value must match.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "Property type", 
+      "format": ""
+    }, 
+    "minLength": {
+      "required": false, 
+      "type": "object", 
+      "description": "Minimum allowed string length.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the property.", 
+      "format": ""
+    }
+  }
+}

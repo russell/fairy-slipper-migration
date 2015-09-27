@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "prefix": {
+      "required": false, 
+      "type": "string", 
+      "description": "Prefix for the specified resource type. If you specify a prefix,\nyou must use this value followed by a prefix separator such as the\ncolon ( ``:`` ) character to prefix any properties in the namespace\nthat you want to apply to the specified resource type.", 
+      "format": ""
+    }, 
+    "properties_target": {
+      "required": false, 
+      "type": "string", 
+      "description": "Some resource types allow more than one key and value pair for each\ninstance. For example, the Image service allows both user and image\nmetadata on volumes. The ``properties_target`` parameter enables a\nnamespace target to remove the ambiguity.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the resource type.", 
+      "format": ""
+    }
+  }
+}
