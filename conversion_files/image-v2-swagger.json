@@ -109,7 +109,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -199,7 +199,7 @@
           "type": "object"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -774,7 +774,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -876,7 +876,7 @@
           "type": "object"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1074,7 +1074,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1188,7 +1188,7 @@
           "type": "object"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1516,7 +1516,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1618,7 +1618,7 @@
           "type": "object"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -2321,7 +2321,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Depending on the referenced target location, this operation\nperforms one of the following functions:\n\n- The target location is an array index. A new value is inserted\n  into the array at the specified index.\n\n- The target location is an object member that does not exist. A new\n  member is added to the object.\n\n- The target location is an object member that exists. The member\n  value is replaced.\n\nThe operation object MUST contain a ``value`` member that specifies\nthe value to add. For example:\n\n.. code-block:: json\n\n   {\n      \"op\": \"add\",\n      \"path\": \"/a/b/c\",\n      \"value\": [\n         \"foo\",\n         \"bar\"\n      ]\n   }\n\nThe target location MUST reference one of these values:\n\n- The root of the target document. The specified value is the entire\n  content of the target document.\n\n- A member to add to an object. The specified value is added to that\n  object at the specified location. If the member already exists,\n  it is replaced by the specified value.\n\n- An element to add to the array. The specified value is added to\n  the array at the specified location. Any element that is at or\n  above the specified index is shifted one position to the right.\n  The specified index MUST NOT be greater than the number of\n  elements in the array. If the hyphen (-) character is used to\n  index the end of the array (see [RFC6901]), the value is appended\n  to the array.\n\nBecause this operation adds to existing objects and arrays, its\ntarget location often does not exist.\n\nThe request body must conform to one of these media types:\n\n- ``application/openstack-images-v2.0-json-patch``\n\n- ``application/openstack-images-v2.1-json-patch`` (Since Image API\n  v2.2.)\n\nYou can also use the PATCH method to add or remove image\nproperties.\n\nFor information about the PATCH method and the available media\ntypes, see Image API v2 HTTP PATCH media types .\n\nPreconditions\n\n- When you add or replace a location to the specified image, you\n  must set the ``disk_format`` and ``container_format`` parameters\n  in the image.\n\n- When you replace a location, a location must be previously set in\n  the image.\n\nSynchronous Postconditions\n\n- With correct permissions, you can view the updated values of the\n  attributes of the image.\n\n- After you add a location to an image that had no location and with\n  correct permissions, you can use API calls to view the image\n  status as ``active`` .\n\n- After you remove all locations from the image and with correct\n  permissions, you can use API calls to view the image status as\n  ``queued`` .\n\nTroubleshooting\n\n- If you cannot update locations, your request might be missing some\n  information. Make sure that you meet the preconditions and run\n  the request again. If the request fails again, review your API\n  request.", 
+        "description": "Depending on the referenced target location, this operation\nperforms one of the following functions:\n\n- The target location is an array index. A new value is inserted\n  into the array at the specified index.\n\n- The target location is an object member that does not exist. A new\n  member is added to the object.\n\n- The target location is an object member that exists. The member\n  value is replaced.\n\nThe operation object MUST contain a ``value`` member that specifies\nthe value to add. For example:\n\n.. code-block:: json\n\n   {\n      \"op\": \"add\",\n      \"path\": \"/a/b/c\",\n      \"value\": [\n         \"foo\",\n         \"bar\"\n      ]\n   }\n\nThe target location MUST reference one of these values:\n\n- The root of the target document. The specified value is the entire\n  content of the target document.\n\n- A member to add to an object. The specified value is added to that\n  object at the specified location. If the member already exists,\n  it is replaced by the specified value.\n\n- An element to add to the array. The specified value is added to\n  the array at the specified location. Any element that is at or\n  above the specified index is shifted one position to the right.\n  The specified index MUST NOT be greater than the number of\n  elements in the array. If the hyphen (-) character is used to\n  index the end of the array (see [RFC6901]), the value is appended\n  to the array.\n\nBecause this operation adds to existing objects and arrays, its\ntarget location often does not exist.\n\nThe request body must conform to one of these media types:\n\n- ``application/openstack-images-v2.0-json-patch``\n\n- ``application/openstack-images-v2.1-json-patch`` (Since Image API\n  v2.2.)\n\nYou can also use the PATCH method to add or remove image\nproperties.\n\nFor information about the PATCH method and the available media\ntypes, see `Image API v2 HTTP PATCH media types\n<http://specs.openstack.org/openstack/glance-specs/specs/api/v2\n/http-patch-image-api-v2.html>`_.\n\nPreconditions\n\n- When you add or replace a location to the specified image, you\n  must set the ``disk_format`` and ``container_format`` parameters\n  in the image.\n\n- When you replace a location, a location must be previously set in\n  the image.\n\nSynchronous Postconditions\n\n- With correct permissions, you can view the updated values of the\n  attributes of the image.\n\n- After you add a location to an image that had no location and with\n  correct permissions, you can use API calls to view the image\n  status as ``active`` .\n\n- After you remove all locations from the image and with correct\n  permissions, you can use API calls to view the image status as\n  ``queued`` .\n\nTroubleshooting\n\n- If you cannot update locations, your request might be missing some\n  information. Make sure that you meet the preconditions and run\n  the request again. If the request fails again, review your API\n  request.", 
         "examples": {
           "application/json": [
             {
@@ -2652,7 +2652,7 @@
             "type": "string"
           }, 
           {
-            "description": "The content range of image data. For details, see Hypertext\nTransfer Protocol (HTTP/1.1): Range Requests .", 
+            "description": "The content range of image data. For details, see `Hypertext\nTransfer Protocol (HTTP/1.1): Range Requests\n<http://tools.ietf.org/html/rfc7233>`_.", 
             "format": "", 
             "in": "header", 
             "name": "Content-Range", 

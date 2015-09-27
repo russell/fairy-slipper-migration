@@ -573,7 +573,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .", 
+        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see `Filtering and column\nselection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.", 
         "examples": {}, 
         "id": "listNetworks", 
         "method": "get", 
@@ -776,7 +776,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .\n\nIn addition to the following response parameters, the response\nmight show extension response parameters. For information, see\nNetworks multiple provider extension (networks) .", 
+        "description": "You can control which response parameters are returned by using the\nfields query parameter. For information, see `Filtering and column\nselection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.\n\nIn addition to the following response parameters, the response\nmight show extension response parameters. For information, see\n`Networks multiple provider extension (networks)\n<http://developer.openstack.org/api-ref-\nnetworking-v2-ext.html#showProviderNetwork>`_.", 
         "examples": {}, 
         "id": "showNetwork", 
         "method": "get", 
@@ -950,7 +950,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Default policy settings return only those ports that are owned by\nthe tenant who submits the request, unless the request is submitted\nby a user with administrative rights. Users can control which\nattributes are returned by using the fields query parameter.\nAdditionally, you can filter results by using query string\nparameters. For information, see Filtering and Column Selection .", 
+        "description": "Default policy settings return only those ports that are owned by\nthe tenant who submits the request, unless the request is submitted\nby a user with administrative rights. Users can control which\nattributes are returned by using the fields query parameter.\nAdditionally, you can filter results by using query string\nparameters. For information, see `Filtering and Column Selection\n<http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.", 
         "examples": {}, 
         "id": "listPorts", 
         "method": "get", 

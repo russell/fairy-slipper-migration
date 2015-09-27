@@ -93,7 +93,7 @@
   "service": "compute-extensions", 
   "tags": [
     {
-      "description": "Servers with block device mapping format(servers)", 
+      "description": "Servers with block device mapping format (servers)", 
       "name": "block-device-mapping", 
       "summary": "Creates a server with a block device mapping."
     }, 
@@ -118,7 +118,7 @@
       "summary": "Shows metadata for servers."
     }, 
     {
-      "description": "Servers with extended availability zones(servers)", 
+      "description": "Servers with extended availability zones (servers)", 
       "name": "ext-az", 
       "summary": "Shows the instance availability zone for compute nodes (nova-\ncompute). Internal services appear in their own *internal*\navailability zone."
     }, 
@@ -138,7 +138,7 @@
       "summary": "Creates one or more servers with an optional reservation ID. The\nrequest and response examples show how to create multiple servers\nwith or without a reservation ID."
     }, 
     {
-      "description": "Servers with mac_addr extended attribute(servers)", 
+      "description": "Servers with mac_addr extended attribute (servers)", 
       "name": "server-ext-ips-mac", 
       "summary": "Creates, shows information for, and lists servers with the\n``mac_addr`` extended attribute."
     }, 
@@ -178,7 +178,7 @@
       "summary": "Gets the usage data for a server."
     }, 
     {
-      "description": "Servers and images with disk config (servers,images)", 
+      "description": "Servers and images with disk config (servers, images)", 
       "name": "disk-config", 
       "summary": "Extends servers with the ``diskConfig`` attribute."
     }, 
@@ -228,7 +228,7 @@
       "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor , OS-FLV-EXT-DATA:ephemeral , and swap extended\nattributes."
     }, 
     {
-      "description": "Flavors with rxtx_factor extended attribute(flavors)", 
+      "description": "Flavors with rxtx_factor extended attribute (flavors)", 
       "name": "flavor-rxtx", 
       "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor extended attribute, which is related to configured\nbandwidth cap values."
     }, 
@@ -258,7 +258,7 @@
       "summary": "Extends limits to show the project usage. Shows information such as\nRAM and instance quotas usage."
     }, 
     {
-      "description": "Limits with project usage for administrators(limits)", 
+      "description": "Limits with project usage for administrators (limits)", 
       "name": "used-limits-for-admins", 
       "summary": "Extends limits to enable administrators to show the project usage\nfor a specified customer project ID. Shows information such as RAM\nand instance quotas usage."
     }, 
@@ -378,7 +378,7 @@
       "summary": "Creates and deletes security group rules."
     }, 
     {
-      "description": "Rules for default security group(os-security-group-default-rules)", 
+      "description": "Rules for default security group (os-security-group-default-rules)", 
       "name": "security-group-default-rules", 
       "summary": "Lists, shows information for, and creates default security group\nrules."
     }, 

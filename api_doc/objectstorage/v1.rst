@@ -328,7 +328,9 @@
    or replaces metadata. This form of the operation has no request
    body.
    
-   You can also use the form POST feature to upload objects.
+   You can also use the `form POST feature
+   <http://docs.openstack.org/kilo/config-reference/content/object-
+   storage-form-post.html>`_ to upload objects.
    
    Example requests and responses:
    
@@ -690,7 +692,8 @@
    The sort order for the name is based on a binary comparison, a
    single built-in collating sequence that compares string data by
    using the SQLite memcmp() function, regardless of text encoding.
-   See Collating Sequences .
+   See `Collating Sequences
+   <http://www.sqlite.org/datatype3.html#collation>`_.
    
    This operation does not accept a request body.
    

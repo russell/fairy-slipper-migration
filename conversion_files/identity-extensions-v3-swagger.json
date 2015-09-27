@@ -44,7 +44,7 @@
           "type": "string"
         }, 
         "oauth_expires_at": {
-          "description": "The date and time when a request token expires.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf the Identity API does not include this attribute or its value is\n``null`` , the token never expires.", 
+          "description": "The date and time when a request token expires.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf the Identity API does not include this attribute or its value is\n``null`` , the token never expires.", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -109,7 +109,7 @@
           "type": "object"
         }, 
         "oauth_expires_at": {
-          "description": "The date and time when a request token expires.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf the Identity API does not include this attribute or its value is\n``null`` , the token never expires.", 
+          "description": "The date and time when a request token expires.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf the Identity API does not include this attribute or its value is\n``null`` , the token never expires.", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -168,7 +168,7 @@
           "type": "integer"
         }, 
         "metadata": {
-          "description": "A Base64-encoded JSON object that contains these key and value\npairs:\n\n- ``source`` . The identity who is requesting a ticket.\n\n- ``destination`` . The target for which the ticket will be valid.\n\n- ``timestamp`` . The current time stamp from the requester.\n\n- ``nonce`` . Random, single-use data. See Cryptographic nonce .\n\nThe time stamp and nonce are required to prevent replay attacks.\n\nFor example:\n\n.. code-block:: json\n\n   {\n       \"source\": \"scheduler.host.example.com\",\n       \"destination\": \"compute.host.example.com\",\n       \"timestamp\": \"2012-03-26T10:01:01.720000\",\n       \"nonce\": 1234567890\n   }", 
+          "description": "A Base64-encoded JSON object that contains these key and value\npairs:\n\n- ``source`` . The identity who is requesting a ticket.\n\n- ``destination`` . The target for which the ticket will be valid.\n\n- ``timestamp`` . The current time stamp from the requester.\n\n- ``nonce`` . Random, single-use data. See `Cryptographic nonce\n  <https://en.wikipedia.org/wiki/Cryptographic_nonce>`_.\n\nThe time stamp and nonce are required to prevent replay attacks.\n\nFor example:\n\n.. code-block:: json\n\n   {\n       \"source\": \"scheduler.host.example.com\",\n       \"destination\": \"compute.host.example.com\",\n       \"timestamp\": \"2012-03-26T10:01:01.720000\",\n       \"nonce\": 1234567890\n   }", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1363,7 +1363,7 @@
     "/v3/OS-OAUTH1/access_token": [
       {
         "consumes": [], 
-        "description": "After the user authorizes the request token, the consumer exchanges\nthe authorized request token and OAuth verifier for an access\ntoken.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .\n\nSupported signature methods: HMAC-SHA1.\n\nYou must provide all required OAuth parameters in the request. See\nConsumer Obtains a Request Token .", 
+        "description": "After the user authorizes the request token, the consumer exchanges\nthe authorized request token and OAuth verifier for an access\ntoken.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See `Consumer Obtains a Request Token\n<http://oauth.net/core/1.0a/#auth_step1>`_.\n\nSupported signature methods: HMAC-SHA1.\n\nYou must provide all required OAuth parameters in the request. See\n`Consumer Obtains a Request Token\n<http://oauth.net/core/1.0a/#auth_step1>`_.", 
         "examples": {}, 
         "id": "createAccessToken", 
         "method": "post", 
@@ -1752,7 +1752,7 @@
     "/v3/OS-OAUTH1/request_token": [
       {
         "consumes": [], 
-        "description": "Supported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See Consumer Obtains a Request Token .", 
+        "description": "Supported signature methods: HMAC-SHA1.\n\nThe consumer must provide all required OAuth parameters in the\nrequest. See `Consumer Obtains a Request Token\n<http://oauth.net/core/1.0a/#auth_step1>`_.", 
         "examples": {}, 
         "id": "getUnauthorizedRequestToken", 
         "method": "post", 
@@ -2236,7 +2236,7 @@
     "/v3/auth/tokens": [
       {
         "consumes": [], 
-        "description": "The token represents the delegated authorization and identity\n(impersonation) of the authorizing user. The roles and scope of the\ngenerated token match those that the consumer initially requested.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide required OAuth parameters in the request.\nSee Consumer Obtains a Request Token .\n\nThe returned token is scoped to the requested project and with the\nrequested roles. In addition to the standard token response, the\ntoken has an OAuth-specific object.\n\nExample OAuth-specific object in a token:\n\n.. code-block:: json\n\n   \"OS-OAUTH1\": {\n       \"access_token_id\": \"cce0b8be7\"\n   }", 
+        "description": "The token represents the delegated authorization and identity\n(impersonation) of the authorizing user. The roles and scope of the\ngenerated token match those that the consumer initially requested.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide required OAuth parameters in the request.\nSee `Consumer Obtains a Request Token\n<http://oauth.net/core/1.0a/#auth_step1>`_.\n\nThe returned token is scoped to the requested project and with the\nrequested roles. In addition to the standard token response, the\ntoken has an OAuth-specific object.\n\nExample OAuth-specific object in a token:\n\n.. code-block:: json\n\n   \"OS-OAUTH1\": {\n       \"access_token_id\": \"cce0b8be7\"\n   }", 
         "examples": {}, 
         "id": "authenticate", 
         "method": "post", 

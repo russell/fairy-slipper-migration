@@ -263,7 +263,7 @@
       "summary": "Bare metal nodes."
     }, 
     {
-      "description": "Servers with block device mapping format(servers, os-block-device-mapping)", 
+      "description": "Servers with block device mapping format (servers, os-block-device-mapping)", 
       "name": "os-block-device-mapping-v2.1", 
       "summary": "Creates a server with a block device mapping."
     }, 
@@ -368,7 +368,7 @@
       "summary": "Lists, shows information for, creates, and deletes security groups."
     }, 
     {
-      "description": "Rules for default security group(os-security-group-default-rules)", 
+      "description": "Rules for default security group (os-security-group-default-rules)", 
       "name": "os-security-group-default-rules-v2.1", 
       "summary": "Lists, shows information for, and creates default security group\nrules."
     }, 

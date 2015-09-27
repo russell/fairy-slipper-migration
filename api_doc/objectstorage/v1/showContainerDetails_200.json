@@ -10,7 +10,7 @@
     "last_modified": {
       "required": true, 
       "type": "string", 
-      "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
+      "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
       "format": ""
     }, 
     "bytes": {

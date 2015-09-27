@@ -18,12 +18,16 @@
    :synopsis: Shows information for a specified network.
 
    You can control which response parameters are returned by using the
-   fields query parameter. For information, see Filtering and column
-   selection .
+   fields query parameter. For information, see `Filtering and column
+   selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
    
    In addition to the following response parameters, the response
    might show extension response parameters. For information, see
-   Networks multiple provider extension (networks) .
+   `Networks multiple provider extension (networks)
+   <http://developer.openstack.org/api-ref-
+   networking-v2-ext.html#showProviderNetwork>`_.
 
    :responseexample 200: v2/examples/showNetwork_resp_200.json
    :accepts: application/json
@@ -270,7 +274,10 @@
    by a user with administrative rights. Users can control which
    attributes are returned by using the fields query parameter.
    Additionally, you can filter results by using query string
-   parameters. For information, see Filtering and Column Selection .
+   parameters. For information, see `Filtering and Column Selection
+   <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
 
    :responseexample 200: v2/examples/listPorts_resp_200.json
    :accepts: application/json
@@ -340,8 +347,10 @@
    :synopsis: Lists networks to which the specified tenant has access.
 
    You can control which response parameters are returned by using the
-   fields query parameter. For information, see Filtering and column
-   selection .
+   fields query parameter. For information, see `Filtering and column
+   selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
 
    :responseexample 200: v2/examples/listNetworks_resp_200.json
    :accepts: application/json

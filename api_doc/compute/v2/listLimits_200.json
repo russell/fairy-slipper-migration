@@ -70,7 +70,7 @@
     "maxTotalFloatingIps": {
       "required": true, 
       "type": "integer", 
-      "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see Associate\nfloating IP addresses .", 
+      "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see `Associate\nfloating IP addresses <http://docs.openstack.org/user-\nguide/cli_manage_ip_addresses.html#associate-floating-ip-\naddresses>`_.", 
       "format": ""
     }, 
     "maxTotalInstances": {

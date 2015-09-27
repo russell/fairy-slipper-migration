@@ -223,7 +223,7 @@
    Bare metal nodes.
 
 .. swagger:tag:: os-block-device-mapping-v2.1
-   :synopsis: Servers with block device mapping format(servers, os-block-device-mapping)
+   :synopsis: Servers with block device mapping format (servers, os-block-device-mapping)
 
    Creates a server with a block device mapping.
 
@@ -346,7 +346,7 @@
    Lists, shows information for, creates, and deletes security groups.
 
 .. swagger:tag:: os-security-group-default-rules-v2.1
-   :synopsis: Rules for default security group(os-security-group-default-rules)
+   :synopsis: Rules for default security group (os-security-group-default-rules)
 
    Lists, shows information for, and creates default security group
    rules.

@@ -45,7 +45,7 @@
           "type": "string"
         }, 
         "last_modified": {
-          "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
+          "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -152,7 +152,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "The sort order for the name is based on a binary comparison, a\nsingle built-in collating sequence that compares string data by\nusing the SQLite memcmp() function, regardless of text encoding.\nSee Collating Sequences .\n\nThis operation does not accept a request body.\n\nExample requests and responses:\n\n- Show account details and list containers, and ask for a JSON\n  response:\n  ``curl -i $publicURL?format=json -X GET -H \"X-Auth-Token:\n  $token\"``\n  See the example response below.\n\n- List containers and ask for an XML response: ``curl -i\n  $publicURL?format=xml -X GET -H \"X-Auth-Token: $token\"``\n  See the example response below.\n\nThe response body returns a list of containers. The default\nresponse ( ``text/plain`` ) returns one container per line.\n\nIf you use query parameters to page through a long list of\ncontainers, you have reached the end of the list if the number of\nitems in the returned list is less than the request ``limit``\nvalue. The list contains more items if the number of items in the\nreturned list equals the ``limit`` value.\n\nWhen asking for a list of containers and there are none, the\nresponse behavior changes depending on whether the request format\nis text, JSON, or XML. For a text response, you get a 204 , because\nthere is no content. However, for a JSON or XML response, you get a\n200 with content indicating an empty array.\n\nIf the request succeeds, the operation returns one of these status\ncodes:\n\n- 200 . Success. The response body lists the containers.\n\n- 204 . Success. The response body shows no containers. Either the\n  account has no containers or you are paging through a long list\n  of names by using the ``marker`` , ``limit`` , or ``end_marker``\n  query parameters, and you have reached the end of the list.", 
+        "description": "The sort order for the name is based on a binary comparison, a\nsingle built-in collating sequence that compares string data by\nusing the SQLite memcmp() function, regardless of text encoding.\nSee `Collating Sequences\n<http://www.sqlite.org/datatype3.html#collation>`_.\n\nThis operation does not accept a request body.\n\nExample requests and responses:\n\n- Show account details and list containers, and ask for a JSON\n  response:\n  ``curl -i $publicURL?format=json -X GET -H \"X-Auth-Token:\n  $token\"``\n  See the example response below.\n\n- List containers and ask for an XML response: ``curl -i\n  $publicURL?format=xml -X GET -H \"X-Auth-Token: $token\"``\n  See the example response below.\n\nThe response body returns a list of containers. The default\nresponse ( ``text/plain`` ) returns one container per line.\n\nIf you use query parameters to page through a long list of\ncontainers, you have reached the end of the list if the number of\nitems in the returned list is less than the request ``limit``\nvalue. The list contains more items if the number of items in the\nreturned list equals the ``limit`` value.\n\nWhen asking for a list of containers and there are none, the\nresponse behavior changes depending on whether the request format\nis text, JSON, or XML. For a text response, you get a 204 , because\nthere is no content. However, for a JSON or XML response, you get a\n200 with content indicating an empty array.\n\nIf the request succeeds, the operation returns one of these status\ncodes:\n\n- 200 . Success. The response body lists the containers.\n\n- 204 . Success. The response body shows no containers. Either the\n  account has no containers or you are paging through a long list\n  of names by using the ``marker`` , ``limit`` , or ``end_marker``\n  query parameters, and you have reached the end of the list.", 
         "examples": {}, 
         "id": "showAccountDetails", 
         "method": "get", 
@@ -272,7 +272,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -314,7 +314,7 @@
                 "type": "integer"
               }, 
               "X-Timestamp": {
-                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT`` .", 
+                "description": "The date and time in `UNIX Epoch time stamp format\n<https://en.wikipedia.org/wiki/Unix_time>`_ when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT``.", 
                 "format": "", 
                 "required": true, 
                 "type": "integer"
@@ -357,7 +357,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -399,7 +399,7 @@
                 "type": "integer"
               }, 
               "X-Timestamp": {
-                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT`` .", 
+                "description": "The date and time in `UNIX Epoch time stamp format\n<https://en.wikipedia.org/wiki/Unix_time>`_ when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT``.", 
                 "format": "", 
                 "required": true, 
                 "type": "integer"
@@ -633,7 +633,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -657,7 +657,7 @@
                 "type": "integer"
               }, 
               "X-Timestamp": {
-                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT`` .", 
+                "description": "The date and time in `UNIX Epoch time stamp format\n<https://en.wikipedia.org/wiki/Unix_time>`_ when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT``.", 
                 "format": "", 
                 "required": true, 
                 "type": "integer"
@@ -710,7 +710,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -734,7 +734,7 @@
                 "type": "integer"
               }, 
               "X-Timestamp": {
-                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT`` .", 
+                "description": "The date and time in `UNIX Epoch time stamp format\n<https://en.wikipedia.org/wiki/Unix_time>`_ when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon, Wed, 26 Aug\n2015 19:57:28 GMT``.", 
                 "format": "", 
                 "required": true, 
                 "type": "integer"
@@ -1158,7 +1158,7 @@
       }, 
       {
         "consumes": [], 
-        "description": "To create or update custom metadata, use the ``X-Object-\nMeta-{name}`` header, where ``{name}`` is the name of the metadata\nitem.\n\nIn addition to the custom metadata, you can also update these\nsystem metadata items: ``Content-Type`` ``Content-Encoding``\n``Content-Disposition`` ``X-Delete-At`` . However you cannot update\nother system metadata such as ``Content-Length`` or ``Last-\nModified`` .\n\nYou can use COPY as an alternate to the POST operation by copying\nto the same object. With the POST operation you must specify all\nmetadata items, whereas with the COPY operation, you need to\nspecify only changed or additional items.\n\nAll metadata is preserved during the object copy. If you specify\nmetadata on the request to copy the object, either PUT or COPY ,\nthe metadata overwrites any conflicting keys on the target (new)\nobject.\n\nA POST request deletes any existing custom metadata that you added\nwith a previous PUT or POST request. Consequently, you must specify\nall custom metadata in the request. However, system metadata is\nunchanged by the POST request unless you explicitly supply it in a\nrequest header.\n\nYou can also set the ``X-Delete-At`` or ``X-Delete-After`` header\nto define when to expire the object.\n\nWhen used as described in this section, the POST operation creates\nor replaces metadata. This form of the operation has no request\nbody.\n\nYou can also use the form POST feature to upload objects.\n\nExample requests and responses:\n\n- Create object metadata:\n  ::     curl -i $publicURL/marktwain/goodbye -X POST -H \"X\n  -Auth-Token: $token\" -H \"X-Object-Meta-Book: GoodbyeColumbus\"\n  ::     HTTP/1.1 202 Accepted    Content-Length: 76    Content-\n  Type: text/html; charset=UTF-8    X-Trans-Id:\n  txb5fb5c91ba1f4f37bb648-0052d84b3f    Date: Thu, 16 Jan 2014\n  21:12:31 GMT    <    html>    <    h1>Accepted    <    /h1>    <\n  p>The request is accepted for processing.    <    /p>    <\n  /html>\n\n- Update object metadata:\n  ::     curl -i $publicURL/marktwain/goodbye -X POST -H \"X-Auth-\n  Token: $token\" H \"X-Object-Meta-Book: GoodbyeOldFriend\"\n  ::     HTTP/1.1 202 Accepted    Content-Length: 76    Content-\n  Type: text/html; charset=UTF-8    X-Trans-Id:\n  tx5ec7ab81cdb34ced887c8-0052d84ca4    Date: Thu, 16 Jan 2014\n  21:18:28 GMT    <    html>    <    h1>Accepted    <    /h1>    <\n  p>The request is accepted for processing.    <    /p>    <\n  /html>", 
+        "description": "To create or update custom metadata, use the ``X-Object-\nMeta-{name}`` header, where ``{name}`` is the name of the metadata\nitem.\n\nIn addition to the custom metadata, you can also update these\nsystem metadata items: ``Content-Type`` ``Content-Encoding``\n``Content-Disposition`` ``X-Delete-At`` . However you cannot update\nother system metadata such as ``Content-Length`` or ``Last-\nModified`` .\n\nYou can use COPY as an alternate to the POST operation by copying\nto the same object. With the POST operation you must specify all\nmetadata items, whereas with the COPY operation, you need to\nspecify only changed or additional items.\n\nAll metadata is preserved during the object copy. If you specify\nmetadata on the request to copy the object, either PUT or COPY ,\nthe metadata overwrites any conflicting keys on the target (new)\nobject.\n\nA POST request deletes any existing custom metadata that you added\nwith a previous PUT or POST request. Consequently, you must specify\nall custom metadata in the request. However, system metadata is\nunchanged by the POST request unless you explicitly supply it in a\nrequest header.\n\nYou can also set the ``X-Delete-At`` or ``X-Delete-After`` header\nto define when to expire the object.\n\nWhen used as described in this section, the POST operation creates\nor replaces metadata. This form of the operation has no request\nbody.\n\nYou can also use the `form POST feature\n<http://docs.openstack.org/kilo/config-reference/content/object-\nstorage-form-post.html>`_ to upload objects.\n\nExample requests and responses:\n\n- Create object metadata:\n  ::     curl -i $publicURL/marktwain/goodbye -X POST -H \"X\n  -Auth-Token: $token\" -H \"X-Object-Meta-Book: GoodbyeColumbus\"\n  ::     HTTP/1.1 202 Accepted    Content-Length: 76    Content-\n  Type: text/html; charset=UTF-8    X-Trans-Id:\n  txb5fb5c91ba1f4f37bb648-0052d84b3f    Date: Thu, 16 Jan 2014\n  21:12:31 GMT    <    html>    <    h1>Accepted    <    /h1>    <\n  p>The request is accepted for processing.    <    /p>    <\n  /html>\n\n- Update object metadata:\n  ::     curl -i $publicURL/marktwain/goodbye -X POST -H \"X-Auth-\n  Token: $token\" H \"X-Object-Meta-Book: GoodbyeOldFriend\"\n  ::     HTTP/1.1 202 Accepted    Content-Length: 76    Content-\n  Type: text/html; charset=UTF-8    X-Trans-Id:\n  tx5ec7ab81cdb34ced887c8-0052d84ca4    Date: Thu, 16 Jan 2014\n  21:18:28 GMT    <    html>    <    h1>Accepted    <    /h1>    <\n  p>The request is accepted for processing.    <    /p>    <\n  /html>", 
         "examples": {}, 
         "id": "updateObjectMeta", 
         "method": "post", 

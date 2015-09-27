@@ -387,7 +387,9 @@
    properties.
    
    For information about the PATCH method and the available media
-   types, see Image API v2 HTTP PATCH media types .
+   types, see `Image API v2 HTTP PATCH media types
+   <http://specs.openstack.org/openstack/glance-specs/specs/api/v2
+   /http-patch-image-api-v2.html>`_.
    
    Preconditions
    
@@ -1319,8 +1321,9 @@
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :reqheader Content-Range: The content range of image data. For
-                             details, see Hypertext Transfer Protocol
-                             (HTTP/1.1): Range Requests .
+                             details, see `Hypertext Transfer Protocol
+                             (HTTP/1.1): Range Requests
+                             <http://tools.ietf.org/html/rfc7233>`_.
    :statuscode 200: 
    :statuscode 403: 
    :statuscode 204: 

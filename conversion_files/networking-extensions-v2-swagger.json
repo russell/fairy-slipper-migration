@@ -4650,7 +4650,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Default policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\n::\n\n   GET /v2.0/floatingips\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those floating IPs that are\nowned by the tenant who submits the request, unless an admin user\nsubmits the request.\n\nThis example request lists floating IPs in JSON format:\n\n::\n\n   GET /v2.0/floatingips\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see `Filtering\nand Column Selection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.", 
         "examples": {}, 
         "id": "listFloatingIps", 
         "method": "get", 
@@ -4765,7 +4765,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Use the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\n::\n\n   GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address\n   &\n   fields=floating_ip_address\n   Accept: application/json", 
+        "description": "Use the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see `Filtering and\nColumn Selection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.\n\nThis example request shows details for a floating IP in JSON\nformat. This example also filters the result by the\n``fixed_ip_address`` and ``floating_ip_address`` fields.\n\n::\n\n   GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address\n   &\n   fields=floating_ip_address\n   Accept: application/json", 
         "examples": {}, 
         "id": "showFloatingIp", 
         "method": "get", 
@@ -9834,7 +9834,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "Default policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\n::\n\n   GET /v2.0/routers\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see Filtering\nand Column Selection .", 
+        "description": "Default policy settings return only those routers that are owned by\nthe tenant who submits the request, unless an admin user submits\nthe request.\n\nThis example request lists routers in JSON format:\n\n::\n\n   GET /v2.0/routers\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. Additionally, you can filter results\nby using query string parameters. For information, see `Filtering\nand Column Selection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.", 
         "examples": {}, 
         "id": "listRouters", 
         "method": "get", 
@@ -9964,7 +9964,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "This example request shows details for a router in JSON format:\n\n::\n\n   GET /v2.0/routers/{router_id}\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see Filtering and\nColumn Selection .", 
+        "description": "This example request shows details for a router in JSON format:\n\n::\n\n   GET /v2.0/routers/{router_id}\n   Accept: application/json\n\nUse the ``fields`` query parameter to control which fields are\nreturned in the response body. For information, see `Filtering and\nColumn Selection <http://specs.openstack.org/openstack/neutron-\nspecs/specs/api/networking_general_api_information.html#filtering-\nand-column-selection>`_.", 
         "examples": {}, 
         "id": "showRouter", 
         "method": "get", 

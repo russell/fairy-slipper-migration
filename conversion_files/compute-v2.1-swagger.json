@@ -1324,148 +1324,7 @@
         "title": "List API versions"
       }
     ], 
-    "/v2.1/extensions": [
-      {
-        "consumes": [
-          "application/json"
-        ], 
-        "description": "", 
-        "examples": {}, 
-        "id": "listExtensions", 
-        "method": "get", 
-        "parameters": [], 
-        "produces": [
-          "application/json"
-        ], 
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "os-create-backup", 
-                  "description": "Create a backup of a server.", 
-                  "links": [], 
-                  "name": "CreateBackup", 
-                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
-                  "updated": "2014-12-03T00:00:00Z"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }, 
-          "203": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "os-create-backup", 
-                  "description": "Create a backup of a server.", 
-                  "links": [], 
-                  "name": "CreateBackup", 
-                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
-                  "updated": "2014-12-03T00:00:00Z"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }
-        }, 
-        "summary": "Lists available extensions.", 
-        "tags": [
-          "extensions-v2.1"
-        ], 
-        "title": "List extensions"
-      }
-    ], 
-    "/v2.1/extensions/{alias}": [
-      {
-        "consumes": [
-          "application/json"
-        ], 
-        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
-        "examples": {}, 
-        "id": "getExtension", 
-        "method": "get", 
-        "parameters": [
-          {
-            "description": "An alias, which is a name for a pointer to a resource. For example,\na named extension.", 
-            "format": "", 
-            "in": "path", 
-            "name": "alias", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
-        "produces": [
-          "application/json"
-        ], 
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "OS-DCF", 
-                  "description": "Disk Management Extension.", 
-                  "links": [], 
-                  "name": "DiskConfig", 
-                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
-                  "updated": "2011-09-27T00:00:00+00:00"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }, 
-          "203": {
-            "examples": {
-              "application/json": {
-                "extension": {
-                  "alias": "OS-DCF", 
-                  "description": "Disk Management Extension.", 
-                  "links": [], 
-                  "name": "DiskConfig", 
-                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
-                  "updated": "2011-09-27T00:00:00+00:00"
-                }
-              }
-            }, 
-            "headers": {
-              "X-OpenStack-Request-ID": {
-                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
-                "format": "", 
-                "required": false, 
-                "type": "string"
-              }
-            }
-          }
-        }, 
-        "summary": "Shows details about a specified extension.", 
-        "tags": [
-          "extensions-v2.1"
-        ], 
-        "title": "Get extension"
-      }
-    ], 
-    "/v2.1/images": [
+    "//v2.1/images": [
       {
         "consumes": [
           "application/json"
@@ -1476,7 +1335,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -1862,7 +1721,7 @@
         "title": "List images"
       }
     ], 
-    "/v2.1/images/detail": [
+    "//v2.1/images/detail": [
       {
         "consumes": [
           "application/json"
@@ -1873,7 +1732,7 @@
         "method": "get", 
         "parameters": [
           {
-            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, the call returns\nonly the items changed since the specified time. If data has not\nchanged since the ``changes-since`` time, the call returns an empty\nlist.\n\nTo enable you to keep track of changes, this filter also displays\nimages that were deleted if the ``changes-since`` value specifies a\ndate in the last 30 days. Items deleted more than 30 days ago might\nbe returned, but it is not guaranteed.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -2413,7 +2272,7 @@
         "title": "List images details"
       }
     ], 
-    "/v2.1/images/{image_id}": [
+    "//v2.1/images/{image_id}": [
       {
         "consumes": [
           "application/json"
@@ -2613,7 +2472,7 @@
         "title": "Delete image"
       }
     ], 
-    "/v2.1/images/{image_id}/metadata": [
+    "//v2.1/images/{image_id}/metadata": [
       {
         "consumes": [
           "application/json"
@@ -2869,7 +2728,7 @@
         "title": "Create or replace image metadata"
       }
     ], 
-    "/v2.1/images/{image_id}/metadata/{key}": [
+    "//v2.1/images/{image_id}/metadata/{key}": [
       {
         "consumes": [
           "application/json"
@@ -3124,6 +2983,147 @@
         "title": "Delete image metadata item"
       }
     ], 
+    "/v2.1/extensions": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "", 
+        "examples": {}, 
+        "id": "listExtensions", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "os-create-backup", 
+                  "description": "Create a backup of a server.", 
+                  "links": [], 
+                  "name": "CreateBackup", 
+                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
+                  "updated": "2014-12-03T00:00:00Z"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "os-create-backup", 
+                  "description": "Create a backup of a server.", 
+                  "links": [], 
+                  "name": "CreateBackup", 
+                  "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
+                  "updated": "2014-12-03T00:00:00Z"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }
+        }, 
+        "summary": "Lists available extensions.", 
+        "tags": [
+          "extensions-v2.1"
+        ], 
+        "title": "List extensions"
+      }
+    ], 
+    "/v2.1/extensions/{alias}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Extensions introduce features and vendor-specific functionality to\nthe API without requiring a version change.", 
+        "examples": {}, 
+        "id": "getExtension", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "An alias, which is a name for a pointer to a resource. For example,\na named extension.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alias", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "OS-DCF", 
+                  "description": "Disk Management Extension.", 
+                  "links": [], 
+                  "name": "DiskConfig", 
+                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
+                  "updated": "2011-09-27T00:00:00+00:00"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "OS-DCF", 
+                  "description": "Disk Management Extension.", 
+                  "links": [], 
+                  "name": "DiskConfig", 
+                  "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
+                  "updated": "2011-09-27T00:00:00+00:00"
+                }
+              }
+            }, 
+            "headers": {
+              "X-OpenStack-Request-ID": {
+                "description": "Returns a unique request ID that provides tracking for the request.\nProvider must configure middleware to provide the request ID.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }
+            }
+          }
+        }, 
+        "summary": "Shows details about a specified extension.", 
+        "tags": [
+          "extensions-v2.1"
+        ], 
+        "title": "Get extension"
+      }
+    ], 
     "/v2.1/os-simple-tenant-usage": [
       {
         "consumes": [
@@ -3246,7 +3246,7 @@
         "consumes": [
           "application/json"
         ], 
-        "description": "The ``os:scheduler_hints`` parameter can be set at boot time. For\ndetails, see Scheduling .", 
+        "description": "The ``os:scheduler_hints`` parameter can be set at boot time. For\ndetails, see `Scheduling <http://docs.openstack.org/kilo/config-\nreference/content/section_compute-scheduler.html>`_.", 
         "examples": {
           "application/json": {
             "os:scheduler_hints": {
@@ -8331,7 +8331,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time before which to list usage audits.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "before_timestamp", 
@@ -17072,7 +17072,7 @@
       "summary": "Bare metal nodes."
     }, 
     {
-      "description": "Servers with block device mapping format(servers, os-block-device-mapping)", 
+      "description": "Servers with block device mapping format (servers, os-block-device-mapping)", 
       "name": "os-block-device-mapping-v2.1", 
       "summary": "Creates a server with a block device mapping."
     }, 
@@ -17177,7 +17177,7 @@
       "summary": "Lists, shows information for, creates, and deletes security groups."
     }, 
     {
-      "description": "Rules for default security group(os-security-group-default-rules)", 
+      "description": "Rules for default security group (os-security-group-default-rules)", 
       "name": "os-security-group-default-rules-v2.1", 
       "summary": "Lists, shows information for, and creates default security group\nrules."
     }, 

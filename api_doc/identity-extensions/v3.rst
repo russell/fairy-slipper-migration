@@ -160,12 +160,14 @@
    Supported signature methods: HMAC-SHA1.
    
    The consumer must provide all required OAuth parameters in the
-   request. See Consumer Obtains a Request Token .
+   request. See `Consumer Obtains a Request Token
+   <http://oauth.net/core/1.0a/#auth_step1>`_.
    
    Supported signature methods: HMAC-SHA1.
    
    You must provide all required OAuth parameters in the request. See
-   Consumer Obtains a Request Token .
+   `Consumer Obtains a Request Token
+   <http://oauth.net/core/1.0a/#auth_step1>`_.
 
    :responseexample 200: v3/examples/createAccessToken_resp_200.txt
    :tag: oauth1
@@ -189,7 +191,8 @@
    Supported signature methods: HMAC-SHA1.
    
    The consumer must provide required OAuth parameters in the request.
-   See Consumer Obtains a Request Token .
+   See `Consumer Obtains a Request Token
+   <http://oauth.net/core/1.0a/#auth_step1>`_.
    
    The returned token is scoped to the requested project and with the
    requested roles. In addition to the standard token response, the
@@ -415,7 +418,8 @@
    Supported signature methods: HMAC-SHA1.
    
    The consumer must provide all required OAuth parameters in the
-   request. See Consumer Obtains a Request Token .
+   request. See `Consumer Obtains a Request Token
+   <http://oauth.net/core/1.0a/#auth_step1>`_.
 
    :responseexample 200: v3/examples/getUnauthorizedRequestToken_resp_200.txt
    :tag: oauth1

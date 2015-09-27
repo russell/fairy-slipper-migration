@@ -1,5 +1,5 @@
 .. swagger:tag:: block-device-mapping
-   :synopsis: Servers with block device mapping format(servers)
+   :synopsis: Servers with block device mapping format (servers)
 
    Creates a server with a block device mapping.
 
@@ -24,7 +24,7 @@
    Shows metadata for servers.
 
 .. swagger:tag:: ext-az
-   :synopsis: Servers with extended availability zones(servers)
+   :synopsis: Servers with extended availability zones (servers)
 
    Shows the instance availability zone for compute nodes (nova-
    compute). Internal services appear in their own *internal*
@@ -50,7 +50,7 @@
    with or without a reservation ID.
 
 .. swagger:tag:: server-ext-ips-mac
-   :synopsis: Servers with mac_addr extended attribute(servers)
+   :synopsis: Servers with mac_addr extended attribute (servers)
 
    Creates, shows information for, and lists servers with the
    ``mac_addr`` extended attribute.
@@ -110,7 +110,7 @@
    Gets the usage data for a server.
 
 .. swagger:tag:: disk-config
-   :synopsis: Servers and images with disk config (servers,images)
+   :synopsis: Servers and images with disk config (servers, images)
 
    Extends servers with the ``diskConfig`` attribute.
 
@@ -168,7 +168,7 @@
    attributes.
 
 .. swagger:tag:: flavor-rxtx
-   :synopsis: Flavors with rxtx_factor extended attribute(flavors)
+   :synopsis: Flavors with rxtx_factor extended attribute (flavors)
 
    Creates, gets details for, and lists details for flavors. Includes
    the rxtx_factor extended attribute, which is related to configured
@@ -206,7 +206,7 @@
    RAM and instance quotas usage.
 
 .. swagger:tag:: used-limits-for-admins
-   :synopsis: Limits with project usage for administrators(limits)
+   :synopsis: Limits with project usage for administrators (limits)
 
    Extends limits to enable administrators to show the project usage
    for a specified customer project ID. Shows information such as RAM
@@ -355,7 +355,7 @@
    Creates and deletes security group rules.
 
 .. swagger:tag:: security-group-default-rules
-   :synopsis: Rules for default security group(os-security-group-default-rules)
+   :synopsis: Rules for default security group (os-security-group-default-rules)
 
    Lists, shows information for, and creates default security group
    rules.

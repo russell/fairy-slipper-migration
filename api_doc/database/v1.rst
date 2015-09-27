@@ -515,7 +515,7 @@
    and sets up a volume of the specified size, which is the storage
    for the database instance.
    
-   **Notes**
+    **Notes**
    
    - You can create only one database instance per POST request.
    
@@ -607,7 +607,7 @@
    |                 |                       names must be specified.                      |                                    |          |
    +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
    
-   **Notes**
+    **Notes**
    
    - A user is granted all privileges on the specified databases.
    
@@ -709,8 +709,9 @@
      PRIVILEGES to tell the server to reload the grant tables.
    
    - For additional information, See:
-     http://dev.mysql.com/doc/refman/5.1/en/user-account-
-     management.html
+     `http://dev.mysql.com/doc/refman/5.1/en/user-account-
+     management.html <http://dev.mysql.com/doc/refman/5.1/en/user-
+     account-management.html>`_
 
    :requestexample: v1/examples/getUsers_req.txt
    :responseexample 200: v1/examples/getUsers_resp_200.json
@@ -907,7 +908,8 @@
    
    See the MySQL documentation for information about supported
    character sets and collations at
-   http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html .
+   `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html
+   <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`_.
    
    The following database names are reserved and cannot be used for
    creating databases: lost+found, information_schema, and mysql.

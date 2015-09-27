@@ -73,7 +73,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -175,7 +175,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -240,7 +240,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -252,7 +252,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -354,7 +354,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -430,7 +430,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -442,7 +442,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -544,7 +544,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -632,7 +632,7 @@
           "type": "string"
         }, 
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -644,7 +644,7 @@
           "type": "boolean"
         }, 
         "deleted_at": {
-          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -746,7 +746,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -1879,7 +1879,7 @@
           "type": "integer"
         }, 
         "maxTotalFloatingIps": {
-          "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see Associate\nfloating IP addresses .", 
+          "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see `Associate\nfloating IP addresses <http://docs.openstack.org/user-\nguide/cli_manage_ip_addresses.html#associate-floating-ip-\naddresses>`_.", 
           "format": "", 
           "required": true, 
           "type": "integer"
@@ -2121,7 +2121,7 @@
           "type": "integer"
         }, 
         "maxTotalFloatingIps": {
-          "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see Associate\nfloating IP addresses .", 
+          "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see `Associate\nfloating IP addresses <http://docs.openstack.org/user-\nguide/cli_manage_ip_addresses.html#associate-floating-ip-\naddresses>`_.", 
           "format": "", 
           "required": true, 
           "type": "integer"
@@ -2186,7 +2186,7 @@
     "getMigrations_200": {
       "properties": {
         "created_at": {
-          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -2246,7 +2246,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -4359,7 +4359,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
+            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
             "format": "", 
             "in": "query", 
             "name": "created_at", 
@@ -4481,7 +4481,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
+            "description": "The date and time when the image or server was created.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the created-at date and time stamp, its value is\n``null`` .", 
             "format": "", 
             "in": "query", 
             "name": "created_at", 
@@ -17723,7 +17723,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\n\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\n\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -18884,7 +18884,7 @@
             "type": "string"
           }, 
           {
-            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\n\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.", 
+            "description": "The date and time when the image or server last changed status.\n\nUse this query parameter to check for changes since a previous\nrequest rather than re-downloading and re-parsing the full status\nat each polling interval. If data has changed, only the items\nchanged since the specified time are returned in the response. If\ndata has not changed since the ``changes-since`` time, an empty\nlist is returned.\n\nFor example, issue a GET request against the following endpoint to\nlist all servers that have changed since Mon, 24 Jan 2015 17:08:00\nUTC:\n\n::\n\n   GET /v2/010101/servers?changes-since=2015-01-24T17:08:00Z\n\nTo enable you to keep track of changes, this filter also displays\nimages and servers that were deleted if the ``changes-since`` value\nspecifies a date in the last 30 days. Items deleted more than 30\ndays ago might be returned, but it is not guaranteed.\n\nThe date and time stamp format is `ISO 8601\n<https://en.wikipedia.org/wiki/ISO_8601>`_ :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00``.\n\nIf you omit the time zone, the UTC time zone is assumed.", 
             "format": "", 
             "in": "query", 
             "name": "changes-since", 
@@ -24618,7 +24618,7 @@
   "swagger": "2.0", 
   "tags": [
     {
-      "description": "Servers with block device mapping format(servers)", 
+      "description": "Servers with block device mapping format (servers)", 
       "name": "block-device-mapping", 
       "summary": "Creates a server with a block device mapping."
     }, 
@@ -24643,7 +24643,7 @@
       "summary": "Shows metadata for servers."
     }, 
     {
-      "description": "Servers with extended availability zones(servers)", 
+      "description": "Servers with extended availability zones (servers)", 
       "name": "ext-az", 
       "summary": "Shows the instance availability zone for compute nodes (nova-\ncompute). Internal services appear in their own *internal*\navailability zone."
     }, 
@@ -24663,7 +24663,7 @@
       "summary": "Creates one or more servers with an optional reservation ID. The\nrequest and response examples show how to create multiple servers\nwith or without a reservation ID."
     }, 
     {
-      "description": "Servers with mac_addr extended attribute(servers)", 
+      "description": "Servers with mac_addr extended attribute (servers)", 
       "name": "server-ext-ips-mac", 
       "summary": "Creates, shows information for, and lists servers with the\n``mac_addr`` extended attribute."
     }, 
@@ -24703,7 +24703,7 @@
       "summary": "Gets the usage data for a server."
     }, 
     {
-      "description": "Servers and images with disk config (servers,images)", 
+      "description": "Servers and images with disk config (servers, images)", 
       "name": "disk-config", 
       "summary": "Extends servers with the ``diskConfig`` attribute."
     }, 
@@ -24753,7 +24753,7 @@
       "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor , OS-FLV-EXT-DATA:ephemeral , and swap extended\nattributes."
     }, 
     {
-      "description": "Flavors with rxtx_factor extended attribute(flavors)", 
+      "description": "Flavors with rxtx_factor extended attribute (flavors)", 
       "name": "flavor-rxtx", 
       "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor extended attribute, which is related to configured\nbandwidth cap values."
     }, 
@@ -24783,7 +24783,7 @@
       "summary": "Extends limits to show the project usage. Shows information such as\nRAM and instance quotas usage."
     }, 
     {
-      "description": "Limits with project usage for administrators(limits)", 
+      "description": "Limits with project usage for administrators (limits)", 
       "name": "used-limits-for-admins", 
       "summary": "Extends limits to enable administrators to show the project usage\nfor a specified customer project ID. Shows information such as RAM\nand instance quotas usage."
     }, 
@@ -24903,7 +24903,7 @@
       "summary": "Creates and deletes security group rules."
     }, 
     {
-      "description": "Rules for default security group(os-security-group-default-rules)", 
+      "description": "Rules for default security group (os-security-group-default-rules)", 
       "name": "security-group-default-rules", 
       "summary": "Lists, shows information for, and creates default security group\nrules."
     }, 

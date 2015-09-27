@@ -1156,11 +1156,12 @@
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
    :query created_at: The date and time when the image or server was
-                      created.  The date and time stamp format is ISO
-                      8601 :  ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                      created.  The date and time stamp format is `ISO
+                      8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+                      :  ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
                       ``±hh:mm`` value, if included, returns the time
                       zone as an offset from UTC.  For example,
-                      ``2015-08-27T09:49:58-05:00`` .  If you omit the
+                      ``2015-08-27T09:49:58-05:00``.  If you omit the
                       created-at date and time stamp, its value is
                       ``null`` .
    :statuscode 202: 
@@ -1188,11 +1189,12 @@
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
    :query created_at: The date and time when the image or server was
-                      created.  The date and time stamp format is ISO
-                      8601 :  ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                      created.  The date and time stamp format is `ISO
+                      8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+                      :  ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
                       ``±hh:mm`` value, if included, returns the time
                       zone as an offset from UTC.  For example,
-                      ``2015-08-27T09:49:58-05:00`` .  If you omit the
+                      ``2015-08-27T09:49:58-05:00``.  If you omit the
                       created-at date and time stamp, its value is
                       ``null`` .
    :statuscode 202: 
@@ -1571,12 +1573,14 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
-                         included, returns the time zone as an offset
-                         from UTC.  For example,
-                         ``2015-08-27T09:49:58-05:00`` .  If you omit
-                         the time zone, the UTC time zone is assumed.
+                         format is `ISO 8601
+                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
+                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00``.  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
    :query image: The UUID for the image.
    :query flavor: The UUID for the specific flavor, which is a
                   combination of memory, disk size, and CPUs.
@@ -3155,12 +3159,14 @@
                          date in the last 30 days. Items deleted more
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
-                         format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
-                         included, returns the time zone as an offset
-                         from UTC.  For example,
-                         ``2015-08-27T09:49:58-05:00`` .  If you omit
-                         the time zone, the UTC time zone is assumed.
+                         format is `ISO 8601
+                         <https://en.wikipedia.org/wiki/ISO_8601>`_ :
+                         ::     CCYY-MM-DDThh:mm:ss±hh:mm  The
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00``.  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
    :query image: The UUID for the image.
    :query flavor: The UUID for the specific flavor, which is a
                   combination of memory, disk size, and CPUs.

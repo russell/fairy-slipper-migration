@@ -102,8 +102,10 @@
    
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
-   by using query string parameters. For information, see Filtering
-   and Column Selection .
+   by using query string parameters. For information, see `Filtering
+   and Column Selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
 
    :responseexample 200: v2/examples/listFloatingIps_resp_200.json
    :accepts: application/json
@@ -1682,8 +1684,10 @@
    :synopsis: Shows details for a specified floating IP.
 
    Use the ``fields`` query parameter to control which fields are
-   returned in the response body. For information, see Filtering and
-   Column Selection .
+   returned in the response body. For information, see `Filtering and
+   Column Selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
    
    This example request shows details for a floating IP in JSON
    format. This example also filters the result by the
@@ -2179,8 +2183,10 @@
       Accept: application/json
    
    Use the ``fields`` query parameter to control which fields are
-   returned in the response body. For information, see Filtering and
-   Column Selection .
+   returned in the response body. For information, see `Filtering and
+   Column Selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
 
    :responseexample 200: v2/examples/showRouter_resp_200.json
    :accepts: application/json
@@ -2469,8 +2475,10 @@
    
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
-   by using query string parameters. For information, see Filtering
-   and Column Selection .
+   by using query string parameters. For information, see `Filtering
+   and Column Selection <http://specs.openstack.org/openstack/neutron-
+   specs/specs/api/networking_general_api_information.html#filtering-
+   and-column-selection>`_.
 
    :responseexample 200: v2/examples/listRouters_resp_200.json
    :accepts: application/json
