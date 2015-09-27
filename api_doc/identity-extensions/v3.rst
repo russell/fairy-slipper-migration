@@ -167,6 +167,7 @@
    You must provide all required OAuth parameters in the request. See
    Consumer Obtains a Request Token .
 
+   :responseexample 200: v3/examples/createAccessToken_resp_200.txt
    :tag: oauth1
    :statuscode 200: 
    :statuscode 400: 
@@ -416,6 +417,7 @@
    The consumer must provide all required OAuth parameters in the
    request. See Consumer Obtains a Request Token .
 
+   :responseexample 200: v3/examples/getUnauthorizedRequestToken_resp_200.txt
    :tag: oauth1
    :statuscode 200: 
    :statuscode 400: 

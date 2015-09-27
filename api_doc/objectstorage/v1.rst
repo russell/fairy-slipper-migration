@@ -430,7 +430,9 @@
    returned.
 
    :responseexample 200: v1/examples/showContainerDetails_resp_200.json
+   :responseexample 200: v1/examples/showContainerDetails_resp_200.txt
    :responseexample 204: v1/examples/showContainerDetails_resp_204.json
+   :responseexample 204: v1/examples/showContainerDetails_resp_204.txt
    :accepts: application/json
    :produces: application/json
    :tag: storage-container-services
@@ -730,7 +732,9 @@
      query parameters, and you have reached the end of the list.
 
    :responseexample 200: v1/examples/showAccountDetails_resp_200.json
+   :responseexample 200: v1/examples/showAccountDetails_resp_200.txt
    :responseexample 204: v1/examples/showAccountDetails_resp_204.json
+   :responseexample 204: v1/examples/showAccountDetails_resp_204.txt
    :accepts: application/json
    :produces: application/json
    :tag: storage-account-services
