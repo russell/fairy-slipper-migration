@@ -1381,8 +1381,8 @@
    :query before_timestamp: The date and time before which to list
                             usage audits.  The date and time stamp
                             format is ISO 8601 :  ::     CCYY-MM-
-                            DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
-                            included, returns the time zone as an
+                            DDThh:mm:ss±hh:mm  The ``±hh:mm`` value,
+                            if included, returns the time zone as an
                             offset from UTC.  For example,
                             ``2015-08-27T09:49:58-05:00`` .  If you
                             omit the time zone, the UTC time zone is
@@ -1572,6 +1572,7 @@
    .. code-block:: json
    
       GET /os-fping?all_tenants=1
+   
    Specify the ``include`` and ``exclude`` query parameters to filter
    the results. For example:
    
@@ -1582,6 +1583,7 @@
       include=uuid1,uuid2
       &
       exclude=uuid3,uuid4
+   
    Policy defaults enable only users with the administrative role or
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
@@ -2968,7 +2970,7 @@
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
                          is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit
@@ -3067,7 +3069,7 @@
                          days ago might be returned, but it is not
                          guaranteed.  The date and time stamp format
                          is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit

@@ -99,6 +99,7 @@
    
       GET /v2.0/floatingips
       Accept: application/json
+   
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
    by using query string parameters. For information, see Filtering
@@ -1713,6 +1714,7 @@
    
       PUT /v2.0/floatingips/{floatingip_id}
       Accept: application/json
+   
    Depending on the request body that you submit, this request
    associates a port with or disassociates a port from a floating IP.
 
@@ -2162,6 +2164,7 @@
    
       GET /v2.0/routers/{router_id}
       Accept: application/json
+   
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. For information, see Filtering and
    Column Selection .
@@ -2450,6 +2453,7 @@
    
       GET /v2.0/routers
       Accept: application/json
+   
    Use the ``fields`` query parameter to control which fields are
    returned in the response body. Additionally, you can filter results
    by using query string parameters. For information, see Filtering

@@ -45,7 +45,7 @@
           "type": "string"
         }, 
         "last_modified": {
-          "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
+          "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -272,7 +272,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -357,7 +357,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -633,7 +633,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -710,7 +710,7 @@
                 "type": "string"
               }, 
               "Date": {
-                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
                 "format": "", 
                 "required": true, 
                 "type": "string"
@@ -971,7 +971,7 @@
       }, 
       {
         "consumes": [], 
-        "description": "The PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201 Created`` status code.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB.\n\nExample requests and responses:\n\n- Create object:\n  ``curl -i $publicURL/janeausten/helloworld.txt -X PUT -H\n  \"Content-Length: 1\" -H \"Content-Type: text/html; charset=UTF-8\"\n  -H \"X-Auth-Token: $token\"``\n  ::     HTTP/1.1 201 Created    Last-Modified: Fri, 17 Jan 2014\n  17:28:35 GMT    Content-Length: 116    Etag:\n  d41d8cd98f00b204e9800998ecf8427e    Content-Type: text/html;\n  charset=UTF-8    X-Trans-Id: tx4d5e4f06d357462bb732f-0052d96843\n  Date: Fri, 17 Jan 2014 17:28:35 GMT\n\n- Replace object:\n  ``curl -i $publicURL/janeausten/helloworld -X PUT -H \"Content-\n  Length: 0\" -H \"X-Auth-Token: $token\"`` ::     HTTP/1.1 201\n  Created    Last-Modified: Fri, 17 Jan 2014 17:28:35 GMT\n  Content-Length: 116    Etag: d41d8cd98f00b204e9800998ecf8427e\n  Content-Type: text/html; charset=UTF-8    X-Trans-Id:\n  tx4d5e4f06d357462bb732f-0052d96843    Date: Fri, 17 Jan 2014\n  17:28:35 GMT\n\nThe ``201 Created`` status code indicates a successful write.\n\nIf the request times out, the operation returns the ``408 Request\nTimeout`` error code.\n\nThe ``411 Length Required`` error code indicates a missing\n``Transfer-Encoding`` or ``Content-Length`` request header.\n\nIf the MD5 checksum of the data that is written to the object store\ndoes not match the optional ``ETag`` value, the operation returns\nthe ``422 Unprocessable Entity`` error code.", 
+        "description": "The PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201 Created`` status code.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB.\n\nExample requests and responses:\n\n- Create object:\n  ``curl -i $publicURL/janeausten/helloworld.txt -X PUT -H\n  \"Content-Length: 1\" -H \"Content-Type: text/html; charset=UTF-8\"\n  -H \"X-Auth-Token: $token\"``\n  ::     HTTP/1.1 201 Created    Last-Modified: Fri, 17 Jan 2014\n  17:28:35 GMT    Content-Length: 116    Etag:\n  d41d8cd98f00b204e9800998ecf8427e    Content-Type: text/html;\n  charset=UTF-8    X-Trans-Id: tx4d5e4f06d357462bb732f-0052d96843\n  Date: Fri, 17 Jan 2014 17:28:35 GMT\n\n- Replace object:\n  ``curl -i $publicURL/janeausten/helloworld -X PUT -H \"Content-\n  Length: 0\" -H \"X-Auth-Token: $token\"``::     HTTP/1.1 201 Created\n  Last-Modified: Fri, 17 Jan 2014 17:28:35 GMT    Content-Length:\n  116    Etag: d41d8cd98f00b204e9800998ecf8427e    Content-Type:\n  text/html; charset=UTF-8    X-Trans-Id: tx4d5e4f06d357462bb732f-\n  0052d96843    Date: Fri, 17 Jan 2014 17:28:35 GMT\n\nThe ``201 Created`` status code indicates a successful write.\n\nIf the request times out, the operation returns the ``408 Request\nTimeout`` error code.\n\nThe ``411 Length Required`` error code indicates a missing\n``Transfer-Encoding`` or ``Content-Length`` request header.\n\nIf the MD5 checksum of the data that is written to the object store\ndoes not match the optional ``ETag`` value, the operation returns\nthe ``422 Unprocessable Entity`` error code.", 
         "examples": {}, 
         "id": "createOrReplaceObject", 
         "method": "put", 
@@ -1028,7 +1028,7 @@
       }, 
       {
         "consumes": [], 
-        "description": "You can copy an object to a new object with the same name. Copying\nto the same name is an alternative to using POST to add metadata to\nan object. With POST , you must specify all the metadata. With COPY\n, you can add additional metadata to the object.\n\nWith COPY , you can set the ``X-Fresh-Metadata`` header to ``True``\nto copy the object without any existing metadata.\n\nAlternatively, you can use PUT with the ``X-Copy-From`` request\nheader to accomplish the same operation as the COPY object\noperation.\n\nThe PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201 Created`` success node.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB in size. All metadata is\npreserved during the object copy. If you specify metadata on the\nrequest to copy the object, either PUT or COPY , the metadata\noverwrites any conflicting keys on the target (new) object.\n\nExample requests and responses:\n\n- Copy the ``goodbye`` object from the ``marktwain`` container to\n  the ``janeausten`` container: ``curl -i\n  $publicURL/marktwain/goodbye -X COPY -H \"X-Auth-Token: $token\" -H\n  \"Destination: janeausten/goodbye\"`` ::     HTTP/1.1 201 Created\n  Content-Length: 0    X-Copied-From-Last-Modified: Thu, 16 Jan\n  2014 21:19:45 GMT    X-Copied-From: marktwain/goodbye    Last-\n  Modified: Fri, 17 Jan 2014 18:22:57 GMT    Etag:\n  451e372e48e0f6b1114fa0724aa79fa1    Content-Type: text/html;\n  charset=UTF-8    X-Object-Meta-Movie: AmericanPie    X-Trans-Id:\n  txdcb481ad49d24e9a81107-0052d97501    Date: Fri, 17 Jan 2014\n  18:22:57 GMT\n\n- Alternatively, you can use PUT to copy the ``goodbye`` object from\n  the ``marktwain`` container to the ``janeausten`` container. This\n  request requires a ``Content-Length`` header even if it is set to\n  zero (0).\n  ``curl -i $publicURL/janeausten/goodbye -X PUT -H \"X-Auth-Token:\n  $token\" -H \"X-Copy-From: /marktwain/goodbye\" -H \"Content-Length:\n  0\"``\n  ::     HTTP/1.1 201 Created    Content-Length: 0    X-Copied-\n  From-Last-Modified: Thu, 16 Jan 2014 21:19:45 GMT    X-Copied-\n  From: marktwain/goodbye    Last-Modified: Fri, 17 Jan 2014\n  18:22:57 GMT    Etag: 451e372e48e0f6b1114fa0724aa79fa1\n  Content-Type: text/html; charset=UTF-8    X-Object-Meta-Movie:\n  AmericanPie    X-Trans-Id: txdcb481ad49d24e9a81107-0052d97501\n  Date: Fri, 17 Jan 2014 18:22:57 GMT\n\nWhen several replicas exist, the system copies from the most recent\nreplica. That is, the COPY operation behaves as though the\n``X-Newest`` header is in the request.", 
+        "description": "You can copy an object to a new object with the same name. Copying\nto the same name is an alternative to using POST to add metadata to\nan object. With POST , you must specify all the metadata. With COPY\n, you can add additional metadata to the object.\n\nWith COPY , you can set the ``X-Fresh-Metadata`` header to ``True``\nto copy the object without any existing metadata.\n\nAlternatively, you can use PUT with the ``X-Copy-From`` request\nheader to accomplish the same operation as the COPY object\noperation.\n\nThe PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201 Created`` success node.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB in size. All metadata is\npreserved during the object copy. If you specify metadata on the\nrequest to copy the object, either PUT or COPY , the metadata\noverwrites any conflicting keys on the target (new) object.\n\nExample requests and responses:\n\n- Copy the ``goodbye`` object from the ``marktwain`` container to\n  the ``janeausten`` container: ``curl -i\n  $publicURL/marktwain/goodbye -X COPY -H \"X-Auth-Token: $token\" -H\n  \"Destination: janeausten/goodbye\"``::     HTTP/1.1 201 Created\n  Content-Length: 0    X-Copied-From-Last-Modified: Thu, 16 Jan\n  2014 21:19:45 GMT    X-Copied-From: marktwain/goodbye    Last-\n  Modified: Fri, 17 Jan 2014 18:22:57 GMT    Etag:\n  451e372e48e0f6b1114fa0724aa79fa1    Content-Type: text/html;\n  charset=UTF-8    X-Object-Meta-Movie: AmericanPie    X-Trans-Id:\n  txdcb481ad49d24e9a81107-0052d97501    Date: Fri, 17 Jan 2014\n  18:22:57 GMT\n\n- Alternatively, you can use PUT to copy the ``goodbye`` object from\n  the ``marktwain`` container to the ``janeausten`` container. This\n  request requires a ``Content-Length`` header even if it is set to\n  zero (0).\n  ``curl -i $publicURL/janeausten/goodbye -X PUT -H \"X-Auth-Token:\n  $token\" -H \"X-Copy-From: /marktwain/goodbye\" -H \"Content-Length:\n  0\"``\n  ::     HTTP/1.1 201 Created    Content-Length: 0    X-Copied-\n  From-Last-Modified: Thu, 16 Jan 2014 21:19:45 GMT    X-Copied-\n  From: marktwain/goodbye    Last-Modified: Fri, 17 Jan 2014\n  18:22:57 GMT    Etag: 451e372e48e0f6b1114fa0724aa79fa1\n  Content-Type: text/html; charset=UTF-8    X-Object-Meta-Movie:\n  AmericanPie    X-Trans-Id: txdcb481ad49d24e9a81107-0052d97501\n  Date: Fri, 17 Jan 2014 18:22:57 GMT\n\nWhen several replicas exist, the system copies from the most recent\nreplica. That is, the COPY operation behaves as though the\n``X-Newest`` header is in the request.", 
         "examples": {}, 
         "id": "copyObject", 
         "method": "copy", 
@@ -1210,7 +1210,7 @@
     {
       "description": "Discoverability", 
       "name": "storage_info", 
-      "summary": "If configured, lists the activated capabilities for this versionof\nthe OpenStack Object Storage API."
+      "summary": "If configured, lists the activated capabilities for this version of\nthe OpenStack Object Storage API."
     }, 
     {
       "description": "Endpoints", 
@@ -1220,17 +1220,17 @@
     {
       "description": "Accounts", 
       "name": "storage-account-services", 
-      "summary": "Lists containers for a specified account. Creates, updates,\nshows,and deletes account metadata."
+      "summary": "Lists containers for a specified account. Creates, updates, shows,\nand deletes account metadata."
     }, 
     {
       "description": "Containers", 
       "name": "storage-container-services", 
-      "summary": "Lists objects in a specified container. Creates, shows detailsfor,\nand deletes containers. Creates, updates, shows, and\ndeletescontainer metadata."
+      "summary": "Lists objects in a specified container. Creates, shows details for,\nand deletes containers. Creates, updates, shows, and deletes\ncontainer metadata."
     }, 
     {
       "description": "Objects", 
       "name": "storage-object-services", 
-      "summary": "Creates, replaces, shows details for, and deletes objects.\nCopiesobjects from another object with a new or different name.\nUpdatesobject metadata."
+      "summary": "Creates, replaces, shows details for, and deletes objects. Copies\nobjects from another object with a new or different name. Updates\nobject metadata."
     }
   ]
 }

@@ -105,7 +105,7 @@
     {
       "description": "Servers multiple create (servers)", 
       "name": "multiple-create", 
-      "summary": "Creates one or more servers with an optional reservation ID.\nTherequest and response examples show how to create multiple\nservers withor without a reservation ID."
+      "summary": "Creates one or more servers with an optional reservation ID. The\nrequest and response examples show how to create multiple servers\nwith or without a reservation ID."
     }, 
     {
       "description": "Servers actions (servers, action)", 
@@ -115,17 +115,17 @@
     {
       "description": "Servers action (servers, os-server-actions)", 
       "name": "os-server-actions-add-v2.1", 
-      "summary": "Permits all users to list available server actions for a\nspecifiedserver. Permits administrators to get details for a\nspecifiedserver action for a specified server."
+      "summary": "Permits all users to list available server actions for a specified\nserver. Permits administrators to get details for a specified\nserver action for a specified server."
     }, 
     {
       "description": "Servers admin actions (servers, action)", 
       "name": "admin-actions", 
-      "summary": "Administrators only. Performs actions on a server. Specify the\nactionin the request body."
+      "summary": "Administrators only. Performs actions on a server. Specify the\naction in the request body."
     }, 
     {
       "description": "Servers admin password (servers, action)", 
       "name": "admin-password", 
-      "summary": "Enables users with the administrative role or the owner of the\nserverto change the password of the administrative user."
+      "summary": "Enables users with the administrative role or the owner of the\nserver to change the password of the administrative user."
     }, 
     {
       "description": "Servers console output (servers, action)", 
@@ -145,7 +145,7 @@
     {
       "description": "Servers shelve (servers, action)", 
       "name": "shelve", 
-      "summary": "Shelves running servers, restores shelved servers, and\nremovesshelved servers.\n\nShelving is useful when you have an unused instance that you\nwouldlike to keep for later use. For example, at the end of a work\nweekyou can shelve an instance and at the start of the next week\nyou canunshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. Allassociated data\nand resources are kept but anything still in memoryis not retained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelvedinstance that\nyou no longer need."
+      "summary": "Shelves running servers, restores shelved servers, and removes\nshelved servers.\n\nShelving is useful when you have an unused instance that you would\nlike to keep for later use. For example, at the end of a work week\nyou can shelve an instance and at the start of the next week you\ncan unshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. All associated data\nand resources are kept but anything still in memory is not\nretained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelved instance that\nyou no longer need."
     }, 
     {
       "description": "Servers deferred delete (servers, action)", 
@@ -165,27 +165,27 @@
     {
       "description": "Servers IPs (servers, ips)", 
       "name": "server-ips", 
-      "summary": "Lists the IP addresses assigned to an instance or shows details\nfora specified IP address."
+      "summary": "Lists the IP addresses assigned to an instance or shows details for\na specified IP address."
     }, 
     {
       "description": "Server metadata (servers, metadata)", 
       "name": "server-metadata-v2.1", 
-      "summary": "Lists metadata, creates or replaces one or more metadataitems, and\nupdates one or more metadata items for a server.\n\nShows details for, creates or replaces, and updates a\nspecifiedmetadata item, by key, for a server."
+      "summary": "Lists metadata, creates or replaces one or more metadata items, and\nupdates one or more metadata items for a server.\n\nShows details for, creates or replaces, and updates a specified\nmetadata item, by key, for a server."
     }, 
     {
       "description": "Servers configuration drive (servers, os-config-drive)", 
       "name": "config-drive", 
-      "summary": "Shows server details including configuration drive information for\naspecified server ID or user."
+      "summary": "Shows server details including configuration drive information for\na specified server ID or user."
     }, 
     {
       "description": "Servers password (servers, os-server-password)", 
       "name": "server-password", 
-      "summary": "Gets the encrypted administrative password set through the\nmetadataservice."
+      "summary": "Gets the encrypted administrative password set through the metadata\nservice."
     }, 
     {
       "description": "Servers usage (servers, os-server-usage)", 
       "name": "server-usage", 
-      "summary": "Lists all servers and shows server details. Includes server\nusageinformation.\n\nShows ``OS-SRV-USG:launched_at`` and ``OS-SRV-USG:terminated_at``\nattributes in server responses."
+      "summary": "Lists all servers and shows server details. Includes server usage\ninformation.\n\nShows ``OS-SRV-USG:launched_at`` and ``OS-SRV- USG:terminated_at``\nattributes in server responses."
     }, 
     {
       "description": "Servers virtual interfaces (servers, os-virtual-interfaces)", 
@@ -205,7 +205,7 @@
     {
       "description": "Flavors extra-specs (flavors, os-flavor-extra-specs)", 
       "name": "flavor-extra-specs", 
-      "summary": "Lists, creates, deletes, and updates the extra-specs or keys for\naflavor."
+      "summary": "Lists, creates, deletes, and updates the extra-specs or keys for a\nflavor."
     }, 
     {
       "description": "Flavors manage (flavors, os-flavor-manage)", 
@@ -230,7 +230,7 @@
     {
       "description": "Images", 
       "name": "compute_images-v2.1", 
-      "summary": "Lists, gets details for, and deletes images. Also sets, lists,gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create andrebuild\na server. By default, operators provide pre-builtoperating system\nimages. You can also create custom images. SeeCompute server\nactions.\n\nIf you set the image size policy in the ``policy.json`` file, the\n``OS-EXT-IMG-SIZE:size`` extended attribute isvisible."
+      "summary": "Lists, gets details for, and deletes images. Also sets, lists, gets\ndetails for, and deletes image metadata.\n\nAn image is a collection of files that you use to create and\nrebuild a server. By default, operators provide pre-built operating\nsystem images. You can also create custom images. See Compute\nserver actions.\n\nIf you set the image size policy in the ``policy.json`` file, the\n``OS-EXT-IMG-SIZE:size`` extended attribute is visible."
     }, 
     {
       "description": "Image metadata", 
@@ -240,17 +240,17 @@
     {
       "description": "Guest agents (os-agents)", 
       "name": "agents", 
-      "summary": "Creates, lists, updates, and deletes guest agent builds. Use\nguestagents to access files on the disk, configure networking, or\nrunother applications or scripts in the guest while the agent runs.\nThishypervisor-specific extension is not currently enabled for KVM.\nUseof guest agents is possible only if the underlying service\nprovideruses the Xen driver."
+      "summary": "Creates, lists, updates, and deletes guest agent builds. Use guest\nagents to access files on the disk, configure networking, or run\nother applications or scripts in the guest while the agent runs.\nThis hypervisor-specific extension is not currently enabled for\nKVM. Use of guest agents is possible only if the underlying service\nprovider uses the Xen driver."
     }, 
     {
       "description": "Host aggregates (os-aggregates, action)", 
       "name": "aggregates", 
-      "summary": "Creates and manages host aggregates. An aggregate assigns metadata\ntogroups of compute nodes. Aggregates are only visible to the\ncloudprovider."
+      "summary": "Creates and manages host aggregates. An aggregate assigns metadata\nto groups of compute nodes. Aggregates are only visible to the\ncloud provider."
     }, 
     {
       "description": "Assisted volume snapshots (os-assisted-volume-snapshots)", 
       "name": "os-assisted-volume-snapshots-v2.1", 
-      "summary": "Creates and deletes snapshots through an emulator/hypervisor.The\nqcow2 file format is supported.\n\nAn internal snapshot that lacks storage such as NFS or GlusterFScan\nuse an emulator/hypervisor to add the snapshot feature."
+      "summary": "Creates and deletes snapshots through an emulator/hypervisor. The\nqcow2 file format is supported.\n\nAn internal snapshot that lacks storage such as NFS or GlusterFS\ncan use an emulator/hypervisor to add the snapshot feature."
     }, 
     {
       "description": "Availability zones (os-availability-zone)", 
@@ -270,7 +270,7 @@
     {
       "description": "Cells (os-cells, capacities)", 
       "name": "cells", 
-      "summary": "Adds neighbor cells, lists neighbor cells, and gets the\ncapabilitiesof the local cell."
+      "summary": "Adds neighbor cells, lists neighbor cells, and gets the\ncapabilities of the local cell."
     }, 
     {
       "description": "Root certificates (os-certificates)", 
@@ -290,12 +290,12 @@
     {
       "description": "Fixed IPs (os-fixed-ips)", 
       "name": "os-fixed-ips-v2.1", 
-      "summary": "Shows data for a specified fixed IP, such as host name, CIDR,\nandaddress. Also, reserves and frees a fixed IP address."
+      "summary": "Shows data for a specified fixed IP, such as host name, CIDR, and\naddress. Also, reserves and frees a fixed IP address."
     }, 
     {
       "description": "Floating IP DNS records (os-floating-ip-dns)", 
       "name": "floating-ip-dns", 
-      "summary": "Manages DNS records associated with IP addresses allocated by\nthefloating IPs extension. Requests are dispatched to a DNS\ndriverselected at startup."
+      "summary": "Manages DNS records associated with IP addresses allocated by the\nfloating IPs extension. Requests are dispatched to a DNS driver\nselected at startup."
     }, 
     {
       "description": "Floating IP pools (os-floating-ip-pools)", 
@@ -305,7 +305,7 @@
     {
       "description": "Floating IPs (os-floating-ips)", 
       "name": "floating-ips", 
-      "summary": "Assigns and allocates floating IP addresses to instancesthat run in\nan OpenStack cloud."
+      "summary": "Assigns and allocates floating IP addresses to instances that run\nin an OpenStack cloud."
     }, 
     {
       "description": "Floating IPs bulk (os-floating-ips-bulk)", 
@@ -325,7 +325,7 @@
     {
       "description": "Hypervisors (os-hypervisors)", 
       "name": "hypervisors", 
-      "summary": "Displays extra statistical information from the machine that\nhoststhe hypervisor through the API for the hypervisor (XenAPI\norKVM/libvirt)."
+      "summary": "Displays extra statistical information from the machine that hosts\nthe hypervisor through the API for the hypervisor (XenAPI or\nKVM/libvirt)."
     }, 
     {
       "description": "Instance usage audit log (os-instance-usage-audit-log)", 
@@ -340,12 +340,12 @@
     {
       "description": "Networks (os-networks)", 
       "name": "networks", 
-      "summary": "Creates, lists, shows information for, and deletes networks.\n\nAdds network to a project, disassociates a network from a\nproject,and disassociates a project from a network.\n\nAssociates host with and disassociates host from a network."
+      "summary": "Creates, lists, shows information for, and deletes networks.\n\nAdds network to a project, disassociates a network from a project,\nand disassociates a project from a network.\n\nAssociates host with and disassociates host from a network."
     }, 
     {
       "description": "PCI pools (os-pci)", 
       "name": "os-pci-v2.1", 
-      "summary": "Displays extra statistical information from the machine that\nhoststhe hypervisor through the API for the hypervisor (XenAPI\norKVM/libvirt)."
+      "summary": "Displays extra statistical information from the machine that hosts\nthe hypervisor through the API for the hypervisor (XenAPI or\nKVM/libvirt)."
     }, 
     {
       "description": "Quota class (os-quota-class-sets)", 
@@ -355,12 +355,12 @@
     {
       "description": "Quota sets (os-quota-sets)", 
       "name": "quota-sets", 
-      "summary": "Permits administrators, depending on policy settings, to view\nquotasfor a project and view and update default quotas."
+      "summary": "Permits administrators, depending on policy settings, to view\nquotas for a project and view and update default quotas."
     }, 
     {
       "description": "Scheduler hints (os-scheduler-hints)", 
       "name": "os-scheduler-hints-v2.1", 
-      "summary": "Creates a server with scheduler hints that are passed directly to\nthescheduler."
+      "summary": "Creates a server with scheduler hints that are passed directly to\nthe scheduler."
     }, 
     {
       "description": "Security groups (os-security-groups)", 
@@ -370,7 +370,7 @@
     {
       "description": "Rules for default security group(os-security-group-default-rules)", 
       "name": "os-security-group-default-rules-v2.1", 
-      "summary": "Lists, shows information for, and creates default securitygroup\nrules."
+      "summary": "Lists, shows information for, and creates default security group\nrules."
     }, 
     {
       "description": "Rules for security group (os-security-group-rules)", 
@@ -390,7 +390,7 @@
     {
       "description": "Manage services (os-services)", 
       "name": "services", 
-      "summary": "Lists, enables, disables, and deletes Compute services in allhosts."
+      "summary": "Lists, enables, disables, and deletes Compute services in all\nhosts."
     }, 
     {
       "description": "Usage reports (os-simple-tenant-usage)", 

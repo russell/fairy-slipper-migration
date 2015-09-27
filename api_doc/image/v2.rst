@@ -355,6 +355,7 @@
             "bar"
          ]
       }
+   
    The target location MUST reference one of these values:
    
    - The root of the target document. The specified value is the entire
@@ -872,6 +873,7 @@
       sort_key=status
       &
       sort_dir=desc
+   
    To specify the ``sort`` query parameter to sort the results:
    
    .. code-block:: json

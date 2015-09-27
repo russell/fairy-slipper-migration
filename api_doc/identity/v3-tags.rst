@@ -24,24 +24,24 @@
    Manages domains.
    
    Domains represent collections of users, groups, and projects. Each
-   is owned by exactlyone domain. Users, however, can be associated
-   with multiple projects by granting rolesto the user on a project,
+   is owned by exactly one domain. Users, however, can be associated
+   with multiple projects by granting roles to the user on a project,
    including projects owned by other domains.
    
    Each domain defines a namespace where certain API-visible name
-   attributes exist, whichaffects whether those names must be globally
-   unique or unique within that domain. In theIdentity API, the
-   uniqueness of the following attributes is as follows:
+   attributes exist, which affects whether those names must be
+   globally unique or unique within that domain. In the Identity API,
+   the uniqueness of the following attributes is as follows:
    
-   - *Domain name*. Globally unique across alldomains.
+   - *Domain name* . Globally unique across all domains.
    
-   - *Role name*. Globally unique across alldomains.
+   - *Role name* . Globally unique across all domains.
    
-   - *User name*. Unique within the owningdomain.
+   - *User name* . Unique within the owning domain.
    
-   - *Project name*. Unique within the owningdomain.
+   - *Project name* . Unique within the owning domain.
    
-   - *Group name*. Unique within the owningdomain.
+   - *Group name* . Unique within the owning domain.
 
 .. swagger:tag:: projects
    :synopsis: Projects
@@ -73,15 +73,18 @@
 
    Manages policies.
    
-   You can encode policy rule sets into a blob to be consumed byremote
-   services. To do so, set ``type`` to ``application/json`` and
+   You can encode policy rule sets into a blob to be consumed by
+   remote services. To do so, set ``type`` to ``application/json`` and
    specify policy rules as JSON strings in a ``blob`` . For example:
    
    ::
+   
       "blob": {           "default": false       }
+   
    Or:
    
    ::
+   
       "blob": {           "foobar_user": [               "role:compute-user"           ]       }
 
 .. swagger:tag:: regions-v3
@@ -89,11 +92,11 @@
 
    Manages regions.
    
-   A region is a general division of an OpenStack deployment.You can
-   associate zero or more sub-regions with a regionto create a tree-
+   A region is a general division of an OpenStack deployment. You can
+   associate zero or more sub-regions with a region to create a tree-
    like structured hierarchy.
    
-   Although a region does not have a geographical connotation,
-   adeployment can use a geographical name for a region, such as ``us-
+   Although a region does not have a geographical connotation, a
+   deployment can use a geographical name for a region, such as ``us-
    east`` .
 

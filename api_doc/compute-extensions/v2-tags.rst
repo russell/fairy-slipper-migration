@@ -27,27 +27,27 @@
    :synopsis: Servers with extended availability zones(servers)
 
    Shows the instance availability zone for compute nodes (nova-
-   compute). Internal services appear in their own
-   *internal*availability zone.
+   compute). Internal services appear in their own *internal*
+   availability zone.
 
 .. swagger:tag:: extended-status
    :synopsis: Servers extended status (servers)
 
    Shows the ``vm_state`` , ``task_state`` , and ``power_state``
-   extended status information in detailedserver responses.
+   extended status information in detailed server responses.
 
 .. swagger:tag:: ext-ips
    :synopsis: Servers with IP type (servers)
 
-   Shows the type of the IP addresses that are assigned to aninstance.
-   Type is either fixed or floating.
+   Shows the type of the IP addresses that are assigned to an
+   instance. Type is either fixed or floating.
 
 .. swagger:tag:: multi-server-create
    :synopsis: Servers multiple create (servers)
 
-   Creates one or more servers with an optional reservation ID.
-   Therequest and response examples show how to create multiple
-   serverswith or without a reservation ID.
+   Creates one or more servers with an optional reservation ID. The
+   request and response examples show how to create multiple servers
+   with or without a reservation ID.
 
 .. swagger:tag:: server-ext-ips-mac
    :synopsis: Servers with mac_addr extended attribute(servers)
@@ -63,8 +63,8 @@
 .. swagger:tag:: admin-actions
    :synopsis: Servers administrative actions (servers, action)
 
-   Administrator only. Performs actions on a server. Specifythe action
-   in the request body.
+   Administrator only. Performs actions on a server. Specify the
+   action in the request body.
 
 .. swagger:tag:: deferred-delete
    :synopsis: Servers deferred delete (servers, action)
@@ -74,28 +74,29 @@
 .. swagger:tag:: rescue
    :synopsis: Servers rescue and unrescue (servers, action)
 
-   Puts a server into rescue mode and unrescues a server inrescue
+   Puts a server into rescue mode and unrescues a server in rescue
    mode.
 
 .. swagger:tag:: server-shelve
    :synopsis: Servers shelve (servers, action)
 
-   Shelves running servers, restores shelved servers, and
-   removesshelved servers.
+   Shelves running servers, restores shelved servers, and removes
+   shelved servers.
    
-   Shelving is useful when you have an unused instance that you
-   wouldlike to keep for later use. For example, at the end of a work
-   weekyou can shelve an instance and at the start of the next week
-   you canunshelve it.
+   Shelving is useful when you have an unused instance that you would
+   like to keep for later use. For example, at the end of a work week
+   you can shelve an instance and at the start of the next week you
+   can unshelve it.
    
    Your cloud provider might bill you for a shelved server.
    
-   Use the ``shelve`` action to shelve a server. Allassociated data
-   and resources are kept but anything still in memoryis not retained.
+   Use the ``shelve`` action to shelve a server. All associated data
+   and resources are kept but anything still in memory is not
+   retained.
    
    Use the ``unshelve`` action to restore a shelved instance.
    
-   Use the ``shelveOffload`` action to remove a shelvedinstance that
+   Use the ``shelveOffload`` action to remove a shelved instance that
    you no longer need.
 
 .. swagger:tag:: server-start-stop
@@ -121,14 +122,14 @@
 .. swagger:tag:: instance-actions
    :synopsis: Servers instance actions (servers, os-instance-actions)
 
-   Lists available actions for a specified server. Administrators
-   canget details for a specified action for a specified server.
+   Lists available actions for a specified server. Administrators can
+   get details for a specified action for a specified server.
 
 .. swagger:tag:: server-password
    :synopsis: Servers password (servers, os-server-password)
 
-   Gets and resets the encrypted administrative password set
-   throughthe metadata service.
+   Gets and resets the encrypted administrative password set through
+   the metadata service.
 
 .. swagger:tag:: virtual-interfaces
    :synopsis: Servers virtual interfaces (servers, os-virtual-interfaces)
@@ -138,16 +139,15 @@
 .. swagger:tag:: volume-attachments
    :synopsis: Servers with volume attachments (servers, os-volume_attachments)
 
-   Attaches volumes that are created through the volume API to
-   serverinstances. Also, lists volume attachments for a server
-   instance,gets volume details for a volume attachment, and detaches
-   avolume.
+   Attaches volumes that are created through the volume API to server
+   instances. Also, lists volume attachments for a server instance,
+   gets volume details for a volume attachment, and detaches a volume.
 
 .. swagger:tag:: os-volume_boot
    :synopsis: Server boot from volume (os-volumes_boot)
 
    Starts an instance by using a volume with the ``bootable``
-   attribute. The image on the volume is usedto boot the instance.
+   attribute. The image on the volume is used to boot the instance.
 
 .. swagger:tag:: flavormanage
    :synopsis: Flavors create and delete (flavors)
@@ -163,16 +163,16 @@
 .. swagger:tag:: flavorextradata
    :synopsis: Flavors with extended attributes (flavors)
 
-   Creates, gets details for, and lists details for flavors.
-   Includestherxtx_factor,OS-FLV-EXT-DATA:ephemeral,andswapextended
+   Creates, gets details for, and lists details for flavors. Includes
+   the rxtx_factor , OS-FLV-EXT-DATA:ephemeral , and swap extended
    attributes.
 
 .. swagger:tag:: flavor-rxtx
    :synopsis: Flavors with rxtx_factor extended attribute(flavors)
 
-   Creates, gets details for, and lists details for flavors.
-   Includestherxtx_factorextended attribute, which isrelated to
-   configured bandwidth cap values.
+   Creates, gets details for, and lists details for flavors. Includes
+   the rxtx_factor extended attribute, which is related to configured
+   bandwidth cap values.
 
 .. swagger:tag:: flavor-extra-specs
    :synopsis: Flavors with extra-specs (flavors, os-extra-specs)
@@ -182,53 +182,53 @@
 .. swagger:tag:: flavor-access
    :synopsis: Flavors access (flavors, os-flavor-access)
 
-   Creates and gets details for private flavors. Also, lists, adds,and
-   removes tenants' access to private flavors.
+   Creates and gets details for private flavors. Also, lists, adds,
+   and removes tenants' access to private flavors.
 
 .. swagger:tag:: flavor-swap
    :synopsis: Flavors swap (flavors, os-flavor-swap)
 
    Creates and lists flavors with a swap value. Requires the ``os-
-   flavormanage`` extension. The swap value is the amount ofswap disk
+   flavormanage`` extension. The swap value is the amount of swap disk
    space, in GBs, to allocate to a server.
 
 .. swagger:tag:: ext-img-size
    :synopsis: Images with size attribute (images)
 
-   Lists details for available images and gets details for aspecified
+   Lists details for available images and gets details for a specified
    image. Includes the ``OS-EXT-IMG-SIZE:size`` extended attribute,
    which shows the image size.
 
 .. swagger:tag:: used-limits
    :synopsis: Limits with project usage (limits)
 
-   Extends limits to show the project usage. Shows information suchas
+   Extends limits to show the project usage. Shows information such as
    RAM and instance quotas usage.
 
 .. swagger:tag:: used-limits-for-admins
    :synopsis: Limits with project usage for administrators(limits)
 
-   Extends limits to enable administrators to show the project
-   usagefor a specified customer project ID. Shows information such as
-   RAMand instance quotas usage.
+   Extends limits to enable administrators to show the project usage
+   for a specified customer project ID. Shows information such as RAM
+   and instance quotas usage.
 
 .. swagger:tag:: agents
    :synopsis: Guest agents (os-agents)
 
    Creates, updates, and deletes guest agents.
    
-   Use guest agents to access files on the disk, configurenetworking,
-   and run other applications and scripts in the guestwhile it runs.
-   This hypervisor-specific extension is not currentlyenabled for KVM.
-   Use of guest agents is possible only if theunderlying service
+   Use guest agents to access files on the disk, configure networking,
+   and run other applications and scripts in the guest while it runs.
+   This hypervisor-specific extension is not currently enabled for
+   KVM. Use of guest agents is possible only if the underlying service
    provider uses the Xen driver.
 
 .. swagger:tag:: aggregates
    :synopsis: Host aggregates (os-aggregates)
 
-   Creates and manages host aggregates. An aggregate assigns
-   metadatato groups of compute nodes. Aggregates are only visible to
-   thecloud provider.
+   Creates and manages host aggregates. An aggregate assigns metadata
+   to groups of compute nodes. Aggregates are only visible to the
+   cloud provider.
 
 .. swagger:tag:: baremetal-ext-status
    :synopsis: Bare metal nodes (os-baremetal-nodes)
@@ -253,21 +253,21 @@
 .. swagger:tag:: extended-networks
    :synopsis: Network extended attributes (os-extended-networks)
 
-   Creates, shows details for, and lists networks with
-   extendedattributes.
+   Creates, shows details for, and lists networks with extended
+   attributes.
 
 .. swagger:tag:: fixed-ips
    :synopsis: Fixed IPs (os-fixed-ips)
 
-   Shows data for a specified fixed IP, such as host name, CIDR,
-   andaddress. Also, reserves and frees a fixed IP address.
+   Shows data for a specified fixed IP, such as host name, CIDR, and
+   address. Also, reserves and frees a fixed IP address.
 
 .. swagger:tag:: floating-ip-dns
    :synopsis: Floating IP DNS records (os-floating-ip-dns)
 
-   Manages DNS records that are associated with IP addresses that
-   areallocated by the floating IPs extension. Requests are
-   dispatchedto a DNS driver selected at startup.
+   Manages DNS records that are associated with IP addresses that are
+   allocated by the floating IPs extension. Requests are dispatched to
+   a DNS driver selected at startup.
 
 .. swagger:tag:: floating-ip-pools
    :synopsis: Floating IP pools (os-floating-ip-pools)
@@ -277,14 +277,14 @@
 .. swagger:tag:: floating-ips
    :synopsis: Floating IPs (os-floating-ips)
 
-   Assigns and allocates floating IP addresses to instancesthat run in
-   an OpenStack cloud.
+   Assigns and allocates floating IP addresses to instances that run
+   in an OpenStack cloud.
 
 .. swagger:tag:: floating-ips-bulk
    :synopsis: Floating IPs bulk (os-floating-ips-bulk)
 
-   Bulk-creates, deletes, and lists floating IPs. By default, thepool
-   is named nova. Use theos-floating-ip-poolsextension to view
+   Bulk-creates, deletes, and lists floating IPs. By default, the pool
+   is named nova. Use the os-floating-ip-pools extension to view
    available pools.
 
 .. swagger:tag:: hosts
@@ -295,16 +295,16 @@
 .. swagger:tag:: hypervisors
    :synopsis: Hypervisors (os-hypervisors)
 
-   Displays extra statistical information from the machine that
-   hoststhe hypervisor through the API for the hypervisor (XenAPI
-   orKVM/libvirt).
+   Displays extra statistical information from the machine that hosts
+   the hypervisor through the API for the hypervisor (XenAPI or
+   KVM/libvirt).
 
 .. swagger:tag:: hypervisor-status
    :synopsis: Hypervisor with status (os-hypervisor-status)
 
-   Displays extra statistical information including status from
-   themachine that hosts the hypervisor through the API for
-   thehypervisor (XenAPI or KVM/libvirt).
+   Displays extra statistical information including status from the
+   machine that hosts the hypervisor through the API for the
+   hypervisor (XenAPI or KVM/libvirt).
 
 .. swagger:tag:: interface
    :synopsis: Attach interfaces (os-interface)
@@ -317,19 +317,19 @@
    Generates, imports, and deletes SSH keys.
    
    To add a keypair to a server, specify the ``key_name`` parameter in
-   the request body in acreate serverrequest.
+   the request body in a create server request.
 
 .. swagger:tag:: migrations
    :synopsis: Migrations (os-migrations)
 
-   Administrators only. Gets in-progress migrations for a region
-   orspecified cell in a region.
+   Administrators only. Gets in-progress migrations for a region or
+   specified cell in a region.
 
 .. swagger:tag:: networks
    :synopsis: Networks (os-networks)
 
-   Shows network information for and deletes networks.
-   Also,disassociates a network from a project in VLAN mode.
+   Shows network information for and deletes networks. Also,
+   disassociates a network from a project in VLAN mode.
 
 .. swagger:tag:: quota-class-sets
    :synopsis: Quota class (os-quota-class-sets)
@@ -346,8 +346,8 @@
 .. swagger:tag:: security-groups
    :synopsis: Security groups (os-security-groups)
 
-   Lists, lists by server, creates, shows information for, updates,and
-   deletes security groups.
+   Lists, lists by server, creates, shows information for, updates,
+   and deletes security groups.
 
 .. swagger:tag:: os-security-group-rules
    :synopsis: Rules for security group (os-security-group-rules)
@@ -357,7 +357,7 @@
 .. swagger:tag:: security-group-default-rules
    :synopsis: Rules for default security group(os-security-group-default-rules)
 
-   Lists, shows information for, and creates default securitygroup
+   Lists, shows information for, and creates default security group
    rules.
 
 .. swagger:tag:: server-groups

@@ -1209,7 +1209,7 @@
           "type": "string"
         }, 
         "updated_at": {
-          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+          "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -1476,7 +1476,7 @@
           "type": "string"
         }, 
         "expires_at": {
-          "description": "The date and time when the token expires.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+          "description": "The date and time when the token expires.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
           "format": "", 
           "required": false, 
           "type": "string"
@@ -1488,7 +1488,7 @@
           "type": "string"
         }, 
         "issued_at": {
-          "description": "The date and time when the token was issued.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .", 
+          "description": "The date and time when the token was issued.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .", 
           "format": "", 
           "required": true, 
           "type": "string"
@@ -8204,7 +8204,7 @@
     {
       "description": "Domains", 
       "name": "domains", 
-      "summary": "Manages domains.\n\nDomains represent collections of users, groups, and projects. Each\nis owned by exactlyone domain. Users, however, can be associated\nwith multiple projects by granting rolesto the user on a project,\nincluding projects owned by other domains.\n\nEach domain defines a namespace where certain API-visible name\nattributes exist, whichaffects whether those names must be globally\nunique or unique within that domain. In theIdentity API, the\nuniqueness of the following attributes is as follows:\n\n- *Domain name*. Globally unique across alldomains.\n\n- *Role name*. Globally unique across alldomains.\n\n- *User name*. Unique within the owningdomain.\n\n- *Project name*. Unique within the owningdomain.\n\n- *Group name*. Unique within the owningdomain."
+      "summary": "Manages domains.\n\nDomains represent collections of users, groups, and projects. Each\nis owned by exactly one domain. Users, however, can be associated\nwith multiple projects by granting roles to the user on a project,\nincluding projects owned by other domains.\n\nEach domain defines a namespace where certain API-visible name\nattributes exist, which affects whether those names must be\nglobally unique or unique within that domain. In the Identity API,\nthe uniqueness of the following attributes is as follows:\n\n- *Domain name* . Globally unique across all domains.\n\n- *Role name* . Globally unique across all domains.\n\n- *User name* . Unique within the owning domain.\n\n- *Project name* . Unique within the owning domain.\n\n- *Group name* . Unique within the owning domain."
     }, 
     {
       "description": "Projects", 
@@ -8234,12 +8234,12 @@
     {
       "description": "Policies", 
       "name": "policies", 
-      "summary": "Manages policies.\n\nYou can encode policy rule sets into a blob to be consumed byremote\nservices. To do so, set ``type`` to ``application/json`` and\nspecify policy rules as JSON strings in a ``blob`` . For example:\n\n::\n   \"blob\": {           \"default\": false       }\nOr:\n\n::\n   \"blob\": {           \"foobar_user\": [               \"role:compute-user\"           ]       }"
+      "summary": "Manages policies.\n\nYou can encode policy rule sets into a blob to be consumed by\nremote services. To do so, set ``type`` to ``application/json`` and\nspecify policy rules as JSON strings in a ``blob`` . For example:\n\n::\n\n   \"blob\": {           \"default\": false       }\n\nOr:\n\n::\n\n   \"blob\": {           \"foobar_user\": [               \"role:compute-user\"           ]       }"
     }, 
     {
       "description": "Regions", 
       "name": "regions-v3", 
-      "summary": "Manages regions.\n\nA region is a general division of an OpenStack deployment.You can\nassociate zero or more sub-regions with a regionto create a tree-\nlike structured hierarchy.\n\nAlthough a region does not have a geographical connotation,\nadeployment can use a geographical name for a region, such as ``us-\neast`` ."
+      "summary": "Manages regions.\n\nA region is a general division of an OpenStack deployment. You can\nassociate zero or more sub-regions with a region to create a tree-\nlike structured hierarchy.\n\nAlthough a region does not have a geographical connotation, a\ndeployment can use a geographical name for a region, such as ``us-\neast`` ."
     }
   ]
 }

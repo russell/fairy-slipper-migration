@@ -28,7 +28,7 @@
     "updated_at": {
       "required": false, 
       "type": "string", 
-      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
       "format": ""
     }, 
     "id": {
@@ -46,7 +46,7 @@
     "deleted_at": {
       "required": false, 
       "type": "string", 
-      "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
+      "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\n::\n\n   CCYY-MM-DDThh:mm:ss\u00b1hh:mm\n\nThe ``\u00b1hh:mm`` value, if included, returns the time zone as an\noffset from UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the deleted-at date and time stamp, its value is\n``null`` .", 
       "format": ""
     }, 
     "gateway": {

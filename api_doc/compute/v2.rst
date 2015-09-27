@@ -24,7 +24,7 @@
                          list all servers that have changed since Mon,
                          24 Jan 2015 17:08:00 UTC:  ::     GET
                          /v2/010101/servers?changes-
-                         since=2015-01-24T17:08:00Z To enable you to
+                         since=2015-01-24T17:08:00Z  To enable you to
                          keep track of changes, this filter also
                          displays images and servers that were deleted
                          if the ``changes-since`` value specifies a
@@ -32,7 +32,7 @@
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
                          format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit
@@ -179,7 +179,7 @@
                          list all servers that have changed since Mon,
                          24 Jan 2015 17:08:00 UTC:  ::     GET
                          /v2/010101/servers?changes-
-                         since=2015-01-24T17:08:00Z To enable you to
+                         since=2015-01-24T17:08:00Z  To enable you to
                          keep track of changes, this filter also
                          displays images and servers that were deleted
                          if the ``changes-since`` value specifies a
@@ -187,7 +187,7 @@
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
                          format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit
@@ -497,7 +497,7 @@
                          list all servers that have changed since Mon,
                          24 Jan 2015 17:08:00 UTC:  ::     GET
                          /v2/010101/servers?changes-
-                         since=2015-01-24T17:08:00Z To enable you to
+                         since=2015-01-24T17:08:00Z  To enable you to
                          keep track of changes, this filter also
                          displays images and servers that were deleted
                          if the ``changes-since`` value specifies a
@@ -505,7 +505,7 @@
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
                          format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit
@@ -1296,7 +1296,7 @@
                          list all servers that have changed since Mon,
                          24 Jan 2015 17:08:00 UTC:  ::     GET
                          /v2/010101/servers?changes-
-                         since=2015-01-24T17:08:00Z To enable you to
+                         since=2015-01-24T17:08:00Z  To enable you to
                          keep track of changes, this filter also
                          displays images and servers that were deleted
                          if the ``changes-since`` value specifies a
@@ -1304,7 +1304,7 @@
                          than 30 days ago might be returned, but it is
                          not guaranteed.  The date and time stamp
                          format is ISO 8601 :  ::     CCYY-MM-
-                         DDThh:mm:ss±hh:mm The ``±hh:mm`` value, if
+                         DDThh:mm:ss±hh:mm  The ``±hh:mm`` value, if
                          included, returns the time zone as an offset
                          from UTC.  For example,
                          ``2015-08-27T09:49:58-05:00`` .  If you omit

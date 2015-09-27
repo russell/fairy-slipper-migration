@@ -6,9 +6,9 @@
 .. swagger:tag:: multiple-create
    :synopsis: Servers multiple create (servers)
 
-   Creates one or more servers with an optional reservation ID.
-   Therequest and response examples show how to create multiple
-   servers withor without a reservation ID.
+   Creates one or more servers with an optional reservation ID. The
+   request and response examples show how to create multiple servers
+   with or without a reservation ID.
 
 .. swagger:tag:: server-actions
    :synopsis: Servers actions (servers, action)
@@ -19,21 +19,21 @@
 .. swagger:tag:: os-server-actions-add-v2.1
    :synopsis: Servers action (servers, os-server-actions)
 
-   Permits all users to list available server actions for a
-   specifiedserver. Permits administrators to get details for a
-   specifiedserver action for a specified server.
+   Permits all users to list available server actions for a specified
+   server. Permits administrators to get details for a specified
+   server action for a specified server.
 
 .. swagger:tag:: admin-actions
    :synopsis: Servers admin actions (servers, action)
 
    Administrators only. Performs actions on a server. Specify the
-   actionin the request body.
+   action in the request body.
 
 .. swagger:tag:: admin-password
    :synopsis: Servers admin password (servers, action)
 
    Enables users with the administrative role or the owner of the
-   serverto change the password of the administrative user.
+   server to change the password of the administrative user.
 
 .. swagger:tag:: console-output
    :synopsis: Servers console output (servers, action)
@@ -53,22 +53,23 @@
 .. swagger:tag:: shelve
    :synopsis: Servers shelve (servers, action)
 
-   Shelves running servers, restores shelved servers, and
-   removesshelved servers.
+   Shelves running servers, restores shelved servers, and removes
+   shelved servers.
    
-   Shelving is useful when you have an unused instance that you
-   wouldlike to keep for later use. For example, at the end of a work
-   weekyou can shelve an instance and at the start of the next week
-   you canunshelve it.
+   Shelving is useful when you have an unused instance that you would
+   like to keep for later use. For example, at the end of a work week
+   you can shelve an instance and at the start of the next week you
+   can unshelve it.
    
    Your cloud provider might bill you for a shelved server.
    
-   Use the ``shelve`` action to shelve a server. Allassociated data
-   and resources are kept but anything still in memoryis not retained.
+   Use the ``shelve`` action to shelve a server. All associated data
+   and resources are kept but anything still in memory is not
+   retained.
    
    Use the ``unshelve`` action to restore a shelved instance.
    
-   Use the ``shelveOffload`` action to remove a shelvedinstance that
+   Use the ``shelveOffload`` action to remove a shelved instance that
    you no longer need.
 
 .. swagger:tag:: deferred-delete
@@ -91,37 +92,37 @@
 .. swagger:tag:: server-ips
    :synopsis: Servers IPs (servers, ips)
 
-   Lists the IP addresses assigned to an instance or shows details
-   fora specified IP address.
+   Lists the IP addresses assigned to an instance or shows details for
+   a specified IP address.
 
 .. swagger:tag:: server-metadata-v2.1
    :synopsis: Server metadata (servers, metadata)
 
-   Lists metadata, creates or replaces one or more metadataitems, and
+   Lists metadata, creates or replaces one or more metadata items, and
    updates one or more metadata items for a server.
    
-   Shows details for, creates or replaces, and updates a
-   specifiedmetadata item, by key, for a server.
+   Shows details for, creates or replaces, and updates a specified
+   metadata item, by key, for a server.
 
 .. swagger:tag:: config-drive
    :synopsis: Servers configuration drive (servers, os-config-drive)
 
    Shows server details including configuration drive information for
-   aspecified server ID or user.
+   a specified server ID or user.
 
 .. swagger:tag:: server-password
    :synopsis: Servers password (servers, os-server-password)
 
-   Gets the encrypted administrative password set through the
-   metadataservice.
+   Gets the encrypted administrative password set through the metadata
+   service.
 
 .. swagger:tag:: server-usage
    :synopsis: Servers usage (servers, os-server-usage)
 
-   Lists all servers and shows server details. Includes server
-   usageinformation.
+   Lists all servers and shows server details. Includes server usage
+   information.
    
-   Shows ``OS-SRV-USG:launched_at`` and ``OS-SRV-USG:terminated_at``
+   Shows ``OS-SRV-USG:launched_at`` and ``OS-SRV- USG:terminated_at``
    attributes in server responses.
 
 .. swagger:tag:: virtual-interfaces
@@ -142,8 +143,8 @@
 .. swagger:tag:: flavor-extra-specs
    :synopsis: Flavors extra-specs (flavors, os-flavor-extra-specs)
 
-   Lists, creates, deletes, and updates the extra-specs or keys for
-   aflavor.
+   Lists, creates, deletes, and updates the extra-specs or keys for a
+   flavor.
 
 .. swagger:tag:: flavor-manage
    :synopsis: Flavors manage (flavors, os-flavor-manage)
@@ -168,16 +169,16 @@
 .. swagger:tag:: compute_images-v2.1
    :synopsis: Images
 
-   Lists, gets details for, and deletes images. Also sets, lists,gets
+   Lists, gets details for, and deletes images. Also sets, lists, gets
    details for, and deletes image metadata.
    
-   An image is a collection of files that you use to create andrebuild
-   a server. By default, operators provide pre-builtoperating system
-   images. You can also create custom images. SeeCompute server
-   actions.
+   An image is a collection of files that you use to create and
+   rebuild a server. By default, operators provide pre-built operating
+   system images. You can also create custom images. See Compute
+   server actions.
    
    If you set the image size policy in the ``policy.json`` file, the
-   ``OS-EXT-IMG-SIZE:size`` extended attribute isvisible.
+   ``OS-EXT-IMG-SIZE:size`` extended attribute is visible.
 
 .. swagger:tag:: compute_image_metadata-v2.1
    :synopsis: Image metadata
@@ -188,28 +189,28 @@
 .. swagger:tag:: agents
    :synopsis: Guest agents (os-agents)
 
-   Creates, lists, updates, and deletes guest agent builds. Use
-   guestagents to access files on the disk, configure networking, or
-   runother applications or scripts in the guest while the agent runs.
-   Thishypervisor-specific extension is not currently enabled for KVM.
-   Useof guest agents is possible only if the underlying service
-   provideruses the Xen driver.
+   Creates, lists, updates, and deletes guest agent builds. Use guest
+   agents to access files on the disk, configure networking, or run
+   other applications or scripts in the guest while the agent runs.
+   This hypervisor-specific extension is not currently enabled for
+   KVM. Use of guest agents is possible only if the underlying service
+   provider uses the Xen driver.
 
 .. swagger:tag:: aggregates
    :synopsis: Host aggregates (os-aggregates, action)
 
    Creates and manages host aggregates. An aggregate assigns metadata
-   togroups of compute nodes. Aggregates are only visible to the
-   cloudprovider.
+   to groups of compute nodes. Aggregates are only visible to the
+   cloud provider.
 
 .. swagger:tag:: os-assisted-volume-snapshots-v2.1
    :synopsis: Assisted volume snapshots (os-assisted-volume-snapshots)
 
-   Creates and deletes snapshots through an emulator/hypervisor.The
+   Creates and deletes snapshots through an emulator/hypervisor. The
    qcow2 file format is supported.
    
-   An internal snapshot that lacks storage such as NFS or GlusterFScan
-   use an emulator/hypervisor to add the snapshot feature.
+   An internal snapshot that lacks storage such as NFS or GlusterFS
+   can use an emulator/hypervisor to add the snapshot feature.
 
 .. swagger:tag:: availability-zone
    :synopsis: Availability zones (os-availability-zone)
@@ -230,7 +231,7 @@
    :synopsis: Cells (os-cells, capacities)
 
    Adds neighbor cells, lists neighbor cells, and gets the
-   capabilitiesof the local cell.
+   capabilities of the local cell.
 
 .. swagger:tag:: certificates
    :synopsis: Root certificates (os-certificates)
@@ -250,15 +251,15 @@
 .. swagger:tag:: os-fixed-ips-v2.1
    :synopsis: Fixed IPs (os-fixed-ips)
 
-   Shows data for a specified fixed IP, such as host name, CIDR,
-   andaddress. Also, reserves and frees a fixed IP address.
+   Shows data for a specified fixed IP, such as host name, CIDR, and
+   address. Also, reserves and frees a fixed IP address.
 
 .. swagger:tag:: floating-ip-dns
    :synopsis: Floating IP DNS records (os-floating-ip-dns)
 
-   Manages DNS records associated with IP addresses allocated by
-   thefloating IPs extension. Requests are dispatched to a DNS
-   driverselected at startup.
+   Manages DNS records associated with IP addresses allocated by the
+   floating IPs extension. Requests are dispatched to a DNS driver
+   selected at startup.
 
 .. swagger:tag:: floating-ip-pools
    :synopsis: Floating IP pools (os-floating-ip-pools)
@@ -268,8 +269,8 @@
 .. swagger:tag:: floating-ips
    :synopsis: Floating IPs (os-floating-ips)
 
-   Assigns and allocates floating IP addresses to instancesthat run in
-   an OpenStack cloud.
+   Assigns and allocates floating IP addresses to instances that run
+   in an OpenStack cloud.
 
 .. swagger:tag:: floating-ips-bulk
    :synopsis: Floating IPs bulk (os-floating-ips-bulk)
@@ -291,9 +292,9 @@
 .. swagger:tag:: hypervisors
    :synopsis: Hypervisors (os-hypervisors)
 
-   Displays extra statistical information from the machine that
-   hoststhe hypervisor through the API for the hypervisor (XenAPI
-   orKVM/libvirt).
+   Displays extra statistical information from the machine that hosts
+   the hypervisor through the API for the hypervisor (XenAPI or
+   KVM/libvirt).
 
 .. swagger:tag:: instance-usage-audit-log
    :synopsis: Instance usage audit log (os-instance-usage-audit-log)
@@ -310,17 +311,17 @@
 
    Creates, lists, shows information for, and deletes networks.
    
-   Adds network to a project, disassociates a network from a
-   project,and disassociates a project from a network.
+   Adds network to a project, disassociates a network from a project,
+   and disassociates a project from a network.
    
    Associates host with and disassociates host from a network.
 
 .. swagger:tag:: os-pci-v2.1
    :synopsis: PCI pools (os-pci)
 
-   Displays extra statistical information from the machine that
-   hoststhe hypervisor through the API for the hypervisor (XenAPI
-   orKVM/libvirt).
+   Displays extra statistical information from the machine that hosts
+   the hypervisor through the API for the hypervisor (XenAPI or
+   KVM/libvirt).
 
 .. swagger:tag:: quota-class-sets
    :synopsis: Quota class (os-quota-class-sets)
@@ -331,13 +332,13 @@
    :synopsis: Quota sets (os-quota-sets)
 
    Permits administrators, depending on policy settings, to view
-   quotasfor a project and view and update default quotas.
+   quotas for a project and view and update default quotas.
 
 .. swagger:tag:: os-scheduler-hints-v2.1
    :synopsis: Scheduler hints (os-scheduler-hints)
 
    Creates a server with scheduler hints that are passed directly to
-   thescheduler.
+   the scheduler.
 
 .. swagger:tag:: security-groups
    :synopsis: Security groups (os-security-groups)
@@ -347,7 +348,7 @@
 .. swagger:tag:: os-security-group-default-rules-v2.1
    :synopsis: Rules for default security group(os-security-group-default-rules)
 
-   Lists, shows information for, and creates default securitygroup
+   Lists, shows information for, and creates default security group
    rules.
 
 .. swagger:tag:: os-security-group-rules-v2.1
@@ -368,7 +369,8 @@
 .. swagger:tag:: services
    :synopsis: Manage services (os-services)
 
-   Lists, enables, disables, and deletes Compute services in allhosts.
+   Lists, enables, disables, and deletes Compute services in all
+   hosts.
 
 .. swagger:tag:: os-simple-tenant-usage-v2.1
    :synopsis: Usage reports (os-simple-tenant-usage)

@@ -5789,22 +5789,22 @@
     {
       "description": "Plugins", 
       "name": "plugins", 
-      "summary": "A plugin object defines the Hadoop or Spark version that it\ncaninstall and which configurations can be set for the cluster."
+      "summary": "A plugin object defines the Hadoop or Spark version that it can\ninstall and which configurations can be set for the cluster."
     }, 
     {
       "description": "Image registry", 
       "name": "imageregistry", 
-      "summary": "The image registry is a tool for managing images. Each pluginlists\nrequired tags for an image. The Data Processing service\nalsorequires a user name to log in to an instance\u2019s OS for\nremoteoperations execution.\n\nThe image registry enables you to add tags to and remove tags from\nimagesand define the OS user name."
+      "summary": "The image registry is a tool for managing images. Each plugin lists\nrequired tags for an image. The Data Processing service also\nrequires a user name to log in to an instance\u2019s OS for remote\noperations execution.\n\nThe image registry enables you to add tags to and remove tags from\nimages and define the OS user name."
     }, 
     {
       "description": "Node group templates", 
       "name": "node-group-template", 
-      "summary": "A cluster is a group of nodes with the same configuration. A\nnodegroup template configures a node in the cluster.\n\nA template configures Hadoop processes and VM characteristics,such\nas the number of reduced slots for task tracker, the number ofCPUs,\nand the amount of RAM. The template specifies the VMcharacteristics\nthrough an OpenStack flavor."
+      "summary": "A cluster is a group of nodes with the same configuration. A node\ngroup template configures a node in the cluster.\n\nA template configures Hadoop processes and VM characteristics, such\nas the number of reduced slots for task tracker, the number of\nCPUs, and the amount of RAM. The template specifies the VM\ncharacteristics through an OpenStack flavor."
     }, 
     {
       "description": "Cluster templates", 
       "name": "clustertemplate", 
-      "summary": "A cluster template configures a Hadoop cluster. A cluster\ntemplatelists node groups with the number of instances in each\ngroup. Youcan also define cluster-scoped configurations in a\nclustertemplate."
+      "summary": "A cluster template configures a Hadoop cluster. A cluster template\nlists node groups with the number of instances in each group. You\ncan also define cluster-scoped configurations in a cluster\ntemplate."
     }, 
     {
       "description": "Clusters", 
@@ -5814,37 +5814,37 @@
     {
       "description": "Event log", 
       "name": "event-log", 
-      "summary": "The event log feature provides information about cluster\nprovisioning.In the event of errors, the event log shows the reason\nfor the failure."
+      "summary": "The event log feature provides information about cluster\nprovisioning. In the event of errors, the event log shows the\nreason for the failure."
     }, 
     {
       "description": "Data sources", 
       "name": "datasources", 
-      "summary": "A data source object defines the location of input or output\nforMapReduce jobs and might reference different types of storage.\n\nThe Data Processing service does not validate data sourcelocations."
+      "summary": "A data source object defines the location of input or output for\nMapReduce jobs and might reference different types of storage.\n\nThe Data Processing service does not validate data source\nlocations."
     }, 
     {
       "description": "Job binary internals", 
       "name": "jobbinary-internals", 
-      "summary": "Job binary internal objects represent data processing\napplicationsand libraries that are stored in the internal database."
+      "summary": "Job binary internal objects represent data processing applications\nand libraries that are stored in the internal database."
     }, 
     {
       "description": "Job binaries", 
       "name": "jobbinaries", 
-      "summary": "Job binary objects represent data processing applications\nandlibraries that are stored in either the internal database or\ntheObject Storage service."
+      "summary": "Job binary objects represent data processing applications and\nlibraries that are stored in either the internal database or the\nObject Storage service."
     }, 
     {
       "description": "Jobs", 
       "name": "jobs", 
-      "summary": "A job object lists the binaries that a job needs to run. Torun a\njob, you must specify data sources and job parameters.\n\nYou can run a job on an existing or new transient cluster."
+      "summary": "A job object lists the binaries that a job needs to run. To run a\njob, you must specify data sources and job parameters.\n\nYou can run a job on an existing or new transient cluster."
     }, 
     {
       "description": "Job executions", 
       "name": "job-executions", 
-      "summary": "A job execution object represents a Hadoop job that runs on\naspecified cluster. A job execution polls the status of a\nrunningjob and reports it to the user. Also a user can cancel a\nrunning job."
+      "summary": "A job execution object represents a Hadoop job that runs on a\nspecified cluster. A job execution polls the status of a running\njob and reports it to the user. Also a user can cancel a running\njob."
     }, 
     {
       "description": "Job types", 
       "name": "job-types", 
-      "summary": "Each plugin that supports EDP also supports specific job\ntypes.Different versions of a plugin might actually support\ndifferent jobtypes. Configuration options vary by plugin, version,\nandjob type.\n\nThe job types provide information about which plugins supportwhich\njob types and how to configure the job types."
+      "summary": "Each plugin that supports EDP also supports specific job types.\nDifferent versions of a plugin might actually support different job\ntypes. Configuration options vary by plugin, version, and job type.\n\nThe job types provide information about which plugins support which\njob types and how to configure the job types."
     }
   ]
 }

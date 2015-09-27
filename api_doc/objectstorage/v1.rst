@@ -91,12 +91,11 @@
    
    - Replace object:
      ``curl -i $publicURL/janeausten/helloworld -X PUT -H "Content-
-     Length: 0" -H "X-Auth-Token: $token"`` ::     HTTP/1.1 201
-     Created    Last-Modified: Fri, 17 Jan 2014 17:28:35 GMT
-     Content-Length: 116    Etag: d41d8cd98f00b204e9800998ecf8427e
-     Content-Type: text/html; charset=UTF-8    X-Trans-Id:
-     tx4d5e4f06d357462bb732f-0052d96843    Date: Fri, 17 Jan 2014
-     17:28:35 GMT
+     Length: 0" -H "X-Auth-Token: $token"``::     HTTP/1.1 201 Created
+     Last-Modified: Fri, 17 Jan 2014 17:28:35 GMT    Content-Length:
+     116    Etag: d41d8cd98f00b204e9800998ecf8427e    Content-Type:
+     text/html; charset=UTF-8    X-Trans-Id: tx4d5e4f06d357462bb732f-
+     0052d96843    Date: Fri, 17 Jan 2014 17:28:35 GMT
    
    The ``201 Created`` status code indicates a successful write.
    
@@ -163,7 +162,7 @@
    - Copy the ``goodbye`` object from the ``marktwain`` container to
      the ``janeausten`` container: ``curl -i
      $publicURL/marktwain/goodbye -X COPY -H "X-Auth-Token: $token" -H
-     "Destination: janeausten/goodbye"`` ::     HTTP/1.1 201 Created
+     "Destination: janeausten/goodbye"``::     HTTP/1.1 201 Created
      Content-Length: 0    X-Copied-From-Last-Modified: Thu, 16 Jan
      2014 21:19:45 GMT    X-Copied-From: marktwain/goodbye    Last-
      Modified: Fri, 17 Jan 2014 18:22:57 GMT    Etag:

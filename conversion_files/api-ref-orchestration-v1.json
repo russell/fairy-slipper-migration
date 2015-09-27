@@ -88,7 +88,7 @@
     {
       "description": "General API information", 
       "name": "general-info", 
-      "summary": "Authenticated calls that target a known URI but that use anHTTP\nmethod that the implementation does not support return a\n``405Method Not Allowed`` error code. In addition, the HTTP\n``OPTIONS`` method is supported for each known URI. Inboth cases,\nthe ``Allow`` response header indicates theHTTP methods that are\nsupported for the resource."
+      "summary": "Authenticated calls that target a known URI but that use an HTTP\nmethod that the implementation does not support return a ``405\nMethod Not Allowed`` error code. In addition, the HTTP ``OPTIONS``\nmethod is supported for each known URI. In both cases, the\n``Allow`` response header indicates the HTTP methods that are\nsupported for the resource."
     }, 
     {
       "description": "API versions", 
@@ -103,7 +103,7 @@
     {
       "description": "Stack actions", 
       "name": "stack-actions", 
-      "summary": "Performs non-lifecycle operations on the stack. Specifythe action\nin the request body."
+      "summary": "Performs non-lifecycle operations on the stack. Specify the action\nin the request body."
     }, 
     {
       "description": "Stack resources", 
