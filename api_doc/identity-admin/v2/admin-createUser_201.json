@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "username": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user username.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the user is enabled (true) or disabled (false).", 
+      "format": ""
+    }, 
+    "email": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user email.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user ID.", 
+      "format": ""
+    }
+  }
+}

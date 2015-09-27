@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "ParameterGroups": {
+      "required": false, 
+      "type": "array", 
+      "description": "A list of parameter groups. Each group contains a list of parameter\nnames.", 
+      "format": ""
+    }, 
+    "Description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The description specified in the template.", 
+      "format": ""
+    }, 
+    "Parameters": {
+      "required": true, 
+      "type": "object", 
+      "description": "An object that defines all input parameters that are defined in the\ntemplate. Indexed by parameter name.", 
+      "format": ""
+    }
+  }
+}

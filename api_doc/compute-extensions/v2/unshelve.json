@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "unshelve": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``unshelve`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

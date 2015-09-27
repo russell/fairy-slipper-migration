@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "auto_disk_config": {
+      "required": false, 
+      "type": "string", 
+      "description": "Defines how the server's root disk partition is handled when the\nserver is started or resized. Valid values are:\n\n- True. The root partition expands to encompass all available\n  virtual disks.\n\n- False. The root partition remains the same size as the original\n  image. The operating system sees extra virtual disk space as\n  unformatted free space.", 
+      "format": ""
+    }, 
+    "accessIPv4": {
+      "required": false, 
+      "type": "string", 
+      "description": "The IP version 4 address.", 
+      "format": ""
+    }, 
+    "accessIPv6": {
+      "required": false, 
+      "type": "string", 
+      "description": "The IP version 6 address.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The name of the server. If you edit the server name, the server\nhost name does not change. Also, server names are not guaranteed to\nbe unique.", 
+      "format": ""
+    }
+  }
+}

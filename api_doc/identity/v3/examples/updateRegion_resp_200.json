@@ -1,0 +1,11 @@
+{
+  "region": {
+    "parent_region_id": "us-southwest", 
+    "description": "US Southwest Subregion", 
+    "links": {
+      "self": "https://identity:35357/v3/regions/us-southwest-1", 
+      "child_regions": "https://identity:35357/v3/regions?parent_region_id=us-southwest-1"
+    }, 
+    "id": "us-southwest-1"
+  }
+}

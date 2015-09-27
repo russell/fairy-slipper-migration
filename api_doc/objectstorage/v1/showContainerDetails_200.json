@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "hash": {
+      "required": true, 
+      "type": "string", 
+      "description": "The MD5 checksum value of the object content.", 
+      "format": ""
+    }, 
+    "last_modified": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
+      "format": ""
+    }, 
+    "bytes": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The total number of bytes that are stored in Object Storage for the\naccount.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the container.", 
+      "format": ""
+    }, 
+    "content_type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The content type of the object.", 
+      "format": ""
+    }
+  }
+}

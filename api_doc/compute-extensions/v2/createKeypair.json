@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "public_key": {
+      "required": false, 
+      "type": "string", 
+      "description": "The public ssh key to import. If not provided, a key is generated.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name to associate with the keypair.", 
+      "format": ""
+    }
+  }
+}

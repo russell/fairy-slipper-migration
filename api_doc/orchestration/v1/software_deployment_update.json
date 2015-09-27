@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "action": {
+      "required": true, 
+      "type": "string", 
+      "description": "Current stack action in which this deployment resource is being\ntriggered.", 
+      "format": ""
+    }, 
+    "output_values": {
+      "required": false, 
+      "type": "string", 
+      "description": "Map of output values for the deployment, as signaled from the\nserver.", 
+      "format": ""
+    }, 
+    "config_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "ID of the software configuration resource to run when applying to\nthe server. This ID might not be the same configuration ID with\nwhich the deployment was created because ephemeral configurations\nare created throughout the life cycle of the deployment.", 
+      "format": ""
+    }, 
+    "status": {
+      "required": false, 
+      "type": "string", 
+      "description": "Current status of the deployment. Value is ``IN_PROGRESS`` ,\n``COMPLETE`` , or ``FAILED`` .", 
+      "format": ""
+    }, 
+    "status_reason": {
+      "required": false, 
+      "type": "string", 
+      "description": "Error description for the last status change, which is ``FAILED``\nstatus.", 
+      "format": ""
+    }
+  }
+}

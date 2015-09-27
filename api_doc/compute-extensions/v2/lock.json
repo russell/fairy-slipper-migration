@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "lock": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``lock`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

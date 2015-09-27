@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "member_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "ID of member with which an image is shared.", 
+      "format": ""
+    }
+  }
+}

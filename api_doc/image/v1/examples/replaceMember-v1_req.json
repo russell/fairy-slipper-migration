@@ -1,0 +1,11 @@
+{
+  "memberships": [
+    {
+      "can_share": false, 
+      "member_id": "tenant1"
+    }, 
+    {
+      "...": "..."
+    }
+  ]
+}

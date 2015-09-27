@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "One or more metadata key and value pairs to set or unset for the\nsnapshot.\n\nTo unset a metadata key value, specify only the key name.\n\nTo set a metadata key value, specify the key and value pair.\n\nThe Block Storage server does not respect case-sensitive key names.\nFor example, if you specify both ``\"key\": \"v1\"`` and ``\"KEY\":\n\"V1\"`` , the server sets and returns only the ``KEY`` key and value\npair.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The volume status.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The volume description.", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": true, 
+      "type": "string", 
+      "description": "The availability zone.", 
+      "format": ""
+    }, 
+    "created_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "Date and time when the volume was created.", 
+      "format": "date-time"
+    }, 
+    "source_volid": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the source volume.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The volume name.", 
+      "format": ""
+    }, 
+    "attachments": {
+      "required": true, 
+      "type": "object", 
+      "description": "One or more instance attachments.", 
+      "format": ""
+    }, 
+    "volume_type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The associated volume type.", 
+      "format": ""
+    }, 
+    "volumes": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``volumes`` object.", 
+      "format": ""
+    }, 
+    "snapshot_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the source volume snapshot.", 
+      "format": ""
+    }, 
+    "size": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The size of the volume, in gibibytes (GiB).", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The volume ID.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+      "format": ""
+    }
+  }
+}

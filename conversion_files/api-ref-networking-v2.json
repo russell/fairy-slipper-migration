@@ -1,0 +1,47 @@
+{
+  "file_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-ports.wadl": "ports", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-subnets.wadl": "subnets"
+  }, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#bulkCreateNetwork": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#createNetwork": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#deleteNetwork": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#listNetworks": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#listVersionsv2-neutron": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#showNetwork": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#showVersionDetailsv2-neutron": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#updateNetwork": "networks"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#Networks": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#network_id": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#version": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/netconn-api/src/os-networks.wadl#versions": "versions"
+  }, 
+  "service": "networking", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": "Lists information for all Networking API versions and shows details\nabout API v2.0."
+    }, 
+    {
+      "description": "Networks", 
+      "name": "networks", 
+      "summary": "Lists, shows information for, creates, updates, and deletes\nnetworks."
+    }, 
+    {
+      "description": "Subnets", 
+      "name": "subnets", 
+      "summary": "Lists, shows information for, creates, updates, and deletes subnet\nresources."
+    }, 
+    {
+      "description": "Ports", 
+      "name": "ports", 
+      "summary": "Lists, shows information for, creates, updates, and deletes ports."
+    }
+  ], 
+  "title": "Networking API", 
+  "version": "v2"
+}

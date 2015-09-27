@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "removeFloatingIp": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``removeFloatingIp`` action in the request body.", 
+      "format": ""
+    }, 
+    "address": {
+      "required": true, 
+      "type": "string", 
+      "description": "The floating IP address that you want to remove.", 
+      "format": ""
+    }
+  }
+}

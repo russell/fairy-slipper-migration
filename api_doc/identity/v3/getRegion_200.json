@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "parent_region_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the parent region.", 
+      "format": ""
+    }, 
+    "region": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``region`` object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The region description.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "The links for the region.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the region.", 
+      "format": ""
+    }
+  }
+}

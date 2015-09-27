@@ -1,0 +1,17 @@
+{
+  "node_groups": [
+    {
+      "count": 3, 
+      "name": "worker", 
+      "node_group_template_id": "846edb31-add5-46e6-a4ee-a4c339f99251"
+    }, 
+    {
+      "count": 1, 
+      "name": "master", 
+      "node_group_template_id": "0bb9f1a4-0c44-4dc5-9452-6741c62ed9ae"
+    }
+  ], 
+  "hadoop_version": "2.7.1", 
+  "name": "cluster-template", 
+  "plugin_name": "vanilla"
+}

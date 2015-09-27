@@ -1,0 +1,11 @@
+{
+  "region": {
+    "parent_region_id": "829551", 
+    "description": "US West Subregion 1", 
+    "links": {
+      "self": "https://identity:35357/v3/regions/8ebd7f", 
+      "child_regions": "https://identity:35357/v3/regions?parent_region_id=8ebd7f"
+    }, 
+    "id": "8ebd7f"
+  }
+}

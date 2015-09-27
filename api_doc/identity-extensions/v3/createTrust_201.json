@@ -1,0 +1,71 @@
+{
+  "type": "object", 
+  "properties": {
+    "impersonation": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "The impersonation flag.", 
+      "format": ""
+    }, 
+    "roles_links": {
+      "required": true, 
+      "type": "object", 
+      "description": "A roles links object. Includes ``next`` , ``previous`` , and\n``self`` links for roles.", 
+      "format": ""
+    }, 
+    "trust": {
+      "required": true, 
+      "type": "string", 
+      "description": "A trust object.", 
+      "format": ""
+    }, 
+    "trustor_user_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The trustor user ID.", 
+      "format": ""
+    }, 
+    "roles": {
+      "required": true, 
+      "type": "object", 
+      "description": "A roles object. Includes ``id`` , ``name`` , and ``links`` for any\nroles.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Trust links.", 
+      "format": ""
+    }, 
+    "oauth_expires_at": {
+      "required": false, 
+      "type": "string", 
+      "description": "The date and time when a request token expires.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf the Identity API does not include this attribute or its value is\n``null`` , the token never expires.", 
+      "format": ""
+    }, 
+    "remaining_uses": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Remaining uses flag.", 
+      "format": ""
+    }, 
+    "trustee_user_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The trustee user ID.", 
+      "format": ""
+    }, 
+    "project_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the project.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the trust.", 
+      "format": ""
+    }
+  }
+}

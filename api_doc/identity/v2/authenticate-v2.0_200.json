@@ -1,0 +1,95 @@
+{
+  "type": "object", 
+  "properties": {
+    "endpoints_links": {
+      "required": true, 
+      "type": "string", 
+      "description": "Links for the endpoint.", 
+      "format": ""
+    }, 
+    "serviceCatalog": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``serviceCatalog`` object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The description of the tenant. If not set, this value is ``null`` .", 
+      "format": ""
+    }, 
+    "expires": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the token expires.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the tenant is enabled or disabled.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Endpoint name.", 
+      "format": ""
+    }, 
+    "access": {
+      "required": true, 
+      "type": "string", 
+      "description": "An ``access`` object.", 
+      "format": ""
+    }, 
+    "token": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``token`` object.", 
+      "format": ""
+    }, 
+    "user": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``user`` object, which shows the ``username`` , ``roles_links`` ,\n``id`` , ``roles`` , and ``name`` .", 
+      "format": ""
+    }, 
+    "issued_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the token was issued.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .", 
+      "format": ""
+    }, 
+    "endpoints": {
+      "required": true, 
+      "type": "string", 
+      "description": "One or more ``endpoints`` objects. Each object shows the\n``adminURL`` , ``region`` , ``internalURL`` , ``id`` , and\n``publicURL`` for the endpoint.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "Endpoint type.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The tenant ID.", 
+      "format": ""
+    }, 
+    "tenant": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``tenant`` object.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``metadata`` object.", 
+      "format": ""
+    }
+  }
+}

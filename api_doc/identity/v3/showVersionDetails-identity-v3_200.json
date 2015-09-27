@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The status of the version. For example, ``experimental`` or\n``stable`` .", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "The version links.", 
+      "format": ""
+    }, 
+    "updated_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "version": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``version`` object.", 
+      "format": ""
+    }, 
+    "media-types": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``media-types`` object, which shows the supported media types.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The version ID, such as ``v3.0`` .", 
+      "format": ""
+    }
+  }
+}

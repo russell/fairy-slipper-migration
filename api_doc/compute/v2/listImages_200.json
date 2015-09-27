@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "images": {
+      "required": true, 
+      "type": "string", 
+      "description": "Image information.", 
+      "format": ""
+    }, 
+    "previous": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the previous metadata item.", 
+      "format": "uri"
+    }, 
+    "next": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the next metadata item.", 
+      "format": "uri"
+    }
+  }
+}

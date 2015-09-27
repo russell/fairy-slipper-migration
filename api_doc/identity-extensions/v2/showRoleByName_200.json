@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The role description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The role name.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The role ID.", 
+      "format": ""
+    }
+  }
+}

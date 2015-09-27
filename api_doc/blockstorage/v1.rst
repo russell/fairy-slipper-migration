@@ -1,0 +1,439 @@
+.. http:get:: /v1/{tenant_id}/snapshots/{snapshot_id}
+   :synopsis: Show snapshot information
+
+   Shows information about a specified snapshot.
+
+   :responseexample 200: v1/examples/getSnapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/snapshots/{snapshot_id}
+   :synopsis: Delete snapshot
+
+   Deletes a specified snapshot.
+
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 202: 
+
+
+.. http:get:: /v1
+   :synopsis: Show API v1 details
+
+   Shows details for Block Storage API v1.
+
+   :responseexample 200: v1/examples/showVersionDetailsv1_resp_200.json
+   :responseexample 203: v1/examples/showVersionDetailsv1_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}
+   :synopsis: Show quota details for user
+
+   Shows details for quotas for a specified tenant and user.
+
+   :responseexample 200: v1/examples/showQuotaDetailUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/types
+   :synopsis: List volume types
+
+   Lists volume types.
+
+   :responseexample 200: v1/examples/getVolumeTypes_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/types
+   :synopsis: Create volume type
+
+   Creates a volume type.
+
+   :requestexample: v1/examples/createVolumeType_req.json
+   :responseexample 200: v1/examples/createVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :requestschema: v1/createVolumeType.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/volumes/detail
+   :synopsis: List volumes (detailed)
+
+   Lists details for volume entities.
+
+   :responseexample 200: v1/examples/getVolumesDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/volumes
+   :synopsis: Create volume
+
+   Creates a volume.
+
+   :requestexample: v1/examples/createVolume_req.json
+   :responseexample 201: v1/examples/createVolume_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :requestschema: v1/createVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 201: 
+
+
+.. http:get:: /v1/{tenant_id}/volumes
+   :synopsis: List volumes
+
+   Lists simple volume entities.
+
+   :responseexample 200: v1/examples/getVolumesSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /
+   :synopsis: List API versions
+
+   Lists information about all Block Storage API versions.
+
+   :responseexample 300: v1/examples/listVersionsv1_resp_300.json
+   :responseexample 200: v1/examples/listVersionsv1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/snapshots/detail
+   :synopsis: List snapshots (detailed)
+
+   Lists details for snapshot entities.
+
+   :responseexample 200: v1/examples/getSnapshotsDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/snapshots
+   :synopsis: Create snapshot
+
+   Creates a snapshot.
+
+   :requestexample: v1/examples/createSnapshot_req.json
+   :responseexample 201: v1/examples/createSnapshot_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :requestschema: v1/createSnapshot.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 201: 
+
+
+.. http:get:: /v1/{tenant_id}/snapshots
+   :synopsis: List snapshots
+
+   Lists simple snapshot entities.
+
+   :responseexample 200: v1/examples/getSnapshotsSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/os-quota-sets/defaults
+   :synopsis: Get default quotas
+
+   Gets default quotas for a tenant.
+
+   :responseexample 200: v1/examples/getDefaults_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
+   :synopsis: Show quotas
+
+   Shows quotas for a tenant.
+
+   :responseexample 200: v1/examples/showQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :query usage: Set to ``usage=True`` to show quota usage. Default is
+                 ``False`` .
+   :statuscode 200: 
+
+
+.. http:put:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
+   :synopsis: Update quotas
+
+   Updates quotas for a tenant.
+
+   :requestexample: v1/examples/updateQuota_req.json
+   :responseexample 200: v1/examples/updateQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :requestschema: v1/updateQuota.json
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/os-quota-sets/{tenant_id}
+   :synopsis: Delete quotas
+
+   Deletes quotas for a tenant so the quotas revert to default values.
+
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :synopsis: Show quotas for user
+
+   Enables an admin user to show quotas for a specified tenant and
+   user.
+
+   :responseexample 200: v1/examples/showQuotaUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :synopsis: Update quotas for user
+
+   Updates quotas for a specified tenant/project and user.
+
+   :requestexample: v1/examples/updateQuotaUser_req.json
+   :responseexample 200: v1/examples/updateQuotaUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-quota-sets-v1
+   :requestschema: v1/updateQuotaUser.json
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}
+   :synopsis: Delete quotas for user
+
+   Deletes quotas for a user so that the quotas revert to default
+   values.
+
+   :tag: os-quota-sets-v1
+   :parameter tenant_id: The ID for the tenant for which you want to
+                         show or update quotas. This ID is different
+                         from the first tenant ID that you specify in
+                         the URI: That ID is for the admin tenant.
+   :parameter user_id: The user ID. Specify in the URI as a query
+                       string: ``user_id={user_id}`` .
+   :statuscode 200: 
+
+
+.. http:put:: /v1/{tenant_id}/types/{volume_type_id}
+   :synopsis: Update volume type
+
+   Updates a volume type.
+
+   :requestexample: v1/examples/updateVolumeType_req.json
+   :responseexample 200: v1/examples/updateVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :requestschema: v1/updateVolumeType.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier of an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:put:: /v1/{tenant_id}/types/{volume_type_id}
+   :synopsis: Update extra specs for a volume type
+
+   Updates the extra specifications assigned to a volume type.
+
+   :requestexample: v1/examples/updateVolumeTypeExtraSpecs_req.json
+   :responseexample 200: v1/examples/updateVolumeTypeExtraSpecs_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :requestschema: v1/updateVolumeTypeExtraSpecs.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier of an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/types/{volume_type_id}
+   :synopsis: Show volume type information
+
+   Shows information about a specified volume type.
+
+   :responseexample 200: v1/examples/getVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier of an existing
+                              volume type.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/types/{volume_type_id}
+   :synopsis: Delete volume type
+
+   Deletes a specified volume type.
+
+   :tag: types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier of an existing
+                              volume type.
+   :statuscode 202: 
+
+
+.. http:get:: /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
+   :synopsis: Show snapshot metadata
+
+   Shows the metadata for a specified snapshot.
+
+   :responseexample 200: v1/examples/showSnapshotMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:put:: /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
+   :synopsis: Update snapshot metadata
+
+   Updates the metadata for a specified snapshot.
+
+   :requestexample: v1/examples/updateSnapshotMetadata_req.json
+   :responseexample 200: v1/examples/updateSnapshotMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: snapshots
+   :requestschema: v1/updateSnapshotMetadata.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier of an existing
+                           snapshot.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/volumes/{volume_id}
+   :synopsis: Show volume information
+
+   Shows information about a specified volume.
+
+   :responseexample 200: v1/examples/getVolume_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/volumes/{volume_id}
+   :synopsis: Delete volume
+
+   Deletes a specified volume.
+
+   :tag: volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier of an existing volume.
+   :statuscode 202: 
+
+

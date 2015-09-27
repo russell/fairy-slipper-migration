@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume status.", 
+      "format": ""
+    }, 
+    "migration_status": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume migration status.", 
+      "format": ""
+    }, 
+    "attach_status": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume attach status.", 
+      "format": ""
+    }
+  }
+}

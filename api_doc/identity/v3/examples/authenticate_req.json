@@ -1,0 +1,23 @@
+{
+  "auth": {
+    "scope": {
+      "project": {
+        "domain": {
+          "name": "example.com"
+        }, 
+        "name": "project-x"
+      }
+    }, 
+    "identity": {
+      "password": {
+        "user": {
+          "password": "secretsecret", 
+          "id": "0ca8f6"
+        }
+      }, 
+      "methods": [
+        "password"
+      ]
+    }
+  }
+}

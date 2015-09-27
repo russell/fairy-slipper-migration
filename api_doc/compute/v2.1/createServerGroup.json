@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The server group name. A non-empty string with no leading or\ntrailing spaces. Maximum length is 255 characters.", 
+      "format": ""
+    }, 
+    "policies": {
+      "required": false, 
+      "type": "object", 
+      "description": "A list of one or more policy names to associate with the server\ngroup. The list must contain at least one policy name.\n\nEach policy name must be a non-empty string with no leading or\ntrailing spaces. Maximum length is 255 characters.", 
+      "format": ""
+    }
+  }
+}

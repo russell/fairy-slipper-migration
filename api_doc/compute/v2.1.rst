@@ -1,0 +1,4234 @@
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-console-auth-token
+   :synopsis: Show console authentication token
+
+   Shows the authentication token for a specified console for a
+   specified server instance.
+   
+   This feature is available for ``rdp-html5`` console type only.
+
+   :responseexample 200: v2.1/examples/getConsoleAuth_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-consoles-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-cells/{cell_id}
+   :synopsis: Show cell data
+
+   Shows data for a specified cell.
+   
+   When cells are not enabled, the cells API calls return a ``501
+   NotImplemented`` error.
+
+   :responseexample 200: v2.1/examples/datacell_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: cells
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter cell_id: The cell ID.
+   :statuscode 200: 
+   :statuscode 501: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers
+   :synopsis: Create multiple servers
+
+   Creates one or more servers with an optional reservation ID.
+
+   :requestexample: v2.1/examples/createServer_req.json
+   :responseexample 202: v2.1/examples/createServer_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: multiple-create
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers
+   :synopsis: Create server with block device mapping
+
+   Creates a server with a block device mapping.
+   
+   To define the block device mapping, you can include either a
+   ``block_device_mapping`` or ``block_device_mapping_v2`` object in
+   the request body. The ``block_device_mapping_v2`` object is
+   preferred.
+
+   :requestexample: v2.1/examples/createServer_req.json
+   :responseexample 202: v2.1/examples/createServer_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-block-device-mapping-v2.1
+   :requestschema: v2.1/createServer.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query security_group: The name of the security group in which the
+                          server is created. Default is the
+                          ``default`` security group.
+   :query user_data: Base64-encoded configuration information or
+                     script that you want to use on launch.
+   :query availability_zone: The availability zone in which to launch
+                             the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-cells/{cell_id}/capacities
+   :synopsis: Show cell capacities
+
+   Shows capacities for a specified cell.
+   
+   When cells are not enabled, the cells API calls return a ``501
+   NotImplemented`` error.
+
+   :responseexample 200: v2.1/examples/cellcapacity_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: cells
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter cell_id: The cell ID.
+   :statuscode 200: 
+   :statuscode 501: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-networks/{id}
+   :synopsis: Show network information
+
+   Shows information for a specified network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/GetNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-networks/{id}
+   :synopsis: Delete network
+
+   Deletes a specified network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-volumes/detail
+   :synopsis: List details for volumes
+
+   Lists details for all volumes.
+
+   :responseexample 200: v2.1/examples/getVolumesDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-pci
+   :synopsis: List PCI devices
+
+   Lists PCI devices.
+
+   :responseexample 200: v2.1/examples/listPciDevices_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-pci-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-agents
+   :synopsis: Create agent build
+
+   Creates an agent build.
+
+   :requestexample: v2.1/examples/agentbuild_req.json
+   :responseexample 201: v2.1/examples/agentbuild_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: agents
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-agents
+   :synopsis: List agent builds
+
+   Lists agent builds.
+
+   :responseexample 200: v2.1/examples/listbuilds_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: agents
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-agents
+   :synopsis: Delete agent build
+
+   Deletes an existing agent build.
+
+   :tag: agents
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ips-bulk
+   :synopsis: List floating IPs
+
+   Lists all floating IPs.
+
+   :responseexample 200: v2.1/examples/ListFloatingIPsBulk_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips-bulk
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-floating-ips-bulk
+   :synopsis: Create floating IPs
+
+   Bulk-creates floating IPs.
+
+   :requestexample: v2.1/examples/CreateFloatingIPsBulk_req.json
+   :responseexample 200: v2.1/examples/CreateFloatingIPsBulk_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips-bulk
+   :requestschema: v2.1/CreateFloatingIPsBulk.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}
+   :synopsis: Create or update DNS domain
+
+   Creates or updates a DNS domain.
+
+   :requestexample: v2.1/examples/CreateDomain_req.json
+   :responseexample 200: v2.1/examples/CreateDomain_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}
+   :synopsis: Delete DNS domain
+
+   Deletes a DNS domain and all associated host entries.
+
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}
+   :synopsis: Show flavor extra specs
+
+   Shows an extra spec for specified flavor, by key.
+
+   :requestexample: v2.1/examples/showflavor_req.json
+   :responseexample 200: v2.1/examples/showflavor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-extra-specs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :parameter flavor_extra_spec_key: The extra spec key for the
+                                     flavor.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}/{flavor_extra_spec_key}
+   :synopsis: Update flavor extra spec
+
+   Updates a specified extra spec value, by key, for a specified
+   flavor.
+
+   :requestexample: v2.1/examples/updateflavorspec_req.json
+   :responseexample 200: v2.1/examples/updateflavorspec_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-extra-specs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :parameter flavor_extra_spec_key: The extra spec key for the
+                                     flavor.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-security-group-default-rules/{security_group_default_rule_id}
+   :synopsis: Show default security group rule information
+
+   Shows information for a specified security group rule.
+
+   :responseexample 200: v2.1/examples/showSecGroupDefaultRule_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-security-group-default-rules-v2.1
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter security_group_default_rule_id: The unique identifier of
+                                              the security group rule.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-security-group-default-rules/{security_group_default_rule_id}
+   :synopsis: Delete default security group rule
+
+   Deletes a specified security group rule.
+
+   :tag: os-security-group-default-rules-v2.1
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter security_group_default_rule_id: The unique identifier of
+                                              the security group rule.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-volumes
+   :synopsis: Create volume
+
+   Creates a volume.
+
+   :requestexample: v2.1/examples/createVolume_req.json
+   :responseexample 201: v2.1/examples/createVolume_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :requestschema: v2.1/createVolume.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 201: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-volumes
+   :synopsis: List volumes
+
+   Lists the volumes associated with the account.
+
+   :responseexample 200: v2.1/examples/getVolumesSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-instance-usage-audit-log
+   :synopsis: List usage audits for an instance
+
+   Lists usage audits for a specified instance.
+
+   :responseexample 200: v2.1/examples/listusageaudits_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: instance-usage-audit-log
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors
+   :synopsis: List hypervisors
+
+   Lists hypervisors.
+
+   :responseexample 200: v2.1/examples/listhypervisors_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-migrations
+   :synopsis: List migrations
+
+   Lists in-progress migrations.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/returnmigrations_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: migrations
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/startup
+   :synopsis: Start host
+
+   Starts a specified host.
+
+   :responseexample 200: v2.1/examples/startshost_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/metadata
+   :synopsis: List all metadata
+
+   Lists all metadata for a specified server.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/listServerMetadata_resp_200.json
+   :responseexample 203: v2.1/examples/listServerMetadata_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/metadata
+   :synopsis: Update metadata items
+
+   Updates one or more metadata items for a specified server.
+   
+   Replaces metadata items that match the specified keys. Does not
+   modify items that are not specified in the request.
+   
+   If this operation exceeds the quota for metadata items, the API
+   throws an ``overLimit (413)`` fault.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/updateServerMetadata_req.json
+   :responseexample 200: v2.1/examples/updateServerMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata
+   :synopsis: Create or replace metadata items
+
+   Creates or replaces one or more specified metadata items for a
+   specified server.
+   
+   Creates any metadata items that do not already exist in the server.
+   Removes and completely replaces any metadata items that already
+   exist in the server with the metadata items in the request.
+   
+   If this operation exceeds the quota for metadata items, the API
+   throws an ``overLimit (413)`` fault.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/createServerMetadata_req.json
+   :responseexample 200: v2.1/examples/createServerMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-services/detail
+   :synopsis: List disabled services
+
+   Lists disabled services. If information exists, includes reasons
+   why services were disabled.
+
+   :responseexample 200: v2.1/examples/getDisableReasonDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/shutdown
+   :synopsis: Shut down host
+
+   Shuts down a specified host.
+
+   :responseexample 200: v2.1/examples/shutdownhost_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-tenant-networks
+   :synopsis: List project networks
+
+   Lists project networks.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/listProjectNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: tenant-networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-tenant-networks
+   :synopsis: Create project network
+
+   Creates a project network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/createProjectNetwork_req.json
+   :responseexample 202: v2.1/examples/createProjectNetwork_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: tenant-networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-quota-sets
+   :synopsis: Delete quota for tenant
+
+   Deletes a quota for tenant.
+
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 204: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-quota-sets
+   :synopsis: Force-update quota
+
+   Force-updates quota for tenant.
+
+   :requestexample: v2.1/examples/forceupdatequota_req.json
+   :responseexample 200: v2.1/examples/forceupdatequota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-quota-sets
+   :synopsis: Update quota
+
+   Updates quota for tenant.
+
+   :requestexample: v2.1/examples/updatesquotatenant_req.json
+   :responseexample 200: v2.1/examples/updatesquotatenant_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
+   :synopsis: Add host
+
+   Adds a host to the specified aggregate.
+   
+   Specify the ``add_host`` action in the request body.
+
+   :requestexample: v2.1/examples/addhost_req.json
+   :responseexample 202: v2.1/examples/addhost_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter aggregate_id: The aggregate ID.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
+   :synopsis: Create or update aggregate metadata
+
+   Creates or replaces metadata for an aggregate.
+   
+   Specify the ``add_metadata`` action in the request body.
+
+   :requestexample: v2.1/examples/aggregatemetadata_req.json
+   :responseexample 200: v2.1/examples/aggregatemetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter aggregate_id: The aggregate ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}/action
+   :synopsis: Remove host
+
+   Removes a host from a specified aggregate.
+   
+   Specify the ``remove_host`` action in the request body.
+
+   :requestexample: v2.1/examples/removeaggregate_req.json
+   :responseexample 202: v2.1/examples/removeaggregate_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter aggregate_id: The aggregate ID.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/limits
+   :synopsis: Show global and rate limits
+
+   Shows global and rate limit information.
+
+   :responseexample 200: v2.1/examples/getlimits_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: limits
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/detail
+   :synopsis: List flavors with details
+
+   Lists flavors with details.
+
+   :responseexample 200: v2.1/examples/returnflavorall_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: //v2.1/images/{image_id}
+   :synopsis: Get image details
+
+   Gets details for a specified image.
+
+   :responseexample 200: v2.1/examples/getImage_resp_200.json
+   :responseexample 203: v2.1/examples/getImage_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: //v2.1/images/{image_id}
+   :synopsis: Delete image
+
+   Deletes a specified image.
+
+   :tag: compute_images-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-snapshots/detail
+   :synopsis: List details for snapshots
+
+   Lists details for all snapshots.
+
+   :responseexample 200: v2.1/examples/getSnapshotsDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}/action
+   :synopsis: Reserve or release a fixed IP
+
+   Reserves or releases a fixed IP.
+   
+   To reserve a fixed IP address, specify ``reserve`` in the request
+   body. To release a fixed IP address, specify ``unreserve`` in the
+   request body.
+
+   :requestexample: v2.1/examples/reserveIP_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-fixed-ips-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter fixed_ip: The fixed IP of interest to you.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-snapshots
+   :synopsis: Create snapshot
+
+   Creates a snapshot.
+
+   :requestexample: v2.1/examples/createSnapshot_req.json
+   :responseexample 201: v2.1/examples/createSnapshot_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :requestschema: v2.1/createSnapshot.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 201: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-snapshots
+   :synopsis: List snapshots
+
+   Lists snapshots.
+
+   :responseexample 200: v2.1/examples/getSnapshotsSimple_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access/detail
+   :synopsis: List flavors with details and access list
+
+   Lists flavors with details. Includes access list information.
+
+   :responseexample 200: v2.1/examples/list-flavor-accesslist-detail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
+   :synopsis: Show metadata item details
+
+   Shows details for a specified metadata item, by key, for a
+   specified server.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/getServerMetadataItem_resp_200.json
+   :responseexample 203: v2.1/examples/getServerMetadataItem_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter key: The metadata key.
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
+   :synopsis: Create or update metadata item
+
+   Creates or replaces a specified metadata item, by key, for a
+   specified server.
+   
+   Creates a metadata item that does not already exist in the server.
+   Removes and completely replaces a metadata item that already exists
+   in the server with the metadata item in the request.
+   
+   If this operation exceeds the quota for metadata items, the API
+   throws an ``overLimit (413)`` fault.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/setServerMetadataItem_req.json
+   :responseexample 200: v2.1/examples/setServerMetadataItem_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter key: The metadata key.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
+   :synopsis: Delete metadata item
+
+   Deletes a specified metadata item, by key, from a specified server.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :tag: server-metadata-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter key: The metadata key.
+   :statuscode 204: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes
+   :synopsis: Add bare metal node
+
+   Adds a bare metal node to a specified server.
+   
+   Preconditions
+   
+   - You can add a bare metal node to a server with an ``ACTIVE`` ,
+     ``PAUSED`` , ``SHUTOFF`` , ``VERIFY_RESIZE`` , or
+     ``SOFT_DELETED`` status.
+   
+   - You can add a bare metal node to a server with a status that is
+     not locked.
+
+   :requestexample: v2.1/examples/addBaremetalNode_req.json
+   :responseexample 202: v2.1/examples/addBaremetalNode_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes
+   :synopsis: List bare metal nodes
+
+   Lists the bare metal nodes that are associated with a specified
+   server.
+
+   :responseexample 202: v2.1/examples/listBaremetalNodes_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-security-group-rules/{security_group_rule_id}
+   :synopsis: Delete security group rule
+
+   Deletes a specified security group rule.
+
+   :tag: os-security-group-rules-v2.1
+   :parameter tenant_id: The ID of the tenant.
+   :parameter security_group_rule_id: The ID of the security group
+                                      rule.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}/uptime
+   :synopsis: Show hypervisor uptime
+
+   Shows the uptime for a specified hypervisor.
+
+   :responseexample 200: v2.1/examples/showhypervisoruptime_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter hypervisor_id: The ID of the hypervisor.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-security-groups
+   :synopsis: List security groups
+
+   Lists security groups.
+
+   :responseexample 200: v2.1/examples/listSecGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-security-groups
+   :synopsis: Create security group
+
+   Creates a security group.
+
+   :requestexample: v2.1/examples/createSecGroup_req.json
+   :responseexample 200: v2.1/examples/createSecGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :requestschema: v2.1/createSecGroup.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}
+   :synopsis: Show aggregate details
+
+   Shows the details of an aggregate, hosts and metadata included.
+
+   :requestexample: v2.1/examples/showaggregate_req.json
+   :responseexample 200: v2.1/examples/showaggregate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter aggregate_id: The aggregate ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}
+   :synopsis: Update aggregate
+
+   Updates either or both the name and availability zone for a
+   specified aggregate.
+
+   :requestexample: v2.1/examples/updateaggregate_req.json
+   :responseexample 200: v2.1/examples/updateaggregate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter aggregate_id: The aggregate ID.
+   :statuscode 200: 
+
+
+.. http:get:: /
+   :synopsis: List API versions
+
+   Lists information about all Compute API versions.
+
+   :responseexample 300: v2.1/examples/listVersionsv2.1_resp_300.json
+   :responseexample 200: v2.1/examples/listVersionsv2.1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors
+   :synopsis: List flavors
+
+   Lists flavors.
+
+   :responseexample 200: v2.1/examples/getflavorbrief_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}
+   :synopsis: Create or update flavor extra specs
+
+   Creates and updates flavor extra specs.
+
+   :requestexample: v2.1/examples/updateflavor_req.json
+   :responseexample 201: v2.1/examples/updateflavor_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-extra-specs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-extra-specs/{flavor_id}
+   :synopsis: Show flavor extra specs
+
+   Lists extra specs for a specified flavor.
+
+   :requestexample: v2.1/examples/listflavor_req.json
+   :responseexample 200: v2.1/examples/listflavor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-extra-specs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-certificates
+   :synopsis: Create certificate
+
+   Creates a certificate.
+
+   :responseexample 201: v2.1/examples/createcertificate_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: certificates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-cloudpipe
+   :synopsis: List cloudpipes
+
+   Lists cloudpipes.
+
+   :responseexample 200: v2.1/examples/listCloudpipes_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-cloudpipe-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-cloudpipe
+   :synopsis: Create cloudpipe
+
+   Creates a cloudpipe.
+
+   :requestexample: v2.1/examples/createCloudpipe_req.json
+   :responseexample 200: v2.1/examples/createCloudpipe_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-cloudpipe-v2.1
+   :requestschema: v2.1/createCloudpipe.json
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: //v2.1/images/{image_id}/metadata
+   :synopsis: Show image metadata
+
+   Shows metadata for a specified image.
+
+   :responseexample 200: v2.1/examples/showImageMetadata_resp_200.json
+   :responseexample 203: v2.1/examples/showImageMetadata_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: //v2.1/images/{image_id}/metadata
+   :synopsis: Update image metadata items
+
+   Updates metadata items by key for a specified image.
+   
+   Replaces items that match the specified keys and does not modify
+   items not specified in the request.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/updateImageMetadata_req.json
+   :responseexample 200: v2.1/examples/updateImageMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: //v2.1/images/{image_id}/metadata
+   :synopsis: Create or replace image metadata
+
+   Creates or replaces metadata for a specified image.
+   
+   Replaces items that match the specified keys. If you omit a key
+   that already exists, this key retains its value.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/createImageMetadata_req.json
+   :responseexample 200: v2.1/examples/createImageMetadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :statuscode 200: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-pci/{pci_id}
+   :synopsis: Show PCI device with extra information
+
+   Shows information for a specified PCI device. Includes extra
+   information.
+
+   :responseexample 200: v2.1/examples/showPciDevicePool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-pci-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter pci_id: The ID of the PCI device.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles
+   :synopsis: Create console for server
+
+   Creates a console for a specified server instance.
+
+   :tag: os-consoles-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles
+   :synopsis: Lists consoles for server
+
+   Lists all consoles for a specified server instance.
+
+   :responseexample 200: v2.1/examples/listConsoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-consoles-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-cells
+   :synopsis: List cells with details
+
+   Lists cells with details.
+   
+   When cells are not enabled, the cells API calls return a ``501
+   NotImplemented`` error.
+
+   :responseexample 200: v2.1/examples/returnallcell_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: cells
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 501: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-cells
+   :synopsis: List cells
+
+   Lists cells.
+   
+   When cells are not enabled, the cells API calls return a ``501
+   NotImplemented`` error.
+
+   :responseexample 200: v2.1/examples/listcell_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: cells
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 501: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-services
+   :synopsis: List services
+
+   Lists all services.
+
+   :responseexample 200: v2.1/examples/listServices_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-services
+   :synopsis: Delete service
+
+   Deletes a specified service.
+
+   :requestexample: v2.1/examples/deleteService_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 404: 
+   :statuscode 204: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns
+   :synopsis: List DNS domains
+
+   Lists registered DNS domains published by the DNS drivers.
+
+   :responseexample 200: v2.1/examples/ListDomains_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-manage
+   :synopsis: Create flavor
+
+   Creates a flavor.
+
+   :requestexample: v2.1/examples/create-flavors_req.json
+   :responseexample 201: v2.1/examples/create-flavors_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-manage
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-instance-usage-audit-log/{before_timestamp}
+   :synopsis: List usage audits before specified time
+
+   Lists usage audits that occurred before a specified time.
+
+   :responseexample 200: v2.1/examples/listinstanceusage_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: instance-usage-audit-log
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query before_timestamp: The date and time before which to list
+                            usage audits.  The date and time stamp
+                            format is ISO 8601 :  CCYY-MM-
+                            DDThh:mm:ss±hh:mmThe ``±hh:mm`` value, if
+                            included, returns the time zone as an
+                            offset from UTC.  For example,
+                            ``2015-08-27T09:49:58-05:00`` .  If you
+                            omit the time zone, the UTC time zone is
+                            assumed.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-availability-zone
+   :synopsis: Get availability zone information
+
+   Gets availability zone information.
+
+   :responseexample 200: v2.1/examples/getAvailabilityZone_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: availability-zone
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-networks
+   :synopsis: List networks
+
+   Lists networks that are available to the project.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/ListNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks
+   :synopsis: Create network
+
+   Creates a network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/CreateNetwork_req.json
+   :responseexample 202: v2.1/examples/CreateNetwork_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ips-bulk/{host_name}
+   :synopsis: List floating IPs by host
+
+   Lists all floating IPs for a specified host.
+
+   :responseexample 200: v2.1/examples/ListFloatingIPsBulkbyHost_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips-bulk
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host of interest to you.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks/add
+   :synopsis: Add network
+
+   Adds a specified network to a project.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/AddNetwork_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors/os-pci
+   :synopsis: List hypervisors with PCI statistics
+
+   Lists hypervisors. Includes PCI device statistics.
+
+   :responseexample 200: v2.1/examples/listHypervisorsPciDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/os-simple-tenant-usage/{tenant_id}
+   :synopsis: Show usage details for tenant
+
+   Shows usage details for a specified tenant.
+
+   :responseexample 200: v2.1/examples/retrievetenantall_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-simple-tenant-usage-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-volume-types/{volume_type_id}
+   :synopsis: Show volume type
+
+   Shows information for a specified volume type.
+
+   :responseexample 200: v2.1/examples/getVolumeType_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_type_id: The unique identifier for a volume type.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
+   :synopsis: Show security group information
+
+   Shows information for a specified security group.
+
+   :responseexample 200: v2.1/examples/showSecGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter security_group_id: The ID of the security group.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
+   :synopsis: Update security group
+
+   Updates a security group.
+
+   :requestexample: v2.1/examples/updateSecGroup_req.json
+   :responseexample 200: v2.1/examples/updateSecGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :requestschema: v2.1/updateSecGroup.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter security_group_id: The ID of the security group.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
+   :synopsis: Delete security group
+
+   Deletes a specified security group.
+
+   :tag: security-groups
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter security_group_id: The ID of the security group.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-fping
+   :synopsis: Ping instances
+
+   Run the fping utility to ping all or specified instances and report
+   which ones are alive.
+   
+   Specify the ``all_tenants=1`` query parameter to ping instances for
+   all tenants. For example:
+   
+   GET /os-fping?all_tenants=1Specify the ``include`` and ``exclude`` query parameters to filter
+   the results. For example:
+   
+   GET /os-fping?all_tenants=1 & include=uuid1,uuid2 & exclude=uuid3,uuid4Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/list-fping_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: fping
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query all_tenants: Specify the ``all_tenants=1`` query parameter
+                       to ping instances for all tenants.
+   :query include: Specify ``include=uuid[,uuid...]`` to include the
+                   specified instances in the results.
+   :query exclude: Specify ``exclude=uuid[,uuid...]`` to exclude the
+                   specified instances from the results.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/os-server-actions/{server_id}
+   :synopsis: List actions for server
+
+   Lists actions for a specified server.
+
+   :responseexample 200: v2.1/examples/returnactionlist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-server-actions-add-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-certificates/{certificate_id}
+   :synopsis: Show certificate details
+
+   Shows details for a specified certificate.
+
+   :responseexample 200: v2.1/examples/returncertificate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: certificates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter certificate_id: The certificate ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-quota-sets/detail
+   :synopsis: Show quotas (detailed)
+
+   Lists quotas with details for a tenant.
+
+   :responseexample 200: v2.1/examples/listDetailQuotas_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Shelve server
+
+   Shelves a running server.
+   
+   Specify the ``shelve`` action in the request body.
+   
+   All associated data and resources are kept but anything still in
+   memory is not retained. To restore a shelved instance, use the
+   ``unshelve`` action. To remove a shelved instance, use the
+   ``shelveOffload`` action.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+   
+   Preconditions
+   
+   - The server status must be ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` ,
+     or ``SUSPENDED`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to shelve the server.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully shelve a server, its status changes to
+     ``SHELVED`` and the image status is ``ACTIVE`` . The server
+     instance data appears on the compute node that the Compute
+     service manages.
+   
+   - If you boot the server from volumes or set the
+     ``shelved_offload_time`` option to 0, the Compute service
+     automatically deletes the instance on compute nodes and changes
+     the server status to ``SHELVED_OFFLOADED`` .
+   
+   Troubleshooting
+   
+   - If the server status does not change to ``SHELVED`` or
+     ``SHELVED_OFFLOADED`` , the shelve operation failed. Ensure that
+     you meet the preconditions and run the request again. If the
+     request fails again, investigate whether another operation is
+     running that causes a race condition.
+
+   :requestexample: v2.1/examples/shelve_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: shelve
+   :requestschema: v2.1/shelve.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Remove shelved instance
+
+   Removes an instance from the server.
+   
+   Specify the ``shelveOffload`` action in the request body.
+   
+   Data and resource associations are deleted. If an instance is no
+   longer needed, you can remove that instance from the hypervisor to
+   minimize resource usage.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+   
+   Preconditions
+   
+   - The server status must be ``SHELVED`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to shelve-offload the server.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully shelve-offload a server, its status changes
+     to ``SHELVED_OFFLOADED`` . The server instance data appears on
+     the compute node.
+   
+   Troubleshooting
+   
+   - If the server status does not change to ``SHELVED_OFFLOADED`` ,
+     the shelve-offload operation failed. Ensure that you meet the
+     preconditions and run the request again. If the request fails
+     again, investigate whether another operation is running that
+     causes a race condition.
+
+   :requestexample: v2.1/examples/shelve-offload_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: shelve
+   :requestschema: v2.1/shelve-offload.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Restore shelved server
+
+   Restores a shelved server.
+   
+   Specify the ``unshelve`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+   
+   Preconditions
+   
+   - The server status must be ``SHELVED`` or ``SHELVED_OFFLOADED`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to unshelve the server.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully shelve a server, its status changes to
+     ``ACTIVE`` . The server appears on the compute node.
+   
+   - The shelved image is deleted from the list of images returned by
+     an API call.
+   
+   Troubleshooting
+   
+   - If the server status does not change to ``ACTIVE`` , the unshelve
+     operation failed. Ensure that you meet the preconditions and run
+     the request again. If the request fails again, investigate
+     whether another operation is running that causes a race
+     condition.
+
+   :requestexample: v2.1/examples/unshelve_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: shelve
+   :requestschema: v2.1/unshelve.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Force delete instance
+
+   Force deletes an instance before deferred cleanup.
+   
+   Specify the ``forceDelete`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/forcedelete_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: deferred-delete
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Restore soft-deleted instance
+
+   Restores a previously soft-deleted instance. You cannot use this
+   method to restore deleted instances.
+   
+   Specify the ``restore`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/restoredelete_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: deferred-delete
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Get console output for an instance
+
+   Gets console output for a server instance.
+   
+   Specify the ``os-getConsoleOutput`` action in the request body.
+
+   :requestexample: v2.1/examples/getConsoleOutput_req.json
+   :responseexample 200: v2.1/examples/getConsoleOutput_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: console-output
+   :requestschema: v2.1/getConsoleOutput.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Reboot server
+
+   Reboots the specified server. Specify the ``reboot`` action in the
+   request body.
+
+   :requestexample: v2.1/examples/rebootServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Rebuild server
+
+   Rebuilds the specified server. Specify the ``rebuild`` action in
+   the request body.
+
+   :requestexample: v2.1/examples/rebuildServer_req.json
+   :responseexample 202: v2.1/examples/rebuildServer_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Rebuild server with preserve ephemeral
+
+   Rebuilds the specified server with preserve ephemeral option.
+   Specify the ``rebuild`` action in the request body.
+
+   :requestexample: v2.1/examples/rebuildServer-preserve-ephemeral_req.json
+   :responseexample 202: v2.1/examples/rebuildServer-preserve-ephemeral_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Resize server
+
+   Resizes the specified server. Specify the ``resize`` action in the
+   request body.
+   
+   A successfully resized server shows a ``VERIFY_RESIZE`` status,
+   ``RESIZED`` VM status, and ``finished`` migration status. If you
+   set the ``auto_confirm`` option of the Compute service to ``True``
+   , the Compute service automatically confirms the resize operation.
+   
+   Preconditions
+   
+   - You can only resize a server when its status is ``ACTIVE`` or
+     ``SHUTOFF`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to resize the server.
+
+   :requestexample: v2.1/examples/resizeServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Confirm resized server
+
+   Confirms a pending resize action. Specify the ``confirmResize``
+   action in the request body.
+   
+   After you make this request, you typically must keep polling the
+   server status to determine whether the request succeeded. A
+   successfully confirming resize operation shows a status of
+   ``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``confirmed`` .
+   You can also see the resized server in the compute node that
+   OpenStack Compute manages.
+   
+   Preconditions
+   
+   - You can only confirm the resized server where the status is
+     ``VERIFY_RESIZED`` , the vm_status is ``RESIZED`` , and the
+     migration_status is ``finished`` or ``confirming`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to confirm the server.
+   
+   Troubleshooting
+   
+   - If the specified server status remains ``RESIZED`` , the request
+     failed. Ensure you meet the preconditions and run the request
+     again. If the request fails again, investigate the compute back
+     end or ask your cloud provider.
+
+   :requestexample: v2.1/examples/confirmServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 204: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Revert resized server
+
+   Cancels and reverts a pending resize action. Specify the
+   ``revertResize`` action in the request body.
+   
+   After you make this request, you typically must keep polling the
+   server status to determine whether the request succeeded. A
+   successfully reverting resize operation shows a status of
+   ``ACTIVE`` or ``SHUTOFF`` and a migration_status of ``reverted`` .
+   You can also see the reverted server in the compute node that
+   OpenStack Compute manages.
+   
+   Preconditions
+   
+   - You can only confirm the resized server where the status is
+     ``VERIFY_RESIZE`` and the vm_status is ``RESIZED`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to revert the resizing.
+   
+   Troubleshooting
+   
+   - If the specified server status remains ``RESIZED`` , the request
+     failed. Ensure you meet the preconditions and run the request
+     again. If the request fails again, investigate the compute back
+     end.
+   
+   - The specified server is not reverted in the compute node that
+     OpenStack Compute manages.
+
+   :requestexample: v2.1/examples/revertServer_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Create image
+
+   Creates an image. Specify the ``createImage`` action in the request
+   body.
+   
+   After you make this request, you typically must keep polling the
+   status of the created image to determine whether the request
+   succeeded.
+   
+   If the operation succeeds, the created image has a status of
+   ``available`` and the server status returns to the original status.
+   You can also see the new image in the image back end that OpenStack
+   Image service manages.
+   
+   Preconditions
+   
+   - The specified server must exist.
+   
+   - You can only create a new image from the server when its status is
+     ``ACTIVE`` , ``SHUTOFF`` , ``PAUSED`` , or ``SUSPENDED`` .
+   
+   - The connection to the Image service is valid.
+   
+   Troubleshooting
+   
+   - If the image status remains uploading or shows another error
+     status, the request failed. Ensure you meet the preconditions and
+     run the request again. If the request fails again, investigate
+     the image back end.
+   
+   - If the server status does not go back to an original server's
+     status, the request failed. Ensure you meet the preconditions, or
+     check if there is another operation that causes race conditions
+     for the server, then run the request again. If the request fails
+     again, investigate the compute back end or ask your cloud
+     provider.
+   
+   - If the request fails due to an error on OpenStack Compute service,
+     the image is purged from the image store that OpenStack Image
+     service manages. Ensure you meet the preconditions and run the
+     request again. If the request fails again, investigate OpenStack
+     Compute service or ask your cloud provider.
+
+   :requestexample: v2.1/examples/createImage_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Start server
+
+   Starts a stopped server and changes its status to ``ACTIVE`` .
+   
+   Preconditions
+   
+   - The server status must be ``SHUTOFF`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to start the server.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully start a server, its status changes to
+     ``ACTIVE`` . The server appears on the compute node that the
+     Compute service manages.
+   
+   Troubleshooting
+   
+   - If the server status does not change to ``ACTIVE`` , the start
+     operation failed. Ensure that you meet the preconditions and run
+     the request again. If the request fails again, investigate
+     whether another operation is running that causes a race
+     condition.
+
+   :requestexample: v2.1/examples/start_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2.1/start.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Stop server
+
+   Stops a running server and changes its status to ``SHUTOFF`` .
+   
+   Preconditions
+   
+   - The server status must be ``ACTIVE`` or ``ERROR`` .
+   
+   - If the specified server is locked, you must have administrator
+     privileges to stop the server.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully stop a server, its status changes to
+     ``SHUTOFF`` . The server instance data appears only on the
+     compute node that Compute service manages.
+
+   :requestexample: v2.1/examples/stop_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2.1/stop.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Attach volume
+
+   Attaches a specified volume. Specify the ``attach`` action in the
+   request body.
+   
+   If the attach operation succeeds, the volume status is ``in-use`` .
+   
+   Preconditions
+   
+   - The specified server must exist.
+   
+   - You can only attach a volume to the server when its status is
+     ``available`` .
+   
+   - The connection to the Block storage service is valid.
+   
+   Troubleshooting
+   
+   - If the request fails due to an OpenStack Compute service error,
+     ensure you meet the preconditions and run the request again. If
+     the request fails again, investigate OpenStack Compute service or
+     ask your cloud provider.
+
+   :requestexample: v2.1/examples/attachVolume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2.1/attachVolume.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Rescue server
+
+   Puts a server in rescue mode and changes its status to ``RESCUE`` .
+   
+   If you specify the ``rescue_image_ref`` extended attribute, the
+   specified image is used to rescue the instance. If you omit an
+   image reference, the base image reference is used by default.
+   
+   Asynchronous Postconditions
+   
+   - After you successfully rescue a server and make a
+     ``GET/v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its
+     status changes to ``UNRESCUE`` .
+
+   :requestexample: v2.1/examples/rescue_req.json
+   :responseexample 202: v2.1/examples/rescue_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2.1/rescue.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Unrescue server
+
+   Unrescues a specified server. Changes status to ``ACTIVE`` .
+   
+   Preconditions
+   
+   - The specified server must exist.
+   
+   - You can only unrescue a server when its status is ``RESCUE`` .
+   
+   Asynchronous Postconditions
+   
+   - After you successfully unrescue a server and make a
+     ``GET/v2.1/​{tenant_id}​/servers/​{server_id}​`` request, its
+     status changes to ``ACTIVE`` .
+
+   :requestexample: v2.1/examples/unrescue_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-actions
+   :requestschema: v2.1/unrescue.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Get output for spice
+
+   Gets text console output.
+   
+   Specify the ``get_spice_console`` action in the request body.
+
+   :requestexample: v2.1/examples/getoutputspice_req.json
+   :responseexample 200: v2.1/examples/getoutputspice_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: remote-consoles
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Get console output
+
+   Gets text console output for VNC.
+   
+   Specify the ``get_vnc_console`` action in the request body.
+
+   :requestexample: v2.1/examples/getoutputvnc_req.json
+   :responseexample 200: v2.1/examples/getoutputvnc_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: remote-consoles
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Change admin password
+
+   Changes the admin password.
+   
+   Specify the ``changePassword`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/adminpassword_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-password
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Evacuate server
+
+   Evacuates a server from a failed host to a new one.
+   
+   Specify the ``evacuate`` action in the request body.
+
+   :requestexample: v2.1/examples/evacuateserver_req.json
+   :responseexample 202: v2.1/examples/evacuateserver_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: evacuate
+   :requestschema: v2.1/evacuateserver.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Add IP to instance
+
+   Adds an IP to a specified network on an instance.
+   
+   Specify the ``addFixedIp`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/addiptoinstance_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: multinic
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Remove IP from instance
+
+   Removes an IP from a specified instance.
+   
+   Specify the ``remove_fixed_ip`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/removeip_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: multinic
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Change admin password
+
+   Changes the admin password.
+   
+   Specify the ``changePassword`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/adminpassword_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Back up server
+
+   Backs up a server instance.
+   
+   Specify the ``createBackup`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/backupserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Inject network information
+
+   Injects network information into a server.
+   
+   Specify the ``injectNetworkInfo`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/adminservernetwork_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Live migrate to new host
+
+   Live-migrates a server to a new host without rebooting.
+   
+   Specify the ``os-migrateLive`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/livemigrate_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Lock server
+
+   Locks a server instance.
+   
+   Specify the ``lock`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/lockserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Migrate server
+
+   Migrates a server to a host. The scheduler chooses the host.
+   
+   Specify the ``migrate`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/migrateserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Pause server
+
+   Pauses a server. Changes its status to PAUSED.
+   
+   Specify the ``pause`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/pauseserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Reset server networking
+
+   Resets networking on a server.
+   
+   Specify the ``resetNetwork`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/resetnetwork_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Reset server state
+
+   Resets the state of a server to a specified state.
+   
+   Specify the ``os-resetState`` action and the ``state`` in the
+   request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/resetserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Resume server
+
+   Resumes a SUSPENDED server and changes its status to ACTIVE.
+   
+   Specify the ``resume`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/resumeserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Suspend server
+
+   Suspends a server and changes its status to SUSPENDED.
+   
+   Specify the ``suspend`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/suspendserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Unlock server
+
+   Unlocks a server instance.
+   
+   Specify the ``unlock`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/unlockserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/action
+   :synopsis: Unpause server
+
+   Unpauses a PAUSED server and changes its status to ACTIVE.
+   
+   Specify the ``unpause`` action in the request body.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/unpauseserver_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-actions
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-assisted-volume-snapshots/{snapshot_id}
+   :synopsis: Delete assisted volume snapshot
+
+   Deletes an assisted volume snapshot.
+   
+   To make this request, add the ``delete_info`` query parameter to
+   the URI, as follows:
+   
+   DELETE /os-assisted-volume-snapshots?delete_info='{"volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
+
+   :tag: os-assisted-volume-snapshots-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter snapshot_id: The ID of the snapshot.
+   :query delete_info: Information for snapshot deletion. Include the
+                       ID of the associated volume. For example:
+                       DELETE /os-assisted-volume-
+                       snapshots?delete_info='{"volume_id":
+                       "521752a6-acf6-4b2d-bc7a-119f9148cd8c"}'
+   :statuscode 204: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx/{flavor_id}
+   :synopsis: Show flavor details
+
+   Shows details for a specified flavor.
+
+   :responseexample 200: v2.1/examples/returndata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/ips/{network_label}
+   :synopsis: Show IP details
+
+   Shows IP addresses details for a specified network label of a
+   specified server instance.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/show-ip_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-ips
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter network_label: The network label, such as ``public`` or
+                             ``private`` .
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-security-group-rules
+   :synopsis: Create security group rule
+
+   Creates a rule for a specified security group.
+
+   :requestexample: v2.1/examples/createSecGroupRule_req.json
+   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-security-group-rules-v2.1
+   :requestschema: v2.1/createSecGroupRule.json
+   :parameter tenant_id: The ID of the tenant.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-server-groups
+   :synopsis: Create server group
+
+   Creates a server group.
+
+   :requestexample: v2.1/examples/createServerGroup_req.json
+   :responseexample 200: v2.1/examples/createServerGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-groups
+   :requestschema: v2.1/createServerGroup.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-server-groups
+   :synopsis: List server groups
+
+   Lists server groups.
+
+   :responseexample 200: v2.1/examples/listServerGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-groups
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-security-group-default-rules
+   :synopsis: List default security group rules
+
+   Lists default security group rules.
+
+   :responseexample 200: v2.1/examples/listSecGroupDefaultRules_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-security-group-default-rules-v2.1
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-security-group-default-rules
+   :synopsis: Create default security group rule
+
+   Creates a default security group rule.
+   
+   You must specify an IP protocol ( ``ip_protocol`` ) value if you
+   specify a source ( ``from_port`` ) or destination ( ``to_port`` )
+   port value. Otherwise, the operation returns the ``Bad request
+   (400)Source/destination port requires a protocol`` error.
+
+   :requestexample: v2.1/examples/createSecGroupRule_req.json
+   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-security-group-default-rules-v2.1
+   :requestschema: v2.1/createSecGroupRule.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ip-pools
+   :synopsis: List floating IP pools
+
+   Lists floating IP pools.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/listFloatingIpPools_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-pools
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/flavors/os-flavor-manage/{flavor_id}
+   :synopsis: Delete flavor
+
+   Deletes a flavor.
+
+   :requestexample: v2.1/examples/delete-flavors_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-manage
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 204: 
+
+
+.. http:get:: /v2.1/extensions
+   :synopsis: List extensions
+
+   Lists available extensions.
+
+   :responseexample 200: v2.1/examples/listExtensions_resp_200.json
+   :responseexample 203: v2.1/examples/listExtensions_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions-v2.1
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-assisted-volume-snapshots
+   :synopsis: Create assisted volume snapshots
+
+   Creates an assisted volume snapshot.
+
+   :requestexample: v2.1/examples/createsnapshots_req.json
+   :responseexample 200: v2.1/examples/createsnapshots_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-assisted-volume-snapshots-v2.1
+   :requestschema: v2.1/createsnapshots.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-quota-sets/
+   :synopsis: Delete quota for user
+
+   Deletes quota for a specified user.
+
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 204: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-quota-sets/
+   :synopsis: Update quota for user
+
+   Updates quota for user.
+
+   :requestexample: v2.1/examples/updatesquotauser_req.json
+   :responseexample 200: v2.1/examples/updatesquotauser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}
+   :synopsis: Show server details with configuration drive
+
+   Shows details for a specified server. Includes configuration drive
+   information.
+
+   :responseexample 200: v2.1/examples/returnserver_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: config-drive
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}
+   :synopsis: Show server details
+
+   Shows details for a specified server. Includes server usage
+   information.
+
+   :responseexample 200: v2.1/examples/showServer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-usage
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-security-groups
+   :synopsis: List security groups by server
+
+   Lists security groups for a specified server.
+
+   :responseexample 200: v2.1/examples/listSecGroupsByServer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-virtual-interfaces
+   :synopsis: List virtual interfaces
+
+   Lists the virtual interfaces for a specified instance.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Change these
+   permissions through the ``policy.json`` file.
+
+   :responseexample 202: v2.1/examples/getVirtualInterfaces_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: virtual-interfaces
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-cloudpipe/configure-project
+   :synopsis: Update cloudpipe
+
+   Updates the virtual private network (VPN) IP address and port for a
+   specified cloudpipe instance.
+
+   :requestexample: v2.1/examples/updateCloudpipe_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-cloudpipe-v2.1
+   :requestschema: v2.1/updateCloudpipe.json
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/extensions/{alias}
+   :synopsis: Get extension
+
+   Shows details about a specified extension.
+   
+   Extensions introduce features and vendor-specific functionality to
+   the API without requiring a version change.
+
+   :responseexample 200: v2.1/examples/getExtension_resp_200.json
+   :responseexample 203: v2.1/examples/getExtension_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions-v2.1
+   :parameter alias: An alias, which is a name for a pointer to a
+                     resource. For example, a named extension.
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:get:: //v2.1/images/detail
+   :synopsis: List images details
+
+   Lists all details for available images.
+
+   :responseexample 200: v2.1/examples/listDetailImages_resp_200.json
+   :responseexample 203: v2.1/examples/listDetailImages_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :query changes-since: The date and time when the image last changed
+                         status.  Use this query parameter to check
+                         for changes since a previous request rather
+                         than re-downloading and re-parsing the full
+                         status at each polling interval. If data has
+                         changed, the call returns only the items
+                         changed since the specified time. If data has
+                         not changed since the ``changes-since`` time,
+                         the call returns an empty list.  To enable
+                         you to keep track of changes, this filter
+                         also displays images that were deleted if the
+                         ``changes-since`` value specifies a date in
+                         the last 30 days. Items deleted more than 30
+                         days ago might be returned, but it is not
+                         guaranteed.  The date and time stamp format
+                         is ISO 8601 :  CCYY-MM-DDThh:mm:ss±hh:mmThe
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00`` .  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
+   :query server: Name of the server in URL format.
+   :query name: Name of the image as a string.
+   :query status: Value of the image statuses. For example, you can
+                  filter on ``ACTIVE`` .
+   :query type: Value of the type of image, such as snapshot or
+                backup.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-volumes/{volume_id}
+   :synopsis: Show volume information
+
+   Shows information for a specified volume.
+
+   :responseexample 200: v2.1/examples/getVolume_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier for a volume.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-volumes/{volume_id}
+   :synopsis: Delete volume
+
+   Deletes a specified volume.
+
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter volume_id: The unique identifier for a volume.
+   :statuscode 202: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: //v2.1/images
+   :synopsis: List images
+
+   Lists IDs, names, and links for available images.
+
+   :responseexample 200: v2.1/examples/listImages_resp_200.json
+   :responseexample 203: v2.1/examples/listImages_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_images-v2.1
+   :query changes-since: The date and time when the image last changed
+                         status.  Use this query parameter to check
+                         for changes since a previous request rather
+                         than re-downloading and re-parsing the full
+                         status at each polling interval. If data has
+                         changed, the call returns only the items
+                         changed since the specified time. If data has
+                         not changed since the ``changes-since`` time,
+                         the call returns an empty list.  To enable
+                         you to keep track of changes, this filter
+                         also displays images that were deleted if the
+                         ``changes-since`` value specifies a date in
+                         the last 30 days. Items deleted more than 30
+                         days ago might be returned, but it is not
+                         guaranteed.  The date and time stamp format
+                         is ISO 8601 :  CCYY-MM-DDThh:mm:ss±hh:mmThe
+                         ``±hh:mm`` value, if included, returns the
+                         time zone as an offset from UTC.  For
+                         example, ``2015-08-27T09:49:58-05:00`` .  If
+                         you omit the time zone, the UTC time zone is
+                         assumed.
+   :query server: Name of the server in URL format.
+   :query name: Name of the image as a string.
+   :query status: Value of the image statuses. For example, you can
+                  filter on ``ACTIVE`` .
+   :query type: Value of the type of image, such as snapshot or
+                backup.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/action
+   :synopsis: Add interface to bare metal node
+
+   Adds an interface to a bare metal node that is associated with a
+   specified server.
+
+   :requestexample: v2.1/examples/addInterfaceToBaremetalNode_req.json
+   :responseexample 202: v2.1/examples/addInterfaceToBaremetalNode_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/action
+   :synopsis: Delete interface from bare metal node
+
+   Deletes an interface from a bare metal node that is associated with
+   a specified server.
+
+   :requestexample: v2.1/examples/deleteInterfaceFromBaremetalNode_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-services/enable
+   :synopsis: Enable scheduling for a service
+
+   Enables scheduling for a service.
+
+   :requestexample: v2.1/examples/enableScheduling_req.json
+   :responseexample 200: v2.1/examples/enableScheduling_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx
+   :synopsis: Create flavor
+
+   Creates a flavor.
+
+   :requestexample: v2.1/examples/createflavor_req.json
+   :responseexample 200: v2.1/examples/createflavor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-server-groups/{ServerGroup_id}
+   :synopsis: Show server group details
+
+   Shows details for a specified server group.
+
+   :responseexample 200: v2.1/examples/showServerGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-groups
+   :parameter ServerGroup_id: The server group ID.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-server-groups/{ServerGroup_id}
+   :synopsis: Delete server group
+
+   Deletes a specified server group.
+
+   :tag: server-groups
+   :parameter ServerGroup_id: The server group ID.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-tenant-networks/{id}
+   :synopsis: Show project network information
+
+   Shows information for a specified project network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/GetProjectNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: tenant-networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-tenant-networks/{id}
+   :synopsis: Delete project network
+
+   Deletes a specified project network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :tag: tenant-networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hosts
+   :synopsis: List hosts
+
+   Lists hosts.
+
+   :responseexample 200: v2.1/examples/listallhosts_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-quota-class-sets/{class_id}
+   :synopsis: Show quota
+
+   Shows the quota for a specified class.
+
+   :responseexample 200: v2.1/examples/showquota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-class-sets
+   :parameter class_id: The ID of the quota class.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-quota-class-sets/{class_id}
+   :synopsis: Update quota
+
+   Updates quota for a specified class.
+
+   :requestexample: v2.1/examples/updatequota_req.json
+   :responseexample 200: v2.1/examples/updatequota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-class-sets
+   :parameter class_id: The ID of the quota class.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}/action
+   :synopsis: Add flavor access to tenant
+
+   Adds flavor access to a specified tenant and flavor.
+   
+   Specify the ``add_tenant_access`` action and the ``tenant_id`` in
+   the request body.
+
+   :requestexample: v2.1/examples/add-flavoraccess-to-tenant_req.json
+   :responseexample 200: v2.1/examples/add-flavoraccess-to-tenant_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}/action
+   :synopsis: Remove flavor access from tenant
+
+   Removes the specified flavor access from a specified tenant and
+   flavor.
+   
+   Specify the ``remove_tenant_access`` action and the ``tenant_id``
+   in the request body.
+
+   :requestexample: v2.1/examples/remove-flavoraccess-from-tenant_req.json
+   :responseexample 200: v2.1/examples/remove-flavoraccess-from-tenant_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-agents/{id}
+   :synopsis: Update agent build
+
+   Updates an agent build.
+
+   :requestexample: v2.1/examples/updatebuild_req.json
+   :responseexample 200: v2.1/examples/updatebuild_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: agents
+   :requestschema: v2.1/updatebuild.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The agent build ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-keypairs/{keypair_name}
+   :synopsis: Show keypair information
+
+   Shows a keypair that is associated with the account.
+
+   :responseexample 200: v2.1/examples/showKeypair_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: keypairs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter keypair_name: The keypair name.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-keypairs/{keypair_name}
+   :synopsis: Delete keypair
+
+   Deletes a specified keypair.
+
+   :tag: keypairs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter keypair_name: The keypair name.
+   :statuscode 204: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors/statistics
+   :synopsis: Show hypervisor statistics
+
+   Shows statistics for all hypervisors.
+
+   :responseexample 200: v2.1/examples/showhypervisorstatistics_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/os-server-actions/{server_id}/{request_id}
+   :synopsis: Show server action details
+
+   Shows details for a specified action and specified server.
+
+   :responseexample 200: v2.1/examples/returninstancedata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-server-actions-add-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-volume-types
+   :synopsis: List volume types
+
+   Lists volume types.
+
+   :responseexample 200: v2.1/examples/getVolumeTypes_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-fping/{id}
+   :synopsis: Ping an instance
+
+   Run the fping utility to ping a specified instance and report
+   whether it is alive.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/show-fping_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: fping
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the instance.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/{flavor_id}
+   :synopsis: Show flavor details
+
+   Shows details for a specified flavor.
+
+   :responseexample 200: v2.1/examples/getflavorid_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/diagnostics
+   :synopsis: Get server diagnostics
+
+   Gets basic usage data for a specified server.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/getDiagnostics_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: diagnostics
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: //v2.1/images/{image_id}/metadata/{key}
+   :synopsis: Show image metadata item details
+
+   Shows details for a metadata item by key for a specified image.
+
+   :responseexample 200: v2.1/examples/getImageMetadataItem_resp_200.json
+   :responseexample 203: v2.1/examples/getImageMetadataItem_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: //v2.1/images/{image_id}/metadata/{key}
+   :synopsis: Create or update image metadata item
+
+   Creates or updates a metadata item by key for a specified image.
+   
+   If this operation exceeds the metadata items quota, the API throws
+   an ``overLimit (413)`` fault.
+
+   :requestexample: v2.1/examples/setImageMetadataItem_req.json
+   :responseexample 200: v2.1/examples/setImageMetadataItem_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 200: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:delete:: //v2.1/images/{image_id}/metadata/{key}
+   :synopsis: Delete image metadata item
+
+   Deletes a metadata item by key for a specified image.
+
+   :tag: compute_image_metadata-v2.1
+   :parameter image_id: The UUID for the image.
+   :parameter key: A string. Maximum length is 255 characters.
+   :statuscode 204: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
+   :synopsis: Delete bare metal node
+
+   Deletes a bare metal node from a specified server.
+
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :parameter node_id: Node ID.
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
+   :synopsis: Show bare metal node details
+
+   Shows details for a specified bare metal node.
+   
+   Preconditions
+   
+   - The specified bare metal node must be associated with the server.
+
+   :responseexample 202: v2.1/examples/showBaremetalNodeDetails_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-baremetal-nodes-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter server_id: The UUID for the server of interest to you.
+   :parameter node_id: Node ID.
+   :statuscode 202: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-availability-zone/detail
+   :synopsis: Get detailed availability zone information
+
+   Gets detailed availability zone information.
+
+   :responseexample 200: v2.1/examples/getAvailabilityZoneDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: availability-zone
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/servers
+   :synopsis: Create server with scheduler hints
+
+   Creates a server with scheduler hints that are passed directly to
+   the scheduler.
+   
+   The ``os:scheduler_hints`` parameter can be set at boot time. For
+   details, see Scheduling .
+
+   :requestexample: v2.1/examples/createServer_req.json
+   :responseexample 200: v2.1/examples/createServer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-scheduler-hints-v2.1
+   :requestschema: v2.1/createServer.json
+   :query security_group: The name of the security group. If blank,
+                          the server is created in the "default"
+                          security group.
+   :query user_data: Configuration information or scripts to use upon
+                     launch. Must be Base64 encoded.
+   :query availability_zone: The availability zone in which to launch
+                             the server.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-server-external-events
+   :synopsis: Create events
+
+   Creates events.
+
+   :requestexample: v2.1/examples/createevents_req.json
+   :responseexample 200: v2.1/examples/createevents_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-server-external-events-v2.1
+   :requestschema: v2.1/createevents.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-services/disable
+   :synopsis: Disable scheduling for a service
+
+   Disables scheduling for a service.
+
+   :requestexample: v2.1/examples/disableScheduling_req.json
+   :responseexample 200: v2.1/examples/disableScheduling_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-quota-sets/defaults
+   :synopsis: Show default quotas
+
+   Shows default quotas for tenant.
+
+   :responseexample 200: v2.1/examples/showdefaultquotas_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quota-sets
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-pci/detail
+   :synopsis: List PCI devices with extra information
+
+   Lists PCI devices with extra information.
+
+   :responseexample 200: v2.1/examples/listPciDevicesDetail_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-pci-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-floating-ips-bulk/delete
+   :synopsis: Bulk-delete floating IPs
+
+   Bulk-deletes floating IPs.
+
+   :requestexample: v2.1/examples/DeleteFloatingIPBulk_req.json
+   :responseexample 200: v2.1/examples/DeleteFloatingIPBulk_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips-bulk
+   :requestschema: v2.1/DeleteFloatingIPBulk.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{ip}
+   :synopsis: List DNS entries
+
+   Lists DNS entries for a specified domain and IP.
+
+   :responseexample 200: v2.1/examples/FindEntriesbyIP_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :parameter ip: The IP address.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ips
+   :synopsis: List floating IPs
+
+   Lists floating IP addresses associated with the tenant or account.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/ListFloatingIPs_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-floating-ips
+   :synopsis: Allocate floating IP
+
+   Allocates a new floating IP address to a tenant or account.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/AllocateFloatingIP_req.json
+   :responseexample 200: v2.1/examples/AllocateFloatingIP_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ips
+   :requestschema: v2.1/AllocateFloatingIP.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+   :statuscode 400: 
+
+
+.. http:post:: /v2.1/{tenant_id}/flavors/os-flavor-access
+   :synopsis: Create flavor with access list
+
+   Creates a flavor with access list.
+
+   :requestexample: v2.1/examples/create-flavor-accesslist_req.json
+   :responseexample 200: v2.1/examples/create-flavor-accesslist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access
+   :synopsis: List flavors with access list
+
+   Lists flavors with access list information.
+
+   :responseexample 200: v2.1/examples/list-flavor-accesslist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles/{console_id}
+   :synopsis: Show console details
+
+   Shows details for a specified console for a specified server
+   instance.
+
+   :responseexample 200: v2.1/examples/getConsole_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-consoles-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter console_id: The ID for the console.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-consoles/{console_id}
+   :synopsis: Delete console
+
+   Deletes a specified console for a specified server instance.
+
+   :tag: os-consoles-v2.1
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :parameter console_id: The ID for the console.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/os-simple-tenant-usage
+   :synopsis: List tenant usage for all tenants
+
+   Lists usage information for all tenants.
+
+   :responseexample 200: v2.1/examples/retrievetenantusage_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-simple-tenant-usage-v2.1
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-snapshots/{snapshot_id}
+   :synopsis: Show snapshot
+
+   Shows information for a specified snapshot.
+
+   :responseexample 200: v2.1/examples/getSnapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier for a snapshot.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-snapshots/{snapshot_id}
+   :synopsis: Delete snapshot
+
+   Deletes a specified snapshot from the account.
+   
+   This operation is asynchronous. You must list snapshots repeatedly
+   to determine whether the snapshot was deleted.
+
+   :tag: os-volumes
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter snapshot_id: The unique identifier for a snapshot.
+   :statuscode 202: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/os-pci
+   :synopsis: Show hypervisor with PCI statistics
+
+   Shows information for a specified hypervisor. Includes PCI device
+   statistics.
+
+   :responseexample 200: v2.1/examples/showHypervisorsPci_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter hypervisor_id: The ID of the hypervisor.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-fixed-ips/{fixed_ip}
+   :synopsis: Show fixed IP information
+
+   Shows information for a specified fixed IP address.
+
+   :responseexample 200: v2.1/examples/showIP_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: os-fixed-ips-v2.1
+   :parameter tenant_id: The ID for the tenant or account in a multi-
+                         tenancy cloud.
+   :parameter fixed_ip: The fixed IP of interest to you.
+   :statuscode 200: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-floating-ips/{id}
+   :synopsis: Deallocate floating IP
+
+   Deallocates a specified floating IP address.
+   
+   You can use this call to deallocate and delete only manually-
+   allocated floating IP addresses. You must manually deallocate auto-
+   allocated floating IP addresses before you can delete them.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :tag: floating-ips
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the floating IP address.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-keypairs
+   :synopsis: List keypairs
+
+   Lists keypairs that are associated with the account.
+
+   :responseexample 200: v2.1/examples/getKeypair_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: keypairs
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query user_id: The user ID of the user who runs the operation.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-keypairs
+   :synopsis: Create or import keypair
+
+   Generates or imports a keypair.
+
+   :requestexample: v2.1/examples/createKeypair_req.json
+   :responseexample 201: v2.1/examples/createKeypair_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: keypairs
+   :requestschema: v2.1/createKeypair.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query user_id: The user ID of the user who runs the operation.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}
+   :synopsis: Show hypervisor details
+
+   Shows details for a specified hypervisor.
+
+   :responseexample 200: v2.1/examples/showhypervisordetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hypervisors
+   :parameter hypervisor_id: The ID of the hypervisor.
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-aggregates
+   :synopsis: Create aggregate
+
+   Creates a specified aggregate in a specified availability zone.
+
+   :requestexample: v2.1/examples/createaggregate_req.json
+   :responseexample 201: v2.1/examples/createaggregate_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 201: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-aggregates
+   :synopsis: List aggregates
+
+   Lists aggregates id, name, and availability_zone for an aggregate.
+
+   :requestexample: v2.1/examples/listaggregate_req.json
+   :responseexample 200: v2.1/examples/listaggregate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: aggregates
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
+   :synopsis: Create or update DNS entry
+
+   Creates or updates a DNS entry.
+
+   :requestexample: v2.1/examples/CreateEntry_req.json
+   :responseexample 200: v2.1/examples/CreateEntry_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :parameter name: The name of the DNS entry.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
+   :synopsis: Find unique DNS entry
+
+   Finds a unique DNS entry for a specified domain and name.
+
+   :responseexample 200: v2.1/examples/FindUniqueEntry_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :parameter name: The name of the DNS entry.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
+   :synopsis: Delete DNS entry
+
+   Deletes a specified DNS entry.
+
+   :tag: floating-ip-dns
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter domain: Registered DNS domain published by the DNS
+                      drivers.
+   :parameter name: The name of the DNS entry.
+   :statuscode 200: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
+   :synopsis: Disassociate network
+
+   Disassociates a specified network from a project so that the
+   network can be reused.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/DisassociateNetwork_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
+   :synopsis: Disassociate project
+
+   Disassociates the project from a specified network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/DisassociateProject_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
+   :synopsis: Disassociate host
+
+   Disassociates the host from a specified network.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/DisassociateHost_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:post:: /v2.1/{tenant_id}/os-networks/{id}/action
+   :synopsis: Associate host
+
+   Associates a specified network with a host.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :requestexample: v2.1/examples/AssociateHost_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter id: The ID of the network.
+   :statuscode 202: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}
+   :synopsis: Show host details
+
+   Shows details for a specified host.
+
+   :responseexample 200: v2.1/examples/showinfo_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-hosts/{host_name}
+   :synopsis: Enable host
+
+   Enables or puts a specified host in maintenance mode.
+
+   :requestexample: v2.1/examples/enablehost_req.json
+   :responseexample 200: v2.1/examples/enablehost_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.1/{tenant_id}/os-services/disable-log-reason
+   :synopsis: Log disabled service information
+
+   Logs information to the service table about why a service was
+   disabled.
+
+   :requestexample: v2.1/examples/disableLogReason_req.json
+   :responseexample 200: v2.1/examples/disableLogReason_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: services
+   :requestschema: v2.1/disableLogReason.json
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-server-password
+   :synopsis: Get server password
+
+   Gets the administrative password for a specified server.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/getPassword_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-password
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/{server_id}/ips
+   :synopsis: List IPs
+
+   Lists IP addresses that are assigned to an instance.
+   
+   Policy defaults enable only users with the administrative role or
+   the owner of the server to perform this operation. Cloud providers
+   can change these permissions through the ``policy.json`` file.
+
+   :responseexample 200: v2.1/examples/list-ips_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-ips
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter server_id: The UUID for the server.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}
+   :synopsis: Show flavor details with access list
+
+   Shows details for a specified flavor. Includes access list
+   information.
+
+   :responseexample 200: v2.1/examples/show-flavor-accesslist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavor-access
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter flavor_id: The flavor ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/detail
+   :synopsis: List servers with configuration drive
+
+   Lists server details. Includes configuration drive information.
+
+   :responseexample 200: v2.1/examples/returnlist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: config-drive
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/servers/detail
+   :synopsis: List servers with details
+
+   Lists servers. Includes server usage details.
+
+   :responseexample 200: v2.1/examples/listServersWithDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: server-usage
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :query sort_key: Sorts by the requested server attribute. Default
+                    is ``created`` . You can specify multiple pairs of
+                    sort key and sort direction query parameters. If
+                    you omit the sort direction in a pair, the API
+                    uses the natural sorting direction of the server
+                    attribute that is provided as the ``sort_key`` .
+   :query sort_dir: Sort direction. A valid value is ``asc``
+                    (ascending) or ``desc`` (descending). Default is
+                    ``desc`` . You can specify multiple pairs of sort
+                    key and sort direction query parameters. If you
+                    omit the sort direction in a pair, the API uses
+                    the natural sorting direction of the server
+                    attribute that is provided as the ``sort_key`` .
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-rxtx/detail
+   :synopsis: List flavors with details
+
+   Lists flavors with details.
+
+   :responseexample 200: v2.1/examples/returnallflavor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :statuscode 200: 
+
+
+.. http:get:: /v2.1/{tenant_id}/os-hosts/{host_name}/reboot
+   :synopsis: Reboot host
+
+   Reboots a host.
+
+   :responseexample 200: v2.1/examples/reboothost_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: hosts
+   :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
+   :parameter host_name: The name of the host.
+   :statuscode 200: 
+
+

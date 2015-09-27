@@ -1,0 +1,4845 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "software_config_create": {
+      "properties": {
+        "config": {
+          "description": "Configuration script or manifest that defines which configuration\nis performed.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "group": {
+          "description": "Namespace that groups this software configuration by when it is\ndelivered to a server. This setting might simply define which\nconfiguration tool performs the configuration.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "inputs": {
+          "description": "Schema that represents the inputs that this software configuration\nexpects.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The name of the configuration to create.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "options": {
+          "description": "Map that contains options that are specific to the configuration\nmanagement tool that this resource uses.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "outputs": {
+          "description": "Schema that represents the outputs that this software configuration\nproduces.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "software_deployment_create": {
+      "properties": {
+        "action": {
+          "description": "The current stack action that triggers this deployment resource.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "config_id": {
+          "description": "The ID of the software configuration resource that runs when\napplying to the server.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "server_id": {
+          "description": "The ID of the compute server to which the configuration applies.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "stack_user_project_id": {
+          "description": "Authentication project ID, which can also perform operations on\nthis deployment.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "Current status of the deployment. A valid value is ``COMPLETE`` ,\n``IN_PROGRESS`` , or ``FAILED`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "status_reason": {
+          "description": "Error description for the last status change, which is ``FAILED``\nstatus.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "software_deployment_update": {
+      "properties": {
+        "action": {
+          "description": "Current stack action in which this deployment resource is being\ntriggered.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "config_id": {
+          "description": "ID of the software configuration resource to run when applying to\nthe server. This ID might not be the same configuration ID with\nwhich the deployment was created because ephemeral configurations\nare created throughout the life cycle of the deployment.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "output_values": {
+          "description": "Map of output values for the deployment, as signaled from the\nserver.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "Current status of the deployment. Value is ``IN_PROGRESS`` ,\n``COMPLETE`` , or ``FAILED`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "status_reason": {
+          "description": "Error description for the last status change, which is ``FAILED``\nstatus.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_action_cancel_update": {
+      "properties": {
+        "cancel_update": {
+          "description": "Specify the ``cancel_update`` action in the request body.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_action_check": {
+      "properties": {
+        "check": {
+          "description": "Specify the ``check`` action in the request body.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_action_resume": {
+      "properties": {
+        "resume": {
+          "description": "Specify the ``resume`` action in the request body.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_action_suspend": {
+      "properties": {
+        "suspend": {
+          "description": "Specify the ``suspend`` action in the request body.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_adopt": {
+      "properties": {
+        "adopt_stack_data": {
+          "description": "Existing resources data to adopt a stack. Data returned by abandon\nstack could be provided as ``adopt_stack_data`` .", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "disable_rollback": {
+          "description": "Enables or disables deletion of all stack resources when stack\ncreation fails. Set to ``True`` to keep all resources when stack\ncreation fails. Set to ``False`` to delete all resources when stack\ncreation fails. Default is ``True`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "environment": {
+          "description": "A JSON environment for the stack.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "files": {
+          "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "Supplies arguments for parameters defined in the stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` would be the names of two\nparameters defined in the template.\n\n{ ... \"parameters\": { \"a\": \"Value\", \"b\": \"3\" } ... }While the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nA value must be provided for each template parameter which does not\nspecify a default value. However, this parameter is not allowed to\ncontain JSON properties with names that do not match a parameter\ndefined in the template.\n\nThe ``files`` parameter maps logical file names to file contents.\nBoth the ``get_file`` intrinsic function and provider template\nfunctionality use this mapping. When you want to use a provider\ntemplate, for example, the Orchestration service adds an entry to\nthe ``files`` map by using:- The URL of the provider template as\nthe name.  - The contents of that file as the value.\n\nAdditionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "stack_name": {
+          "description": "A name for the new stack.\n\nThe value must be unique within a project. The name must start with\nan ASCII letter and can contain ASCII letters, digits, underscores,\nperiods, and hyphens. Specifically, the name must match the\n``^[a-zA-Z][a-zA-Z0-9_.-]*$`` regular expression.\n\nWhen you delete or abandon a stack, its name might not be available\nfor reuse for an unspecified period of time.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "timeout_mins": {
+          "description": "The timeout for stack creation in minutes.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_create": {
+      "properties": {
+        "files": {
+          "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "Supplies arguments for parameters defined in the stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` would be the names of two\nparameters defined in the template.\n\n{ ... \"parameters\": { \"a\": \"Value\", \"b\": \"3\" } ... }While the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nA value must be provided for each template parameter which does not\nspecify a default value. However, this parameter is not allowed to\ncontain JSON properties with names that do not match a parameter\ndefined in the template.\n\nThe ``files`` parameter maps logical file names to file contents.\nBoth the ``get_file`` intrinsic function and provider template\nfunctionality use this mapping. When you want to use a provider\ntemplate, for example, the Orchestration service adds an entry to\nthe ``files`` map by using:- The URL of the provider template as\nthe name.  - The contents of that file as the value.\n\nAdditionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "stack_name": {
+          "description": "A name for the new stack.\n\nThis value must be unique within a project. The name must start\nwith an ASCII letter and can contain ASCII letters, digits,\nunderscores, periods, and hyphens. Specifically, the name must\nmatch the ``^[a-zA-Z][a-zA-Z0-9_.-]*$`` regular expression.\n\nWhen you delete or abandon a stack, its name might not be available\nfor reuse for an unspecified period of time.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "tags": {
+          "description": "One or more simple string tags to associate with the stack. To\nassociate multiple tags with a stack, separate the tags with\ncommas. For example, ``tag1,tag2`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_create_201": {
+      "properties": {
+        "disable_rollback": {
+          "description": "Enables or disables deletion of all previously-created stack\nresources when stack creation fails. Set to ``True`` to keep all\npreviously-created stack resources when stack creation fails. Set\nto ``False`` to delete all previously-created stack resources when\nstack creation fails. Default is ``True`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "environment": {
+          "description": "A JSON environment for the stack.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "files": {
+          "description": "A map of file names to JSON template bodies. File names are\nprovider resource templates, as referenced in the environment.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "links": {
+          "description": "A list of URLs for the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "param_name-n": {
+          "description": "User-defined parameter names to pass to the template.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "param_value-n": {
+          "description": "User-defined parameter values to pass to the template.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "rel": {
+          "description": "A reference to the stack's parent. If no parent, reference is\n``self`` .", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "stack_id": {
+          "description": "The system-assigned ID for the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "stack_name": {
+          "description": "The name of the stack to create.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "A JSON template.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "The URL of the template.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "timeout_mins": {
+          "description": "The timeout for stack creation in minutes.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_preview": {
+      "properties": {
+        "files": {
+          "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "Supplies arguments for parameters defined in the stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` would be the names of two\nparameters defined in the template.\n\n{ ... \"parameters\": { \"a\": \"Value\", \"b\": \"3\" } ... }While the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nA value must be provided for each template parameter which does not\nspecify a default value. However, this parameter is not allowed to\ncontain JSON properties with names that do not match a parameter\ndefined in the template.\n\nThe ``files`` parameter maps logical file names to file contents.\nBoth the ``get_file`` intrinsic function and provider template\nfunctionality use this mapping. When you want to use a provider\ntemplate, for example, the Orchestration service adds an entry to\nthe ``files`` map by using:- The URL of the provider template as\nthe name.  - The contents of that file as the value.\n\nAdditionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "stack_name": {
+          "description": "A name for the new stack.\n\nThe value must be unique within a project. The name must start with\nan ASCII letter and can contain ASCII letters, digits, underscores,\nperiods, and hyphens. Specifically, the name must match the\n``^[a-zA-Z][a-zA-Z0-9_.-]*$`` regular expression.\n\nWhen you delete or abandon a stack, its name might not be available\nfor reuse for an unspecified period of time.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_preview_200": {
+      "properties": {
+        "capabilities": {
+          "description": "List of stack capabilities for stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "A description of the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "disable_rollback": {
+          "description": "Enables or disables stack rollback when stack creation fails. Set\nto ``True`` to rollback the stack when stack creation fails. Set to\n``False`` to disable stack rollback when stack creation fails.\nDefault is ``True`` .", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The stack ID.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "notification_topics": {
+          "description": "List of notification topics for stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "List of parameters defined for the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "parent": {
+          "description": "The stack ID of the parent stack, if this is a nested stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "resources": {
+          "description": "List of stack resources.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "stack_name": {
+          "description": "The name of the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "stack_owner": {
+          "description": "Stack owner name.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "template_description": {
+          "description": "A description of the template that defines the stack.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "timeout_mins": {
+          "description": "Time-lines for stack creation.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "updated_time": {
+          "description": "Time of last stack update in the following format: ``YYYY-MM-\nDDThh:mm:ssTZD`` , where ``TZD`` is the time zone designator.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_snapshot": {
+      "properties": {
+        "name": {
+          "description": "The name of the snapshot.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_update": {
+      "properties": {
+        "environment": {
+          "description": "A JSON environment for the stack.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "files": {
+          "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "This parameter supplies updated arguments for parameters defined in\nthe stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` are the names of two parameters\ndefined in the template. { ... \"parameters\": { \"a\": \"Value\", \"b\":\n\"3\" } ... }\n\nWhile the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nYou must specify a value for each template parameter that does not\nhave a default value. However, this parameter cannot contain JSON\nproperties with names that do not match a parameter that is defined\nin the template.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "tags": {
+          "description": "One or more simple string tags to associate with the stack. To\nassociate multiple tags with a stack, separate the tags with\ncommas. For example, ``tag1,tag2`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "timeout_mins": {
+          "description": "The timeout for stack creation in minutes.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "stack_update_preview": {
+      "properties": {
+        "environment": {
+          "description": "A JSON environment for the stack.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "files": {
+          "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "parameters": {
+          "description": "This parameter supplies updated arguments for parameters defined in\nthe stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` are the names of two parameters\ndefined in the template. { ... \"parameters\": { \"a\": \"Value\", \"b\":\n\"3\" } ... }\n\nWhile the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nYou must specify a value for each template parameter that does not\nhave a default value. However, this parameter cannot contain JSON\nproperties with names that do not match a parameter that is defined\nin the template.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "tags": {
+          "description": "One or more simple string tags to associate with the stack. To\nassociate multiple tags with a stack, separate the tags with\ncommas. For example, ``tag1,tag2`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "timeout_mins": {
+          "description": "The timeout for stack creation in minutes.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "template_validate": {
+      "properties": {
+        "environment": {
+          "description": "A JSON environment for the stack.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template": {
+          "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "template_url": {
+          "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "template_validate_200": {
+      "properties": {
+        "Description": {
+          "description": "The description specified in the template.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ParameterGroups": {
+          "description": "A list of parameter groups. Each group contains a list of parameter\nnames.", 
+          "format": "", 
+          "required": false, 
+          "type": "array"
+        }, 
+        "Parameters": {
+          "description": "An object that defines all input parameters that are defined in the\ntemplate. Indexed by parameter name.", 
+          "format": "", 
+          "required": true, 
+          "type": "object"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "orchestration", 
+    "title": "Orchestration API", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists all Orchestration API versions.", 
+        "examples": {}, 
+        "id": "getVersions-heat-v1", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8000/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List versions", 
+        "tags": [
+          "heat-versions"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/build_info": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows build information for an Orchestration deployment.", 
+        "examples": {}, 
+        "id": "build_info_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "api": {
+                  "revision": "{api_build_revision}"
+                }, 
+                "engine": {
+                  "revision": "{engine_build_revision}"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show build information", 
+        "tags": [
+          "build-info"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/resource_types": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the supported template resource types.", 
+        "examples": {}, 
+        "id": "resource_type_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "resource_types": [
+                  "AWS::EC2::Instance", 
+                  "OS::Heat::ScalingPolicy", 
+                  "AWS::CloudFormation::Stack", 
+                  "OS::Keystone::Group", 
+                  "OS::Glance::Image", 
+                  "AWS::EC2::Volume", 
+                  "OS::Heat::SoftwareDeployment", 
+                  "AWS::AutoScaling::ScalingPolicy", 
+                  "AWS::EC2::InternetGateway", 
+                  "OS::Heat::SoftwareDeployments", 
+                  "AWS::EC2::VolumeAttachment", 
+                  "AWS::CloudFormation::WaitConditionHandle", 
+                  "OS::Cinder::VolumeAttachment", 
+                  "OS::Cinder::EncryptedVolumeType", 
+                  "OS::Heat::AutoScalingGroup", 
+                  "OS::Nova::FloatingIP", 
+                  "OS::Heat::HARestarter", 
+                  "OS::Keystone::Project", 
+                  "OS::Keystone::Endpoint", 
+                  "OS::Heat::InstanceGroup", 
+                  "AWS::CloudWatch::Alarm", 
+                  "AWS::AutoScaling::AutoScalingGroup", 
+                  "OS::Heat::CloudConfig", 
+                  "OS::Heat::SoftwareComponent", 
+                  "OS::Cinder::Volume", 
+                  "OS::Keystone::Service", 
+                  "OS::Heat::WaitConditionHandle", 
+                  "OS::Heat::SoftwareConfig", 
+                  "AWS::CloudFormation::WaitCondition", 
+                  "OS::Heat::StructuredDeploymentGroup", 
+                  "OS::Heat::RandomString", 
+                  "OS::Heat::SoftwareDeploymentGroup", 
+                  "OS::Nova::KeyPair", 
+                  "OS::Heat::MultipartMime", 
+                  "OS::Heat::UpdateWaitConditionHandle", 
+                  "OS::Nova::Server", 
+                  "AWS::IAM::AccessKey", 
+                  "AWS::EC2::SecurityGroup", 
+                  "AWS::EC2::EIPAssociation", 
+                  "AWS::EC2::EIP", 
+                  "OS::Heat::AccessPolicy", 
+                  "AWS::IAM::User", 
+                  "OS::Heat::WaitCondition", 
+                  "OS::Heat::StructuredDeployment", 
+                  "AWS::RDS::DBInstance", 
+                  "AWS::AutoScaling::LaunchConfiguration", 
+                  "OS::Heat::Stack", 
+                  "OS::Nova::FloatingIPAssociation", 
+                  "OS::Heat::ResourceGroup", 
+                  "OS::Heat::StructuredConfig", 
+                  "OS::Nova::ServerGroup", 
+                  "OS::Heat::StructuredDeployments", 
+                  "OS::Keystone::Role", 
+                  "OS::Keystone::User", 
+                  "AWS::ElasticLoadBalancing::LoadBalancer", 
+                  "OS::Nova::Flavor", 
+                  "OS::Cinder::VolumeType"
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List resource types", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/resource_types/{type_name}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows the interface schema for a specified resource type. This\nschema describes the properties that can be set on the resource,\ntheir types, constraints, descriptions, and default values.\nAdditionally, the resource attributes and their descriptions are\nprovided.", 
+        "examples": {}, 
+        "id": "resource_type_get", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a resource type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "type_name", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "attributes": {
+                  "an_attribute": {
+                    "description": "A runtime value of the resource."
+                  }
+                }, 
+                "properties": {
+                  "a_property": {
+                    "constraints": [
+                      {
+                        "description": "Must be between 1 and 255 characters", 
+                        "length": {
+                          "max": 255, 
+                          "min": 1
+                        }
+                      }
+                    ], 
+                    "description": "A resource description.", 
+                    "required": true, 
+                    "type": "string", 
+                    "update_allowed": false
+                  }
+                }, 
+                "resource_type": "OS::Heat::AResourceName", 
+                "support_status": {
+                  "message": "A status message", 
+                  "status": "SUPPORTED", 
+                  "version": "2014.1"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show resource schema", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/resource_types/{type_name}/template": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows the template representation for a specified resource type.\n\nThe returned template contains a single resource of the specified\ntype. Each resource property is mapped to a template parameter and\neach resource attribute is mapped to a template output.\n\nYou can use these templates as a starting place for creating\ncustomized, template-based resources or as examples of usi ng the\nparticular resource in another template.\n\nUse the ``template_type`` query parameter to specify the resource\ntemplate type. Default type is ``cfn`` . The ``hot`` template type\nis supported. For example:\n\n/v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn", 
+        "examples": {}, 
+        "id": "resource_type_template", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a resource type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "type_name", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "HeatTemplateFormatVersion": "2012-12-12", 
+                "Outputs": {
+                  "private_key": {
+                    "Description": "The private key if it has been saved.", 
+                    "Value": "{\"Fn::GetAtt\": [\"KeyPair\", \"private_key\"]}"
+                  }, 
+                  "public_key": {
+                    "Description": "The public key.", 
+                    "Value": "{\"Fn::GetAtt\": [\"KeyPair\", \"public_key\"]}"
+                  }
+                }, 
+                "Parameters": {
+                  "name": {
+                    "Description": "The name of the key pair.", 
+                    "Type": "String"
+                  }, 
+                  "public_key": {
+                    "Description": "The optional public key. This allows users to supply the public key from a pre-existing key pair. If not supplied, a new key pair will be generated.", 
+                    "Type": "String"
+                  }, 
+                  "save_private_key": {
+                    "AllowedValues": [
+                      "True", 
+                      "true", 
+                      "False", 
+                      "false"
+                    ], 
+                    "Default": false, 
+                    "Description": "True if the system should remember a generated private key; False otherwise.", 
+                    "Type": "String"
+                  }
+                }, 
+                "Resources": {
+                  "KeyPair": {
+                    "Properties": {
+                      "name": {
+                        "Ref": "name"
+                      }, 
+                      "public_key": {
+                        "Ref": "public_key"
+                      }, 
+                      "save_private_key": {
+                        "Ref": "save_private_key"
+                      }
+                    }, 
+                    "Type": "OS::Nova::KeyPair"
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show resource template", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/services": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Enables administrative users to view details for all orchestration\nengines.\n\nOrchestration engine details include ``engine_id`` , topic name,\nlast updated time, health status, and host name.\n\nTroubleshooting\n\n- A ``503`` error code indicates that the heat engines are not\n  operational. Run the heat-manage service list command or contact\n  your cloud provider to determine why the heat engines are not\n  operational.", 
+        "examples": {}, 
+        "id": "service_status_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "services": [
+                  {
+                    "binary": "heat-engine", 
+                    "created_at": "2015-02-03T05:55:59.000000", 
+                    "deleted_at": null, 
+                    "engine_id": "9d9242c3-4b9e-45e1-9e74-7615fbf20e5d", 
+                    "host": "engine-1", 
+                    "hostname": "mrkanag", 
+                    "id": "e1908f44-42f9-483f-b778-bc814072c33d", 
+                    "report_interval": 60, 
+                    "status": "up", 
+                    "topic": "engine", 
+                    "updated_at": "2015-02-03T05:57:59.000000"
+                  }, 
+                  {
+                    "binary": "heat-engine", 
+                    "created_at": "2015-02-03T06:03:14.000000", 
+                    "deleted_at": null, 
+                    "engine_id": "2d2434bf-adb6-4453-9c6b-b22fb8bd2306", 
+                    "host": "engine", 
+                    "hostname": "mrkanag", 
+                    "id": "582b5657-6db7-48ad-8483-0096350faa21", 
+                    "report_interval": 60, 
+                    "status": "down", 
+                    "topic": "engine", 
+                    "updated_at": "2015-02-03T06:09:55.000000"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show orchestration engine status", 
+        "tags": [
+          "service-status"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/software_configs": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a software configuration.", 
+        "examples": {
+          "application/json": {
+            "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
+            "group": "script", 
+            "inputs": [
+              {
+                "default": null, 
+                "description": null, 
+                "name": "foo", 
+                "type": "String"
+              }, 
+              {
+                "default": null, 
+                "description": null, 
+                "name": "bar", 
+                "type": "String"
+              }
+            ], 
+            "name": "a-config-we5zpvyu7b5o", 
+            "options": null, 
+            "outputs": [
+              {
+                "description": null, 
+                "error_output": false, 
+                "name": "result", 
+                "type": "String"
+              }
+            ]
+          }
+        }, 
+        "id": "software_config_create", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/software_config_create"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_config": {
+                  "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "group": "script", 
+                  "id": "ddee7aca-aa32-4335-8265-d436b20db4f1", 
+                  "inputs": [
+                    {
+                      "default": null, 
+                      "description": null, 
+                      "name": "foo", 
+                      "type": "String"
+                    }, 
+                    {
+                      "default": null, 
+                      "description": null, 
+                      "name": "bar", 
+                      "type": "String"
+                    }
+                  ], 
+                  "name": "a-config-we5zpvyu7b5o", 
+                  "options": null, 
+                  "outputs": [
+                    {
+                      "description": null, 
+                      "error_output": false, 
+                      "name": "result", 
+                      "type": "String"
+                    }
+                  ]
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create configuration", 
+        "tags": [
+          "software-config"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/software_configs/{config_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a software configuration.", 
+        "examples": {}, 
+        "id": "software_config_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The configuration ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "config_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_config": {
+                  "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "group": "script", 
+                  "id": "ddee7aca-aa32-4335-8265-d436b20db4f1", 
+                  "inputs": [
+                    {
+                      "default": null, 
+                      "description": null, 
+                      "name": "foo", 
+                      "type": "String"
+                    }, 
+                    {
+                      "default": null, 
+                      "description": null, 
+                      "name": "bar", 
+                      "type": "String"
+                    }
+                  ], 
+                  "name": "a-config-we5zpvyu7b5o", 
+                  "options": null, 
+                  "outputs": [
+                    {
+                      "description": null, 
+                      "error_output": false, 
+                      "name": "result", 
+                      "type": "String"
+                    }
+                  ]
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show configuration details", 
+        "tags": [
+          "software-config"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a software configuration.", 
+        "examples": {}, 
+        "id": "software_config_delete", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The configuration ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "config_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete config", 
+        "tags": [
+          "software-config"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/software_deployments": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists all available software deployments.", 
+        "examples": {}, 
+        "id": "software_deployment_index", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_deployments": [
+                  {
+                    "action": "CREATE", 
+                    "config_id": "8da95794-2ad9-4979-8ae5-739ce314c5cd", 
+                    "creation_time": "2015-01-31T15:12:36Z", 
+                    "id": "ef422fa5-719a-419e-a10c-72e3a367b0b8", 
+                    "input_values": null, 
+                    "output_values": {
+                      "deploy_status_code": 0, 
+                      "deploy_stderr": "+ echo Writing to /tmp/barmy\n+ echo fu\n+ cat /tmp/barmy\n+ echo -n The file /tmp/barmy contains fu for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE\n+ echo Written to /tmp/barmy\n+ echo Output to stderr\nOutput to stderr\n", 
+                      "deploy_stdout": "Writing to /tmp/barmy\nWritten to /tmp/barmy\n", 
+                      "result": "The file /tmp/barmy contains fu for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE"
+                    }, 
+                    "server_id": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5", 
+                    "status": "COMPLETE", 
+                    "status_reason": "Outputs received", 
+                    "updated_time": "2015-01-31T15:18:21Z"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List deployments", 
+        "tags": [
+          "software-config"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a software deployment.", 
+        "examples": {
+          "application/json": {
+            "action": "CREATE", 
+            "config_id": "8da95794-2ad9-4979-8ae5-739ce314c5cd", 
+            "server_id": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5", 
+            "stack_user_project_id": "c024bfada67845ddb17d2b0c0be8cd79", 
+            "status": "IN_PROGRESS", 
+            "status_reason": "Deploy data available"
+          }
+        }, 
+        "id": "software_deployment_create", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/software_deployment_create"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_deployment": {
+                  "action": "CREATE", 
+                  "config_id": "8da95794-2ad9-4979-8ae5-739ce314c5cd", 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "id": "ef422fa5-719a-419e-a10c-72e3a367b0b8", 
+                  "input_values": null, 
+                  "output_values": null, 
+                  "server_id": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5", 
+                  "status": "IN_PROGRESS", 
+                  "status_reason": "Deploy data available", 
+                  "updated_time": "2015-01-31T15:18:21Z"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create deployment", 
+        "tags": [
+          "software-config"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/software_deployments/metadata/{server_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows the deployment configuration metadata for a specified server.\n\nUse the ``group`` property to specify the configuration hook to\nwhich the pass the metadata item.", 
+        "examples": {}, 
+        "id": "software_deployment_metadata", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the server for which to fetch configuration metadata.", 
+            "format": "", 
+            "in": "path", 
+            "name": "server_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "metadata": [
+                  {
+                    "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
+                    "creation_time": "2015-01-31T15:12:36Z", 
+                    "group": "script", 
+                    "id": "3d5ec2a8-7004-43b6-a7f6-542bdbe9d434", 
+                    "inputs": [
+                      {
+                        "default": null, 
+                        "description": null, 
+                        "name": "foo", 
+                        "type": "String", 
+                        "value": "fooooo"
+                      }, 
+                      {
+                        "default": null, 
+                        "description": null, 
+                        "name": "bar", 
+                        "type": "String", 
+                        "value": "baaaaa"
+                      }, 
+                      {
+                        "description": "ID of the server being deployed to", 
+                        "name": "deploy_server_id", 
+                        "type": "String", 
+                        "value": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5"
+                      }, 
+                      {
+                        "description": "Name of the current action being deployed", 
+                        "name": "deploy_action", 
+                        "type": "String", 
+                        "value": "CREATE"
+                      }, 
+                      {
+                        "description": "ID of the stack this deployment belongs to", 
+                        "name": "deploy_stack_id", 
+                        "type": "String", 
+                        "value": "a/9bd57090-8954-48ab-bab9-adf9e1ac70fc"
+                      }, 
+                      {
+                        "description": "Name of this deployment resource in the stack", 
+                        "name": "deploy_resource_name", 
+                        "type": "String", 
+                        "value": "deployment"
+                      }, 
+                      {
+                        "description": "ID of signal to use for signalling output values", 
+                        "name": "deploy_signal_id", 
+                        "type": "String", 
+                        "value": "http://192.168.20.103:8000/v1/signal/arn%3Aopenstack%3Aheat%3A%3Ae2a84fbdaeb047ae8da4b503f3b69f1f%3Astacks%2Fa%2F9bd57090-8954-48ab-bab9-adf9e1ac70fc%2Fresources%2Fdeployment?Timestamp=2014-03-19T20%3A30%3A59Z&SignatureMethod=HmacSHA256&AWSAccessKeyId=ca3571413e4a49998d580215517b3685&SignatureVersion=2&Signature=w6Iu%2BNbg86mqwSOUf1GLuKPO7KaD82PiGpL4ig9Q1l4%3D"
+                      }
+                    ], 
+                    "name": "a-config-we5zpvyu7b5o", 
+                    "options": null, 
+                    "outputs": [
+                      {
+                        "description": null, 
+                        "error_output": false, 
+                        "name": "result", 
+                        "type": "String"
+                      }
+                    ], 
+                    "updated_time": "2015-01-31T15:18:21Z"
+                  }, 
+                  {
+                    "config": "#!/bin/sh -x\necho \"Writing to /tmp/$bar\"\necho $foo > /tmp/$bar\necho -n \"The file /tmp/$bar contains `cat /tmp/$bar` for server $deploy_server_id during $deploy_action\" > $heat_outputs_path.result\necho \"Written to /tmp/$bar\"\necho \"Output to stderr\" 1>&2", 
+                    "creation_time": "2015-01-31T16:14:13Z", 
+                    "group": "script", 
+                    "id": "8da95794-2ad9-4979-8ae5-739ce314c5cd", 
+                    "inputs": [
+                      {
+                        "default": null, 
+                        "description": null, 
+                        "name": "foo", 
+                        "type": "String", 
+                        "value": "fu"
+                      }, 
+                      {
+                        "default": null, 
+                        "description": null, 
+                        "name": "bar", 
+                        "type": "String", 
+                        "value": "barmy"
+                      }, 
+                      {
+                        "description": "ID of the server being deployed to", 
+                        "name": "deploy_server_id", 
+                        "type": "String", 
+                        "value": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5"
+                      }, 
+                      {
+                        "description": "Name of the current action being deployed", 
+                        "name": "deploy_action", 
+                        "type": "String", 
+                        "value": "CREATE"
+                      }, 
+                      {
+                        "description": "ID of the stack this deployment belongs to", 
+                        "name": "deploy_stack_id", 
+                        "type": "String", 
+                        "value": "a/9bd57090-8954-48ab-bab9-adf9e1ac70fc"
+                      }, 
+                      {
+                        "description": "Name of this deployment resource in the stack", 
+                        "name": "deploy_resource_name", 
+                        "type": "String", 
+                        "value": "other_deployment"
+                      }, 
+                      {
+                        "description": "ID of signal to use for signalling output values", 
+                        "name": "deploy_signal_id", 
+                        "type": "String", 
+                        "value": "http://192.168.20.103:8000/v1/signal/arn%3Aopenstack%3Aheat%3A%3Ae2a84fbdaeb047ae8da4b503f3b69f1f%3Astacks%2Fa%2F9bd57090-8954-48ab-bab9-adf9e1ac70fc%2Fresources%2Fother_deployment?Timestamp=2014-03-19T20%3A30%3A59Z&SignatureMethod=HmacSHA256&AWSAccessKeyId=7b761482f8254946bcd3d5ccb36fe939&SignatureVersion=2&Signature=giMfv%2BhrAw6y%2FCMKQIQz2IhO5PkAj5%2BfP5YsL6rul3o%3D"
+                      }
+                    ], 
+                    "name": "a-config-we5zpvyu7b5o", 
+                    "options": null, 
+                    "outputs": [
+                      {
+                        "description": null, 
+                        "error_output": false, 
+                        "name": "result", 
+                        "type": "String"
+                      }
+                    ], 
+                    "updated_time": "2015-01-31T16:18:19Z"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show server configuration metadata", 
+        "tags": [
+          "software-config"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/software_deployments/{deployment_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a specified software deployment.", 
+        "examples": {}, 
+        "id": "software_deployment_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The deployment ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "deployment_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_deployment": {
+                  "action": "CREATE", 
+                  "config_id": "3d5ec2a8-7004-43b6-a7f6-542bdbe9d434", 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "id": "06e87bcc-33a2-4bce-aebd-533e698282d3", 
+                  "input_values": null, 
+                  "output_values": null, 
+                  "server_id": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5", 
+                  "status": "IN_PROGRESS", 
+                  "status_reason": "Deploy data available", 
+                  "updated_time": "2015-01-31T15:18:21Z"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show deployment details", 
+        "tags": [
+          "software-config"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified software deployment.", 
+        "examples": {
+          "application/json": {
+            "output_values": {
+              "deploy_status_code": 0, 
+              "deploy_stderr": "+ echo Writing to /tmp/baaaaa\n+ echo fooooo\n+ cat /tmp/baaaaa\n+ echo -n The file /tmp/baaaaa contains fooooo for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE\n+ echo Written to /tmp/baaaaa\n+ echo Output to stderr\nOutput to stderr\n", 
+              "deploy_stdout": "Writing to /tmp/baaaaa\nWritten to /tmp/baaaaa\n", 
+              "result": "The file /tmp/baaaaa contains fooooo for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE"
+            }, 
+            "status": "COMPLETE", 
+            "status_reason": "Outputs received"
+          }
+        }, 
+        "id": "software_deployment_update", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/software_deployment_update"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The deployment ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "deployment_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "software_deployment": {
+                  "action": "CREATE", 
+                  "config_id": "3d5ec2a8-7004-43b6-a7f6-542bdbe9d434", 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "id": "06e87bcc-33a2-4bce-aebd-533e698282d3", 
+                  "input_values": null, 
+                  "output_values": {
+                    "deploy_status_code": 0, 
+                    "deploy_stderr": "+ echo Writing to /tmp/baaaaa\n+ echo fooooo\n+ cat /tmp/baaaaa\n+ echo -n The file /tmp/baaaaa contains fooooo for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE\n+ echo Written to /tmp/baaaaa\n+ echo Output to stderr\nOutput to stderr\n", 
+                    "deploy_stdout": "Writing to /tmp/baaaaa\nWritten to /tmp/baaaaa\n", 
+                    "result": "The file /tmp/baaaaa contains fooooo for server ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5 during CREATE"
+                  }, 
+                  "server_id": "ec14c864-096e-4e27-bb8a-2c2b4dc6f3f5", 
+                  "status": "COMPLETE", 
+                  "status_reason": "Outputs received", 
+                  "updated_time": "2015-01-31T15:18:21Z"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update deployment", 
+        "tags": [
+          "software-config"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified software deployment.", 
+        "examples": {}, 
+        "id": "software_deployment_delete", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The deployment ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "deployment_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete deployment", 
+        "tags": [
+          "software-config"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists active stacks.", 
+        "examples": {}, 
+        "id": "stack_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified stack ID. Use this filter\nmultiple times to filter by multiple IDs.", 
+            "format": "", 
+            "in": "query", 
+            "name": "id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified status. Use this filter\nmultiple times to filter by multiple statuses.", 
+            "format": "", 
+            "in": "query", 
+            "name": "status", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified name. Use this filter\nmultiple times to filter by multiple names.", 
+            "format": "", 
+            "in": "query", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified action. Use this filter\nmultiple times to filter by multiple actions.", 
+            "format": "", 
+            "in": "query", 
+            "name": "action", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified tenant. Use this filter\nmultiple times to filter by multiple tenants.", 
+            "format": "", 
+            "in": "query", 
+            "name": "tenant", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified user name. Use this filter\nmultiple times to filter by multiple user names.", 
+            "format": "", 
+            "in": "query", 
+            "name": "username", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the stack list by a specified owner ID, which is the ID of\nthe parent stack of listed stack. Use this filter multiple times to\nfilter by multiple owner IDs.", 
+            "format": "", 
+            "in": "query", 
+            "name": "owner_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Specifies whether to include deleted stacks in the list. Default is\n``False`` , which excludes deleted stacks from the list.", 
+            "format": "", 
+            "in": "query", 
+            "name": "show_deleted", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Specifies whether to include nested stacks in the list. Default is\n``False`` , which excludes nested stacks from the list.", 
+            "format": "", 
+            "in": "query", 
+            "name": "show_nested", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Sorts the stack list by ``name`` , ``status`` , ``created_at`` , or\n``updated_at`` key.", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_keys", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Lists stacks that contain one or more simple string tags. To\nspecify multiple tags, separate the tags with commas. For example,\n``tag1,tag2`` . The boolean AND expression is used to combine\nmultiple tags.", 
+            "format": "", 
+            "in": "query", 
+            "name": "tags", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Lists stacks that contain one or more simple string tags. To\nspecify multiple tags, separate the tags with commas. For example,\n``tag1,tag2`` . The boolean OR expression is used to combine\nmultiple tags.", 
+            "format": "", 
+            "in": "query", 
+            "name": "tags_any", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Lists stacks that do not contain one or more simple string tags. To\nspecify multiple tags, separate the tags with commas. For example,\n``tag1,tag2`` . The boolean AND expression is used to combine\nmultiple tags.", 
+            "format": "", 
+            "in": "query", 
+            "name": "not_tags", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Lists stacks that do not contain one or more simple string tags. To\nspecify multiple tags, separate the tags with commas. For example,\n``tag1,tag2`` . The boolean OR expression is used to combine\nmultiple tags.", 
+            "format": "", 
+            "in": "query", 
+            "name": "not_tags_any", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The sort direction of the list. A valid value is ``asc``\n(ascending) or ``desc`` (descending).", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_dir", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Specifies whether to include stacks from all tenants in the stack\nlist. Policy requirements are specified in the Orchestration\n``policy.json`` file. Default is ``False`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "global_tenant", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Specifies whether to include a count key in the response. The count\nkey value is the number of stacks that match the query criteria.\nDefault is ``False`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "with_count", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "stacks": [
+                  {
+                    "creation_time": "2014-06-03T20:59:46Z", 
+                    "description": "sample stack", 
+                    "id": "3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                    "links": [
+                      {
+                        "href": "http://192.168.123.200:8004/v1/eb1c63a4f77141548385f113a28f0f52/stacks/simple_stack/3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "stack_name": "simple_stack", 
+                    "stack_status": "CREATE_COMPLETE", 
+                    "stack_status_reason": "Stack CREATE completed successfully", 
+                    "tags": "", 
+                    "updated_time": ""
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List stack data", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a stack.", 
+        "examples": {
+          "application/json": {
+            "disable_rollback": true, 
+            "files": {}, 
+            "parameters": {
+              "flavor": "m1.heat"
+            }, 
+            "stack_name": "teststack", 
+            "template": {
+              "description": "Simple template to test heat commands", 
+              "heat_template_version": "2013-05-23", 
+              "parameters": {
+                "flavor": {
+                  "default": "m1.tiny", 
+                  "type": "string"
+                }
+              }, 
+              "resources": {
+                "hello_world": {
+                  "properties": {
+                    "flavor": {
+                      "get_param": "flavor"
+                    }, 
+                    "image": "40be8d1a-3eb9-40de-8abd-43237517384f", 
+                    "key_name": "heat_key", 
+                    "user_data": "#!/bin/bash -xv\necho \"hello world\" &gt; /root/hello-world.txt\n"
+                  }, 
+                  "type": "OS::Nova::Server"
+                }
+              }
+            }, 
+            "timeout_mins": 60
+          }
+        }, 
+        "id": "stack_create", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_create"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "stack": {
+                  "id": "3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                  "links": [
+                    {
+                      "href": "http://192.168.123.200:8004/v1/eb1c63a4f77141548385f113a28f0f52/stacks/simple_stack/3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                      "rel": "self"
+                    }
+                  ]
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create stack", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a stack from existing resources.", 
+        "examples": {
+          "application/json": {
+            "adopt_stack_data": {
+              "action": "CREATE", 
+              "id": "bxxxxx4-0xx2-4xx1-axx6-exxxxxxxc", 
+              "name": "teststack", 
+              "resources": {
+                "MyServer": {
+                  "action": "CREATE", 
+                  "metadata": {}, 
+                  "name": "MyServer", 
+                  "resource_data": {}, 
+                  "resource_id": "cxxxx3-dxx3-4xx-bxx2-3xxxxxxxxa", 
+                  "status": "COMPLETE", 
+                  "type": "OS::Trove::Instance"
+                }
+              }, 
+              "status": "COMPLETE", 
+              "template": {}
+            }, 
+            "stack_name": "{stack_name}", 
+            "template_url": "{template_url}", 
+            "timeout_mins": "{timeout_mins}"
+          }
+        }, 
+        "id": "stack_adopt", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_adopt"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "action": "CREATE", 
+                "id": "46c927bb-671a-43db-a29c-16a2610865ca", 
+                "name": "trove", 
+                "resources": {
+                  "mysql_server": {
+                    "action": "CREATE", 
+                    "metadata": {}, 
+                    "name": "mysql_server", 
+                    "resource_data": {}, 
+                    "resource_id": "74c5be7e-3e62-41e7-b455-93d1c32d56e3", 
+                    "status": "COMPLETE", 
+                    "type": "OS::Trove::Instance"
+                  }
+                }, 
+                "status": "COMPLETE", 
+                "template": {
+                  "description": "MySQL server instance", 
+                  "heat-template-version": "2013-05-23", 
+                  "parameters": {
+                    "instance_name": {
+                      "description": "The database instance name", 
+                      "type": "string"
+                    }
+                  }, 
+                  "resources": {
+                    "mysql_server": {
+                      "properties": {
+                        "databases": [
+                          {
+                            "name": "testdbonetwo"
+                          }
+                        ], 
+                        "flavor": "m1.medium", 
+                        "name": "test-trove-db", 
+                        "size": 30, 
+                        "users": [
+                          {
+                            "databases": [
+                              "testdbonetwo"
+                            ], 
+                            "name": "testuser", 
+                            "password": "testpass123"
+                          }
+                        ]
+                      }, 
+                      "type": "OS::Trove::Instance"
+                    }
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Adopt stack", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/preview": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Previews a stack.", 
+        "examples": {
+          "application/json": {
+            "disable_rollback": true, 
+            "files": {}, 
+            "parameters": {
+              "flavor": "m1.heat"
+            }, 
+            "stack_name": "teststack", 
+            "template": {
+              "description": "Simple template to test heat commands", 
+              "heat_template_version": "2013-05-23", 
+              "parameters": {
+                "flavor": {
+                  "default": "m1.tiny", 
+                  "type": "string"
+                }
+              }, 
+              "resources": {
+                "hello_world": {
+                  "properties": {
+                    "flavor": {
+                      "get_param": "flavor"
+                    }, 
+                    "image": "40be8d1a-3eb9-40de-8abd-43237517384f", 
+                    "key_name": "heat_key", 
+                    "user_data": "#!/bin/bash -xv\necho \"hello world\" &gt; /root/hello-world.txt\n"
+                  }, 
+                  "type": "OS::Nova::Server"
+                }
+              }
+            }, 
+            "timeout_mins": 60
+          }
+        }, 
+        "id": "stack_preview", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_preview"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "stack": {
+                  "capabilities": [], 
+                  "creation_time": "2015-01-31T15:12:36Z", 
+                  "description": "HOT template for Nova Server resource.\n", 
+                  "disable_rollback": true, 
+                  "id": "None", 
+                  "links": [
+                    {
+                      "href": "http://192.168.122.102:8004/v1/6e18cc2bdbeb48a5basad2dc499f6804/stacks/test_stack/None", 
+                      "rel": "self"
+                    }
+                  ], 
+                  "notification_topics": [], 
+                  "parameters": {
+                    "OS::project_id": "6e18cc2bdbeb48a5basad2dc499f6804", 
+                    "OS::stack_id": "None", 
+                    "OS::stack_name": "teststack", 
+                    "admin_user": "cloud-user", 
+                    "flavor": "m1.small", 
+                    "image": "F20-cfg", 
+                    "key_name": "heat_key", 
+                    "server_name": "MyServer"
+                  }, 
+                  "parent": null, 
+                  "resources": [
+                    {
+                      "attributes": {}, 
+                      "description": "", 
+                      "metadata": {}, 
+                      "physical_resource_id": "", 
+                      "properties": {
+                        "description": "Ping and SSH", 
+                        "name": "the_sg", 
+                        "rules": [
+                          {
+                            "direction": "ingress", 
+                            "ethertype": "IPv4", 
+                            "port_range_max": null, 
+                            "port_range_min": null, 
+                            "protocol": "icmp", 
+                            "remote_group_id": null, 
+                            "remote_ip_prefix": null, 
+                            "remote_mode": "remote_ip_prefix"
+                          }, 
+                          {
+                            "direction": "ingress", 
+                            "ethertype": "IPv4", 
+                            "port_range_max": 65535, 
+                            "port_range_min": 1, 
+                            "protocol": "tcp", 
+                            "remote_group_id": null, 
+                            "remote_ip_prefix": null, 
+                            "remote_mode": "remote_ip_prefix"
+                          }, 
+                          {
+                            "direction": "ingress", 
+                            "ethertype": "IPv4", 
+                            "port_range_max": 65535, 
+                            "port_range_min": 1, 
+                            "protocol": "udp", 
+                            "remote_group_id": null, 
+                            "remote_ip_prefix": null, 
+                            "remote_mode": "remote_ip_prefix"
+                          }
+                        ]
+                      }, 
+                      "required_by": [
+                        "server1"
+                      ], 
+                      "resource_action": "INIT", 
+                      "resource_identity": {
+                        "path": "/resources/the_sg_res", 
+                        "stack_id": "None", 
+                        "stack_name": "teststack", 
+                        "tenant": "6e18cc2bdbeb48a5b3cad2dc499f6804"
+                      }, 
+                      "resource_name": "the_sg_res", 
+                      "resource_status": "COMPLETE", 
+                      "resource_status_reason": "", 
+                      "resource_type": "OS::Neutron::SecurityGroup", 
+                      "stack_identity": {
+                        "path": "", 
+                        "stack_id": "None", 
+                        "stack_name": "teststack", 
+                        "tenant": "6e18cc2bdbeb48a5b3cad2dc499f6804"
+                      }, 
+                      "stack_name": "teststack", 
+                      "updated_time": "2015-01-31T15:12:36Z"
+                    }, 
+                    {
+                      "attributes": {
+                        "accessIPv4": "", 
+                        "accessIPv6": "", 
+                        "addresses": "", 
+                        "console_urls": "", 
+                        "first_address": "", 
+                        "instance_name": "", 
+                        "name": "MyServer", 
+                        "networks": "", 
+                        "show": ""
+                      }, 
+                      "description": "", 
+                      "metadata": {}, 
+                      "physical_resource_id": "", 
+                      "properties": {
+                        "admin_pass": null, 
+                        "admin_user": "cloud-user", 
+                        "availability_zone": null, 
+                        "block_device_mapping": null, 
+                        "config_drive": null, 
+                        "diskConfig": null, 
+                        "flavor": "m1.small", 
+                        "flavor_update_policy": "RESIZE", 
+                        "image": "F20-cfg", 
+                        "image_update_policy": "REPLACE", 
+                        "key_name": "heat_key", 
+                        "metadata": {
+                          "ha_stack": "None"
+                        }, 
+                        "name": "MyServer", 
+                        "networks": [
+                          {
+                            "fixed_ip": null, 
+                            "network": "private", 
+                            "port": null, 
+                            "uuid": null
+                          }
+                        ], 
+                        "personality": {}, 
+                        "reservation_id": null, 
+                        "scheduler_hints": null, 
+                        "security_groups": [
+                          "None"
+                        ], 
+                        "software_config_transport": "POLL_SERVER_CFN", 
+                        "user_data": "", 
+                        "user_data_format": "HEAT_CFNTOOLS"
+                      }, 
+                      "required_by": [], 
+                      "resource_action": "INIT", 
+                      "resource_identity": {
+                        "path": "/resources/hello_world", 
+                        "stack_id": "None", 
+                        "stack_name": "teststack", 
+                        "tenant": "6e18cc2bdbeb48a3433cad2dc499sdf32234"
+                      }, 
+                      "resource_name": "hello_world", 
+                      "resource_status": "COMPLETE", 
+                      "resource_status_reason": "", 
+                      "resource_type": "OS::Nova::Server", 
+                      "stack_identity": {
+                        "path": "", 
+                        "stack_id": "None", 
+                        "stack_name": "teststack", 
+                        "tenant": "6e18cc2bdbeb48a3433cad2dc499sdf32234"
+                      }, 
+                      "stack_name": "teststack", 
+                      "updated_time": "2015-01-31T15:12:36Z"
+                    }
+                  ], 
+                  "stack_name": "test_stack", 
+                  "stack_owner": "admin", 
+                  "template_description": "HOT template for Nova Server resource.\n", 
+                  "timeout_mins": null, 
+                  "updated_time": null
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Preview stack", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Finds the canonical URL for a specified stack.\n\nAlso works with verbs other than GET , so you can perform PUT and\nDELETE operations on a current stack. Set your client to follow\nredirects. Note that when redirecting, the request method should\nnot change, as defined in RFC2626. However, in many clients the\ndefault behavior is to change the method to GET when you receive a\n302 because this behavior is ubiquitous in web browsers.", 
+        "examples": {}, 
+        "id": "stack_find", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "302": {
+            "examples": {
+              "application/json": {
+                "stack": {
+                  "capabilities": [], 
+                  "creation_time": "2014-06-04T20:36:12Z", 
+                  "description": "sample stack", 
+                  "disable_rollback": true, 
+                  "id": "5333af0c-cc26-47ee-ac3d-8784cefafbd7", 
+                  "links": [
+                    {
+                      "href": "http://192.168.123.200:8004/v1/eb1c63a4f77141548385f113a28f0f52/stacks/simple_stack/5333af0c-cc26-47ee-ac3d-8784cefafbd7", 
+                      "rel": "self"
+                    }
+                  ], 
+                  "notification_topics": [], 
+                  "outputs": [], 
+                  "parameters": {
+                    "OS::stack_id": "5333af0c-cc26-47ee-ac3d-8784cefafbd7", 
+                    "OS::stack_name": "simple_stack"
+                  }, 
+                  "stack_name": "simple_stack", 
+                  "stack_status": "CREATE_COMPLETE", 
+                  "stack_status_reason": "Stack CREATE completed successfully", 
+                  "template_description": "sample stack", 
+                  "timeout_mins": null, 
+                  "updated_time": null
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Find stack", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/events": [
+      {
+        "consumes": [], 
+        "description": "Finds the canonical URL for the event list of a specified stack.", 
+        "examples": {}, 
+        "id": "stack_events_find", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "302": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Find stack events", 
+        "tags": [
+          "stack-events"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/resources": [
+      {
+        "consumes": [], 
+        "description": "Finds the canonical URL for the resource list of a specified stack.\n\nThe canonical URL is returned for only non-deleted stacks. To fetch\nthe resource list for deleted stacks, use the following endpoint:\n\n/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources", 
+        "examples": {}, 
+        "id": "stack_resources_find", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "302": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Find stack resources", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a specified stack.", 
+        "examples": {}, 
+        "id": "stack_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "stack": {
+                  "capabilities": [], 
+                  "creation_time": "2014-06-03T20:59:46Z", 
+                  "description": "sample stack", 
+                  "disable_rollback": "True", 
+                  "id": "3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                  "links": [
+                    {
+                      "href": "http://192.168.123.200:8004/v1/eb1c63a4f77141548385f113a28f0f52/stacks/simple_stack/3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                      "rel": "self"
+                    }
+                  ], 
+                  "notification_topics": [], 
+                  "outputs": [], 
+                  "parameters": {
+                    "OS::project_id": "3ab5b02f-a01f-4f95-afa1-e254afc4a435", 
+                    "OS::stack_id": "3095aefc-09fb-4bc7-b1f0-f21a304e864c", 
+                    "OS::stack_name": "simple_stack"
+                  }, 
+                  "parent": "", 
+                  "stack_name": "simple_stack", 
+                  "stack_owner": "simple_username", 
+                  "stack_status": "CREATE_COMPLETE", 
+                  "stack_status_reason": "Stack CREATE completed successfully", 
+                  "stack_user_project_id": "65728b74-cfe7-4f17-9c15-11d4f686e591", 
+                  "tags": "", 
+                  "template_description": "sample stack", 
+                  "timeout_mins": "", 
+                  "updated_time": ""
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show stack details", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified stack.", 
+        "examples": {
+          "application/json": {
+            "parameters": {
+              "flavor": "m1.small"
+            }, 
+            "template": {
+              "description": "Create a simple stack", 
+              "heat_template_version": "2013-05-23", 
+              "parameters": {
+                "flavor": {
+                  "default": "m1.tiny", 
+                  "type": "string"
+                }
+              }, 
+              "resources": {
+                "hello_world": {
+                  "properties": {
+                    "flavor": {
+                      "get_param": "flavor"
+                    }, 
+                    "image": "40be8d1a-3eb9-40de-8abd-43237517384f", 
+                    "key_name": "heat_key", 
+                    "user_data": "#!/bin/bash -xv\necho \"hello world\" > /root/hello-world.txt\n"
+                  }, 
+                  "type": "OS::Nova::Server"
+                }
+              }
+            }
+          }
+        }, 
+        "id": "stack_update", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_update"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update stack", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified stack and any snapshots of that stack.", 
+        "examples": {}, 
+        "id": "stack_delete", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete stack", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Deletes a specified stack but leaves its resources intact, and\nreturns data describing the stack and its resources.", 
+        "examples": {}, 
+        "id": "stack_abandon", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "action": "CREATE", 
+                "dry_run": true, 
+                "id": "16934ca3-40e0-4fb2-a289-a700662ec05a", 
+                "name": "g", 
+                "resources": {
+                  "server": {
+                    "action": "CREATE", 
+                    "metadata": {}, 
+                    "name": "server", 
+                    "resource_data": {}, 
+                    "resource_id": "39d5dad7-7d7a-4cc8-bd84-851e9e2ff4ea", 
+                    "status": "COMPLETE", 
+                    "type": "OS::Nova::Server"
+                  }
+                }, 
+                "status": "COMPLETE", 
+                "template": {
+                  "heat_template_version": "2013-05-23", 
+                  "outputs": {
+                    "instance_ip": {
+                      "value": {
+                        "str_replace": {
+                          "params": {
+                            "hostname": {
+                              "get_attr": [
+                                "server", 
+                                "first_address"
+                              ]
+                            }, 
+                            "username": "ec2-user"
+                          }, 
+                          "template": "ssh username@hostname"
+                        }
+                      }
+                    }
+                  }, 
+                  "parameters": {
+                    "flavor": {
+                      "default": "m1.small", 
+                      "type": "string"
+                    }, 
+                    "image": {
+                      "default": "fedora-amd64", 
+                      "type": "string"
+                    }, 
+                    "key_name": {
+                      "default": "heat_key", 
+                      "type": "string"
+                    }
+                  }, 
+                  "resources": {
+                    "server": {
+                      "properties": {
+                        "flavor": {
+                          "get_param": "flavor"
+                        }, 
+                        "image": {
+                          "get_param": "image"
+                        }, 
+                        "key_name": {
+                          "get_param": "key_name"
+                        }
+                      }, 
+                      "type": "OS::Nova::Server"
+                    }
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Abandon stack", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Suspends a stack.", 
+        "examples": {
+          "application/json": {
+            "suspend": null
+          }
+        }, 
+        "id": "stack_action_suspend", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_action_suspend"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Suspend stack", 
+        "tags": [
+          "stack-actions"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Resumes a suspended stack.", 
+        "examples": {
+          "application/json": {
+            "resume": null
+          }
+        }, 
+        "id": "stack_action_resume", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_action_resume"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Resume stack", 
+        "tags": [
+          "stack-actions"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Cancels a currently running update of a stack.", 
+        "examples": {
+          "application/json": {
+            "cancel_update": null
+          }
+        }, 
+        "id": "stack_action_cancel_update", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_action_cancel_update"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Cancel stack update", 
+        "tags": [
+          "stack-actions"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Checks whether the resources are in expected states for the\nspecified stack.", 
+        "examples": {
+          "application/json": {
+            "check": null
+          }
+        }, 
+        "id": "stack_action_check", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_action_check"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Check stack resources", 
+        "tags": [
+          "stack-actions"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists events for a specified stack.", 
+        "examples": {}, 
+        "id": "stack_event_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource action. You can use\nthis filter multiple times to filter by multiple resource actions.\nValid resource actions are ``ADOPT`` , ``CHECK`` , ``CREATE`` ,\n``DELETE`` , ``INIT`` , ``RESTORE`` , ``RESUME`` , ``ROLLBACK`` ,\n``SNAPSHOT`` , ``SUSPEND`` , and ``UPDATE`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_action", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource status. You can use\nthis filter multiple times to filter by multiple resource statuses.\nValid resource statuses are ``COMPLETE`` , ``FAILED`` , and\n``IN_PROGRESS`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_status", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource name. You can use\nthis filter multiple times to filter by multiple resource names.", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource type. You can use\nthis filter multiple times to filter by multiple resource types.\nValid resource types include ``OS::Cinder::Volume`` ,\n``OS::Nova::Server`` , ``OS::Neutron::Port`` , and so on.", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_type", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Sorts the list by the ``resource_type`` or ``created_at`` key.", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_keys", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The sort direction of the list. A valid value is ``asc``\n(ascending) or ``desc`` (descending).", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_dir", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "events": [
+                  {
+                    "event_time": "2014-07-23T08:14:47Z", 
+                    "id": "474bfdf0-a450-46ec-a78a-0c7faa404073", 
+                    "links": [
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port/events/474bfdf0-a450-46ec-a78a-0c7faa404073", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port", 
+                        "rel": "resource"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5", 
+                        "rel": "stack"
+                      }
+                    ], 
+                    "logical_resource_id": "port", 
+                    "physical_resource_id": null, 
+                    "resource_name": "port", 
+                    "resource_status": "CREATE_FAILED", 
+                    "resource_status_reason": "NotFound: Subnet f8a699d0-3537-429e-87a5-6b5a8d0c2bf0 could not be found"
+                  }, 
+                  {
+                    "event_time": "2014-07-23T08:14:47Z", 
+                    "id": "66fa95b6-e6f8-4f05-b1af-e828f5aba04c", 
+                    "links": [
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port/events/66fa95b6-e6f8-4f05-b1af-e828f5aba04c", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port", 
+                        "rel": "resource"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5", 
+                        "rel": "stack"
+                      }
+                    ], 
+                    "logical_resource_id": "port", 
+                    "physical_resource_id": null, 
+                    "resource_name": "port", 
+                    "resource_status": "CREATE_IN_PROGRESS", 
+                    "resource_status_reason": "state changed"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List stack events", 
+        "tags": [
+          "stack-events"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Preview an update for a specified stack", 
+        "examples": {
+          "application/json": {
+            "parameters": {
+              "flavor": "m1.small"
+            }, 
+            "template": {
+              "description": "Create a simple stack", 
+              "heat_template_version": "2013-05-23", 
+              "parameters": {
+                "flavor": {
+                  "default": "m1.tiny", 
+                  "type": "string"
+                }
+              }, 
+              "resources": {
+                "hello_world": {
+                  "properties": {
+                    "flavor": {
+                      "get_param": "flavor"
+                    }, 
+                    "image": "40be8d1a-3eb9-40de-8abd-43237517384f", 
+                    "key_name": "heat_key", 
+                    "user_data": "#!/bin/bash -xv\necho \"hello world\" > /root/hello-world.txt\n"
+                  }, 
+                  "type": "OS::Nova::Server"
+                }
+              }
+            }
+          }
+        }, 
+        "id": "stack_update_preview", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_update_preview"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "added": [
+                  {
+                    "physical_resource_id": "{resource id or ''}", 
+                    "resource_action": "CREATE", 
+                    "resource_name": "", 
+                    "resource_status": "COMPLETE", 
+                    "resource_status_reason": "", 
+                    "resource_type": "restype", 
+                    "stack_identity": "{stack_id}", 
+                    "stack_name": "{stack_name}", 
+                    "updated_time": "datetime"
+                  }
+                ], 
+                "deleted": [
+                  {
+                    "physical_resource_id": "{resource id or ''}", 
+                    "resource_action": "CREATE", 
+                    "resource_name": "", 
+                    "resource_status": "COMPLETE", 
+                    "resource_status_reason": "", 
+                    "resource_type": "restype", 
+                    "stack_identity": "{stack_id}", 
+                    "stack_name": "{stack_name}", 
+                    "updated_time": "datetime"
+                  }
+                ], 
+                "replaced": [
+                  {
+                    "physical_resource_id": "{resource id or ''}", 
+                    "resource_action": "CREATE", 
+                    "resource_name": "", 
+                    "resource_status": "COMPLETE", 
+                    "resource_status_reason": "", 
+                    "resource_type": "restype", 
+                    "stack_identity": "{stack_id}", 
+                    "stack_name": "{stack_name}", 
+                    "updated_time": "datetime"
+                  }
+                ], 
+                "unchanged": [
+                  {
+                    "physical_resource_id": "{resource id or ''}", 
+                    "resource_action": "CREATE", 
+                    "resource_name": "", 
+                    "resource_status": "COMPLETE", 
+                    "resource_status_reason": "", 
+                    "resource_type": "restype", 
+                    "stack_identity": "{stack_id}", 
+                    "stack_name": "{stack_name}", 
+                    "updated_time": "datetime"
+                  }
+                ], 
+                "updated": [
+                  {
+                    "physical_resource_id": "{resource id or ''}", 
+                    "resource_action": "CREATE", 
+                    "resource_name": "", 
+                    "resource_status": "COMPLETE", 
+                    "resource_status_reason": "", 
+                    "resource_type": "restype", 
+                    "stack_identity": "{stack_id}", 
+                    "stack_name": "{stack_name}", 
+                    "updated_time": "datetime"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Preview stack update", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists resources in a stack.", 
+        "examples": {}, 
+        "id": "resource_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Includes resources from nested stacks up to the ``nested_depth``\nlevels of recursion.", 
+            "format": "", 
+            "in": "query", 
+            "name": "nested_depth", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Enables detailed resource information for each resource in list of\nresources.", 
+            "format": "", 
+            "in": "query", 
+            "name": "with_detail", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "resources": [
+                  {
+                    "creation_time": "2015-06-25T14:59:53", 
+                    "links": [
+                      {
+                        "href": "http://hostname/v1/1234/stacks/mystack/629a32d0-ac4f-4f63-b58d-f0d047b1ba4c/resources/random_key_name", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "http://hostname/v1/1234/stacks/mystack/629a32d0-ac4f-4f63-b58d-f0d047b1ba4c", 
+                        "rel": "stack"
+                      }
+                    ], 
+                    "logical_resource_id": "random_key_name", 
+                    "physical_resource_id": "mystack-random_key_name-pmjmy5pks735", 
+                    "required_by": [], 
+                    "resource_name": "random_key_name", 
+                    "resource_status": "CREATE_COMPLETE", 
+                    "resource_status_reason": "state changed", 
+                    "resource_type": "OS::Heat::RandomString", 
+                    "updated_time": "2015-06-25T14:59:53"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List resources", 
+        "tags": [
+          "stack-resources"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows data for a specified resource.", 
+        "examples": {}, 
+        "id": "resource_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "resource": {
+                  "attributes": {
+                    "value": "I9S20uIp"
+                  }, 
+                  "creation_time": "2015-06-25T14:59:53", 
+                  "description": "", 
+                  "links": [
+                    {
+                      "href": "http://hostname/v1/1234/stacks/mystack/629a32d0-ac4f-4f63-b58d-f0d047b1ba4c/resources/random_key_name", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "http://hostname/v1/1234/stacks/mystack/629a32d0-ac4f-4f63-b58d-f0d047b1ba4c", 
+                      "rel": "stack"
+                    }
+                  ], 
+                  "logical_resource_id": "random_key_name", 
+                  "physical_resource_id": "mystack-random_key_name-pmjmy5pks735", 
+                  "required_by": [], 
+                  "resource_name": "random_key_name", 
+                  "resource_status": "CREATE_COMPLETE", 
+                  "resource_status_reason": "state changed", 
+                  "resource_type": "OS::Heat::RandomString", 
+                  "updated_time": "2015-06-25T14:59:53"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show resource data", 
+        "tags": [
+          "stack-resources"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists events for a specified stack resource.", 
+        "examples": {}, 
+        "id": "resource_event_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource action. You can use\nthis filter multiple times to filter by multiple resource actions.\nValid resource actions are ``ADOPT`` , ``CHECK`` , ``CREATE`` ,\n``DELETE`` , ``INIT`` , ``RESTORE`` , ``RESUME`` , ``ROLLBACK`` ,\n``SNAPSHOT`` , ``SUSPEND`` , and ``UPDATE`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_action", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource status. You can use\nthis filter multiple times to filter by multiple resource statuses.\nValid resource statuses are ``COMPLETE`` , ``FAILED`` , and\n``IN_PROGRESS`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_status", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource name. You can use\nthis filter multiple times to filter by multiple resource names.", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the event list by a specified resource type. You can use\nthis filter multiple times to filter by multiple resource types.\nValid resource types include ``OS::Cinder::Volume`` ,\n``OS::Nova::Server`` , ``OS::Neutron::Port`` , and so on.", 
+            "format": "", 
+            "in": "query", 
+            "name": "resource_type", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Sorts the list by the ``resource_type`` or ``created_at`` key.", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_keys", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The sort direction of the list. A valid value is ``asc``\n(ascending) or ``desc`` (descending).", 
+            "format": "", 
+            "in": "query", 
+            "name": "sort_dir", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "events": [
+                  {
+                    "event_time": "2014-07-23T08:14:47Z", 
+                    "id": "474bfdf0-a450-46ec-a78a-0c7faa404073", 
+                    "links": [
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port/events/474bfdf0-a450-46ec-a78a-0c7faa404073", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port", 
+                        "rel": "resource"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5", 
+                        "rel": "stack"
+                      }
+                    ], 
+                    "logical_resource_id": "port", 
+                    "physical_resource_id": null, 
+                    "resource_name": "port", 
+                    "resource_status": "CREATE_FAILED", 
+                    "resource_status_reason": "NotFound: Subnet f8a699d0-3537-429e-87a5-6b5a8d0c2bf0 could not be found"
+                  }, 
+                  {
+                    "event_time": "2014-07-23T08:14:47Z", 
+                    "id": "66fa95b6-e6f8-4f05-b1af-e828f5aba04c", 
+                    "links": [
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port/events/66fa95b6-e6f8-4f05-b1af-e828f5aba04c", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5/resources/port", 
+                        "rel": "resource"
+                      }, 
+                      {
+                        "href": "http://192.168.123.200:8004/v1/dc4b074874244f7693dd65583733a758/stacks/aws_port/db467ed1-50b5-4a3e-aeb1-396ff1d151c5", 
+                        "rel": "stack"
+                      }
+                    ], 
+                    "logical_resource_id": "port", 
+                    "physical_resource_id": null, 
+                    "resource_name": "port", 
+                    "resource_status": "CREATE_IN_PROGRESS", 
+                    "resource_status_reason": "state changed"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List resource events", 
+        "tags": [
+          "stack-events"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}": [
+      {
+        "consumes": [], 
+        "description": "Shows details for a specified event.", 
+        "examples": {}, 
+        "id": "event_show", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of an event related to the resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "event_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show event details", 
+        "tags": [
+          "stack-events"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows metadata for a specified resource.", 
+        "examples": {}, 
+        "id": "resource_metadata", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "metadata": {
+                  "some_key": "some_value", 
+                  "some_other_key": "some_other_value"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show resource metadata", 
+        "tags": [
+          "stack-resources"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal": [
+      {
+        "consumes": [], 
+        "description": "Sends a signal to a specified resource.\n\nThe contents of the request body depends on the resource to which\nyou send a signal.\n\nSome resources cannot receive signals. If you send them a signal,\nthey return a 400 error code.", 
+        "examples": {}, 
+        "id": "resource_signal", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The name of a resource in the stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Send a signal to a resource", 
+        "tags": [
+          "stack-resources"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Takes a snapshot of all the resources in the stack. All snapshots\nare deleted upon deletion of the stack.", 
+        "examples": {
+          "application/json": {
+            "name": "vol_snapshot"
+          }
+        }, 
+        "id": "stack_snapshot", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/stack_snapshot"
+            }
+          }, 
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "creation_time": "2015-09-01T20:57:55Z", 
+                "data": null, 
+                "id": "13c3a4b5-0585-440e-85a4-6f96b20e7a78", 
+                "name": "vol_snapshot", 
+                "status": "IN_PROGRESS", 
+                "status_reason": null
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Snapshot stack", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the stack snapshots.", 
+        "examples": {}, 
+        "id": "stack_list_snapshot", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshots": [
+                  {
+                    "creation_time": "2015-08-04T20:57:55Z", 
+                    "data": null, 
+                    "id": "7c4e1ef4-bf1b-41ab-a0c8-ce01f4ffdfa1", 
+                    "name": "vol_snapshot", 
+                    "status": "IN_PROGRESS", 
+                    "status_reason": null
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List snapshots", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a specified snapshot.", 
+        "examples": {}, 
+        "id": "stack_show_snapshot", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The snapshot ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshot": {
+                  "creation_time": "2015-08-04T20:57:55Z", 
+                  "data": {
+                    "action": "SNAPSHOT", 
+                    "environment": {
+                      "parameters": {}, 
+                      "resource_registry": {
+                        "resources": {}
+                      }
+                    }, 
+                    "id": "656452c2-e151-40da-8704-c844e69b485c", 
+                    "name": "stack_vol1", 
+                    "project_id": "ecdb08032cd042179692a1b148f6565e", 
+                    "resources": {
+                      "volume": {
+                        "action": "SNAPSHOT", 
+                        "metadata": {}, 
+                        "name": "volume", 
+                        "resource_data": {
+                          "backup_id": "99108cf8-398f-461b-a043-bdceb7c9f572"
+                        }, 
+                        "resource_id": "3ab8cf79-807b-4c40-b743-0655f91e072f", 
+                        "status": "COMPLETE", 
+                        "type": "OS::Cinder::Volume"
+                      }
+                    }, 
+                    "stack_user_project_id": "fffa11067b1c48129ddfb78fba2bf09f", 
+                    "status": "COMPLETE", 
+                    "template": {
+                      "heat_template_version": "2013-05-23", 
+                      "resources": {
+                        "volume": {
+                          "properties": {
+                            "size": 1
+                          }, 
+                          "type": "OS::Cinder::Volume"
+                        }
+                      }
+                    }
+                  }, 
+                  "id": "7c4e1ef4-bf1b-41ab-a0c8-ce01f4ffdfa1", 
+                  "name": "vol_snapshot", 
+                  "status": "COMPLETE", 
+                  "status_reason": "Stack SNAPSHOT completed successfully"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show snapshot", 
+        "tags": [
+          "stacks"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a stack snapshot.", 
+        "examples": {}, 
+        "id": "stack_delete_snapshot", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The snapshot ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete snapshot", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore": [
+      {
+        "consumes": [], 
+        "description": "Restores a stack snapshot. You can restore only active stacks from\na snapshot. Deleted stacks must be recreated.", 
+        "examples": {}, 
+        "id": "stack_restore_snapshot", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The snapshot ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Restore snapshot", 
+        "tags": [
+          "stacks"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Gets a template for a specified stack.", 
+        "examples": {}, 
+        "id": "stack_template", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of a stack.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The stack ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "stack_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "description": "Hello world HOT template that just defines a single server. Contains just base features to verify base HOT support.\n", 
+                "heat_template_version": "2013-05-23", 
+                "outputs": {
+                  "foo": {
+                    "description": "Show foo parameter value", 
+                    "value": {
+                      "get_param": "foo"
+                    }
+                  }
+                }, 
+                "parameters": {
+                  "foo": {
+                    "default": "secret", 
+                    "description": "Name of an existing key pair to use for the server", 
+                    "hidden": true, 
+                    "type": "string"
+                  }
+                }, 
+                "resources": {
+                  "random_key_name": {
+                    "properties": {
+                      "length": 8
+                    }, 
+                    "type": "OS::Heat::RandomString"
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Get stack template", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/template_versions": [
+      {
+        "consumes": [], 
+        "description": "Lists all available template versions.", 
+        "examples": {}, 
+        "id": "template_version_list", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List template versions", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/validate": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Validates a specified template.", 
+        "examples": {
+          "application/json": {
+            "template_url": "/PATH_TO_HEAT_TEMPLATES/WordPress_Single_Instance.template"
+          }
+        }, 
+        "id": "template_validate", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/template_validate"
+            }
+          }, 
+          {
+            "description": "The ID of the tenant. A tenant is also known as an account or\nproject.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "Description": "A template that provides a single server instance.", 
+                "ParameterGroups": [
+                  {
+                    "description": "My parameter groups", 
+                    "label": "Parameter groups", 
+                    "parameters": [
+                      "param_name-1", 
+                      "param_name-2"
+                    ]
+                  }
+                ], 
+                "Parameters": {
+                  "key_name": {
+                    "description": "Keypair name for SSH access to the server", 
+                    "required": true, 
+                    "type": "String"
+                  }, 
+                  "server-size": {
+                    "constraints": [
+                      {
+                        "allowed_values": [
+                          "512MB Standard Instance", 
+                          "1GB Standard Instance", 
+                          "4GB Standard Instance", 
+                          "8GB Standard Instance"
+                        ], 
+                        "description": "Must be a valid server size."
+                      }
+                    ], 
+                    "default": "1GB Standard Instance", 
+                    "description": "Server size", 
+                    "type": "String"
+                  }, 
+                  "server_name": {
+                    "default": "My server", 
+                    "description": "My server", 
+                    "type": "String"
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Validate template", 
+        "tags": [
+          "stack-templates"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "General API information", 
+      "name": "general-info", 
+      "summary": "Authenticated calls that target a known URI but that use an HTTP\nmethod that the implementation does not support return a\n``405Method Not Allowed`` error code. In addition, the HTTP\n``OPTIONS`` method is supported for each known URI. In both cases,\nthe ``Allow`` response header indicates the HTTP methods that are\nsupported for the resource."
+    }, 
+    {
+      "description": "API versions", 
+      "name": "heat-versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stacks", 
+      "name": "stacks", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stack actions", 
+      "name": "stack-actions", 
+      "summary": "Performs non-lifecycle operations on the stack. Specify the action\nin the request body."
+    }, 
+    {
+      "description": "Stack resources", 
+      "name": "stack-resources", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stack events", 
+      "name": "stack-events", 
+      "summary": ""
+    }, 
+    {
+      "description": "Templates", 
+      "name": "stack-templates", 
+      "summary": ""
+    }, 
+    {
+      "description": "Build info", 
+      "name": "build-info", 
+      "summary": ""
+    }, 
+    {
+      "description": "Software configuration", 
+      "name": "software-config", 
+      "summary": ""
+    }, 
+    {
+      "description": "Manage service", 
+      "name": "service-status", 
+      "summary": ""
+    }
+  ]
+}

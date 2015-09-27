@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the resource.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Policy links.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "If ``true`` , the domain is enabled. If ``false`` , the domain is\ndisabled.", 
+      "format": ""
+    }, 
+    "domains": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``domains`` object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The domain ID.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The description.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "Metadata value to be set.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "Host ID to add to an aggregate.", 
+      "format": ""
+    }
+  }
+}

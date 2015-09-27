@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "net_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the virtual network.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the virtual interface.", 
+      "format": ""
+    }, 
+    "virtual_interfaces": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``virtual_interfaces`` object.", 
+      "format": ""
+    }, 
+    "mac_address": {
+      "required": true, 
+      "type": "string", 
+      "description": "The MAC address.", 
+      "format": ""
+    }
+  }
+}

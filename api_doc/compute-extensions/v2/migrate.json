@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "migrate": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``migrate`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

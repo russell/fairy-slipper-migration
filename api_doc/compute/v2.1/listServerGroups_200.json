@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "server_groups": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``server_groups`` object.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the server group.", 
+      "format": ""
+    }, 
+    "members": {
+      "required": true, 
+      "type": "object", 
+      "description": "A list of members in the server group.", 
+      "format": ""
+    }, 
+    "policies": {
+      "required": true, 
+      "type": "object", 
+      "description": "A list of policies associated with the server group.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the server group.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "Associated metadata key-and-value pairs.", 
+      "format": ""
+    }
+  }
+}

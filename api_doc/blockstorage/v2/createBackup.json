@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "container": {
+      "required": true, 
+      "type": "string", 
+      "description": "The container name or null.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup description or null.", 
+      "format": ""
+    }, 
+    "incremental": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "The backup mode. A valid value is ``True`` for incremental backup\nmode or ``False`` for full backup mode. Default is ``False`` .", 
+      "format": ""
+    }, 
+    "volume_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the volume that you want to back up.", 
+      "format": ""
+    }, 
+    "backup": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``backup`` object.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup name.", 
+      "format": ""
+    }
+  }
+}

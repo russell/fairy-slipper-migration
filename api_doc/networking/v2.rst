@@ -1,0 +1,451 @@
+.. http:get:: /v2.0
+   :synopsis: Show API v2.0 details
+
+   Shows details for Networking API v2.0.
+
+   :responseexample 200: v2/examples/showVersionDetailsv2-neutron_resp_200.json
+   :responseexample 203: v2/examples/showVersionDetailsv2-neutron_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 203: 
+
+
+.. http:get:: /v2.0/networks/{network_id}
+   :synopsis: Show network
+
+   Shows information for a specified network.
+   
+   You can control which response parameters are returned by using the
+   fields query parameter. For information, see Filtering and column
+   selection .
+   
+   In addition to the following response parameters, the response
+   might show extension response parameters. For information, see
+   Networks multiple provider extension (networks) .
+
+   :responseexample 200: v2/examples/showNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/networks/{network_id}
+   :synopsis: Update network
+
+   Updates a specified network.
+
+   :requestexample: v2/examples/updateNetwork_req.json
+   :responseexample 200: v2/examples/updateNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/networks/{network_id}
+   :synopsis: Delete network
+
+   Deletes a specified network and its associated resources.
+
+   :tag: networks
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/subnets
+   :synopsis: List subnets
+
+   Lists subnets to which the specified tenant has access.
+   
+   Default policy settings returns exclusively subnets owned by the
+   tenant submitting the request, unless the request is submitted by a
+   user with administrative rights. You can control which attributes
+   are returned by using the fields query parameter. You can filter
+   results by using query string parameters.
+
+   :responseexample 200: v2/examples/listSubnets_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnets
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/subnets
+   :synopsis: Create subnet
+
+   Creates a subnet on a specified network.
+   
+   OpenStack Networking does not try to derive the correct IP version
+   from the specified CIDR. If you do not specify the ``gateway_ip``
+   attribute, OpenStack Networking allocates an address from the CIDR
+   for the gateway for the subnet.
+   
+   To specify a subnet without a gateway, set the ``gateway_ip``
+   attribute to ``null`` in the request body. If you do not specify
+   the ``allocation_pools`` attribute, OpenStack Networking
+   automatically allocates pools for covering all IP addresses in the
+   CIDR, excluding the address reserved for the subnet gateway.
+   Otherwise, you can explicitly specify allocation pools as shown in
+   the following example.
+   
+   When you specify both the ``allocation_pools`` and ``gateway_ip``
+   attributes, you must ensure that the gateway IP does not overlap
+   with the specified allocation pools; otherwise a 409 Conflict error
+   occurs.
+   
+   A subnet can have one or more name servers and host routes. Hosts
+   in this subnet use the specified name servers. Devices with IP
+   addresses from this subnet, not including the local subnet route,
+   use the specified host routes.
+   
+   Specify the ``ipv6_ra_mode`` and ``ipv6_address_mode`` attributes
+   to create subnets that support IPv6 configurations, such as
+   Stateless Address Autoconfiguration (SLAAC), DHCPv6 Stateful, and
+   DHCPv6 Stateless configurations.
+
+   :requestexample: v2/examples/createSubnet_req.json
+   :responseexample 201: v2/examples/createSubnet_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnets
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 409: 
+
+
+.. http:post:: /v2.0/subnets
+   :synopsis: Bulk create subnet
+
+   Creates multiple subnets in a single request. Specify a list of
+   subnets in the request body.
+   
+   The bulk create operation is always atomic. Either all or no
+   subnets in the request body are created.
+
+   :requestexample: v2/examples/bulkCreateSubnet_req.json
+   :responseexample 201: v2/examples/bulkCreateSubnet_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnets
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 409: 
+
+
+.. http:get:: /v2.0/ports/{port_id}
+   :synopsis: Show port
+
+   Shows information for a specified port.
+
+   :responseexample 200: v2/examples/showPort_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ports
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/ports/{port_id}
+   :synopsis: Update port
+
+   Updates a specified port.
+   
+   You can update information for a port, such as its symbolic name
+   and associated IPs. When you update IPs for a port, any previously
+   associated IPs are removed, returned to the respective subnets
+   allocation pools, and replaced by the IPs specified in the body for
+   the update request. Therefore, this operation replaces the
+   ``fixed_ip`` attribute when it is specified in the request body. If
+   the updated IP addresses are not valid or are already in use, the
+   operation fails and the existing IP addresses are not removed from
+   the port.
+   
+   When you update security groups for a port and the operation
+   succeeds, any associated security groups are removed and replaced
+   by the security groups specified in the body for the update
+   request. Therefore, this operation replaces the ``security_groups``
+   attribute when you specify it in the request body. However, if the
+   specified security groups are not valid, the operation fails and
+   the existing security groups are not removed from the port.
+
+   :requestexample: v2/examples/updatePort_req.json
+   :responseexample 200: v2/examples/updatePort_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ports
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 409: 
+
+
+.. http:delete:: /v2.0/ports/{port_id}
+   :synopsis: Delete port
+
+   Deletes a specified port.
+   
+   Any IP addresses that are associated with the port are returned to
+   the respective subnets allocation pools.
+
+   :tag: ports
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/extensions/{alias}
+   :synopsis: Get extension details
+
+   Gets detailed information for a specified extension.
+
+   :responseexample 200: v2/examples/getExtension_resp_200.json
+   :responseexample 203: v2/examples/getExtension_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :parameter alias: The alias of an extension.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/extensions
+   :synopsis: List extensions
+
+   Lists available Networking API extensions.
+
+   :responseexample 200: v2/examples/listExtensions_resp_200.json
+   :responseexample 203: v2/examples/listExtensions_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/ports
+   :synopsis: List ports
+
+   Lists ports to which the tenant has access.
+   
+   Default policy settings return only those ports that are owned by
+   the tenant who submits the request, unless the request is submitted
+   by a user with administrative rights. Users can control which
+   attributes are returned by using the fields query parameter.
+   Additionally, you can filter results by using query string
+   parameters. For information, see Filtering and Column Selection .
+
+   :responseexample 200: v2/examples/listPorts_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ports
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/ports
+   :synopsis: Create port
+
+   Creates a port on a specified network.
+   
+   You must specify the ``network_id`` attribute in the request body
+   to define the network where the port is to be created.
+
+   :requestexample: v2/examples/createPort_req.json
+   :responseexample 201: v2/examples/createPort_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ports
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/ports
+   :synopsis: Bulk create ports
+
+   Creates multiple ports in a single request. Specify a list of ports
+   in the request body.
+   
+   Guarantees the atomic completion of the bulk operation.
+
+   :requestexample: v2/examples/bulkCreatePorts_req.json
+   :responseexample 201: v2/examples/bulkCreatePorts_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ports
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:get:: /
+   :synopsis: List API versions
+
+   Lists information about all Networking API versions.
+
+   :responseexample 300: v2/examples/listVersionsv2-neutron_resp_300.json
+   :responseexample 200: v2/examples/listVersionsv2-neutron_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:get:: /v2.0/networks
+   :synopsis: List networks
+
+   Lists networks to which the specified tenant has access.
+   
+   You can control which response parameters are returned by using the
+   fields query parameter. For information, see Filtering and column
+   selection .
+
+   :responseexample 200: v2/examples/listNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/networks
+   :synopsis: Create network
+
+   Creates a network.
+   
+   A request body is optional. An administrative user can specify
+   another tenant ID, which is the tenant who owns the network, in the
+   request body.
+
+   :requestexample: v2/examples/createNetwork_req.json
+   :responseexample 201: v2/examples/createNetwork_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v2.0/networks
+   :synopsis: Bulk create networks
+
+   Creates multiple networks in a single request.
+   
+   In the request body, specify a list of networks.
+   
+   The bulk create operation is always atomic. Either all or no
+   networks in the request body are created.
+
+   :requestexample: v2/examples/bulkCreateNetwork_req.json
+   :responseexample 201: v2/examples/bulkCreateNetwork_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: networks
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/subnets/{subnet_id}
+   :synopsis: Show subnet
+
+   Shows information for a specified subnet.
+   
+   Use the fields query parameter to filter the results.
+
+   :responseexample 200: v2/examples/showSubnet_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnets
+   :parameter subnet_id: The UUID for the subnet of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/subnets/{subnet_id}
+   :synopsis: Update subnet
+
+   Updates a specified subnet.
+   
+   Some attributes, such as IP version (ip_version), and CIDR (cidr)
+   cannot be updated. Attempting to update these attributes results in
+   a ``400 BadRequest`` error.
+
+   :requestexample: v2/examples/updateSubnet_req.json
+   :responseexample 200: v2/examples/updateSubnet_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnets
+   :parameter subnet_id: The UUID for the subnet of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/subnets/{subnet_id}
+   :synopsis: Delete subnet
+
+   Deletes a specified subnet.
+   
+   The operation fails if subnet IP addresses are still allocated.
+
+   :tag: subnets
+   :parameter subnet_id: The UUID for the subnet of interest to you.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+

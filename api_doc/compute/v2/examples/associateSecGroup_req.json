@@ -1,0 +1,5 @@
+{
+  "security_group": {
+    "name": "secgroup_name"
+  }
+}

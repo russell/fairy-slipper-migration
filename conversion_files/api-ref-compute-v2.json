@@ -1,0 +1,120 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#changePassword": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#confirmServer": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#createImage": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#createImageMetadata": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#createServer": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#createServerMetadata": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#deleteImage": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#deleteImageMetadataItem": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#deleteServer": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#deleteServerMetadataItem": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getExtensionv2": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getFlavor": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getImage": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getImageMetadataItem": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getNetworkAddresses": "server-addresses", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getServer": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getServerAddresses": "server-addresses", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#getServerMetadataItem": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listDetailFlavors": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listDetailImages": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listDetailServers": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listExtensionsv2": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listFlavors": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listImages": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listLimits": "limits", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listServers": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#listVersionsv2": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#rebootServer": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#rebuildServer": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#resizeServer": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#revertServer": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#setImageMetadataItem": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#setServerMetadataItem": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#showImageMetadata": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#showServerMetadata": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#updateImageMetadata": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#updateServer": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#updateServerMetadata": "server-metadata"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#Flavors": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#Images": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#Network_label": "server-addresses", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#ServerMetadataKey": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#Servers": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#action": "server-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#extension": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#extensions": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#flavor_detail": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#flavor_id": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#imageMetadataKey": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#image_detail": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#image_id": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#image_metadata": "image-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#ips": "server-addresses", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#limits": "limits", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#server_detail": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#server_id": "servers", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#server_metadata": "server-metadata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/wadl/os-compute-2.wadl#versions": "versions"
+  }, 
+  "service": "compute", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": "Lists information for all API versions."
+    }, 
+    {
+      "description": "Limits", 
+      "name": "limits", 
+      "summary": "Gets rate and absolute limits.\n\nAn absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite."
+    }, 
+    {
+      "description": "Extensions", 
+      "name": "extensions", 
+      "summary": "Lists available Compute API v2 extensions and shows details for a\nspecified extension."
+    }, 
+    {
+      "description": "Servers", 
+      "name": "servers", 
+      "summary": "Lists, creates, gets details for, updates, and deletes servers.\n\n- **Passwords**\n  When you create a server, you can specify a password through the\n  optional adminPass attribute. The specified password must meet\n  the complexity requirements set by your OpenStack Compute\n  provider. The server might enter an ``ERROR`` state if the\n  complexity requirements are not met. In this case, a client might\n  issue a change password action to reset the server password.\n  If you do not specify a password, a randomly generated password\n  is assigned and returned in the response object. This password is\n  guaranteed to meet the security requirements set by the compute\n  provider. For security reasons, the password is not returned in\n  subsequent GET calls.\n\n- **Server metadata**\n  You can specify custom server metadata at server launch time. The\n  maximum size for each metadata key-value pair is 255 bytes. The\n  maximum number of key-value pairs that can be supplied per server\n  is determined by the compute provider. You can query this value\n  through the ``maxServerMeta`` absolute limit.\n\n- **Server networks**\n  You can specify networks to which the server connects at launch\n  time. You can specify one or more networks. Users can also\n  specify a specific port on the network or the fixed IP address to\n  assign to the server interface.\n  You can use both IPv4 and IPv6 addresses as access addresses and\n  you can assign both addresses simultaneously. You can update\n  access addresses after you create a server.\n\n- **Server personality**\n  You can customize the personality of a server instance by\n  injecting data into its file system. For example, you might want\n  to insert ssh keys, set configuration files, or store data that\n  you want to retrieve from inside the instance. This feature\n  provides a minimal amount of launch-time personalization. If you\n  require significant customization, create a custom image.\n  Follow these guidelines when you inject files:\n - The maximum size of the file path data is 255 bytes.\n\n - Encode the file contents as a Base64 string. The compute providers\n   determines the maximum size of the file contents. This value can\n   vary based on the image that is used to create the server.\n   The maximum limit refers to the number of bytes in the decoded\n   data and not to the number of characters in the encoded data.\n\n - You can inject only text files. You cannot inject binary or ZIP\n   files into a new build.\n\n - The ``maxPersonality`` absolute limit defines the maximum number\n   of file path and content pairs that you can supply. The compute\n   provider determines this value.\n\n - The ``maxPersonalitySize`` absolute limit is a byte limit that is\n   guaranteed to apply to all images in the deployment. Providers\n   can set additional per-image personality limits.\n\n   The file injection might not occur until after the server is\n   built and booted.\n   During file injection, any existing files that match specified\n   files are renamed to include the BAK extension appended with a\n   time stamp. For example, if the ``/etc/passwd`` file exists, it\n   is backed up as ``/etc/passwd.bak.1246036261.5785`` .\n   After file injection, only system administrators can access\n   personality files. For example, on Linux, all files have root as\n   the owner and the root group as the group owner, and allow only\n   user and group read access (chmod 440).\n\n- **Server access addresses**\n  In a hybrid environment, the underlying implementation might not\n  control the IP address of a server. Instead, the access IP\n  address might be part of the dedicated hardware; for example, a\n  router/NAT device. In this case, the addresses provided by the\n  implementation cannot actually be used to access the server (from\n  outside the local LAN). Here, a separate access address might be\n  assigned at creation time to provide access to the server. This\n  address might not be directly bound to a network interface on the\n  server and might not necessarily appear when you query the server\n  addresses. Nonetheless, clients that must access the server\n  directly are encouraged to do so through an access address."
+    }, 
+    {
+      "description": "Server metadata", 
+      "name": "server-metadata", 
+      "summary": "Shows details for, sets, updates, and deletes server metadata and\nmetadata items."
+    }, 
+    {
+      "description": "Server addresses", 
+      "name": "server-addresses", 
+      "summary": "Lists addresses for a specified server or a specified server and\nnetwork."
+    }, 
+    {
+      "description": "Server actions", 
+      "name": "server-actions", 
+      "summary": "Performs actions for a specified server: Changes administrator\npassword, reboots, rebuilds, and resizes servers, and creates an\nimage from a server."
+    }, 
+    {
+      "description": "Flavors", 
+      "name": "flavors", 
+      "summary": "Lists available flavors and gets details for a specified flavor. A\nflavor is a hardware configuration for a server. Each flavor is a\nunique combination of disk space and memory capacity."
+    }, 
+    {
+      "description": "Images", 
+      "name": "images", 
+      "summary": "Lists, gets details for, and deletes images.\n\nAlso, sets, lists, gets details for, and deletes image metadata.\n\nAn image is a collection of files that you use to create and\nrebuild a server. By default, operators provide pre-built operating\nsystem images. You can also create custom images: See Computer\nserver actions."
+    }, 
+    {
+      "description": "Image metadata", 
+      "name": "image-metadata", 
+      "summary": "Shows details for, sets, updates, and deletes image metadata or\nmetadata items."
+    }
+  ], 
+  "title": "Compute API", 
+  "version": "v2"
+}

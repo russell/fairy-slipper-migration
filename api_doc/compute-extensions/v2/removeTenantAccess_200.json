@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "tenant_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The tenant ID.", 
+      "format": ""
+    }, 
+    "flavor_id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The flavor ID.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The status of the pool. Indicates whether the pool is operational.", 
+      "format": ""
+    }, 
+    "lb_method": {
+      "required": true, 
+      "type": "string", 
+      "description": "The load-balancer algorithm, which is round-robin, least-\nconnections, and so on, that is used to distribute traffic to the\npool members. This value, which must be supported, is dependent on\nthe load-balancer provider. The round-robin algorithm must be\nsupported.", 
+      "format": ""
+    }, 
+    "protocol": {
+      "required": true, 
+      "type": "string", 
+      "description": "The protocol of the pool, which is TCP, HTTP, or HTTPS.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The description for the pool.", 
+      "format": ""
+    }, 
+    "vip_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of VIP.", 
+      "format": ""
+    }, 
+    "health_monitors": {
+      "required": false, 
+      "type": "array", 
+      "description": "List of health monitors that are associated with the pool.", 
+      "format": ""
+    }, 
+    "subnet_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "All members of this pool are on this subnet.", 
+      "format": ""
+    }, 
+    "tenant_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the tenant who owns the pool. Only administrative users\ncan specify a tenant ID other than their own.", 
+      "format": ""
+    }, 
+    "admin_state_up": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "The administrative state of the pool, which is up ( ``true`` ) or\ndown ( ``false`` ).", 
+      "format": ""
+    }, 
+    "session_persistence": {
+      "required": false, 
+      "type": "object", 
+      "description": "The session persistence algorithm, if any, to use. This algorithm\nis a dictionary with the ``type`` and ``cookie_name`` keys.", 
+      "format": ""
+    }, 
+    "health_monitors_status": {
+      "required": true, 
+      "type": "string", 
+      "description": "Information about the health monitors that are associated with the\npool.", 
+      "format": ""
+    }, 
+    "members": {
+      "required": true, 
+      "type": "array", 
+      "description": "List of members that belong to the pool.", 
+      "format": ""
+    }, 
+    "provider": {
+      "required": true, 
+      "type": "string", 
+      "description": "The load-balancer provider.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The unique ID for the pool.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Pool name. Does not have to be unique.", 
+      "format": ""
+    }
+  }
+}

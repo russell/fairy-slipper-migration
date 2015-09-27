@@ -1,0 +1,9 @@
+{
+  "flavor": {
+    "vcpus": 2, 
+    "disk": 10, 
+    "ram": 1024, 
+    "id": "10", 
+    "name": "test_flavor"
+  }
+}

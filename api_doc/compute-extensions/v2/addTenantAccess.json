@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "addTenantAccess": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``addTenantAccess`` action.", 
+      "format": ""
+    }, 
+    "tenant": {
+      "required": true, 
+      "type": "string", 
+      "description": "The UUID of the tenant to which to give access.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "interfaceAttachment": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``interfaceAttachment`` action in the request body.", 
+      "format": ""
+    }, 
+    "port_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the port for which you want to create an interface.\n\nThe ``net_id`` and ``port_id`` parameters are mutually exclusive.\n\nIf you do not specify the ``port_id`` parameter, the OpenStack\nNetworking API v2.0 allocates a port on the specified network.", 
+      "format": ""
+    }, 
+    "fixed_ips": {
+      "required": false, 
+      "type": "string", 
+      "description": "Fixed IP addresses with subnet IDs.\n\nIf you request a specific fixed IP address without a ``net_id`` ,\nthe request returns a ``400 BadRequest`` error code.", 
+      "format": ""
+    }, 
+    "net_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the network for which you want to create an interface.\n\nThe ``net_id`` and ``port_id`` parameters are mutually exclusive.\n\nIf you do not specify the ``net_id`` parameter, the OpenStack\nNetworking API v2.0 uses the network information cache that is\nassociated with the instance.", 
+      "format": ""
+    }
+  }
+}

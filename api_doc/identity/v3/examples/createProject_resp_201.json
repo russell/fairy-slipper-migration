@@ -1,0 +1,12 @@
+{
+  "project": {
+    "name": "myNewProject", 
+    "links": {
+      "self": "http://identity:35357/v3/projects/456789"
+    }, 
+    "enabled": true, 
+    "id": "456789", 
+    "parent_id": "123c56", 
+    "domain_id": "1789d1"
+  }
+}

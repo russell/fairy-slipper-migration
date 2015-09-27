@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "device": {
+      "required": false, 
+      "type": "string", 
+      "description": "The device name.", 
+      "format": ""
+    }, 
+    "disk_bus": {
+      "required": false, 
+      "type": "string", 
+      "description": "The disk bus name.", 
+      "format": ""
+    }, 
+    "device_type": {
+      "required": false, 
+      "type": "string", 
+      "description": "The device type name.", 
+      "format": ""
+    }, 
+    "volume_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The volume ID.", 
+      "format": ""
+    }
+  }
+}

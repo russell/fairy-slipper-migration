@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "datastore": {
+      "required": true, 
+      "type": "string", 
+      "description": "Datastore assigned to the configuration group. Required if default\ndatastore is not configured.", 
+      "format": ""
+    }, 
+    "values": {
+      "required": true, 
+      "type": "string", 
+      "description": "Dictionary that lists configuration parameter names and associated\nvalues.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the configuration group you are creating.", 
+      "format": ""
+    }
+  }
+}

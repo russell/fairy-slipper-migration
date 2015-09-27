@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "router_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "ID of the router into which the VPN service is inserted.", 
+      "format": ""
+    }, 
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "Indicates whether IPSec VPN service is currently operational.\nPossible values are ACTIVE, DOWN, BUILD, ERROR, PENDING_CREATE,\nPENDING_UPDATE, and PENDING_DELETE.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "Human-readable description for the VPN service.", 
+      "format": ""
+    }, 
+    "admin_state_up": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "The administrative state of the VPN service, which is up ( ``true``\n) or down ( ``false`` ). If down, the port does not forward\npackets.", 
+      "format": ""
+    }, 
+    "subnet_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The subnet where the tenant wants the VPN service.", 
+      "format": ""
+    }, 
+    "tenant_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "Owner of the VPN service. Only administrative users can specify a\ntenant ID other than their own.", 
+      "format": ""
+    }, 
+    "vpnservices": {
+      "required": true, 
+      "type": "array", 
+      "description": "VPN service objects.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The unique ID for the VPN service.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Human-readable name for the VPN service. Does not have to be\nunique.", 
+      "format": ""
+    }
+  }
+}

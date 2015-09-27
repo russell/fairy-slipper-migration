@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "os-force_delete": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``os-force_delete`` action.", 
+      "format": ""
+    }
+  }
+}

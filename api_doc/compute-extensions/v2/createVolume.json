@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "display_name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume name.", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": false, 
+      "type": "string", 
+      "description": "The availability zone.", 
+      "format": ""
+    }, 
+    "display_description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume description.", 
+      "format": ""
+    }, 
+    "volume_type": {
+      "required": false, 
+      "type": "string", 
+      "description": "The unique identifier for a volume type.", 
+      "format": ""
+    }, 
+    "snapshot_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The unique identifier for a snapshot.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+      "format": ""
+    }, 
+    "size": {
+      "required": true, 
+      "type": "string", 
+      "description": "The size of the volume, in gigabytes (GB).", 
+      "format": ""
+    }
+  }
+}

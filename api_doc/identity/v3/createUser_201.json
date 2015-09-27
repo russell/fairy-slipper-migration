@@ -1,0 +1,65 @@
+{
+  "type": "object", 
+  "properties": {
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user description.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "The links for the new user.", 
+      "format": ""
+    }, 
+    "user": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``user`` object.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If the user is enabled, this value is ``true`` . If the user is\ndisabled, this value is ``false`` .", 
+      "format": ""
+    }, 
+    "email": {
+      "required": true, 
+      "type": "string", 
+      "description": "The email address for the new user.", 
+      "format": ""
+    }, 
+    "default_project_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The default tenant for the new user.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the new user.", 
+      "format": ""
+    }, 
+    "password": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user password. Required for some authentication back ends.", 
+      "format": ""
+    }, 
+    "domain_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the domain for the new user.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }
+  }
+}

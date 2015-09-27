@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "public_key": {
+      "required": false, 
+      "type": "string", 
+      "description": "The public ssh key to import. If you omit this value, a key is\ngenerated.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": false, 
+      "type": "string", 
+      "description": "The keypair type.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name to associate with the keypair.", 
+      "format": ""
+    }, 
+    "user_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user ID of the user who runs the operation.", 
+      "format": ""
+    }
+  }
+}

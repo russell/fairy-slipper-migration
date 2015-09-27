@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "memberships": {
+      "required": true, 
+      "type": "string", 
+      "description": "", 
+      "format": ""
+    }, 
+    "can_share": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the specified owner is authorized to share the\nspecified image.\n\nIf the owner can share the image, this value is ``true`` .\nOtherwise, this value is ``false`` .\n\nThe owner ID, which is the tenant ID, is specified in the request\nURI.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user name for the database on instance creation.", 
+      "format": ""
+    }, 
+    "flavorRef": {
+      "required": true, 
+      "type": "string", 
+      "description": "Reference (href), which is the actual URI to a flavor as specified\nin the response from the list flavors API call.\n\nRather than the flavor URI, you can also pass the flavor id\n(integer) as the value for ``flavorRef`` . For example, the flavor\nID for the flavor URI shown above is ``1`` .", 
+      "format": ""
+    }, 
+    "instance": {
+      "required": true, 
+      "type": "string", 
+      "description": "An ``instance`` object.", 
+      "format": ""
+    }, 
+    "collate": {
+      "required": false, 
+      "type": "string", 
+      "description": "Set of rules for comparing characters in a character set. The\ndefault value for collate is ``utf8_general_ci`` .", 
+      "format": ""
+    }, 
+    "databases": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``databases`` object.", 
+      "format": ""
+    }, 
+    "users": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``users`` object.", 
+      "format": ""
+    }, 
+    "password": {
+      "required": false, 
+      "type": "string", 
+      "description": "The password for those users on instance creation.", 
+      "format": ""
+    }, 
+    "character_set": {
+      "required": false, 
+      "type": "string", 
+      "description": "Set of symbols and encodings. The default character set is ``utf8``\n.", 
+      "format": ""
+    }, 
+    "size": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The volume size, in gigabytes (GB). A valid value is from 1 to 50.", 
+      "format": ""
+    }
+  }
+}

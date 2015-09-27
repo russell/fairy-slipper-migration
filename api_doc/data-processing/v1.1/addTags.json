@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "tags": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of tags to add.", 
+      "format": ""
+    }
+  }
+}

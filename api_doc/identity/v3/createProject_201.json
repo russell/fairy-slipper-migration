@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The project name.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "The project links.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If set to ``true`` , project is enabled. If set to ``false`` ,\nproject is disabled.", 
+      "format": ""
+    }, 
+    "domain_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the domain for the project.", 
+      "format": ""
+    }, 
+    "parent_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the parent project.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the project.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The project description.", 
+      "format": ""
+    }
+  }
+}

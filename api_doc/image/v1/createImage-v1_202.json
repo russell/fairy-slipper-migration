@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "location": {
+      "required": true, 
+      "type": "string", 
+      "description": "A location for the image identified by a URI.", 
+      "format": "uri"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "os:scheduler_hints": {
+      "required": true, 
+      "type": "object", 
+      "description": "The dictionary of data to send to the scheduler. Alternatively, you\ncan specify ``OS-SCH-HNT:scheduler_hints`` as the string.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name for your created server.", 
+      "format": ""
+    }, 
+    "imageRef": {
+      "required": true, 
+      "type": "string", 
+      "description": "The image reference for the desired image for your server instance.\n\nSpecify as an ID or full URL.", 
+      "format": ""
+    }, 
+    "flavorRef": {
+      "required": true, 
+      "type": "string", 
+      "description": "The flavor reference for the desired flavor for your server\ninstance.\n\nSpecify as an ID or full URL.", 
+      "format": ""
+    }, 
+    "server": {
+      "required": true, 
+      "type": "string", 
+      "description": "Server.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "Metadata key and value pairs. The maximum size of the metadata key\nand value is 255 bytes each.", 
+      "format": ""
+    }, 
+    "personality": {
+      "required": false, 
+      "type": "string", 
+      "description": "File path and contents (text only) to inject into the server at\nlaunch. The maximum size of the file path data is 255 bytes. The\nmaximum limit refers to the number of bytes in the decoded data and\nnot the number of characters in the encoded data.", 
+      "format": ""
+    }
+  }
+}

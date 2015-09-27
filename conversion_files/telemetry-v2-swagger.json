@@ -1,0 +1,1239 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "listCapabilities_200": {
+      "properties": {
+        "alarm_storage": {
+          "description": "Defines the capabilities for the storage that stores persisting\nalarm definitions. A value of ``true`` indicates that the\ncapability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "array"
+        }, 
+        "alarms:history:query:complex": {
+          "description": "Indicates whether the complex query capability for alarm history is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "alarms:history:query:simple": {
+          "description": "Indicates whether the simple query capability for alarm history is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "alarms:query:complex": {
+          "description": "Indicates whether the complex query capability for alarm\ndefinitions is available for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "alarms:query:simple": {
+          "description": "Indicates whether the simple query capability for alarm definitions\nis available for the configured database back end. A value of\n``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "api": {
+          "description": "An array of API capabilities for the configured storage driver.", 
+          "format": "", 
+          "required": true, 
+          "type": "array"
+        }, 
+        "event_storage": {
+          "description": "Defines the capabilities for the storage that stores persisting\nevents. A value of ``true`` indicates that the capability is\navailable.", 
+          "format": "", 
+          "required": true, 
+          "type": "array"
+        }, 
+        "events:query:simple": {
+          "description": "Indicates whether the simple query capability for events is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "meters:pagination": {
+          "description": "Indicates whether pagination for meters is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "meters:query:complex": {
+          "description": "Indicates whether the complex query capability for meters is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "meters:query:metadata": {
+          "description": "Indicates whether the simple query capability for the metadata of\nmeters is available for the configured database back end. A value\nof ``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "meters:query:simple": {
+          "description": "Indicates whether the simple query capability for meters is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "resources:pagination": {
+          "description": "Indicates whether pagination for resources is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "resources:query:complex": {
+          "description": "Indicates whether the complex query capability for resources is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "resources:query:metadata": {
+          "description": "Indicates whether the simple query capability for the metadata of\nresources is available for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "resources:query:simple": {
+          "description": "Indicates whether the simple query capability for resources is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "samples:pagination": {
+          "description": "Indicates whether pagination for samples is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "samples:query:complex": {
+          "description": "Indicates whether the complex query capability for samples is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "samples:query:metadata": {
+          "description": "Indicates whether the simple query capability for the metadata of\nsamples is available for the configured database back end. A value\nof ``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "samples:query:simple": {
+          "description": "Indicates whether the simple query capability for samples is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:avg": {
+          "description": "Indicates whether the ``avg`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``avg`` capability to get\naverage values for samples.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:cardinality": {
+          "description": "Indicates whether the ``cardinality`` capability is available for\nthe configured database back end. A value of ``true`` indicates\nthat the capability is available. Use the ``cardinality``\ncapability to get cardinality for samples.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:count": {
+          "description": "Indicates whether the ``count`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``count`` capability to\ncalculate the number of samples for a specified query.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:max": {
+          "description": "Indicates whether the ``max`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``max`` capability to\ncalculate the maximum value for a specified query.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:min": {
+          "description": "Indicates whether the ``min`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``min`` capability to\ncalculate the minimum value for a specified query.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:quartile": {
+          "description": "Indicates whether the ``quartile`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``quartile`` capability to\ncalculate the quartile of sample volumes for a specified query.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:stddev": {
+          "description": "Indicates whether the ``stddev`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``stddev`` capability to\ncalculate the standard deviation of sample volumes for a specified\nquery.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:selectable:sum": {
+          "description": "Indicates whether the ``sum`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``sum`` capability to\ncalculate the sum of sample volumes for a specified query.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:aggregation:standard": {
+          "description": "Indicates whether the ``standard`` set of aggregation capability is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:groupby": {
+          "description": "Indicates whether the ``groupby`` capabilityality is available for\ncalculating statistics for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:pagination": {
+          "description": "Indicates whether pagination for statistics is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:query:complex": {
+          "description": "Indicates whether the complex query capability for statistics is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:query:metadata": {
+          "description": "Indicates whether the simple query capability for the metadata of\nsamples used for calculating statistics is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "statistics:query:simple": {
+          "description": "Indicates whether the simple query capability for statistics is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "storage": {
+          "description": "Defines the capabilities for the storage that stores persisting\nsamples. A value of ``true`` indicates that the capability is\navailable.", 
+          "format": "", 
+          "required": true, 
+          "type": "array"
+        }, 
+        "storage:production_ready": {
+          "description": "Indicates whether the the configured database back end is ready to\nuse in production environment. A value of ``true`` indicates that\nthe database back end is ready to use in a production environment.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "telemetry", 
+    "title": "Telemetry API", 
+    "version": "v2"
+  }, 
+  "paths": {
+    "/v2/alarms": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists alarms, based on the specified query.", 
+        "examples": {}, 
+        "id": "listAlarms", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filter rules for the alarms to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "alarm_actions": [
+                    "http://site:8000/alarm"
+                  ], 
+                  "alarm_id": null, 
+                  "combination_rule": null, 
+                  "description": "An alarm", 
+                  "enabled": true, 
+                  "insufficient_data_actions": [
+                    "http://site:8000/nodata"
+                  ], 
+                  "name": "SwiftObjectAlarm", 
+                  "ok_actions": [
+                    "http://site:8000/ok"
+                  ], 
+                  "project_id": "c96c887c216949acbdfbd8b494863567", 
+                  "repeat_actions": false, 
+                  "state": "ok", 
+                  "state_timestamp": "2013-11-21T12:33:08.486228", 
+                  "threshold_rule": null, 
+                  "timestamp": "2013-11-21T12:33:08.486221", 
+                  "type": "threshold", 
+                  "user_id": "c96c887c216949acbdfbd8b494863567"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List alarms", 
+        "tags": [
+          "alarms"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates an alarm.", 
+        "examples": {}, 
+        "id": "createAlarm", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "An alarm within the request body.", 
+            "format": "", 
+            "in": "query", 
+            "name": "data", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "alarm_actions": [
+                  "http://site:8000/alarm"
+                ], 
+                "alarm_id": null, 
+                "combination_rule": null, 
+                "description": "An alarm", 
+                "enabled": true, 
+                "insufficient_data_actions": [
+                  "http://site:8000/nodata"
+                ], 
+                "name": "SwiftObjectAlarm", 
+                "ok_actions": [
+                  "http://site:8000/ok"
+                ], 
+                "project_id": "c96c887c216949acbdfbd8b494863567", 
+                "repeat_actions": false, 
+                "state": "ok", 
+                "state_timestamp": "2013-11-21T12:33:08.486228", 
+                "threshold_rule": null, 
+                "timestamp": "2013-11-21T12:33:08.486221", 
+                "type": "threshold", 
+                "user_id": "c96c887c216949acbdfbd8b494863567"
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create alarm", 
+        "tags": [
+          "alarms"
+        ]
+      }
+    ], 
+    "/v2/alarms/{alarm_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified alarm, by alarm ID.", 
+        "examples": {}, 
+        "id": "showAlarm", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "alarm_actions": [
+                  "http://site:8000/alarm"
+                ], 
+                "alarm_id": null, 
+                "combination_rule": null, 
+                "description": "An alarm", 
+                "enabled": true, 
+                "insufficient_data_actions": [
+                  "http://site:8000/nodata"
+                ], 
+                "name": "SwiftObjectAlarm", 
+                "ok_actions": [
+                  "http://site:8000/ok"
+                ], 
+                "project_id": "c96c887c216949acbdfbd8b494863567", 
+                "repeat_actions": false, 
+                "state": "ok", 
+                "state_timestamp": "2013-11-21T12:33:08.486228", 
+                "threshold_rule": null, 
+                "timestamp": "2013-11-21T12:33:08.486221", 
+                "type": "threshold", 
+                "user_id": "c96c887c216949acbdfbd8b494863567"
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show alarm", 
+        "tags": [
+          "alarms"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified alarm.", 
+        "examples": {}, 
+        "id": "updateAlarm", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "An alarm within the request body.", 
+            "format": "", 
+            "in": "query", 
+            "name": "data", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "alarm_actions": [
+                  "http://site:8000/alarm"
+                ], 
+                "alarm_id": null, 
+                "combination_rule": null, 
+                "description": "An alarm", 
+                "enabled": true, 
+                "insufficient_data_actions": [
+                  "http://site:8000/nodata"
+                ], 
+                "name": "SwiftObjectAlarm", 
+                "ok_actions": [
+                  "http://site:8000/ok"
+                ], 
+                "project_id": "c96c887c216949acbdfbd8b494863567", 
+                "repeat_actions": false, 
+                "state": "ok", 
+                "state_timestamp": "2013-11-21T12:33:08.486228", 
+                "threshold_rule": null, 
+                "timestamp": "2013-11-21T12:33:08.486221", 
+                "type": "threshold", 
+                "user_id": "c96c887c216949acbdfbd8b494863567"
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update alarm", 
+        "tags": [
+          "alarms"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified alarm, by alarm ID.", 
+        "examples": {}, 
+        "id": "deleteAlarm", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete alarm", 
+        "tags": [
+          "alarms"
+        ]
+      }
+    ], 
+    "/v2/alarms/{alarm_id}/history": [
+      {
+        "consumes": [], 
+        "description": "Assembles and shows the history for a specified alarm, by alarm ID.", 
+        "examples": {}, 
+        "id": "showAlarmHistory", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filter rules for the changes to be described.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show alarm history", 
+        "tags": [
+          "alarms"
+        ]
+      }
+    ], 
+    "/v2/alarms/{alarm_id}/state": [
+      {
+        "consumes": [], 
+        "description": "Sets the state of a specified alarm.", 
+        "examples": {}, 
+        "id": "updateAlarmState", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "An alarm state within the request body. A valid value is ``ok`` ,\n``alarm`` , or ``insufficient data`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "state", 
+            "required": false, 
+            "type": "object"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update alarm state", 
+        "tags": [
+          "alarms"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Shows the state for a specified alarm, by alarm ID.", 
+        "examples": {}, 
+        "id": "showAlarmState", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID of the alarm.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alarm_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show alarm state", 
+        "tags": [
+          "alarms"
+        ]
+      }
+    ], 
+    "/v2/capabilities": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "A representation of the API and storage capabilities. Usually\nconstrained by restrictions imposed by the storage driver.", 
+        "examples": {}, 
+        "id": "listCapabilities", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "alarm_storage": {
+                  "storage:production_ready": true
+                }, 
+                "api": {
+                  "alarms:history:query:complex": true, 
+                  "alarms:history:query:simple": true, 
+                  "alarms:query:complex": true, 
+                  "alarms:query:simple": true, 
+                  "events:query:simple": true, 
+                  "meters:pagination": true, 
+                  "meters:query:complex": false, 
+                  "meters:query:metadata": true, 
+                  "meters:query:simple": true, 
+                  "resources:pagination": false, 
+                  "resources:query:complex": false, 
+                  "resources:query:metadata": true, 
+                  "resources:query:simple": true, 
+                  "samples:pagination": true, 
+                  "samples:query:complex": true, 
+                  "samples:query:metadata": true, 
+                  "samples:query:simple": true, 
+                  "statistics:aggregation:selectable:avg": true, 
+                  "statistics:aggregation:selectable:cardinality": true, 
+                  "statistics:aggregation:selectable:count": true, 
+                  "statistics:aggregation:selectable:max": true, 
+                  "statistics:aggregation:selectable:min": true, 
+                  "statistics:aggregation:selectable:quartile": false, 
+                  "statistics:aggregation:selectable:stddev": true, 
+                  "statistics:aggregation:selectable:sum": true, 
+                  "statistics:aggregation:standard": true, 
+                  "statistics:groupby": true, 
+                  "statistics:pagination": true, 
+                  "statistics:query:complex": false, 
+                  "statistics:query:metadata": true, 
+                  "statistics:query:simple": true
+                }, 
+                "event_storage": {
+                  "storage:production_ready": true
+                }, 
+                "storage": {
+                  "storage:production_ready": true
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List capabilities", 
+        "tags": [
+          "capabilities"
+        ]
+      }
+    ], 
+    "/v2/meters": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists meters, based on the data recorded so far.", 
+        "examples": {}, 
+        "id": "listMeters", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filter rules for the meters to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "meter_id": "YmQ5NDMxYzEtOGQ2OS00YWQzLTgwM2EtOGQ0YTZiODlmZDM2K2luc3RhbmNl\n", 
+                  "name": "instance", 
+                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                  "source": "openstack", 
+                  "type": "gauge", 
+                  "unit": "instance", 
+                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List meters", 
+        "tags": [
+          "meters"
+        ]
+      }
+    ], 
+    "/v2/meters/{meter_name}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists samples for a specified meter, by meter name.", 
+        "examples": {}, 
+        "id": "listSamplesforMeter", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of the meter.", 
+            "format": "", 
+            "in": "path", 
+            "name": "meter_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filter rules for the data to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "counter_name": "instance", 
+                  "counter_type": "gauge", 
+                  "counter_unit": "instance", 
+                  "counter_volume": 1.0, 
+                  "message_id": "5460acce-4fd6-480d-ab18-9735ec7b1996", 
+                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                  "resource_metadata": {
+                    "name1": "value1", 
+                    "name2": "value2"
+                  }, 
+                  "source": "openstack", 
+                  "timestamp": "2013-11-21T12:33:08.323533", 
+                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List samples for meter", 
+        "tags": [
+          "meters"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Adds a list of samples to the specified meter, by meter name.", 
+        "examples": {}, 
+        "id": "createMeter", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The name of the meter.", 
+            "format": "", 
+            "in": "path", 
+            "name": "meter_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "A list of samples within the request body.", 
+            "format": "", 
+            "in": "query", 
+            "name": "samples", 
+            "required": false, 
+            "type": "array"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "counter_name": "instance", 
+                  "counter_type": "gauge", 
+                  "counter_unit": "instance", 
+                  "counter_volume": 1.0, 
+                  "message_id": "5460acce-4fd6-480d-ab18-9735ec7b1996", 
+                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                  "resource_metadata": {
+                    "name1": "value1", 
+                    "name2": "value2"
+                  }, 
+                  "source": "openstack", 
+                  "timestamp": "2013-11-21T12:33:08.323533", 
+                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create meter", 
+        "tags": [
+          "meters"
+        ]
+      }
+    ], 
+    "/v2/meters/{meter_name}/statistics": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Computes and lists statistics for samples in a specified time\nrange.", 
+        "examples": {}, 
+        "id": "listSamplesStatistics", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of the meter.", 
+            "format": "", 
+            "in": "path", 
+            "name": "meter_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filter rules for the data to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }, 
+          {
+            "description": "Fields for group by aggregation", 
+            "format": "", 
+            "in": "query", 
+            "name": "groupby", 
+            "required": false, 
+            "type": "array"
+          }, 
+          {
+            "description": "The period, in seconds, for which you want statistics.", 
+            "format": "", 
+            "in": "query", 
+            "name": "period", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "avg": 4.5, 
+                  "count": 10, 
+                  "duration": 300.0, 
+                  "duration_end": "2013-01-04T16:47:00", 
+                  "duration_start": "2013-01-04T16:42:00", 
+                  "max": 9.0, 
+                  "min": 1.0, 
+                  "period": 7200, 
+                  "period_end": "2013-01-04T18:00:00", 
+                  "period_start": "2013-01-04T16:00:00", 
+                  "sum": 45.0, 
+                  "unit": "GiB"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show meter statistics", 
+        "tags": [
+          "meters"
+        ]
+      }
+    ], 
+    "/v2/resources": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists definitions for all resources.", 
+        "examples": {}, 
+        "id": "listResources", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filter rules for the resources to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "links": [
+                    {
+                      "href": "http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "http://localhost:8777/v2/meters/volume?q.field=resource_id&q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                      "rel": "volume"
+                    }
+                  ], 
+                  "metadata": {
+                    "name1": "value1", 
+                    "name2": "value2"
+                  }, 
+                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                  "source": "openstack", 
+                  "timestamp": "2013-11-21T12:33:08.189843", 
+                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List resources", 
+        "tags": [
+          "resources"
+        ]
+      }
+    ], 
+    "/v2/resources/{resource_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified resource, by resource ID.", 
+        "examples": {}, 
+        "id": "showResource", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID of the resource.", 
+            "format": "", 
+            "in": "path", 
+            "name": "resource_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "links": [
+                  {
+                    "href": "http://localhost:8777/v2/resources/bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                    "rel": "self"
+                  }, 
+                  {
+                    "href": "http://localhost:8777/v2/meters/volume?q.field=resource_id&q.value=bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                    "rel": "volume"
+                  }
+                ], 
+                "metadata": {
+                  "name1": "value1", 
+                  "name2": "value2"
+                }, 
+                "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                "source": "openstack", 
+                "timestamp": "2013-11-21T12:33:08.189843", 
+                "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show resource information", 
+        "tags": [
+          "resources"
+        ]
+      }
+    ], 
+    "/v2/samples": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists all known samples, based on the data recorded so far.", 
+        "examples": {}, 
+        "id": "listSamples", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filter rules for the samples to be returned.", 
+            "format": "", 
+            "in": "query", 
+            "name": "q", 
+            "required": false, 
+            "type": "array"
+          }, 
+          {
+            "description": "Requests a specified page size of returned items from the query.\nReturns a number of items up to the specified limit value. Use the\n``limit`` parameter to make an initial limited request and use the\nID of the last-seen item from the response as the ``marker``\nparameter value in a subsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Specifies the ID of the last-seen item. Use the ``limit`` parameter\nto make an initial limited request and use the ID of the last-seen\nitem from the response as the ``marker`` parameter value in a\nsubsequent limited request.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "id": "8db08c68-bc70-11e4-a8c4-fa163e1d1a9b", 
+                  "metadata": {
+                    "name1": "value1", 
+                    "name2": "value2"
+                  }, 
+                  "meter": "instance", 
+                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                  "recorded_at": "2015-02-24T22:00:32.747930", 
+                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                  "source": "openstack", 
+                  "timestamp": "2015-02-24T22:00:32.747930", 
+                  "type": "gauge", 
+                  "unit": "instance", 
+                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff", 
+                  "volume": 1.0
+                }
+              ]
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List samples", 
+        "tags": [
+          "samples"
+        ]
+      }
+    ], 
+    "/v2/samples/{sample_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified sample, by sample ID.", 
+        "examples": {}, 
+        "id": "showSample", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID of the sample.", 
+            "format": "", 
+            "in": "path", 
+            "name": "sample_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "id": "8db08c68-bc70-11e4-a8c4-fa163e1d1a9b", 
+                "metadata": {
+                  "name1": "value1", 
+                  "name2": "value2"
+                }, 
+                "meter": "instance", 
+                "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
+                "recorded_at": "2015-02-24T22:00:32.747930", 
+                "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
+                "source": "openstack", 
+                "timestamp": "2015-02-24T22:00:32.747930", 
+                "type": "gauge", 
+                "unit": "instance", 
+                "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff", 
+                "volume": 1.0
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show sample", 
+        "tags": [
+          "samples"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "Alarms", 
+      "name": "alarms", 
+      "summary": "Lists, creates, gets details for, updates, and deletes alarms."
+    }, 
+    {
+      "description": "Meters", 
+      "name": "meters", 
+      "summary": "Creates, lists all, and lists samples for meters. Computes and\nlists statistics for samples in a specified time range.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied. The default limit is\nthe ``default_api_return_limit`` configuration option value."
+    }, 
+    {
+      "description": "Samples", 
+      "name": "samples", 
+      "summary": "Lists all samples and gets information for a specified sample.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied. The default limit is\nthe ``default_api_return_limit`` configuration option value."
+    }, 
+    {
+      "description": "Resources", 
+      "name": "resources", 
+      "summary": "Lists all and gets information for resources."
+    }, 
+    {
+      "description": "Capabilities", 
+      "name": "capabilities", 
+      "summary": "Gets information for API and storage capabilities.\n\nThe Telemetry service enables you to store samples, events, and\nalarm definitions in supported database back ends. The\n``capabilities`` resource enables you to list the capabilities that\na database supports.\n\nThe ``capabilities`` resource returns a flattened dictionary of\ncapability properties, each with an associated boolean value. A\nvalue of ``true`` indicates that the corresponding capability is\navailable in the back end.\n\nOptionally, you can configure separate database back ends for\nsamples, events, and alarm definitions. The ``capabilities``\nresponse body shows a value of ``true`` to indicate that the\nsamples, events, or alarm definitions database is ready to use in a\nproduction environment."
+    }
+  ]
+}

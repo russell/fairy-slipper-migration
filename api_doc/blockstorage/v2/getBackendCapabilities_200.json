@@ -1,0 +1,65 @@
+{
+  "type": "object", 
+  "properties": {
+    "pool_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The pool name.", 
+      "format": ""
+    }, 
+    "display_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The display name.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The storage description.", 
+      "format": ""
+    }, 
+    "volume_backend_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Volume back-end storage name.", 
+      "format": ""
+    }, 
+    "namespace": {
+      "required": true, 
+      "type": "string", 
+      "description": "The storage name space, such as ``OS::Storage::Capabilities::foo``\n.", 
+      "format": ""
+    }, 
+    "visibility": {
+      "required": true, 
+      "type": "string", 
+      "description": "Enables public or private visibility. Set to ``True`` to make the\nback end publicly visible.", 
+      "format": ""
+    }, 
+    "driver_version": {
+      "required": true, 
+      "type": "string", 
+      "description": "The driver version.", 
+      "format": ""
+    }, 
+    "vendor_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The vendor name.", 
+      "format": ""
+    }, 
+    "properties": {
+      "required": true, 
+      "type": "object", 
+      "description": "A set of storage properties, such as QoS, IOPS, and so on.", 
+      "format": ""
+    }, 
+    "storage_protocol": {
+      "required": true, 
+      "type": "string", 
+      "description": "The storage protocol, such as Fibre Channel, iSCSI, NFS, and so on.", 
+      "format": ""
+    }
+  }
+}

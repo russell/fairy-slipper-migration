@@ -1,0 +1,87 @@
+{
+  "limits": {
+    "rate": [
+      {
+        "regex": ".*", 
+        "limit": [
+          {
+            "value": 120, 
+            "verb": "POST", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 120, 
+            "unit": "MINUTE"
+          }, 
+          {
+            "value": 120, 
+            "verb": "PUT", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 120, 
+            "unit": "MINUTE"
+          }, 
+          {
+            "value": 120, 
+            "verb": "DELETE", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 120, 
+            "unit": "MINUTE"
+          }
+        ], 
+        "uri": "*"
+      }, 
+      {
+        "regex": "^/servers", 
+        "limit": [
+          {
+            "value": 120, 
+            "verb": "POST", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 120, 
+            "unit": "MINUTE"
+          }
+        ], 
+        "uri": "*/servers"
+      }, 
+      {
+        "regex": ".*changes-since.*", 
+        "limit": [
+          {
+            "value": 120, 
+            "verb": "GET", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 120, 
+            "unit": "MINUTE"
+          }
+        ], 
+        "uri": "*changes-since*"
+      }, 
+      {
+        "regex": "^/os-fping", 
+        "limit": [
+          {
+            "value": 12, 
+            "verb": "GET", 
+            "next-available": "2012-11-27T17:22:18Z", 
+            "remaining": 12, 
+            "unit": "MINUTE"
+          }
+        ], 
+        "uri": "*/os-fping"
+      }
+    ], 
+    "absolute": {
+      "maxServerMeta": 128, 
+      "maxPersonality": 5, 
+      "maxImageMeta": 128, 
+      "maxPersonalitySize": 10240, 
+      "maxTotalRAMSize": 51200, 
+      "maxTotalKeypairs": 100, 
+      "maxSecurityGroupRules": 20, 
+      "maxServerGroups": 10, 
+      "maxSecurityGroups": 10, 
+      "maxServerGroupMembers": 10, 
+      "maxTotalFloatingIps": 10, 
+      "maxTotalInstances": 10, 
+      "maxTotalCores": 20
+    }
+  }
+}

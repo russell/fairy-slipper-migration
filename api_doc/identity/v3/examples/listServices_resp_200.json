@@ -1,0 +1,27 @@
+{
+  "services": [
+    {
+      "name": "keystone", 
+      "links": {
+        "self": "http://identity:5000/v3/services/686766"
+      }, 
+      "enabled": true, 
+      "type": "identity", 
+      "id": "686766", 
+      "description": "Keystone Identity Service"
+    }, 
+    {
+      "type": "volume", 
+      "enabled": true, 
+      "id": "936521", 
+      "links": {
+        "self": "http://identity:5000/v3/services/936521"
+      }
+    }
+  ], 
+  "links": {
+    "self": "http://identity:5000/v3/services", 
+    "previous": null, 
+    "next": null
+  }
+}

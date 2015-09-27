@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "volume_type": {
+      "required": true, 
+      "type": "string", 
+      "description": "A partial representation of a volume type used in the creation\nprocess.", 
+      "format": ""
+    }
+  }
+}

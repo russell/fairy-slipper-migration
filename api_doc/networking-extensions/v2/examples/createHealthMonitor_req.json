@@ -1,0 +1,13 @@
+{
+  "healthmonitor": {
+    "admin_state_up": true, 
+    "pool_id": "74aa2010-a59f-4d35-a436-60a6da882819", 
+    "delay": "1", 
+    "expected_codes": "200,201,202", 
+    "max_retries": 5, 
+    "http_method": "GET", 
+    "timeout": 1, 
+    "url_path": "/index.html", 
+    "type": "HTTP"
+  }
+}

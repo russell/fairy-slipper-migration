@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "OS-DCF:diskConfig": {
+      "required": false, 
+      "type": "string", 
+      "description": "Valid value is AUTO or MANUAL.", 
+      "format": ""
+    }
+  }
+}

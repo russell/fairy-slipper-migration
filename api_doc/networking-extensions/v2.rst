@@ -1,0 +1,3100 @@
+.. http:post:: /v2.0/vpn/ikepolicies
+   :synopsis: Create IKE policy
+
+   Creates an IKE policy.
+   
+   The IKE policy is used for phases one and two negotiation of the
+   VPN connection. You can specify both the authentication and
+   encryption algorithms for connections.
+
+   :requestexample: v2/examples/createIKEPolicy_req.json
+   :responseexample 201: v2/examples/createIKEPolicy_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/createIKEPolicy.json
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/vpn/ikepolicies
+   :synopsis: List IKE policies
+
+   Lists IKE policies.
+   
+   This operation lists all IKE policies.
+
+   :responseexample 200: v2/examples/listIKEPolicies_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/subnetpools/{subnetpool_id}
+   :synopsis: Show subnet pool
+
+   Shows information for a specified subnet pool.
+   
+   Use the ``fields`` query parameter to filter the results.
+
+   :responseexample 200: v2/examples/showSubnetPool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnetpools-ext
+   :parameter subnetpool_id: The UUID for the subnet pool of interest
+                             to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/subnetpools/{subnetpool_id}
+   :synopsis: Update subnet pool
+
+   Updates a specified subnet pool.
+
+   :requestexample: v2/examples/updateSubnetPool_req.json
+   :responseexample 200: v2/examples/updateSubnetPool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnetpools-ext
+   :requestschema: v2/updateSubnetPool.json
+   :parameter subnetpool_id: The UUID for the subnet pool of interest
+                             to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/subnetpools/{subnetpool_id}
+   :synopsis: Delete subnet pool
+
+   Deletes a specified subnet pool.
+   
+   The operation fails if any subnets allocated from the subnet pool
+   are still in use.
+
+   :tag: subnetpools-ext
+   :parameter subnetpool_id: The UUID for the subnet pool of interest
+                             to you.
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/floatingips
+   :synopsis: List floating IPs
+
+   Lists floating IPs that are accessible to the tenant who submits
+   the request.
+   
+   Default policy settings return only those floating IPs that are
+   owned by the tenant who submits the request, unless an admin user
+   submits the request.
+   
+   This example request lists floating IPs in JSON format:
+   
+   GET /v2.0/floatingips Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   returned in the response body. Additionally, you can filter results
+   by using query string parameters. For information, see Filtering
+   and Column Selection .
+
+   :responseexample 200: v2/examples/listFloatingIps_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/floatingips
+   :synopsis: Create floating IP
+
+   Creates a floating IP, and, if you specify port information,
+   associates the floating IP with an internal port.
+   
+   To associate the floating IP with an internal port, specify the
+   port ID attribute in the request body. If you do not specify a port
+   ID in the request, you can issue a PUT request instead of a POST
+   request.
+   
+   Default policy settings enable only administrative users to set
+   floating IP addresses and some non-administrative users might
+   require a floating IP address. If you do not specify a floating IP
+   address in the request, the API automatically allocates one.
+   
+   By default, this operation associates the floating IP address with
+   a single fixed IP address that is configured on an OpenStack
+   Networking port. If a port has multiple IP addresses, you must
+   specify the ``fixed_ip_address`` attribute in the request body to
+   associate a specific fixed IP address with the floating IP address.
+   
+   You can create floating IPs on external networks only.
+   
+   You must configure an IP address with the internal OpenStack
+   Networking port that is associated with the floating IP address.
+   
+   Error codes:
+   
+   - ``400`` The operation returns this error code for one of these
+     reasons:
+    - The specified network is not external, such as
+      ``router:external=False`` .
+   
+    - The specified internal OpenStack Networking port is not associated
+      with the floating IP address.
+   
+    - The requested floating IP address does not fall in the subnet
+      range for the external network.
+   
+    - The specified fixed IP address is not valid.
+   
+   
+   - ``401`` The operation is not authorized.
+   
+   - ``404`` The specified port ID is not valid.
+   
+   - ``409`` The operation returns this error code for one of these
+     reasons:
+    - The requested floating IP address is already in use.
+   
+    - The internal OpenStack Networking port and specified fixed IP
+      address are already associated with another floating IP.
+
+   :requestexample: v2/examples/createFloatingIp_req.json
+   :responseexample 201: v2/examples/createFloatingIp_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/lb/members
+   :synopsis: List members
+
+   Lists members.
+
+   :responseexample 200: v2/examples/listMembers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:post:: /v2.0/lb/members
+   :synopsis: Create a load balancer member
+
+   Creates a load balancer member.
+
+   :requestexample: v2/examples/createMember_req.json
+   :responseexample 201: v2/examples/createMember_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/quotas
+   :synopsis: List quotas
+
+   Lists quotas for tenants who have non-default quota values.
+
+   :responseexample 200: v2/examples/listQuotas_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quotas
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
+   :synopsis: Show IKE policies
+
+   Shows details for a specified IKE policy.
+   
+   Shows the details for a specified IKE policy.
+
+   :responseexample 200: v2/examples/showIKEPolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :parameter ikepolicy_id: The UUID for the IKE policy.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
+   :synopsis: Update IKE policy
+
+   Updates policy settings in a specified IKE policy.
+
+   :requestexample: v2/examples/updateIKEPolicy_req.json
+   :responseexample 200: v2/examples/updateIKEPolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/updateIKEPolicy.json
+   :parameter ikepolicy_id: The UUID for the IKE policy.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/vpn/ikepolicies/{ikepolicy_id}
+   :synopsis: Remove IKE policy
+
+   Removes a specified IKE policy.
+   
+   Removes the IKE policy specified in the request.
+
+   :tag: vpnaas
+   :parameter ikepolicy_id: The UUID for the IKE policy.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/security-group-rules/{rules-security-groups-id}
+   :synopsis: Show security group rule
+
+   Shows detailed information for a specified security group rule.
+   
+   The response body contains the following information about the
+   security group rule:
+
+   :responseexample 200: v2/examples/getSecGroupRule_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security_group-ruless
+   :parameter rules-security-groups-id: The unique identifier of the
+                                        security group rule.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:delete:: /v2.0/security-group-rules/{rules-security-groups-id}
+   :synopsis: Delete security group rule
+
+   Deletes a specified rule from an OpenStack Networking security
+   group.
+
+   :tag: security_group-ruless
+   :parameter rules-security-groups-id: The unique identifier of the
+                                        security group rule.
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/lbaas/listeners/{listener_id}
+   :synopsis: Show listener details
+
+   Shows details for a specified listener.
+   
+   This operation returns a listener object identified by
+   ``listener_id`` . If the user is not an administrative user and the
+   listener object does not belong to her tenant account, the call
+   returns the HTTP ``Forbidden(403)`` response code.
+   
+   If this operation succeeds, it returns a listener element that can
+   contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``protocol``
+   
+   - ``protocol_port``
+   
+   - ``connection_limit``
+   
+   - ``default_pool_id``
+   
+   - ``admin_state_up``
+   
+   - ``loadbalancers``
+   
+   - ``default_tls_container_ref``
+   
+   - ``sni_container_refs``
+   
+   Example: Show listener details
+
+   :responseexample 200: v2/examples/showListener_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lbaas/listeners/{listener_id}
+   :synopsis: Update listener
+
+   Updates a specified listener.
+   
+   This operation updates the attributes of a specified listener. Upon
+   successful validation of the request, the service returns the HTTP
+   ``Accepted (202)`` response code.
+   
+   The update operation enables the caller to change one or more of
+   the following listener attributes:
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``admin_state_up``
+   
+   - ``connection_limit``
+   
+   - ``default_tls_container_ref``
+   
+   - ``sni_container_refs``
+   
+   Example: Update a listener
+   
+   Note: You cannot update the ``listener_id`` , ``tenant_id`` ,
+   ``loadbalancer_id`` , ``loadbalancers`` , ``default_pool_id`` ,
+   ``protocol`` , and ``protocol_port`` listener attributes.
+   Attempting to update an immutable attribute results in the HTTP
+   ``Immutable (422)`` response code.
+   
+   Note: You cannot update a listener if the load balancer to which
+   the listener is attached does not have a ``provisioning_status`` of
+   ``ACTIVE`` .
+
+   :requestexample: v2/examples/updateListener_req.json
+   :responseexample 200: v2/examples/updateListener_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/updateListener.json
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lbaas/listeners/{listener_id}
+   :synopsis: Remove listener
+
+   Removes a specified listener.
+   
+   This operation removes a specified listener and its associated
+   configuration from the tenant account. Any and all configuration
+   data is immediately purged and cannot be recovered.
+   
+   You cannot delete a listener if the load balancer to which it is
+   attached does not have a ``provisioning_status`` of ``ACTIVE`` .
+   
+   Example: Delete a listener
+
+   :tag: lbaas
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/health_monitors/{health_monitor_id}
+   :synopsis: Show health monitor details
+
+   Shows details for a specified health monitor.
+   
+   This operation returns a health monitor object identified by
+   ``health_monitor_id`` . If the user is not an administrative user
+   and the health monitor object does not belong to her tenant
+   account, the service returns the HTTP ``Forbidden (403)`` response
+   code.
+   
+   If this operation succeeds, it returns a health monitor element
+   that can contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``type``
+   
+   - ``delay``
+   
+   - ``timeout``
+   
+   - ``max_retries``
+   
+   - ``http_method``
+   
+   - ``url_path``
+   
+   - ``expected_codes``
+   
+   - ``admin_state_up``
+   
+   - ``pool_id``
+   
+   - ``pools``
+   
+   Example: Show health monitor details
+
+   :responseexample 200: v2/examples/showHealthMonitor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lbaas/health_monitors/{health_monitor_id}
+   :synopsis: Update health monitor
+
+   Updates a specified health monitor.
+   
+   This operation updates the attributes of the specified health
+   monitor. Upon successful validation of the request, the service
+   returns the HTTP ``Accepted (202)`` response code.
+   
+   The update operation enables you to change one or more health
+   monitor attributes:
+   
+   - ``delay``
+   
+   - ``timeout``
+   
+   - ``max_retries``
+   
+   - ``http_method``
+   
+   - ``url_path``
+   
+   - ``expected_codes``
+   
+   - ``admin_state_up``
+   
+   Note: The health monitor ID, ``tenant_id`` , ``pool_id`` , and type
+   are immutable attributes and cannot be updated. If you specify an
+   unsupported attribute, the service returns the HTTP ``Immutable
+   (422)`` response code.
+
+   :requestexample: v2/examples/updateHealthMonitor_req.json
+   :responseexample 200: v2/examples/updateHealthMonitor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/updateHealthMonitor.json
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lbaas/health_monitors/{health_monitor_id}
+   :synopsis: Remove health monitor
+
+   Removes a specified health monitor.
+   
+   This operation removes the specified health monitor and its
+   associated configuration from the tenant account. Any and all
+   configuration data is immediately purged and cannot be recovered.
+   
+   You cannot delete a health monitor if the attached load balancer
+   does not have a ``provisioning_status`` value of ``ACTIVE`` .
+   
+   Example: Delete a health monitor
+
+   :tag: lbaas
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lb/members/{member_id}
+   :synopsis: Show member details
+
+   Shows details for a specified member.
+
+   :responseexample 200: v2/examples/showMember_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter member_id: The UUID for the member.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:put:: /v2.0/lb/members/{member_id}
+   :synopsis: Update member
+
+   Updates a specified load balancer member.
+
+   :requestexample: v2/examples/updateMember_req.json
+   :responseexample 200: v2/examples/updateMember_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter member_id: The UUID for the member.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lb/members/{member_id}
+   :synopsis: Delete member
+
+   Deletes a specified load balancer member.
+
+   :tag: lbaas
+   :parameter member_id: The UUID for the member.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
+   :synopsis: Show pool member details
+
+   Shows details for a specified pool member.
+   
+   This operation returns a member object identified by ``member_id``
+   that belongs to a pool object identified by ``pool_id`` . If the
+   user is not an administrative user and the pool or member object
+   does not belong to her tenant account, the service returns the HTTP
+   ``Forbidden (403)`` response code.
+   
+   If this operation succeeds, it returns a pool element that can
+   contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``address``
+   
+   - ``protocol_port``
+   
+   - ``weight``
+   
+   - ``subnet_id``
+   
+   - ``admin_state_up``
+   
+   Example: Show pool member details
+
+   :responseexample 200: v2/examples/showMember_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
+   :synopsis: Update pool member
+
+   Updates a specified member of a pool.
+   
+   This operation updates the attributes of the specified pool. Upon
+   successful validation of the request, the service returns the HTTP
+   ``OK (200)`` response code.
+   
+   The update operation enables you to change one or more of these
+   pool attributes:
+   
+   - ``weight``
+   
+   - ``admin_state_up``
+   
+   Note: You cannot update the member ID, ``tenant_id`` , ``address``
+   , ``protocol_port`` , and ``subnet_id`` attributes. If you attempt
+   to update any of these attributes, the service returns the HTTP
+   ``Immutable (422)`` response code.
+   
+   Note: You cannot update a member if the attached load balancer does
+   not have a ``provisioning_status`` of ``ACTIVE`` .
+
+   :requestexample: v2/examples/updateMember_req.json
+   :responseexample 200: v2/examples/updateMember_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/updateMember.json
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lbaas/pools/{pool_id}/members/{member_id}
+   :synopsis: Remove member from pool
+
+   Removes a member from a pool.
+   
+   This operation removes the specified member and its associated
+   configuration from the tenant account. Any and all configuration
+   data is immediately purged and cannot be recovered.
+   
+   A member cannot be deleted if the attached load balancer does not
+   have a ``provisioning_status`` of ``ACTIVE`` .
+   
+   Example: Remove a member from a pool
+
+   :tag: lbaas
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
+   :synopsis: Show load balancer details
+
+   Shows details for a specified load balancer.
+   
+   This operation returns a load balancer object identified by
+   ``loadbalancer_id`` . If the user is not an administrative user and
+   the load balancer object does not belong to her tenant account, the
+   service returns the HTTP ``Forbidden (403)`` response code.
+   
+   If this operation succeeds, it returns a load balancer element that
+   can contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``vip_subnet_id``
+   
+   - ``vip_address``
+   
+   - ``admin_state_up``
+   
+   - ``listeners``
+   
+   - ``provisioning_status``
+   
+   - ``operating_status``
+   
+   **Example: Show loadbalancer details**
+
+   :responseexample 200: v2/examples/showLoadBalancer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
+   :synopsis: Update load balancer
+
+   Updates a specified load balancer.
+   
+   This operation updates the attributes of the specified load
+   balancer. Upon successful validation of the request, the service
+   returns the ``Accepted (202)`` response code. A caller should check
+   that the load balancer ``provisioning_status`` has changed to
+   ``ACTIVE`` to confirm that the update has taken effect. If the load
+   balancer ``provisioning_status`` is ``PENDING_UPDATE`` , the caller
+   can poll the load balancer object by using a GET operation to wait
+   for the changes to be applied.
+   
+   The update operation enables you to change one or more of the
+   following load balancer attributes:
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``admin_state_up``
+   
+   This operation returns the updated load balancer object. The
+   ``provisioning_status`` value can be ``ACTIVE`` ,
+   ``PENDING_UPDATE`` , or ``ERROR`` .
+
+   :requestexample: v2/examples/updateLoadBalancer_req.json
+   :responseexample 200: v2/examples/updateLoadBalancer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/updateLoadBalancer.json
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lbaas/loadbalancers/{loadbalancer_id}
+   :synopsis: Remove load balancer
+
+   Removes a specified load balancer.
+   
+   This operation removes the specified load balancer and its
+   associated configuration from the tenant account. Any and all
+   configuration data is immediately purged and cannot be recovered.
+   
+   Example: Delete a load balancer
+
+   :tag: lbaas
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:put:: /v2.0/routers/{router_id}/add_router_interface
+   :synopsis: Add interface to router
+
+   Adds an internal interface to a logical router.
+   
+   Attaches a subnet to an internal router interface.
+   
+   Specify a subnet ID or port ID in the request body:
+   
+   - Subnet ID. The gateway IP address for the subnet is used to create
+     the router interface.
+   
+   - Port ID. The IP address associated with the port is used to create
+     the router interface.
+   
+   If you specify both IDs, the operation returns a ``400 BadRequest``
+   error.
+   
+   If the port is already used, the operation returns a
+   ``409Conflict`` error.
+   
+   The port ID that is returned by this operation can be either:
+   
+   - The same ID that is passed in the request body.
+   
+   - The ID of a port that is created by this operation to attach the
+     specified subnet to the router.
+   
+   After you run this operation:
+   
+   - The device ID of this port is set to the router ID.
+   
+   - The ``device_owner`` attribute is set to
+     ``network:router_interface`` .
+
+   :requestexample: v2/examples/addRouterInterface_req.json
+   :responseexample 200: v2/examples/addRouterInterface_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :requestschema: v2/addRouterInterface.json
+   :parameter router_id: The UUID of the router.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/metering/metering-labels
+   :synopsis: List metering labels
+
+   Lists all l3 metering labels that belong to the specified tenant.
+   
+   The list includes the unique ID for each metering labels.
+   
+   This operation does not require a request body.
+   
+   This operation returns a response body.
+
+   :responseexample 200: v2/examples/listMeteringLabels_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/metering/metering-labels
+   :synopsis: Create metering label
+
+   Creates a l3 metering label.
+   
+   This operation requires a request body.
+   
+   The following table describes the required and optional attributes
+   in the request body:
+
+   :requestexample: v2/examples/createMeteringLabel_req.json
+   :responseexample 201: v2/examples/createMeteringLabel_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :requestschema: v2/createMeteringLabel.json
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/lb/vips/{vip_id}
+   :synopsis: Show VIP details
+
+   Shows details for a specified VIP.
+
+   :responseexample 200: v2/examples/showVIP_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter vip_id: The UUID for the VIP.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lb/vips/{vip_id}
+   :synopsis: Update VIP
+
+   Updates a specified load balancer VIP.
+
+   :requestexample: v2/examples/updateVIP_req.json
+   :responseexample 200: v2/examples/updateVIP_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter vip_id: The UUID for the VIP.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lb/vips/{vip_id}
+   :synopsis: Delete VIP
+
+   Deletes a specified load balancer VIP.
+
+   :tag: lbaas
+   :parameter vip_id: The UUID for the VIP.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/loadbalancers
+   :synopsis: List load balancers
+
+   Lists load balancers.
+   
+   Lists all load balancers that are associated with your tenant
+   account.
+   
+   This operation returns a list, which might be empty. Each element
+   in the list is a load balancer that can contain the following
+   attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``vip_subnet_id``
+   
+   - ``vip_address``
+   
+   - ``admin_state_up``
+   
+   - ``listeners``
+   
+   - ``provisioning_status``
+   
+   - ``operating_status``
+
+   :responseexample 200: v2/examples/listLoadBalancers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/lbaas/loadbalancers
+   :synopsis: Create load balancer
+
+   Creates a load balancer.
+   
+   This operation provisions a new load balancer based on the
+   configuration defined in the request object. After the request is
+   validated and progress has started on the provisioning process, a
+   response object is returned. The object contains a unique
+   identifier and the status of provisioning the load balancer.
+   
+   The ``provisioning_status`` of the load balancer in the response
+   can have one of the following values: ``ACTIVE`` ,
+   ``PENDING_CREATE`` , or ``ERROR`` .
+   
+   If the status is ``PENDING_CREATE`` , the caller can view the
+   progress of the provisioning operation by performing a GET on
+   ``/lbaas/loadbalancers/loadbalancer_id`` . When the status of the
+   load balancer changes to ``ACTIVE`` , the load balancer was
+   successfully provisioned and is operational for traffic handling.
+   
+   If the request cannot be fulfilled due to insufficient or invalid
+   data, the service returns the HTTP ``Bad Request(400)`` response
+   code with information about the failure in the response body.
+   Validation errors require that you correct the error and submit the
+   request again.
+   
+   You can configure all documented features of the load balancer at
+   creation time by specifying the additional elements or attributes
+   in the request.
+   
+   Users with an administrative role can create load balancers on
+   behalf of other tenants by specifying a ``tenant_id`` attribute
+   different than their own.
+   
+   **Example: Create a load balancer**
+   
+   - ``tenant_id`` . only required if the caller has an administrative
+     role and wants to create a load balancer for another tenant.
+   
+   - ``vip_subnet_id`` . The network on which to allocate the VIP
+     address for the load balancer. A tenant can only create load
+     balancer VIPs on networks that are authorized by the policy, such
+     as her own networks or shared or provider networks.
+   
+   Some attributes receive default values if not specified in the
+   request:
+   
+   - ``admin_state_up`` . The default is true.
+   
+   - ``name`` . The default is an empty string.
+   
+   - ``description`` . The default is an empty string.
+   
+   If the request cannot be fulfilled due to insufficient data or data
+   that is not valid, the service returns the HTTP ``BadRequest
+   (400)`` response code with information about the failure in the
+   response body. Validation errors require that you correct the error
+   and submit the request again.
+   
+   You can configure all documented features of the load balancer at
+   creation time by specifying the additional elements or attributes
+   in the request.
+   
+   Users with an administrative role can create load balancers on
+   behalf of other tenants by specifying a ``tenant_id`` attribute
+   that is different than their own.
+   
+   A user can supply a ``vip_address`` field if she owns the subnet on
+   which the load balancer's VIP will be created. If a ``vip_address``
+   is not specified in the payload, the LBaaS service allocates one
+   from the load balancer VIP's subnet.
+   
+   Example: Create a load balancer
+
+   :requestexample: v2/examples/createLoadBalancer_req.json
+   :responseexample 201: v2/examples/createLoadBalancer_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/createLoadBalancer.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
+   :synopsis: Show IPSec connection
+
+   Shows details for a specified IPSec connection.
+
+   :responseexample 200: v2/examples/showIPSecSiteConnection_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :parameter connection_id: The UUID for the IPSec site-to-site
+                             connection.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
+   :synopsis: Update IPSec connection
+
+   Updates connection settings for a specified IPSec connection.
+
+   :requestexample: v2/examples/updateIPSecSiteConnection_req.json
+   :responseexample 200: v2/examples/updateIPSecSiteConnection_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/updateIPSecSiteConnection.json
+   :parameter connection_id: The UUID for the IPSec site-to-site
+                             connection.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/vpn/ipsecsiteconnections/{connection_id}
+   :synopsis: Remove IPSec connection
+
+   Removes a specified IPSec connection.
+   
+   Removes the IPSec connection specified in the request.
+
+   :tag: vpnaas
+   :parameter connection_id: The UUID for the IPSec site-to-site
+                             connection.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/ports/{port_id}
+   :synopsis: Show port
+
+   Shows information for the specified port.
+
+   :responseexample 200: v2/examples/showPort_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: port-binding
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 200: 
+
+
+.. http:put:: /v2.0/ports/{port_id}
+   :synopsis: Update port
+
+   Updates the specified port.
+
+   :requestexample: v2/examples/updatePort_req.json
+   :responseexample 200: v2/examples/updatePort_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: port-binding
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/ports/{port_id}
+   :synopsis: Delete port
+
+   Deletes the specified port.
+
+   :tag: port-binding
+   :parameter port_id: The UUID for the port of interest to you.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/subnetpools
+   :synopsis: List subnet pools
+
+   Lists subnet pools to which the specified tenant has access.
+   
+   Default policy settings returns exclusively subnet pools owned by
+   the tenant submitting the request, unless the request is submitted
+   by a user with administrative rights.
+
+   :responseexample 200: v2/examples/listSubnetPools_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnetpools-ext
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/subnetpools
+   :synopsis: Create subnet pool
+
+   Creates a subnet pool.
+
+   :requestexample: v2/examples/createSubnetPool_req.json
+   :responseexample 201: v2/examples/createSubnetPool_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: subnetpools-ext
+   :requestschema: v2/createSubnetPool.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/security-groups/{security_group_id}
+   :synopsis: Show security group
+
+   Shows details for a specified security group.
+   
+   This operation returns a response body that contains the
+   description, name, ID, and security group rules associated with the
+   specified security group and tenant ID.
+
+   :responseexample 200: v2/examples/getSecGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :parameter security_group_id: The unique identifier of the security
+                                 group.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/security-groups/{security_group_id}
+   :synopsis: Update security group
+
+   Updates a specified security group.
+
+   :requestexample: v2/examples/updateSecGroup_req.json
+   :responseexample 200: v2/examples/updateSecGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :requestschema: v2/updateSecGroup.json
+   :parameter security_group_id: The unique identifier of the security
+                                 group.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/security-groups/{security_group_id}
+   :synopsis: Delete security group
+
+   Deletes an OpenStack Networking security group.
+   
+   This operation deletes an OpenStack Networking security group and
+   its associated security group rules, provided that a port is not
+   associated with the security group.
+   
+   This operation does not require a request body. This operation does
+   not return a response body.
+
+   :tag: security-groups
+   :parameter security_group_id: The unique identifier of the security
+                                 group.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/vpn/vpnservices
+   :synopsis: List VPN services
+
+   Lists VPN services.
+   
+   This operation lists all VPN services.
+   
+   The list might be empty.
+
+   :responseexample 200: v2/examples/listVPNServices_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/vpn/vpnservices
+   :synopsis: Create VPN service
+
+   Creates a VPN service.
+   
+   Creates a VPN service object. The service is associated with a
+   router and a local (private) subnet. After the service is created,
+   it can contain multiple VPN connections.
+   
+   Example:
+
+   :requestexample: v2/examples/createVPNService_req.json
+   :responseexample 201: v2/examples/createVPNService_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/createVPNService.json
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:put:: /v2.0/routers/{router_id}/remove_router_interface
+   :synopsis: Remove interface from router
+
+   Removes an internal interface from a logical router.
+   
+   This operation removes an internal router interface, which detaches
+   a subnet from the router. You must specify either a subnet ID or
+   port ID in the request body; this value is used to identify the
+   router interface to remove.
+   
+   You can also specify both a subnet ID and port ID. If you specify
+   both IDs, the subnet ID must correspond to the subnet ID of the
+   first IP address on the port specified by the port ID. Otherwise,
+   the operation returns a ``409 Conflict`` error. The response
+   contains information about the affected router and interface.
+   
+   The operation returns a ``404 Not Found`` if the router or the
+   subnet and port do not exist or are not visible to you. As a
+   consequence of this operation, the port connecting the router with
+   the subnet is removed from the subnet for the network.
+   
+   This example removes an interface from a router:
+   
+   PUT /v2.0/routers/{router_id}/remove_router_interface Accept: application/json
+
+   :requestexample: v2/examples/removeRouterInterface_req.json
+   :responseexample 200: v2/examples/removeRouterInterface_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :parameter router_id: The UUID of the router.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/lb/health_monitors/{health_monitor_id}
+   :synopsis: Show health monitor details
+
+   Shows details for a specified health monitor.
+
+   :responseexample 200: v2/examples/showHealthMonitor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter health_monitor_id: The UUID for the health monitor.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:put:: /v2.0/lb/health_monitors/{health_monitor_id}
+   :synopsis: Update health monitor
+
+   Updates a specified load balancer health monitor.
+
+   :requestexample: v2/examples/updateHealthMonitor_req.json
+   :responseexample 200: v2/examples/updateHealthMonitor_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter health_monitor_id: The UUID for the health monitor.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lb/health_monitors/{health_monitor_id}
+   :synopsis: Delete health monitor
+
+   Deletes a specified load balancer health monitor.
+
+   :tag: lbaas
+   :parameter health_monitor_id: The UUID for the health monitor.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/security-groups
+   :synopsis: List security groups
+
+   Lists OpenStack Networking security groups to which the specified
+   tenant has access.
+   
+   The list shows the unique ID for and the rules that are associated
+   with each security group.
+
+   :responseexample 200: v2/examples/listSecGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/security-groups
+   :synopsis: Create security group
+
+   Creates an OpenStack Networking security group.
+   
+   This operation creates a security group with default security group
+   rules for the IPv4 and IPv6 ether types.
+
+   :requestexample: v2/examples/createSecGroup_req.json
+   :responseexample 201: v2/examples/createSecGroup_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security-groups
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/networks/{network_id}
+   :synopsis: Show network details
+
+   Shows details for a specified network.
+
+   :responseexample 200: v2/examples/showProviderNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-provider
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/networks/{network_id}
+   :synopsis: Update network
+
+   Updates a specified network.
+
+   :requestexample: v2/examples/updateProviderNetwork_req.json
+   :responseexample 200: v2/examples/updateProviderNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-provider
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/networks/{network_id}
+   :synopsis: Delete network
+
+   Deletes a specified network.
+
+   :tag: network-provider
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/networks/{network_id}
+   :synopsis: Show details for a network with multiple segments
+
+   Shows details for a specified network with multiple segments.
+
+   :responseexample 200: v2/examples/showMultiNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-multi-provider
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/networks/{network_id}
+   :synopsis: Show VLAN-transparent network details
+
+   Shows details for a specified VLAN-transparent network.
+
+   :responseexample 200: v2/examples/showVTNetwork_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-vlan-transparency
+   :parameter network_id: The UUID for the network of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/vpn/ipsecsiteconnections
+   :synopsis: Create IPSec connection
+
+   Creates an IPSec connection.
+   
+   Creates a site-to-site IPSec connection for a service.
+
+   :requestexample: v2/examples/createIPSecSiteConnection_req.json
+   :responseexample 201: v2/examples/createIPSecSiteConnection_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/createIPSecSiteConnection.json
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/vpn/ipsecsiteconnections
+   :synopsis: List IPSec connections
+
+   Lists IPSec connections.
+
+   :responseexample 200: v2/examples/listIPSecSiteConnections_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/quotas/{tenant_id}
+   :synopsis: Show quota
+
+   Shows quotas for a specified tenant.
+
+   :responseexample 200: v2/examples/showQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quotas
+   :parameter tenant_id: The tenant ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/quotas/{tenant_id}
+   :synopsis: Update quota
+
+   Updates quotas for a specified tenant. Use when non-default quotas
+   are desired.
+
+   :requestexample: v2/examples/updateQuota_req.json
+   :responseexample 200: v2/examples/updateQuota_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: quotas
+   :parameter tenant_id: The tenant ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:delete:: /v2.0/quotas/{tenant_id}
+   :synopsis: Reset quota
+
+   Resets quotas to default values for a specified tenant.
+
+   :tag: quotas
+   :parameter tenant_id: The tenant ID.
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/lb/pools/{pool_id}/health_monitors
+   :synopsis: Associate health monitor with pool
+
+   Associates a health monitor with a specified pool.
+
+   :requestexample: v2/examples/associateHealthMonitor_req.json
+   :responseexample 201: v2/examples/associateHealthMonitor_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter pool_id: The UUID for the pool.
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/security-group-rules
+   :synopsis: List security group rules
+
+   Lists a summary of all OpenStack Networking security group rules
+   that the specified tenant can access.
+   
+   The list provides the unique ID for each security group rule.
+
+   :responseexample 200: v2/examples/listSecGroupRules_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security_group-ruless
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/security-group-rules
+   :synopsis: Create security group rule
+
+   Creates an OpenStack Networking security group rule.
+
+   :requestexample: v2/examples/createSecGroupRule_req.json
+   :responseexample 201: v2/examples/createSecGroupRule_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: security_group-ruless
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/floatingips/{floatingip_id}
+   :synopsis: Show floating IP details
+
+   Shows details for a specified floating IP.
+   
+   Use the ``fields`` query parameter to control which fields are
+   returned in the response body. For information, see Filtering and
+   Column Selection .
+   
+   This example request shows details for a floating IP in JSON
+   format. This example also filters the result by the
+   ``fixed_ip_address`` and ``floating_ip_address`` fields.
+   
+   GET /v2.0/floatingips/{floatingip_id}?fields=fixed_ip_address & fields=floating_ip_address Accept: application/json
+
+   :responseexample 200: v2/examples/showFloatingIp_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :parameter floatingip_id: The UUID of the floating IP.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/floatingips/{floatingip_id}
+   :synopsis: Update floating IP
+
+   Updates a floating IP and its association with an internal port.
+   
+   The association process is the same as the process for the create
+   floating IP operation.
+   
+   To disassociate a floating IP from a port, set the ``port_id``
+   attribute to null or omit it from the request body.
+   
+   This example updates a floating IP:
+   
+   PUT /v2.0/floatingips/{floatingip_id} Accept: application/jsonDepending on the request body that you submit, this request
+   associates a port with or disassociates a port from a floating IP.
+
+   :requestexample: v2/examples/updateFloatingIp_req.json
+   :responseexample 200: v2/examples/updateFloatingIp_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :parameter floatingip_id: The UUID of the floating IP.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/floatingips/{floatingip_id}
+   :synopsis: Delete floating IP
+
+   Deletes a floating IP and, if present, its associated port.
+   
+   This example deletes a floating IP:
+   
+   DELETE /v2.0/floatingips/{floatingip_id} Accept: application/json
+
+   :tag: layer3
+   :parameter floatingip_id: The UUID of the floating IP.
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/metering/metering-label-rules
+   :synopsis: List metering label rules
+
+   Lists a summary of all l3 metering label rules belonging to the
+   specified tenant.
+   
+   The list provides the unique ID for each metering label rule.
+   
+   This operation does not require a request body. This operation
+   returns a response body.
+
+   :responseexample 200: v2/examples/listMeteringLabelRules_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/metering/metering-label-rules
+   :synopsis: Create metering label rule
+
+   Creates a l3 metering label rule.
+   
+   This operation requires a request body.
+   
+   This operation returns a response body.
+
+   :requestexample: v2/examples/createMeteringLabelRule_req.json
+   :responseexample 201: v2/examples/createMeteringLabelRule_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :requestschema: v2/createMeteringLabelRule.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/extensions
+   :synopsis: List extensions
+
+   Lists available Networking API extensions.
+
+   :responseexample 200: v2/examples/listExtensions_resp_200.json
+   :responseexample 203: v2/examples/listExtensions_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/metering/metering-labels/{metering_label_id}
+   :synopsis: Show metering label
+
+   Shows information for a specified metering label.
+   
+   This operation does not require a request body.
+   
+   This operation returns a response body that contains the
+   description, name, ID.
+
+   :responseexample 200: v2/examples/getMeteringLabel_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :parameter metering_label_id: The unique identifier of the metering
+                                 label.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:delete:: /v2.0/metering/metering-labels/{metering_label_id}
+   :synopsis: Delete metering label
+
+   Deletes a l3 metering label.
+   
+   This operation deletes a l3 metering label.
+   
+   This operation does not require a request body. This operation does
+   not return a response body.
+
+   :tag: metering
+   :parameter metering_label_id: The unique identifier of the metering
+                                 label.
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/lbaas/pools/{pool_id}
+   :synopsis: Show pool details
+
+   Shows details for a specified pool.
+   
+   This operation returns a pool object identified by ``pool_id`` . If
+   the user is not an administrative user and the pool object does not
+   belong to her tenant account, the call returns the HTTP
+   ``Forbidden(403)`` response code.
+   
+   If this operation succeeds, it returns a ``pool`` element that can
+   contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``protocol``
+   
+   - ``lb_method``
+   
+   - ``session_persistence``
+   
+   - ``admin_state_up``
+   
+   - ``listeners``
+   
+   - ``members``
+   
+   - ``health_monitor_id``
+   
+   Example: Show pool details
+
+   :responseexample 200: v2/examples/showPool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 409: 
+
+
+.. http:put:: /v2.0/lbaas/pools/{pool_id}
+   :synopsis: Update pool
+
+   Updates a specified pool.
+   
+   This operation updates the attributes of the specified pool. Upon
+   successful validation of the request, the service returns the HTTP
+   ``Accepted (202)`` response code.
+   
+   The update operation enables the caller to change one or more of
+   the following pool attributes:
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``admin_state_up``
+   
+   - ``lb_method``
+   
+   - ``session_persistence``
+   
+   Note: You cannot update the pool ID, ``tenant_id`` ,
+   ``listener_id`` , ``listeners`` , ``health_monitor_id`` ,
+   ``protocol`` , and ``members`` immutable attributes. If you try to
+   update any of these attributes, the service returns the HTTP
+   ``Immutable (422)`` response code.
+   
+   Note: You cannot update a pool if the load balancer to which it is
+   attached does not have a ``provisioning_status`` of ``ACTIVE`` .
+   
+   Example: Update a pool
+
+   :requestexample: v2/examples/updatePool_req.json
+   :responseexample 200: v2/examples/updatePool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/updatePool.json
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lbaas/pools/{pool_id}
+   :synopsis: Remove pool
+
+   Removes a specified pool.
+   
+   This operation removes a specified pool and its associated
+   configuration from the tenant account. Any and all configuration
+   data is immediately purged and cannot be recovered.
+   
+   You cannot delete a pool if the load balancer to which it is
+   attached does not have a ``provisioning_status`` of ``ACTIVE`` .
+   
+   Example: Delete a pool
+
+   :tag: lbaas
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/ports
+   :synopsis: List ports
+
+   Lists ports to which the tenant has access.
+
+   :responseexample 200: v2/examples/listPorts_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: port-binding
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/ports
+   :synopsis: Create port
+
+   Creates a port on the specified network.
+
+   :requestexample: v2/examples/createPort_req.json
+   :responseexample 201: v2/examples/createPort_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: port-binding
+   :statuscode 201: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/lb/vips
+   :synopsis: List VIPs
+
+   Lists VIPs.
+
+   :responseexample 200: v2/examples/listVIPs_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/lb/vips
+   :synopsis: Create a load balancer VIP
+
+   Creates a load balancer VIP.
+
+   :requestexample: v2/examples/createVIP_req.json
+   :responseexample 201: v2/examples/createVIP_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:post:: /v2.0/lbaas/health_monitors
+   :synopsis: Create health monitor
+
+   Creates a health monitor.
+   
+   This operation provisions a new health monitor based on the
+   configuration defined in the request object. After the request is
+   validated and progress has started on the provisioning process, a
+   response object is returned. The object contains a unique
+   identifier.
+   
+   The caller of this operation must specify these health monitor
+   attributes, at a minimum:
+   
+   - ``tenant_id`` . Only required if the caller has an administrative
+     role and wants to create a health monitor for another tenant.
+   
+   - ``type`` . The type of health monitor. Must be one of TCP, HTTP,
+     HTTPS
+   
+   - ``delay`` . The interval in seconds between health checks.
+   
+   - ``timeout`` . The time in seconds that a health check times out.
+   
+   - ``max_retries`` . Number of failed health checks before marked as
+     OFFLINE.
+   
+   - ``pool_id`` . The pool that this health monitor will monitor.
+   
+   Some attributes will receive default values if not specified in the
+   request and are only useful when health monitor type of HTTP(S) is
+   specified:
+   
+   - ``http_method`` . The default is GET.
+   
+   - ``url_path`` . The default is ``/`` .
+   
+   - ``expected_codes`` . The expected http status codes to get from a
+     successful health check. Default is 200.
+   
+   - ``admin_state_up`` . The default is true.
+   
+   If the request cannot be fulfilled due to insufficient data or data
+   that is not valid, an HTTP 400 (Bad Request) error response is
+   returned with information regarding the nature of the failure in
+   the response body. Failures in the validation process are non-
+   recoverable and require the caller to correct the cause of the
+   failure and POST the request again.
+   
+   You can configure all documented features of the health monitor at
+   creation time by specifying the additional elements or attributes
+   in the request.
+   
+   Users with an administrative role can create health monitors on
+   behalf of other tenants by specifying a ``tenant_id`` attribute
+   different than their own.
+   
+   To update a health monitor, the load balancer to which it is being
+   attached must have an ACTIVE provisioning status.
+   
+   Example: Create a health monitor
+
+   :requestexample: v2/examples/createHealthMonitor_req.json
+   :responseexample 201: v2/examples/createHealthMonitor_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/createHealthMonitor.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/health_monitors
+   :synopsis: List health monitors
+
+   Lists health monitors.
+   
+   This operation lists all health monitors associated with your
+   tenant account.
+   
+   This operation returns a list, which might be empty, each element
+   in the list is a health monitor that can contain the following
+   attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``type``
+   
+   - ``delay``
+   
+   - ``timeout``
+   
+   - ``max_retries``
+   
+   - ``http_method``
+   
+   - ``url_path``
+   
+   - ``expected_codes``
+   
+   - ``admin_state_up``
+   
+   - ``pool_id``
+   
+   - ``pools``
+   
+   Example: List health monitors
+
+   :responseexample 200: v2/examples/listHealthMonitors_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/routers/{router_id}
+   :synopsis: Show router details
+
+   Shows details for a specified router.
+   
+   This example request shows details for a router in JSON format:
+   
+   GET /v2.0/routers/{router_id} Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   returned in the response body. For information, see Filtering and
+   Column Selection .
+
+   :responseexample 200: v2/examples/showRouter_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :parameter router_id: The UUID of the router.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/routers/{router_id}
+   :synopsis: Update router
+
+   Updates a logical router.
+   
+   You can update the name, administrative state, and the external
+   gateway. For more information about how to set the external gateway
+   for a router, see the create router operation. This operation does
+   not enable the update of router interfaces. To update a router, use
+   the add router interface and remove router interface operations.
+   
+   This example updates the external gateway information for a router:
+   
+   PUT /v2.0/routers/{router_id} Accept: application/json
+
+   :requestexample: v2/examples/updateRouter_req.json
+   :responseexample 200: v2/examples/updateRouter_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :parameter router_id: The UUID of the router.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/routers/{router_id}
+   :synopsis: Delete router
+
+   Deletes a logical router and, if present, its external gateway
+   interface.
+   
+   This operation fails if the router has attached interfaces.
+   
+   Use the remove router interface operation to remove all router
+   interfaces before you delete the router.
+   
+   This example deletes a router:
+   
+   DELETE /v2.0/routers/{router_id} Accept: application/json
+
+   :tag: layer3
+   :parameter router_id: The UUID of the router.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/routers/{router_id}
+   :synopsis: Update router
+
+   Configures extra routes on a specified router.
+   
+   The next hop IP address must be a part of one of the subnets to
+   which the router interfaces are connected. Otherwise, the server
+   responds with the ``400 Bad Request`` error code.
+   
+   When a validation error is detected, such as a format error of IP
+   address or CIDR, the server responds with the ``400 Bad Request``
+   error code.
+   
+   When Networking receives a request to delete the router interface
+   for subnets that are used by one or more routes, it responds with a
+   ``409 Conflict`` error code.
+
+   :requestexample: v2/examples/updateRouter_req.json
+   :responseexample 200: v2/examples/updateRouter_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extraroute
+   :requestschema: v2/updateRouter.json
+   :parameter router_id: The UUID for the router of interest to you.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v2.0/lbaas/listeners
+   :synopsis: Create listener
+
+   Creates a listener.
+   
+   This operation provisions a new listener based on the configuration
+   defined in the request object. After the request is validated and
+   the provisioning process begins, a response object is returned. The
+   object contains a unique identifier.
+   
+   At a minimum, you must specify these listener attributes:
+   
+   - ``tenant_id`` . Required only if the caller has an administrative
+     role and wants to create a listener for another tenant.
+   
+   - ``loadbalancer_id`` . The load balancer on which this listener is
+     provisioned. A tenant can only create listeners on load balancers
+     authorized by policy. For example, her own load balancers.
+   
+   - ``description`` . The load balancer description.
+   
+   - ``protocol`` . The protocol for which the front end listens. Must
+     be TCP, HTTP, or HTTPS.
+   
+   - ``protocol_port`` . The port on which the front end listens. Must
+     be an integer from 1 to 65535.
+   
+   - ``default_tls_container_ref`` . The reference to a container that
+     holds TLS secrets. If you also specify ``sni_container_refs`` ,
+     this container is the default.
+   
+   - ``sni_container_refs`` . A list of references to containers that
+     hold TLS secrets that are used for Server Name Indication (SNI).
+   
+   Some attributes receive default values if not specified in the
+   request:
+   
+   - ``admin_state_up`` . The default is ``true`` .
+   
+   - ``name`` . The default is an empty string.
+   
+   - ``description`` . The default is an empty string.
+   
+   - ``connection_limit`` . The default is ``-1`` , which indicates an
+     infinite limit.
+   
+   If the request cannot be fulfilled due to insufficient or invalid
+   data, the service returns the HTTP ``Bad Request(400)`` response
+   code with information about the failure in the response body.
+   Validation errors require that you correct the error and submit the
+   request again.
+   
+   You can configure all documented features of the listener at
+   creation time by specifying the additional elements or attributes
+   in the request.
+   
+   Users with an administrative role can create listeners on behalf of
+   other tenants by specifying a ``tenant_id`` attribute different
+   than their own.
+   
+   A listener cannot be updated if the load balancer that it is
+   attempting to be attached to does not have a
+   ``provisioning_status`` of ``ACTIVE`` .
+   
+   Example: Create a listener
+
+   :requestexample: v2/examples/createListener_req.json
+   :responseexample 201: v2/examples/createListener_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/createListener.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/listeners
+   :synopsis: List listeners
+
+   Lists listeners.
+   
+   This operation lists all listeners that are associated with your
+   tenant account.
+   
+   This operation returns a list, which might be empty. Each list
+   element is a listener that can contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``protocol``
+   
+   - ``protocol_port``
+   
+   - ``connection_limit``
+   
+   - ``default_pool_id``
+   
+   - ``admin_state_up``
+   
+   - ``loadbalancers``
+   
+   - ``default_tls_container_ref``
+   
+   - ``sni_container_refs``
+   
+   Example: List listeners
+
+   :responseexample 200: v2/examples/listListeners_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
+   :synopsis: Show IPSec policy
+
+   Shows details for a specified IPSec policy.
+   
+   Shows details for a specified IPSec policy.
+
+   :responseexample 200: v2/examples/showIPSecPolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :parameter ipsecpolicy_id: The UUID for the IPSec policy.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
+   :synopsis: Update IPSec policy
+
+   Updates policy settings in a specified IPSec policy.
+
+   :requestexample: v2/examples/updateIPSecPolicy_req.json
+   :responseexample 200: v2/examples/updateIPSecPolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/updateIPSecPolicy.json
+   :parameter ipsecpolicy_id: The UUID for the IPSec policy.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/vpn/ipsecpolicies/{ipsecpolicy_id}
+   :synopsis: Remove IPSec policy
+
+   Removes a specified IPSec policy.
+   
+   Removes the IPSec policy specified in the request.
+
+   :tag: vpnaas
+   :parameter ipsecpolicy_id: The UUID for the IPSec policy.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/routers
+   :synopsis: List routers
+
+   Lists logical routers that are accessible to the tenant who submits
+   the request.
+   
+   Default policy settings return only those routers that are owned by
+   the tenant who submits the request, unless an admin user submits
+   the request.
+   
+   This example request lists routers in JSON format:
+   
+   GET /v2.0/routers Accept: application/jsonUse the ``fields`` query parameter to control which fields are
+   returned in the response body. Additionally, you can filter results
+   by using query string parameters. For information, see Filtering
+   and Column Selection .
+
+   :responseexample 200: v2/examples/listRouters_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/routers
+   :synopsis: Create router
+
+   Creates a logical router.
+   
+   This operation creates a new logical router. When it is created, a
+   logical router does not have any internal interface; it is not
+   associated to any subnet. You can optionally specify an external
+   gateway for a router at create time. The external gateway for the
+   router must be plugged into an external network. An external
+   network has its extended field ``router:external`` set to ``true``
+   . To specify an external gateway, the identifier of the external
+   network must be passed in the ``external_gateway_info`` attribute
+   in the request body, as follows:
+   
+   { "router": { "external_gateway_info": { "network_id": "8ca37218-28ff-41cb-9b10-039601ea7e6b" } } }
+
+   :requestexample: v2/examples/createRouter_req.json
+   :responseexample 201: v2/examples/createRouter_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: layer3
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v2.0/lbaas/pools/{pool_id}/members
+   :synopsis: Add member to pool
+
+   Adds a member to a pool.
+   
+   This operation provisions a new member and adds it to a pool based
+   on the configuration defined in the request object. After the
+   request is validated and progress has started on the provisioning
+   process, a response object is returned. The object contains a
+   unique identifier.
+   
+   At a minimum, you must specify the following pool attributes:
+   
+   - ``tenant_id`` . Only required if the caller has an administrative
+     role and wants to create a pool for another tenant.
+   
+   - ``address`` . The IP address of the member to receive traffic from
+     the load balancer.
+   
+   - ``protocol_port`` The port on which the member is listening to
+     receive traffic.
+   
+   Some attributes receive default values if not specified in the
+   request:
+   
+   - ``admin_state_up`` . The default is ``true`` .
+   
+   - ``weight`` . The default is ``1`` .
+   
+   If you omit the ``subnet_id`` parameter, LBaaS uses the
+   ``vip_subnet_id`` parameter value for the subnet ID.
+   
+   If the request fails due to incorrect data, the service returns the
+   HTTP ``Bad Request (400)`` response code with information about the
+   failure in the response body. Validation errors require that you
+   correct the error and submit the request again.
+   
+   To configure all documented member features at creation time,
+   specify additional elements or attributes in the request.
+   
+   Users with an administrative role can create members on behalf of
+   other tenants by specifying a ``tenant_id`` attribute that is
+   different than their own.
+   
+   To update a member, the load balancer must have a
+   ``provisioning_status`` of ``ACTIVE`` .
+
+   :requestexample: v2/examples/createMember_req.json
+   :responseexample 201: v2/examples/createMember_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/createMember.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/pools/{pool_id}/members
+   :synopsis: List pool members
+
+   Lists members of a specified pool.
+   
+   Lists all members that are associated with a pool that is
+   associated with your tenant account. The list of members includes
+   only members that belong to the pool object identified by
+   ``pool_id`` .
+   
+   This operation returns a list, which might be empty. Each element
+   in the list is a member that can contain the following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``address``
+   
+   - ``protocol_port``
+   
+   - ``weight``
+   
+   - ``subnet_id``
+   
+   - ``admin_state_up``
+   
+   Example: List pool members
+
+   :responseexample 200: v2/examples/listMembers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/metering/metering-label-rules/{metering-label-rule-id}
+   :synopsis: Show metering label rule
+
+   Shows detailed information for a specified metering label rule.
+   
+   This operation does not require a request body.
+   
+   This operation returns a response body, which contains the
+   following information about the metering label rule:
+   
+   - ``direction`` . Either ingress or egress.
+   
+   - ``excluded`` . Either True or False.
+   
+   - The ID for the specified metering label rule
+   
+   - The remote IP prefix
+   
+   - The metering label ID for the metering label with which the rule
+     is associated
+
+   :responseexample 200: v2/examples/getMeteringLabelRule_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: metering
+   :parameter metering-label-rule-id: The unique identifier of
+                                      metering label rule.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+
+
+.. http:delete:: /v2.0/metering/metering-label-rules/{metering-label-rule-id}
+   :synopsis: Delete metering label rule
+
+   Deletes a specified l3 metering label rule.
+   
+   This operation does not require a request body.
+   
+   This operation does not return a response body.
+
+   :tag: metering
+   :parameter metering-label-rule-id: The unique identifier of
+                                      metering label rule.
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/lbaas/pools
+   :synopsis: Create pool
+
+   Creates a pool.
+   
+   This operation provisions a new pool based on the configuration
+   defined in the request object. After the request is validated and
+   progress has started on the provisioning process, a response object
+   is returned. The object contains a unique identifier.
+   
+   The caller of this operation must specify these pool attributes, at
+   a minimum:
+   
+   - ``tenant_id`` . Required only if the caller has an administrative
+     role and wants to create a pool for another tenant.
+   
+   - ``protocol`` . The protocol for which this pool and its members
+     listen. A valid value is TCP, HTTP, or HTTPS.
+   
+   - ``lb_method`` . The load-balancer algorithm, which is round-robin,
+     least-connections, and so on, that is used to distribute traffic
+     to the pool members. This value, which must be supported, is
+     dependent on the load-balancer provider. The round-robin
+     algorithm must be supported.
+   
+   - ``protocol_port`` . The port on which the front end listens. Must
+     be an integer from 1 to 65535.
+   
+   - ``listener_id`` . The ID of the listener in which this pool
+     becomes the default pool. Each listener can have only one default
+     pool.
+   
+   Some attributes receive default values if not specified in the
+   request:
+   
+   - ``admin_state_up`` . The default is ``true`` .
+   
+   - ``name`` . The default is an empty string.
+   
+   - ``description`` . The default is an empty string.
+   
+   - ``session_persistence`` . The default is an empty dictionary.
+   
+   If the request cannot be fulfilled due to insufficient or invalid
+   data, the service returns the HTTP ``Bad Request(400)`` response
+   code with information about the failure in the response body.
+   Validation errors require that you correct the error and submit the
+   request again.
+   
+   Users can configure all documented features at creation time by
+   providing the additional elements or attributes in the request.
+   
+   Users with an administrative role can create pools on behalf of
+   other tenants by specifying a ``tenant_id`` attribute that is
+   different than their own.
+   
+   You cannot update a pool if the load balancer to which it is
+   attempting to be attached does not have a ``provisioning_status``
+   of ``ACTIVE`` .
+   
+   Example: Create a pool
+
+   :requestexample: v2/examples/createPool_req.json
+   :responseexample 201: v2/examples/createPool_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :requestschema: v2/createPool.json
+   :statuscode 201: 
+   :statuscode 404: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/lbaas/pools
+   :synopsis: List pools
+
+   Lists pools.
+   
+   This operation lists all pools that are associated with your tenant
+   account.
+   
+   This operation returns a response body that contains a list, which
+   might be empty. Each pool element in the list can contain the
+   following attributes:
+   
+   - ``id``
+   
+   - ``tenant_id``
+   
+   - ``name``
+   
+   - ``description``
+   
+   - ``protocol``
+   
+   - ``lb_method``
+   
+   - ``session_persistence``
+   
+   - ``admin_state_up``
+   
+   - ``listeners``
+   
+   - ``members``
+   
+   - ``health_monitor_id``
+   
+   Example: List pools
+
+   :responseexample 200: v2/examples/listPools_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/lb/pools/{pool_id}/health_monitors/{health_monitor_id}
+   :synopsis: Disassociate health monitor from pool
+
+   Disassociates a specified health monitor from a pool.
+
+   :tag: lbaas
+   :parameter health_monitor_id: The UUID for the health monitor.
+   :parameter pool_id: The UUID for the pool.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/extensions/{alias}
+   :synopsis: Get extension details
+
+   Gets detailed information for a specified extension.
+
+   :responseexample 200: v2/examples/getExtension_resp_200.json
+   :responseexample 203: v2/examples/getExtension_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: extensions
+   :parameter alias: The alias of an extension.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/lb/pools
+   :synopsis: List pools
+
+   Lists pools.
+
+   :responseexample 200: v2/examples/listPools_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:post:: /v2.0/lb/pools
+   :synopsis: Create a load balancer pool
+
+   Creates a load balancer pool.
+
+   :requestexample: v2/examples/createPool_req.json
+   :responseexample 201: v2/examples/createPool_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/vpn/vpnservices/{service_id}
+   :synopsis: Show VPN service details
+
+   Shows details for a specified VPN service.
+   
+   Shows details for a specified VPN service. If the user is not an
+   administrative user and the VPN service object does not belong to
+   the user's tenant account, a 403 (Forbidden) error is returned.
+
+   :responseexample 200: v2/examples/showVPNService_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :parameter service_id: The UUID for the VPN service.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:put:: /v2.0/vpn/vpnservices/{service_id}
+   :synopsis: Update VPN service
+
+   Updates a specified VPN service.
+   
+   This operation updates the attributes of a specified VPN service.
+   To update a service, the service status cannot be a ``PENDING_*``
+   status.
+
+   :requestexample: v2/examples/updateVPNService_req.json
+   :responseexample 200: v2/examples/updateVPNService_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/updateVPNService.json
+   :parameter service_id: The UUID for the VPN service.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v2.0/vpn/vpnservices/{service_id}
+   :synopsis: Remove VPN service
+
+   Removes a specified VPN service.
+   
+   This operation removes a specified VPN service. If the service has
+   connections, the request is rejected.
+
+   :tag: vpnaas
+   :parameter service_id: The UUID for the VPN service.
+   :statuscode 409: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/vpn/ipsecpolicies
+   :synopsis: Create IPSec policy
+
+   Creates an IPSec policy.
+   
+   The IP security policy specifies the authentication and encryption
+   algorithms and encapsulation mode to use for the established VPN
+   connection.
+
+   :requestexample: v2/examples/createIPSecPolicy_req.json
+   :responseexample 201: v2/examples/createIPSecPolicy_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :requestschema: v2/createIPSecPolicy.json
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/vpn/ipsecpolicies
+   :synopsis: List IPSec policies
+
+   Lists IPSec policies.
+   
+   This operation lists all IPSec policies.
+
+   :responseexample 200: v2/examples/listIPSecPolicies_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: vpnaas
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 401: 
+
+
+.. http:get:: /v2.0/lb/health_monitors
+   :synopsis: List health monitors
+
+   Lists health monitors.
+
+   :responseexample 200: v2/examples/listHealthMonitors_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:post:: /v2.0/lb/health_monitors
+   :synopsis: Create a load balancer health monitor
+
+   Creates a load balancer health monitor.
+
+   :requestexample: v2/examples/createHealthMonitor_req.json
+   :responseexample 201: v2/examples/createHealthMonitor_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:get:: /v2.0/networks
+   :synopsis: List networks
+
+   Lists networks that are accessible to the tenant who submits the
+   request.
+
+   :responseexample 200: v2/examples/listProviderNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-provider
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/networks
+   :synopsis: Create network
+
+   Creates a network.
+
+   :requestexample: v2/examples/createProviderNetwork_req.json
+   :responseexample 201: v2/examples/createProviderNetwork_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-provider
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/networks
+   :synopsis: List networks
+
+   Lists networks that are accessible to the tenant who submits the
+   request. Networks with multiple segments include the ``segments``
+   list in the response.
+
+   :responseexample 200: v2/examples/listMultiNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-multi-provider
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/networks
+   :synopsis: Create network with multiple segment mappings
+
+   Creates a network with multiple segment mappings.
+
+   :requestexample: v2/examples/createMultiNetwork_req.json
+   :responseexample 201: v2/examples/createMultiNetwork_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-multi-provider
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/networks
+   :synopsis: List networks with VLAN transparency attribute
+
+   Lists networks. The response shows the VLAN transparency attribute.
+
+   :responseexample 200: v2/examples/listVTNetworks_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-vlan-transparency
+   :statuscode 200: 
+   :statuscode 401: 
+
+
+.. http:post:: /v2.0/networks
+   :synopsis: Create VLAN-transparent network
+
+   Creates a VLAN-transparent network.
+
+   :requestexample: v2/examples/createVTNetwork_req.json
+   :responseexample 201: v2/examples/createVTNetwork_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: network-vlan-transparency
+   :statuscode 201: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v2.0/lb/pools/{pool_id}
+   :synopsis: Show pool details
+
+   Shows details for a specified pool.
+
+   :responseexample 200: v2/examples/showPool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter pool_id: The UUID for the pool.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:put:: /v2.0/lb/pools/{pool_id}
+   :synopsis: Update pool
+
+   Updates a specified load balancer pool.
+
+   :requestexample: v2/examples/updatePool_req.json
+   :responseexample 200: v2/examples/updatePool_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: lbaas
+   :parameter pool_id: The UUID for the pool.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+
+.. http:delete:: /v2.0/lb/pools/{pool_id}
+   :synopsis: Delete pool
+
+   Deletes a specified load balancer pool.
+
+   :tag: lbaas
+   :parameter pool_id: The UUID for the pool.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+   :statuscode 500: 
+
+

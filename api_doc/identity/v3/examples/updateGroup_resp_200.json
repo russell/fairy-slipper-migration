@@ -1,0 +1,11 @@
+{
+  "group": {
+    "id": "101112", 
+    "name": "myUpdatedGroup", 
+    "description": "my updated group", 
+    "links": {
+      "self": "http://identity:35357/v3/groups/101112"
+    }, 
+    "domain_id": "161718"
+  }
+}

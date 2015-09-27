@@ -1,0 +1,1802 @@
+.. http:get:: /v3/projects
+   :synopsis: List projects
+
+   Lists projects.
+
+   :responseexample 200: v3/examples/listProjects_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :query domain_id: Filters on domain_id.
+   :query parent_id: Filters on parent_id.
+   :query name: Filters on a name.
+   :query enabled: Filters on enabled or disabled roles. Values are
+                   ``true`` or ``false`` .
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/projects
+   :synopsis: Create project
+
+   Creates a project.
+
+   :requestexample: v3/examples/createProject_req.json
+   :responseexample 201: v3/examples/createProject_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :requestschema: v3/createProject.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/policies
+   :synopsis: List policies
+
+   Lists policies.
+
+   :responseexample 200: v3/examples/listPolicies_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: policies
+   :query type: Filters by service type. Service types include
+                compute, ec2, image, and identity.
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/policies
+   :synopsis: Create policy
+
+   Creates a policy.
+
+   :requestexample: v3/examples/createPolicy_req.json
+   :responseexample 201: v3/examples/createPolicy_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: policies
+   :requestschema: v3/createPolicy.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/projects/{project_id}
+   :synopsis: Show project details
+
+   Shows details for a specified project.
+
+   :responseexample 200: v3/examples/getProject_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/projects/{project_id}
+   :synopsis: Update project
+
+   Updates a specified project.
+
+   :requestexample: v3/examples/updateProject_req.json
+   :responseexample 200: v3/examples/updateProject_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/projects/{project_id}
+   :synopsis: Delete project
+
+   Deletes a specified project.
+
+   :tag: projects
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/users
+   :synopsis: List users
+
+   Lists users.
+
+   :responseexample 200: v3/examples/listUsers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :query domain_id: Filters on domain_id.
+   :query name: Filters on a name.
+   :query enabled: Filters on enabled or disabled roles. Values are
+                   ``true`` or ``false`` .
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/users
+   :synopsis: Create user
+
+   Creates a user.
+
+   :requestexample: v3/examples/createUser_req.json
+   :responseexample 201: v3/examples/createUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :requestschema: v3/createUser.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Grant role to project group
+
+   Grants a specified role to a specified project group.
+
+   :tag: projects
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Check role for project group
+
+   Validates that a specified project group has a specified role.
+
+   :tag: projects
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Revoke role from project group
+
+   Revokes a specified role from a specified project group.
+
+   :tag: projects
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /
+   :synopsis: List versions
+
+   Lists information about all Identity API versions.
+
+   :responseexample 200: v3/examples/getVersions-identity-v3_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions-identity
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/users/{user_id}
+   :synopsis: Show user details
+
+   Shows details for a specified user.
+
+   :responseexample 200: v3/examples/getUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/users/{user_id}
+   :synopsis: Update user
+
+   Updates the password for or enables or disables a specified user.
+   
+   If the back-end driver does not allow this functionality, this call
+   might return the HTTP ``Not Implemented (501)`` status code.
+
+   :requestexample: v3/examples/updateUser_req.json
+   :responseexample 200: v3/examples/updateUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/users/{user_id}
+   :synopsis: Delete user
+
+   Deletes a specified user.
+
+   :tag: users
+   :parameter user_id: The user ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/groups/{group_id}/users
+   :synopsis: List users in group
+
+   Lists the users in a specified group.
+
+   :responseexample 200: v3/examples/listGroupUsers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: groups
+   :parameter group_id: The group ID.
+   :query domain_id: Filters on domain_id.
+   :query description: Filters on a description.
+   :query name: Filters on a name.
+   :query enabled: Filters on enabled or disabled roles. Values are
+                   ``true`` or ``false`` .
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/auth/tokens
+   :synopsis: Authenticate
+
+   Authenticates and generates a token.
+   
+   Each REST request against the Identity Service requires the ``X
+   -Auth-Token`` header. Clients obtain this token and the URL
+   endpoints for other service APIs by supplying their valid
+   credentials to the authentication service.
+   
+   A REST interface provides client authentication by using the POST
+   method with ``auth/tokens`` the path. The body of the request must
+   include a payload of credentials including the authentication
+   method and, optionally, the authorization scope. The scope includes
+   either a project or domain. If you include both project and domain,
+   this call returns the HTTP ``Bad Request (400)`` status code
+   because a token cannot be simultaneously scoped as both a project
+   and domain.
+   
+   If you do not include the optional scope and the authenticating
+   user has a defined default project (the ``default_project_id``
+   attribute for the user), that default project is treated as the
+   preferred authorization scope.
+   
+   If no default project is defined, the token is issued without an
+   explicit scope of authorization.
+   
+   Provide one of the following sets of credentials to authenticate:
+   User ID and password, user name and password scoped by domain ID or
+   name, user ID and password scoped by project ID or name with or
+   without domain scope, or token.
+   
+   The following examples demonstrate authentication requests with
+   different types of credentials.
+   
+   If ``scope`` is included, ``project id`` uniquely identifies the
+   ``project`` . However, ``project name`` uniquely identifies the
+   ``project`` only when used in conjunction with a ``domain ID`` or a
+   ``domain name`` .
+   
+   If the authentication token has expired, this call returns the HTTP
+   ``401`` status code.
+   
+   If the subject token has expired, this call returns the HTTP
+   ``404`` status code.
+   
+   The Identity API treats expired tokens as no longer valid tokens.
+   
+   The deployment determines how long expired tokens are stored.
+   
+   As the following example responses show, the response to an
+   authentication request returns the token ID in the ``X-Subject-
+   Token`` header instead of in the token data.
+   
+   If the call has no explicit authorization scope, the response does
+   not contain the ``catalog`` , ``project`` , ``domain`` , or
+   ``roles`` fields. However, the response still uniquely identifies
+   the user.
+   
+   A token scoped to a ``project`` also has both a service ``catalog``
+   and the user's roles applicable to the ``project`` .
+   
+   A token scoped to a ``domain`` also has both a service ``catalog``
+   and the user's roles applicable to the ``project`` .
+   
+   Optionally, the Identity API implementation might return an
+   ``authentication`` attribute to indicate the supported
+   authentication methods.
+   
+   For authentication processes that require multiple round trips, The
+   Identity API implementation might return an HTTP ``Unauthorized
+   (401)`` status code with additional information for the next
+   authentication step.
+   
+   The following examples illustrate several possible HTTP
+   ``Unauthorized (401)`` authentication errors. Other errors, like
+   HTTP ``Forbidden (403)`` , are also possible.
+
+   :requestexample: v3/examples/authenticate_req.json
+   :responseexample 201: v3/examples/authenticate_resp_201.json
+   :responseexample 401: v3/examples/authenticate_resp_401.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: tokens
+   :requestschema: v3/authenticate.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/auth/tokens
+   :synopsis: Validate token
+
+   Validates a specified token.
+   
+   Pass your own token in the ``X-Auth-Token`` header. Pass the token
+   to be validated in the ``X-Subject-Token`` header. The Identity API
+   returns the same response as when the subject token was issued by
+   ``POST/auth/tokens`` .
+
+   :responseexample 200: v3/examples/validateTokens_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: tokens
+   :reqheader X-Auth-Token: A valid authentication token for an
+                            administrative user.
+   :reqheader X-Subject-Token: The token ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/auth/tokens
+   :synopsis: Check token
+
+   Validates a specified token.
+   
+   This call is similar to ``GET /auth/tokens`` but no response body
+   is provided even in the ``X-Subject-Token`` header.
+   
+   The Identity API returns the same response as when the subject
+   token was issued by ``POST /auth/tokens`` even if an error occurs
+   because the token is not valid. An HTTP ``204`` status code
+   indicates that the ``X-Subject-Token`` is valid.
+
+   :tag: tokens
+   :reqheader X-Auth-Token: A valid authentication token for an
+                            administrative user.
+   :reqheader X-Subject-Token: The token ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/auth/tokens
+   :synopsis: Revoke token
+
+   Revokes a specified token.
+   
+   This call is similar to ``HEAD /auth/tokens`` except that the ``X
+   -Subject-Token`` token is immediately not valid, regardless of the
+   ``expires_at`` attribute value. An additional ``X -Auth-Token`` is
+   not required.
+
+   :tag: tokens
+   :reqheader X-Auth-Token: A valid authentication token for an
+                            administrative user.
+   :reqheader X-Subject-Token: The token ID.
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/groups/{group_id}/users/{user_id}
+   :synopsis: Assign user to group
+
+   Assigns a specified user to a specified group.
+
+   :tag: groups
+   :parameter user_id: The user ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/groups/{group_id}/users/{user_id}
+   :synopsis: Remove user from group
+
+   Removes a specified user from a specified group.
+
+   :tag: groups
+   :parameter user_id: The user ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/groups/{group_id}/users/{user_id}
+   :synopsis: Check user membership in group
+
+   Validates that a specified user is in a specified group.
+
+   :tag: groups
+   :parameter user_id: The user ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/services
+   :synopsis: List services
+
+   Lists services.
+
+   :responseexample 200: v3/examples/listServices_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: service-catalog
+   :query type: Filters by service type. Service types include
+                compute, ec2, image, and identity.
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/services
+   :synopsis: Create service
+
+   Creates a service.
+
+   :requestexample: v3/examples/createService_req.json
+   :responseexample 201: v3/examples/createService_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: service-catalog
+   :requestschema: v3/createService.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/regions/{region_id}
+   :synopsis: Show region details
+
+   Shows details for a specified region, by ID.
+
+   :responseexample 200: v3/examples/getRegion_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: regions-v3
+   :parameter region_id: The region ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/regions/{region_id}
+   :synopsis: Update region
+
+   Updates a specified region.
+   
+   If you try to update a region with a parent region ID that does not
+   exist, this call returns the HTTP ``Not Found(404)`` status code.
+
+   :requestexample: v3/examples/updateRegion_req.json
+   :responseexample 200: v3/examples/updateRegion_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: regions-v3
+   :requestschema: v3/updateRegion.json
+   :parameter region_id: The region ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/regions/{region_id}
+   :synopsis: Delete region
+
+   Deletes a specified region.
+   
+   If you try to delete a region that has child regions, this call
+   returns the HTTP ``Conflict (409)`` status code.
+
+   :tag: regions-v3
+   :parameter region_id: The region ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/roles
+   :synopsis: List roles
+
+   Lists roles.
+
+   :responseexample 200: v3/examples/listRoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: roles
+   :query name: Filters on a name.
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/roles
+   :synopsis: Create role
+
+   Creates a role.
+
+   :requestexample: v3/examples/createRole_req.json
+   :responseexample 201: v3/examples/createRole_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: roles
+   :requestschema: v3/createRole.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Grant role to project user
+
+   Grants a role to a specified user in a project.
+
+   :tag: projects
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Check role for project user
+
+   Validates that a specified user has a specified role in a project.
+
+   :tag: projects
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Revoke role from project user
+
+   Revokes a role from a specified project user.
+
+   :tag: projects
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/users/{user_id}/groups
+   :synopsis: List groups for user
+
+   Lists groups for a specified user.
+
+   :responseexample 200: v3/examples/listUserGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/projects/{project_id}/users/{user_id}/roles
+   :synopsis: List roles for project user
+
+   Lists roles for a specified user in a project.
+
+   :responseexample 200: v3/examples/listProjectUserRoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :parameter user_id: The user ID.
+   :parameter project_id: Filters on the UUID for a project.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/credentials
+   :synopsis: List credentials
+
+   Lists credentials.
+
+   :responseexample 200: v3/examples/listCredentials_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: credentials
+   :query user_id: Filters on user_id.
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/credentials
+   :synopsis: Create credential
+
+   Creates a credential.
+   
+   The following example shows how to create an EC2-style credential.
+   The credential blob is a string that contains a JSON-serialized
+   dictionary with the ``access`` and ``secret`` keys. This format is
+   required when you specify the ``ec2`` type. To specify other
+   credentials such as ``access_key`` , change the type and contents
+   of the data blob.
+
+   :requestexample: v3/examples/createCredential_req.json
+   :responseexample 201: v3/examples/createCredential_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: credentials
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/endpoints
+   :synopsis: List endpoints
+
+   Lists available endpoints.
+
+   :responseexample 200: v3/examples/listEndpoints_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: endpoints
+   :query interface: Filters by interface.
+   :query service_id: Filters by service_id.
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/endpoints
+   :synopsis: Create endpoint
+
+   Creates an endpoint.
+
+   :requestexample: v3/examples/createEndpoint_req.json
+   :responseexample 201: v3/examples/createEndpoint_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: endpoints
+   :requestschema: v3/createEndpoint.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/projects/{project_id}/groups/{group_id}/roles
+   :synopsis: List roles for project group
+
+   Lists roles for a specified project group.
+
+   :responseexample 200: v3/examples/listProjectGroupRoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: projects
+   :parameter project_id: Filters on the UUID for a project.
+   :parameter group_id: The group ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/policies/{policy_id}
+   :synopsis: Show policy details
+
+   Shows details for a specified policy.
+
+   :responseexample 200: v3/examples/getPolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: policies
+   :parameter policy_id: The policy ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/policies/{policy_id}
+   :synopsis: Update policy
+
+   Updates a specified policy.
+
+   :requestexample: v3/examples/updatePolicy_req.json
+   :responseexample 200: v3/examples/updatePolicy_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: policies
+   :parameter policy_id: The policy ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/policies/{policy_id}
+   :synopsis: Delete policy
+
+   Deletes a specified policy.
+
+   :tag: policies
+   :parameter policy_id: The policy ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3
+   :synopsis: Show API version details
+
+   Shows details for the Identity API v3.
+
+   :responseexample 200: v3/examples/showVersionDetails-identity-v3_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions-identity
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Grant role to domain group
+
+   Grants a specified role to a specified domain group.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter role_id: The role ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Check role for domain group
+
+   Validates that a specified group has a specified role on a domain.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter role_id: The role ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+   :synopsis: Revoke role from domain group
+
+   Revokes a role from a group on a domain.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter role_id: The role ID.
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/groups/{group_id}
+   :synopsis: Show group details
+
+   Shows details for a specified group.
+
+   :responseexample 200: v3/examples/getGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: groups
+   :parameter group_id: The group ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/groups/{group_id}
+   :synopsis: Update group
+
+   Updates a specified group.
+   
+   If the back-end driver does not allow this functionality, this
+   operation might return the HTTP ``Not Implemented(501)`` status
+   code.
+
+   :requestexample: v3/examples/updateGroup_req.json
+   :responseexample 200: v3/examples/updateGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: groups
+   :parameter group_id: The group ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/groups/{group_id}
+   :synopsis: Delete group
+
+   Deletes a specified group.
+
+   :tag: groups
+   :parameter group_id: The group ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/regions
+   :synopsis: Create region
+
+   Creates a region.
+   
+   If you try to add a region with a parent region ID that does not
+   exist, this call returns the HTTP ``Not Found(404)`` status code.
+   
+   If you try to add a region with a parent region ID that would form
+   a circular relationship, this call returns the HTTP ``Conflict
+   (409)`` status code.
+
+   :requestexample: v3/examples/createRegion_req.json
+   :responseexample 201: v3/examples/createRegion_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: regions-v3
+   :requestschema: v3/createRegion.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/regions
+   :synopsis: List regions
+
+   Lists regions.
+
+   :responseexample 200: v3/examples/listRegions_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: regions-v3
+   :query parent_region_id: Filters the results by the specified
+                            parent region, by ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/domains
+   :synopsis: List domains
+
+   Lists domains.
+
+   :responseexample 200: v3/examples/listDomains_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :query name: Filters on a name.
+   :query enabled: Filters on enabled or disabled roles. Values are
+                   ``true`` or ``false`` .
+   :query page: Enables you to page through the list.
+   :query per_page: Sets the page size for paging through the list.
+                    Default page size is 30.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/domains
+   :synopsis: Create domain
+
+   Creates a domain.
+
+   :requestexample: v3/examples/createDomain_req.json
+   :responseexample 201: v3/examples/createDomain_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :requestschema: v3/createDomain.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/domains/{domain_id}/users/{user_id}/roles
+   :synopsis: List roles for domain user
+
+   Lists roles for a user on a domain.
+
+   :responseexample 200: v3/examples/listDomainUserRoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-PKI/revoked
+   :synopsis: List revoked tokens
+
+   Lists revoked PKI tokens.
+
+   :responseexample 200: v3/examples/listRevokedTokens_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions-identity
+   :reqheader X-Auth-Token: A valid authentication token for an
+                            administrative user.
+   :reqheader X-Subject-Token: The token ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Grant role to domain user
+
+   Grants a role to a specified domain user.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Check role for domain user
+
+   Validates that a specified user has a specified role on a domain.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+   :synopsis: Revoke role from domain user
+
+   Revokes a role from a specified domain user.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter user_id: The user ID.
+   :parameter role_id: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/regions/{user_defined_region_id}
+   :synopsis: Create region with user-defined ID
+
+   Creates a region with a user-defined region ID.
+   
+   The user-defined region ID must be unique to the OpenStack
+   deployment. If not, this call returns the HTTP ``Conflict(409)``
+   status code. You must URL-encode the user-defined region ID if it
+   contains characters that are not allowed in an URI.
+   
+   If you try to add a region with a parent region ID that does not
+   exist, this call returns the HTTP ``Not Found(404)`` status code.
+   
+   If you try to add a region with a parent region ID that would form
+   a circular relationship, this call returns the HTTP ``Conflict
+   (409)`` status code.
+
+   :requestexample: v3/examples/createRegionWithID_req.json
+   :responseexample 201: v3/examples/createRegionWithID_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: regions-v3
+   :requestschema: v3/createRegionWithID.json
+   :parameter user_defined_region_id: A user-defined region ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/role_assignments
+   :synopsis: List role assignments
+
+   Lists role assignments.
+   
+   Because the role assignments list can be long, use the query
+   parameters to filter the list.
+   
+   Some typical examples are:
+   
+   ``GET /role_assignments?user.id={user_id}`` lists role assignments
+   for the specified user.
+   
+   ``GET/role_assignments?scope.project.id={project_id}`` lists role
+   assignments for the specified project.
+   
+   Each role assignment entity in the collection contains a link to
+   the assignment that created this entity.
+   
+   Use the ``effective`` query parameter to list effective assignments
+   at the user, project, and domain level. This parameter allows for
+   the effects of group membership. The group role assignment entities
+   themselves are not returned in the collection. This represents the
+   effective role assignments that would be included in a scoped
+   token. You can use the other query parameters with the
+   ``effective`` parameter.
+   
+   For example, to determine what a user can actually do, issue the
+   ``GET/role_assignments?user.id={user_id}&effective`` request.
+   
+   To return the equivalent set of role assignments that would be
+   included in the token response of a project-scoped token, issue the
+   ``GET /role_assignments?user.id={user_id}&scope.project.id={project
+   _id}&effective`` request.
+   
+   In the response, the ``links`` entity section for entities that are
+   included by virtue of group members also contains a URL that you
+   can use to access the membership of the group.
+
+   :responseexample 200: v3/examples/listRoleAssignments_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: roles
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/domains/{domain_id}
+   :synopsis: Show domain details
+
+   Shows details for a specified domain.
+
+   :responseexample 200: v3/examples/getDomain_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/domains/{domain_id}
+   :synopsis: Update domain
+
+   Updates a specified domain.
+
+   :requestexample: v3/examples/updateDomain_req.json
+   :responseexample 200: v3/examples/updateDomain_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :requestschema: v3/updateDomain.json
+   :parameter domain_id: Filters on domain_id.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/domains/{domain_id}
+   :synopsis: Delete domain
+
+   Deletes a specified domain.
+   
+   To minimize the risk of accidentally deleting a domain, you must
+   first disable the domain by using the update domain method. If you
+   try to delete an enabled domain, this call returns an HTTP
+   ``Forbidden (403)`` status code.
+   
+   When you delete a domain, this call also deletes all entities owned
+   by it, such as users, groups, and projects, and any credentials and
+   granted roles that relate to those entities.
+
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/services/{service_id}
+   :synopsis: Show service details
+
+   Shows details for a specified service.
+
+   :responseexample 200: v3/examples/getService_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: service-catalog
+   :parameter service_id: The service ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/services/{service_id}
+   :synopsis: Update service
+
+   Updates a specified service.
+
+   :requestexample: v3/examples/updateService_req.json
+   :responseexample 200: v3/examples/updateService_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: service-catalog
+   :requestschema: v3/updateService.json
+   :parameter service_id: The service ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/services/{service_id}
+   :synopsis: Delete service
+
+   Deletes a specified service.
+   
+   If you try to delete a service when endpoints exist, this call
+   either deletes all associated endpoints or fails until all
+   endpoints are deleted.
+
+   :tag: service-catalog
+   :parameter service_id: The service ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/endpoints/{endpoint_id}
+   :synopsis: Update endpoint
+
+   Updates a specified endpoint.
+
+   :requestexample: v3/examples/updateEndpoint_req.json
+   :responseexample 200: v3/examples/updateEndpoint_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: endpoints
+   :requestschema: v3/updateEndpoint.json
+   :parameter endpoint_id: The endpoint ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/endpoints/{endpoint_id}
+   :synopsis: Delete endpoint
+
+   Deletes a specified endpoint.
+
+   :tag: endpoints
+   :parameter endpoint_id: The endpoint ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/roles/{role_id}
+   :synopsis: Show role details
+
+   Shows details for a specified role.
+
+   :responseexample 200: v3/examples/getRole_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: roles
+   :parameter role_id: The role ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/roles/{role_id}
+   :synopsis: Update role
+
+   Updates a specified role.
+
+   :requestexample: v3/examples/updateRole_req.json
+   :responseexample 200: v3/examples/updateRole_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: roles
+   :parameter role_id: The role ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/roles/{role_id}
+   :synopsis: Delete role
+
+   Deletes a specified role.
+
+   :tag: roles
+   :parameter role_id: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/domains/{domain_id}/groups/{group_id}/roles
+   :synopsis: List roles for domain group
+
+   Lists roles for a specified domain group.
+
+   :responseexample 200: v3/examples/listDomainGroupRoles_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: domains
+   :parameter domain_id: Filters on domain_id.
+   :parameter group_id: The group ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/credentials/{credential_id}
+   :synopsis: Show credential details
+
+   Shows details for a specified credential.
+
+   :responseexample 200: v3/examples/getCredential_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: credentials
+   :parameter credential_id: The credential ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/credentials/{credential_id}
+   :synopsis: Update credential
+
+   Updates a specified credential.
+
+   :requestexample: v3/examples/updateCredential_req.json
+   :responseexample 200: v3/examples/updateCredential_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: credentials
+   :parameter credential_id: The credential ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/credentials/{credential_id}
+   :synopsis: Delete credential
+
+   Deletes a specified credential.
+
+   :tag: credentials
+   :parameter credential_id: The credential ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/groups
+   :synopsis: List groups
+
+   Lists groups.
+
+   :responseexample 200: v3/examples/listGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: groups
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/groups
+   :synopsis: Create group
+
+   Creates a group.
+
+   :requestexample: v3/examples/createGroup_req.json
+   :responseexample 201: v3/examples/createGroup_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: groups
+   :requestschema: v3/createGroup.json
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/users/{user_id}/projects
+   :synopsis: List projects for user
+
+   List projects for a specified user.
+
+   :responseexample 200: v3/examples/listUserProjects_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+

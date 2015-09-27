@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume description.", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": false, 
+      "type": "string", 
+      "description": "The availability zone.", 
+      "format": ""
+    }, 
+    "bootable": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables or disables the bootable attribute. You can boot an\ninstance from a bootable volume.", 
+      "format": ""
+    }, 
+    "volume_type": {
+      "required": false, 
+      "type": "string", 
+      "description": "The associated volume type.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The volume name.", 
+      "format": ""
+    }, 
+    "volume": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``volume`` object.", 
+      "format": ""
+    }, 
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "The OpenStack Block Storage host where the existing volume resides.", 
+      "format": ""
+    }, 
+    "ref": {
+      "required": true, 
+      "type": "string", 
+      "description": "A reference to the existing volume. The internal structure of this\nreference depends on the volume driver implementation. For details\nabout the required elements in the structure, see the documentation\nfor the volume driver.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+      "format": ""
+    }
+  }
+}

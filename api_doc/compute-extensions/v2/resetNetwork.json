@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "resetNetwork": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``resetNetwork`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

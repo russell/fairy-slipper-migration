@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "rescue_image_ref": {
+      "required": false, 
+      "type": "string", 
+      "description": "The image reference to use to rescue your server instance. Specify\nthe image reference by ID or full URL.\n\nIf you omit an image reference, default is the base image\nreference.", 
+      "format": ""
+    }, 
+    "rescue": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``rescue`` action in the request body.", 
+      "format": ""
+    }, 
+    "adminPass": {
+      "required": false, 
+      "type": "string", 
+      "description": "The password for the rescued instance. If you omit this parameter,\nthe operation generates a new password.", 
+      "format": ""
+    }
+  }
+}

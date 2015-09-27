@@ -1,0 +1,83 @@
+{
+  "type": "object", 
+  "properties": {
+    "parent": {
+      "required": true, 
+      "type": "string", 
+      "description": "The stack ID of the parent stack, if this is a nested stack.", 
+      "format": ""
+    }, 
+    "disable_rollback": {
+      "required": true, 
+      "type": "string", 
+      "description": "Enables or disables stack rollback when stack creation fails. Set\nto ``True`` to rollback the stack when stack creation fails. Set to\n``False`` to disable stack rollback when stack creation fails.\nDefault is ``True`` .", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "A description of the stack.", 
+      "format": ""
+    }, 
+    "parameters": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of parameters defined for the stack.", 
+      "format": ""
+    }, 
+    "stack_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the stack.", 
+      "format": ""
+    }, 
+    "timeout_mins": {
+      "required": true, 
+      "type": "string", 
+      "description": "Time-lines for stack creation.", 
+      "format": ""
+    }, 
+    "capabilities": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of stack capabilities for stack.", 
+      "format": ""
+    }, 
+    "notification_topics": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of notification topics for stack.", 
+      "format": ""
+    }, 
+    "stack_owner": {
+      "required": true, 
+      "type": "string", 
+      "description": "Stack owner name.", 
+      "format": ""
+    }, 
+    "updated_time": {
+      "required": true, 
+      "type": "string", 
+      "description": "Time of last stack update in the following format: ``YYYY-MM-\nDDThh:mm:ssTZD`` , where ``TZD`` is the time zone designator.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The stack ID.", 
+      "format": ""
+    }, 
+    "resources": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of stack resources.", 
+      "format": ""
+    }, 
+    "template_description": {
+      "required": true, 
+      "type": "string", 
+      "description": "A description of the template that defines the stack.", 
+      "format": ""
+    }
+  }
+}

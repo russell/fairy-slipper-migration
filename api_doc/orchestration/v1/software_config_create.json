@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "inputs": {
+      "required": false, 
+      "type": "string", 
+      "description": "Schema that represents the inputs that this software configuration\nexpects.", 
+      "format": ""
+    }, 
+    "group": {
+      "required": false, 
+      "type": "string", 
+      "description": "Namespace that groups this software configuration by when it is\ndelivered to a server. This setting might simply define which\nconfiguration tool performs the configuration.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The name of the configuration to create.", 
+      "format": ""
+    }, 
+    "outputs": {
+      "required": false, 
+      "type": "string", 
+      "description": "Schema that represents the outputs that this software configuration\nproduces.", 
+      "format": ""
+    }, 
+    "config": {
+      "required": false, 
+      "type": "string", 
+      "description": "Configuration script or manifest that defines which configuration\nis performed.", 
+      "format": ""
+    }, 
+    "options": {
+      "required": false, 
+      "type": "string", 
+      "description": "Map that contains options that are specific to the configuration\nmanagement tool that this resource uses.", 
+      "format": ""
+    }
+  }
+}

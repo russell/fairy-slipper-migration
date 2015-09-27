@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The flavor name.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "Flavor links.", 
+      "format": ""
+    }, 
+    "ram": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Amount of RAM.", 
+      "format": ""
+    }, 
+    "vcpus": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Number of VCPUs.", 
+      "format": ""
+    }, 
+    "os-flavor-access:is_public": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Set to true if access is public. Set to false if access is private.", 
+      "format": ""
+    }, 
+    "disk": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Integer value for the minimum disk space in GB.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The flavor ID.", 
+      "format": ""
+    }
+  }
+}

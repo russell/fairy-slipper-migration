@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }, 
+    "auth": {
+      "required": true, 
+      "type": "string", 
+      "description": "An ``auth`` object.", 
+      "format": ""
+    }, 
+    "token": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``token`` object. With token authentication, the ``id`` uniquely\nidentifies the token. This method is typically used in combination\nwith a request to change authorization scope.", 
+      "format": ""
+    }, 
+    "user": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``user`` object. Specify ``id`` or ``name`` to uniquely identify\nthe user and ``password`` . Use ``name`` only in conjunction with a\ndomain ``id`` or ``name`` .", 
+      "format": ""
+    }, 
+    "scope": {
+      "required": false, 
+      "type": "string", 
+      "description": "Token can be scoped for a domain or project. Specify either an\n``id`` or ``name`` to uniquely identify the domain or project. Use\nproject ``name`` only in conjunction with a domain ``id`` or\n``name`` .", 
+      "format": ""
+    }, 
+    "password": {
+      "required": false, 
+      "type": "string", 
+      "description": "The password.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": false, 
+      "type": "string", 
+      "description": "With password authentication, ``id`` uniquely identifies the user.\nHowever, ``name`` uniquely identifies the user when used in\nconjunction with a domain ``id`` or ``name`` .", 
+      "format": ""
+    }, 
+    "identity": {
+      "required": true, 
+      "type": "string", 
+      "description": "An ``identity`` object.", 
+      "format": ""
+    }, 
+    "methods": {
+      "required": true, 
+      "type": "string", 
+      "description": "The authentication method, which is ``password`` or ``token`` .\n\nWith password authentication, you can specify user ID and password,\nuser name and password scoped by domain ID or name, or user ID and\npassword scoped by project ID or name with or without domain scope.\n\nWith token authentication, you specify the token ID.", 
+      "format": ""
+    }
+  }
+}

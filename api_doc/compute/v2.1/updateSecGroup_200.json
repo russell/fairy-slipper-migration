@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "Security group description.", 
+      "format": ""
+    }, 
+    "rules": {
+      "required": true, 
+      "type": "string", 
+      "description": "A security group rules object.", 
+      "format": ""
+    }, 
+    "tenant_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The tenant.", 
+      "format": ""
+    }, 
+    "security_group": {
+      "required": true, 
+      "type": "string", 
+      "description": "Security group object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The security group ID.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The security group name.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "injectNetworkInfo": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``injectNetworkInfo`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

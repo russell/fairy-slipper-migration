@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "from_port": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Port at start of range.", 
+      "format": ""
+    }, 
+    "ip_protocol": {
+      "required": true, 
+      "type": "string", 
+      "description": "The IP protocol: ICMP, TCP, or UDP.", 
+      "format": ""
+    }, 
+    "to_port": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Port at end of range.", 
+      "format": ""
+    }, 
+    "ip_range": {
+      "required": true, 
+      "type": "string", 
+      "description": "An IP range object.", 
+      "format": ""
+    }, 
+    "cidr": {
+      "required": true, 
+      "type": "string", 
+      "description": "The CIDR for address range.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "Security group ID.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "files": {
+      "required": false, 
+      "type": "string", 
+      "description": "Supplies the contents of files referenced in the template or the\nenvironment. Stack templates and resource templates can explicitly\nreference files by using the ``get_file`` intrinsic function. In\naddition, the ``environment`` parameter can contain implicit\nreferences to files.\n\nThe value is a JSON object, where each key is a relative or\nabsolute URI which serves as the name of a file, and the associated\nvalue provides the contents of the file. The following code shows\nthe general structure of this parameter.\n\n{ ... \"files\": { \"fileA.yaml\": \"Contents of the file\", \"file:///usr/fileB.template\": \"Contents of the file\", \"http://example.com/fileC.template\": \"Contents of the file\" } ... }Additionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }Do not use this parameter to provide the content of the template\nlocated at the address specified by ``template_url`` . Instead, use\nthe ``template`` parameter to supply the template content as part\nof the request.", 
+      "format": ""
+    }, 
+    "parameters": {
+      "required": false, 
+      "type": "string", 
+      "description": "Supplies arguments for parameters defined in the stack template.\n\nThe value is a JSON object, where each key is the name of a\nparameter defined in the template and the associated value is the\nargument to use for that parameter when instantiating the template.\nThe following code shows the general structure of this parameter.\nIn the example, ``a`` and ``b`` would be the names of two\nparameters defined in the template.\n\n{ ... \"parameters\": { \"a\": \"Value\", \"b\": \"3\" } ... }While the service accepts JSON numbers for parameters with the type\n``number`` and JSON objects for parameters with the type ``json`` ,\nall parameter values are converted to their string representation\nfor storage in the created Stack. Clients are encouraged to send\nall parameter values using their string representation for\nconsistency between requests and responses from the Orchestration\nservice.\n\nA value must be provided for each template parameter which does not\nspecify a default value. However, this parameter is not allowed to\ncontain JSON properties with names that do not match a parameter\ndefined in the template.\n\nThe ``files`` parameter maps logical file names to file contents.\nBoth the ``get_file`` intrinsic function and provider template\nfunctionality use this mapping. When you want to use a provider\ntemplate, for example, the Orchestration service adds an entry to\nthe ``files`` map by using:- The URL of the provider template as\nthe name.  - The contents of that file as the value.\n\nAdditionally, some template authors encode their user data in a\nlocal file. The Orchestration client examines the template for the\n``get_file`` intrinsic function and adds an entry to the ``files``\nmap with the path to the file as the name and the file contents as\nthe value. So, a simple example looks like this:\n\n{ \"files\": { \"myfile\": \"#!/bin/bash\\necho \\\"Hello world\\\" > /root/testfile.txt\" }, ..., \"stack_name\": \"teststack\", \"template\": { ..., \"resources\": { \"my_server\": { \"type\": \"OS::Nova::Server\", \"properties\": { ..., \"user_data\": { \"get_file\": \"myfile\" } } } } }, \"timeout_mins\": 60 }", 
+      "format": ""
+    }, 
+    "tags": {
+      "required": false, 
+      "type": "string", 
+      "description": "One or more simple string tags to associate with the stack. To\nassociate multiple tags with a stack, separate the tags with\ncommas. For example, ``tag1,tag2`` .", 
+      "format": ""
+    }, 
+    "stack_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "A name for the new stack.\n\nThis value must be unique within a project. The name must start\nwith an ASCII letter and can contain ASCII letters, digits,\nunderscores, periods, and hyphens. Specifically, the name must\nmatch the ``^[a-zA-Z][a-zA-Z0-9_.-]*$`` regular expression.\n\nWhen you delete or abandon a stack, its name might not be available\nfor reuse for an unspecified period of time.", 
+      "format": ""
+    }, 
+    "template_url": {
+      "required": false, 
+      "type": "string", 
+      "description": "A URI to the location containing the stack template on which to\nperform the specified operation.\n\nSee the description of the ``template`` parameter for information\nabout the expected template content located at the URI.\n\nThis parameter is only required when you omit the ``template``\nparameter. If you specify both parameters, this parameter is\nignored.", 
+      "format": ""
+    }, 
+    "template": {
+      "required": false, 
+      "type": "string", 
+      "description": "The stack template on which to perform the specified operation.\n\nThis parameter is always provided as a ``string`` in the JSON\nrequest body. The content of the string is a JSON- or YAML-\nformatted Orchestration template. For example:\n\n\"template\": { \"heat_template_version\": \"2013-05-23\", ...}This parameter is required only when you omit the ``template_url``\nparameter. If you specify both parameters, this value overrides the\n``template_url`` parameter value.", 
+      "format": ""
+    }
+  }
+}

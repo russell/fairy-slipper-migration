@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "Valid values are ``novnc`` and ``xvpvnc`` .", 
+      "format": ""
+    }, 
+    "getConsole": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``getConsole`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

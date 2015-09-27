@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "host": {
+      "required": false, 
+      "type": "string", 
+      "description": "The name or ID of the host where the server is evacuated.", 
+      "format": ""
+    }, 
+    "onSharedStorage": {
+      "required": true, 
+      "type": "string", 
+      "description": "If server is on shared storage, set to True. Otherwise, set to\nFalse.", 
+      "format": ""
+    }, 
+    "evacuate": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``evacuate`` action in the request body.", 
+      "format": ""
+    }, 
+    "adminPass": {
+      "required": false, 
+      "type": "string", 
+      "description": "Specifies a new admin password for the evacuated instance.", 
+      "format": ""
+    }
+  }
+}

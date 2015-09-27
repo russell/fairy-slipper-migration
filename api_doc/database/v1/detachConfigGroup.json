@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "configuration": {
+      "required": true, 
+      "type": "string", 
+      "description": "To detach a configuration group, set the configuration parameter to\nnull.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "type": "object", 
+  "properties": {
+    "statistics:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for statistics is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "alarms:history:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for alarm history is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "meters:query:metadata": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for the metadata of\nmeters is available for the configured database back end. A value\nof ``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "alarms:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for alarm definitions\nis available for the configured database back end. A value of\n``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "resources:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for resources is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "api": {
+      "required": true, 
+      "type": "array", 
+      "description": "An array of API capabilities for the configured storage driver.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:quartile": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``quartile`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``quartile`` capability to\ncalculate the quartile of sample volumes for a specified query.", 
+      "format": ""
+    }, 
+    "statistics:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for statistics is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:count": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``count`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``count`` capability to\ncalculate the number of samples for a specified query.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:min": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``min`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``min`` capability to\ncalculate the minimum value for a specified query.", 
+      "format": ""
+    }, 
+    "samples:pagination": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether pagination for samples is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+      "format": ""
+    }, 
+    "statistics:pagination": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether pagination for statistics is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+      "format": ""
+    }, 
+    "storage": {
+      "required": true, 
+      "type": "array", 
+      "description": "Defines the capabilities for the storage that stores persisting\nsamples. A value of ``true`` indicates that the capability is\navailable.", 
+      "format": ""
+    }, 
+    "alarm_storage": {
+      "required": true, 
+      "type": "array", 
+      "description": "Defines the capabilities for the storage that stores persisting\nalarm definitions. A value of ``true`` indicates that the\ncapability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:avg": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``avg`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``avg`` capability to get\naverage values for samples.", 
+      "format": ""
+    }, 
+    "meters:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for meters is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "resources:pagination": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether pagination for resources is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+      "format": ""
+    }, 
+    "statistics:groupby": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``groupby`` capabilityality is available for\ncalculating statistics for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "alarms:history:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for alarm history is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "meters:pagination": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether pagination for meters is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+      "format": ""
+    }, 
+    "meters:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for meters is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "samples:query:metadata": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for the metadata of\nsamples is available for the configured database back end. A value\nof ``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:query:metadata": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for the metadata of\nsamples used for calculating statistics is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available.", 
+      "format": ""
+    }, 
+    "storage:production_ready": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the the configured database back end is ready to\nuse in production environment. A value of ``true`` indicates that\nthe database back end is ready to use in a production environment.", 
+      "format": ""
+    }, 
+    "samples:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for samples is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "resources:query:metadata": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for the metadata of\nresources is available for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:max": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``max`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``max`` capability to\ncalculate the maximum value for a specified query.", 
+      "format": ""
+    }, 
+    "samples:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for samples is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:standard": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``standard`` set of aggregation capability is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:sum": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``sum`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``sum`` capability to\ncalculate the sum of sample volumes for a specified query.", 
+      "format": ""
+    }, 
+    "events:query:simple": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the simple query capability for events is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:stddev": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``stddev`` capability is available for the\nconfigured database back end. A value of ``true`` indicates that\nthe capability is available. Use the ``stddev`` capability to\ncalculate the standard deviation of sample volumes for a specified\nquery.", 
+      "format": ""
+    }, 
+    "alarms:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for alarm\ndefinitions is available for the configured database back end. A\nvalue of ``true`` indicates that the capability is available.", 
+      "format": ""
+    }, 
+    "statistics:aggregation:selectable:cardinality": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the ``cardinality`` capability is available for\nthe configured database back end. A value of ``true`` indicates\nthat the capability is available. Use the ``cardinality``\ncapability to get cardinality for samples.", 
+      "format": ""
+    }, 
+    "event_storage": {
+      "required": true, 
+      "type": "array", 
+      "description": "Defines the capabilities for the storage that stores persisting\nevents. A value of ``true`` indicates that the capability is\navailable.", 
+      "format": ""
+    }, 
+    "resources:query:complex": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the complex query capability for resources is\navailable for the configured database back end. A value of ``true``\nindicates that the capability is available.", 
+      "format": ""
+    }
+  }
+}

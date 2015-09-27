@@ -1,0 +1,1220 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "showAccountDetails_200": {
+      "properties": {
+        "bytes": {
+          "description": "The total number of bytes that are stored in Object Storage for the\naccount.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "count": {
+          "description": "The number of objects in the container.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "name": {
+          "description": "The name of the container.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "showContainerDetails_200": {
+      "properties": {
+        "bytes": {
+          "description": "The total number of bytes that are stored in Object Storage for the\naccount.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "content_type": {
+          "description": "The content type of the object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "hash": {
+          "description": "The MD5 checksum value of the object content.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "last_modified": {
+          "description": "The date and time when the object was last modified.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The name of the container.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "objectstorage", 
+    "title": "Object Storage API", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/info": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the activated capabilities for this version of the OpenStack\nObject Storage API.", 
+        "examples": {}, 
+        "id": "infoDiscoverability", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "staticweb": {}, 
+                "swift": {
+                  "version": "1.11.0"
+                }, 
+                "tempurl": {}
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List activated capabilities", 
+        "tags": [
+          "storage_info"
+        ]
+      }
+    ], 
+    "/v1/endpoints": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists endpoints for an object, account, or container.\n\nWhen the cloud provider has enabled middleware to list the\nendpoints path, software that needs data location information can\nuse this call to avoid network overhead. The cloud provider can\ncustomize the /endpoints/ path to another resource, so this exact\nresource may vary from provider to provider. Because it goes\nstraight to the middleware, the call is not authenticated, so be\nsure you have tightly secured the environment and network when\nusing this call.", 
+        "examples": {}, 
+        "id": "listEndpoints", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "endpoints": [
+                  "http://storage01.swiftdrive.com:6008/d8/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage02.swiftdrive.com:6008/d2/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage02.swiftdrive.com:6006/d3/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage02.swiftdrive.com:6008/d5/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage01.swiftdrive.com:6007/d7/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage02.swiftdrive.com:6007/d4/583/AUTH_dev/EC_cont1/obj", 
+                  "http://storage01.swiftdrive.com:6006/d6/583/AUTH_dev/EC_cont1/obj"
+                ], 
+                "headers": {
+                  "X-Backend-Storage-Policy-Index": "2"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List endpoints", 
+        "tags": [
+          "storage_endpoints"
+        ]
+      }
+    ], 
+    "/v1/{account}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a specified account and lists containers, sorted\nby name, in the account.\n\nThe sort order for the name is based on a binary comparison, a\nsingle built-in collating sequence that compares string data by\nusing the SQLite memcmp() function, regardless of text encoding.\nSee Collating Sequences .\n\nThis operation does not accept a request body.\n\nExample requests and responses:\n\n- Show account details and list containers, and ask for a JSON\n  response:\n  ``curl -i $publicURL?format=json -X GET -H \"X-Auth-Token:\n  $token\"``\n  See the example response below.\n\n- List containers and ask for an XML response: ``curl -i\n  $publicURL?format=xml -X GET-H \"X-Auth-Token:$token\"``\n  See the example response below.\n\nThe response body returns a list of containers. The default\nresponse ( ``text/plain`` ) returns one container per line.\n\nIf you use query parameters to page through a long list of\ncontainers, you have reached the end of the list if the number of\nitems in the returned list is less than the request ``limit``\nvalue. The list contains more items if the number of items in the\nreturned list equals the ``limit`` value.\n\nWhen asking for a list of containers and there are none, the\nresponse behavior changes depending on whether the request format\nis text, JSON, or XML. For a text response, you get a 204 , because\nthere is no content. However, for a JSON or XML response, you get a\n200 with content indicating an empty array.\n\nIf the request succeeds, the operation returns one of these status\ncodes:\n\n- 200 . Success. The response body lists the containers.\n\n- 204 . Success. The response body shows no containers. Either the\n  account has no containers or you are paging through a long list\n  of names by using the ``marker`` , ``limit`` , or ``end_marker``\n  query parameters, and you have reached the end of the list.", 
+        "examples": {}, 
+        "id": "showAccountDetails", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "For an integer value n , limits the number of results to n .", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "For a string value x , returns container names that are greater in\nvalue than the specified marker.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "For a string value x , returns container names that are less in\nvalue than the specified marker.", 
+            "format": "", 
+            "in": "query", 
+            "name": "end_marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The response format. Valid values are ``json`` , ``xml`` , or\n``plain`` . The default is ``plain`` .\n\nIf you append the ``format=xml`` or ``format=json`` query parameter\nto the storage account URL, the response shows extended container\ninformation serialized in the specified format.\n\nIf you append the ``format=plain`` query parameter, the response\nlists the container names separated by newlines.", 
+            "format": "", 
+            "in": "query", 
+            "name": "format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Prefix value. Named items in the response begin with this value.", 
+            "format": "", 
+            "in": "query", 
+            "name": "prefix", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Delimiter value, which returns the object names that are nested in\nthe container.", 
+            "format": "", 
+            "in": "query", 
+            "name": "delimiter", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Authentication token.", 
+            "format": "", 
+            "in": "header", 
+            "name": "X-Auth-Token", 
+            "required": true, 
+            "type": "string"
+          }, 
+          {
+            "description": "If set to True , Object Storage queries all replicas to return the\nmost recent one. If you omit this header, Object Storage responds\nfaster after it finds one valid replica. Because setting this\nheader to True is more expensive for the back end, use it only when\nit is absolutely needed.", 
+            "format": "", 
+            "in": "header", 
+            "name": "X-Newest", 
+            "required": false, 
+            "type": "boolean"
+          }, 
+          {
+            "description": "Instead of using the ``format`` query parameter, set this header to\n``application/json`` , ``application/xml`` , or ``text/xml`` .", 
+            "format": "", 
+            "in": "header", 
+            "name": "Accept", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "bytes": 0, 
+                  "count": 0, 
+                  "name": "janeausten"
+                }, 
+                {
+                  "bytes": 14, 
+                  "count": 1, 
+                  "name": "marktwain"
+                }
+              ], 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Length: 262\nX-Account-Object-Count: 1\nX-Timestamp: 1389453423.35964\nX-Account-Meta-Subject: Literature\nX-Account-Bytes-Used: 14\nX-Account-Container-Count: 2\nContent-Type: application/xml; charset=utf-8\nAccept-Ranges: bytes\nX-Trans-Id: tx69f60bc9f7634a01988e6-0052d9544b\nDate: Fri, 17 Jan 2014 16:03:23 GMT"
+            }, 
+            "headers": {
+              "Content-Length": {
+                "description": "The length of the response body that contains the list of names. If\nthe operation fails, this value is the length of the error text in\nthe response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Type": {
+                "description": "The MIME type of the list of names. If the operation fails, this\nvalue is the MIME type of the error text in the response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Date": {
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Account-Bytes-Used": {
+                "description": "The total number of bytes that are stored in Object Storage for the\naccount.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Account-Container-Count": {
+                "description": "The number of containers.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Account-Meta-Temp-URL-Key": {
+                "description": "The secret key value for temporary URLs. If not set, this header is\nnot returned by this operation.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Meta-Temp-URL-Key-2": {
+                "description": "A second secret key value for temporary URLs. If not set, this\nheader is not returned by this operation.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Meta-name": {
+                "description": "The custom account metadata item, where ``{name}`` is the name of\nthe metadata item.\n\nOne ``X-Account-Meta-{name}`` response header appears for each\nmetadata item (for each ``{name}`` ).", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Object-Count": {
+                "description": "The number of objects in the account.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Timestamp": {
+                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon,Wed, 26 Aug 2015\n19:57:28 GMT`` .", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Trans-Id": {
+                "description": "A unique transaction identifier for this request. Your service\nprovider might need this value if you report a problem.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }
+            }
+          }, 
+          "204": {
+            "examples": {
+              "application/json": [
+                {
+                  "bytes": 0, 
+                  "count": 0, 
+                  "name": "janeausten"
+                }, 
+                {
+                  "bytes": 14, 
+                  "count": 1, 
+                  "name": "marktwain"
+                }
+              ], 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Length: 262\nX-Account-Object-Count: 1\nX-Timestamp: 1389453423.35964\nX-Account-Meta-Subject: Literature\nX-Account-Bytes-Used: 14\nX-Account-Container-Count: 2\nContent-Type: application/xml; charset=utf-8\nAccept-Ranges: bytes\nX-Trans-Id: tx69f60bc9f7634a01988e6-0052d9544b\nDate: Fri, 17 Jan 2014 16:03:23 GMT"
+            }, 
+            "headers": {
+              "Content-Length": {
+                "description": "The length of the response body that contains the list of names. If\nthe operation fails, this value is the length of the error text in\nthe response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Type": {
+                "description": "The MIME type of the list of names. If the operation fails, this\nvalue is the MIME type of the error text in the response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Date": {
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Account-Bytes-Used": {
+                "description": "The total number of bytes that are stored in Object Storage for the\naccount.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Account-Container-Count": {
+                "description": "The number of containers.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Account-Meta-Temp-URL-Key": {
+                "description": "The secret key value for temporary URLs. If not set, this header is\nnot returned by this operation.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Meta-Temp-URL-Key-2": {
+                "description": "A second secret key value for temporary URLs. If not set, this\nheader is not returned by this operation.", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Meta-name": {
+                "description": "The custom account metadata item, where ``{name}`` is the name of\nthe metadata item.\n\nOne ``X-Account-Meta-{name}`` response header appears for each\nmetadata item (for each ``{name}`` ).", 
+                "format": "", 
+                "required": false, 
+                "type": "string"
+              }, 
+              "X-Account-Object-Count": {
+                "description": "The number of objects in the account.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Timestamp": {
+                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon,Wed, 26 Aug 2015\n19:57:28 GMT`` .", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Trans-Id": {
+                "description": "A unique transaction identifier for this request. Your service\nprovider might need this value if you report a problem.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }
+            }
+          }
+        }, 
+        "summary": "Show account details and list containers", 
+        "tags": [
+          "storage-account-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Creates, updates, or deletes account metadata.\n\nTo create, update, or delete metadata, use the ``X-Account-\nMeta-{name}`` header, where ``{name}`` is the name of the metadata\nitem.\n\nSubsequent requests for the same key and value pair overwrite the\nprevious value.\n\nTo delete a metadata header, send an empty value for that\nparticular header, such as for the ``X-Account-Meta-Book`` header.\nIf the tool you use to communicate with Object Storage, such as an\nolder version of cURL, does not support empty headers, send the ``X\n-Remove-Account-Meta-{name}`` : arbitrary value header. For\nexample, ``X-Remove-Account-Meta-Book:x`` . The operation ignores\nthe arbitrary value.\n\nIf the container already has other custom metadata items, a request\nto create, update, or delete metadata does not affect those items.\n\nThis operation does not accept a request body.\n\nExample requests and responses:\n\n- Create account metadata:\n  ``curl -i$publicURL -X POST -H \"X-Auth-Token:$token\" -H \"X\n  -Account-Meta-Book: MobyDick\"-H \"X-Account-Meta-\n  Subject:Literature\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id:\n  tx8c2dd6aee35442a4a5646-0052d954fb Date: Fri, 17 Jan 2014\n  16:06:19 GMT\n\n- Update account metadata:\n  ``curl -i$publicURL -X POST -H \"X-Auth-Token:$token\" -H \"X\n  -Account-Meta-Subject:AmericanLiterature\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id:\n  tx1439b96137364ab581156-0052d95532 Date: Fri, 17 Jan 2014\n  16:07:14 GMT\n\n- Delete account metadata:\n  ``curl -i$publicURL -X POST -H \"X-Auth-Token:$token\" -H \"X\n  -Remove-Account-Meta-Subject:x\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id: tx411cf57701424da99948a-\n  0052d9556f Date: Fri, 17 Jan 2014 16:08:15 GMT\n\nIf the request succeeds, the operation returns the 204 status code.\n\nTo confirm your changes, issue a show account metadata request.", 
+        "examples": {}, 
+        "id": "updateAccountMeta", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create, update, or delete account metadata", 
+        "tags": [
+          "storage-account-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Shows metadata for a specified account.\n\nMetadata for the account includes:\n\n- Number of containers\n\n- Number of objects\n\n- Total number of bytes that are stored in Object Storage for the\n  account\n\nBecause the storage system can store large amounts of data, take\ncare when you represent the total bytes response as an integer;\nwhen possible, convert it to a 64-bit unsigned integer if your\nplatform supports that primitive type.\n\nThis operation does not accept a request body.\n\nDo not include metadata headers in this request.\n\nShow account metadata request:\n\n``curl -i $publicURL -XHEAD -H \"X-Auth-Token: $token\"``\n\nHTTP/1.1 204 No Content Content-Length: 0 X-Account-Object-Count: 1\nX-Account-Meta-Book: MobyDick X-Timestamp: 1389453423.35964 X\n-Account-Bytes-Used: 14 X-Account-Container-Count: 2 Content-Type:\ntext/plain; charset=utf-8 Accept-Ranges: bytes X-Trans-Id:\ntxafb3504870144b8ca40f7-0052d955d4 Date: Fri, 17 Jan 2014 16:09:56\nGMT\n\nIf the account or authentication token is not valid, the operation\nreturns the 401 Unauthorized error code.", 
+        "examples": {}, 
+        "id": "showAccountMeta", 
+        "method": "head", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show account metadata", 
+        "tags": [
+          "storage-account-services"
+        ]
+      }
+    ], 
+    "/v1/{account}/{container}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for a specified container and lists objects, sorted\nby name, in the container.\n\nSpecify query parameters in the request to filter the list and\nreturn a subset of object names. Omit query parameters to return\nthe complete list of object names that are stored in the container,\nup to 10,000 names. The 10,000 maximum value is configurable. To\nview the value for the cluster, issue a GET ``/info`` request.\n\nExample requests and responses:\n\n- Show container details for and list objects in the ``marktwain``\n  container, and ask for a JSON response:\n  ``curl -i$publicURL/marktwain?format=json -X GET -H\"X-Auth-Token:\n  $token\"``\n\n- Show container details for and list objects in the ``marktwain``\n  container, and ask for an XML response:\n  ``curl -i$publicURL/marktwain?format=xml -X GET -H\"X-Auth-Token:\n  $token\"``\n\nIf you use query parameters to page through a long list of objects,\nyou have reached the end of the list if the number of items in the\nreturned list is less than the request ``limit`` value. The list\ncontains more items if the number of items in the returned list\nequals the ``limit`` value.\n\nIf the request succeeds, the operation returns one of these status\ncodes:\n\n- 200 . Success. The response body lists the objects.\n\n- 204 . Success. The response body shows no objects. Either the\n  container has no objects or you are paging through a long list of\n  names by using the ``marker`` , ``limit`` , or ``end_marker``\n  query parameters, and you have reached the end of the list.\n\nIf the container does not exist, the 404 Not Found error code is\nreturned.", 
+        "examples": {}, 
+        "id": "showContainerDetails", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "For an integer value n , limits the number of results to n .", 
+            "format": "", 
+            "in": "query", 
+            "name": "limit", 
+            "required": false, 
+            "type": "integer"
+          }, 
+          {
+            "description": "For a string value x , returns container names that are greater in\nvalue than the specified marker.", 
+            "format": "", 
+            "in": "query", 
+            "name": "marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "For a string value x , returns container names that are less in\nvalue than the specified marker.", 
+            "format": "", 
+            "in": "query", 
+            "name": "end_marker", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Prefix value. Named items in the response begin with this value.", 
+            "format": "", 
+            "in": "query", 
+            "name": "prefix", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The response format. Valid values are ``json`` , ``xml`` , or\n``plain`` . The default is ``plain`` .\n\nIf you append the ``format=xml`` or ``format=json`` query parameter\nto the storage account URL, the response shows extended container\ninformation serialized in the specified format.\n\nIf you append the ``format=plain`` query parameter, the response\nlists the container names separated by newlines.", 
+            "format": "", 
+            "in": "query", 
+            "name": "format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Delimiter value, which returns the object names that are nested in\nthe container.", 
+            "format": "", 
+            "in": "query", 
+            "name": "delimiter", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "For a string value, returns the object names that are nested in the\npseudo path. Equivalent to setting delimiter to ``/`` and\n``prefix`` to the path with a ``/`` at the end.", 
+            "format": "", 
+            "in": "query", 
+            "name": "path", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Authentication token.", 
+            "format": "", 
+            "in": "header", 
+            "name": "X-Auth-Token", 
+            "required": true, 
+            "type": "string"
+          }, 
+          {
+            "description": "If set to True , Object Storage queries all replicas to return the\nmost recent one. If you omit this header, Object Storage responds\nfaster after it finds one valid replica. Because setting this\nheader to True is more expensive for the back end, use it only when\nit is absolutely needed.", 
+            "format": "", 
+            "in": "header", 
+            "name": "X-Newest", 
+            "required": false, 
+            "type": "boolean"
+          }, 
+          {
+            "description": "Instead of using the ``format`` query parameter, set this header to\n``application/json`` , ``application/xml`` , or ``text/xml`` .", 
+            "format": "", 
+            "in": "header", 
+            "name": "Accept", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": [
+                {
+                  "bytes": 14, 
+                  "content_type": "application/octet-stream", 
+                  "hash": "451e372e48e0f6b1114fa0724aa79fa1", 
+                  "last_modified": "2014-01-15T16:41:49.390270", 
+                  "name": "goodbye"
+                }, 
+                {
+                  "bytes": 12, 
+                  "content_type": "application/octet-stream", 
+                  "hash": "ed076287532e86365e841e92bfc50d8c", 
+                  "last_modified": "2014-01-15T16:37:43.427570", 
+                  "name": "helloworld"
+                }
+              ], 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Length: 500\nX-Container-Object-Count: 2\nAccept-Ranges: bytes\nX-Container-Meta-Book: TomSawyer\nX-Timestamp: 1389727543.65372\nX-Container-Bytes-Used: 26\nContent-Type: application/xml; charset=utf-8\nX-Trans-Id: txc75ea9a6e66f47d79e0c5-0052d6be76\nDate: Wed, 15 Jan 2014 16:59:35 GMT"
+            }, 
+            "headers": {
+              "Accept-Ranges": {
+                "description": "The type of ranges that the object accepts.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Length": {
+                "description": "The length of the response body that contains the list of names. If\nthe operation fails, this value is the length of the error text in\nthe response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Type": {
+                "description": "The MIME type of the list of names. If the operation fails, this\nvalue is the MIME type of the error text in the response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Date": {
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Container-Bytes-Used": {
+                "description": "The count of bytes used in total.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Container-Meta-name": {
+                "description": "The custom container metadata item, where ``{name}`` is the name of\nthe metadata item.\n\nOne ``X-Container-Meta-{name}`` response header appears for each\nmetadata item (for each ``{name}`` ).", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Container-Object-Count": {
+                "description": "The number of objects.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Timestamp": {
+                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon,Wed, 26 Aug 2015\n19:57:28 GMT`` .", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Trans-Id": {
+                "description": "A unique transaction identifier for this request. Your service\nprovider might need this value if you report a problem.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }
+            }
+          }, 
+          "204": {
+            "examples": {
+              "application/json": [
+                {
+                  "bytes": 14, 
+                  "content_type": "application/octet-stream", 
+                  "hash": "451e372e48e0f6b1114fa0724aa79fa1", 
+                  "last_modified": "2014-01-15T16:41:49.390270", 
+                  "name": "goodbye"
+                }, 
+                {
+                  "bytes": 12, 
+                  "content_type": "application/octet-stream", 
+                  "hash": "ed076287532e86365e841e92bfc50d8c", 
+                  "last_modified": "2014-01-15T16:37:43.427570", 
+                  "name": "helloworld"
+                }
+              ], 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Length: 500\nX-Container-Object-Count: 2\nAccept-Ranges: bytes\nX-Container-Meta-Book: TomSawyer\nX-Timestamp: 1389727543.65372\nX-Container-Bytes-Used: 26\nContent-Type: application/xml; charset=utf-8\nX-Trans-Id: txc75ea9a6e66f47d79e0c5-0052d6be76\nDate: Wed, 15 Jan 2014 16:59:35 GMT"
+            }, 
+            "headers": {
+              "Accept-Ranges": {
+                "description": "The type of ranges that the object accepts.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Length": {
+                "description": "The length of the response body that contains the list of names. If\nthe operation fails, this value is the length of the error text in\nthe response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Content-Type": {
+                "description": "The MIME type of the list of names. If the operation fails, this\nvalue is the MIME type of the error text in the response body.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "Date": {
+                "description": "The transaction date and time.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Container-Bytes-Used": {
+                "description": "The count of bytes used in total.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Container-Meta-name": {
+                "description": "The custom container metadata item, where ``{name}`` is the name of\nthe metadata item.\n\nOne ``X-Container-Meta-{name}`` response header appears for each\nmetadata item (for each ``{name}`` ).", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }, 
+              "X-Container-Object-Count": {
+                "description": "The number of objects.", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Timestamp": {
+                "description": "The date and time in UNIX Epoch time stamp format when the account,\ncontainer, or object was initially created as a current version.\n\nFor example, ``1440619048`` is equivalent to ``Mon,Wed, 26 Aug 2015\n19:57:28 GMT`` .", 
+                "format": "", 
+                "required": true, 
+                "type": "integer"
+              }, 
+              "X-Trans-Id": {
+                "description": "A unique transaction identifier for this request. Your service\nprovider might need this value if you report a problem.", 
+                "format": "", 
+                "required": true, 
+                "type": "string"
+              }
+            }
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show container details and list objects", 
+        "tags": [
+          "storage-container-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Creates a container.\n\nYou do not need to check whether a container already exists before\nissuing a PUT operation because the operation is idempotent: It\ncreates a container or updates an existing container, as\nappropriate.\n\nExample requests and responses:\n\n- Create a container with no metadata: ``curl -i $publicURL/steven\n  -X PUT -H\"Content-Length: 0\" -H \"X-Auth-Token:$token\"``\n  HTTP/1.1 201 Created Content-Length: 0 Content-Type: text/html;\n  charset=UTF-8 X-Trans-Id: tx7f6b7fa09bc2443a94df0-0052d58b56\n  Date: Tue, 14 Jan 2014 19:09:10 GMT\n\n- Create a container with metadata:\n  ``curl -i$publicURL/marktwain -X PUT -H\"X-Auth-Token: $token\"\n  -H\"X-Container-Meta-Book:TomSawyer\"``\n  HTTP/1.1 201 Created Content-Length: 0 Content-Type: text/html;\n  charset=UTF-8 X-Trans-Id: tx06021f10fc8642b2901e7-0052d58f37\n  Date: Tue, 14 Jan 2014 19:25:43 GMT", 
+        "examples": {}, 
+        "id": "createContainer", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create container", 
+        "tags": [
+          "storage-container-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Creates, updates, or deletes custom metadata for a container.\n\nTo create, update, or delete a custom metadata item, use the ``X\n-Container-Meta-{name}`` header, where ``{name}`` is the name of\nthe metadata item.\n\nSubsequent requests for the same key and value pair overwrite the\nprevious value.\n\nTo delete container metadata, send an empty value for that header,\nsuch as for the ``X-Container-Meta-Book`` header. If the tool you\nuse to communicate with Object Storage, such as an older version of\ncURL, does not support empty headers, send the ``X-Remove-\nContainer-Meta-{name}`` : arbitrary value header. For example, ``X\n-Remove-Container-Meta-Book:x`` . The operation ignores the\narbitrary value.\n\nIf the container already has other custom metadata items, a request\nto create, update, or delete metadata does not affect those items.\n\nThis operation does not accept a request body.\n\nExample requests and responses:\n\n- Create container metadata:\n  ``curl -i$publicURL/marktwain -X POST -H\"X-Auth-Token: $token\"\n  -H\"X-Container-Meta-Author: MarkTwain\" -H\"X-Container-Meta-Web-\n  Directory-Type: text/directory\" -H\"X-Container-Meta-\n  Century:Nineteenth\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id:\n  tx05dbd434c651429193139-0052d82635 Date: Thu, 16 Jan 2014\n  18:34:29 GMT\n\n- Update container metadata:\n  ``curl -i$publicURL/marktwain -X POST -H\"X-Auth-Token: $token\"\n  -H\"X-Container-Meta-Author:SamuelClemens\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id:\n  txe60c7314bf614bb39dfe4-0052d82653 Date: Thu, 16 Jan 2014\n  18:34:59 GMT\n\n- Delete container metadata:\n  ``curl -i$publicURL/marktwain -X POST -H\"X-Auth-Token: $token\"\n  -H\"X-Remove-Container-Meta-Century:x\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id: tx7997e18da2a34a9e84ceb-\n  0052d826d0 Date: Thu, 16 Jan 2014 18:37:04 GMT\n\nIf the request succeeds, the operation returns the 204 status code.\n\nTo confirm your changes, issue a show container metadata request.", 
+        "examples": {}, 
+        "id": "updateContainerMeta", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create, update, or delete container metadata", 
+        "tags": [
+          "storage-container-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Shows container metadata, including the number of objects and the\ntotal bytes of all objects stored in the container.\n\nShow container metadata request:\n\n``curl -i$publicURL/marktwain -X HEAD -H \"X-Auth-Token:$token\"``\n\nHTTP/1.1 204 No Content Content-Length: 0 X-Container-Object-Count:\n1 Accept-Ranges: bytes X-Container-Meta-Book: TomSawyer\nX-Timestamp: 1389727543.65372 X-Container-Meta-Author:\nSamuelClemens X-Container-Bytes-Used: 14 Content-Type: text/plain;\ncharset=utf-8 X-Trans-Id: tx0287b982a268461b9ec14-0052d826e2 Date:\nThu, 16 Jan 2014 18:37:22 GMT\n\nIf the request succeeds, the operation returns the 204 status code.", 
+        "examples": {}, 
+        "id": "showContainerMeta", 
+        "method": "head", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show container metadata", 
+        "tags": [
+          "storage-container-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes an empty container.\n\nThis operation fails unless the container is empty. An empty\ncontainer has no objects.\n\nDelete the ``steven`` container:\n\n``curl -i$publicURL/steven -X DELETE -H \"X-Auth-Token:$token\"``\n\nIf the container does not exist, the response is:\n\nHTTP/1.1 404 Not Found Content-Length: 70 Content-Type: text/html;\ncharset=UTF-8 X-Trans-Id: tx4d728126b17b43b598bf7-0052d81e34 Date:\nThu, 16 Jan 2014 18:00:20 GMT\n\nIf the container exists and the deletion succeeds, the response is:\n\nHTTP/1.1 204 No Content Content-Length: 0 Content-Type: text/html;\ncharset=UTF-8 X-Trans-Id: txf76c375ebece4df19c84c-0052d81f14 Date:\nThu, 16 Jan 2014 18:04:04 GMT\n\nIf the container exists but is not empty, the response is:\n\nHTTP/1.1 409 Conflict Content-Length: 95 Content-Type: text/html;\ncharset=UTF-8 X-Trans-Id: tx7782dc6a97b94a46956b5-0052d81f6b Date:\nThu, 16 Jan 2014 18:05:31 GMT < html> < h1>Conflict < /h1> <\np>There was a conflict when trying to complete your request. < /p>\n< /html>", 
+        "examples": {}, 
+        "id": "deleteContainer", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete container", 
+        "tags": [
+          "storage-container-services"
+        ]
+      }
+    ], 
+    "/v1/{account}/{container}/{object}": [
+      {
+        "consumes": [], 
+        "description": "Downloads the object content and gets the object metadata.\n\nThis operation returns the object metadata in the response headers\nand the object content in the response body.\n\nIf this is a large object, the response body contains the\nconcatenated content of the segment objects. To get the manifest\ninstead of concatenated segment objects for a static large object,\nuse the ``multipart-manifest`` query parameter.\n\nExample requests and responses:\n\n- Show object details for the ``goodbye`` object in the\n  ``marktwain`` container: ``curl -i $publicURL/marktwain/goodbye-X\n  GET -H \"X-Auth-Token:$token\"``\n  HTTP/1.1 200 OK Content-Length: 14 Accept-Ranges: bytes Last-\n  Modified: Wed, 15 Jan 2014 16:41:49 GMT Etag:\n  451e372e48e0f6b1114fa0724aa79fa1 X-Timestamp: 1389804109.39027 X\n  -Object-Meta-Orig-Filename: goodbyeworld.txt Content-Type:\n  application/octet-stream X-Trans-Id:\n  tx8145a190241f4cf6b05f5-0052d82a34 Date: Thu, 16 Jan 2014\n  18:51:32 GMT Goodbye World!\n\n- Show object details for the ``goodbye`` object, which does not\n  exist, in the ``janeausten`` container:\n  ``curl -i$publicURL/janeausten/goodbye -X GET -H\"X-Auth-Token:\n  $token\"``\n  HTTP/1.1 404 Not Found Content-Length: 70 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id:\n  tx073f7cbb850c4c99934b9-0052d82b04 Date: Thu, 16 Jan 2014\n  18:55:00 GMT < html> < h1>Not Found < /h1> < p>The resource could\n  not be found. < /p> < /html>", 
+        "examples": {}, 
+        "id": "getObject", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Get object content and metadata", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Creates an object with specified data content and metadata, or\nreplaces an existing object with specified data content and\nmetadata.\n\nThe PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201Created`` status code.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB.\n\nExample requests and responses:\n\n- Create object:\n  ``curl -i$publicURL/janeausten/helloworld.txt -XPUT -H \"Content-\n  Length: 1\" -H\"Content-Type: text/html; charset=UTF-8\"-H \"X-Auth-\n  Token: $token\"``\n  HTTP/1.1 201 Created Last-Modified: Fri, 17 Jan 2014 17:28:35 GMT\n  Content-Length: 116 Etag: d41d8cd98f00b204e9800998ecf8427e\n  Content-Type: text/html; charset=UTF-8 X-Trans-Id:\n  tx4d5e4f06d357462bb732f-0052d96843 Date: Fri, 17 Jan 2014\n  17:28:35 GMT\n\n- Replace object:\n  ``curl-i $publicURL/janeausten/helloworld -X PUT-H \"Content-\n  Length: 0\" -H \"X-Auth-Token:$token\"`` HTTP/1.1 201 Created Last-\n  Modified: Fri, 17 Jan 2014 17:28:35 GMT Content-Length: 116 Etag:\n  d41d8cd98f00b204e9800998ecf8427e Content-Type: text/html;\n  charset=UTF-8 X-Trans-Id: tx4d5e4f06d357462bb732f-0052d96843\n  Date: Fri, 17 Jan 2014 17:28:35 GMT\n\nThe ``201 Created`` status code indicates a successful write.\n\nIf the request times out, the operation returns the ``408 Request\nTimeout`` error code.\n\nThe ``411 Length Required`` error code indicates a missing\n``Transfer-Encoding`` or ``Content-Length`` request header.\n\nIf the MD5 checksum of the data that is written to the object store\ndoes not match the optional ``ETag`` value, the operation returns\nthe ``422 Unprocessable Entity`` error code.", 
+        "examples": {}, 
+        "id": "createOrReplaceObject", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "408": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "411": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create or replace object", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Copies an object to another object in the object store.\n\nYou can copy an object to a new object with the same name. Copying\nto the same name is an alternative to using POST to add metadata to\nan object. With POST , you must specify all the metadata. With COPY\n, you can add additional metadata to the object.\n\nWith COPY , you can set the ``X-Fresh-Metadata`` header to ``True``\nto copy the object without any existing metadata.\n\nAlternatively, you can use PUT with the ``X-Copy-From`` request\nheader to accomplish the same operation as the COPY object\noperation.\n\nThe PUT operation always creates an object. If you use this\noperation on an existing object, you replace the existing object\nand metadata rather than modifying the object. Consequently, this\noperation returns a ``201Created`` success node.\n\nIf you use this operation to copy a manifest object, the new object\nis a normal object and not a copy of the manifest. Instead it is a\nconcatenation of all the segment objects. This means that you\ncannot copy objects larger than 5 GB in size. All metadata is\npreserved during the object copy. If you specify metadata on the\nrequest to copy the object, either PUT or COPY , the metadata\noverwrites any conflicting keys on the target (new) object.\n\nExample requests and responses:\n\n- Copy the ``goodbye`` object from the ``marktwain`` container to\n  the ``janeausten`` container: ``curl -i\n  $publicURL/marktwain/goodbye-X COPY -H \"X-Auth-Token: $token\"\n  -H\"Destination: janeausten/goodbye\"`` HTTP/1.1 201 Created\n  Content-Length: 0 X-Copied-From-Last-Modified: Thu, 16 Jan 2014\n  21:19:45 GMT X-Copied-From: marktwain/goodbye Last-Modified: Fri,\n  17 Jan 2014 18:22:57 GMT Etag: 451e372e48e0f6b1114fa0724aa79fa1\n  Content-Type: text/html; charset=UTF-8 X-Object-Meta-Movie:\n  AmericanPie X-Trans-Id: txdcb481ad49d24e9a81107-0052d97501 Date:\n  Fri, 17 Jan 2014 18:22:57 GMT\n\n- Alternatively, you can use PUT to copy the ``goodbye`` object from\n  the ``marktwain`` container to the ``janeausten`` container. This\n  request requires a ``Content-Length`` header even if it is set to\n  zero (0).\n  ``curl -i $publicURL/janeausten/goodbye-X PUT -H \"X-Auth-Token:\n  $token\" -H\"X-Copy-From: /marktwain/goodbye\" -H\"Content-Length:\n  0\"``\n  HTTP/1.1 201 Created Content-Length: 0 X-Copied-From-Last-\n  Modified: Thu, 16 Jan 2014 21:19:45 GMT X-Copied-From:\n  marktwain/goodbye Last-Modified: Fri, 17 Jan 2014 18:22:57 GMT\n  Etag: 451e372e48e0f6b1114fa0724aa79fa1 Content-Type: text/html;\n  charset=UTF-8 X-Object-Meta-Movie: AmericanPie X-Trans-Id:\n  txdcb481ad49d24e9a81107-0052d97501 Date: Fri, 17 Jan 2014\n  18:22:57 GMT\n\nWhen several replicas exist, the system copies from the most recent\nreplica. That is, the COPY operation behaves as though the\n``X-Newest`` header is in the request.", 
+        "examples": {}, 
+        "id": "copyObject", 
+        "method": "copy", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "201": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Copy object", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Permanently deletes an object from the object store.\n\nYou can use the COPY method to copy the object to a new location.\nThen, use the DELETE method to delete the original object.\n\nObject deletion occurs immediately at request time. Any subsequent\nGET , HEAD , POST , or DELETE operations return a ``404 Not Found``\nerror code.\n\nFor static large object manifests, you can add the ``?multipart-\nmanifest=delete`` query parameter. This operation deletes the\nsegment objects and if all deletions succeed, this operation\ndeletes the manifest object.\n\nExample request and response:\n\n- Delete the ``helloworld`` object from the ``marktwain`` container:\n  ``curl -i$publicURL/marktwain/helloworld -X DELETE-H \"X-Auth-\n  Token: $token\"``\n  HTTP/1.1 204 No Content Content-Length: 0 Content-Type:\n  text/html; charset=UTF-8 X-Trans-Id: tx36c7606fcd1843f59167c-\n  0052d6fdac Date: Wed, 15 Jan 2014 21:29:16 GMT\n\nNormally the DELETE operation does not return a response body.\nHowever, with the ``multipart-manifest=delete`` query parameter,\nthe response body contains a list of manifest and segment objects\nand the status of their DELETE operations.", 
+        "examples": {}, 
+        "id": "deleteObject", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {}, 
+        "summary": "Delete object", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Shows object metadata.\n\nIf the ``Content-Length`` response header is non-zero, the example\ncURL command stalls after it prints the response headers because it\nis waiting for a response body. However, the Object Storage system\ndoes not return a response body for the HEAD operation.\n\nExample requests and responses:\n\n- Show object metadata:\n  ``curl -i$publicURL/marktwain/goodbye -X HEAD -H\"X-Auth-Token:\n  $token\"``\n  HTTP/1.1 200 OK Content-Length: 14 Accept-Ranges: bytes Last-\n  Modified: Thu, 16 Jan 2014 21:12:31 GMT Etag:\n  451e372e48e0f6b1114fa0724aa79fa1 X-Timestamp: 1389906751.73463 X\n  -Object-Meta-Book: GoodbyeColumbus Content-Type: application\n  /octet-stream X-Trans-Id: tx37ea34dcd1ed48ca9bc7d-0052d84b6f\n  Date: Thu, 16 Jan 2014 21:13:19 GMT\n\nIf the request succeeds, the operation returns the 204 status code.", 
+        "examples": {}, 
+        "id": "showObjectMeta", 
+        "method": "head", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show object metadata", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Creates or updates object metadata.\n\nTo create or update custom metadata, use the ``X-Object-\nMeta-{name}`` header, where ``{name}`` is the name of the metadata\nitem.\n\nIn addition to the custom metadata, you can also update these\nsystem metadata items: ``Content-Type`` ``Content-Encoding``\n``Content-Disposition`` ``X-Delete-At`` . However you cannot update\nother system metadata such as ``Content-Length`` or ``Last-\nModified`` .\n\nYou can use COPY as an alternate to the POST operation by copying\nto the same object. With the POST operation you must specify all\nmetadata items, whereas with the COPY operation, you need to\nspecify only changed or additional items.\n\nAll metadata is preserved during the object copy. If you specify\nmetadata on the request to copy the object, either PUT or COPY ,\nthe metadata overwrites any conflicting keys on the target (new)\nobject.\n\nA POST request deletes any existing custom metadata that you added\nwith a previous PUT or POST request. Consequently, you must specify\nall custom metadata in the request. However, system metadata is\nunchanged by the POST request unless you explicitly supply it in a\nrequest header.\n\nYou can also set the ``X-Delete-At`` or ``X-Delete-After`` header\nto define when to expire the object.\n\nWhen used as described in this section, the POST operation creates\nor replaces metadata. This form of the operation has no request\nbody.\n\nYou can also use the form POST feature to upload objects.\n\nExample requests and responses:\n\n- Create object metadata:\n  curl -i $publicURL/marktwain/goodbye -X POST -H \"X -Auth-Token:\n  $token\" -H \"X-Object-Meta-Book: GoodbyeColumbus\"\n  HTTP/1.1 202 Accepted Content-Length: 76 Content-Type: text/html;\n  charset=UTF-8 X-Trans-Id: txb5fb5c91ba1f4f37bb648-0052d84b3f\n  Date: Thu, 16 Jan 2014 21:12:31 GMT < html> < h1>Accepted < /h1>\n  < p>The request is accepted for processing. < /p> < /html>\n\n- Update object metadata:\n  curl -i $publicURL/marktwain/goodbye -X POST -H \"X-Auth-Token:\n  $token\" H \"X-Object-Meta-Book: GoodbyeOldFriend\"\n  HTTP/1.1 202 Accepted Content-Length: 76 Content-Type: text/html;\n  charset=UTF-8 X-Trans-Id: tx5ec7ab81cdb34ced887c8-0052d84ca4\n  Date: Thu, 16 Jan 2014 21:18:28 GMT < html> < h1>Accepted < /h1>\n  < p>The request is accepted for processing. < /p> < /html>", 
+        "examples": {}, 
+        "id": "updateObjectMeta", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The unique name for the account. An account is also known as the\nproject or tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "account", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the object.", 
+            "format": "", 
+            "in": "path", 
+            "name": "object", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique name for the container.\n\nThe container name must be from 1 to 256 characters long and can\nstart with any character and contain any pattern. Character set\nmust be UTF-8. The container name cannot contain a slash ( ``/`` )\ncharacter because this character delimits the container and object\nname. For example, ``/account/container/object`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "container", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create or update object metadata", 
+        "tags": [
+          "storage-object-services"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "Discoverability", 
+      "name": "storage_info", 
+      "summary": "If configured, lists the activated capabilities for this version of\nthe OpenStack Object Storage API."
+    }, 
+    {
+      "description": "Endpoints", 
+      "name": "storage_endpoints", 
+      "summary": "If configured, lists endpoints for a specified account."
+    }, 
+    {
+      "description": "Accounts", 
+      "name": "storage-account-services", 
+      "summary": "Lists containers for a specified account. Creates, updates, shows,\nand deletes account metadata."
+    }, 
+    {
+      "description": "Containers", 
+      "name": "storage-container-services", 
+      "summary": "Lists objects in a specified container. Creates, shows details for,\nand deletes containers. Creates, updates, shows, and deletes\ncontainer metadata."
+    }, 
+    {
+      "description": "Objects", 
+      "name": "storage-object-services", 
+      "summary": "Creates, replaces, shows details for, and deletes objects. Copies\nobjects from another object with a new or different name. Updates\nobject metadata."
+    }
+  ]
+}

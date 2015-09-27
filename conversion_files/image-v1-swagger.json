@@ -1,0 +1,866 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "addMember-v1": {
+      "properties": {
+        "can_share": {
+          "description": "Indicates whether the specified owner is authorized to share the\nspecified image.\n\nIf the owner can share the image, this value is ``true`` .\nOtherwise, this value is ``false`` .\n\nThe owner ID, which is the tenant ID, is specified in the request\nURI.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createImage-v1": {
+      "properties": {
+        "container_format": {
+          "description": "The container format refers to whether the VM image is in a file\nformat that also contains metadata about the actual VM.\n\nContainer formats include OVF and Amazon AMI. In addition, a VM\nimage might not have a container format. Instead, the image is a\nblob of unstructured data.\n\nYou can set the container format to one of the following formats:\n\n- ovf\n  OVF container format.\n\n- bare\n  No container or metadata envelope for the image.\n\n- aki\n  Amazon kernel image.\n\n- ari\n  Amazon ramdisk image.\n\n- ami\n  Amazon machine image.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "createImage": {
+          "description": "", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "disk_format": {
+          "description": "A valid value is ``aki`` , ``ari`` , ``ami`` , ``raw`` , ``iso`` ,\n``vhd`` , ``vdi`` , ``qcow2`` , or ``vmdk`` .\n\nThe disk format of a VM image is the format of the underlying disk\nimage. Virtual appliance vendors have different formats for laying\nout the information contained in a VM disk image.\n\nYou can set the container format for your image to one of the\nfollowing values:\n\n- raw\n  Unstructured disk image format.\n\n- vhd\n  VHD disk format, a common disk format used by VM monitors from\n  VMWare, Xen, Microsoft, VirtualBox, and others.\n\n- vmdk\n  A common disk format that supported by many VM monitors.\n\n- vdi\n  Supported by VirtualBox VM monitor and the QEMU emulator.\n\n- iso\n  An archive format for the data contents of an optical disc, such\n  as CDROM.\n\n- qcow2\n  Supported by the QEMU emulator that can expand dynamically and\n  supports Copy on Write.\n\n- aki\n  An Amazon kernel image.\n\n- ari\n  An Amazon ramdisk image.\n\n- ami\n  An Amazon machine image.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "Name for the image. Note that the name of an image is not unique to\na Glance node. The API cannot expect users to know the names of\nimages owned by others.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createImage-v1_202": {
+      "properties": {
+        "location": {
+          "description": "A location for the image identified by a URI.", 
+          "format": "uri", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "getSharedImages-v1_200": {
+      "properties": {
+        "can_share": {
+          "description": "Indicates whether the specified owner is authorized to share the\nspecified image.\n\nIf the owner can share the image, this value is ``true`` .\nOtherwise, this value is ``false`` .\n\nThe owner ID, which is the tenant ID, is specified in the request\nURI.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "listDetailImage-v1_200": {
+      "properties": {
+        "next": {
+          "description": "Show the next item in the list.", 
+          "format": "uri", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "previous": {
+          "description": "Show the previous item in the list.", 
+          "format": "uri", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "removeMember-v1": {
+      "properties": {
+        "member_id": {
+          "description": "ID of member with which an image is shared.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "replaceMember-v1": {
+      "properties": {
+        "can_share": {
+          "description": "Indicates whether the specified owner is authorized to share the\nspecified image.\n\nIf the owner can share the image, this value is ``true`` .\nOtherwise, this value is ``false`` .\n\nThe owner ID, which is the tenant ID, is specified in the request\nURI.", 
+          "format": "", 
+          "required": true, 
+          "type": "boolean"
+        }, 
+        "memberships": {
+          "description": "", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateImage-v1_200": {
+      "properties": {
+        "location": {
+          "description": "", 
+          "format": "uri", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "image", 
+    "title": "Image service API", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information about all Image service API versions.", 
+        "examples": {}, 
+        "id": "listVersions-image-v1", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v2.2", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT"
+                  }, 
+                  {
+                    "id": "v2.1", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v1.1", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "300": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v2.2", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT"
+                  }, 
+                  {
+                    "id": "v2.1", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v1.1", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }, 
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9292/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "SUPPORTED"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List API versions", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v1/images": [
+      {
+        "consumes": [], 
+        "description": "Registers a virtual machine (VM) image.", 
+        "examples": {}, 
+        "id": "createImage-v1", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createImage-v1"
+            }
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create image", 
+        "tags": [
+          "images"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists public VM images.", 
+        "examples": {}, 
+        "id": "listImage-v1", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filters the image list by a specified image name, in string format.", 
+            "format": "", 
+            "in": "query", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified container format, such as\n``ovf`` , ``bare`` , ``aki`` , ``ari`` , or ``ami`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "container_format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified disk format. A valid value is\n``aki`` , ``ari`` , ``ami`` , ``raw`` , ``iso`` , ``vhd`` , ``vdi``\n, ``qcow2`` , or ``vmdk`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "disk_format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified status. A valid value is\n``queued`` , ``saving`` , ``active`` , ``killed`` , ``deleted`` ,\nor ``pending_delete`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "status", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified minimum image size, in bytes.", 
+            "format": "", 
+            "in": "query", 
+            "name": "size_min", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified maximum image size, in bytes.", 
+            "format": "", 
+            "in": "query", 
+            "name": "size_max", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list to those images that have changed since a\nspecified time stamp value.", 
+            "format": "", 
+            "in": "query", 
+            "name": "changes-since", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "images": [
+                  {
+                    "container_format": "ovf", 
+                    "disk_format": "vhd", 
+                    "name": "Ubuntu 10.04 Plain", 
+                    "size": "5368709120", 
+                    "uri": "http://glance.example.com/images/71c675ab-d94f-49cd-a114-e12490b328d9"
+                  }, 
+                  {
+                    "...": "..."
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List images", 
+        "tags": [
+          "images"
+        ]
+      }
+    ], 
+    "/v1/images/detail": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists details for available images.", 
+        "examples": {}, 
+        "id": "listDetailImage-v1", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Filters the image list by a specified image name, in string format.", 
+            "format": "", 
+            "in": "query", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified container format, such as\n``ovf`` , ``bare`` , ``aki`` , ``ari`` , or ``ami`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "container_format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified disk format. A valid value is\n``aki`` , ``ari`` , ``ami`` , ``raw`` , ``iso`` , ``vhd`` , ``vdi``\n, ``qcow2`` , or ``vmdk`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "disk_format", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified status. A valid value is\n``queued`` , ``saving`` , ``active`` , ``killed`` , ``deleted`` ,\nor ``pending_delete`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "status", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified minimum image size, in bytes.", 
+            "format": "", 
+            "in": "query", 
+            "name": "size_min", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list by a specified maximum image size, in bytes.", 
+            "format": "", 
+            "in": "query", 
+            "name": "size_max", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Filters the image list to those images that have changed since a\nspecified time stamp value.", 
+            "format": "", 
+            "in": "query", 
+            "name": "changes-since", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "images": [
+                  {
+                    "checksum": "c2e5db72bd7fd153f53ede5da5a06de3", 
+                    "container_format": "ovf", 
+                    "created_at": "2010-02-03 09:34:01", 
+                    "deleted_at": "", 
+                    "disk_format": "vhd", 
+                    "is_public": true, 
+                    "min_disk": 5, 
+                    "min_ram": 256, 
+                    "name": "Ubuntu 10.04 Plain 5GB", 
+                    "owner": null, 
+                    "properties": {
+                      "distro": "Ubuntu 10.04 LTS"
+                    }, 
+                    "size": "5368709120", 
+                    "status": "active", 
+                    "updated_at": "2010-02-03 09:34:01", 
+                    "uri": "http://glance.example.com/images/71c675ab-d94f-49cd-a114-e12490b328d9"
+                  }, 
+                  {
+                    "...": "..."
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List image details", 
+        "tags": [
+          "images"
+        ]
+      }
+    ], 
+    "/v1/images/{image_id}": [
+      {
+        "consumes": [], 
+        "description": "Updates an image, uploads an image file, or updates metadata for an\nimage.", 
+        "examples": {}, 
+        "id": "updateImage-v1", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update image", 
+        "tags": [
+          "images"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows the image details as headers and the image binary in the body\nof the response.", 
+        "examples": {}, 
+        "id": "getImage-v1", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "images": [
+                  {
+                    "checksum": "c2e5db72bd7fd153f53ede5da5a06de3", 
+                    "container_format": "ovf", 
+                    "created_at": "2010-02-03 09:34:01", 
+                    "deleted_at": "", 
+                    "disk_format": "vhd", 
+                    "is_public": true, 
+                    "min_disk": 5, 
+                    "min_ram": 256, 
+                    "name": "Ubuntu 10.04 Plain 5GB", 
+                    "owner": null, 
+                    "properties": {
+                      "distro": "Ubuntu 10.04 LTS"
+                    }, 
+                    "size": "5368709120", 
+                    "status": "active", 
+                    "updated_at": "2010-02-03 09:34:01", 
+                    "uri": "http://glance.example.com/images/71c675ab-d94f-49cd-a114-e12490b328d9"
+                  }, 
+                  {
+                    "...": "..."
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show image details and image binary", 
+        "tags": [
+          "images"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes the specified image.", 
+        "examples": {}, 
+        "id": "deleteImage-v1", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete image", 
+        "tags": [
+          "images"
+        ]
+      }
+    ], 
+    "/v1/images/{image_id}/members": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Replaces a membership list for an image.", 
+        "examples": {
+          "application/json": {
+            "memberships": [
+              {
+                "can_share": false, 
+                "member_id": "tenant1"
+              }, 
+              {
+                "...": "..."
+              }
+            ]
+          }
+        }, 
+        "id": "replaceMember-v1", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/replaceMember-v1"
+            }
+          }, 
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Replace member", 
+        "tags": [
+          "members"
+        ]
+      }
+    ], 
+    "/v1/images/{image_id}/members/{owner_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Adds a member to an image.\n\nIf you omit the request body, this call adds the membership to the\nimage, leaves the existing memberships unmodified, and sets the\n``can_share`` attribute to ``false`` for new memberships.", 
+        "examples": {
+          "application/json": {
+            "members": [
+              {
+                "can_share": false, 
+                "member_id": "tenant1"
+              }, 
+              {
+                "can_share": false, 
+                "member_id": "tenant2"
+              }
+            ]
+          }
+        }, 
+        "id": "addMember-v1", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/addMember-v1"
+            }
+          }, 
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Owner ID, which is the tenant ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "owner_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Add member", 
+        "tags": [
+          "members"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Removes a member from an image.", 
+        "examples": {}, 
+        "id": "removeMember-v1", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/removeMember-v1"
+            }
+          }, 
+          {
+            "description": "Image ID stored through the image API. Typically a UUID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "image_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Owner ID, which is the tenant ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "owner_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Remove member", 
+        "tags": [
+          "members"
+        ]
+      }
+    ], 
+    "/v1/shared-images/{owner_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the VM images that are shared with a specified owner. The\nowner ID is the tenant ID.", 
+        "examples": {}, 
+        "id": "getSharedImages-v1", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Owner ID, which is the tenant ID.", 
+            "format": "", 
+            "in": "path", 
+            "name": "owner_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "shared_images": [
+                  {
+                    "can_share": false, 
+                    "image_id": "71c675ab-d94f-49cd-a114-e12490b328d9"
+                  }, 
+                  {
+                    "...": "..."
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List shared images", 
+        "tags": [
+          "shared-images"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Images", 
+      "name": "images", 
+      "summary": ""
+    }, 
+    {
+      "description": "Members", 
+      "name": "members", 
+      "summary": ""
+    }, 
+    {
+      "description": "Shared images", 
+      "name": "shared-images", 
+      "summary": ""
+    }
+  ]
+}

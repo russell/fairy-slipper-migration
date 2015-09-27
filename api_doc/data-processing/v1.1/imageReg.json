@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "username": {
+      "required": true, 
+      "type": "string", 
+      "description": "Username to login into an instance\u2019s OS for remote operations\nexecution.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Description of the image.", 
+      "format": ""
+    }
+  }
+}

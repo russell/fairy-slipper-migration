@@ -1,0 +1,66 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#createAlarm": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#createMeter": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#deleteAlarm": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listAlarms": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listCapabilities": "capabilities", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listMeters": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listResources": "resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listSamples": "samples", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listSamplesStatistics": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#listSamplesforMeter": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#showAlarm": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#showAlarmHistory": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#showAlarmState": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#showResource": "resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#showSample": "samples", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#updateAlarm": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#updateAlarmState": "alarms"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#alarm_id": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#alarms": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#capabilities": "capabilities", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#history": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#meter_name": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#meters": "meters", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#resource_id": "resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#resources": "resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#sample_id": "samples", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#samples": "samples", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#state": "alarms", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/telemetry-api/src/v2/os-telemetry-api-2.0.wadl#statistics": "meters"
+  }, 
+  "service": "telemetry", 
+  "tags": [
+    {
+      "description": "Alarms", 
+      "name": "alarms", 
+      "summary": "Lists, creates, gets details for, updates, and deletes alarms."
+    }, 
+    {
+      "description": "Meters", 
+      "name": "meters", 
+      "summary": "Creates, lists all, and lists samples for meters. Computes and\nlists statistics for samples in a specified time range.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied. The default limit is\nthe ``default_api_return_limit`` configuration option value."
+    }, 
+    {
+      "description": "Samples", 
+      "name": "samples", 
+      "summary": "Lists all samples and gets information for a specified sample.\n\nFor list operations, if you do not explicitly set the ``limit``\nquery parameter, a default limit is applied. The default limit is\nthe ``default_api_return_limit`` configuration option value."
+    }, 
+    {
+      "description": "Resources", 
+      "name": "resources", 
+      "summary": "Lists all and gets information for resources."
+    }, 
+    {
+      "description": "Capabilities", 
+      "name": "capabilities", 
+      "summary": "Gets information for API and storage capabilities.\n\nThe Telemetry service enables you to store samples, events, and\nalarm definitions in supported database back ends. The\n``capabilities`` resource enables you to list the capabilities that\na database supports.\n\nThe ``capabilities`` resource returns a flattened dictionary of\ncapability properties, each with an associated boolean value. A\nvalue of ``true`` indicates that the corresponding capability is\navailable in the back end.\n\nOptionally, you can configure separate database back ends for\nsamples, events, and alarm definitions. The ``capabilities``\nresponse body shows a value of ``true`` to indicate that the\nsamples, events, or alarm definitions database is ready to use in a\nproduction environment."
+    }
+  ], 
+  "title": "Telemetry API", 
+  "version": "v2"
+}

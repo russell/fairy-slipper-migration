@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "tags": {
+      "required": false, 
+      "type": "string", 
+      "description": "Lists images only with specific tag. Can be used multiple times.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,1017 @@
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/root
+   :synopsis: Enable root user
+
+   Enables the root user for a specified database instance and returns
+   the root password.
+   
+   This operation enables login from any host for the root user and
+   provides the user with a generated root password.
+   
+   Changes you make as a root user may cause detrimental effects to
+   the database instance and unpredictable behavior for API
+   operations. When you enable the root user, you accept the
+   possibility that we will not be able to support your database
+   instance. While enabling root does not prevent us from a “best
+   effort” approach to helping you if something goes wrong with your
+   instance, we cannot ensure that we will be able to assist you if
+   you change core MySQL settings. These changes can be (but are not
+   limited to) turning off binlogs, removing users that we use to
+   access your instance, and so forth.
+
+   :responseexample 200: v1/examples/createRoot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances/{instanceId}/root
+   :synopsis: Show root-enabled status for database instance
+
+   Shows root-enabled status for a database instance.
+   
+   Returns true if root user is enabled for a specified database
+   instance or false otherwise.
+   
+   This operation checks an active specified database instance to see
+   if root access is enabled. It returns True if root user is enabled
+   for the specified database instance or False otherwise.
+
+   :responseexample 200: v1/examples/isRootEnabled_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:delete:: /v1.0/{accountId}/instances/{instanceId}/databases/{databaseName}
+   :synopsis: Delete database
+
+   Deletes a specified database.
+   
+   This operation deletes the requested database within the specified
+   database instance. Note that all data associated with the database
+   is also deleted.
+
+   :tag: databases
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter databaseName: The name for the specified database.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:delete:: /v1.0/{accountId}/instances/{instanceId}/users/{name}
+   :synopsis: Delete user
+
+   Deletes a specified user for a specified database instance.
+   
+   This operation deletes the specified user for the specified
+   database instance.
+   
+   There is a bug in a python library that Rackspace is using that may
+   cause incorrect user deletions to occur if a period (.) is used in
+   the user name. In this case, the user name is truncated to remove
+   the portion of the name from the period to the end, leaving only
+   the portion from the beginning up to the period. For example, for a
+   user named "my.userA", the bug would truncate the user name to
+   "my", and if the user "my" exists, that user will be incorrectly
+   deleted. To avoid the problem, do not use periods in user names.
+
+   :tag: user-management
+   :parameter name: The name for the specified user.
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:delete:: /v1.0/{accountId}/instances/{instanceId}
+   :synopsis: Delete database instance
+
+   Deletes a specified database instance, including any associated
+   data.
+   
+   This operation does not delete any read slaves.
+   
+   This operation is not permitted when the instance state is either
+   ``REBUILDING`` or ``BUILDING`` .
+
+   :tag: database-instances
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances/{instanceId}
+   :synopsis: Show database instance details
+
+   Shows database instance details.
+   
+   Lists the status and details of the specified database instance.
+   
+   Lists the volume size in gigabytes (GB) and the approximate GB
+   used.
+   
+   After instance creation, the ``used`` value is greater than 0,
+   which is expected and due to the automatic creation of non-empty
+   transaction logs for MySQL optimization. The ``used`` attribute is
+   **not** returned in the response when the instance status is
+   ``BUILD`` , ``REBOOT`` , ``RESIZE`` , or ``ERROR`` .
+   
+   The list operations return a DNS-resolvable host name that is
+   associated with the database instance rather than an IP address.
+   Because the host name always resolves to the correct IP address for
+   the database instance, you do not need to maintain the mapping.
+   Although the IP address might change when you resize, migrate, or
+   perform other operations, the host name always resolves to the
+   correct database instance.
+
+   :responseexample 200: v1/examples/getInstanceById_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances/{instanceId}
+   :synopsis: List configuration defaults
+
+   Lists the configuration defaults for a specified instance.
+
+   :responseexample 200: v1/examples/listConfigDefaults_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:put:: /v1.0/{accountId}/instances/{instanceId}
+   :synopsis: Attach configuration group
+
+   Attaches a configuration group to a specified instance.
+
+   :requestexample: v1/examples/attachConfigGroup_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :requestschema: v1/attachConfigGroup.json
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:put:: /v1.0/{accountId}/instances/{instanceId}
+   :synopsis: Detach configuration group
+
+   Detaches a configuration group from a specified instance.
+   
+   When you pass in only an instance ID (no configuration ID), this
+   operation detaches whatever configuration group was attached to the
+   specified instance.
+
+   :requestexample: v1/examples/detachConfigGroup_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :requestschema: v1/detachConfigGroup.json
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters/{parameter_name}
+   :synopsis: Show configuration parameter details
+
+   Displays details for a configuration parameter associated with a
+   specified datastore version.
+   
+   Details include the type, minimum and maximum values, and whether
+   you must restart the instance after you change the parameter value.
+
+   :responseexample 200: v1/examples/showParameterDetails_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datastores
+   :parameter parameter_name: Name of the parameter whose details you
+                              want.
+   :parameter datastore_version_id: The ID of the data store version.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/flavors/{flavorId}
+   :synopsis: Show flavor details
+
+   Shows flavor details.
+   
+   This operation lists all information for the specified flavor ID
+   with details of the RAM.
+   
+   This resource is identical to the flavors found in the OpenStack
+   Nova API, but without the disk property.
+   
+   The flavorId parameter should be an integer. If a floating point
+   value is used for the flavorId parameter, the decimal portion is
+   truncated and the integer portion is used as the value of the
+   flavorId.
+   
+   Writer: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.
+
+   :responseexample 200: v1/examples/getFlavorById_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter flavorId: The flavor ID for the specified flavor.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /
+   :synopsis: List versions
+
+   Lists information about all Database Service API versions.
+
+   :responseexample 200: v1/examples/getVersions_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: api-versions
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/action
+   :synopsis: Restart instance
+
+   Restarts the database service for a specified instance.
+   
+   The restart operation restarts only the MySQL instance. Restarting
+   MySQL erases any dynamic configuration settings that you make in
+   MySQL.
+   
+   The MySQL service is unavailable until the instance restarts.
+   
+   If the operation succeeds, it returns a 202 Accepted response.
+
+   :requestexample: v1/examples/restartInstance_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instance-actions
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/action
+   :synopsis: Resize instance
+
+   Resizes the memory for an instance.
+   
+   If you provide a valid ``flavorRef`` , this operation changes the
+   memory size of the instance, and restarts MySQL.
+
+   :requestexample: v1/examples/resizeInstance_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instance-actions
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/action
+   :synopsis: Resize instance volume
+
+   Resizes the volume that is attached to an instance.
+   
+   You can use this operation to increase but not decrease the volume
+   size. A valid volume size is an integer value in gigabytes (GB).
+   
+   You cannot increase the volume to a size that is larger than the
+   API volume size limit.
+   
+   If this operation succeeds, it returns a 202 Accepted response.
+
+   :requestexample: v1/examples/resizeVolume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instance-actions
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances
+   :synopsis: Create database instance
+
+   Creates a database instance.
+   
+   This operation asynchronously provisions a new database instance.
+   This call requires the user to specify a flavor and a volume size.
+   The service then provisions the instance with the requested flavor
+   and sets up a volume of the specified size, which is the storage
+   for the database instance.
+   
+   Notes- You can create only one database instance per POST request.
+   
+   - You can create a database instance with one or more databases, and
+     users associated to those databases.
+   
+   - The default binding for the MySQL instance is port 3306.
+
+   :requestexample: v1/examples/createInstance_req.json
+   :responseexample 200: v1/examples/createInstance_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :requestschema: v1/createInstance.json
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances
+   :synopsis: List database instances
+
+   Lists information, including status, for all database instances.
+   
+   Lists status and information for all database instances.
+
+   :responseexample 200: v1/examples/getInstance_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: database-instances
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/users
+   :synopsis: Create user
+
+   Creates a user for a specified database instance.
+   
+   This operation asynchronously provisions a new user for the
+   specified database instance based on the configuration defined in
+   the request object. Once the request is validated and progress has
+   started on the provisioning process, a 202 Accepted response object
+   is returned.
+   
+   Writer: please add the following note back into the doc once the list User details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the "List User details" section of this document).If the corresponding request cannot be fulfilled due to
+   insufficient or invalid data, an HTTP 400 "Bad Request" error
+   response is returned with information regarding the nature of the
+   failure. Failures in the validation process are non-recoverable and
+   require the caller to correct the cause of the failure and POST the
+   request again.
+   
+   The following table lists the required attributes for creating
+   user. See the request examples for the required xml/json format:
+   
+   Required attributes for creating a user
+   
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   |     Field 1     |                               Field 2                               |              Field 3               | Field 4  |
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   |    Applies To   |                                 Name                                |            Description             | Required |
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   |       User      |                                 name                                | Name of the user for the database. |   Yes    |
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   |     password    |                  User password for database access.                 |                Yes                 |          |
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   | (database) name | Name of the database that the user can access. One or more database |                 No                 |          |
+   |                 |                       names must be specified.                      |                                    |          |
+   +-----------------+---------------------------------------------------------------------+------------------------------------+----------+
+   
+   Notes- A user is granted all privileges on the specified databases.
+   
+   - The following user name is reserved and cannot be used for
+     creating users: root.
+   
+   See the following tables for information about characters that are
+   valid/invalid for creating database names, user names, and
+   passwords.
+   
+   Valid characters in a database name, user name, and password
+   
+   +---------------------------------------------------------------------------------------------------------------------------+
+   |                                                          Field 1                                                          |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   |                                                         Character                                                         |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   |                                          Letters (upper and lower cases allowed)                                          |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   |                                                          Numbers                                                          |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   | '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name, user name, and password |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   |                           "_" is allowed anywhere in the database name, user name, and password                           |
+   +---------------------------------------------------------------------------------------------------------------------------+
+   
+   Characters that **cannot** be used in a database name, user name, and password
+   
+   +---------------------------------------------------------+
+   |                         Field 1                         |
+   +---------------------------------------------------------+
+   |                        Character                        |
+   +---------------------------------------------------------+
+   |                      Single quotes                      |
+   +---------------------------------------------------------+
+   |                      Double quotes                      |
+   +---------------------------------------------------------+
+   |                       Back quotes                       |
+   +---------------------------------------------------------+
+   |                        Semicolons                       |
+   +---------------------------------------------------------+
+   |                          Commas                         |
+   +---------------------------------------------------------+
+   |                       Backslashes                       |
+   +---------------------------------------------------------+
+   |                      Forwardslashes                     |
+   +---------------------------------------------------------+
+   | Spaces at the front or end of the user name or password |
+   +---------------------------------------------------------+
+   
+   Length restrictions for database name, user name, and password
+   
+   +------------------------------+-----------------------------+
+   |           Field 1            |           Field 2           |
+   +------------------------------+-----------------------------+
+   |         Restriction          |            Value            |
+   +------------------------------+-----------------------------+
+   | Database name maximum length |              64             |
+   +------------------------------+-----------------------------+
+   |   User name maximum length   |              16             |
+   +------------------------------+-----------------------------+
+   |   Password maximum length    | unlimited (no restrictions) |
+   +------------------------------+-----------------------------+
+
+   :requestexample: v1/examples/createUser_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: user-management
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances/{instanceId}/users
+   :synopsis: List database instance users
+
+   Lists the users in a specified database instance.
+   
+   This operation lists the users in the specified database instance,
+   along with the associated databases for that user.
+   
+   This operation does not return the system users (database
+   administrators that administer the health of the database). Also,
+   this operation returns the "root" user only if "root" user has been
+   enabled.
+   
+   The following notes apply to MySQL users:
+   
+   - User names can be up to 16 characters long.
+   
+   - When you create accounts with INSERT, you must use FLUSH
+     PRIVILEGES to tell the server to reload the grant tables.
+   
+   - For additional information, See:
+     http://dev.mysql.com/doc/refman/5.1/en/user-account-
+     management.html
+
+   :responseexample 200: v1/examples/getUsers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: user-management
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/datastores/{datastore_name}/versions
+   :synopsis: List datastore versions
+
+   Lists the available versions of a specified datastore.
+
+   :responseexample 200: v1/examples/listDatastoreVersions_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datastores
+   :parameter datastore_name: The name of the datastore whose versions
+                              you want to list.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/configurations
+   :synopsis: Create configuration group
+
+   Creates a configuration group.
+
+   :requestexample: v1/examples/createConfigGroup_req.json
+   :responseexample 200: v1/examples/createConfigGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: configurations
+   :requestschema: v1/createConfigGroup.json
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/configurations
+   :synopsis: List configuration groups
+
+   Lists all configuration groups.
+   
+   The list includes the associated datastore and datastore version
+   for each configuration group.
+
+   :responseexample 200: v1/examples/listConfigGroups_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: configurations
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/flavors
+   :synopsis: List flavors
+
+   Lists information for all available flavors.
+   
+   This operation lists information for all available flavors.
+   
+   This resource is identical to the flavors found in the OpenStack
+   Nova API, but without the disk property.
+
+   :responseexample 200: v1/examples/getFlavors_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: flavors
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters
+   :synopsis: List configuration parameters
+
+   Lists the available configuration parameters for a specified
+   datastore version.
+   
+   Parameter information includes the type, minimum and maximum
+   values, and whether you must restart the instance after you change
+   a parameter value.
+
+   :responseexample 200: v1/examples/listParameters_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datastores
+   :parameter datastore_version_id: The ID of the data store version.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:post:: /v1.0/{accountId}/instances/{instanceId}/databases
+   :synopsis: Create database
+
+   Creates a database within a specified instance.
+   
+   This operation creates a new database within the specified
+   instance.
+   
+   The ``name`` of the database is a required attribute.
+   
+   The following additional attributes can be specified for each
+   database: ``collate`` and ``character_set`` .
+   
+   Required and optional attributes for creating a database
+   
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   |    Field 1    |                                                      Field 2                                                      | Field 3  |
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   |      Name     |                                                    Description                                                    | Required |
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   |      name     | Specifies the database name for creating the database. See the request examples for the required xml/json format. |   Yes    |
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   | character_set |                       Set of symbols and encodings. The default character set is ``utf8`` .                       |    No    |
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   |    collate    |  Set of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci`` . |    No    |
+   +---------------+-------------------------------------------------------------------------------------------------------------------+----------+
+   
+   See the MySQL documentation for information about supported
+   character sets and collations at
+   http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html .
+   
+   The following database names are reserved and cannot be used for
+   creating databases: lost+found, information_schema, and mysql.
+   
+   See the following tables for information about characters that are
+   valid/invalid for creating database names.
+   
+   Valid characters in a database name
+   
+   +--------------------------------------------------------------------------------------------------+
+   |                                             Field 1                                              |
+   +--------------------------------------------------------------------------------------------------+
+   |                                            Character                                             |
+   +--------------------------------------------------------------------------------------------------+
+   |                             Letters (upper and lower cases allowed)                              |
+   +--------------------------------------------------------------------------------------------------+
+   |                                             Numbers                                              |
+   +--------------------------------------------------------------------------------------------------+
+   | '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name |
+   +--------------------------------------------------------------------------------------------------+
+   |                           '_' is allowed anywhere in the database name                           |
+   +--------------------------------------------------------------------------------------------------+
+   
+   Characters that **cannot** be used in a database name
+   
+   +----------------+
+   |    Field 1     |
+   +----------------+
+   |   Character    |
+   +----------------+
+   | Single quotes  |
+   +----------------+
+   | Double quotes  |
+   +----------------+
+   |  Back quotes   |
+   +----------------+
+   |   Semicolons   |
+   +----------------+
+   |     Commas     |
+   +----------------+
+   |  Backslashes   |
+   +----------------+
+   | Forwardslashes |
+   +----------------+
+   
+   Length restrictions for database name
+   
+   +------------------------------+---------+
+   |           Field 1            | Field 2 |
+   +------------------------------+---------+
+   |         Restriction          |  Value  |
+   +------------------------------+---------+
+   | Database-name maximum length |    64   |
+   +------------------------------+---------+
+
+   :requestexample: v1/examples/createDatabase_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: databases
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 202: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0/{accountId}/instances/{instanceId}/databases
+   :synopsis: List instance databases
+
+   Lists databases for a specified instance.
+   
+   This operation lists the databases for the specified instance.
+   
+   This operation returns only the user-defined databases, not the
+   system databases. The system databases (mysql, information_schema,
+   lost+found) can only be viewed by a database administrator.
+
+   :responseexample 200: v1/examples/getDatabases_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: databases
+   :parameter instanceId: The instance ID for the specified database
+                          instance.
+   :parameter accountId: The account ID of the owner of the specified
+                         instance.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+
+.. http:get:: /v1.0
+   :synopsis: Show version details
+
+   Shows details for the Database Service API v1.0.
+
+   :responseexample 200: v1/examples/getVersionInfo_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: api-versions
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 422: 
+   :statuscode 503: 
+   :statuscode 500: 
+   :statuscode 501: 
+
+

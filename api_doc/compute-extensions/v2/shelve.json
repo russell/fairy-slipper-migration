@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "shelve": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``shelve`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "createImage": {
+      "required": true, 
+      "type": "string", 
+      "description": "A dictionary representation of a creation for image.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the snapshot.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "Metadata key and value pairs. The maximum size of the metadata key\nand value is 255 bytes each.", 
+      "format": ""
+    }
+  }
+}

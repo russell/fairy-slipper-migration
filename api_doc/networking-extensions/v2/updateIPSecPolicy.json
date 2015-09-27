@@ -1,0 +1,65 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "Human-readable name for the IPSec policy. Does not have to be\nunique.", 
+      "format": ""
+    }, 
+    "transform_protocol": {
+      "required": false, 
+      "type": "string", 
+      "description": "The transform protocol. A valid value is ``ESP`` , ``AH`` , or\n``AH-ESP`` . Default is ``ESP`` .", 
+      "format": ""
+    }, 
+    "auth_algorithm": {
+      "required": false, 
+      "type": "string", 
+      "description": "The authentication algorithm. A valid value is ``sha1`` , which is\nthe default.", 
+      "format": ""
+    }, 
+    "encapsulation_mode": {
+      "required": false, 
+      "type": "string", 
+      "description": "The encapsulation mode. A valid value is ``tunnel`` or\n``transport`` . Default is ``tunnel`` .", 
+      "format": ""
+    }, 
+    "encryption_algorithm": {
+      "required": false, 
+      "type": "string", 
+      "description": "The encryption algorithm. A valid value is ``3des`` , ``aes-128`` ,\n``aes-192`` , ``aes-256`` , and so on. Default is ``aes-128`` .", 
+      "format": ""
+    }, 
+    "pfs": {
+      "required": false, 
+      "type": "string", 
+      "description": "Perfect forward secrecy (PFS). A valid value is ``Group2`` ,\n``Group5`` , ``Group14`` , and so on. Default is ``Group5`` .", 
+      "format": ""
+    }, 
+    "value": {
+      "required": false, 
+      "type": "integer", 
+      "description": "Lifetime value, as a positive integer. Default is 3600 seconds.", 
+      "format": ""
+    }, 
+    "units": {
+      "required": false, 
+      "type": "string", 
+      "description": "Units for lifetime of the security association. Default is seconds.", 
+      "format": ""
+    }, 
+    "lifetime": {
+      "required": false, 
+      "type": "object", 
+      "description": "The lifetime of the security association. The lifetime consists of\na unit and integer value. You can omit either the unit or value\nportion of the lifetime.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Human-readable description for the IPSec policy.", 
+      "format": ""
+    }
+  }
+}

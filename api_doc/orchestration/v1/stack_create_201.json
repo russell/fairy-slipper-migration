@@ -1,0 +1,77 @@
+{
+  "type": "object", 
+  "properties": {
+    "files": {
+      "required": false, 
+      "type": "string", 
+      "description": "A map of file names to JSON template bodies. File names are\nprovider resource templates, as referenced in the environment.", 
+      "format": ""
+    }, 
+    "disable_rollback": {
+      "required": false, 
+      "type": "string", 
+      "description": "Enables or disables deletion of all previously-created stack\nresources when stack creation fails. Set to ``True`` to keep all\npreviously-created stack resources when stack creation fails. Set\nto ``False`` to delete all previously-created stack resources when\nstack creation fails. Default is ``True`` .", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "A list of URLs for the stack.", 
+      "format": ""
+    }, 
+    "param_name-n": {
+      "required": false, 
+      "type": "string", 
+      "description": "User-defined parameter names to pass to the template.", 
+      "format": ""
+    }, 
+    "stack_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The system-assigned ID for the stack.", 
+      "format": ""
+    }, 
+    "environment": {
+      "required": false, 
+      "type": "string", 
+      "description": "A JSON environment for the stack.", 
+      "format": ""
+    }, 
+    "stack_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the stack to create.", 
+      "format": ""
+    }, 
+    "template_url": {
+      "required": true, 
+      "type": "string", 
+      "description": "The URL of the template.", 
+      "format": ""
+    }, 
+    "rel": {
+      "required": true, 
+      "type": "string", 
+      "description": "A reference to the stack's parent. If no parent, reference is\n``self`` .", 
+      "format": ""
+    }, 
+    "timeout_mins": {
+      "required": false, 
+      "type": "string", 
+      "description": "The timeout for stack creation in minutes.", 
+      "format": ""
+    }, 
+    "param_value-n": {
+      "required": false, 
+      "type": "string", 
+      "description": "User-defined parameter values to pass to the template.", 
+      "format": ""
+    }, 
+    "template": {
+      "required": true, 
+      "type": "string", 
+      "description": "A JSON template.", 
+      "format": ""
+    }
+  }
+}

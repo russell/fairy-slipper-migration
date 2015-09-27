@@ -1,0 +1,731 @@
+.. http:post:: /v1/groups/{name}
+   :synopsis: Create group
+
+   Creates a group in the KDS.
+   
+   Membership in groups is based on the party name. For example, a
+   ``scheduler`` group implicitly includes any party name that starts
+   with ``scheduler`` . For example, a member named
+   ``scheduler.host.example.com`` .
+
+   :responseexample 201: v3/examples/createGroup_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kds
+   :parameter name: The name of the group.
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v1/groups/{name}
+   :synopsis: Delete group
+
+   Deletes a group from the KDS.
+
+   :tag: kds
+   :parameter name: The name of the group.
+   :statuscode 204: 
+
+
+.. http:put:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Assign role to group
+
+   Assigns a specified role to a specified group on projects in a
+   subtree.
+   
+   The inherited role assignment is anchored to a project and applied
+   to its subtree in the projects hierarchy to both existing and
+   future projects.
+   
+   A group can have both a regular, non-inherited role assignment and
+   an inherited role assignment on the same project.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 204: 
+
+
+.. http:head:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Check role for group
+
+   Checks whether a specified group has a specified role assignment
+   with the ``inherited_to_projects`` flag on a specified project.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 200: 
+
+
+.. http:delete:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Revoke role from group
+
+   Revokes an inherited role from a specified group on a specified
+   project.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 204: 
+
+
+.. http:post:: /v3/OS-OAUTH1/consumers
+   :synopsis: Create consumer
+
+   Enables a user to create a consumer.
+
+   :requestexample: v3/examples/createConsumer_req.json
+   :responseexample 201: v3/examples/createConsumer_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-OAUTH1/consumers
+   :synopsis: List consumers
+
+   Lists consumers.
+
+   :responseexample 200: v3/examples/listConsumers_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}
+   :synopsis: Get authorized access token
+
+   Gets an authorized access token.
+
+   :responseexample 200: v3/examples/getAuthorizedAccessToken_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :parameter user_id: The ID of the user.
+   :parameter access_token_id: The ID of the access token.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}
+   :synopsis: Revoke access token
+
+   Enables a user to revoke an access token, which prevents the
+   consumer from requesting new Identity Service API tokens. Also,
+   revokes any Identity Service API tokens that were issued to the
+   consumer through that access token.
+
+   :tag: oauth1
+   :parameter user_id: The ID of the user.
+   :parameter access_token_id: The ID of the access token.
+   :statuscode 204: 
+
+
+.. http:post:: /v3/OS-OAUTH1/access_token
+   :synopsis: Create access token
+
+   Enables a consumer to create an access token by exchanging a
+   request token for an access token.
+   
+   After the user authorizes the request token, the consumer exchanges
+   the authorized request token and OAuth verifier for an access
+   token.
+   
+   Supported signature methods: HMAC-SHA1.
+   
+   The consumer must provide all required OAuth parameters in the
+   request. See Consumer Obtains a Request Token .
+   
+   Supported signature methods: HMAC-SHA1.
+   
+   You must provide all required OAuth parameters in the request. See
+   Consumer Obtains a Request Token .
+
+   :tag: oauth1
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/auth/tokens
+   :synopsis: Get an Identity Service token
+
+   Enables a consumer to get an Identity Service authentication token.
+   
+   The token represents the delegated authorization and identity
+   (impersonation) of the authorizing user. The roles and scope of the
+   generated token match those that the consumer initially requested.
+   
+   Supported signature methods: HMAC-SHA1.
+   
+   The consumer must provide required OAuth parameters in the request.
+   See Consumer Obtains a Request Token .
+   
+   The returned token is scoped to the requested project and with the
+   requested roles. In addition to the standard token response, the
+   token has an OAuth-specific object.
+   
+   Example OAuth-specific object in a token:
+   
+   "OS-OAUTH1": { "access_token_id": "cce0b8be7" }
+
+   :tag: oauth1
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/inherited_to_projects
+   :synopsis: List roles for group
+
+   Lists the inherited project roles for a specified group on a
+   specified project.
+   
+   The list contains only those roles that are assigned to this
+   project that were specified as being inherited to its subtree.
+
+   :responseexample 200: v3/examples/listRolesForGroup_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter project_id: The ID of the project.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/groups
+   :synopsis: Get group key
+
+   Gets the key for a group in the KDS.
+   
+   When a ticket is requested where the destination is a group, a
+   group key is generated that is valid for a predetermined amount of
+   time. Any member of the group can get the key as long as it is
+   still valid. Group keys are necessary to verify signatures and
+   decrypt messages that have a group name as the target.
+
+   :responseexample 201: v3/examples/getGroupKey_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kds
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:post:: /v1/keys/{name}
+   :synopsis: Create key
+
+   Creates a long-term key in the KDS.
+   
+   The request body contains the key.
+   
+   The response shows the key name and generation value.
+
+   :requestexample: v3/examples/createKey_req.json
+   :responseexample 201: v3/examples/createKey_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kds
+   :parameter name: The name of the group.
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v1/keys/{name}
+   :synopsis: Delete key
+
+   Deletes a long-term key from the KDS.
+
+   :tag: kds
+   :parameter name: The name of the group.
+   :statuscode 204: 
+
+
+.. http:put:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Assign role to user
+
+   Assigns a specified role to a specified user on projects in a
+   subtree.
+   
+   The inherited role assignment is anchored to a project and applied
+   to its subtree in the projects hierarchy to both existing and
+   future projects.
+   
+   A user can have both a regular, non-inherited role assignment and
+   an inherited role assignment on the same project.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 204: 
+
+
+.. http:head:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Check role for user
+
+   Checks whether a specified user has a specified role assignment
+   with the ``inherited_to_projects`` flag on a specified project.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 200: 
+
+
+.. http:delete:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Revoke role from user
+
+   Revokes an inherited role from a specified user a specified
+   project.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter project_id: The ID of the project.
+   :statuscode 204: 
+
+
+.. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens
+   :synopsis: List authorized access tokens
+
+   Lists authorized access tokens.
+
+   :responseexample 200: v3/examples/listAuthorizedAccessTokens_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :parameter user_id: The ID of the user.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/inherited_to_projects
+   :synopsis: List roles for user
+
+   Lists the inherited project roles for a specified user on a
+   specified project.
+   
+   The list contains only those roles that are assigned to this
+   project that were specified as being inherited to its subtree.
+
+   :responseexample 200: v3/examples/listRolesForUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter project_id: The ID of the project.
+   :statuscode 200: 
+
+
+.. http:put:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Assign role to user owned by domain projects
+
+   Assigns a specified role to a specified user on projects owned by a
+   specified domain.
+   
+   The inherited role is applied to only the owned projects, both
+   existing and future, and does not appear as a role in a domain-
+   scoped token.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 204: 
+
+
+.. http:head:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Check project role for user on domain
+
+   Checks whether a specified user has an inherited project role on a
+   specified domain.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 200: 
+
+
+.. http:delete:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Revoke project role from user on domain
+
+   Revokes an inherited project role from a specified user on a
+   specified domain.
+
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 204: 
+
+
+.. http:post:: /v3/OS-OAUTH1/request_token
+   :synopsis: Get unauthorized request token
+
+   Enables a consumer to get an unauthorized request token.
+   
+   Supported signature methods: HMAC-SHA1.
+   
+   The consumer must provide all required OAuth parameters in the
+   request. See Consumer Obtains a Request Token .
+
+   :tag: oauth1
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:put:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Assign role to group on domain projects
+
+   Assigns a specified role to a specified group on projects owned by
+   a specified domain.
+   
+   The inherited role is applied to only the owned projects, both
+   existing and future, and does not appear as a role in a domain-
+   scoped token.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 204: 
+
+
+.. http:head:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Check project role for group on domain
+
+   Checks whether a specified group has an inherited project role on a
+   specified domain.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 200: 
+
+
+.. http:delete:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
+   :synopsis: Revoke project role from group on domain
+
+   Revokes an inherited project role from a specified group on a
+   specified domain.
+
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter role_id: The ID of the role.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 204: 
+
+
+.. http:post:: /v1/tickets
+   :synopsis: Generate ticket
+
+   Generates a ticket to facilitate messaging between a source and
+   destination.
+   
+   A generate ticket request contains metadata that you specify as a
+   Base64-encoded JSON object and a signature.
+   
+   The response shows the metadata, encrypted ticket, and signature.
+
+   :requestexample: v3/examples/generateTicket_req.json
+   :responseexample 201: v3/examples/generateTicket_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kds
+   :requestschema: v3/generateTicket.json
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles
+   :synopsis: List roles for an access token
+
+   Lists associated roles for a specified access token.
+
+   :tag: oauth1
+   :parameter user_id: The ID of the user.
+   :parameter access_token_id: The ID of the access token.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:post:: /v3/OS-TRUST/trust
+   :synopsis: Create trust
+
+   Creates a trust.
+
+   :requestexample: v3/examples/createTrust_req.json
+   :responseexample 201: v3/examples/createTrust_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: trust
+   :requestschema: v3/createTrust.json
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-OAUTH1/users/{user_id}/access_tokens/{access_token_id}/roles/{role_id}
+   :synopsis: Get role information for an access token
+
+   Gets information about a specified role for a specified access
+   token.
+
+   :tag: oauth1
+   :parameter user_id: The ID of the user.
+   :parameter role_id: The ID of the role.
+   :parameter access_token_id: The ID of the access token.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/role_assignments
+   :synopsis: List role assignments
+
+   Lists role assignments.
+   
+   The scope section in the list response is extended to allow the
+   representation of role assignments that are inherited to projects.
+   
+   The list of all role assignments can be long. To filter the list,
+   use the query parameters.
+   
+   Some typical examples are:
+   
+   ``GET /role_assignments?user.id={user_id}`` lists all role
+   assignments for the specified user.
+   
+   ``GET/role_assignments?scope.project.id={project_id}`` lists all
+   role assignments for the specified project.
+   
+   Each role assignment entity in the collection contains a link to
+   the assignment that created this entity.
+   
+   Use the ``effective`` query parameter to list effective assignments
+   at the user, project, and domain level. This parameter allows for
+   the effects of group membership as well as inheritance from the
+   parent domain or project, for role assignments that were made using
+   OS-INHERIT assignment APIs.
+   
+   The group role assignment entities themselves are not returned in
+   the collection. Because, like group membership, the effects of
+   inheritance have already been allowed for, the role assignment
+   entities themselves that specify the inheritance are not returned
+   in the collection. This represents the effective role assignments
+   that would be included in a scoped token. You can use the other
+   query parameters with the ``effective`` parameter.
+   
+   For example, to determine what a user can actually do, issue this
+   request: ``GET/role_assignments?user.id={user_id}&effective``
+   
+   To return the equivalent set of role assignments that would be
+   included in the token response of a project-scoped token, issue: ``
+   GET/role_assignments?user.id={user_id}&scope.project.id={project_id
+   }&effective``
+   
+   In the response, the entity ``links`` section for entities that are
+   included by virtue of group members also contains a url that you
+   can use to access the membership of the group.
+   
+   An additional ``scope.OS-INHERIT:inherited_to query`` filter
+   enables filtering based on role assignments that are inherited. The
+   ``scope.OS-INHERIT:inherited_to`` value of ``projects`` is
+   currently supported. This value indicates that this role is
+   inherited to all projects of the owning domain or parent project.
+   
+   An example response for an API call with the query string effective
+   specified follows:
+
+   :responseexample 200: v3/examples/listRoleAssignments_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: inherit
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects
+   :synopsis: List project roles for group on domain
+
+   Lists the inherited project roles on a specified domain for a
+   specified group.
+   
+   The list contains only those role assignments to the domain that
+   were specified as being inherited to projects within that domain.
+
+   :responseexample 200: v3/examples/listRolesForGroup-domain_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: inherit
+   :parameter group_id: The ID of the group.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 200: 
+
+
+.. http:get:: /v3/OS-OAUTH1/consumers/{consumer_id}
+   :synopsis: Show consumer
+
+   Shows information for a specified consumer.
+
+   :responseexample 200: v3/examples/showConsumer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :parameter consumer_id: The ID of the consumer.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v3/OS-OAUTH1/consumers/{consumer_id}
+   :synopsis: Delete consumer
+
+   Deletes a specified consumer.
+   
+   When you delete a consumer, any associated request tokens, access
+   tokens, and Identity API tokens are also deleted.
+
+   :tag: oauth1
+   :parameter consumer_id: The ID of the consumer.
+   :statuscode 204: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:patch:: /v3/OS-OAUTH1/consumers/{consumer_id}
+   :synopsis: Update consumer
+
+   Updates the description for a specified consumer.
+   
+   If you try to update any attribute other than description, the HTTP
+   400 Bad Request error is returned.
+
+   :requestexample: v3/examples/updateConsumer_req.json
+   :responseexample 200: v3/examples/updateConsumer_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: oauth1
+   :parameter consumer_id: The ID of the consumer.
+   :statuscode 200: 
+   :statuscode 400: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/inherited_to_projects
+   :synopsis: List project roles for user on domain
+
+   Lists the inherited project roles on a specified domain for a
+   specified user.
+   
+   The list contains only those role assignments to the domain that
+   were specified as being inherited to projects within that domain.
+
+   :responseexample 200: v3/examples/listRolesForUser-domain_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: inherit
+   :parameter user_id: The ID of the user.
+   :parameter domain_id: The ID of the domain.
+   :statuscode 200: 
+
+

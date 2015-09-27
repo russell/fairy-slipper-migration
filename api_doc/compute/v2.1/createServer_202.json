@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "server": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``server`` object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The server ID.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "Server links.", 
+      "format": ""
+    }, 
+    "adminPass": {
+      "required": true, 
+      "type": "string", 
+      "description": "The administrative password for the server.", 
+      "format": ""
+    }
+  }
+}

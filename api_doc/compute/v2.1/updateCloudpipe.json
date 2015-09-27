@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "vpn_ip": {
+      "required": true, 
+      "type": "string", 
+      "description": "The VPN IP address.", 
+      "format": ""
+    }, 
+    "vpn_port": {
+      "required": true, 
+      "type": "string", 
+      "description": "The VPN port.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "file_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/OS-KSADM-admin.wadl": "ksadm-admin", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/OS-KSCATALOG-admin.wadl": "kscatalog", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/OS-KSEC2-admin.wadl": "ksec2-admin", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/OS-KSS3-admin.wadl": "kss3-admin", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/OS-KSVALIDATE-admin.wadl": "ksvalidate"
+  }, 
+  "method_tags": {}, 
+  "resource_tags": {}, 
+  "service": "identity-extensions", 
+  "tags": [
+    {
+      "description": "OS-KSADM admin extension", 
+      "name": "ksadm-admin", 
+      "summary": ""
+    }, 
+    {
+      "description": "OS-KSCATALOG admin extension", 
+      "name": "kscatalog", 
+      "summary": ""
+    }, 
+    {
+      "description": "OS-KSEC2 admin extension", 
+      "name": "ksec2-admin", 
+      "summary": ""
+    }, 
+    {
+      "description": "OS-KSS3 admin extension", 
+      "name": "kss3-admin", 
+      "summary": ""
+    }, 
+    {
+      "description": "OS-KSVALIDATE admin extension", 
+      "name": "ksvalidate", 
+      "summary": ""
+    }
+  ], 
+  "title": "Identity API", 
+  "version": "v2"
+}

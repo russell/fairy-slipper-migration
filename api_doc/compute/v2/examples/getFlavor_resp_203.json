@@ -1,0 +1,19 @@
+{
+  "flavor": {
+    "name": "m1.tiny", 
+    "links": [
+      {
+        "href": "http://openstack.example.com/v2/openstack/flavors/1", 
+        "rel": "self"
+      }, 
+      {
+        "href": "http://openstack.example.com/openstack/flavors/1", 
+        "rel": "bookmark"
+      }
+    ], 
+    "ram": 512, 
+    "vcpus": 1, 
+    "disk": 1, 
+    "id": "1"
+  }
+}

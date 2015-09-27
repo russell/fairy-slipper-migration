@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "flavors": {
+      "required": true, 
+      "type": "string", 
+      "description": "Flavors are known combinations of memory, disk space, and number of\nCPUs.", 
+      "format": ""
+    }, 
+    "previous": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the previous metadata item.", 
+      "format": "uri"
+    }, 
+    "next": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the next metadata item.", 
+      "format": "uri"
+    }
+  }
+}

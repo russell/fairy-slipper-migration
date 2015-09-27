@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "backups": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``backups`` object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the backup.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Links for the backup.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup name.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "type": "object", 
+  "properties": {
+    "guest_format": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specifies the guest server disk file system format, such as\n``ephemeral`` or ``swap`` .", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": false, 
+      "type": "string", 
+      "description": "The availability zone in which to launch the server.", 
+      "format": ""
+    }, 
+    "user_data": {
+      "required": false, 
+      "type": "string", 
+      "description": "Configuration information or scripts to use upon launch. Must be\nBase64 encoded.", 
+      "format": ""
+    }, 
+    "device_name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Describes a path to the device for the volume you want to use to\nboot the server.", 
+      "format": ""
+    }, 
+    "networks": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``networks`` object. By default, the server instance is\nprovisioned with all isolated networks for the tenant.\n\nOptionally, you can create one or more NICs on the server.\n\nTo provision the server instance with a NIC for a network, specify\nthe UUID of the network in the ``uuid`` attribute in a ``networks``\nobject.\n\nTo provision the server instance with a NIC for an already existing\nport, specify the port-id in the ``port`` attribute in a\n``networks`` object.\n\nYou can specify multiple NICs on the server.", 
+      "format": ""
+    }, 
+    "security_groups": {
+      "required": false, 
+      "type": "string", 
+      "description": "One or more security groups. Specify the name of the security group\nin the ``name`` attribute. If you omit this attribute, the server\nis created in the ``default`` security group.", 
+      "format": ""
+    }, 
+    "uuid": {
+      "required": false, 
+      "type": "string", 
+      "description": "To provision the server instance with a NIC for a network, specify\nthe UUID of the network in the ``uuid`` attribute in a ``networks``\nobject. Required if you omit the ``port`` attribute.", 
+      "format": ""
+    }, 
+    "imageRef": {
+      "required": true, 
+      "type": "string", 
+      "description": "The image reference for the desired image for your server instance.\n\nSpecify as an ID or full URL.", 
+      "format": ""
+    }, 
+    "fixed_ip": {
+      "required": false, 
+      "type": "string", 
+      "description": "A fixed IPv4 address for the NIC. Valid with a ``neutron`` or\n``nova-networks`` network.", 
+      "format": ""
+    }, 
+    "port": {
+      "required": false, 
+      "type": "string", 
+      "description": "To provision the server instance with a NIC for an already existing\nport, specify the port-id in the ``port`` attribute in a\n``networks`` object. The port status must be ``DOWN`` . Required if\nyou omit the ``uuid`` attribute.", 
+      "format": ""
+    }, 
+    "config_drive": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables metadata injection in a server through a configuration\ndrive.\n\nSpecify ``true`` to enable a configuration drive. Otherwise,\nspecify ``false`` .", 
+      "format": ""
+    }, 
+    "destination_type": {
+      "required": false, 
+      "type": "string", 
+      "description": "Defines where the volume comes from. A valid value is ``local`` or\n``volume`` .", 
+      "format": ""
+    }, 
+    "delete_on_termination": {
+      "required": true, 
+      "type": "string", 
+      "description": "To delete the boot volume when the server stops, specify ``true`` .\nOtherwise, specify ``false`` .", 
+      "format": ""
+    }, 
+    "personality": {
+      "required": false, 
+      "type": "string", 
+      "description": "File path and contents (text only) to inject into the server at\nlaunch. The maximum size of the file path data is 255 bytes. The\nmaximum limit refers to the number of bytes in the decoded data and\nnot the number of characters in the encoded data.", 
+      "format": ""
+    }, 
+    "boot_index": {
+      "required": true, 
+      "type": "string", 
+      "description": "The boot order of the device. Use ``-1`` for the boot volume. Use\n``0`` for an attached volume.", 
+      "format": ""
+    }, 
+    "key_name": {
+      "required": false, 
+      "type": "string", 
+      "description": "Key pair name.", 
+      "format": ""
+    }, 
+    "flavorRef": {
+      "required": true, 
+      "type": "string", 
+      "description": "The flavor reference for the desired flavor for your server\ninstance.\n\nSpecify as an ID or full URL.", 
+      "format": ""
+    }, 
+    "source_type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The source type for the volume. A valid value is ``blank`` ,\n``snapshot`` , ``volume`` , or ``image`` .", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The server name.", 
+      "format": ""
+    }, 
+    "block_device_mapping_v2": {
+      "required": false, 
+      "type": "string", 
+      "description": "Enables booting the server from a volume when additional parameters\nare given. If specified, the volume status must be ``available`` ,\nand the volume ``attach_status`` in the OpenStack Block Storage\ndatabase must be ``detached`` .", 
+      "format": ""
+    }, 
+    "server": {
+      "required": true, 
+      "type": "string", 
+      "description": "server.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": false, 
+      "type": "string", 
+      "description": "Metadata key and value pairs. The maximum size of the metadata key\nand value is 255 bytes each.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,264 @@
+.. http:get:: /v2/alarms/{alarm_id}
+   :synopsis: Show alarm
+
+   Shows information for a specified alarm, by alarm ID.
+
+   :responseexample 200: v2/examples/showAlarm_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :statuscode 200: 
+
+
+.. http:put:: /v2/alarms/{alarm_id}
+   :synopsis: Update alarm
+
+   Updates a specified alarm.
+
+   :responseexample 200: v2/examples/updateAlarm_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :query data: An alarm within the request body.
+   :statuscode 200: 
+
+
+.. http:delete:: /v2/alarms/{alarm_id}
+   :synopsis: Delete alarm
+
+   Deletes a specified alarm, by alarm ID.
+
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :statuscode 204: 
+
+
+.. http:get:: /v2/capabilities
+   :synopsis: List capabilities
+
+   A representation of the API and storage capabilities. Usually
+   constrained by restrictions imposed by the storage driver.
+
+   :responseexample 200: v2/examples/listCapabilities_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: capabilities
+   :statuscode 200: 
+
+
+.. http:put:: /v2/alarms/{alarm_id}/state
+   :synopsis: Update alarm state
+
+   Sets the state of a specified alarm.
+
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :query state: An alarm state within the request body. A valid value
+                 is ``ok`` , ``alarm`` , or ``insufficient data`` .
+   :statuscode 200: 
+
+
+.. http:get:: /v2/alarms/{alarm_id}/state
+   :synopsis: Show alarm state
+
+   Shows the state for a specified alarm, by alarm ID.
+
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/alarms
+   :synopsis: List alarms
+
+   Lists alarms, based on the specified query.
+
+   :responseexample 200: v2/examples/listAlarms_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: alarms
+   :query q: Filter rules for the alarms to be returned.
+   :statuscode 200: 
+
+
+.. http:post:: /v2/alarms
+   :synopsis: Create alarm
+
+   Creates an alarm.
+
+   :responseexample 200: v2/examples/createAlarm_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: alarms
+   :query data: An alarm within the request body.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/samples/{sample_id}
+   :synopsis: Show sample
+
+   Shows information for a specified sample, by sample ID.
+
+   :responseexample 200: v2/examples/showSample_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: samples
+   :parameter sample_id: The UUID of the sample.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/samples
+   :synopsis: List samples
+
+   Lists all known samples, based on the data recorded so far.
+
+   :responseexample 200: v2/examples/listSamples_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: samples
+   :query q: Filter rules for the samples to be returned.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/meters/{meter_name}/statistics
+   :synopsis: Show meter statistics
+
+   Computes and lists statistics for samples in a specified time
+   range.
+
+   :responseexample 200: v2/examples/listSamplesStatistics_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: meters
+   :parameter meter_name: The name of the meter.
+   :query q: Filter rules for the data to be returned.
+   :query groupby: Fields for group by aggregation
+   :query period: The period, in seconds, for which you want
+                  statistics.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/resources
+   :synopsis: List resources
+
+   Lists definitions for all resources.
+
+   :responseexample 200: v2/examples/listResources_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: resources
+   :query q: Filter rules for the resources to be returned.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/resources/{resource_id}
+   :synopsis: Show resource information
+
+   Shows information for a specified resource, by resource ID.
+
+   :responseexample 200: v2/examples/showResource_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: resources
+   :parameter resource_id: The UUID of the resource.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/alarms/{alarm_id}/history
+   :synopsis: Show alarm history
+
+   Assembles and shows the history for a specified alarm, by alarm ID.
+
+   :tag: alarms
+   :parameter alarm_id: The UUID of the alarm.
+   :query q: Filter rules for the changes to be described.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/meters
+   :synopsis: List meters
+
+   Lists meters, based on the data recorded so far.
+
+   :responseexample 200: v2/examples/listMeters_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: meters
+   :query q: Filter rules for the meters to be returned.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:get:: /v2/meters/{meter_name}
+   :synopsis: List samples for meter
+
+   Lists samples for a specified meter, by meter name.
+
+   :responseexample 200: v2/examples/listSamplesforMeter_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: meters
+   :parameter meter_name: The name of the meter.
+   :query q: Filter rules for the data to be returned.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :statuscode 200: 
+
+
+.. http:post:: /v2/meters/{meter_name}
+   :synopsis: Create meter
+
+   Adds a list of samples to the specified meter, by meter name.
+
+   :responseexample 200: v2/examples/createMeter_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: meters
+   :parameter meter_name: The name of the meter.
+   :query samples: A list of samples within the request body.
+   :statuscode 200: 
+
+

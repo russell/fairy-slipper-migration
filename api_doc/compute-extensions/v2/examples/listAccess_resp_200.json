@@ -1,0 +1,8 @@
+{
+  "flavor_access": [
+    {
+      "tenant_id": "TENANT_ID", 
+      "flavor_id": "10"
+    }
+  ]
+}

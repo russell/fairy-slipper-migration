@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "xml": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Set to true to generate the report in XML format.", 
+      "format": ""
+    }, 
+    "html": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Set to true to generate the report in HTML format.", 
+      "format": ""
+    }, 
+    "file": {
+      "required": true, 
+      "type": "string", 
+      "description": "The file name for the report.", 
+      "format": ""
+    }
+  }
+}

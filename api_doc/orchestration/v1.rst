@@ -1,0 +1,980 @@
+.. http:get:: /v1/{tenant_id}/resource_types
+   :synopsis: List resource types
+
+   Lists the supported template resource types.
+
+   :responseexample 200: v1/examples/resource_type_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-templates
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/abandon
+   :synopsis: Abandon stack
+
+   Deletes a specified stack but leaves its resources intact, and
+   returns data describing the stack and its resources.
+
+   :responseexample 200: v1/examples/stack_abandon_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+   :synopsis: Show snapshot
+
+   Shows details for a specified snapshot.
+
+   :responseexample 200: v1/examples/stack_show_snapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter snapshot_id: The snapshot ID.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}
+   :synopsis: Delete snapshot
+
+   Deletes a stack snapshot.
+
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter snapshot_id: The snapshot ID.
+   :parameter stack_id: The stack ID.
+   :statuscode 204: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/preview
+   :synopsis: Preview stack
+
+   Previews a stack.
+
+   :requestexample: v1/examples/stack_preview_req.json
+   :responseexample 200: v1/examples/stack_preview_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_preview.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots/{snapshot_id}/restore
+   :synopsis: Restore snapshot
+
+   Restores a stack snapshot. You can restore only active stacks from
+   a snapshot. Deleted stacks must be recreated.
+
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter snapshot_id: The snapshot ID.
+   :parameter stack_id: The stack ID.
+   :statuscode 202: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events/{event_id}
+   :synopsis: Show event details
+
+   Shows details for a specified event.
+
+   :tag: stack-events
+   :parameter resource_name: The name of a resource in the stack.
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter event_id: The ID of an event related to the resource in
+                        the stack.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/events
+   :synopsis: Find stack events
+
+   Finds the canonical URL for the event list of a specified stack.
+
+   :tag: stack-events
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 302: 
+
+
+.. http:get:: /v1/{tenant_id}/template_versions
+   :synopsis: List template versions
+
+   Lists all available template versions.
+
+   :tag: stack-templates
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/software_deployments
+   :synopsis: List deployments
+
+   Lists all available software deployments.
+
+   :responseexample 200: v1/examples/software_deployment_index_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/software_deployments
+   :synopsis: Create deployment
+
+   Creates a software deployment.
+
+   :requestexample: v1/examples/software_deployment_create_req.json
+   :responseexample 200: v1/examples/software_deployment_create_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :requestschema: v1/software_deployment_create.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/software_deployments/metadata/{server_id}
+   :synopsis: Show server configuration metadata
+
+   Shows the deployment configuration metadata for a specified server.
+   
+   Use the ``group`` property to specify the configuration hook to
+   which the pass the metadata item.
+
+   :responseexample 200: v1/examples/software_deployment_metadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :parameter server_id: The ID of the server for which to fetch
+                         configuration metadata.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+
+
+.. http:get:: /
+   :synopsis: List versions
+
+   Lists all Orchestration API versions.
+
+   :responseexample 200: v1/examples/getVersions-heat-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: heat-versions
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/validate
+   :synopsis: Validate template
+
+   Validates a specified template.
+
+   :requestexample: v1/examples/template_validate_req.json
+   :responseexample 200: v1/examples/template_validate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-templates
+   :requestschema: v1/template_validate.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/resource_types/{type_name}/template
+   :synopsis: Show resource template
+
+   Shows the template representation for a specified resource type.
+   
+   The returned template contains a single resource of the specified
+   type. Each resource property is mapped to a template parameter and
+   each resource attribute is mapped to a template output.
+   
+   You can use these templates as a starting place for creating
+   customized, template-based resources or as examples of usi ng the
+   particular resource in another template.
+   
+   Use the ``template_type`` query parameter to specify the resource
+   template type. Default type is ``cfn`` . The ``hot`` template type
+   is supported. For example:
+   
+   /v1/{tenant_id}/resource_types/{type_name}/template?template_type=cfn
+
+   :responseexample 200: v1/examples/resource_type_template_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-templates
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter type_name: The name of a resource type.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/preview
+   :synopsis: Preview stack update
+
+   Preview an update for a specified stack
+
+   :requestexample: v1/examples/stack_update_preview_req.json
+   :responseexample 200: v1/examples/stack_update_preview_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_update_preview.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/resources
+   :synopsis: Find stack resources
+
+   Finds the canonical URL for the resource list of a specified stack.
+   
+   The canonical URL is returned for only non-deleted stacks. To fetch
+   the resource list for deleted stacks, use the following endpoint:
+   
+   /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
+
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 302: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+   :synopsis: Show stack details
+
+   Shows details for a specified stack.
+
+   :responseexample 200: v1/examples/stack_show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:put:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+   :synopsis: Update stack
+
+   Updates a specified stack.
+
+   :requestexample: v1/examples/stack_update_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_update.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 404: 
+   :statuscode 202: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}
+   :synopsis: Delete stack
+
+   Deletes a specified stack and any snapshots of that stack.
+
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 500: 
+   :statuscode 404: 
+   :statuscode 204: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/software_configs
+   :synopsis: Create configuration
+
+   Creates a software configuration.
+
+   :requestexample: v1/examples/software_config_create_req.json
+   :responseexample 200: v1/examples/software_config_create_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :requestschema: v1/software_config_create.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/template
+   :synopsis: Get stack template
+
+   Gets a template for a specified stack.
+
+   :responseexample 200: v1/examples/stack_template_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-templates
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/software_deployments/{deployment_id}
+   :synopsis: Show deployment details
+
+   Shows details for a specified software deployment.
+
+   :responseexample 200: v1/examples/software_deployment_show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter deployment_id: The deployment ID.
+   :statuscode 200: 
+
+
+.. http:put:: /v1/{tenant_id}/software_deployments/{deployment_id}
+   :synopsis: Update deployment
+
+   Updates a specified software deployment.
+
+   :requestexample: v1/examples/software_deployment_update_req.json
+   :responseexample 200: v1/examples/software_deployment_update_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :requestschema: v1/software_deployment_update.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter deployment_id: The deployment ID.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1/{tenant_id}/software_deployments/{deployment_id}
+   :synopsis: Delete deployment
+
+   Deletes a specified software deployment.
+
+   :tag: software-config
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter deployment_id: The deployment ID.
+   :statuscode 204: 
+
+
+.. http:get:: /v1/{tenant_id}/resource_types/{type_name}
+   :synopsis: Show resource schema
+
+   Shows the interface schema for a specified resource type. This
+   schema describes the properties that can be set on the resource,
+   their types, constraints, descriptions, and default values.
+   Additionally, the resource attributes and their descriptions are
+   provided.
+
+   :responseexample 200: v1/examples/resource_type_get_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-templates
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter type_name: The name of a resource type.
+   :statuscode 200: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/events
+   :synopsis: List stack events
+
+   Lists events for a specified stack.
+
+   :responseexample 200: v1/examples/stack_event_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-events
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :query resource_action: Filters the event list by a specified
+                           resource action. You can use this filter
+                           multiple times to filter by multiple
+                           resource actions. Valid resource actions
+                           are ``ADOPT`` , ``CHECK`` , ``CREATE`` ,
+                           ``DELETE`` , ``INIT`` , ``RESTORE`` ,
+                           ``RESUME`` , ``ROLLBACK`` , ``SNAPSHOT`` ,
+                           ``SUSPEND`` , and ``UPDATE`` .
+   :query resource_status: Filters the event list by a specified
+                           resource status. You can use this filter
+                           multiple times to filter by multiple
+                           resource statuses. Valid resource statuses
+                           are ``COMPLETE`` , ``FAILED`` , and
+                           ``IN_PROGRESS`` .
+   :query resource_name: Filters the event list by a specified
+                         resource name. You can use this filter
+                         multiple times to filter by multiple resource
+                         names.
+   :query resource_type: Filters the event list by a specified
+                         resource type. You can use this filter
+                         multiple times to filter by multiple resource
+                         types. Valid resource types include
+                         ``OS::Cinder::Volume`` , ``OS::Nova::Server``
+                         , ``OS::Neutron::Port`` , and so on.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :query sort_keys: Sorts the list by the ``resource_type`` or
+                     ``created_at`` key.
+   :query sort_dir: The sort direction of the list. A valid value is
+                    ``asc`` (ascending) or ``desc`` (descending).
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources
+   :synopsis: List resources
+
+   Lists resources in a stack.
+
+   :responseexample 200: v1/examples/resource_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-resources
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :query nested_depth: Includes resources from nested stacks up to
+                        the ``nested_depth`` levels of recursion.
+   :query with_detail: Enables detailed resource information for each
+                       resource in list of resources.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}
+   :synopsis: Show resource data
+
+   Shows data for a specified resource.
+
+   :responseexample 200: v1/examples/resource_show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-resources
+   :parameter resource_name: The name of a resource in the stack.
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/software_configs/{config_id}
+   :synopsis: Show configuration details
+
+   Shows details for a software configuration.
+
+   :responseexample 200: v1/examples/software_config_show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: software-config
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter config_id: The configuration ID.
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:delete:: /v1/{tenant_id}/software_configs/{config_id}
+   :synopsis: Delete config
+
+   Deletes a software configuration.
+
+   :tag: software-config
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter config_id: The configuration ID.
+   :statuscode 204: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/metadata
+   :synopsis: Show resource metadata
+
+   Shows metadata for a specified resource.
+
+   :responseexample 200: v1/examples/resource_metadata_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-resources
+   :parameter resource_name: The name of a resource in the stack.
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks
+   :synopsis: List stack data
+
+   Lists active stacks.
+
+   :responseexample 200: v1/examples/stack_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :query id: Filters the stack list by a specified stack ID. Use this
+              filter multiple times to filter by multiple IDs.
+   :query status: Filters the stack list by a specified status. Use
+                  this filter multiple times to filter by multiple
+                  statuses.
+   :query name: Filters the stack list by a specified name. Use this
+                filter multiple times to filter by multiple names.
+   :query action: Filters the stack list by a specified action. Use
+                  this filter multiple times to filter by multiple
+                  actions.
+   :query tenant: Filters the stack list by a specified tenant. Use
+                  this filter multiple times to filter by multiple
+                  tenants.
+   :query username: Filters the stack list by a specified user name.
+                    Use this filter multiple times to filter by
+                    multiple user names.
+   :query owner_id: Filters the stack list by a specified owner ID,
+                    which is the ID of the parent stack of listed
+                    stack. Use this filter multiple times to filter by
+                    multiple owner IDs.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :query show_deleted: Specifies whether to include deleted stacks in
+                        the list. Default is ``False`` , which
+                        excludes deleted stacks from the list.
+   :query show_nested: Specifies whether to include nested stacks in
+                       the list. Default is ``False`` , which excludes
+                       nested stacks from the list.
+   :query sort_keys: Sorts the stack list by ``name`` , ``status`` ,
+                     ``created_at`` , or ``updated_at`` key.
+   :query tags: Lists stacks that contain one or more simple string
+                tags. To specify multiple tags, separate the tags with
+                commas. For example, ``tag1,tag2`` . The boolean AND
+                expression is used to combine multiple tags.
+   :query tags_any: Lists stacks that contain one or more simple
+                    string tags. To specify multiple tags, separate
+                    the tags with commas. For example, ``tag1,tag2`` .
+                    The boolean OR expression is used to combine
+                    multiple tags.
+   :query not_tags: Lists stacks that do not contain one or more
+                    simple string tags. To specify multiple tags,
+                    separate the tags with commas. For example,
+                    ``tag1,tag2`` . The boolean AND expression is used
+                    to combine multiple tags.
+   :query not_tags_any: Lists stacks that do not contain one or more
+                        simple string tags. To specify multiple tags,
+                        separate the tags with commas. For example,
+                        ``tag1,tag2`` . The boolean OR expression is
+                        used to combine multiple tags.
+   :query sort_dir: The sort direction of the list. A valid value is
+                    ``asc`` (ascending) or ``desc`` (descending).
+   :query global_tenant: Specifies whether to include stacks from all
+                         tenants in the stack list. Policy
+                         requirements are specified in the
+                         Orchestration ``policy.json`` file. Default
+                         is ``False`` .
+   :query with_count: Specifies whether to include a count key in the
+                      response. The count key value is the number of
+                      stacks that match the query criteria. Default is
+                      ``False`` .
+   :statuscode 200: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks
+   :synopsis: Create stack
+
+   Creates a stack.
+
+   :requestexample: v1/examples/stack_create_req.json
+   :responseexample 201: v1/examples/stack_create_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_create.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 201: 
+   :statuscode 500: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks
+   :synopsis: Adopt stack
+
+   Creates a stack from existing resources.
+
+   :requestexample: v1/examples/stack_adopt_req.json
+   :responseexample 201: v1/examples/stack_adopt_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_adopt.json
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 201: 
+   :statuscode 500: 
+   :statuscode 409: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/services
+   :synopsis: Show orchestration engine status
+
+   Enables administrative users to view details for all orchestration
+   engines.
+   
+   Orchestration engine details include ``engine_id`` , topic name,
+   last updated time, health status, and host name.
+   
+   Troubleshooting
+   
+   - A ``503`` error code indicates that the heat engines are not
+     operational. Run the heat-manage service list command or contact
+     your cloud provider to determine why the heat engines are not
+     operational.
+
+   :responseexample 200: v1/examples/service_status_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: service-status
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 503: 
+
+
+.. http:get:: /v1/{tenant_id}/build_info
+   :synopsis: Show build information
+
+   Shows build information for an Orchestration deployment.
+
+   :responseexample 200: v1/examples/build_info_show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: build-info
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/events
+   :synopsis: List resource events
+
+   Lists events for a specified stack resource.
+
+   :responseexample 200: v1/examples/resource_event_list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-events
+   :parameter resource_name: The name of a resource in the stack.
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :query resource_action: Filters the event list by a specified
+                           resource action. You can use this filter
+                           multiple times to filter by multiple
+                           resource actions. Valid resource actions
+                           are ``ADOPT`` , ``CHECK`` , ``CREATE`` ,
+                           ``DELETE`` , ``INIT`` , ``RESTORE`` ,
+                           ``RESUME`` , ``ROLLBACK`` , ``SNAPSHOT`` ,
+                           ``SUSPEND`` , and ``UPDATE`` .
+   :query resource_status: Filters the event list by a specified
+                           resource status. You can use this filter
+                           multiple times to filter by multiple
+                           resource statuses. Valid resource statuses
+                           are ``COMPLETE`` , ``FAILED`` , and
+                           ``IN_PROGRESS`` .
+   :query resource_name: Filters the event list by a specified
+                         resource name. You can use this filter
+                         multiple times to filter by multiple resource
+                         names.
+   :query resource_type: Filters the event list by a specified
+                         resource type. You can use this filter
+                         multiple times to filter by multiple resource
+                         types. Valid resource types include
+                         ``OS::Cinder::Volume`` , ``OS::Nova::Server``
+                         , ``OS::Neutron::Port`` , and so on.
+   :query limit: Requests a specified page size of returned items from
+                 the query. Returns a number of items up to the
+                 specified limit value. Use the ``limit`` parameter to
+                 make an initial limited request and use the ID of the
+                 last-seen item from the response as the ``marker``
+                 parameter value in a subsequent limited request.
+   :query marker: Specifies the ID of the last-seen item. Use the
+                  ``limit`` parameter to make an initial limited
+                  request and use the ID of the last-seen item from
+                  the response as the ``marker`` parameter value in a
+                  subsequent limited request.
+   :query sort_keys: Sorts the list by the ``resource_type`` or
+                     ``created_at`` key.
+   :query sort_dir: The sort direction of the list. A valid value is
+                    ``asc`` (ascending) or ``desc`` (descending).
+   :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}
+   :synopsis: Find stack
+
+   Finds the canonical URL for a specified stack.
+   
+   Also works with verbs other than GET , so you can perform PUT and
+   DELETE operations on a current stack. Set your client to follow
+   redirects. Note that when redirecting, the request method should
+   not change, as defined in RFC2626. However, in many clients the
+   default behavior is to change the method to GET when you receive a
+   302 because this behavior is ubiquitous in web browsers.
+
+   :responseexample 302: v1/examples/stack_find_resp_302.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :statuscode 302: 
+   :statuscode 404: 
+   :statuscode 500: 
+   :statuscode 401: 
+   :statuscode 400: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+   :synopsis: Snapshot stack
+
+   Takes a snapshot of all the resources in the stack. All snapshots
+   are deleted upon deletion of the stack.
+
+   :requestexample: v1/examples/stack_snapshot_req.json
+   :responseexample 200: v1/examples/stack_snapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :requestschema: v1/stack_snapshot.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/snapshots
+   :synopsis: List snapshots
+
+   Lists the stack snapshots.
+
+   :responseexample 200: v1/examples/stack_list_snapshot_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stacks
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/resources/{resource_name}/signal
+   :synopsis: Send a signal to a resource
+
+   Sends a signal to a specified resource.
+   
+   The contents of the request body depends on the resource to which
+   you send a signal.
+   
+   Some resources cannot receive signals. If you send them a signal,
+   they return a 400 error code.
+
+   :tag: stack-resources
+   :parameter resource_name: The name of a resource in the stack.
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+   :synopsis: Suspend stack
+
+   Suspends a stack.
+
+   :requestexample: v1/examples/stack_action_suspend_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-actions
+   :requestschema: v1/stack_action_suspend.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 201: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+   :synopsis: Resume stack
+
+   Resumes a suspended stack.
+
+   :requestexample: v1/examples/stack_action_resume_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-actions
+   :requestschema: v1/stack_action_resume.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 201: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+   :synopsis: Cancel stack update
+
+   Cancels a currently running update of a stack.
+
+   :requestexample: v1/examples/stack_action_cancel_update_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-actions
+   :requestschema: v1/stack_action_cancel_update.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 201: 
+
+
+.. http:post:: /v1/{tenant_id}/stacks/{stack_name}/{stack_id}/actions
+   :synopsis: Check stack resources
+
+   Checks whether the resources are in expected states for the
+   specified stack.
+
+   :requestexample: v1/examples/stack_action_check_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: stack-actions
+   :requestschema: v1/stack_action_check.json
+   :parameter stack_name: The name of a stack.
+   :parameter tenant_id: The ID of the tenant. A tenant is also known
+                         as an account or project.
+   :parameter stack_id: The stack ID.
+   :statuscode 201: 
+
+

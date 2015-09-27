@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "snapshot": {
+      "required": true, 
+      "type": "string", 
+      "description": "A partial representation of a snapshot that is used to create a\nsnapshot.", 
+      "format": ""
+    }
+  }
+}

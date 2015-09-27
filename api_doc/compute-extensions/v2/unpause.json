@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "unpause": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``unpause`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

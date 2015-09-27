@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "resume": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``resume`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

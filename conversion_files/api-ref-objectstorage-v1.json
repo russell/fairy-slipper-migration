@@ -1,0 +1,58 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#copyObject": "storage-object-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#createContainer": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#createOrReplaceObject": "storage-object-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#deleteContainer": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#deleteObject": "storage-object-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#getObject": "storage-object-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#infoDiscoverability": "storage_info", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#listEndpoints": "storage_endpoints", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#showAccountDetails": "storage-account-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#showAccountMeta": "storage-account-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#showContainerDetails": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#showContainerMeta": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#showObjectMeta": "storage-object-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#updateAccountMeta": "storage-account-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#updateContainerMeta": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#updateObjectMeta": "storage-object-services"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#account": "storage-account-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#container": "storage-container-services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#endpoints": "storage_endpoints", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#info": "storage_info", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/object-api/src/os-object-api-1.0.wadl#object": "storage-object-services"
+  }, 
+  "service": "objectstorage", 
+  "tags": [
+    {
+      "description": "Discoverability", 
+      "name": "storage_info", 
+      "summary": "If configured, lists the activated capabilities for this version of\nthe OpenStack Object Storage API."
+    }, 
+    {
+      "description": "Endpoints", 
+      "name": "storage_endpoints", 
+      "summary": "If configured, lists endpoints for a specified account."
+    }, 
+    {
+      "description": "Accounts", 
+      "name": "storage-account-services", 
+      "summary": "Lists containers for a specified account. Creates, updates, shows,\nand deletes account metadata."
+    }, 
+    {
+      "description": "Containers", 
+      "name": "storage-container-services", 
+      "summary": "Lists objects in a specified container. Creates, shows details for,\nand deletes containers. Creates, updates, shows, and deletes\ncontainer metadata."
+    }, 
+    {
+      "description": "Objects", 
+      "name": "storage-object-services", 
+      "summary": "Creates, replaces, shows details for, and deletes objects. Copies\nobjects from another object with a new or different name. Updates\nobject metadata."
+    }
+  ], 
+  "title": "Object Storage API", 
+  "version": "v1"
+}

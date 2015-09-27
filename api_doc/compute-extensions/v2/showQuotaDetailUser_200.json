@@ -1,0 +1,107 @@
+{
+  "type": "object", 
+  "properties": {
+    "injected_file_content_bytes": {
+      "required": true, 
+      "type": "string", 
+      "description": "An injected_file_content_bytes object.", 
+      "format": ""
+    }, 
+    "metadata_items": {
+      "required": true, 
+      "type": "string", 
+      "description": "A metadata_items object.", 
+      "format": ""
+    }, 
+    "reserved": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The number of reserved items.", 
+      "format": ""
+    }, 
+    "in_use": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The number of items in use.", 
+      "format": ""
+    }, 
+    "ram": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ram object.", 
+      "format": ""
+    }, 
+    "floating_ips": {
+      "required": true, 
+      "type": "string", 
+      "description": "A floating_ips object.", 
+      "format": ""
+    }, 
+    "key_pairs": {
+      "required": true, 
+      "type": "string", 
+      "description": "A key_pairs object.", 
+      "format": ""
+    }, 
+    "injected_file_path_bytes": {
+      "required": true, 
+      "type": "string", 
+      "description": "An injected_file_path_bytes object.", 
+      "format": ""
+    }, 
+    "instances": {
+      "required": true, 
+      "type": "string", 
+      "description": "An instances object.", 
+      "format": ""
+    }, 
+    "limit": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The number of items permitted for this tenant.", 
+      "format": ""
+    }, 
+    "security_group_rules": {
+      "required": true, 
+      "type": "string", 
+      "description": "A security_group_rules object.", 
+      "format": ""
+    }, 
+    "injected_files": {
+      "required": true, 
+      "type": "string", 
+      "description": "An injected_files object.", 
+      "format": ""
+    }, 
+    "quota_set": {
+      "required": true, 
+      "type": "string", 
+      "description": "A quota_set object.", 
+      "format": ""
+    }, 
+    "cores": {
+      "required": true, 
+      "type": "string", 
+      "description": "A cores object.", 
+      "format": ""
+    }, 
+    "fixed_ips": {
+      "required": true, 
+      "type": "string", 
+      "description": "A fixed_ips object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the quota set.", 
+      "format": ""
+    }, 
+    "security_groups": {
+      "required": true, 
+      "type": "string", 
+      "description": "A security_groups object.", 
+      "format": ""
+    }
+  }
+}

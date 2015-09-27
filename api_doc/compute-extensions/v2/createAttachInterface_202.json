@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "port_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The port ID.", 
+      "format": ""
+    }, 
+    "port_state": {
+      "required": true, 
+      "type": "string", 
+      "description": "The port state.", 
+      "format": ""
+    }, 
+    "fixed_ips": {
+      "required": true, 
+      "type": "string", 
+      "description": "Fixed IP addresses with subnet IDs.", 
+      "format": ""
+    }, 
+    "mac_addr": {
+      "required": true, 
+      "type": "string", 
+      "description": "The MAC address.", 
+      "format": ""
+    }, 
+    "net_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The network ID.", 
+      "format": ""
+    }
+  }
+}

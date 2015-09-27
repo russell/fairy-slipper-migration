@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "cancel_update": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``cancel_update`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

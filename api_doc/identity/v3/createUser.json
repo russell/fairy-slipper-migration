@@ -1,0 +1,53 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }, 
+    "user": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``user`` object.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables or disables the new user. To enable the user, set to\n``true`` . To disable the user, set to ``false`` . Default is\n``true`` .", 
+      "format": ""
+    }, 
+    "email": {
+      "required": false, 
+      "type": "string", 
+      "description": "The email address for the new user.", 
+      "format": ""
+    }, 
+    "default_project_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The default tenant for the new user.", 
+      "format": ""
+    }, 
+    "password": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user password. Required for some authentication back ends.", 
+      "format": ""
+    }, 
+    "domain_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the domain for the new user.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user description.", 
+      "format": ""
+    }
+  }
+}

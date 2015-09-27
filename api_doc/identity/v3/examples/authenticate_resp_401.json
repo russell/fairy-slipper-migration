@@ -1,0 +1,16 @@
+{
+  "error": {
+    "message": "Additional authentications steps required.", 
+    "code": 401, 
+    "identity": {
+      "challenge-response": {
+        "challenge": "What was the zip code of your birthplace?", 
+        "session_id": "123456"
+      }, 
+      "methods": [
+        "challenge-response"
+      ]
+    }, 
+    "title": "Not Authorized"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The type of reboot. Valid values are:\n\n- SOFT. Signal the operating system to restart.\n\n- HARD. Restart the server. Equivalent to power cycling the server.", 
+      "format": ""
+    }
+  }
+}

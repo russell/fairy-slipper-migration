@@ -1,0 +1,95 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#attachConfigGroup": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#createConfigGroup": "configurations", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#createDatabase": "databases", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#createInstance": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#createRoot": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#createUser": "user-management", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#deleteDatabase": "databases", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#deleteInstance": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#deleteUser": "user-management", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#detachConfigGroup": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getDatabases": "databases", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getFlavorById": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getFlavors": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getInstance": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getInstanceById": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getUsers": "user-management", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getVersionInfo": "api-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#getVersions": "api-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#isRootEnabled": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#listConfigDefaults": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#listConfigGroups": "configurations", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#listDatastoreVersions": "datastores", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#listParameters": "datastores", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#resizeInstance": "database-instance-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#resizeVolume": "database-instance-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#restartInstance": "database-instance-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#showParameterDetails": "datastores"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#configurations": "configurations", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#databaseName": "databases", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#databases": "databases", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#datastore_versions": "datastores", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#dbaas-version-v1": "api-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#dbaas-versions-v1": "api-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#flavorId": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#flavors": "flavors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#instanceAction": "database-instance-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#instanceId": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#instances": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#name": "user-management", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#parameter_name": "datastores", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#parameters": "datastores", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#root": "database-instances", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/databases-api/xsd/dbaas.wadl#users": "user-management"
+  }, 
+  "service": "database", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "api-versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Database instances (instances)", 
+      "name": "database-instances", 
+      "summary": ""
+    }, 
+    {
+      "description": "Database instance actions (action)", 
+      "name": "database-instance-actions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Databases (databases)", 
+      "name": "databases", 
+      "summary": ""
+    }, 
+    {
+      "description": "Users (users)", 
+      "name": "user-management", 
+      "summary": ""
+    }, 
+    {
+      "description": "Flavors (flavors)", 
+      "name": "flavors", 
+      "summary": ""
+    }, 
+    {
+      "description": "Datastores (datastores)", 
+      "name": "datastores", 
+      "summary": ""
+    }, 
+    {
+      "description": "Configuration groups (configurations)", 
+      "name": "configurations", 
+      "summary": ""
+    }
+  ], 
+  "title": "Database Service API", 
+  "version": "v1"
+}

@@ -1,0 +1,11 @@
+{
+  "region": {
+    "parent_region_id": "us-west-coast", 
+    "description": "US Southwest Region", 
+    "links": {
+      "self": "https://identity:35357/v3/regions/us-southwest", 
+      "child_regions": "http://identity:35357/v3/regions?parent_region_id=us-southwest"
+    }, 
+    "id": "us-southwest"
+  }
+}

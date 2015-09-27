@@ -1,0 +1,1839 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "showVersionDetailsv2-neutron_200": {
+      "properties": {
+        "location": {
+          "description": "Full URL to a service or server.", 
+          "format": "uri", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "networking", 
+    "title": "Networking API", 
+    "version": "v2"
+  }, 
+  "paths": {
+    "/": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information about all Networking API versions.", 
+        "examples": {}, 
+        "id": "listVersionsv2-neutron", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "300": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List API versions", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v2.0": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for Networking API v2.0.", 
+        "examples": {}, 
+        "id": "showVersionDetailsv2-neutron", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "resources": [
+                  {
+                    "collection": "subnets", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/subnets", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "subnet"
+                  }, 
+                  {
+                    "collection": "networks", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/networks", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "network"
+                  }, 
+                  {
+                    "collection": "ports", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/ports", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "port"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "resources": [
+                  {
+                    "collection": "subnets", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/subnets", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "subnet"
+                  }, 
+                  {
+                    "collection": "networks", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/networks", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "network"
+                  }, 
+                  {
+                    "collection": "ports", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:9696/v2.0/ports", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "name": "port"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show API v2.0 details", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v2.0/extensions": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists available Networking API extensions.", 
+        "examples": {}, 
+        "id": "listExtensions", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extensions": [
+                  {
+                    "alias": "service-type", 
+                    "description": "API for retrieving service providers for Neutron advanced services", 
+                    "links": [], 
+                    "name": "Neutron Service Type Management", 
+                    "updated": "2013-01-20T00:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "security-group", 
+                    "description": "The security groups extension.", 
+                    "links": [], 
+                    "name": "security-group", 
+                    "updated": "2012-10-05T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "l3_agent_scheduler", 
+                    "description": "Schedule routers among l3 agents", 
+                    "links": [], 
+                    "name": "L3 Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "lbaas_agent_scheduler", 
+                    "description": "Schedule pools among lbaas agents", 
+                    "links": [], 
+                    "name": "Loadbalancer Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "ext-gw-mode", 
+                    "description": "Extension of the router abstraction for specifying whether SNAT should occur on the external gateway", 
+                    "links": [], 
+                    "name": "Neutron L3 Configurable external gateway mode", 
+                    "updated": "2013-03-28T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "binding", 
+                    "description": "Expose port bindings of a virtual port to external application", 
+                    "links": [], 
+                    "name": "Port Binding", 
+                    "updated": "2014-02-03T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "provider", 
+                    "description": "Expose mapping of virtual networks to physical networks", 
+                    "links": [], 
+                    "name": "Provider Network", 
+                    "updated": "2012-09-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "agent", 
+                    "description": "The agent management extension.", 
+                    "links": [], 
+                    "name": "agent", 
+                    "updated": "2013-02-03T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "quotas", 
+                    "description": "Expose functions for quotas management per tenant", 
+                    "links": [], 
+                    "name": "Quota management support", 
+                    "updated": "2012-07-29T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "dhcp_agent_scheduler", 
+                    "description": "Schedule networks among dhcp agents", 
+                    "links": [], 
+                    "name": "DHCP Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "multi-provider", 
+                    "description": "Expose mapping of virtual networks to multiple physical networks", 
+                    "links": [], 
+                    "name": "Multi Provider Network", 
+                    "updated": "2013-06-27T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "external-net", 
+                    "description": "Adds external network attribute to network resource.", 
+                    "links": [], 
+                    "name": "Neutron external network", 
+                    "updated": "2013-01-14T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "router", 
+                    "description": "Router abstraction for basic L3 forwarding between L2 Neutron networks and access to external networks via a NAT gateway.", 
+                    "links": [], 
+                    "name": "Neutron L3 Router", 
+                    "updated": "2012-07-20T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "allowed-address-pairs", 
+                    "description": "Provides allowed address pairs", 
+                    "links": [], 
+                    "name": "Allowed Address Pairs", 
+                    "updated": "2013-07-23T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "extra_dhcp_opt", 
+                    "description": "Extra options configuration for DHCP. For example PXE boot options to DHCP clients can be specified (e.g. tftp-server, server-ip-address, bootfile-name)", 
+                    "links": [], 
+                    "name": "Neutron Extra DHCP opts", 
+                    "updated": "2013-03-17T12:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "lbaas", 
+                    "description": "Extension for LoadBalancing service", 
+                    "links": [], 
+                    "name": "LoadBalancing service", 
+                    "updated": "2012-10-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "extraroute", 
+                    "description": "Extra routes configuration for L3 router", 
+                    "links": [], 
+                    "name": "Neutron Extra Route", 
+                    "updated": "2013-02-01T10:00:00-00:00"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extensions": [
+                  {
+                    "alias": "service-type", 
+                    "description": "API for retrieving service providers for Neutron advanced services", 
+                    "links": [], 
+                    "name": "Neutron Service Type Management", 
+                    "updated": "2013-01-20T00:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "security-group", 
+                    "description": "The security groups extension.", 
+                    "links": [], 
+                    "name": "security-group", 
+                    "updated": "2012-10-05T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "l3_agent_scheduler", 
+                    "description": "Schedule routers among l3 agents", 
+                    "links": [], 
+                    "name": "L3 Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "lbaas_agent_scheduler", 
+                    "description": "Schedule pools among lbaas agents", 
+                    "links": [], 
+                    "name": "Loadbalancer Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "ext-gw-mode", 
+                    "description": "Extension of the router abstraction for specifying whether SNAT should occur on the external gateway", 
+                    "links": [], 
+                    "name": "Neutron L3 Configurable external gateway mode", 
+                    "updated": "2013-03-28T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "binding", 
+                    "description": "Expose port bindings of a virtual port to external application", 
+                    "links": [], 
+                    "name": "Port Binding", 
+                    "updated": "2014-02-03T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "provider", 
+                    "description": "Expose mapping of virtual networks to physical networks", 
+                    "links": [], 
+                    "name": "Provider Network", 
+                    "updated": "2012-09-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "agent", 
+                    "description": "The agent management extension.", 
+                    "links": [], 
+                    "name": "agent", 
+                    "updated": "2013-02-03T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "quotas", 
+                    "description": "Expose functions for quotas management per tenant", 
+                    "links": [], 
+                    "name": "Quota management support", 
+                    "updated": "2012-07-29T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "dhcp_agent_scheduler", 
+                    "description": "Schedule networks among dhcp agents", 
+                    "links": [], 
+                    "name": "DHCP Agent Scheduler", 
+                    "updated": "2013-02-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "multi-provider", 
+                    "description": "Expose mapping of virtual networks to multiple physical networks", 
+                    "links": [], 
+                    "name": "Multi Provider Network", 
+                    "updated": "2013-06-27T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "external-net", 
+                    "description": "Adds external network attribute to network resource.", 
+                    "links": [], 
+                    "name": "Neutron external network", 
+                    "updated": "2013-01-14T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "router", 
+                    "description": "Router abstraction for basic L3 forwarding between L2 Neutron networks and access to external networks via a NAT gateway.", 
+                    "links": [], 
+                    "name": "Neutron L3 Router", 
+                    "updated": "2012-07-20T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "allowed-address-pairs", 
+                    "description": "Provides allowed address pairs", 
+                    "links": [], 
+                    "name": "Allowed Address Pairs", 
+                    "updated": "2013-07-23T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "extra_dhcp_opt", 
+                    "description": "Extra options configuration for DHCP. For example PXE boot options to DHCP clients can be specified (e.g. tftp-server, server-ip-address, bootfile-name)", 
+                    "links": [], 
+                    "name": "Neutron Extra DHCP opts", 
+                    "updated": "2013-03-17T12:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "lbaas", 
+                    "description": "Extension for LoadBalancing service", 
+                    "links": [], 
+                    "name": "LoadBalancing service", 
+                    "updated": "2012-10-07T10:00:00-00:00"
+                  }, 
+                  {
+                    "alias": "extraroute", 
+                    "description": "Extra routes configuration for L3 router", 
+                    "links": [], 
+                    "name": "Neutron Extra Route", 
+                    "updated": "2013-02-01T10:00:00-00:00"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List extensions", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v2.0/extensions/{alias}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Gets detailed information for a specified extension.", 
+        "examples": {}, 
+        "id": "getExtension", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The alias of an extension.", 
+            "format": "", 
+            "in": "path", 
+            "name": "alias", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "agent", 
+                  "description": "The agent management extension.", 
+                  "links": [], 
+                  "name": "agent", 
+                  "updated": "2013-02-03T10:00:00-00:00"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "extension": {
+                  "alias": "agent", 
+                  "description": "The agent management extension.", 
+                  "links": [], 
+                  "name": "agent", 
+                  "updated": "2013-02-03T10:00:00-00:00"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Get extension details", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v2.0/networks": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists networks to which the specified tenant has access.\n\nYou can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .", 
+        "examples": {}, 
+        "id": "listNetworks", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "networks": [
+                  {
+                    "admin_state_up": true, 
+                    "id": "d32019d3-bc6e-4319-9c1d-6722fc136a22", 
+                    "name": "private-network", 
+                    "provider:network_type": "local", 
+                    "provider:physical_network": null, 
+                    "provider:segmentation_id": null, 
+                    "router:external": true, 
+                    "shared": true, 
+                    "status": "ACTIVE", 
+                    "subnets": [
+                      "54d6f61d-db07-451c-9ab3-b9609b6b6f0b"
+                    ], 
+                    "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                  }, 
+                  {
+                    "admin_state_up": true, 
+                    "id": "db193ab3-96e3-4cb3-8fc5-05f4296d0324", 
+                    "name": "private", 
+                    "provider:network_type": "local", 
+                    "provider:physical_network": null, 
+                    "provider:segmentation_id": null, 
+                    "router:external": true, 
+                    "shared": true, 
+                    "status": "ACTIVE", 
+                    "subnets": [
+                      "08eae331-0402-425a-923c-34f7cfe39c1b"
+                    ], 
+                    "tenant_id": "26a7980765d0414dbc1fc1f88cdb7e6e"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List networks", 
+        "tags": [
+          "networks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a network.\n\nA request body is optional. An administrative user can specify\nanother tenant ID, which is the tenant who owns the network, in the\nrequest body.", 
+        "examples": {
+          "application/json": {
+            "network": {
+              "admin_state_up": true, 
+              "name": "sample_network"
+            }
+          }
+        }, 
+        "id": "createNetwork", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "network": {
+                  "admin_state_up": true, 
+                  "id": "4e8e5957-649f-477b-9e5b-f1f75b21c03c", 
+                  "name": "net1", 
+                  "router:external": false, 
+                  "segments": [
+                    {
+                      "provider:network_type": "vlan", 
+                      "provider:physical_network": "8bab8453-1bc9-45af-8c70-f83aa9b50453", 
+                      "provider:segmentation_id": 2
+                    }, 
+                    {
+                      "provider:network_type": "stt", 
+                      "provider:physical_network": "8bab8453-1bc9-45af-8c70-f83aa9b50453", 
+                      "provider:segmentation_id": null
+                    }
+                  ], 
+                  "shared": false, 
+                  "status": "ACTIVE", 
+                  "subnets": [], 
+                  "tenant_id": "9bacb3c5d39d41a79512987f338cf177"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create network", 
+        "tags": [
+          "networks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates multiple networks in a single request.\n\nIn the request body, specify a list of networks.\n\nThe bulk create operation is always atomic. Either all or no\nnetworks in the request body are created.", 
+        "examples": {
+          "application/json": {
+            "networks": [
+              {
+                "admin_state_up": true, 
+                "name": "sample_network3"
+              }, 
+              {
+                "admin_state_up": true, 
+                "name": "sample_network4"
+              }
+            ]
+          }
+        }, 
+        "id": "bulkCreateNetwork", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "networks": [
+                  {
+                    "admin_state_up": true, 
+                    "id": "bc1a76cb-8767-4c3a-bb95-018b822f2130", 
+                    "name": "sample_network3", 
+                    "provider:network_type": "local", 
+                    "provider:physical_network": null, 
+                    "provider:segmentation_id": null, 
+                    "shared": false, 
+                    "status": "ACTIVE", 
+                    "subnets": [], 
+                    "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                  }, 
+                  {
+                    "admin_state_up": true, 
+                    "id": "af374017-c9ae-4a1d-b799-ab73111476e2", 
+                    "name": "sample_network4", 
+                    "provider:network_type": "local", 
+                    "provider:physical_network": null, 
+                    "provider:segmentation_id": null, 
+                    "shared": false, 
+                    "status": "ACTIVE", 
+                    "subnets": [], 
+                    "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Bulk create networks", 
+        "tags": [
+          "networks"
+        ]
+      }
+    ], 
+    "/v2.0/networks/{network_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified network.\n\nYou can control which response parameters are returned by using the\nfields query parameter. For information, see Filtering and column\nselection .\n\nIn addition to the following response parameters, the response\nmight show extension response parameters. For information, see\nNetworks multiple provider extension (networks) .", 
+        "examples": {}, 
+        "id": "showNetwork", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID for the network of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "network_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "network": {
+                  "admin_state_up": true, 
+                  "id": "d32019d3-bc6e-4319-9c1d-6722fc136a22", 
+                  "mtu": 0, 
+                  "name": "private-network", 
+                  "port_security_enabled": true, 
+                  "router:external": false, 
+                  "shared": true, 
+                  "status": "ACTIVE", 
+                  "subnets": [
+                    "54d6f61d-db07-451c-9ab3-b9609b6b6f0b"
+                  ], 
+                  "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show network", 
+        "tags": [
+          "networks"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified network.", 
+        "examples": {
+          "application/json": {
+            "network": {
+              "name": "sample_network_5_updated"
+            }
+          }
+        }, 
+        "id": "updateNetwork", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The UUID for the network of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "network_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "network": {
+                  "admin_state_up": true, 
+                  "id": "1f370095-98f6-4079-be64-6d3d4a6adcc6", 
+                  "mtu": 0, 
+                  "name": "sample_network_5_updated", 
+                  "port_security_enabled": true, 
+                  "provider:network_type": "local", 
+                  "provider:physical_network": null, 
+                  "provider:segmentation_id": null, 
+                  "router:external": false, 
+                  "shared": false, 
+                  "status": "ACTIVE", 
+                  "subnets": [], 
+                  "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update network", 
+        "tags": [
+          "networks"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified network and its associated resources.", 
+        "examples": {}, 
+        "id": "deleteNetwork", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The UUID for the network of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "network_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete network", 
+        "tags": [
+          "networks"
+        ]
+      }
+    ], 
+    "/v2.0/ports": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists ports to which the tenant has access.\n\nDefault policy settings return only those ports that are owned by\nthe tenant who submits the request, unless the request is submitted\nby a user with administrative rights. Users can control which\nattributes are returned by using the fields query parameter.\nAdditionally, you can filter results by using query string\nparameters. For information, see Filtering and Column Selection .", 
+        "examples": {}, 
+        "id": "listPorts", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "ports": [
+                  {
+                    "admin_state_up": true, 
+                    "allowed_address_pairs": [], 
+                    "device_id": "9ae135f4-b6e0-4dad-9e91-3c223e385824", 
+                    "device_owner": "network:router_gateway", 
+                    "extra_dhcp_opts": [], 
+                    "fixed_ips": [
+                      {
+                        "ip_address": "172.24.4.2", 
+                        "subnet_id": "008ba151-0b8c-4a67-98b5-0d2b87666062"
+                      }
+                    ], 
+                    "id": "d80b1a3b-4fc1-49f3-952e-1e2ab7081d8b", 
+                    "mac_address": "fa:16:3e:58:42:ed", 
+                    "name": "", 
+                    "network_id": "70c1db1f-b701-45bd-96e0-a313ee3430b3", 
+                    "security_groups": [], 
+                    "status": "ACTIVE", 
+                    "tenant_id": ""
+                  }, 
+                  {
+                    "admin_state_up": true, 
+                    "allowed_address_pairs": [], 
+                    "device_id": "9ae135f4-b6e0-4dad-9e91-3c223e385824", 
+                    "device_owner": "network:router_interface", 
+                    "extra_dhcp_opts": [], 
+                    "fixed_ips": [
+                      {
+                        "ip_address": "10.0.0.1", 
+                        "subnet_id": "288bf4a1-51ba-43b6-9d0a-520e9005db17"
+                      }
+                    ], 
+                    "id": "f71a6703-d6de-4be1-a91a-a570ede1d159", 
+                    "mac_address": "fa:16:3e:bb:3c:e4", 
+                    "name": "", 
+                    "network_id": "f27aa545-cbdd-4907-b0c6-c9e8b039dcc2", 
+                    "security_groups": [], 
+                    "status": "ACTIVE", 
+                    "tenant_id": "d397de8a63f341818f198abb0966f6f3"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List ports", 
+        "tags": [
+          "ports"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a port on a specified network.\n\nYou must specify the ``network_id`` attribute in the request body\nto define the network where the port is to be created.", 
+        "examples": {
+          "application/json": {
+            "port": {
+              "admin_state_up": true, 
+              "name": "private-port", 
+              "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7"
+            }
+          }
+        }, 
+        "id": "createPort", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "port": {
+                  "admin_state_up": true, 
+                  "allowed_address_pairs": [], 
+                  "device_id": "", 
+                  "device_owner": "", 
+                  "fixed_ips": [
+                    {
+                      "ip_address": "10.0.0.2", 
+                      "subnet_id": "a0304c3a-4f08-4c43-88af-d796509c97d2"
+                    }
+                  ], 
+                  "id": "65c0ee9f-d634-4522-8954-51021b570b0d", 
+                  "mac_address": "fa:16:3e:c9:cb:f0", 
+                  "name": "private-port", 
+                  "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7", 
+                  "security_groups": [
+                    "f0ac4394-7e4a-4409-9701-ba8be283dbc3"
+                  ], 
+                  "status": "DOWN", 
+                  "tenant_id": "d6700c0c9ffa4f1cb322cd4a1f3906fa"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create port", 
+        "tags": [
+          "ports"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates multiple ports in a single request. Specify a list of ports\nin the request body.\n\nGuarantees the atomic completion of the bulk operation.", 
+        "examples": {
+          "application/json": {
+            "ports": [
+              {
+                "admin_state_up": false, 
+                "name": "sample_port_1", 
+                "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7"
+              }, 
+              {
+                "admin_state_up": false, 
+                "name": "sample_port_2", 
+                "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7"
+              }
+            ]
+          }
+        }, 
+        "id": "bulkCreatePorts", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "ports": [
+                  {
+                    "admin_state_up": false, 
+                    "allowed_address_pairs": [], 
+                    "device_id": "", 
+                    "device_owner": "", 
+                    "fixed_ips": [
+                      {
+                        "ip_address": "10.0.0.5", 
+                        "subnet_id": "a0304c3a-4f08-4c43-88af-d796509c97d2"
+                      }
+                    ], 
+                    "id": "94225baa-9d3f-4b93-bf12-b41e7ce49cdb", 
+                    "mac_address": "fa:16:3e:48:b8:9f", 
+                    "name": "sample_port_1", 
+                    "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7", 
+                    "security_groups": [
+                      "f0ac4394-7e4a-4409-9701-ba8be283dbc3"
+                    ], 
+                    "status": "DOWN", 
+                    "tenant_id": "d6700c0c9ffa4f1cb322cd4a1f3906fa"
+                  }, 
+                  {
+                    "admin_state_up": false, 
+                    "allowed_address_pairs": [], 
+                    "device_id": "", 
+                    "device_owner": "", 
+                    "fixed_ips": [
+                      {
+                        "ip_address": "10.0.0.6", 
+                        "subnet_id": "a0304c3a-4f08-4c43-88af-d796509c97d2"
+                      }
+                    ], 
+                    "id": "235b09e0-63c4-47f1-b221-66ba54c21760", 
+                    "mac_address": "fa:16:3e:f4:73:df", 
+                    "name": "sample_port_2", 
+                    "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7", 
+                    "security_groups": [
+                      "f0ac4394-7e4a-4409-9701-ba8be283dbc3"
+                    ], 
+                    "status": "DOWN", 
+                    "tenant_id": "d6700c0c9ffa4f1cb322cd4a1f3906fa"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Bulk create ports", 
+        "tags": [
+          "ports"
+        ]
+      }
+    ], 
+    "/v2.0/ports/{port_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified port.", 
+        "examples": {}, 
+        "id": "showPort", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID for the port of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "port_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "port": {
+                  "admin_state_up": true, 
+                  "allowed_address_pairs": [], 
+                  "device_id": "5e3898d7-11be-483e-9732-b2f5eccd2b2e", 
+                  "device_owner": "network:router_interface", 
+                  "extra_dhcp_opts": [], 
+                  "fixed_ips": [
+                    {
+                      "ip_address": "10.0.0.1", 
+                      "subnet_id": "a0304c3a-4f08-4c43-88af-d796509c97d2"
+                    }
+                  ], 
+                  "id": "46d4bfb9-b26e-41f3-bd2e-e6dcc1ccedb2", 
+                  "mac_address": "fa:16:3e:23:fd:d7", 
+                  "name": "", 
+                  "network_id": "a87cc70a-3e15-4acf-8205-9b711a3531b7", 
+                  "security_groups": [], 
+                  "status": "ACTIVE", 
+                  "tenant_id": "7e02058126cc4950b75f9970368ba177"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show port", 
+        "tags": [
+          "ports"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified port.\n\nYou can update information for a port, such as its symbolic name\nand associated IPs. When you update IPs for a port, any previously\nassociated IPs are removed, returned to the respective subnets\nallocation pools, and replaced by the IPs specified in the body for\nthe update request. Therefore, this operation replaces the\n``fixed_ip`` attribute when it is specified in the request body. If\nthe updated IP addresses are not valid or are already in use, the\noperation fails and the existing IP addresses are not removed from\nthe port.\n\nWhen you update security groups for a port and the operation\nsucceeds, any associated security groups are removed and replaced\nby the security groups specified in the body for the update\nrequest. Therefore, this operation replaces the ``security_groups``\nattribute when you specify it in the request body. However, if the\nspecified security groups are not valid, the operation fails and\nthe existing security groups are not removed from the port.", 
+        "examples": {
+          "application/json": {
+            "port": {
+              "admin_state_up": true, 
+              "binding:host_id": "test_for_port_update_host", 
+              "device_owner": "compute:nova", 
+              "name": "test-for-port-update"
+            }
+          }
+        }, 
+        "id": "updatePort", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The UUID for the port of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "port_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "port": {
+                  "admin_state_up": true, 
+                  "allowed_address_pairs": [], 
+                  "binding:host_id": "test_for_port_update_host", 
+                  "binding:profile": {}, 
+                  "binding:vif_details": {}, 
+                  "binding:vif_type": "binding_failed", 
+                  "binding:vnic_type": "normal", 
+                  "device_id": "", 
+                  "device_owner": "compute:nova", 
+                  "extra_dhcp_opts": [], 
+                  "fixed_ips": [
+                    {
+                      "ip_address": "20.20.0.4", 
+                      "subnet_id": "898dec4a-74df-4193-985f-c76721bcc746"
+                    }
+                  ], 
+                  "id": "43c831e0-19ce-4a76-9a49-57b57e69428b", 
+                  "mac_address": "fa:16:3e:11:11:5e", 
+                  "name": "test-for-port-update", 
+                  "network_id": "883fc383-5ea1-4c8b-8916-e1ddb0a9f365", 
+                  "security_groups": [
+                    "ce0179d6-8a94-4f7c-91c2-f3038e2acbd0"
+                  ], 
+                  "status": "DOWN", 
+                  "tenant_id": "522eda8d23124b25bf03fe44f1986b74"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update port", 
+        "tags": [
+          "ports"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified port.\n\nAny IP addresses that are associated with the port are returned to\nthe respective subnets allocation pools.", 
+        "examples": {}, 
+        "id": "removePort", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The UUID for the port of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "port_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete port", 
+        "tags": [
+          "ports"
+        ]
+      }
+    ], 
+    "/v2.0/subnets": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists subnets to which the specified tenant has access.\n\nDefault policy settings returns exclusively subnets owned by the\ntenant submitting the request, unless the request is submitted by a\nuser with administrative rights. You can control which attributes\nare returned by using the fields query parameter. You can filter\nresults by using query string parameters.", 
+        "examples": {}, 
+        "id": "listSubnets", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "subnets": [
+                  {
+                    "allocation_pools": [
+                      {
+                        "end": "10.0.0.254", 
+                        "start": "10.0.0.2"
+                      }
+                    ], 
+                    "cidr": "10.0.0.0/24", 
+                    "dns_nameservers": [], 
+                    "enable_dhcp": true, 
+                    "gateway_ip": "10.0.0.1", 
+                    "host_routes": [], 
+                    "id": "08eae331-0402-425a-923c-34f7cfe39c1b", 
+                    "ip_version": 4, 
+                    "name": "private-subnet", 
+                    "network_id": "db193ab3-96e3-4cb3-8fc5-05f4296d0324", 
+                    "tenant_id": "26a7980765d0414dbc1fc1f88cdb7e6e"
+                  }, 
+                  {
+                    "allocation_pools": [
+                      {
+                        "end": "192.255.255.254", 
+                        "start": "192.0.0.2"
+                      }
+                    ], 
+                    "cidr": "192.0.0.0/8", 
+                    "dns_nameservers": [], 
+                    "enable_dhcp": true, 
+                    "gateway_ip": "192.0.0.1", 
+                    "host_routes": [], 
+                    "id": "54d6f61d-db07-451c-9ab3-b9609b6b6f0b", 
+                    "ip_version": 4, 
+                    "name": "my_subnet", 
+                    "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22", 
+                    "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List subnets", 
+        "tags": [
+          "subnets"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a subnet on a specified network.\n\nOpenStack Networking does not try to derive the correct IP version\nfrom the specified CIDR. If you do not specify the ``gateway_ip``\nattribute, OpenStack Networking allocates an address from the CIDR\nfor the gateway for the subnet.\n\nTo specify a subnet without a gateway, set the ``gateway_ip``\nattribute to ``null`` in the request body. If you do not specify\nthe ``allocation_pools`` attribute, OpenStack Networking\nautomatically allocates pools for covering all IP addresses in the\nCIDR, excluding the address reserved for the subnet gateway.\nOtherwise, you can explicitly specify allocation pools as shown in\nthe following example.\n\nWhen you specify both the ``allocation_pools`` and ``gateway_ip``\nattributes, you must ensure that the gateway IP does not overlap\nwith the specified allocation pools; otherwise a 409 Conflict error\noccurs.\n\nA subnet can have one or more name servers and host routes. Hosts\nin this subnet use the specified name servers. Devices with IP\naddresses from this subnet, not including the local subnet route,\nuse the specified host routes.\n\nSpecify the ``ipv6_ra_mode`` and ``ipv6_address_mode`` attributes\nto create subnets that support IPv6 configurations, such as\nStateless Address Autoconfiguration (SLAAC), DHCPv6 Stateful, and\nDHCPv6 Stateless configurations.", 
+        "examples": {
+          "application/json": {
+            "subnet": {
+              "cidr": "10.0.0.1", 
+              "ip_version": 4, 
+              "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22"
+            }
+          }
+        }, 
+        "id": "createSubnet", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "subnet": {
+                  "allocation_pools": [
+                    {
+                      "end": "192.168.199.254", 
+                      "start": "192.168.199.2"
+                    }
+                  ], 
+                  "cidr": "192.168.199.0/24", 
+                  "dns_nameservers": [], 
+                  "enable_dhcp": true, 
+                  "gateway_ip": "192.168.199.1", 
+                  "host_routes": [], 
+                  "id": "3b80198d-4f7b-4f77-9ef5-774d54e17126", 
+                  "ip_version": 4, 
+                  "name": "", 
+                  "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22", 
+                  "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create subnet", 
+        "tags": [
+          "subnets"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates multiple subnets in a single request. Specify a list of\nsubnets in the request body.\n\nThe bulk create operation is always atomic. Either all or no\nsubnets in the request body are created.", 
+        "examples": {
+          "application/json": {
+            "subnets": [
+              {
+                "cidr": "192.168.199.0/24", 
+                "ip_version": 4, 
+                "network_id": "e6031bc2-901a-4c66-82da-f4c32ed89406"
+              }, 
+              {
+                "cidr": "10.56.4.0/22", 
+                "ip_version": 4, 
+                "network_id": "64239a54-dcc4-4b39-920b-b37c2144effa"
+              }
+            ]
+          }
+        }, 
+        "id": "bulkCreateSubnet", 
+        "method": "post", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "subnets": [
+                  {
+                    "allocation_pools": [
+                      {
+                        "end": "192.168.199.254", 
+                        "start": "192.168.199.2"
+                      }
+                    ], 
+                    "cidr": "192.168.199.0/24", 
+                    "dns_nameservers": [], 
+                    "enable_dhcp": true, 
+                    "gateway_ip": "192.168.199.1", 
+                    "host_routes": [], 
+                    "id": "0468a7a7-290d-4127-aedd-6c9449775a24", 
+                    "ip_version": 4, 
+                    "name": "", 
+                    "network_id": "e6031bc2-901a-4c66-82da-f4c32ed89406", 
+                    "tenant_id": "d19231fc08ec4bc4829b668040d34512"
+                  }, 
+                  {
+                    "allocation_pools": [
+                      {
+                        "end": "10.56.7.254", 
+                        "start": "10.56.4.2"
+                      }
+                    ], 
+                    "cidr": "10.56.4.0/22", 
+                    "dns_nameservers": [], 
+                    "enable_dhcp": true, 
+                    "gateway_ip": "10.56.4.1", 
+                    "host_routes": [], 
+                    "id": "b0e7435c-1512-45fb-aa9e-9a7c5932fb30", 
+                    "ip_version": 4, 
+                    "name": "", 
+                    "network_id": "64239a54-dcc4-4b39-920b-b37c2144effa", 
+                    "tenant_id": "d19231fc08ec4bc4829b668040d34512"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Bulk create subnet", 
+        "tags": [
+          "subnets"
+        ]
+      }
+    ], 
+    "/v2.0/subnets/{subnet_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information for a specified subnet.\n\nUse the fields query parameter to filter the results.", 
+        "examples": {}, 
+        "id": "showSubnet", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The UUID for the subnet of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "subnet_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "subnet": {
+                  "allocation_pools": [
+                    {
+                      "end": "192.255.255.254", 
+                      "start": "192.0.0.2"
+                    }
+                  ], 
+                  "cidr": "192.0.0.0/8", 
+                  "dns_nameservers": [], 
+                  "enable_dhcp": true, 
+                  "gateway_ip": "192.0.0.1", 
+                  "host_routes": [], 
+                  "id": "54d6f61d-db07-451c-9ab3-b9609b6b6f0b", 
+                  "ip_version": 4, 
+                  "name": "my_subnet", 
+                  "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22", 
+                  "tenant_id": "4fd44f30292945e481c7b8a0c8908869"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show subnet", 
+        "tags": [
+          "subnets"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a specified subnet.\n\nSome attributes, such as IP version (ip_version), and CIDR (cidr)\ncannot be updated. Attempting to update these attributes results in\na ``400 BadRequest`` error.", 
+        "examples": {
+          "application/json": {
+            "subnet": {
+              "name": "my_subnet"
+            }
+          }
+        }, 
+        "id": "updateSubnet", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "The UUID for the subnet of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "subnet_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "subnet": {
+                  "allocation_pools": [
+                    {
+                      "end": "10.0.0.254", 
+                      "start": "10.0.0.2"
+                    }
+                  ], 
+                  "cidr": "10.0.0.0/24", 
+                  "dns_nameservers": [], 
+                  "enable_dhcp": true, 
+                  "gateway_ip": "10.0.0.1", 
+                  "host_routes": [], 
+                  "id": "08eae331-0402-425a-923c-34f7cfe39c1b", 
+                  "ip_version": 4, 
+                  "name": "my_subnet", 
+                  "network_id": "db193ab3-96e3-4cb3-8fc5-05f4296d0324", 
+                  "tenant_id": "26a7980765d0414dbc1fc1f88cdb7e6e"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update subnet", 
+        "tags": [
+          "subnets"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified subnet.\n\nThe operation fails if subnet IP addresses are still allocated.", 
+        "examples": {}, 
+        "id": "removeSubnet", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The UUID for the subnet of interest to you.", 
+            "format": "", 
+            "in": "path", 
+            "name": "subnet_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "204": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "409": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete subnet", 
+        "tags": [
+          "subnets"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": "Lists information for all Networking API versions and shows details\nabout API v2.0."
+    }, 
+    {
+      "description": "Networks", 
+      "name": "networks", 
+      "summary": "Lists, shows information for, creates, updates, and deletes\nnetworks."
+    }, 
+    {
+      "description": "Subnets", 
+      "name": "subnets", 
+      "summary": "Lists, shows information for, creates, updates, and deletes subnet\nresources."
+    }, 
+    {
+      "description": "Ports", 
+      "name": "ports", 
+      "summary": "Lists, shows information for, creates, updates, and deletes ports."
+    }
+  ]
+}

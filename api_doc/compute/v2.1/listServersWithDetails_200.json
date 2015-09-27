@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "locked": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the server is locked ( ``true`` ) or unlocked (\n``false`` ).", 
+      "format": ""
+    }
+  }
+}

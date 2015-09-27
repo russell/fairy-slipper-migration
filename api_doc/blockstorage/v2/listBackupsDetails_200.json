@@ -1,0 +1,95 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup status, such as available.", 
+      "format": ""
+    }, 
+    "object_count": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The number of objects in the backup.", 
+      "format": ""
+    }, 
+    "fail_reason": {
+      "required": true, 
+      "type": "string", 
+      "description": "If the backup failed, the reason for the failure. Otherwise, null.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup description or null.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Links for the backup.", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": true, 
+      "type": "string", 
+      "description": "The availability zone.", 
+      "format": ""
+    }, 
+    "created_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup name.", 
+      "format": ""
+    }, 
+    "has_dependent_backups": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the backup depends on other backups. If this\nvalue is ``True`` , the backup depends on other backups.", 
+      "format": ""
+    }, 
+    "volume_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the volume from which the backup was created.", 
+      "format": ""
+    }, 
+    "container": {
+      "required": true, 
+      "type": "string", 
+      "description": "The container name or null.", 
+      "format": ""
+    }, 
+    "backups": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``backups`` object.", 
+      "format": ""
+    }, 
+    "size": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The size of the backup, in GB.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the backup.", 
+      "format": ""
+    }, 
+    "is_incremental": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the backup mode is incremental. If this value is\n``True`` , the backup mode is incremental. If this value is\n``False`` , the backup mode is full.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,189 @@
+.. http:put:: /v1/images/{image_id}/members/{owner_id}
+   :synopsis: Add member
+
+   Adds a member to an image.
+   
+   If you omit the request body, this call adds the membership to the
+   image, leaves the existing memberships unmodified, and sets the
+   ``can_share`` attribute to ``false`` for new memberships.
+
+   :requestexample: v1/examples/addMember-v1_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: members
+   :requestschema: v1/addMember-v1.json
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :parameter owner_id: Owner ID, which is the tenant ID.
+   :statuscode 204: 
+
+
+.. http:delete:: /v1/images/{image_id}/members/{owner_id}
+   :synopsis: Remove member
+
+   Removes a member from an image.
+
+   :tag: members
+   :requestschema: v1/removeMember-v1.json
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :parameter owner_id: Owner ID, which is the tenant ID.
+   :statuscode 204: 
+
+
+.. http:put:: /v1/images/{image_id}/members
+   :synopsis: Replace member
+
+   Replaces a membership list for an image.
+
+   :requestexample: v1/examples/replaceMember-v1_req.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: members
+   :requestschema: v1/replaceMember-v1.json
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :statuscode 204: 
+
+
+.. http:get:: /v1/shared-images/{owner_id}
+   :synopsis: List shared images
+
+   Lists the VM images that are shared with a specified owner. The
+   owner ID is the tenant ID.
+
+   :responseexample 200: v1/examples/getSharedImages-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: shared-images
+   :parameter owner_id: Owner ID, which is the tenant ID.
+   :statuscode 200: 
+
+
+.. http:post:: /v1/images
+   :synopsis: Create image
+
+   Registers a virtual machine (VM) image.
+
+   :tag: images
+   :requestschema: v1/createImage-v1.json
+   :statuscode 202: 
+
+
+.. http:get:: /v1/images
+   :synopsis: List images
+
+   Lists public VM images.
+
+   :responseexample 200: v1/examples/listImage-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: images
+   :query name: Filters the image list by a specified image name, in
+                string format.
+   :query container_format: Filters the image list by a specified
+                            container format, such as ``ovf`` ,
+                            ``bare`` , ``aki`` , ``ari`` , or ``ami``
+                            .
+   :query disk_format: Filters the image list by a specified disk
+                       format. A valid value is ``aki`` , ``ari`` ,
+                       ``ami`` , ``raw`` , ``iso`` , ``vhd`` , ``vdi``
+                       , ``qcow2`` , or ``vmdk`` .
+   :query status: Filters the image list by a specified status. A
+                  valid value is ``queued`` , ``saving`` , ``active``
+                  , ``killed`` , ``deleted`` , or ``pending_delete`` .
+   :query size_min: Filters the image list by a specified minimum
+                    image size, in bytes.
+   :query size_max: Filters the image list by a specified maximum
+                    image size, in bytes.
+   :query changes-since: Filters the image list to those images that
+                         have changed since a specified time stamp
+                         value.
+   :statuscode 200: 
+
+
+.. http:get:: /
+   :synopsis: List API versions
+
+   Lists information about all Image service API versions.
+
+   :responseexample 300: v1/examples/listVersions-image-v1_resp_300.json
+   :responseexample 200: v1/examples/listVersions-image-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 300: 
+   :statuscode 200: 
+
+
+.. http:put:: /v1/images/{image_id}
+   :synopsis: Update image
+
+   Updates an image, uploads an image file, or updates metadata for an
+   image.
+
+   :tag: images
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :statuscode 200: 
+
+
+.. http:get:: /v1/images/{image_id}
+   :synopsis: Show image details and image binary
+
+   Shows the image details as headers and the image binary in the body
+   of the response.
+
+   :responseexample 200: v1/examples/getImage-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: images
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :statuscode 200: 
+   :statuscode 403: 
+
+
+.. http:delete:: /v1/images/{image_id}
+   :synopsis: Delete image
+
+   Deletes the specified image.
+
+   :tag: images
+   :parameter image_id: Image ID stored through the image API.
+                        Typically a UUID.
+   :statuscode 204: 
+
+
+.. http:get:: /v1/images/detail
+   :synopsis: List image details
+
+   Lists details for available images.
+
+   :responseexample 200: v1/examples/listDetailImage-v1_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: images
+   :query name: Filters the image list by a specified image name, in
+                string format.
+   :query container_format: Filters the image list by a specified
+                            container format, such as ``ovf`` ,
+                            ``bare`` , ``aki`` , ``ari`` , or ``ami``
+                            .
+   :query disk_format: Filters the image list by a specified disk
+                       format. A valid value is ``aki`` , ``ari`` ,
+                       ``ami`` , ``raw`` , ``iso`` , ``vhd`` , ``vdi``
+                       , ``qcow2`` , or ``vmdk`` .
+   :query status: Filters the image list by a specified status. A
+                  valid value is ``queued`` , ``saving`` , ``active``
+                  , ``killed`` , ``deleted`` , or ``pending_delete`` .
+   :query size_min: Filters the image list by a specified minimum
+                    image size, in bytes.
+   :query size_max: Filters the image list by a specified maximum
+                    image size, in bytes.
+   :query changes-since: Filters the image list to those images that
+                         have changed since a specified time stamp
+                         value.
+   :statuscode 200: 
+
+

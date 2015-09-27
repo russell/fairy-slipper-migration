@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "backup_type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The backup type. Either 'daily' or 'weekly.'", 
+      "format": ""
+    }, 
+    "rotation": {
+      "required": true, 
+      "type": "integer", 
+      "description": "An integer value that represents the number of backups to maintain.", 
+      "format": ""
+    }, 
+    "createBackup": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``createBackup`` action in the request body.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the backup image.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "file_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-admin-actions.wadl": "admin-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-agents.wadl": "agents", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-aggregates.wadl": "aggregates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-availability-zone.wadl": "availability-zone", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-baremetal-ext-status.wadl": "baremetal-ext-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-block-device-mapping-v2-boot.wadl": "block-device-mapping", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-certificates.wadl": "certificates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-cloudpipe.wadl": "cloudpipe", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-console-output.wadl": "console-output", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-consoles.wadl": "consoles", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-coverage.wadl": "coverage", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-createserverext.wadl": "createserverext", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-deferred-delete.wadl": "deferred-delete", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-diagnostics.wadl": "diagnostics", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-disk-config.wadl": "disk-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-ext-az.wadl": "ext-az", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-ext-img-size.wadl": "ext-img-size", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-ext-ips.wadl": "ext-ips", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-extended-networks.wadl": "extended-networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-extended-server-attributes.wadl": "extended-server-attributes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-extended-status.wadl": "extended-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-fixed-ips.wadl": "fixed-ips", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavor-access.wadl": "flavor-access", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavor-extra-specs.wadl": "flavor-extra-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavor-rxtx.wadl": "flavor-rxtx", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavor-swap.wadl": "flavor-swap", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavorextradata.wadl": "flavorextradata", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flavormanage.wadl": "flavormanage", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-floating-ip-dns.wadl": "floating-ip-dns", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-floating-ip-pools.wadl": "floating-ip-pools", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-floating-ips-bulk.wadl": "floating-ips-bulk", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-floating-ips.wadl": "floating-ips", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-flv-disabled.wadl": "flv-disabled", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hosts.wadl": "hosts", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-instance-actions.wadl": "instance-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-interface.wadl": "interface", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-keypairs.wadl": "keypairs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-migrations.wadl": "migrations", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-multi-server-create.wadl": "multi-server-create", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-networks.wadl": "networks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-quota-class-sets.wadl": "quota-class-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-quota-sets.wadl": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-rescue.wadl": "rescue", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-scheduler-hints.wadl": "scheduler-hints", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-group-default-rules.wadl": "security-group-default-rules", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-group-rules.wadl": "os-security-group-rules", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-OS-EXT-IPS-MAC.wadl": "server-ext-ips-mac", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-password.wadl": "server-password", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-shelve.wadl": "server-shelve", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-start-stop.wadl": "server-start-stop", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-services.wadl": "services", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-simple-tenant-usage.wadl": "simple-tenant-usage", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-used-limits-for-admins.wadl": "used-limits-for-admins", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-used-limits.wadl": "used-limits", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-virtual-interfaces.wadl": "virtual-interfaces", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-volume.wadl": "volume", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-volume_attachments.wadl": "volume-attachments", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-volume_boot.wadl": "os-volume_boot"
+  }, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisor-status.wadl#showHypervisor-status": "hypervisor-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#getHypervisorStats": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#getHypervisorUptime": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#listHypervisorInstances": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#listHypervisors": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#showHypervisor": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#createSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#deleteSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#listSecGroups": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#listSecGroupsByServer": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#showSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#updateSecGroup": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#createServerGroup": "server-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#deleteServerGroup": "server-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#listServerGroups": "server-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#showServerGroup": "server-groups"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisor-status.wadl#detail": "hypervisor-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#detail": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#hypervisor_hostname": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#os-hypervisors": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#servers": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-hypervisors.wadl#statistics": "hypervisors", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#os-security-groups": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#os-security-groups2": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-security-groups.wadl#security_group_id": "security-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#ServerGroup_id": "server-groups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/compute-api/src/v2/ext/os-server-groups.wadl#os-server-groups": "server-groups"
+  }, 
+  "service": "compute-extensions", 
+  "tags": [
+    {
+      "description": "Servers with block device mapping format (servers)", 
+      "name": "block-device-mapping", 
+      "summary": "Creates a server with a block device mapping."
+    }, 
+    {
+      "description": "Servers with configuration drive (servers)", 
+      "name": "createserverext", 
+      "summary": "Extends servers and images with a configuration drive."
+    }, 
+    {
+      "description": "Servers console (servers)", 
+      "name": "consoles", 
+      "summary": "Gets a console for a server instance."
+    }, 
+    {
+      "description": "Servers console output (servers)", 
+      "name": "console-output", 
+      "summary": "Gets console output for a server instance."
+    }, 
+    {
+      "description": "Servers extended attributes (servers)", 
+      "name": "extended-server-attributes", 
+      "summary": "Shows metadata for servers."
+    }, 
+    {
+      "description": "Servers with extended availability zones (servers)", 
+      "name": "ext-az", 
+      "summary": "Shows the instance availability zone for compute nodes (nova-\ncompute). Internal services appear in their own *internal*\navailability zone."
+    }, 
+    {
+      "description": "Servers extended status (servers)", 
+      "name": "extended-status", 
+      "summary": "Shows the ``vm_state`` , ``task_state`` , and ``power_state``\nextended status information in detailed server responses."
+    }, 
+    {
+      "description": "Servers with IP type (servers)", 
+      "name": "ext-ips", 
+      "summary": "Shows the type of the IP addresses that are assigned to an\ninstance. Type is either fixed or floating."
+    }, 
+    {
+      "description": "Servers multiple create (servers)", 
+      "name": "multi-server-create", 
+      "summary": "Creates one or more servers with an optional reservation ID. The\nrequest and response examples show how to create multiple servers\nwith or without a reservation ID."
+    }, 
+    {
+      "description": "Servers with mac_addr extended attribute (servers)", 
+      "name": "server-ext-ips-mac", 
+      "summary": "Creates, shows information for, and lists servers with the\n``mac_addr`` extended attribute."
+    }, 
+    {
+      "description": "Servers with scheduler hints (servers)", 
+      "name": "scheduler-hints", 
+      "summary": "Creates a server with scheduler hints."
+    }, 
+    {
+      "description": "Servers administrative actions (servers, action)", 
+      "name": "admin-actions", 
+      "summary": "Administrator only. Performs actions on a server. Specify the\naction in the request body."
+    }, 
+    {
+      "description": "Servers deferred delete (servers, action)", 
+      "name": "deferred-delete", 
+      "summary": "Force-deletes a server and restores a deleted server."
+    }, 
+    {
+      "description": "Servers rescue and unrescue (servers, action)", 
+      "name": "rescue", 
+      "summary": "Puts a server into rescue mode and unrescues a server in rescue\nmode."
+    }, 
+    {
+      "description": "Servers shelve (servers, action)", 
+      "name": "server-shelve", 
+      "summary": "Shelves running servers, restores shelved servers, and removes\nshelved servers.\n\nShelving is useful when you have an unused instance that you would\nlike to keep for later use. For example, at the end of a work week\nyou can shelve an instance and at the start of the next week you\ncan unshelve it.\n\nYour cloud provider might bill you for a shelved server.\n\nUse the ``shelve`` action to shelve a server. All associated data\nand resources are kept but anything still in memory is not\nretained.\n\nUse the ``unshelve`` action to restore a shelved instance.\n\nUse the ``shelveOffload`` action to remove a shelved instance that\nyou no longer need."
+    }, 
+    {
+      "description": "Servers start and stop (servers, action)", 
+      "name": "server-start-stop", 
+      "summary": "Starts a stopped server and stops a running server."
+    }, 
+    {
+      "description": "Servers diagnostics (servers, diagnostics)", 
+      "name": "diagnostics", 
+      "summary": "Gets the usage data for a server."
+    }, 
+    {
+      "description": "Servers and images with disk config (servers, images)", 
+      "name": "disk-config", 
+      "summary": "Extends servers with the ``diskConfig`` attribute."
+    }, 
+    {
+      "description": "Servers availability zones (servers, os-availability-zone)", 
+      "name": "availability-zone", 
+      "summary": "Gets availability zone information."
+    }, 
+    {
+      "description": "Servers instance actions (servers, os-instance-actions)", 
+      "name": "instance-actions", 
+      "summary": "Lists available actions for a specified server. Administrators can\nget details for a specified action for a specified server."
+    }, 
+    {
+      "description": "Servers password (servers, os-server-password)", 
+      "name": "server-password", 
+      "summary": "Gets and resets the encrypted administrative password set through\nthe metadata service."
+    }, 
+    {
+      "description": "Servers virtual interfaces (servers, os-virtual-interfaces)", 
+      "name": "virtual-interfaces", 
+      "summary": "Lists the virtual interfaces for a specified server instance."
+    }, 
+    {
+      "description": "Servers with volume attachments (servers, os-volume_attachments)", 
+      "name": "volume-attachments", 
+      "summary": "Attaches volumes that are created through the volume API to server\ninstances. Also, lists volume attachments for a server instance,\ngets volume details for a volume attachment, and detaches a volume."
+    }, 
+    {
+      "description": "Server boot from volume (os-volumes_boot)", 
+      "name": "os-volume_boot", 
+      "summary": "Starts an instance by using a volume with the ``bootable``\nattribute. The image on the volume is used to boot the instance."
+    }, 
+    {
+      "description": "Flavors create and delete (flavors)", 
+      "name": "flavormanage", 
+      "summary": "Creates, lists, and deletes flavors."
+    }, 
+    {
+      "description": "Flavors with disabled attribute (flavors)", 
+      "name": "flv-disabled", 
+      "summary": "Lists and gets details for flavors. Includes the ``disabled``\nextended attribute."
+    }, 
+    {
+      "description": "Flavors with extended attributes (flavors)", 
+      "name": "flavorextradata", 
+      "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor , OS-FLV-EXT-DATA:ephemeral , and swap extended\nattributes."
+    }, 
+    {
+      "description": "Flavors with rxtx_factor extended attribute (flavors)", 
+      "name": "flavor-rxtx", 
+      "summary": "Creates, gets details for, and lists details for flavors. Includes\nthe rxtx_factor extended attribute, which is related to configured\nbandwidth cap values."
+    }, 
+    {
+      "description": "Flavors with extra-specs (flavors, os-extra-specs)", 
+      "name": "flavor-extra-specs", 
+      "summary": "Lists, creates, and updates the extra-specs or keys for a flavor."
+    }, 
+    {
+      "description": "Flavors access (flavors, os-flavor-access)", 
+      "name": "flavor-access", 
+      "summary": "Creates and gets details for private flavors. Also, lists, adds,\nand removes tenants' access to private flavors."
+    }, 
+    {
+      "description": "Flavors swap (flavors, os-flavor-swap)", 
+      "name": "flavor-swap", 
+      "summary": "Creates and lists flavors with a swap value. Requires the ``os-\nflavormanage`` extension. The swap value is the amount of swap disk\nspace, in GBs, to allocate to a server."
+    }, 
+    {
+      "description": "Images with size attribute (images)", 
+      "name": "ext-img-size", 
+      "summary": "Lists details for available images and gets details for a specified\nimage. Includes the ``OS-EXT-IMG-SIZE:size`` extended attribute,\nwhich shows the image size."
+    }, 
+    {
+      "description": "Limits with project usage (limits)", 
+      "name": "used-limits", 
+      "summary": "Extends limits to show the project usage. Shows information such as\nRAM and instance quotas usage."
+    }, 
+    {
+      "description": "Limits with project usage for administrators (limits)", 
+      "name": "used-limits-for-admins", 
+      "summary": "Extends limits to enable administrators to show the project usage\nfor a specified customer project ID. Shows information such as RAM\nand instance quotas usage."
+    }, 
+    {
+      "description": "Guest agents (os-agents)", 
+      "name": "agents", 
+      "summary": "Creates, updates, and deletes guest agents.\n\nUse guest agents to access files on the disk, configure networking,\nand run other applications and scripts in the guest while it runs.\nThis hypervisor-specific extension is not currently enabled for\nKVM. Use of guest agents is possible only if the underlying service\nprovider uses the Xen driver."
+    }, 
+    {
+      "description": "Host aggregates (os-aggregates)", 
+      "name": "aggregates", 
+      "summary": "Creates and manages host aggregates. An aggregate assigns metadata\nto groups of compute nodes. Aggregates are only visible to the\ncloud provider."
+    }, 
+    {
+      "description": "Bare metal nodes (os-baremetal-nodes)", 
+      "name": "baremetal-ext-status", 
+      "summary": "Bare metal nodes."
+    }, 
+    {
+      "description": "Root certificates (os-certificates)", 
+      "name": "certificates", 
+      "summary": "Creates and shows details for a root certificate."
+    }, 
+    {
+      "description": "Cloudpipe (os-cloudpipe)", 
+      "name": "cloudpipe", 
+      "summary": "Manages virtual VPNs for projects."
+    }, 
+    {
+      "description": "Coverage reports (os-coverage)", 
+      "name": "coverage", 
+      "summary": "Shows coverage reports."
+    }, 
+    {
+      "description": "Network extended attributes (os-extended-networks)", 
+      "name": "extended-networks", 
+      "summary": "Creates, shows details for, and lists networks with extended\nattributes."
+    }, 
+    {
+      "description": "Fixed IPs (os-fixed-ips)", 
+      "name": "fixed-ips", 
+      "summary": "Shows data for a specified fixed IP, such as host name, CIDR, and\naddress. Also, reserves and frees a fixed IP address."
+    }, 
+    {
+      "description": "Floating IP DNS records (os-floating-ip-dns)", 
+      "name": "floating-ip-dns", 
+      "summary": "Manages DNS records that are associated with IP addresses that are\nallocated by the floating IPs extension. Requests are dispatched to\na DNS driver selected at startup."
+    }, 
+    {
+      "description": "Floating IP pools (os-floating-ip-pools)", 
+      "name": "floating-ip-pools", 
+      "summary": "Manages groups of floating IPs."
+    }, 
+    {
+      "description": "Floating IPs (os-floating-ips)", 
+      "name": "floating-ips", 
+      "summary": "Assigns and allocates floating IP addresses to instances that run\nin an OpenStack cloud."
+    }, 
+    {
+      "description": "Floating IPs bulk (os-floating-ips-bulk)", 
+      "name": "floating-ips-bulk", 
+      "summary": "Bulk-creates, deletes, and lists floating IPs. By default, the pool\nis named nova. Use the os-floating-ip-pools extension to view\navailable pools."
+    }, 
+    {
+      "description": "Hosts (os-hosts)", 
+      "name": "hosts", 
+      "summary": "Manages physical hosts."
+    }, 
+    {
+      "description": "Hypervisors (os-hypervisors)", 
+      "name": "hypervisors", 
+      "summary": "Displays extra statistical information from the machine that hosts\nthe hypervisor through the API for the hypervisor (XenAPI or\nKVM/libvirt)."
+    }, 
+    {
+      "description": "Hypervisor with status (os-hypervisor-status)", 
+      "name": "hypervisor-status", 
+      "summary": "Displays extra statistical information including status from the\nmachine that hosts the hypervisor through the API for the\nhypervisor (XenAPI or KVM/libvirt)."
+    }, 
+    {
+      "description": "Attach interfaces (os-interface)", 
+      "name": "interface", 
+      "summary": "Creates, lists, gets details for, and deletes port interfaces."
+    }, 
+    {
+      "description": "Keypairs (os-keypairs)", 
+      "name": "keypairs", 
+      "summary": "Generates, imports, and deletes SSH keys.\n\nTo add a keypair to a server, specify the ``key_name`` parameter in\nthe request body in a create server request."
+    }, 
+    {
+      "description": "Migrations (os-migrations)", 
+      "name": "migrations", 
+      "summary": "Administrators only. Gets in-progress migrations for a region or\nspecified cell in a region."
+    }, 
+    {
+      "description": "Networks (os-networks)", 
+      "name": "networks", 
+      "summary": "Shows network information for and deletes networks. Also,\ndisassociates a network from a project in VLAN mode."
+    }, 
+    {
+      "description": "Quota class (os-quota-class-sets)", 
+      "name": "quota-class-sets", 
+      "summary": "Provides quota classes management support."
+    }, 
+    {
+      "description": "Quota sets (os-quota-sets)", 
+      "name": "quota-sets", 
+      "summary": "Administrators only, depending on policy settings.\n\nShows quotas for a tenant and shows and updates default quotas."
+    }, 
+    {
+      "description": "Security groups (os-security-groups)", 
+      "name": "security-groups", 
+      "summary": "Lists, lists by server, creates, shows information for, updates,\nand deletes security groups."
+    }, 
+    {
+      "description": "Rules for security group (os-security-group-rules)", 
+      "name": "os-security-group-rules", 
+      "summary": "Creates and deletes security group rules."
+    }, 
+    {
+      "description": "Rules for default security group (os-security-group-default-rules)", 
+      "name": "security-group-default-rules", 
+      "summary": "Lists, shows information for, and creates default security group\nrules."
+    }, 
+    {
+      "description": "Server groups (os-server-groups)", 
+      "name": "server-groups", 
+      "summary": "Lists, shows information for, creates, and deletes server groups."
+    }, 
+    {
+      "description": "Manage services (os-services)", 
+      "name": "services", 
+      "summary": "Lists, enables, and disables Compute services in all hosts."
+    }, 
+    {
+      "description": "Usage reports (os-simple-tenant-usage)", 
+      "name": "simple-tenant-usage", 
+      "summary": "Reports usage statistics on compute and storage resources."
+    }, 
+    {
+      "description": "Volume extension (os-volumes, os-snapshots)", 
+      "name": "volume", 
+      "summary": "Manages volumes and snapshots for use with the Compute API."
+    }
+  ], 
+  "title": "Compute API", 
+  "version": "v2"
+}

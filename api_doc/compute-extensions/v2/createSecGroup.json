@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "security_group": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``security_group`` action in the request body.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Security group description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The security group name.", 
+      "format": ""
+    }
+  }
+}

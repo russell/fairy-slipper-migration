@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "Security group description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The security group name.", 
+      "format": ""
+    }
+  }
+}

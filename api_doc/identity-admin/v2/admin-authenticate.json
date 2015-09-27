@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "username": {
+      "required": false, 
+      "type": "string", 
+      "description": "The user name. Required if you include the ``passwordCredentials``\nobject. If you do not provide a password credentials, you must\nprovide a token.", 
+      "format": ""
+    }, 
+    "passwordCredentials": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``passwordCredentials`` object. To authenticate, you must provide\neither a user ID and password or a token.", 
+      "format": ""
+    }, 
+    "tenantId": {
+      "required": false, 
+      "type": "string", 
+      "description": "The tenant ID. Both the ``tenantId`` and ``tenantName`` attributes\nare optional, but should not be specified together. If both\nattributes are specified, the server responds with a ``400`` ``Bad\nRequest`` .", 
+      "format": ""
+    }, 
+    "token": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``token`` object. Required if you do not provide password\ncredentials.", 
+      "format": ""
+    }, 
+    "tenantName": {
+      "required": false, 
+      "type": "string", 
+      "description": "The tenant name. Both the ``tenantId`` and ``tenantName``\nattributes are optional, but should not be specified together. If\nboth attributes are specified, the server responds with a ``400``\n``Bad Request`` .", 
+      "format": ""
+    }, 
+    "password": {
+      "required": false, 
+      "type": "string", 
+      "description": "The password of the user. Required if you include the\n``passwordCredentials`` object. If you do not provide a password\ncredentials, you must provide a token.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The token ID. This is a required field in the ``token`` object.", 
+      "format": ""
+    }
+  }
+}

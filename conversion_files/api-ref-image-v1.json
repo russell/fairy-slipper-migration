@@ -1,0 +1,50 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#addMember-v1": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#createImage-v1": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#deleteImage-v1": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#getImage-v1": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#getSharedImages-v1": "shared-images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#listDetailImage-v1": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#listImage-v1": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#listVersions-image-v1": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#removeMember-v1": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#replaceMember-v1": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#updateImage-v1": "images"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#Images": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#detail": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#image_id": "images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#members": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#owner-2": "shared-images", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#owner-id": "members", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/image-api/src/v1/os-image-1.0.wadl#versions": "versions"
+  }, 
+  "service": "image", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Images", 
+      "name": "images", 
+      "summary": ""
+    }, 
+    {
+      "description": "Members", 
+      "name": "members", 
+      "summary": ""
+    }, 
+    {
+      "description": "Shared images", 
+      "name": "shared-images", 
+      "summary": ""
+    }
+  ], 
+  "title": "Image service API", 
+  "version": "v1"
+}

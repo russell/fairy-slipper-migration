@@ -1,0 +1,164 @@
+{
+  "identity/v2/": {
+    "version": "v2", 
+    "service": "identity", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Identity API"
+  }, 
+  "database/v1/": {
+    "version": "v1", 
+    "service": "database", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Database Service API"
+  }, 
+  "identity/v3/": {
+    "version": "v3", 
+    "service": "identity", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Identity API"
+  }, 
+  "compute/v2.1/": {
+    "version": "v2.1", 
+    "service": "compute", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Compute API"
+  }, 
+  "compute-extensions/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "compute-extensions", 
+    "title": "Compute API"
+  }, 
+  "orchestration/v1/": {
+    "version": "v1", 
+    "service": "orchestration", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Orchestration API"
+  }, 
+  "networking/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "networking", 
+    "title": "Networking API"
+  }, 
+  "data-processing/v1.1/": {
+    "version": "v1.1", 
+    "service": "data-processing", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Data Processing API"
+  }, 
+  "telemetry/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "telemetry", 
+    "title": "Telemetry API"
+  }, 
+  "identity-admin/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "identity-admin", 
+    "title": "Identity Admin API"
+  }, 
+  "blockstorage/v1/": {
+    "version": "v1", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "blockstorage", 
+    "title": "Block Storage API"
+  }, 
+  "networking-extensions/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "networking-extensions", 
+    "title": "Networking API"
+  }, 
+  "identity-extensions/v2/": {
+    "version": "v2", 
+    "service": "identity-extensions", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Identity API"
+  }, 
+  "identity-extensions/v3/": {
+    "version": "v3", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "identity-extensions", 
+    "title": "Identity API"
+  }, 
+  "blockstorage/v2/": {
+    "version": "v2", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "blockstorage", 
+    "title": "Block Storage API"
+  }, 
+  "objectstorage/v1/": {
+    "version": "v1", 
+    "service": "objectstorage", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Object Storage API"
+  }, 
+  "compute/v2/": {
+    "version": "v2", 
+    "service": "compute", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "title": "Compute API"
+  }, 
+  "image/v1/": {
+    "version": "v1", 
+    "license": {
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html", 
+      "name": "Apache 2.0"
+    }, 
+    "service": "image", 
+    "title": "Image service API"
+  }
+}

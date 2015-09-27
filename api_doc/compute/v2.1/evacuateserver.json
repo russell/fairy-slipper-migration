@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name or ID of the host to which the server is evacuated.", 
+      "format": ""
+    }, 
+    "on_shared_storage": {
+      "required": true, 
+      "type": "string", 
+      "description": "Set to ``True`` to indicate that server is on shared storage.\nOtherwise, set to ``False`` .", 
+      "format": ""
+    }, 
+    "admin_password": {
+      "required": false, 
+      "type": "string", 
+      "description": "An administrative password to access the evacuated instance.\n\nTo set the administrative password, set the\n``enable_instance_password`` option to ``True`` in the\nconfiguration. If this option is set to ``False`` and you attempt\nto set the administrative password, the password is not set and the\nresponse shows a ``null`` value for the ``admin_password``\nparameter.", 
+      "format": ""
+    }, 
+    "evacuate": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``evacuate`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

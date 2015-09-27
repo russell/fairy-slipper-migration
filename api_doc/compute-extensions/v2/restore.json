@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "restore": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``restore`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

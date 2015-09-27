@@ -1,0 +1,7 @@
+{
+  "domain_entry": {
+    "project": "project1", 
+    "scope": "public", 
+    "domain": "domain1.example.org"
+  }
+}

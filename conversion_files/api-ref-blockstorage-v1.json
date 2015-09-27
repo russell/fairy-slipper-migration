@@ -1,0 +1,78 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#deleteQuotas": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#deleteQuotasUser": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#getDefaults": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#showQuota": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#showQuotaDetailUser": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#showQuotaUser": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#updateQuota": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#updateQuotaUser": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#createSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#createVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#createVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#deleteSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#deleteVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#deleteVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getSnapshotsDetail": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getSnapshotsSimple": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getVolumeTypes": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getVolumesDetail": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#getVolumesSimple": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#listVersionsv1": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#showSnapshotMetadata": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#showVersionDetailsv1": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#updateSnapshotMetadata": "snapshots"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#defaults-cinder-v1": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#tenant_id-quotas-cinder-v1": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#user_id-cinder-v1": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/os-quota-sets-v1.wadl#user_id-detail-cinder-v1": "os-quota-sets-v1", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#detail-snapshots": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#detail-volume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#snapshot-metadata": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#snapshot_id": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#snapshots": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#types": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#version": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#versions": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#volume_id": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#volume_type_id": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v1/volume-api-v1.wadl#volumes": "volumes"
+  }, 
+  "service": "blockstorage", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Volumes", 
+      "name": "volumes", 
+      "summary": "The ``snapshot_id`` and ``source_volid`` parameters specify the ID\nof the snapshot or volume from which the volume originates. If the\nvolume was not created from a snapshot or source volume, these\nvalues are null."
+    }, 
+    {
+      "description": "Volume types", 
+      "name": "types", 
+      "summary": ""
+    }, 
+    {
+      "description": "Snapshots", 
+      "name": "snapshots", 
+      "summary": ""
+    }, 
+    {
+      "description": "Quota sets extension (os-quota-sets)", 
+      "name": "os-quota-sets-v1", 
+      "summary": "Administrators only, depending on policy settings.\n\nShows, updates, and deletes quotas for a tenant."
+    }
+  ], 
+  "title": "Block Storage API", 
+  "version": "v1"
+}

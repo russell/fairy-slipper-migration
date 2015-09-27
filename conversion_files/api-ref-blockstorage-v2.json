@@ -1,0 +1,172 @@
+{
+  "file_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-limits-v2.wadl": "limits", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-vol-image-meta-v2.wadl": "os-vol-image-meta-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-volume-manage-v2.wadl": "volume-manage"
+  }, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-backend-capabilities-v2.wadl#getBackendCapabilities": "os-backend-capabilities-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#associateQoSSpec": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#createQoSSpec": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#disassociateQoSSpec": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#disassociateQoSSpecAll": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#getQoSAssociations": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#listQoSSpecs": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#deleteQuotas": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#deleteQuotasUser": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#getDefaults": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#showQuota": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#showQuotaDetailUser": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#showQuotaUser": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#updateQuota": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#updateQuotaUser": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-volume-type-access-v2.wadl#createVolumeTypeAccessExt": "volume-type-access", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#attachVolume": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#createSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#createVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#createVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#deleteSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#deleteVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#deleteVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#extendVolume": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getSnapshotsDetail": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getSnapshotsSimple": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getVolumeTypes": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getVolumesDetail": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#getVolumesSimple": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#listExtensions-cinder-v2": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#listVersions": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#resetVolume": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#setVolumeimagemetadata": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#showSnapshotMetadata": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#unsetVolumeimagemetadata": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#updateSnapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#updateSnapshotMetadata": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#updateVolume": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#updateVolumeType": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#updateVolumeTypeExtraSpecs": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#versionDetails": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#createBackup": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#deleteBackup": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#forceDeleteBackup": "ext-backups-actions-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#listBackups": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#listBackupsDetails": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#restoreBackup": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#showBackup": "ext-backups"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-backend-capabilities-v2.wadl#hostname": "os-backend-capabilities-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#associate": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#associations": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#disassociate": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#disassociate_all": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#qos-specs": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-qos-v2.wadl#qos_id": "qos-v2-qos-specs", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#defaults-cinder-v2": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#tenant_id_cinder_v2": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#user_id-cinder-v2": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-quota-sets-v2.wadl#user_id-detail-cinder-v2": "quota-sets", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/os-volume-type-access-v2.wadl#volumes": "volume-type-access", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#detail": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#detail-snapshot": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#extensions": "extensions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#snapshot-metadata": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#snapshot_id": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#snapshots": "snapshots", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#types": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#version": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#versions": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#volume-action": "volume-api-v2-volumes-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#volume_id": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#volume_type_id": "types", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-api-v2.wadl#volumes": "volumes", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#action": "ext-backups-actions-v2", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#backup_id": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#backups": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#detail": "ext-backups", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/volume-api/src/v2/volume-backups-api-v2.wadl#restore": "ext-backups"
+  }, 
+  "service": "blockstorage", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "API extensions (extensions)", 
+      "name": "extensions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Limits (limits)", 
+      "name": "limits", 
+      "summary": "Shows absolute limits for a tenant.\n\nAn absolute limit value of ``-1`` indicates that the absolute limit\nfor the item is infinite."
+    }, 
+    {
+      "description": "Volumes (volumes)", 
+      "name": "volumes", 
+      "summary": "A volume is a detachable block storage device similar to a USB hard\ndrive. You can attach a volume to one instance at a time.\n\nThe ``snapshot_id`` and ``source_volid`` parameters specify the ID\nof the snapshot or volume from which this volume originates. If the\nvolume was not created from a snapshot or source volume, these\nvalues are null.\n\nWhen you create, list, update, or delete volumes, the possible\nstatus values are:\n\nVolume statuses\n\n+------------------+----------------------------------------------------------+\n| Status           | Description                                              |\n+------------------+----------------------------------------------------------+\n| creating         | The volume is being created.                             |\n+------------------+----------------------------------------------------------+\n| available        | The volume is ready to be attached to an instance.       |\n+------------------+----------------------------------------------------------+\n| attaching        | The volume is attaching to an instance.                  |\n+------------------+----------------------------------------------------------+\n| in-use           | The volume is attached to an instance.                   |\n+------------------+----------------------------------------------------------+\n| deleting         | The volume is being deleted.                             |\n+------------------+----------------------------------------------------------+\n| error            | An error occurred during volume creation.                |\n+------------------+----------------------------------------------------------+\n| error_deleting   | An error occurred during volume deletion.                |\n+------------------+----------------------------------------------------------+\n| backing-up       | The volume is being backed up.                           |\n+------------------+----------------------------------------------------------+\n| restoring-backup | A backup is being restored to the volume.                |\n+------------------+----------------------------------------------------------+\n| error_restoring  | An error occurred during backup restoration to a volume. |\n+------------------+----------------------------------------------------------+\n| error_extending  | An error occurred while attempting to extend a volume.   |\n+------------------+----------------------------------------------------------+"
+    }, 
+    {
+      "description": "Volume type access (volumes)", 
+      "name": "volume-type-access", 
+      "summary": "Creates private volumes.\n\nBy default, volumes are public. To create a private volume, set the\n``is_public`` boolean field to ``false`` at volume creation time.\nTo control access to a private volume, you add a project to or\nremove a project from the volume. Private volume types without\nprojects are only accessible by users with the administrative role\nand context."
+    }, 
+    {
+      "description": "Volume actions (volumes, action)", 
+      "name": "volume-api-v2-volumes-actions", 
+      "summary": "Performs actions for a specified volume. Extends the size, resets\nstatuses for, sets image metadata, or removes image metadata from a\nvolume."
+    }, 
+    {
+      "description": "Backups (backups)", 
+      "name": "ext-backups", 
+      "summary": "A backup is a full copy of a volume stored in an external service.\nThe service can be configured. The only supported service is Object\nStorage. A backup can subsequently be restored from the external\nservice to either the same volume that the backup was originally\ntaken from or to a new volume. Backup and restore operations can\nonly be carried out on volumes that are in an unattached and\navailable state.\n\nWhen you create, list, or delete backups, these status values are\npossible:\n\nBackup statuses\n\n+-----------------+----------------------------------------------------------+\n| Status          | Description                                              |\n+-----------------+----------------------------------------------------------+\n| creating        | The backup is being created.                             |\n+-----------------+----------------------------------------------------------+\n| available       | The backup is ready to be restored to a volume.          |\n+-----------------+----------------------------------------------------------+\n| deleting        | The backup is being deleted.                             |\n+-----------------+----------------------------------------------------------+\n| error           | An error has occurred with the backup.                   |\n+-----------------+----------------------------------------------------------+\n| restoring       | The backup is being restored to a volume.                |\n+-----------------+----------------------------------------------------------+\n| error_restoring | An error occurred during backup restoration to a volume. |\n+-----------------+----------------------------------------------------------+\n\nIn the event of an error, more information about the error can be\nfound in the fail_reason field for the backup."
+    }, 
+    {
+      "description": "Backup actions (backups, action)", 
+      "name": "ext-backups-actions-v2", 
+      "summary": "Force-deletes a backup."
+    }, 
+    {
+      "description": "Capabilities for storage back ends (capabilities)", 
+      "name": "os-backend-capabilities-v2", 
+      "summary": "Shows capabilities for a storage back end."
+    }, 
+    {
+      "description": "Quota sets extension (os-quota-sets)", 
+      "name": "quota-sets", 
+      "summary": "Administrators only, depending on policy settings.\n\nShows, updates, and deletes quotas for a tenant."
+    }, 
+    {
+      "description": "Quality of service (QoS) specifications (qos-specs)", 
+      "name": "qos-v2-qos-specs", 
+      "summary": "Administrators only, depending on policy settings.\n\nCreates, lists, shows details for, associates, disassociates, sets\nkeys, unsets keys, and deletes quality of service (QoS)\nspecifications."
+    }, 
+    {
+      "description": "Volume types (types)", 
+      "name": "types", 
+      "summary": ""
+    }, 
+    {
+      "description": "Volume snapshots (snapshots)", 
+      "name": "snapshots", 
+      "summary": "A snapshot is a point-in-time copy of the data that a volume\ncontains.\n\nWhen you create, list, or delete snapshots, these status values are\npossible:\n\nSnapshot statuses\n\n+----------------+---------------------------------------------+\n| Status         | Description                                 |\n+----------------+---------------------------------------------+\n| creating       | The snapshot is being created.              |\n+----------------+---------------------------------------------+\n| available      | The snapshot is ready to be used.           |\n+----------------+---------------------------------------------+\n| deleting       | The snapshot is being deleted.              |\n+----------------+---------------------------------------------+\n| error          | An error occurred during snapshot creation. |\n+----------------+---------------------------------------------+\n| error_deleting | An error occurred during snapshot deletion. |\n+----------------+---------------------------------------------+"
+    }, 
+    {
+      "description": "Volume manage extension (os-volume-manage)", 
+      "name": "volume-manage", 
+      "summary": "Creates volumes by using existing storage instead of allocating new\nstorage."
+    }, 
+    {
+      "description": "Volume image metadata extension (os-vol-image-meta)", 
+      "name": "os-vol-image-meta-v2", 
+      "summary": "Shows image metadata that is associated with a specified volume."
+    }
+  ], 
+  "title": "Block Storage API", 
+  "version": "v2"
+}

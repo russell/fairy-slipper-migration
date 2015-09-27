@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service type.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables or disables a service. If ``true`` , the service is\nenabled. If ``false`` , the service is disabled. Default is\n``true`` .", 
+      "format": ""
+    }, 
+    "name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The service name.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.. swagger:tag:: plugins
+   :summary: Plugins
+
+   A plugin object defines the Hadoop or Spark version that it can
+   install and which configurations can be set for the cluster.
+
+.. swagger:tag:: imageregistry
+   :summary: Image registry
+
+   The image registry is a tool for managing images. Each plugin lists
+   required tags for an image. The Data Processing service also
+   requires a user name to log in to an instance’s OS for remote
+   operations execution.
+   
+   The image registry enables you to add tags to and remove tags from
+   images and define the OS user name.
+
+.. swagger:tag:: node-group-template
+   :summary: Node group templates
+
+   A cluster is a group of nodes with the same configuration. A node
+   group template configures a node in the cluster.
+   
+   A template configures Hadoop processes and VM characteristics, such
+   as the number of reduced slots for task tracker, the number of
+   CPUs, and the amount of RAM. The template specifies the VM
+   characteristics through an OpenStack flavor.
+
+.. swagger:tag:: clustertemplate
+   :summary: Cluster templates
+
+   A cluster template configures a Hadoop cluster. A cluster template
+   lists node groups with the number of instances in each group. You
+   can also define cluster-scoped configurations in a cluster
+   template.
+
+.. swagger:tag:: clusters
+   :summary: Clusters
+
+   A cluster is a group of nodes with the same configuration.
+
+.. swagger:tag:: event-log
+   :summary: Event log
+
+   The event log feature provides information about cluster
+   provisioning. In the event of errors, the event log shows the
+   reason for the failure.
+
+.. swagger:tag:: datasources
+   :summary: Data sources
+
+   A data source object defines the location of input or output for
+   MapReduce jobs and might reference different types of storage.
+   
+   The Data Processing service does not validate data source
+   locations.
+
+.. swagger:tag:: jobbinary-internals
+   :summary: Job binary internals
+
+   Job binary internal objects represent data processing applications
+   and libraries that are stored in the internal database.
+
+.. swagger:tag:: jobbinaries
+   :summary: Job binaries
+
+   Job binary objects represent data processing applications and
+   libraries that are stored in either the internal database or the
+   Object Storage service.
+
+.. swagger:tag:: jobs
+   :summary: Jobs
+
+   A job object lists the binaries that a job needs to run. To run a
+   job, you must specify data sources and job parameters.
+   
+   You can run a job on an existing or new transient cluster.
+
+.. swagger:tag:: job-executions
+   :summary: Job executions
+
+   A job execution object represents a Hadoop job that runs on a
+   specified cluster. A job execution polls the status of a running
+   job and reports it to the user. Also a user can cancel a running
+   job.
+
+.. swagger:tag:: job-types
+   :summary: Job types
+
+   Each plugin that supports EDP also supports specific job types.
+   Different versions of a plugin might actually support different job
+   types. Configuration options vary by plugin, version, and job type.
+   
+   The job types provide information about which plugins support which
+   job types and how to configure the job types.
+

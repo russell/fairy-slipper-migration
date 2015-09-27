@@ -1,0 +1,41 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": false, 
+      "type": "string", 
+      "description": "Current status of the deployment. A valid value is ``COMPLETE`` ,\n``IN_PROGRESS`` , or ``FAILED`` .", 
+      "format": ""
+    }, 
+    "server_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the compute server to which the configuration applies.", 
+      "format": ""
+    }, 
+    "config_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the software configuration resource that runs when\napplying to the server.", 
+      "format": ""
+    }, 
+    "stack_user_project_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "Authentication project ID, which can also perform operations on\nthis deployment.", 
+      "format": ""
+    }, 
+    "action": {
+      "required": true, 
+      "type": "string", 
+      "description": "The current stack action that triggers this deployment resource.", 
+      "format": ""
+    }, 
+    "status_reason": {
+      "required": false, 
+      "type": "string", 
+      "description": "Error description for the last status change, which is ``FAILED``\nstatus.", 
+      "format": ""
+    }
+  }
+}

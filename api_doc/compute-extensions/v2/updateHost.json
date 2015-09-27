@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "Valid values are enable or disable.", 
+      "format": ""
+    }, 
+    "maintenance_mode": {
+      "required": true, 
+      "type": "string", 
+      "description": "Valid values are enable or disable.", 
+      "format": ""
+    }
+  }
+}

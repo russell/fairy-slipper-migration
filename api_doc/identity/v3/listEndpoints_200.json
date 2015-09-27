@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "region_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service region ID.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "The endpoint links.", 
+      "format": ""
+    }, 
+    "url": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service URL.", 
+      "format": ""
+    }, 
+    "region": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service region.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If ``true`` , the endpoint is enabled. If ``false`` , the endpoint\nis disabled.", 
+      "format": ""
+    }, 
+    "interface": {
+      "required": true, 
+      "type": "string", 
+      "description": "The interface type, which is ``admin`` , ``public`` , or\n``internal`` .", 
+      "format": ""
+    }, 
+    "service_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service ID.", 
+      "format": ""
+    }, 
+    "endpoints": {
+      "required": true, 
+      "type": "string", 
+      "description": "An ``endpoints`` object.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The endpoint ID.", 
+      "format": ""
+    }
+  }
+}

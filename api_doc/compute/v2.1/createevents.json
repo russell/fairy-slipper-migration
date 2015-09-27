@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "status": {
+      "required": true, 
+      "type": "string", 
+      "description": "The event status. Valid values are ``failed`` , ``completed`` , and\n``in-progress`` .", 
+      "format": ""
+    }, 
+    "tag": {
+      "required": false, 
+      "type": "string", 
+      "description": "A string value that identifies the event.", 
+      "format": ""
+    }, 
+    "events": {
+      "required": true, 
+      "type": "object", 
+      "description": "Specify the ``events`` action in the request body.", 
+      "format": ""
+    }, 
+    "server_uuid": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the server that is associated with the event.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The event name. Valid values are ``network-changed`` , ``network-\nvif-plugged`` , ``network-vif-unplugged`` , and ``network-vif-\ndeletedplugged`` .", 
+      "format": ""
+    }
+  }
+}

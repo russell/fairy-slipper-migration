@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "roles_links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Role links.", 
+      "format": ""
+    }, 
+    "roles": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``roles`` object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "The role description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The role name.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The role ID.", 
+      "format": ""
+    }
+  }
+}

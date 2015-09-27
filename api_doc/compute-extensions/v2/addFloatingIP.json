@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "fixed_address": {
+      "required": false, 
+      "type": "string", 
+      "description": "A fixed IP address that you want to associate with the floating IP\naddress.", 
+      "format": ""
+    }, 
+    "addFloatingIp": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``addFloatingIP`` action in the request body.", 
+      "format": ""
+    }, 
+    "address": {
+      "required": true, 
+      "type": "string", 
+      "description": "A floating IP address to associate with the instance.", 
+      "format": ""
+    }
+  }
+}

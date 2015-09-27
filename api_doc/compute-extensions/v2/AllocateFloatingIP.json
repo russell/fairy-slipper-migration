@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "pool": {
+      "required": false, 
+      "type": "string", 
+      "description": "Pool to allocate IP address from. Will use default pool if not\nspecified.", 
+      "format": ""
+    }
+  }
+}

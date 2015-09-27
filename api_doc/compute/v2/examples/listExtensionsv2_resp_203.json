@@ -1,0 +1,676 @@
+{
+  "extensions": [
+    {
+      "updated": "2011-06-09T00:00:00+00:00", 
+      "description": "Multiple network support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/multinic/api/v1.1", 
+      "alias": "NMN", 
+      "name": "Multinic"
+    }, 
+    {
+      "updated": "2011-09-27T00:00:00+00:00", 
+      "description": "Disk Management Extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/disk_config/api/v1.1", 
+      "alias": "OS-DCF", 
+      "name": "DiskConfig"
+    }, 
+    {
+      "updated": "2013-01-30T00:00:00+00:00", 
+      "description": "Extended Server Attributes support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_availability_zone/api/v2", 
+      "alias": "OS-EXT-AZ", 
+      "name": "ExtendedAvailabilityZone"
+    }, 
+    {
+      "updated": "2013-02-19T00:00:00+00:00", 
+      "description": "Adds image size to image listings.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/image_size/api/v1.1", 
+      "alias": "OS-EXT-IMG-SIZE", 
+      "name": "ImageSize"
+    }, 
+    {
+      "updated": "2013-01-06T00:00:00+00:00", 
+      "description": "Adds type parameter to the ip list.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_ips/api/v1.1", 
+      "alias": "OS-EXT-IPS", 
+      "name": "ExtendedIps"
+    }, 
+    {
+      "updated": "2013-03-07T00:00:00+00:00", 
+      "description": "Adds mac address parameter to the ip list.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_ips_mac/api/v1.1", 
+      "alias": "OS-EXT-IPS-MAC", 
+      "name": "ExtendedIpsMac"
+    }, 
+    {
+      "updated": "2011-11-03T00:00:00+00:00", 
+      "description": "Extended Server Attributes support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_status/api/v1.1", 
+      "alias": "OS-EXT-SRV-ATTR", 
+      "name": "ExtendedServerAttributes"
+    }, 
+    {
+      "updated": "2011-11-03T00:00:00+00:00", 
+      "description": "Extended Status support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_status/api/v1.1", 
+      "alias": "OS-EXT-STS", 
+      "name": "ExtendedStatus"
+    }, 
+    {
+      "updated": "2013-03-07T00:00:00+00:00", 
+      "description": "Adds network id parameter to the virtual interface list.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended-virtual-interfaces-net/api/v1.1", 
+      "alias": "OS-EXT-VIF-NET", 
+      "name": "ExtendedVIFNet"
+    }, 
+    {
+      "updated": "2012-08-29T00:00:00+00:00", 
+      "description": "Support to show the disabled status of a flavor.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_disabled/api/v1.1", 
+      "alias": "OS-FLV-DISABLED", 
+      "name": "FlavorDisabled"
+    }, 
+    {
+      "updated": "2011-09-14T00:00:00+00:00", 
+      "description": "Provide additional data for flavors.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_extra_data/api/v1.1", 
+      "alias": "OS-FLV-EXT-DATA", 
+      "name": "FlavorExtraData"
+    }, 
+    {
+      "updated": "2011-07-19T00:00:00+00:00", 
+      "description": "Pass arbitrary key/value pairs to the scheduler.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/scheduler-hints/api/v2", 
+      "alias": "OS-SCH-HNT", 
+      "name": "SchedulerHints"
+    }, 
+    {
+      "updated": "2013-04-29T00:00:00+00:00", 
+      "description": "Adds launched_at and terminated_at on Servers.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/server_usage/api/v1.1", 
+      "alias": "OS-SRV-USG", 
+      "name": "ServerUsage"
+    }, 
+    {
+      "updated": "2011-09-20T00:00:00+00:00", 
+      "description": "Enable admin-only server actions\n\n    Actions include: pause, unpause, suspend, resume, migrate,\n    resetNetwork, injectNetworkInfo, lock, unlock, createBackup\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/admin-actions/api/v1.1", 
+      "alias": "os-admin-actions", 
+      "name": "AdminActions"
+    }, 
+    {
+      "updated": "2012-10-28T00:00:00-00:00", 
+      "description": "Agents support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/agents/api/v2", 
+      "alias": "os-agents", 
+      "name": "Agents"
+    }, 
+    {
+      "updated": "2012-01-12T00:00:00+00:00", 
+      "description": "Admin-only aggregate administration.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/aggregates/api/v1.1", 
+      "alias": "os-aggregates", 
+      "name": "Aggregates"
+    }, 
+    {
+      "updated": "2013-08-29T00:00:00-00:00", 
+      "description": "Assisted volume snapshots.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/assisted-volume-snapshots/api/v2", 
+      "alias": "os-assisted-volume-snapshots", 
+      "name": "AssistedVolumeSnapshots"
+    }, 
+    {
+      "updated": "2012-07-22T00:00:00+00:00", 
+      "description": "Attach interface support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/interfaces/api/v1.1", 
+      "alias": "os-attach-interfaces", 
+      "name": "AttachInterfaces"
+    }, 
+    {
+      "updated": "2012-12-21T00:00:00+00:00", 
+      "description": "1. Add availability_zone to the Create Server v1.1 API.\n       2. Add availability zones describing.\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/availabilityzone/api/v1.1", 
+      "alias": "os-availability-zone", 
+      "name": "AvailabilityZone"
+    }, 
+    {
+      "updated": "2013-08-27T00:00:00+00:00", 
+      "description": "Add extended status in Baremetal Nodes v2 API.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/baremetal_ext_status/api/v2", 
+      "alias": "os-baremetal-ext-status", 
+      "name": "BareMetalExtStatus"
+    }, 
+    {
+      "updated": "2013-01-04T00:00:00+00:00", 
+      "description": "Admin-only bare-metal node administration.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/baremetal_nodes/api/v2", 
+      "alias": "os-baremetal-nodes", 
+      "name": "BareMetalNodes"
+    }, 
+    {
+      "updated": "2013-07-08T00:00:00+00:00", 
+      "description": "Allow boot with the new BDM data format.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/block_device_mapping_v2_boot/api/v2", 
+      "alias": "os-block-device-mapping-v2-boot", 
+      "name": "BlockDeviceMappingV2Boot"
+    }, 
+    {
+      "updated": "2013-05-27T00:00:00+00:00", 
+      "description": "Adding functionality to get cell capacities.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/cell_capacities/api/v1.1", 
+      "alias": "os-cell-capacities", 
+      "name": "CellCapacities"
+    }, 
+    {
+      "updated": "2013-05-14T00:00:00+00:00", 
+      "description": "Enables cells-related functionality such as adding neighbor cells,\n    listing neighbor cells, and getting the capabilities of the local cell.\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/cells/api/v1.1", 
+      "alias": "os-cells", 
+      "name": "Cells"
+    }, 
+    {
+      "updated": "2012-01-19T00:00:00+00:00", 
+      "description": "Certificates support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/certificates/api/v1.1", 
+      "alias": "os-certificates", 
+      "name": "Certificates"
+    }, 
+    {
+      "updated": "2011-12-16T00:00:00+00:00", 
+      "description": "Adds actions to create cloudpipe instances.\n\n    When running with the Vlan network mode, you need a mechanism to route\n    from the public Internet to your vlans.  This mechanism is known as a\n    cloudpipe.\n\n    At the time of creating this class, only OpenVPN is supported.  Support for\n    a SSH Bastion host is forthcoming.\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/cloudpipe/api/v1.1", 
+      "alias": "os-cloudpipe", 
+      "name": "Cloudpipe"
+    }, 
+    {
+      "updated": "2012-11-14T00:00:00+00:00", 
+      "description": "Adds the ability to set the vpn ip/port for cloudpipe instances.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/cloudpipe-update/api/v2", 
+      "alias": "os-cloudpipe-update", 
+      "name": "CloudpipeUpdate"
+    }, 
+    {
+      "updated": "2012-07-16T00:00:00+00:00", 
+      "description": "Config Drive Extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/config_drive/api/v1.1", 
+      "alias": "os-config-drive", 
+      "name": "ConfigDrive"
+    }, 
+    {
+      "updated": "2011-12-08T00:00:00+00:00", 
+      "description": "Console log output support, with tailing ability.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-console-output/api/v2", 
+      "alias": "os-console-output", 
+      "name": "ConsoleOutput"
+    }, 
+    {
+      "updated": "2011-12-23T00:00:00+00:00", 
+      "description": "Interactive Console support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-consoles/api/v2", 
+      "alias": "os-consoles", 
+      "name": "Consoles"
+    }, 
+    {
+      "updated": "2011-07-19T00:00:00+00:00", 
+      "description": "Extended support to the Create Server v1.1 API.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/createserverext/api/v1.1", 
+      "alias": "os-create-server-ext", 
+      "name": "Createserverext"
+    }, 
+    {
+      "updated": "2011-09-01T00:00:00+00:00", 
+      "description": "Instance deferred delete.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/deferred-delete/api/v1.1", 
+      "alias": "os-deferred-delete", 
+      "name": "DeferredDelete"
+    }, 
+    {
+      "updated": "2013-01-06T00:00:00+00:00", 
+      "description": "Enables server evacuation.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/evacuate/api/v2", 
+      "alias": "os-evacuate", 
+      "name": "Evacuate"
+    }, 
+    {
+      "updated": "2013-04-19T00:00:00+00:00", 
+      "description": "Adds optional fixed_address to the add floating IP command.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_floating_ips/api/v2", 
+      "alias": "os-extended-floating-ips", 
+      "name": "ExtendedFloatingIps"
+    }, 
+    {
+      "updated": "2013-06-09T00:00:00+00:00", 
+      "description": "Adds ability for admins to delete quota\n    and optionally force the update Quota command.\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_quotas/api/v1.1", 
+      "alias": "os-extended-quotas", 
+      "name": "ExtendedQuotas"
+    }, 
+    {
+      "updated": "2013-10-21T00:00:00-00:00", 
+      "description": "Extended hypervisors support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_hypervisors/api/v1.1", 
+      "alias": "os-extended-hypervisors", 
+      "name": "ExtendedHypervisors"
+    }, 
+    {
+      "updated": "2013-05-17T00:00:00-00:00", 
+      "description": "Extended services support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_services/api/v2", 
+      "alias": "os-extended-services", 
+      "name": "ExtendedServices"
+    }, 
+    {
+      "updated": "2013-06-07T00:00:00+00:00", 
+      "description": "Extended Volumes support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_volumes/api/v1.1", 
+      "alias": "os-extended-volumes", 
+      "name": "ExtendedVolumes"
+    }, 
+    {
+      "updated": "2012-10-18T13:25:27-06:00", 
+      "description": "Fixed IPs support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/fixed_ips/api/v2", 
+      "alias": "os-fixed-ips", 
+      "name": "FixedIPs"
+    }, 
+    {
+      "updated": "2012-08-01T00:00:00+00:00", 
+      "description": "Flavor access support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_access/api/v2", 
+      "alias": "os-flavor-access", 
+      "name": "FlavorAccess"
+    }, 
+    {
+      "updated": "2011-06-23T00:00:00+00:00", 
+      "description": "Instance type (flavor) extra specs.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_extra_specs/api/v1.1", 
+      "alias": "os-flavor-extra-specs", 
+      "name": "FlavorExtraSpecs"
+    }, 
+    {
+      "updated": "2012-01-19T00:00:00+00:00", 
+      "description": "\n    Flavor create/delete API support\n    ", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_manage/api/v1.1", 
+      "alias": "os-flavor-manage", 
+      "name": "FlavorManage"
+    }, 
+    {
+      "updated": "2012-08-29T00:00:00+00:00", 
+      "description": "Support to show the rxtx status of a flavor.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_rxtx/api/v1.1", 
+      "alias": "os-flavor-rxtx", 
+      "name": "FlavorRxtx"
+    }, 
+    {
+      "updated": "2012-08-29T00:00:00+00:00", 
+      "description": "Support to show the swap status of a flavor.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/flavor_swap/api/v1.1", 
+      "alias": "os-flavor-swap", 
+      "name": "FlavorSwap"
+    }, 
+    {
+      "updated": "2011-12-23T00:00:00+00:00", 
+      "description": "Floating IP DNS support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/ext/floating_ip_dns/api/v1.1", 
+      "alias": "os-floating-ip-dns", 
+      "name": "FloatingIpDns"
+    }, 
+    {
+      "updated": "2012-01-04T00:00:00+00:00", 
+      "description": "Floating IPs support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/floating_ip_pools/api/v1.1", 
+      "alias": "os-floating-ip-pools", 
+      "name": "FloatingIpPools"
+    }, 
+    {
+      "updated": "2011-06-16T00:00:00+00:00", 
+      "description": "Floating IPs support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/floating_ips/api/v1.1", 
+      "alias": "os-floating-ips", 
+      "name": "FloatingIps"
+    }, 
+    {
+      "updated": "2012-10-29T13:25:27-06:00", 
+      "description": "Bulk handling of Floating IPs.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/floating_ips_bulk/api/v2", 
+      "alias": "os-floating-ips-bulk", 
+      "name": "FloatingIpsBulk"
+    }, 
+    {
+      "updated": "2012-07-06T00:00:00+00:00", 
+      "description": "Fping Management Extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/fping/api/v1.1", 
+      "alias": "os-fping", 
+      "name": "Fping"
+    }, 
+    {
+      "updated": "2012-12-11T00:00:00+00:00", 
+      "description": "Support hiding server addresses in certain states.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/hide_server_addresses/api/v1.1", 
+      "alias": "os-hide-server-addresses", 
+      "name": "HideServerAddresses"
+    }, 
+    {
+      "updated": "2011-06-29T00:00:00+00:00", 
+      "description": "Admin-only host administration.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/hosts/api/v1.1", 
+      "alias": "os-hosts", 
+      "name": "Hosts"
+    }, 
+    {
+      "updated": "2012-06-21T00:00:00+00:00", 
+      "description": "Admin-only hypervisor administration.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/hypervisors/api/v1.1", 
+      "alias": "os-hypervisors", 
+      "name": "Hypervisors"
+    }, 
+    {
+      "updated": "2013-02-08T00:00:00+00:00", 
+      "description": "View a log of actions and events taken on an instance.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/instance-actions/api/v1.1", 
+      "alias": "os-instance-actions", 
+      "name": "InstanceActions"
+    }, 
+    {
+      "updated": "2014-02-18T00:00:00-00:00", 
+      "description": "Server External Event Triggers.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/server-external-events/api/v2", 
+      "alias": "os-server-external-events", 
+      "name": "ServerExternalEvents"
+    }, 
+    {
+      "updated": "2013-06-01T00:00:00+00:00", 
+      "description": "Server group support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/servergroups/api/v2", 
+      "alias": "os-server-groups", 
+      "name": "ServerGroups"
+    }, 
+    {
+      "updated": "2014-07-25T00:00:00Z", 
+      "description": "Adds quota support to server groups.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/server-group-quotas/api/v2", 
+      "alias": "os-server-group-quotas", 
+      "name": "ServerGroupQuotas"
+    }, 
+    {
+      "updated": "2012-07-06T01:00:00+00:00", 
+      "description": "Admin-only Task Log Monitoring.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/ext/services/api/v1.1", 
+      "alias": "os-instance_usage_audit_log", 
+      "name": "OSInstanceUsageAuditLog"
+    }, 
+    {
+      "updated": "2011-08-08T00:00:00+00:00", 
+      "description": "Keypair Support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/keypairs/api/v1.1", 
+      "alias": "os-keypairs", 
+      "name": "Keypairs"
+    }, 
+    {
+      "updated": "2013-05-30T00:00:00+00:00", 
+      "description": "Provide data on migrations.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/migrations/api/v2.0", 
+      "alias": "os-migrations", 
+      "name": "Migrations"
+    }, 
+    {
+      "updated": "2012-08-07T00:00:00+00:00", 
+      "description": "Allow multiple create in the Create Server v1.1 API.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/multiplecreate/api/v1.1", 
+      "alias": "os-multiple-create", 
+      "name": "MultipleCreate"
+    }, 
+    {
+      "updated": "2011-12-23T00:00:00+00:00", 
+      "description": "Admin-only Network Management Extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-networks/api/v1.1", 
+      "alias": "os-networks", 
+      "name": "Networks"
+    }, 
+    {
+      "updated": "2012-11-19T00:00:00+00:00", 
+      "description": "Network association support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/networks_associate/api/v2", 
+      "alias": "os-networks-associate", 
+      "name": "NetworkAssociationSupport"
+    }, 
+    {
+      "updated": "2013-12-17T00:00:00+00:00", 
+      "description": "Allow preservation of the ephemeral partition on rebuild.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/preserve_ephemeral_rebuild/api/v2", 
+      "alias": "os-preserve-ephemeral-rebuild", 
+      "name": "PreserveEphemeralOnRebuild"
+    }, 
+    {
+      "updated": "2011-08-08T00:00:00+00:00", 
+      "description": "Quotas management support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/quotas-sets/api/v1.1", 
+      "alias": "os-quota-sets", 
+      "name": "Quotas"
+    }, 
+    {
+      "updated": "2011-08-18T00:00:00+00:00", 
+      "description": "Instance rescue mode.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/rescue/api/v1.1", 
+      "alias": "os-rescue", 
+      "name": "Rescue"
+    }, 
+    {
+      "updated": "2014-03-05T00:00:00+00:00", 
+      "description": "Rescue instance with the image specified.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_rescue_with_image/api/v2", 
+      "alias": "os-extended-rescue-with-image", 
+      "name": "ExtendedRescueWithImage"
+    }, 
+    {
+      "updated": "2013-02-05T00:00:00+00:00", 
+      "description": "Default rules for security group support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/securitygroupdefaultrules/api/v1.1", 
+      "alias": "os-security-group-default-rules", 
+      "name": "SecurityGroupDefaultRules"
+    }, 
+    {
+      "updated": "2013-05-28T00:00:00+00:00", 
+      "description": "Security group support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/securitygroups/api/v1.1", 
+      "alias": "os-security-groups", 
+      "name": "SecurityGroups"
+    }, 
+    {
+      "updated": "2011-12-21T00:00:00+00:00", 
+      "description": "Allow Admins to view server diagnostics through server action.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/server-diagnostics/api/v1.1", 
+      "alias": "os-server-diagnostics", 
+      "name": "ServerDiagnostics"
+    }, 
+    {
+      "updated": "2012-11-29T00:00:00+00:00", 
+      "description": "Server password support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/server-password/api/v2", 
+      "alias": "os-server-password", 
+      "name": "ServerPassword"
+    }, 
+    {
+      "updated": "2012-01-23T00:00:00+00:00", 
+      "description": "Start/Stop instance compute API support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/servers/api/v1.1", 
+      "alias": "os-server-start-stop", 
+      "name": "ServerStartStop"
+    }, 
+    {
+      "updated": "2012-10-28T00:00:00-00:00", 
+      "description": "Services support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/services/api/v2", 
+      "alias": "os-services", 
+      "name": "Services"
+    }, 
+    {
+      "updated": "2013-04-06T00:00:00+00:00", 
+      "description": "Instance shelve mode.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/shelve/api/v1.1", 
+      "alias": "os-shelve", 
+      "name": "Shelve"
+    }, 
+    {
+      "updated": "2011-08-19T00:00:00+00:00", 
+      "description": "Simple tenant usage extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-simple-tenant-usage/api/v1.1", 
+      "alias": "os-simple-tenant-usage", 
+      "name": "SimpleTenantUsage"
+    }, 
+    {
+      "updated": "2012-03-07T09:46:43-05:00", 
+      "description": "Tenant-based Network Management Extension.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-tenant-networks/api/v2", 
+      "alias": "os-tenant-networks", 
+      "name": "OSTenantNetworks"
+    }, 
+    {
+      "updated": "2012-07-13T00:00:00+00:00", 
+      "description": "Provide data on limited resources that are being used.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/used_limits/api/v1.1", 
+      "alias": "os-used-limits", 
+      "name": "UsedLimits"
+    }, 
+    {
+      "updated": "2013-05-02T00:00:00+00:00", 
+      "description": "Provide data to admin on limited resources used by other tenants.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/used_limits_for_admin/api/v1.1", 
+      "alias": "os-used-limits-for-admin", 
+      "name": "UsedLimitsForAdmin"
+    }, 
+    {
+      "updated": "2012-08-07T00:00:00+00:00", 
+      "description": "Add user_data to the Create Server v1.1 API.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/userdata/api/v1.1", 
+      "alias": "os-user-data", 
+      "name": "UserData"
+    }, 
+    {
+      "updated": "2013-07-18T00:00:00+00:00", 
+      "description": "Project user quota support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/user_quotas/api/v1.1", 
+      "alias": "os-user-quotas", 
+      "name": "UserQuotas"
+    }, 
+    {
+      "updated": "2011-08-17T00:00:00+00:00", 
+      "description": "Virtual interface support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/virtual_interfaces/api/v1.1", 
+      "alias": "os-virtual-interfaces", 
+      "name": "VirtualInterfaces"
+    }, 
+    {
+      "updated": "2013-06-20T00:00:00-00:00", 
+      "description": "Support for updating a volume attachment.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/os-volume-attachment-update/api/v2", 
+      "alias": "os-volume-attachment-update", 
+      "name": "VolumeAttachmentUpdate"
+    }, 
+    {
+      "updated": "2011-03-25T00:00:00+00:00", 
+      "description": "Volumes support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/volumes/api/v1.1", 
+      "alias": "os-volumes", 
+      "name": "Volumes"
+    }, 
+    {
+      "updated": "2013-12-10T00:00:00+00:00", 
+      "description": "Services deletion support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/extended_services_delete/api/v2", 
+      "alias": "os-extended-services-delete", 
+      "name": "ExtendedServicesDelete"
+    }, 
+    {
+      "updated": "2013-08-13T00:00:00+00:00", 
+      "description": "Console token authentication support.", 
+      "links": [], 
+      "namespace": "http://docs.openstack.org/compute/ext/consoles-auth-tokens/api/v2", 
+      "alias": "os-console-auth-tokens", 
+      "name": "ConsoleAuthTokens"
+    }
+  ]
+}

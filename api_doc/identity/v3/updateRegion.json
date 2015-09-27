@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "parent_region_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "If the region is hierarchically a child of another region, set this\nparameter to the ID of the parent region.", 
+      "format": ""
+    }, 
+    "region": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``region`` object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The region description.", 
+      "format": ""
+    }
+  }
+}

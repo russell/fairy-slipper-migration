@@ -1,0 +1,56 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-authenticate": "admin-tokens", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-checkToken": "admin-tokens", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-createUser": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-deleteUser": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-getTenantById": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-getTenantByName": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-getUserById": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-getUserByName": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-getVersionInfo": "admin-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-listRolesForUserOnTenant": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-listTenants": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-listUserGlobalRoles": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-updateUser": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-validateToken": "admin-tokens"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-tenantById": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-tenants": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-tokenById": "admin-tokens", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-tokens": "admin-tokens", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-userId": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-userRoles": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-userRolesForTenant": "admin-tenants", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-userid": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-users": "admin-users", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity-admin.wadl#admin-version": "admin-versions"
+  }, 
+  "service": "identity-admin", 
+  "tags": [
+    {
+      "description": "Versions", 
+      "name": "admin-versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Tokens", 
+      "name": "admin-tokens", 
+      "summary": ""
+    }, 
+    {
+      "description": "Users", 
+      "name": "admin-users", 
+      "summary": ""
+    }, 
+    {
+      "description": "Tenants", 
+      "name": "admin-tenants", 
+      "summary": ""
+    }
+  ], 
+  "title": "Identity Admin API", 
+  "version": "v2"
+}

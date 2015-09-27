@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "configuration": {
+      "required": true, 
+      "type": "string", 
+      "description": "ID of the configuration group that you want to attach to the\ninstance.", 
+      "format": ""
+    }
+  }
+}

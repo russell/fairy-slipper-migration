@@ -1,0 +1,30 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#authenticate-v2.0": "identity-auth", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#getVersionInfo-v2.0": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#getVersions-v2": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#listTenants": "identity-auth"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#tenants": "identity-auth", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#tokens": "identity-auth", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#version": "versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/identity-api/src/v2.0/wadl/identity.wadl#versions": "versions"
+  }, 
+  "service": "identity", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Tokens", 
+      "name": "identity-auth", 
+      "summary": ""
+    }
+  ], 
+  "title": "Identity API", 
+  "version": "v2"
+}

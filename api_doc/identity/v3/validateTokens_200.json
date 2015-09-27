@@ -1,0 +1,59 @@
+{
+  "type": "object", 
+  "properties": {
+    "domain": {
+      "required": false, 
+      "type": "string", 
+      "description": "Specify either ``id`` or ``name`` to uniquely identify the domain.", 
+      "format": ""
+    }, 
+    "methods": {
+      "required": true, 
+      "type": "string", 
+      "description": "The authentication method, which is ``password`` or ``token`` .\n\nWith password authentication, you can specify user ID and password,\nuser name and password scoped by domain ID or name, or user ID and\npassword scoped by project ID or name with or without domain scope.\n\nWith token authentication, you specify the token ID.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "The user links.", 
+      "format": ""
+    }, 
+    "expires_at": {
+      "required": false, 
+      "type": "string", 
+      "description": "The date and time when the token expires.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nA ``null`` value indicates that the token never expires.", 
+      "format": ""
+    }, 
+    "token": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``token`` object.", 
+      "format": ""
+    }, 
+    "user": {
+      "required": false, 
+      "type": "string", 
+      "description": "A ``user`` object. Specify ``id`` or ``name`` to uniquely identify\nthe user and ``password`` . Use ``name`` only in conjunction with a\ndomain ``id`` or ``name`` .", 
+      "format": ""
+    }, 
+    "issued_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the token was issued.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user ID.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }
+  }
+}

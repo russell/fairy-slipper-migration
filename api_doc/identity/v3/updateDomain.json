@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "enabled": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables or disables a domain.\n\nSet to ``true`` to enable the domain or ``false`` to disable the\ndomain.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The domain description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The domain name.", 
+      "format": ""
+    }
+  }
+}

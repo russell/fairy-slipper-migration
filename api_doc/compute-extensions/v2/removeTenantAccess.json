@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "removeTenantAccess": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``removeTenantAccess`` action.", 
+      "format": ""
+    }, 
+    "tenant": {
+      "required": true, 
+      "type": "string", 
+      "description": "The UUID of the tenant to which to give access.", 
+      "format": ""
+    }
+  }
+}

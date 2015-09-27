@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "shelveOffload": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``shelveOffload`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

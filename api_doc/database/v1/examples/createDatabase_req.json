@@ -1,0 +1,12 @@
+{
+  "databases": [
+    {
+      "character_set": "utf8", 
+      "name": "testingdb", 
+      "collate": "utf8_general_ci"
+    }, 
+    {
+      "name": "sampledb"
+    }
+  ]
+}

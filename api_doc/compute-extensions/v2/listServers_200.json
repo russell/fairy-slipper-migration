@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "servers": {
+      "required": true, 
+      "type": "string", 
+      "description": "List of servers.", 
+      "format": ""
+    }, 
+    "previous": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the previous item in the list.", 
+      "format": "uri"
+    }, 
+    "next": {
+      "required": false, 
+      "type": "string", 
+      "description": "Moves to the next item in the list.", 
+      "format": "uri"
+    }
+  }
+}

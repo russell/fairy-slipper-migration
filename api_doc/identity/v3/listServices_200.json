@@ -1,0 +1,47 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service name.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service links.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If ``true`` , the service is enabled. If ``false`` , the service is\ndisabled.", 
+      "format": ""
+    }, 
+    "services": {
+      "required": true, 
+      "type": "string", 
+      "description": "A ``services`` object.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service type.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service ID.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The description.", 
+      "format": ""
+    }
+  }
+}

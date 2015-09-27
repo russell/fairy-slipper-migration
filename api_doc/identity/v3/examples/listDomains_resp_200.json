@@ -1,0 +1,22 @@
+{
+  "domains": [
+    {
+      "name": "myDomain", 
+      "enabled": true, 
+      "description": "Domain description", 
+      "links": {
+        "self": "http://identity:35357/v3/domains/161718"
+      }, 
+      "id": "161718"
+    }, 
+    {
+      "name": "anotherDomain", 
+      "enabled": true, 
+      "description": "Another domain", 
+      "links": {
+        "self": "http://identity:35357/v3/domains/864369"
+      }, 
+      "id": "864369"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "type": "object", 
+  "properties": {
+    "maxServerMeta": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of metadata key-value pairs that can be supplied\nper server for the project.", 
+      "format": ""
+    }, 
+    "maxPersonality": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of file path and content pairs that can be\nsupplied on server build and rebuild for the project.", 
+      "format": ""
+    }, 
+    "maxImageMeta": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of key-value pairs per image for the project.", 
+      "format": ""
+    }, 
+    "maxPersonalitySize": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum size, in bytes, for each personality file that is\nguaranteed to apply to all images in the project. Providers can set\nadditional per-image personality limits.", 
+      "format": ""
+    }, 
+    "maxTotalRAMSize": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum total amount of RAM, in MB, for all servers at any one\ntime for the project.", 
+      "format": ""
+    }, 
+    "maxTotalKeypairs": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of key pairs per server for the project.", 
+      "format": ""
+    }, 
+    "maxSecurityGroupRules": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of security group rules per security group for\nthe project.", 
+      "format": ""
+    }, 
+    "maxServerGroups": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of server groups per server for the project.", 
+      "format": ""
+    }, 
+    "maxSecurityGroups": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of security groups per server for the project.", 
+      "format": ""
+    }, 
+    "rate": {
+      "required": true, 
+      "type": "object", 
+      "description": "Current rate limits.", 
+      "format": ""
+    }, 
+    "maxServerGroupMembers": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of server group members per server group for the\nproject.", 
+      "format": ""
+    }, 
+    "maxTotalFloatingIps": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of floating IP addresses for the project.\n\nThese IPs must be allocated from the central pool before you can\nuse them. To allocate a floating IP to a project, see Associate\nfloating IP addresses .", 
+      "format": ""
+    }, 
+    "maxTotalInstances": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of servers at any one time for the project.", 
+      "format": ""
+    }, 
+    "maxTotalCores": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The maximum number of cores for the project.", 
+      "format": ""
+    }
+  }
+}

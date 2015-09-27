@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "tenantId": {
+      "required": true, 
+      "type": "string", 
+      "description": "The tenant ID.", 
+      "format": ""
+    }, 
+    "password": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user password.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Indicates whether the user is enabled (true) or disabled (false).", 
+      "format": ""
+    }, 
+    "email": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user email.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The user name.", 
+      "format": ""
+    }
+  }
+}

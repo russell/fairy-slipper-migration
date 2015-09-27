@@ -1,0 +1,1015 @@
+.. http:put:: /v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}
+   :synopsis: Grant roles to user on tenant
+
+   Grants a specified role to a specified user for a specified tenant.
+
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :parameter roleId: The role ID.
+   :parameter tenantId: The tenant ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}
+   :synopsis: Revoke role from user on tenant
+
+   Revokes a specified role from a specified user for a specified
+   tenant.
+
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :parameter roleId: The role ID.
+   :parameter tenantId: The tenant ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/services/{serviceId}
+   :synopsis: Shows service information by ID
+
+   Shows information for a specified service, by ID.
+
+   :responseexample 200: v2/examples/showServiceByID_resp_200.json
+   :responseexample 203: v2/examples/showServiceByID_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter serviceId: The service ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/services/{serviceId}
+   :synopsis: Delete service
+
+   Deletes a specified service.
+
+   :tag: ksadm-admin
+   :parameter serviceId: The service ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSVALIDATE/token/endpoints
+   :synopsis: List endpoints for token
+
+   Lists endpoints associated with a specific token.
+
+   :responseexample 200: v2/examples/listEndpointsForToken_resp_200.json
+   :responseexample 203: v2/examples/listEndpointsForToken_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksvalidate
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials/{type}
+   :synopsis: List credentials by type
+
+   Lists credentials by type.
+
+   :responseexample 200: v2/examples/listCredentialsByType_resp_200.json
+   :responseexample 203: v2/examples/listCredentialsByType_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kss3-admin
+   :parameter type: The credential type.
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSVALIDATE/token/validate
+   :synopsis: Validate token
+
+   Checks that a token is valid and that it belongs to a specified
+   tenant and service IDs. Returns the permissions for a particular
+   client.
+   
+   Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (
+   ``404`` ) fault is returned for a token that is not valid.
+   
+   This extension might decrypt ``X-Subject-Token`` header and
+   internally call the normal validation for Identity, passing in all
+   headers and query parameters. It should therefore support all
+   existing calls on ``/tokens/{tokenId}`` , including extensions such
+   as HP-IDM.
+
+   :responseexample 200: v2/examples/validateToken_resp_200.json
+   :responseexample 203: v2/examples/validateToken_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksvalidate
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v2.0/OS-KSVALIDATE/token/validate
+   :synopsis: Check token
+
+   Checks that a token is valid and that it belongs to a specified
+   tenant and service IDs, for performance.
+   
+   Behavior is similar to ``/tokens/{tokenId}`` . An itemNotFound (
+   ``404`` ) fault is returned for a token that is not valid.
+   
+   This extension might decrypt ``X-Subject-Token`` header and
+   internally call the normal validation for Identity, passing in all
+   headers and query parameters. It should therefore support all
+   existing calls on ``/tokens/{tokenId}`` , including extensions such
+   as HP-IDM.
+
+   :tag: ksvalidate
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants/{tenantId}/users
+   :synopsis: List users on a tenant
+
+   Lists all users for a specified tenant.
+
+   :responseexample 200: v2/examples/listUsersForTenant_resp_200.json
+   :responseexample 203: v2/examples/listUsersForTenant_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter tenantId: The tenant ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.0/users/{userId}/OS-KSADM/enabled
+   :synopsis: Enable user
+
+   Enables a specified user.
+
+   :requestexample: v2/examples/enableUser_req.json
+   :responseexample 200: v2/examples/enableUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSADM/
+   :synopsis: List roles
+
+   Lists all roles.
+
+   :responseexample 200: v2/examples/listRoles_resp_200.json
+   :responseexample 203: v2/examples/listRoles_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users
+   :synopsis: List users
+
+   Lists all users.
+
+   :responseexample 200: v2/examples/listUsers_resp_200.json
+   :responseexample 203: v2/examples/listUsers_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users
+   :synopsis: Create user
+
+   Creates a user.
+
+   :requestexample: v2/examples/createUser_req.json
+   :responseexample 201: v2/examples/createUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSADM/roles/{role_name}
+   :synopsis: Show role information by name
+
+   Shows information for a specified role, by name.
+
+   :responseexample 200: v2/examples/showRoleByName_resp_200.json
+   :responseexample 203: v2/examples/showRoleByName_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.0/users/{userId}/roles/OS-KSADM/{roleId}
+   :synopsis: Grant global role to user
+
+   Grants a specified global role to a specified user.
+
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :parameter roleId: The role ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/users/{userId}/roles/OS-KSADM/{roleId}
+   :synopsis: Delete global role from user
+
+   Deletes a specified global role from a specified user.
+
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :parameter roleId: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
+   :synopsis: Update user credentials
+
+   Updates credentials.
+
+   :requestexample: v2/examples/updateUserCredential_req.json
+   :responseexample 200: v2/examples/updateUserCredential_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kss3-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
+   :synopsis: Revoke user credentials
+
+   Revokes user credentials.
+
+   :tag: kss3-admin
+   :parameter userId: The user ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials/s3credentials
+   :synopsis: Get user credentials
+
+   Gets user credentials.
+
+   :responseexample 200: v2/examples/getUserCredential_resp_200.json
+   :responseexample 203: v2/examples/getUserCredential_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kss3-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users/{userId}/OS-KSADM/credentials
+   :synopsis: Grant credential to user
+
+   Grants a specified credential to a specified user.
+
+   :requestexample: v2/examples/grantCredentialToUser_req.json
+   :responseexample 201: v2/examples/grantCredentialToUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksec2-admin
+   :parameter userId: The user ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials
+   :synopsis: List credentials
+
+   Lists credentials.
+
+   :responseexample 200: v2/examples/listCredentials_resp_200.json
+   :responseexample 203: v2/examples/listCredentials_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksec2-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/services
+   :synopsis: List services
+
+   Lists all services.
+
+   :responseexample 200: v2/examples/listServices_resp_200.json
+   :responseexample 203: v2/examples/listServices_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/services
+   :synopsis: Create service
+
+   Creates a service.
+
+   :requestexample: v2/examples/createService_req.json
+   :responseexample 201: v2/examples/createService_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/services/{serviceName}
+   :synopsis: Show service information by name
+
+   Shows information for a specified service, by name.
+
+   :responseexample 200: v2/examples/showServiceByName_resp_200.json
+   :responseexample 203: v2/examples/showServiceByName_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
+   :synopsis: Update user credentials
+
+   Updates credentials for a specified user.
+
+   :requestexample: v2/examples/updateUserCredential_req.json
+   :responseexample 200: v2/examples/updateUserCredential_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksec2-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
+   :synopsis: Delete user credentials
+
+   Deletes user credentials.
+
+   :tag: ksec2-admin
+   :parameter userId: The user ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials
+   :synopsis: Get user credentials
+
+   Gets user credentials.
+
+   :responseexample 200: v2/examples/getUserCredential_resp_200.json
+   :responseexample 203: v2/examples/getUserCredential_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksec2-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/OS-KSADM
+   :synopsis: Create role
+
+   Creates a role.
+
+   :requestexample: v2/examples/createRole_req.json
+   :responseexample 201: v2/examples/createRole_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/tenants
+   :synopsis: Create tenant
+
+   Creates a specified tenant.
+
+   :requestexample: v2/examples/createTenant_req.json
+   :responseexample 201: v2/examples/createTenant_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :statuscode 201: 
+   :statuscode 400: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 413: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
+   :synopsis: Get endpoint template
+
+   Gets endpoint templates.
+
+   :responseexample 200: v2/examples/getEndpointTemplate_resp_200.json
+   :responseexample 203: v2/examples/getEndpointTemplate_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :parameter endpointTemplateId: The endpoint template ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
+   :synopsis: Update endpoint template
+
+   Updates endpoint template.
+
+   :requestexample: v2/examples/updateEndpointTemplate_req.json
+   :responseexample 200: v2/examples/updateEndpointTemplate_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :parameter endpointTemplateId: The endpoint template ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
+   :synopsis: Delete endpoint template.
+
+   Deletes an endpoint template.
+
+   :tag: kscatalog
+   :parameter endpointTemplateId: The endpoint template ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users/{userId}/OS-KSS3/credentials
+   :synopsis: Grant credential to user
+
+   Grants a specified credential to a specified user.
+
+   :requestexample: v2/examples/grantCredentialToUser_req.json
+   :responseexample 201: v2/examples/grantCredentialToUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kss3-admin
+   :parameter userId: The user ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSS3/credentials
+   :synopsis: List credentials
+
+   Lists credentials.
+
+   :responseexample 200: v2/examples/listCredentials_resp_200.json
+   :responseexample 203: v2/examples/listCredentials_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kss3-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/roles
+   :synopsis: List global roles for user
+
+   Lists global roles for a specified user.
+
+   :responseexample 200: v2/examples/listUserRoles_resp_200.json
+   :responseexample 203: v2/examples/listUserRoles_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/tenants/{tenantId}
+   :synopsis: Update tenant
+
+   Updates a specified tenant.
+
+   :requestexample: v2/examples/updateTenant_req.json
+   :responseexample 200: v2/examples/updateTenant_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter tenantId: The tenant ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/tenants/{tenantId}
+   :synopsis: Delete tenant
+
+   Deletes a specified tenant.
+
+   :tag: ksadm-admin
+   :parameter tenantId: The tenant ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints
+   :synopsis: Create endpoint
+
+   Creates endpoint to a tenant.
+
+   :requestexample: v2/examples/createEndpoint_req.json
+   :responseexample 201: v2/examples/createEndpoint_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :parameter tenantId: The tenant ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints
+   :synopsis: List endpoints
+
+   Lists endpoints for a tenant.
+
+   :responseexample 200: v2/examples/listEndpoints_resp_200.json
+   :responseexample 203: v2/examples/listEndpoints_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :parameter tenantId: The tenant ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{userId}/OS-KSADM/credentials/OS-KSEC2:ec2Credentials/{type}
+   :synopsis: List credentials by type
+
+   Lists credentials by type.
+
+   :responseexample 200: v2/examples/listCredentialsByType_resp_200.json
+   :responseexample 203: v2/examples/listCredentialsByType_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksec2-admin
+   :parameter type: The credential type.
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSCATALOG/endpointTemplates
+   :synopsis: List endpoint templates
+
+   Lists endpoint templates.
+
+   :responseexample 200: v2/examples/listEndpointTemplates_resp_200.json
+   :responseexample 203: v2/examples/listEndpointTemplates_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/OS-KSCATALOG/endpointTemplates
+   :synopsis: Create endpoint template
+
+   Creates endpoint template.
+
+   :requestexample: v2/examples/createEndpointTemplate_req.json
+   :responseexample 201: v2/examples/createEndpointTemplate_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/OS-KSADM/{roleId}
+   :synopsis: Show role information by ID
+
+   Shows information for a specified role, by ID.
+
+   :responseexample 200: v2/examples/showRoleByID_resp_200.json
+   :responseexample 203: v2/examples/showRoleByID_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter roleId: The role ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/OS-KSADM/{roleId}
+   :synopsis: Delete role
+
+   Deletes a specified role.
+
+   :tag: ksadm-admin
+   :parameter roleId: The role ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.0/users/{userId}
+   :synopsis: Update user
+
+   Updates a specified user.
+
+   :requestexample: v2/examples/updateUser_req.json
+   :responseexample 200: v2/examples/updateUser_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/users/{userId}
+   :synopsis: Delete user
+
+   Deletes a specified user.
+
+   :tag: ksadm-admin
+   :parameter userId: The user ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints/{endpointId}
+   :synopsis: Get endpoint
+
+   Gets endpoint for a tenant.
+
+   :responseexample 200: v2/examples/getEndpoint_resp_200.json
+   :responseexample 203: v2/examples/getEndpoint_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: kscatalog
+   :parameter tenantId: The tenant ID.
+   :parameter endpointId: The endpoint ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/tenants/{tenantId}/OS-KSCATALOG/endpoints/{endpointId}
+   :synopsis: Delete endpoint
+
+   Deletes an endpoint from a tenant.
+
+   :tag: kscatalog
+   :parameter tenantId: The tenant ID.
+   :parameter endpointId: The endpoint ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+

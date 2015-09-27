@@ -1,0 +1,5 @@
+{
+  "removeTenantAccess": {
+    "tenant": "TENANT_ID"
+  }
+}

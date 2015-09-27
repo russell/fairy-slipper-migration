@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "start": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify ``start`` in the request body.", 
+      "format": ""
+    }, 
+    "combine": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Set to true to generate a combined report for all services.", 
+      "format": ""
+    }
+  }
+}

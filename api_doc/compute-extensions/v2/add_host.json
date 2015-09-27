@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "Host ID to add to an aggregate, which is a collection of multiple\ngroups of hosts that share common resources like storage and\nnetwork.", 
+      "format": ""
+    }
+  }
+}

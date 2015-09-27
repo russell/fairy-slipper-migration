@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The snapshot ID.", 
+      "format": ""
+    }, 
+    "volume_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The source volume ID.", 
+      "format": ""
+    }
+  }
+}

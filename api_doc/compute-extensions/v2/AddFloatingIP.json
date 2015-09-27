@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "pool": {
+      "required": true, 
+      "type": "string", 
+      "description": "The pool to which to add the floating IP address.", 
+      "format": ""
+    }
+  }
+}

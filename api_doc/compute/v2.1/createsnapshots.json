@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "create_info": {
+      "required": true, 
+      "type": "object", 
+      "description": "Information for snapshot creation.", 
+      "format": ""
+    }, 
+    "snapshot_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The snapshot ID.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The snapshot type. A valid value is ``qcow2`` .", 
+      "format": ""
+    }, 
+    "volume_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The source volume ID.", 
+      "format": ""
+    }, 
+    "new_file": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the qcow2 file that Block Storage creates, which\nbecomes the active image for the VM.", 
+      "format": ""
+    }
+  }
+}

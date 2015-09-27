@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "Hypervisor ID.", 
+      "format": ""
+    }, 
+    "hypervisor_hostname": {
+      "required": true, 
+      "type": "string", 
+      "description": "Hypervisor host name, retrieved from the per-server listing.", 
+      "format": ""
+    }
+  }
+}

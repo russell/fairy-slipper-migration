@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "instance_uuid": {
+      "required": false, 
+      "type": "string", 
+      "description": "The UUID of the attaching instance.", 
+      "format": ""
+    }, 
+    "mountpoint": {
+      "required": false, 
+      "type": "string", 
+      "description": "The attaching mount point.", 
+      "format": ""
+    }, 
+    "host_name": {
+      "required": false, 
+      "type": "string", 
+      "description": "The name of the attaching host.", 
+      "format": ""
+    }, 
+    "os-attach": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ``os-attach`` action.", 
+      "format": ""
+    }
+  }
+}

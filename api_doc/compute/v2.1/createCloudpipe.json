@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "project_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "Creates the cloudpipe for the specified project ID. If omitted, the\nproject ID defaults to the calling tenant.", 
+      "format": ""
+    }
+  }
+}

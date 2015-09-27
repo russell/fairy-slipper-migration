@@ -1,0 +1,3222 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "attachConfigGroup": {
+      "properties": {
+        "configuration": {
+          "description": "ID of the configuration group that you want to attach to the\ninstance.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createConfigGroup": {
+      "properties": {
+        "datastore": {
+          "description": "Datastore assigned to the configuration group. Required if default\ndatastore is not configured.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "Name of the configuration group you are creating.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "values": {
+          "description": "Dictionary that lists configuration parameter names and associated\nvalues.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createInstance": {
+      "properties": {
+        "character_set": {
+          "description": "Set of symbols and encodings. The default character set is ``utf8``\n.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "collate": {
+          "description": "Set of rules for comparing characters in a character set. The\ndefault value for collate is ``utf8_general_ci`` .", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "databases": {
+          "description": "A ``databases`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "flavorRef": {
+          "description": "Reference (href), which is the actual URI to a flavor as specified\nin the response from the list flavors API call.\n\nRather than the flavor URI, you can also pass the flavor id\n(integer) as the value for ``flavorRef`` . For example, the flavor\nID for the flavor URI shown above is ``1`` .", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "instance": {
+          "description": "An ``instance`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The user name for the database on instance creation.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "password": {
+          "description": "The password for those users on instance creation.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The volume size, in gigabytes (GB). A valid value is from 1 to 50.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "users": {
+          "description": "A ``users`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "detachConfigGroup": {
+      "properties": {
+        "configuration": {
+          "description": "To detach a configuration group, set the configuration parameter to\nnull.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "database", 
+    "title": "Database Service API", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information about all Database Service API versions.", 
+        "examples": {
+          "text/plain": "GET / HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "getVersions", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-01-01T00:00:00Z"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 153\nDate: Wed, 25 Jan 2012 21:53:04 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List versions", 
+        "tags": [
+          "api-versions"
+        ]
+      }
+    ], 
+    "/v1.0": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for the Database Service API v1.0.", 
+        "examples": {
+          "text/plain": "GET /v1.0/ HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "getVersionInfo", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8779/v1.0/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-08-01T00:00:00Z"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 158\nDate: Tue, 22 Apr 2014 19:02:58 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show version details", 
+        "tags": [
+          "api-versions"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/configurations": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a configuration group.", 
+        "examples": {
+          "application/json": {
+            "configuration": {
+              "datastore": [
+                {
+                  "type": "mysql"
+                }
+              ], 
+              "name": "group1", 
+              "values": [
+                {
+                  "sync_binlog": 1
+                }
+              ]
+            }
+          }, 
+          "text/plain": "POST /v1.0/1234/configurations HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: d6cafa5b-e0c7-4ab8-948e-7c95f2acd031\nAccept: application/json\nContent-Type: application/json\n\n"
+        }, 
+        "id": "createConfigGroup", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createConfigGroup"
+            }
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "created": "2015-07-01T16:38:27", 
+                "datastore_name": "mysql", 
+                "datastore_version_id": "2dc7faa0-efff-4c2b-8cff-bcd949c518a5", 
+                "datastore_version_name": "5.6", 
+                "description": null, 
+                "id": "2aa51628-5c42-4086-8682-137caffd2ba6", 
+                "instance_count": 0, 
+                "name": "group1", 
+                "updated": "2015-07-01T16:38:27", 
+                "values": {
+                  "sync_binlog": 1
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 360\nDate: Mon, 6 Jul 2015 21:53:10 GMT\n\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create configuration group", 
+        "tags": [
+          "configurations"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists all configuration groups.\n\nThe list includes the associated datastore and datastore version\nfor each configuration group.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/configurations HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
+        }, 
+        "id": "listConfigGroups", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "configurations": [
+                  {
+                    "created": "2015-07-01T16:38:27", 
+                    "datastore_name": "mysql", 
+                    "datastore_version_id": "2dc7faa0-efff-4c2b-8cff-bcd949c518a5", 
+                    "datastore_version_name": "5.6", 
+                    "description": null, 
+                    "id": "2aa51628-5c42-4086-8682-137caffd2ba6", 
+                    "name": "group1", 
+                    "updated": "2015-07-01T16:38:27"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 426\nDate: Tue, 07 Jul 2012 19:53:04 GMT\n\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List configuration groups", 
+        "tags": [
+          "configurations"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the available configuration parameters for a specified\ndatastore version.\n\nParameter information includes the type, minimum and maximum\nvalues, and whether you must restart the instance after you change\na parameter value.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/datastores/versions/692d8418-7a8f-47f1-8060-59846c6e024f/parameters HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
+        }, 
+        "id": "listParameters", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID of the data store version.", 
+            "format": "", 
+            "in": "path", 
+            "name": "datastore_version_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "configuration-parameters": [
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 18446744073709552000, 
+                    "min": 4096, 
+                    "name": "myisam_sort_buffer_size", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 0, 
+                    "name": "sync_binlog", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 1073741824, 
+                    "min": 1024, 
+                    "name": "max_allowed_packet", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "character_set_connection", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 1, 
+                    "min": 0, 
+                    "name": "autocommit", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474d-ac18-2c6abd35a758", 
+                    "name": "character_set_client", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 18446744073709548000, 
+                    "min": 128, 
+                    "name": "join_buffer_size", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 1, 
+                    "min": 0, 
+                    "name": "local_infile", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 65535, 
+                    "min": 1, 
+                    "name": "auto_increment_offset", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 100000, 
+                    "min": 1, 
+                    "name": "max_connections", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474dac18-2c6abd35a758", 
+                    "max": 18446744073709552000, 
+                    "min": 0, 
+                    "name": "bulk_insert_buffer_size", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 18446744073709552000, 
+                    "min": 32768, 
+                    "name": "sort_buffer_size", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 262144, 
+                    "name": "innodb_log_buffer_size", 
+                    "restart_required": true, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 1, 
+                    "min": 0, 
+                    "name": "innodb_file_per_table", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "character_set_server", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474dac18-2c6abd35a758", 
+                    "max": 18446744073709552000, 
+                    "min": 5242880, 
+                    "name": "innodb_buffer_pool_size", 
+                    "restart_required": true, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "collation_server", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "character_set_filesystem", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474d-ac18-2c6abd35a758", 
+                    "name": "collation_database", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 2, 
+                    "min": 0, 
+                    "name": "innodb_flush_log_at_trx_commit", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 65535, 
+                    "min": 1, 
+                    "name": "interactive_timeout", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 0, 
+                    "name": "max_user_connections", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 1000, 
+                    "min": 0, 
+                    "name": "innodb_thread_concurrency", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 10, 
+                    "name": "innodb_open_files", 
+                    "restart_required": true, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 8, 
+                    "name": "key_buffer_size", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474d-ac18-2c6abd35a758", 
+                    "max": 31536000, 
+                    "min": 2, 
+                    "name": "connect_timeout", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "collation_connection", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "character_set_database", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 65535, 
+                    "min": 1, 
+                    "name": "auto_increment_increment", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 18446744073709552000, 
+                    "min": 1, 
+                    "name": "max_connect_errors", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "name": "character_set_results", 
+                    "restart_required": false, 
+                    "type": "string"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 99, 
+                    "min": 0, 
+                    "name": "expire_logs_days", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef474d-ac18-2c6abd35a758", 
+                    "max": 31536000, 
+                    "min": 1, 
+                    "name": "wait_timeout", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }, 
+                  {
+                    "datastore_version_id": "f597f709-70ef-474d-ac18-2c6abd35a758", 
+                    "max": 4294967295, 
+                    "min": 0, 
+                    "name": "server_id", 
+                    "restart_required": false, 
+                    "type": "integer"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 8454\nDate: Fri, 12 Jun 2015 21:58:13 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List configuration parameters", 
+        "tags": [
+          "datastores"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/datastores/versions/{datastore_version_id}/parameters/{parameter_name}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Displays details for a configuration parameter associated with a\nspecified datastore version.\n\nDetails include the type, minimum and maximum values, and whether\nyou must restart the instance after you change the parameter value.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/datastores/versions/f8e67741-e767-4137-b394-3fb8a3fafd2f/parameters/connect_timeout HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
+        }, 
+        "id": "showParameterDetails", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "Name of the parameter whose details you want.", 
+            "format": "", 
+            "in": "path", 
+            "name": "parameter_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The ID of the data store version.", 
+            "format": "", 
+            "in": "path", 
+            "name": "datastore_version_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "datastore_version_id": "f8e67741-e767-4137-b394-3fb8a3fafd2f", 
+                "max": 31536000, 
+                "min": 2, 
+                "name": "connect_timeout", 
+                "restart_required": false, 
+                "type": "integer"
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 180\nDate: Tue, 16 Jun 2015 21:58:13 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show configuration parameter details", 
+        "tags": [
+          "datastores"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/datastores/{datastore_name}/versions": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the available versions of a specified datastore.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/datastores/mysql/versions HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
+        }, 
+        "id": "listDatastoreVersions", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The name of the datastore whose versions you want to list.", 
+            "format": "", 
+            "in": "path", 
+            "name": "datastore_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "active": 1, 
+                "datastore": "3a8968d8-e5f5-4452-83ca-f6c90b5de06a", 
+                "id": "2dc7faa0-efff-4c2b-8cff-bcd949c518a5", 
+                "image": "b69fbd9e-b31d-46ff-8afb-cbf452f6f835", 
+                "links": [
+                  {
+                    "href": "https://10.240.28.38:8779/v1.0/27bee406abb5486e81ef3ff4382aabaf/datastores/versions/2dc7faa0-efff-4c2b-8cff-bcd949c518a5", 
+                    "rel": "self"
+                  }, 
+                  {
+                    "href": "https://10.240.28.38:8779/datastores/versions/2dc7faa0-efff-4c2b-8cff-bcd949c518a5", 
+                    "rel": "bookmark"
+                  }
+                ], 
+                "name": "5.6", 
+                "packages": "mysql-server-5.6"
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 580\nDate: Tue, 23 Jun 2015 21:58:13 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List datastore versions", 
+        "tags": [
+          "datastores"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/flavors": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information for all available flavors.\n\nThis operation lists information for all available flavors.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/flavors HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "getFlavors", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "flavors": [
+                  {
+                    "id": 1, 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/1", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "m1.tiny", 
+                    "ram": 512
+                  }, 
+                  {
+                    "id": 2, 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/2", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/2", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "m1.small", 
+                    "ram": 1024
+                  }, 
+                  {
+                    "id": 3, 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/3", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/3", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "m1.medium", 
+                    "ram": 2048
+                  }, 
+                  {
+                    "id": 4, 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/4", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/4", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "m1.large", 
+                    "ram": 4096
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 1768\nDate: Tue, 19 Jun 2012 19:52:45 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List flavors", 
+        "tags": [
+          "flavors"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/flavors/{flavorId}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows flavor details.\n\nThis operation lists all information for the specified flavor ID\nwith details of the RAM.\n\nThis resource is identical to the flavors found in the OpenStack\nNova API, but without the disk property.\n\nThe flavorId parameter should be an integer. If a floating point\nvalue is used for the flavorId parameter, the decimal portion is\ntruncated and the integer portion is used as the value of the\nflavorId.\n\nWriter: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/flavors/1 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "getFlavorById", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The flavor ID for the specified flavor.", 
+            "format": "", 
+            "in": "path", 
+            "name": "flavorId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "flavor": {
+                  "id": 1, 
+                  "links": [
+                    {
+                      "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "https://openstack.example.com/flavors/1", 
+                      "rel": "bookmark"
+                    }
+                  ], 
+                  "name": "m1.tiny", 
+                  "ram": 512
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 209\nDate: Wed, 25 Jan 2012 21:53:05 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show flavor details", 
+        "tags": [
+          "flavors"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a database instance.\n\nThis operation asynchronously provisions a new database instance.\nThis call requires the user to specify a flavor and a volume size.\nThe service then provisions the instance with the requested flavor\nand sets up a volume of the specified size, which is the storage\nfor the database instance.\n\nNotes- You can create only one database instance per POST request.\n\n- You can create a database instance with one or more databases, and\n  users associated to those databases.\n\n- The default binding for the MySQL instance is port 3306.", 
+        "examples": {
+          "application/json": {
+            "instance": {
+              "databases": [
+                {
+                  "character_set": "utf8", 
+                  "collate": "utf8_general_ci", 
+                  "name": "sampledb"
+                }, 
+                {
+                  "name": "nextround"
+                }
+              ], 
+              "flavorRef": "https://openstack.example.com/v1.0/1234/flavors/1", 
+              "name": "json_rack_instance", 
+              "users": [
+                {
+                  "databases": [
+                    {
+                      "name": "sampledb"
+                    }
+                  ], 
+                  "name": "demouser", 
+                  "password": "secretsecret"
+                }
+              ], 
+              "volume": {
+                "size": 2
+              }
+            }
+          }, 
+          "text/plain": "POST /v1.0/1234/instances HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: d6cafa5b-e0c7-4ab8-948e-7c95f2acd031\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "createInstance", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createInstance"
+            }
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "instance": {
+                  "created": "2012-01-25T21:53:09Z", 
+                  "flavor": {
+                    "id": "1", 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/1", 
+                        "rel": "bookmark"
+                      }
+                    ]
+                  }, 
+                  "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
+                  "id": "dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+                  "links": [
+                    {
+                      "href": "https://openstack.example.com/v1.0/1234/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "https://openstack.example.com/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+                      "rel": "bookmark"
+                    }
+                  ], 
+                  "name": "json_rack_instance", 
+                  "status": "BUILD", 
+                  "updated": "2012-01-25T21:53:10Z", 
+                  "volume": {
+                    "size": 2
+                  }
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 636\nDate: Wed, 25 Jan 2012 21:53:10 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create database instance", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information, including status, for all database instances.\n\nLists status and information for all database instances.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "getInstance", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "instances": [
+                  {
+                    "flavor": {
+                      "id": "1", 
+                      "links": [
+                        {
+                          "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                          "rel": "self"
+                        }, 
+                        {
+                          "href": "https://openstack.example.com/flavors/1", 
+                          "rel": "bookmark"
+                        }
+                      ]
+                    }, 
+                    "id": "28d1b8f3-172a-4f6d-983d-36021508444a", 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/instances/28d1b8f3-172a-4f6d-983d-36021508444a", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/instances/28d1b8f3-172a-4f6d-983d-36021508444a", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "json_rack_instance", 
+                    "status": "ACTIVE", 
+                    "volume": {
+                      "size": 2
+                    }
+                  }, 
+                  {
+                    "flavor": {
+                      "id": "1", 
+                      "links": [
+                        {
+                          "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                          "rel": "self"
+                        }, 
+                        {
+                          "href": "https://openstack.example.com/flavors/1", 
+                          "rel": "bookmark"
+                        }
+                      ]
+                    }, 
+                    "id": "8fb081af-f237-44f5-80cc-b46be1840ca9", 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/instances/8fb081af-f237-44f5-80cc-b46be1840ca9", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/instances/8fb081af-f237-44f5-80cc-b46be1840ca9", 
+                        "rel": "bookmark"
+                      }
+                    ], 
+                    "name": "xml_rack_instance", 
+                    "status": "ACTIVE", 
+                    "volume": {
+                      "size": 2
+                    }
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 1150\nDate: Tue, 19 Jun 2012 19:53:04 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List database instances", 
+        "tags": [
+          "database-instances"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}": [
+      {
+        "consumes": [], 
+        "description": "Deletes a specified database instance, including any associated\ndata.\n\nThis operation does not delete any read slaves.\n\nThis operation is not permitted when the instance state is either\n``REBUILDING`` or ``BUILDING`` .", 
+        "examples": {
+          "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "deleteInstance", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:15:51 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete database instance", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows database instance details.\n\nLists the status and details of the specified database instance.\n\nLists the volume size in gigabytes (GB) and the approximate GB\nused.\n\nAfter instance creation, the ``used`` value is greater than 0,\nwhich is expected and due to the automatic creation of non-empty\ntransaction logs for MySQL optimization. The ``used`` attribute is\n**not** returned in the response when the instance status is\n``BUILD`` , ``REBOOT`` , ``RESIZE`` , or ``ERROR`` .\n\nThe list operations return a DNS-resolvable host name that is\nassociated with the database instance rather than an IP address.\nBecause the host name always resolves to the correct IP address for\nthe database instance, you do not need to maintain the mapping.\nAlthough the IP address might change when you resize, migrate, or\nperform other operations, the host name always resolves to the\ncorrect database instance.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "getInstanceById", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "instance": {
+                  "created": "2012-03-28T21:31:02Z", 
+                  "flavor": {
+                    "id": "1", 
+                    "links": [
+                      {
+                        "href": "https://openstack.example.com/v1.0/1234/flavors/1", 
+                        "rel": "self"
+                      }, 
+                      {
+                        "href": "https://openstack.example.com/flavors/1", 
+                        "rel": "bookmark"
+                      }
+                    ]
+                  }, 
+                  "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
+                  "id": "2450c73f-7805-4afe-a42c-4094ab42666b", 
+                  "links": [
+                    {
+                      "href": "https://openstack.example.com/v1.0/1234/instances/2450c73f-7805-4afe-a42c-4094ab42666b", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "https://openstack.example.com/instances/2450c73f-7805-4afe-a42c-4094ab42666b", 
+                      "rel": "bookmark"
+                    }
+                  ], 
+                  "name": "xml_rack_instance", 
+                  "status": "ACTIVE", 
+                  "updated": "2012-03-28T21:34:25Z", 
+                  "volume": {
+                    "size": 2, 
+                    "used": 0.124542236328125
+                  }
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 685\nDate: Wed, 28 Mar 2012 21:37:29 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show database instance details", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the configuration defaults for a specified instance.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances/instance_1 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
+        }, 
+        "id": "listConfigDefaults", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "instance": {
+                  "configuration": {
+                    "basedir": "/usr", 
+                    "connect_timeout": "15", 
+                    "datadir": "/var/lib/mysql/data", 
+                    "default_storage_engine": "innodb", 
+                    "inno db_log_buffer_size": "25M", 
+                    "innodb_ log_file_size": "50M", 
+                    "innodb_buffer_pool_size": "150M", 
+                    "innodb_data_file_path": "ibdata1:10M:autoextend", 
+                    "innodb_file_per_table": "1", 
+                    "innodb_log_files_in_group": "2", 
+                    "join_buffer_size": "1M", 
+                    "key_buffer_size": "50M", 
+                    "local-infile": "0", 
+                    "max_allowed_packet": "1024K", 
+                    "max_connections": "100", 
+                    "max_heap_table_size": "16M", 
+                    "max_user_connections": "100", 
+                    "myisam-recover ": "BACKUP", 
+                    "open_files_limit": "512", 
+                    "pid_file": "/var/run/mysqld/mysqld.pid", 
+                    "port": "3306", 
+                    "query_cache_limit": "1M", 
+                    "query_cache_size": "8M", 
+                    "query_cache_type": "1", 
+                    "read_bu ffer_size": "512K", 
+                    "read_rnd_buffer_size": "512 K", 
+                    "server_id": "334596", 
+                    "skip-external-locking": "1", 
+                    "sort_buffer_size": "1M", 
+                    "table_definition_cache": "256", 
+                    "table_open_cache": "256", 
+                    "thread_cache_size": "4", 
+                    "thread_stack": "192K", 
+                    "tmp_table_size": "16M", 
+                    "tmpdir": "/var/tmp", 
+                    "user": "mysql", 
+                    "wait_timeout": "120"
+                  }
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 1559\nDate: Wed, 08 Jul 2015 19:53:04 GMT\n\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List configuration defaults", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Attaches a configuration group to a specified instance.", 
+        "examples": {
+          "application/json": {
+            "instance": {
+              "configuration": "2aa51628-5c42-4086-8682-137caffd2ba6"
+            }
+          }, 
+          "text/plain": "PUT /v1.0/1234/instances/4c93c73b-d6d0-47d7-b8c6-b699d19d7de9 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
+        }, 
+        "id": "attachConfigGroup", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/attachConfigGroup"
+            }
+          }, 
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 OK\nContent-Type: application/json\nContent-Length: 0\nDate: Mon, 13 Jul 2015 19:53:04 GMT\n\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "415": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Attach configuration group", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Detaches a configuration group from a specified instance.\n\nWhen you pass in only an instance ID (no configuration ID), this\noperation detaches whatever configuration group was attached to the\nspecified instance.", 
+        "examples": {
+          "application/json": {
+            "instance": {}
+          }, 
+          "text/plain": "PUT /v1.0/1234/instances/4c93c73b-d6d0-47d7-b8c6-b699d19d7de9 HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n"
+        }, 
+        "id": "detachConfigGroup", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/detachConfigGroup"
+            }
+          }, 
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 OK\nContent-Type: application/json\nContent-Length: 0\nDate: Mon, 13 Jul 2015 19:53:04 GMT\n\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "415": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Detach configuration group", 
+        "tags": [
+          "database-instances"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/action": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Restarts the database service for a specified instance.\n\nThe restart operation restarts only the MySQL instance. Restarting\nMySQL erases any dynamic configuration settings that you make in\nMySQL.\n\nThe MySQL service is unavailable until the instance restarts.\n\nIf the operation succeeds, it returns a 202 Accepted response.", 
+        "examples": {
+          "application/json": {
+            "restart": {}
+          }, 
+          "text/plain": "POST /v1.0/1234/instances/13d940c4-70bb-4ff4-8866-6ee9ab5e5cae/action HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "restartInstance", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:11:19 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "415": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Restart instance", 
+        "tags": [
+          "database-instance-actions"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Resizes the memory for an instance.\n\nIf you provide a valid ``flavorRef`` , this operation changes the\nmemory size of the instance, and restarts MySQL.", 
+        "examples": {
+          "application/json": {
+            "resize": {
+              "flavorRef": "https://openstack.example.com/v1.0/1234/flavors/2"
+            }
+          }, 
+          "text/plain": "POST /v1.0/1234/instances/23a3d4fb-3731-497b-afd4-bf25bde2b5fc/action HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 2eeb3252-0164-40f5-8fb7-85df5faa2698\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "resizeInstance", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: text/plain; charset=UTF-8\nContent-Length: 58\nDate: Mon, 06 Feb 2012 21:28:10 GMT\n\n   \n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "415": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Resize instance", 
+        "tags": [
+          "database-instance-actions"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Resizes the volume that is attached to an instance.\n\nYou can use this operation to increase but not decrease the volume\nsize. A valid volume size is an integer value in gigabytes (GB).\n\nYou cannot increase the volume to a size that is larger than the\nAPI volume size limit.\n\nIf this operation succeeds, it returns a 202 Accepted response.", 
+        "examples": {
+          "application/json": {
+            "resize": {
+              "volume": {
+                "size": 4
+              }
+            }
+          }, 
+          "text/plain": "POST /v1.0/1234/instances/23a3d4fb-3731-497b-afd4-bf25bde2b5fc/action HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 2eeb3252-0164-40f5-8fb7-85df5faa2698\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "resizeVolume", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:12:20 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "415": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Resize instance volume", 
+        "tags": [
+          "database-instance-actions"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/databases": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a database within a specified instance.\n\nThis operation creates a new database within the specified\ninstance.\n\nThe ``name`` of the database is a required attribute.\n\nThe following additional attributes can be specified for each\ndatabase: ``collate`` and ``character_set`` .\n\nRequired and optional attributes for creating a database\n\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    Field 1    |                                                      Field 2                                                      | Field 3  |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      Name     |                                                    Description                                                    | Required |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|      name     | Specifies the database name for creating the database. See the request examples for the required xml/json format. |   Yes    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n| character_set |                       Set of symbols and encodings. The default character set is ``utf8`` .                       |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n|    collate    |  Set of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci`` . |    No    |\n+---------------+-------------------------------------------------------------------------------------------------------------------+----------+\n\nSee the MySQL documentation for information about supported\ncharacter sets and collations at\nhttp://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html .\n\nThe following database names are reserved and cannot be used for\ncreating databases: lost+found, information_schema, and mysql.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names.\n\nValid characters in a database name\n\n+--------------------------------------------------------------------------------------------------+\n|                                             Field 1                                              |\n+--------------------------------------------------------------------------------------------------+\n|                                            Character                                             |\n+--------------------------------------------------------------------------------------------------+\n|                             Letters (upper and lower cases allowed)                              |\n+--------------------------------------------------------------------------------------------------+\n|                                             Numbers                                              |\n+--------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name |\n+--------------------------------------------------------------------------------------------------+\n|                           '_' is allowed anywhere in the database name                           |\n+--------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name\n\n+----------------+\n|    Field 1     |\n+----------------+\n|   Character    |\n+----------------+\n| Single quotes  |\n+----------------+\n| Double quotes  |\n+----------------+\n|  Back quotes   |\n+----------------+\n|   Semicolons   |\n+----------------+\n|     Commas     |\n+----------------+\n|  Backslashes   |\n+----------------+\n| Forwardslashes |\n+----------------+\n\nLength restrictions for database name\n\n+------------------------------+---------+\n|           Field 1            | Field 2 |\n+------------------------------+---------+\n|         Restriction          |  Value  |\n+------------------------------+---------+\n| Database-name maximum length |    64   |\n+------------------------------+---------+", 
+        "examples": {
+          "application/json": {
+            "databases": [
+              {
+                "character_set": "utf8", 
+                "collate": "utf8_general_ci", 
+                "name": "testingdb"
+              }, 
+              {
+                "name": "sampledb"
+              }
+            ]
+          }, 
+          "text/plain": "POST /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/databases HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "createDatabase", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:11:18 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create database", 
+        "tags": [
+          "databases"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists databases for a specified instance.\n\nThis operation lists the databases for the specified instance.\n\nThis operation returns only the user-defined databases, not the\nsystem databases. The system databases (mysql, information_schema,\nlost+found) can only be viewed by a database administrator.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/databases HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n"
+        }, 
+        "id": "getDatabases", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "databases": [
+                  {
+                    "name": "anotherexampledb"
+                  }, 
+                  {
+                    "name": "exampledb"
+                  }, 
+                  {
+                    "name": "nextround"
+                  }, 
+                  {
+                    "name": "sampledb"
+                  }, 
+                  {
+                    "name": "testingdb"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 136\nDate: Wed, 25 Jan 2012 21:58:01 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List instance databases", 
+        "tags": [
+          "databases"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/databases/{databaseName}": [
+      {
+        "consumes": [], 
+        "description": "Deletes a specified database.\n\nThis operation deletes the requested database within the specified\ndatabase instance. Note that all data associated with the database\nis also deleted.", 
+        "examples": {
+          "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/databases/exampledb HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "deleteDatabase", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The name for the specified database.", 
+            "format": "", 
+            "in": "path", 
+            "name": "databaseName", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:11:18 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete database", 
+        "tags": [
+          "databases"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/root": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Enables the root user for a specified database instance and returns\nthe root password.\n\nThis operation enables login from any host for the root user and\nprovides the user with a generated root password.\n\nChanges you make as a root user may cause detrimental effects to\nthe database instance and unpredictable behavior for API\noperations. When you enable the root user, you accept the\npossibility that we will not be able to support your database\ninstance. While enabling root does not prevent us from a \u201cbest\neffort\u201d approach to helping you if something goes wrong with your\ninstance, we cannot ensure that we will be able to assist you if\nyou change core MySQL settings. These changes can be (but are not\nlimited to) turning off binlogs, removing users that we use to\naccess your instance, and so forth.", 
+        "examples": {
+          "text/plain": "POST /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/root HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "createRoot", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "user": {
+                  "name": "root", 
+                  "password": "secretsecret"
+                }
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 78\nDate: Wed, 25 Jan 2012 21:58:11 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Enable root user", 
+        "tags": [
+          "database-instances"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows root-enabled status for a database instance.\n\nReturns true if root user is enabled for a specified database\ninstance or false otherwise.\n\nThis operation checks an active specified database instance to see\nif root access is enabled. It returns True if root user is enabled\nfor the specified database instance or False otherwise.", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/root HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "isRootEnabled", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "rootEnabled": true
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 21\nDate: Wed, 25 Jan 2012 21:58:13 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show root-enabled status for database instance", 
+        "tags": [
+          "database-instances"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/users": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a user for a specified database instance.\n\nThis operation asynchronously provisions a new user for the\nspecified database instance based on the configuration defined in\nthe request object. Once the request is validated and progress has\nstarted on the provisioning process, a 202 Accepted response object\nis returned.\n\nWriter: please add the following note back into the doc once the list User details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the \"List User details\" section of this document).If the corresponding request cannot be fulfilled due to\ninsufficient or invalid data, an HTTP 400 \"Bad Request\" error\nresponse is returned with information regarding the nature of the\nfailure. Failures in the validation process are non-recoverable and\nrequire the caller to correct the cause of the failure and POST the\nrequest again.\n\nThe following table lists the required attributes for creating\nuser. See the request examples for the required xml/json format:\n\nRequired attributes for creating a user\n\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     Field 1     |                               Field 2                               |              Field 3               | Field 4  |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|    Applies To   |                                 Name                                |            Description             | Required |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|       User      |                                 name                                | Name of the user for the database. |   Yes    |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n|     password    |                  User password for database access.                 |                Yes                 |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n| (database) name | Name of the database that the user can access. One or more database |                 No                 |          |\n|                 |                       names must be specified.                      |                                    |          |\n+-----------------+---------------------------------------------------------------------+------------------------------------+----------+\n\nNotes- A user is granted all privileges on the specified databases.\n\n- The following user name is reserved and cannot be used for\n  creating users: root.\n\nSee the following tables for information about characters that are\nvalid/invalid for creating database names, user names, and\npasswords.\n\nValid characters in a database name, user name, and password\n\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Field 1                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                         Character                                                         |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                          Letters (upper and lower cases allowed)                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                                                          Numbers                                                          |\n+---------------------------------------------------------------------------------------------------------------------------+\n| '@', '?', '#', and spaces are allowed, but **not** at the beginning and end of the database name, user name, and password |\n+---------------------------------------------------------------------------------------------------------------------------+\n|                           \"_\" is allowed anywhere in the database name, user name, and password                           |\n+---------------------------------------------------------------------------------------------------------------------------+\n\nCharacters that **cannot** be used in a database name, user name, and password\n\n+---------------------------------------------------------+\n|                         Field 1                         |\n+---------------------------------------------------------+\n|                        Character                        |\n+---------------------------------------------------------+\n|                      Single quotes                      |\n+---------------------------------------------------------+\n|                      Double quotes                      |\n+---------------------------------------------------------+\n|                       Back quotes                       |\n+---------------------------------------------------------+\n|                        Semicolons                       |\n+---------------------------------------------------------+\n|                          Commas                         |\n+---------------------------------------------------------+\n|                       Backslashes                       |\n+---------------------------------------------------------+\n|                      Forwardslashes                     |\n+---------------------------------------------------------+\n| Spaces at the front or end of the user name or password |\n+---------------------------------------------------------+\n\nLength restrictions for database name, user name, and password\n\n+------------------------------+-----------------------------+\n|           Field 1            |           Field 2           |\n+------------------------------+-----------------------------+\n|         Restriction          |            Value            |\n+------------------------------+-----------------------------+\n| Database name maximum length |              64             |\n+------------------------------+-----------------------------+\n|   User name maximum length   |              16             |\n+------------------------------+-----------------------------+\n|   Password maximum length    | unlimited (no restrictions) |\n+------------------------------+-----------------------------+", 
+        "examples": {
+          "application/json": {
+            "users": [
+              {
+                "databases": [
+                  {
+                    "name": "databaseA"
+                  }
+                ], 
+                "name": "dbuser3", 
+                "password": "secretsecret"
+              }, 
+              {
+                "databases": [
+                  {
+                    "name": "databaseB"
+                  }, 
+                  {
+                    "name": "databaseC"
+                  }
+                ], 
+                "name": "dbuser4", 
+                "password": "secretsecret"
+              }
+            ]
+          }, 
+          "text/plain": "POST /v1.0/1234/instances/1c59bdb8-03b6-4079-a7db-ba92d23a98b3/users HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: bb64d788-2dec-4a6b-a670-7151d108cacf\nAccept: application/json\nContent-Type: application/json"
+        }, 
+        "id": "createUser", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:11:18 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create user", 
+        "tags": [
+          "user-management"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists the users in a specified database instance.\n\nThis operation lists the users in the specified database instance,\nalong with the associated databases for that user.\n\nThis operation does not return the system users (database\nadministrators that administer the health of the database). Also,\nthis operation returns the \"root\" user only if \"root\" user has been\nenabled.\n\nThe following notes apply to MySQL users:\n\n- User names can be up to 16 characters long.\n\n- When you create accounts with INSERT, you must use FLUSH\n  PRIVILEGES to tell the server to reload the grant tables.\n\n- For additional information, See:\n  http://dev.mysql.com/doc/refman/5.1/en/user-account-\n  management.html", 
+        "examples": {
+          "text/plain": "GET /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "getUsers", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "users": [
+                  {
+                    "databases": [
+                      {
+                        "name": "databaseA"
+                      }
+                    ], 
+                    "name": "dbuser3"
+                  }, 
+                  {
+                    "databases": [
+                      {
+                        "name": "databaseB"
+                      }, 
+                      {
+                        "name": "databaseC"
+                      }
+                    ], 
+                    "name": "dbuser4"
+                  }
+                ]
+              }, 
+              "text/plain": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 152\nDate: Wed, 21 Mar 2012 17:46:46 GMT"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List database instance users", 
+        "tags": [
+          "user-management"
+        ]
+      }
+    ], 
+    "/v1.0/{accountId}/instances/{instanceId}/users/{name}": [
+      {
+        "consumes": [], 
+        "description": "Deletes a specified user for a specified database instance.\n\nThis operation deletes the specified user for the specified\ndatabase instance.\n\nThere is a bug in a python library that Rackspace is using that may\ncause incorrect user deletions to occur if a period (.) is used in\nthe user name. In this case, the user name is truncated to remove\nthe portion of the name from the period to the end, leaving only\nthe portion from the beginning up to the period. For example, for a\nuser named \"my.userA\", the bug would truncate the user name to\n\"my\", and if the user \"my\" exists, that user will be incorrectly\ndeleted. To avoid the problem, do not use periods in user names.", 
+        "examples": {
+          "text/plain": "DELETE /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users/testuser HTTP/1.1\nUser-Agent: python-example-client\nHost: openstack.example.com\nX-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7\nAccept: application/json\nContent-Type: application/json\n\n\n"
+        }, 
+        "id": "deleteUser", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The name for the specified user.", 
+            "format": "", 
+            "in": "path", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The instance ID for the specified database instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "instanceId", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The account ID of the owner of the specified instance.", 
+            "format": "", 
+            "in": "path", 
+            "name": "accountId", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {
+              "text/plain": "HTTP/1.1 202 Accepted\nContent-Type: application/json\nContent-Length: 0\nDate: Wed, 27 Jun 2012 23:11:19 GMT\n"
+            }, 
+            "headers": {}
+          }, 
+          "400": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "401": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "403": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "404": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "405": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "413": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "422": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "500": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "501": {
+            "examples": {}, 
+            "headers": {}
+          }, 
+          "503": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete user", 
+        "tags": [
+          "user-management"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "api-versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Database instances (instances)", 
+      "name": "database-instances", 
+      "summary": ""
+    }, 
+    {
+      "description": "Database instance actions (action)", 
+      "name": "database-instance-actions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Databases (databases)", 
+      "name": "databases", 
+      "summary": ""
+    }, 
+    {
+      "description": "Users (users)", 
+      "name": "user-management", 
+      "summary": ""
+    }, 
+    {
+      "description": "Flavors (flavors)", 
+      "name": "flavors", 
+      "summary": ""
+    }, 
+    {
+      "description": "Datastores (datastores)", 
+      "name": "datastores", 
+      "summary": ""
+    }, 
+    {
+      "description": "Configuration groups (configurations)", 
+      "name": "configurations", 
+      "summary": ""
+    }
+  ]
+}

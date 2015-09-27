@@ -1,0 +1,22 @@
+{
+  "endpoints": [
+    {
+      "interface": "public", 
+      "service_id": "686766", 
+      "id": "828384", 
+      "links": {
+        "self": "http://identity:35357/v3/endpoints/828384"
+      }, 
+      "name": "the public volume endpoint"
+    }, 
+    {
+      "interface": "internal", 
+      "service_id": "686766", 
+      "id": "642136", 
+      "links": {
+        "self": "http://identity:35357/v3/endpoints/642136"
+      }, 
+      "name": "the internal volume endpoint"
+    }
+  ]
+}

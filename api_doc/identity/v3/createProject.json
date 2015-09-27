@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "parent_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the parent project.", 
+      "format": ""
+    }, 
+    "enabled": {
+      "required": false, 
+      "type": "boolean", 
+      "description": "Enables or disables a project.\n\nSet to ``true`` to enable the project or ``false`` to disable the\nproject. Default is ``true`` .", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The project description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The project name.", 
+      "format": ""
+    }, 
+    "domain_id": {
+      "required": false, 
+      "type": "string", 
+      "description": "The ID of the domain for the project.", 
+      "format": ""
+    }
+  }
+}

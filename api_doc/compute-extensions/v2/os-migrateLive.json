@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "disk_over_commit": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If true, disk over commit is allowed.", 
+      "format": ""
+    }, 
+    "block_migration": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "If true, block migration is allowed.", 
+      "format": ""
+    }, 
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of the new host.", 
+      "format": ""
+    }, 
+    "os-migrateLive": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``os-migrateLive`` action in the request body.", 
+      "format": ""
+    }
+  }
+}

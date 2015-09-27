@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "adminPass": {
+      "required": true, 
+      "type": "string", 
+      "description": "The password that enables the administrator to access the rescued\ninstance.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "resetState": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``resetState`` action in the request body.", 
+      "format": ""
+    }, 
+    "state": {
+      "required": true, 
+      "type": "string", 
+      "description": "The desired state of a server.", 
+      "format": ""
+    }
+  }
+}

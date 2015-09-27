@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "location": {
+      "required": true, 
+      "type": "string", 
+      "description": "", 
+      "format": "uri"
+    }
+  }
+}

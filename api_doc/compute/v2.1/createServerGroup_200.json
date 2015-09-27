@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "rules": {
+      "required": true, 
+      "type": "string", 
+      "description": "A rules object.", 
+      "format": ""
+    }, 
+    "security_groups": {
+      "required": true, 
+      "type": "string", 
+      "description": "Security groups object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "Security group description.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The security group name.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The security group ID.", 
+      "format": ""
+    }
+  }
+}

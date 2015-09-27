@@ -1,0 +1,10 @@
+{
+  "extension": {
+    "updated": "2014-12-03T00:00:00Z", 
+    "description": "Create a backup of a server.", 
+    "links": [], 
+    "namespace": "http://docs.openstack.org/compute/ext/fake_xml", 
+    "alias": "os-create-backup", 
+    "name": "CreateBackup"
+  }
+}

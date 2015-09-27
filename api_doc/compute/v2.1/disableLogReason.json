@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "binary": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service name.", 
+      "format": ""
+    }, 
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "The host name.", 
+      "format": ""
+    }, 
+    "disabled_reason": {
+      "required": true, 
+      "type": "string", 
+      "description": "The reason the service was disabled.", 
+      "format": ""
+    }
+  }
+}

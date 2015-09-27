@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "generation": {
+      "required": true, 
+      "type": "integer", 
+      "description": "A unique integer value that identifies the key. The generation\nvalue changes only if you set a new key. If the request sets the\nkey to the same value that already exists, the response shows the\nexisting generation value, which makes the request idempotent.", 
+      "format": ""
+    }, 
+    "signature": {
+      "required": true, 
+      "type": "string", 
+      "description": "A Base64-encoded HMAC signature over the Base64-encoded request\nmetadata object. For example:\n\n``Base64encode(HMAC(SigningKey,RequestMetadata))``\n\nThe long-term key of the requester is used for the signature. When\nthe request is received, the KDS must verify the signature. To do\nso, the KDS must access the ``source`` from the request metadata to\nlook up the associated long-term key to use to verify the\nsignature. The KDS should not access any other data contained in\nthe request metadata before verifying the signature. If the KDS\nfails to verify the signature, it risks issuing a ticket to a party\nwho is impersonating the source.", 
+      "format": ""
+    }, 
+    "metadata": {
+      "required": true, 
+      "type": "string", 
+      "description": "A Base64-encoded JSON object that contains these key and value\npairs:\n\n- ``source`` . The identity who is requesting a ticket.\n\n- ``destination`` . The target for which the ticket will be valid.\n\n- ``timestamp`` . The current time stamp from the requester.\n\n- ``nonce`` . Random, single-use data. See Cryptographic nonce .\n\nThe time stamp and nonce are required to prevent replay attacks.\n\nFor example:\n\n{ \"source\": \"scheduler.host.example.com\", \"destination\": \"compute.host.example.com\", \"timestamp\": \"2012-03-26T10:01:01.720000\", \"nonce\": 1234567890 }", 
+      "format": ""
+    }
+  }
+}

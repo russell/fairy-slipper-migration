@@ -1,0 +1,13 @@
+{
+  "endpoint": {
+    "name": "the internal volume endpoint", 
+    "links": {
+      "self": "http://identity:35357/v3/endpoints/828384"
+    }, 
+    "url": "http://identity:35357/v3/endpoints/828384", 
+    "region": "north", 
+    "interface": "internal", 
+    "service_id": "686766", 
+    "id": "828384"
+  }
+}

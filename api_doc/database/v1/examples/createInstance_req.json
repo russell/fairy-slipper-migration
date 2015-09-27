@@ -1,0 +1,30 @@
+{
+  "instance": {
+    "users": [
+      {
+        "password": "secretsecret", 
+        "name": "demouser", 
+        "databases": [
+          {
+            "name": "sampledb"
+          }
+        ]
+      }
+    ], 
+    "volume": {
+      "size": 2
+    }, 
+    "flavorRef": "https://openstack.example.com/v1.0/1234/flavors/1", 
+    "name": "json_rack_instance", 
+    "databases": [
+      {
+        "character_set": "utf8", 
+        "name": "sampledb", 
+        "collate": "utf8_general_ci"
+      }, 
+      {
+        "name": "nextround"
+      }
+    ]
+  }
+}

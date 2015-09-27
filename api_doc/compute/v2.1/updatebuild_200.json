@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "url": {
+      "required": true, 
+      "type": "string", 
+      "description": "The URL associated with the agent.", 
+      "format": ""
+    }, 
+    "md5hash": {
+      "required": true, 
+      "type": "string", 
+      "description": "The MD5 hash.", 
+      "format": ""
+    }, 
+    "agent_id": {
+      "required": true, 
+      "type": "integer", 
+      "description": "The agent ID.", 
+      "format": ""
+    }, 
+    "version": {
+      "required": true, 
+      "type": "string", 
+      "description": "The version.", 
+      "format": ""
+    }
+  }
+}

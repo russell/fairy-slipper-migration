@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "tenant_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The tenant ID for the specified metering label.", 
+      "format": ""
+    }, 
+    "metering_label": {
+      "required": true, 
+      "type": "object", 
+      "description": "The ``metering label`` object.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": true, 
+      "type": "string", 
+      "description": "Description for the metering label.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the metering label.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The metering label ID.", 
+      "format": ""
+    }
+  }
+}

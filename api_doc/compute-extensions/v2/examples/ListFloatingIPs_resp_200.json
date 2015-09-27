@@ -1,0 +1,18 @@
+{
+  "floating_ips": [
+    {
+      "instance_id": null, 
+      "ip": "10.10.10.1", 
+      "fixed_ip": null, 
+      "id": 1, 
+      "pool": "nova"
+    }, 
+    {
+      "instance_id": null, 
+      "ip": "10.10.10.2", 
+      "fixed_ip": null, 
+      "id": 2, 
+      "pool": "nova"
+    }
+  ]
+}

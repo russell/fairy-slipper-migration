@@ -1,0 +1,141 @@
+{
+  "file_tags": {}, 
+  "method_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#build_info_show": "build-info", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#event_show": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#getVersions-heat-v1": "heat-versions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_event_list": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_list": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_metadata": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_show": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_signal": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_type_get": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_type_list": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_type_template": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#service_status_list": "service-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_config_create": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_config_delete": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_config_show": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_create": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_delete": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_index": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_metadata": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_show": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployment_update": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_abandon": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_action_cancel_update": "stack-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_action_check": "stack-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_action_resume": "stack-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_action_suspend": "stack-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_adopt": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_create": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_delete": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_delete_snapshot": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_event_list": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_events_find": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_find": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_list": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_list_snapshot": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_preview": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_resources_find": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_restore_snapshot": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_show": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_show_snapshot": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_snapshot": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_template": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_update": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_update_preview": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#template_validate": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#template_version_list": "stack-templates"
+  }, 
+  "resource_tags": {
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#abandon": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#actions": "stack-actions", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#build_info": "build-info", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#config_id": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#deployment_id": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#event_id": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#events": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#events2": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#events4": "stack-events", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#list_template_versions": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#metadata": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#preview": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_name": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_schema": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_template": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resource_types": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resources": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#resources2": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#restore": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#server_id": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#service_list": "service-status", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#signal": "stack-resources", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#snapshot_id_snapshots": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#snapshots": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_configs": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#software_deployments": "software-config", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_id": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stack_name": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#stacks": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#template": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#update_preview": "stacks", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#validate_template": "stack-templates", 
+    "/home/russell/projects/fairy-slipper-migration/api-site/api-ref/src/wadls/orchestration-api/src/v1/orchestration-api.wadl#versions": "heat-versions"
+  }, 
+  "service": "orchestration", 
+  "tags": [
+    {
+      "description": "General API information", 
+      "name": "general-info", 
+      "summary": "Authenticated calls that target a known URI but that use an HTTP\nmethod that the implementation does not support return a\n``405Method Not Allowed`` error code. In addition, the HTTP\n``OPTIONS`` method is supported for each known URI. In both cases,\nthe ``Allow`` response header indicates the HTTP methods that are\nsupported for the resource."
+    }, 
+    {
+      "description": "API versions", 
+      "name": "heat-versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stacks", 
+      "name": "stacks", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stack actions", 
+      "name": "stack-actions", 
+      "summary": "Performs non-lifecycle operations on the stack. Specify the action\nin the request body."
+    }, 
+    {
+      "description": "Stack resources", 
+      "name": "stack-resources", 
+      "summary": ""
+    }, 
+    {
+      "description": "Stack events", 
+      "name": "stack-events", 
+      "summary": ""
+    }, 
+    {
+      "description": "Templates", 
+      "name": "stack-templates", 
+      "summary": ""
+    }, 
+    {
+      "description": "Build info", 
+      "name": "build-info", 
+      "summary": ""
+    }, 
+    {
+      "description": "Software configuration", 
+      "name": "software-config", 
+      "summary": ""
+    }, 
+    {
+      "description": "Manage service", 
+      "name": "service-status", 
+      "summary": ""
+    }
+  ], 
+  "title": "Orchestration API", 
+  "version": "v1"
+}

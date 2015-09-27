@@ -1,0 +1,23 @@
+{
+  "stack_name": "{stack_name}", 
+  "template_url": "{template_url}", 
+  "adopt_stack_data": {
+    "status": "COMPLETE", 
+    "name": "teststack", 
+    "template": {}, 
+    "action": "CREATE", 
+    "id": "bxxxxx4-0xx2-4xx1-axx6-exxxxxxxc", 
+    "resources": {
+      "MyServer": {
+        "status": "COMPLETE", 
+        "name": "MyServer", 
+        "resource_data": {}, 
+        "resource_id": "cxxxx3-dxx3-4xx-bxx2-3xxxxxxxxa", 
+        "action": "CREATE", 
+        "type": "OS::Trove::Instance", 
+        "metadata": {}
+      }
+    }
+  }, 
+  "timeout_mins": "{timeout_mins}"
+}

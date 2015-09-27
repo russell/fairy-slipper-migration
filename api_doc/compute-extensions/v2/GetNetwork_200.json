@@ -1,0 +1,179 @@
+{
+  "type": "object", 
+  "properties": {
+    "bridge": {
+      "required": true, 
+      "type": "string", 
+      "description": "VIFs on this network are connected to this bridge.", 
+      "format": ""
+    }, 
+    "vpn_public_port": {
+      "required": true, 
+      "type": "string", 
+      "description": "VPN public port.", 
+      "format": ""
+    }, 
+    "dhcp_start": {
+      "required": true, 
+      "type": "string", 
+      "description": "DHCP starting address.", 
+      "format": ""
+    }, 
+    "bridge_interface": {
+      "required": true, 
+      "type": "string", 
+      "description": "The bridge is connected to this interface.", 
+      "format": ""
+    }, 
+    "updated_at": {
+      "required": false, 
+      "type": "string", 
+      "description": "The date and time when the server or image was updated.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nFor example, ``2015-08-27T09:49:58-05:00`` .\n\nIf you omit the time zone, the UTC time zone is assumed.\n\nIf you omit the updated-at date and time stamp, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The network ID.", 
+      "format": ""
+    }, 
+    "cidr_v6": {
+      "required": true, 
+      "type": "string", 
+      "description": "IPv6 subnet.", 
+      "format": ""
+    }, 
+    "deleted_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server or image was deleted.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the deleted-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }, 
+    "gateway": {
+      "required": true, 
+      "type": "string", 
+      "description": "IPv4 gateway.", 
+      "format": ""
+    }, 
+    "vpn_public_address": {
+      "required": true, 
+      "type": "string", 
+      "description": "VPN public address.", 
+      "format": ""
+    }, 
+    "network": {
+      "required": true, 
+      "type": "object", 
+      "description": "A dictionary representation of a network.", 
+      "format": ""
+    }, 
+    "label": {
+      "required": true, 
+      "type": "string", 
+      "description": "Network label.", 
+      "format": ""
+    }, 
+    "priority": {
+      "required": true, 
+      "type": "integer", 
+      "description": "Network priority.", 
+      "format": ""
+    }, 
+    "project_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "Project id.", 
+      "format": ""
+    }, 
+    "netmask_v6": {
+      "required": true, 
+      "type": "string", 
+      "description": "The IPv6 net mask.", 
+      "format": ""
+    }, 
+    "deleted": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Deleted flag.", 
+      "format": ""
+    }, 
+    "vlan": {
+      "required": true, 
+      "type": "string", 
+      "description": "VLAN ID.", 
+      "format": ""
+    }, 
+    "broadcast": {
+      "required": false, 
+      "type": "string", 
+      "description": "The broadcast address.", 
+      "format": ""
+    }, 
+    "host": {
+      "required": true, 
+      "type": "string", 
+      "description": "Network host.", 
+      "format": ""
+    }, 
+    "injected": {
+      "required": true, 
+      "type": "boolean", 
+      "description": "Injected flag.", 
+      "format": ""
+    }, 
+    "cidr": {
+      "required": true, 
+      "type": "string", 
+      "description": "IPv4 subnet.", 
+      "format": ""
+    }, 
+    "rxtx_base": {
+      "required": true, 
+      "type": "string", 
+      "description": "RXTX base factor value for the network.", 
+      "format": ""
+    }, 
+    "multi_host": {
+      "required": true, 
+      "type": "string", 
+      "description": "Multi host.", 
+      "format": ""
+    }, 
+    "dns2": {
+      "required": true, 
+      "type": "string", 
+      "description": "Second DNS.", 
+      "format": ""
+    }, 
+    "dns1": {
+      "required": true, 
+      "type": "string", 
+      "description": "First DNS.", 
+      "format": ""
+    }, 
+    "netmask": {
+      "required": true, 
+      "type": "string", 
+      "description": "The net mask.", 
+      "format": ""
+    }, 
+    "gateway_v6": {
+      "required": true, 
+      "type": "string", 
+      "description": "IPv6 gateway.", 
+      "format": ""
+    }, 
+    "vpn_private_address": {
+      "required": true, 
+      "type": "string", 
+      "description": "VPN private address.", 
+      "format": ""
+    }, 
+    "created_at": {
+      "required": true, 
+      "type": "string", 
+      "description": "The date and time when the server, image, or backup was created.\n\nThe date and time stamp format is ISO 8601 :\n\nCCYY-MM-DDThh:mm:ss\u00b1hh:mmFor example, ``2015-08-27T09:49:58-05:00`` .\n\nThe ``\u00b1hh:mm`` value, if included, is the time zone as an offset\nfrom UTC.\n\nIf the updated-at date and time stamp is not set, its value is\n``null`` .", 
+      "format": ""
+    }
+  }
+}

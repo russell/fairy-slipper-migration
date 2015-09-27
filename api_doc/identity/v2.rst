@@ -1,0 +1,130 @@
+.. http:get:: /v2.0
+   :synopsis: Show version details
+
+   Shows details for the Identity API v2.0.
+
+   :responseexample 200: v2/examples/getVersionInfo-v2.0_resp_200.json
+   :responseexample 203: v2/examples/getVersionInfo-v2.0_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/extensions/{alias}
+   :synopsis: Get extension details
+
+   Gets detailed information for a specified extension.
+   
+   Specify the extension alias in the URI.
+
+   :responseexample 200: v2/examples/getExtension-v2.0_resp_200.json
+   :responseexample 203: v2/examples/getExtension-v2.0_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :parameter alias: The extension name.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /
+   :synopsis: List versions
+
+   Lists information about all Identity API versions.
+
+   :responseexample 200: v2/examples/getVersions-v2_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: versions
+   :statuscode 200: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants
+   :synopsis: List tenants
+
+   Lists tenants to which the specified token has access.
+
+   :responseexample 200: v2/examples/listTenants_resp_200.json
+   :responseexample 203: v2/examples/listTenants_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: identity-auth
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/tokens
+   :synopsis: Authenticate
+
+   Authenticates and generates a token.
+   
+   The Identity API is a RESTful web service. It is the entry point to
+   all service APIs. To access the Identity API, you must know its
+   URL.
+   
+   Each REST request against Identity requires the X-Auth-Token
+   header. Clients obtain this token, along with the URL to other
+   service APIs, by first authenticating against Identity with valid
+   credentials.
+   
+   To authenticate, you must provide either a user ID and password or
+   a token.
+   
+   If the authentication token has expired, this call returns the HTTP
+   ``401`` status code.
+   
+   If the token specified in the request has expired, this call
+   returns the HTTP ``404`` status code.
+   
+   The Identity API treats expired tokens as no longer valid tokens.
+   
+   The deployment determines how long expired tokens are stored.
+
+   :requestexample: v2/examples/authenticate-v2.0_req.json
+   :responseexample 200: v2/examples/authenticate-v2.0_resp_200.json
+   :responseexample 203: v2/examples/authenticate-v2.0_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: identity-auth
+   :requestschema: v2/authenticate-v2.0.json
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+

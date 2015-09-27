@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "os-getConsoleOutput": {
+      "required": true, 
+      "type": "string", 
+      "description": "Specify the ``os-getConsoleOutput`` action in the request body.", 
+      "format": ""
+    }, 
+    "length": {
+      "required": false, 
+      "type": "string", 
+      "description": "Number of lines to fetch from the end of console log.", 
+      "format": ""
+    }
+  }
+}

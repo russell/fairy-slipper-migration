@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "createImage": {
+      "required": false, 
+      "type": "string", 
+      "description": "", 
+      "format": ""
+    }, 
+    "container_format": {
+      "required": true, 
+      "type": "string", 
+      "description": "The container format refers to whether the VM image is in a file\nformat that also contains metadata about the actual VM.\n\nContainer formats include OVF and Amazon AMI. In addition, a VM\nimage might not have a container format. Instead, the image is a\nblob of unstructured data.\n\nYou can set the container format to one of the following formats:\n\n- ovf\n  OVF container format.\n\n- bare\n  No container or metadata envelope for the image.\n\n- aki\n  Amazon kernel image.\n\n- ari\n  Amazon ramdisk image.\n\n- ami\n  Amazon machine image.", 
+      "format": ""
+    }, 
+    "disk_format": {
+      "required": true, 
+      "type": "string", 
+      "description": "A valid value is ``aki`` , ``ari`` , ``ami`` , ``raw`` , ``iso`` ,\n``vhd`` , ``vdi`` , ``qcow2`` , or ``vmdk`` .\n\nThe disk format of a VM image is the format of the underlying disk\nimage. Virtual appliance vendors have different formats for laying\nout the information contained in a VM disk image.\n\nYou can set the container format for your image to one of the\nfollowing values:\n\n- raw\n  Unstructured disk image format.\n\n- vhd\n  VHD disk format, a common disk format used by VM monitors from\n  VMWare, Xen, Microsoft, VirtualBox, and others.\n\n- vmdk\n  A common disk format that supported by many VM monitors.\n\n- vdi\n  Supported by VirtualBox VM monitor and the QEMU emulator.\n\n- iso\n  An archive format for the data contents of an optical disc, such\n  as CDROM.\n\n- qcow2\n  Supported by the QEMU emulator that can expand dynamically and\n  supports Copy on Write.\n\n- aki\n  An Amazon kernel image.\n\n- ari\n  An Amazon ramdisk image.\n\n- ami\n  An Amazon machine image.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name for the image. Note that the name of an image is not unique to\na Glance node. The API cannot expect users to know the names of\nimages owned by others.", 
+      "format": ""
+    }
+  }
+}

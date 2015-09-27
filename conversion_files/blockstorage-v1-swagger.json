@@ -1,0 +1,3042 @@
+{
+  "basePath": {}, 
+  "definitions": {
+    "createSnapshot": {
+      "properties": {
+        "snapshot": {
+          "description": "A partial representation of a snapshot used in the creation\nprocess.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createVolume": {
+      "properties": {
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "imageRef": {
+          "description": "The ID of the image from which you want to create the volume.\nRequired to create a bootable volume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "To create a volume from an existing snapshot, specify the ID of the\nexisting volume snapshot. The volume is created in same\navailability zone and with same size as the snapshot.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "To create a volume from an existing volume, specify the ID of the\nexisting volume. The volume is created with the same size as the\nsource volume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "volume": {
+          "description": "A partial representation of a volume used in the creation process.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createVolumeType": {
+      "properties": {
+        "volume_type": {
+          "description": "A partial representation of a volume type used in the creation\nprocess.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "createVolume_201": {
+      "properties": {
+        "attachments": {
+          "description": "One or more instance attachments.", 
+          "format": "", 
+          "required": true, 
+          "type": "object"
+        }, 
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "created_at": {
+          "description": "Date and time when the volume was created.", 
+          "format": "date-time", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The volume ID.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "The ID of the source volume snapshot.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "The ID of the source volume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "The volume status.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume": {
+          "description": "A ``volume`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "getDefaults_200": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "getVolume_200": {
+      "properties": {
+        "attachments": {
+          "description": "One or more instance attachments.", 
+          "format": "", 
+          "required": true, 
+          "type": "object"
+        }, 
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "created_at": {
+          "description": "Date and time when the volume was created.", 
+          "format": "date-time", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The volume ID.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "The ID of the source volume snapshot.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "The ID of the source volume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "The volume status.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume": {
+          "description": "A ``volume`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "getVolumesDetail_200": {
+      "properties": {
+        "attachments": {
+          "description": "One or more instance attachments.", 
+          "format": "", 
+          "required": true, 
+          "type": "object"
+        }, 
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "created_at": {
+          "description": "Date and time when the volume was created.", 
+          "format": "date-time", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The volume ID.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "The ID of the source volume snapshot.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "The ID of the source volume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "The volume status.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volumes": {
+          "description": "A ``volumes`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "getVolumesSimple_200": {
+      "properties": {
+        "attachments": {
+          "description": "One or more instance attachments.", 
+          "format": "", 
+          "required": true, 
+          "type": "object"
+        }, 
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "created_at": {
+          "description": "Date and time when the volume was created.", 
+          "format": "date-time", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The volume ID.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "The ID of the source volume snapshot.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "The ID of the source volume.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "status": {
+          "description": "The volume status.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volumes": {
+          "description": "A ``volumes`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "showQuotaDetailUser_200": {
+      "properties": {
+        "cores": {
+          "description": "A cores object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "fixed_ips": {
+          "description": "A fixed_ips object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "floating_ips": {
+          "description": "A floating_ips object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "in_use": {
+          "description": "The number of items in use.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "An injected_file_content_bytes object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "An injected_file_path_bytes object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "injected_files": {
+          "description": "An injected_files object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "instances": {
+          "description": "An instances object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "key_pairs": {
+          "description": "A key_pairs object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "limit": {
+          "description": "The number of items permitted for this tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "A metadata_items object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "quota_set": {
+          "description": "A quota_set object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "A ram object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "reserved": {
+          "description": "The number of reserved items.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "A security_group_rules object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "security_groups": {
+          "description": "A security_groups object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "showQuotaUser_200": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "showQuota_200": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "in_use": {
+          "description": "The in use data size. Visible only if you set the ``usage=True``\nquery parameter.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "reserved": {
+          "description": "Reserved volume size. Visible only if you set the ``usage=True``\nquery parameter.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateQuota": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateQuotaUser": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateQuotaUser_200": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateQuota_200": {
+      "properties": {
+        "cores": {
+          "description": "The number of instance cores allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "fixed_ips": {
+          "description": "The number of fixed IP addresses allowed for each tenant. Must be\nequal to or greater than the number of allowed instances.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "floating_ips": {
+          "description": "The number of floating IP addresses allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "id": {
+          "description": "The ID for the quota set.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_content_bytes": {
+          "description": "The number of bytes of content allowed for each injected file.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_file_path_bytes": {
+          "description": "The number of bytes allowed for each injected file path.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "injected_files": {
+          "description": "The number of injected files allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "instances": {
+          "description": "The number of instances allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "key_pairs": {
+          "description": "The number of key pairs allowed for each user.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "metadata_items": {
+          "description": "The number of metadata items allowed for each instance.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "quota_set": {
+          "description": "A ``quota_set`` object.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "ram": {
+          "description": "The amount of instance RAM in megabytes allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "security_group_rules": {
+          "description": "The number of rules allowed for each security group.", 
+          "format": "", 
+          "required": false, 
+          "type": "integer"
+        }, 
+        "security_groups": {
+          "description": "The number of security groups allowed for each tenant.", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateSnapshotMetadata": {
+      "properties": {
+        "metadata": {
+          "description": "One or more metadata key and value pairs to set or unset for the\nsnapshot.\n\nTo unset a metadata key value, specify only the key name.\n\nTo set a metadata key value, specify the key and value pair.\n\nThe Block Storage server does not respect case-sensitive key names.\nFor example, if you specify both ``\"key\": \"v1\"`` and ``\"KEY\":\n\"V1\"`` , the server sets and returns only the ``KEY`` key and value\npair.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateVolumeType": {
+      "properties": {
+        "volume_type": {
+          "description": "A volume type offers a way to categorize or group volumes.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateVolumeTypeExtraSpecs": {
+      "properties": {
+        "extra_specs": {
+          "description": "A key:value pair that offers a way to show additional\nspecifications associated with the volume type. Examples include\ncapabilities, capacity, compression, and so on, depending on the\nstorage driver in use.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "A volume type offers a way to categorize or group volumes.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }, 
+    "updateVolumeTypeExtraSpecs_200": {
+      "properties": {
+        "availability_zone": {
+          "description": "The availability zone.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "description": {
+          "description": "The volume description.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "imageRef": {
+          "description": "The ID of the image from which you want to create the volume.\nRequired to create a bootable volume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "metadata": {
+          "description": "One or more metadata key and value pairs to associate with the\nvolume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "name": {
+          "description": "The volume name.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "size": {
+          "description": "The size of the volume, in gibibytes (GiB).", 
+          "format": "", 
+          "required": true, 
+          "type": "integer"
+        }, 
+        "snapshot_id": {
+          "description": "To create a volume from an existing snapshot, specify the ID of the\nexisting volume snapshot. The volume is created in same\navailability zone and with same size as the snapshot.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "source_volid": {
+          "description": "To create a volume from an existing volume, specify the ID of the\nexisting volume. The volume is created with the same size as the\nsource volume.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }, 
+        "volume": {
+          "description": "A partial representation of a volume used in the creation process.", 
+          "format": "", 
+          "required": true, 
+          "type": "string"
+        }, 
+        "volume_type": {
+          "description": "The associated volume type.", 
+          "format": "", 
+          "required": false, 
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "externalDocs": {}, 
+  "host": {}, 
+  "info": {
+    "license": {
+      "name": "Apache 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "service": "blockstorage", 
+    "title": "Block Storage API", 
+    "version": "v1"
+  }, 
+  "paths": {
+    "/": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists information about all Block Storage API versions.", 
+        "examples": {}, 
+        "id": "listVersionsv1", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8776/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-01-04T11:33:21Z"
+                  }, 
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8776/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-11-21T11:33:21Z"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }, 
+          "300": {
+            "examples": {
+              "application/json": {
+                "versions": [
+                  {
+                    "id": "v1.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8776/v1/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-01-04T11:33:21Z"
+                  }, 
+                  {
+                    "id": "v2.0", 
+                    "links": [
+                      {
+                        "href": "http://23.253.228.211:8776/v2/", 
+                        "rel": "self"
+                      }
+                    ], 
+                    "status": "CURRENT", 
+                    "updated": "2012-11-21T11:33:21Z"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List API versions", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v1": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for Block Storage API v1.", 
+        "examples": {}, 
+        "id": "showVersionDetailsv1", 
+        "method": "get", 
+        "parameters": [], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "version": {
+                  "id": "v1.0", 
+                  "links": [
+                    {
+                      "href": "http://23.253.228.211:8776/v1/", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "http://jorgew.github.com/block-storage-api/content/os-block-storage-1.0.pdf", 
+                      "rel": "describedby", 
+                      "type": "application/pdf"
+                    }, 
+                    {
+                      "href": "http://docs.rackspacecloud.com/servers/api/v1.1/application.wadl", 
+                      "rel": "describedby", 
+                      "type": "application/vnd.sun.wadl+xml"
+                    }
+                  ], 
+                  "media-types": [
+                    {
+                      "base": "application/xml", 
+                      "type": "application/vnd.openstack.volume+xml;version=1"
+                    }, 
+                    {
+                      "base": "application/json", 
+                      "type": "application/vnd.openstack.volume+json;version=1"
+                    }
+                  ], 
+                  "status": "CURRENT", 
+                  "updated": "2012-01-04T11:33:21Z"
+                }
+              }
+            }, 
+            "headers": {}
+          }, 
+          "203": {
+            "examples": {
+              "application/json": {
+                "version": {
+                  "id": "v1.0", 
+                  "links": [
+                    {
+                      "href": "http://23.253.228.211:8776/v1/", 
+                      "rel": "self"
+                    }, 
+                    {
+                      "href": "http://jorgew.github.com/block-storage-api/content/os-block-storage-1.0.pdf", 
+                      "rel": "describedby", 
+                      "type": "application/pdf"
+                    }, 
+                    {
+                      "href": "http://docs.rackspacecloud.com/servers/api/v1.1/application.wadl", 
+                      "rel": "describedby", 
+                      "type": "application/vnd.sun.wadl+xml"
+                    }
+                  ], 
+                  "media-types": [
+                    {
+                      "base": "application/xml", 
+                      "type": "application/vnd.openstack.volume+xml;version=1"
+                    }, 
+                    {
+                      "base": "application/json", 
+                      "type": "application/vnd.openstack.volume+json;version=1"
+                    }
+                  ], 
+                  "status": "CURRENT", 
+                  "updated": "2012-01-04T11:33:21Z"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show API v1 details", 
+        "tags": [
+          "versions"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/os-quota-sets/defaults": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Gets default quotas for a tenant.", 
+        "examples": {}, 
+        "id": "getDefaults", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": 20, 
+                  "fixed_ips": -1, 
+                  "floating_ips": 10, 
+                  "id": "fake_tenant", 
+                  "injected_file_content_bytes": 10240, 
+                  "injected_file_path_bytes": 255, 
+                  "injected_files": 5, 
+                  "instances": 10, 
+                  "key_pairs": 100, 
+                  "metadata_items": 128, 
+                  "ram": 51200, 
+                  "security_group_rules": 20, 
+                  "security_groups": 10
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Get default quotas", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/os-quota-sets/{tenant_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows quotas for a tenant.", 
+        "examples": {}, 
+        "id": "showQuota", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "Set to ``usage=True`` to show quota usage. Default is ``False`` .", 
+            "format": "", 
+            "in": "query", 
+            "name": "usage", 
+            "required": false, 
+            "type": "boolean"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": 20, 
+                  "fixed_ips": -1, 
+                  "floating_ips": 10, 
+                  "id": "fake_tenant", 
+                  "injected_file_content_bytes": 10240, 
+                  "injected_file_path_bytes": 255, 
+                  "injected_files": 5, 
+                  "instances": 10, 
+                  "key_pairs": 100, 
+                  "metadata_items": 128, 
+                  "ram": 51200, 
+                  "security_group_rules": 20, 
+                  "security_groups": 10
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show quotas", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates quotas for a tenant.", 
+        "examples": {
+          "application/json": {
+            "quota_set": {
+              "security_groups": 45
+            }
+          }
+        }, 
+        "id": "updateQuota", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/updateQuota"
+            }
+          }, 
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": 20, 
+                  "fixed_ips": -1, 
+                  "floating_ips": 10, 
+                  "injected_file_content_bytes": 10240, 
+                  "injected_file_path_bytes": 255, 
+                  "injected_files": 5, 
+                  "instances": 10, 
+                  "key_pairs": 100, 
+                  "metadata_items": 128, 
+                  "ram": 51200, 
+                  "security_group_rules": 20, 
+                  "security_groups": 45
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update quotas", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes quotas for a tenant so the quotas revert to default values.", 
+        "examples": {}, 
+        "id": "deleteQuotas", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete quotas", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/os-quota-sets/{tenant_id}/detail/{user_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows details for quotas for a specified tenant and user.", 
+        "examples": {}, 
+        "id": "showQuotaDetailUser", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The user ID. Specify in the URI as a query string:\n``user_id={user_id}`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "user_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": {
+                    "in_use": 0, 
+                    "limit": 20, 
+                    "reserved": 0
+                  }, 
+                  "fixed_ips": {
+                    "in_use": 0, 
+                    "limit": -1, 
+                    "reserved": 0
+                  }, 
+                  "floating_ips": {
+                    "in_use": 0, 
+                    "limit": 10, 
+                    "reserved": 0
+                  }, 
+                  "injected_file_content_bytes": {
+                    "in_use": 0, 
+                    "limit": 10240, 
+                    "reserved": 0
+                  }, 
+                  "injected_file_path_bytes": {
+                    "in_use": 0, 
+                    "limit": 255, 
+                    "reserved": 0
+                  }, 
+                  "injected_files": {
+                    "in_use": 0, 
+                    "limit": 5, 
+                    "reserved": 0
+                  }, 
+                  "instances": {
+                    "in_use": 0, 
+                    "limit": 10, 
+                    "reserved": 0
+                  }, 
+                  "key_pairs": {
+                    "in_use": 0, 
+                    "limit": 100, 
+                    "reserved": 0
+                  }, 
+                  "metadata_items": {
+                    "in_use": 0, 
+                    "limit": 128, 
+                    "reserved": 0
+                  }, 
+                  "ram": {
+                    "in_use": 0, 
+                    "limit": 51200, 
+                    "reserved": 0
+                  }, 
+                  "security_group_rules": {
+                    "in_use": 0, 
+                    "limit": 20, 
+                    "reserved": 0
+                  }, 
+                  "security_groups": {
+                    "in_use": 0, 
+                    "limit": 10, 
+                    "reserved": 0
+                  }
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show quota details for user", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/os-quota-sets/{tenant_id}/{user_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Enables an admin user to show quotas for a specified tenant and\nuser.", 
+        "examples": {}, 
+        "id": "showQuotaUser", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The user ID. Specify in the URI as a query string:\n``user_id={user_id}`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "user_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": 20, 
+                  "fixed_ips": -1, 
+                  "floating_ips": 10, 
+                  "id": "fake_tenant", 
+                  "injected_file_content_bytes": 10240, 
+                  "injected_file_path_bytes": 255, 
+                  "injected_files": 5, 
+                  "instances": 10, 
+                  "key_pairs": 100, 
+                  "metadata_items": 128, 
+                  "ram": 51200, 
+                  "security_group_rules": 20, 
+                  "security_groups": 10
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show quotas for user", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates quotas for a specified tenant/project and user.", 
+        "examples": {
+          "application/json": {
+            "quota_set": {
+              "force": "True", 
+              "instances": 9
+            }
+          }
+        }, 
+        "id": "updateQuotaUser", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/updateQuotaUser"
+            }
+          }, 
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The user ID. Specify in the URI as a query string:\n``user_id={user_id}`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "user_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "quota_set": {
+                  "cores": 20, 
+                  "fixed_ips": -1, 
+                  "floating_ips": 10, 
+                  "injected_file_content_bytes": 10240, 
+                  "injected_file_path_bytes": 255, 
+                  "injected_files": 5, 
+                  "instances": 9, 
+                  "key_pairs": 100, 
+                  "metadata_items": 128, 
+                  "ram": 51200, 
+                  "security_group_rules": 20, 
+                  "security_groups": 10
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update quotas for user", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes quotas for a user so that the quotas revert to default\nvalues.", 
+        "examples": {}, 
+        "id": "deleteQuotasUser", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The ID for the tenant for which you want to show or update quotas.\nThis ID is different from the first tenant ID that you specify in\nthe URI: That ID is for the admin tenant.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The user ID. Specify in the URI as a query string:\n``user_id={user_id}`` .", 
+            "format": "", 
+            "in": "path", 
+            "name": "user_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "200": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete quotas for user", 
+        "tags": [
+          "os-quota-sets-v1"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/snapshots": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a snapshot.", 
+        "examples": {
+          "application/json": {
+            "snapshot": {
+              "display_description": "Daily backup", 
+              "display_name": "snap-001", 
+              "force": true, 
+              "volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"
+            }
+          }
+        }, 
+        "id": "createSnapshot", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createSnapshot"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "snapshot": {
+                  "created_at": "2012-02-29T03:50:07Z", 
+                  "display_description": "Daily backup", 
+                  "display_name": "snap-001", 
+                  "id": "3fbbcccf-d058-4502-8844-6feeffdf4cb5", 
+                  "size": 30, 
+                  "status": "available", 
+                  "volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create snapshot", 
+        "tags": [
+          "snapshots"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists simple snapshot entities.", 
+        "examples": {}, 
+        "id": "getSnapshotsSimple", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshots": [
+                  {
+                    "created_at": "2012-02-29T03:50:07Z", 
+                    "display_description": "Daily backup", 
+                    "display_name": "snap-001", 
+                    "id": "3fbbcccf-d058-4502-8844-6feeffdf4cb5", 
+                    "metadata": {
+                      "contents": "junk"
+                    }, 
+                    "size": 30, 
+                    "status": "available", 
+                    "volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"
+                  }, 
+                  {
+                    "created_at": "2012-03-19T01:52:47Z", 
+                    "display_description": "Weekly backup", 
+                    "display_name": "snap-002", 
+                    "id": "e479997c-650b-40a4-9dfe-77655818b0d2", 
+                    "metadata": {}, 
+                    "size": 25, 
+                    "status": "available", 
+                    "volume_id": "76b8950a-8594-4e5b-8dce-0dfa9c696358"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List snapshots", 
+        "tags": [
+          "snapshots"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/snapshots/detail": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists details for snapshot entities.", 
+        "examples": {}, 
+        "id": "getSnapshotsDetail", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshots": [
+                  {
+                    "created_at": "2012-02-29T03:50:07Z", 
+                    "display_description": "Daily backup", 
+                    "display_name": "snap-001", 
+                    "id": "3fbbcccf-d058-4502-8844-6feeffdf4cb5", 
+                    "metadata": {
+                      "contents": "junk"
+                    }, 
+                    "size": 30, 
+                    "status": "available", 
+                    "volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"
+                  }, 
+                  {
+                    "created_at": "2012-03-19T01:52:47Z", 
+                    "display_description": "Weekly backup", 
+                    "display_name": "snap-002", 
+                    "id": "e479997c-650b-40a4-9dfe-77655818b0d2", 
+                    "metadata": {}, 
+                    "size": 25, 
+                    "status": "available", 
+                    "volume_id": "76b8950a-8594-4e5b-8dce-0dfa9c696358"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List snapshots (detailed)", 
+        "tags": [
+          "snapshots"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/snapshots/{snapshot_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information about a specified snapshot.", 
+        "examples": {}, 
+        "id": "getSnapshot", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing snapshot.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshot": {
+                  "created_at": "2012-02-29T03:50:07Z", 
+                  "display_description": "Daily backup", 
+                  "display_name": "snap-001", 
+                  "id": "3fbbcccf-d058-4502-8844-6feeffdf4cb5", 
+                  "size": 30, 
+                  "status": "available", 
+                  "volume_id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show snapshot information", 
+        "tags": [
+          "snapshots"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified snapshot.", 
+        "examples": {}, 
+        "id": "deleteSnapshot", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing snapshot.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete snapshot", 
+        "tags": [
+          "snapshots"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/snapshots/{snapshot_id}/metadata": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows the metadata for a specified snapshot.", 
+        "examples": {}, 
+        "id": "showSnapshotMetadata", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing snapshot.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "snapshot": {
+                  "created_at": "2014-05-06T17:59:52.000000", 
+                  "description": null, 
+                  "id": "dfcd17fe-3b64-44ba-b95f-1c9c7109ef95", 
+                  "metadata": {
+                    "key": "v1"
+                  }, 
+                  "name": "my-snapshot", 
+                  "os-extended-snapshot-attributes:progress": "0%", 
+                  "os-extended-snapshot-attributes:project_id": "7e0105e19cd2466193729ef78b604f79", 
+                  "size": 10, 
+                  "status": "available", 
+                  "volume_id": "ebd80b99-bc3d-4154-9d28-5583baa80580"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show snapshot metadata", 
+        "tags": [
+          "snapshots"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates the metadata for a specified snapshot.", 
+        "examples": {
+          "application/json": {
+            "metadata": {
+              "key": "v1"
+            }
+          }
+        }, 
+        "id": "updateSnapshotMetadata", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/updateSnapshotMetadata"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing snapshot.", 
+            "format": "", 
+            "in": "path", 
+            "name": "snapshot_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "metadata": {
+                  "key": "v1"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update snapshot metadata", 
+        "tags": [
+          "snapshots"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/types": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists volume types.", 
+        "examples": {}, 
+        "id": "getVolumeTypes", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume_types": [
+                  {
+                    "extra_specs": {
+                      "capabilities": "gpu"
+                    }, 
+                    "id": "289da7f8-6440-407c-9fb4-7db01ec49164", 
+                    "name": "vol-type-001"
+                  }, 
+                  {
+                    "extra_specs": {}, 
+                    "id": "96c3bda7-c82a-4f50-be73-ca7621794835", 
+                    "name": "vol-type-002"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List volume types", 
+        "tags": [
+          "types"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a volume type.", 
+        "examples": {
+          "application/json": {
+            "volume_type": {
+              "extra_specs": {
+                "capabilities": "gpu"
+              }, 
+              "name": "vol-type-001"
+            }
+          }
+        }, 
+        "id": "createVolumeType", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createVolumeType"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume_type": {
+                  "extra_specs": {
+                    "capabilities": "gpu"
+                  }, 
+                  "id": "289da7f8-6440-407c-9fb4-7db01ec49164", 
+                  "name": "vol-type-001"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create volume type", 
+        "tags": [
+          "types"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/types/{volume_type_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates a volume type.", 
+        "examples": {
+          "application/json": {
+            "volume_type": {
+              "extra_specs": {
+                "capabilities": "gpu"
+              }, 
+              "name": "vol-type-001"
+            }
+          }
+        }, 
+        "id": "updateVolumeType", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/updateVolumeType"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_type_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume_type": {
+                  "extra_specs": {
+                    "capabilities": "gpu"
+                  }, 
+                  "id": "289da7f8-6440-407c-9fb4-7db01ec49164", 
+                  "name": "vol-type-001"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update volume type", 
+        "tags": [
+          "types"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Updates the extra specifications assigned to a volume type.", 
+        "examples": {
+          "application/json": {
+            "volume_type": {
+              "extra_specs": {
+                "capabilities": "gpu"
+              }, 
+              "name": "vol-type-001"
+            }
+          }
+        }, 
+        "id": "updateVolumeTypeExtraSpecs", 
+        "method": "put", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/updateVolumeTypeExtraSpecs"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_type_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume_type": {
+                  "extra_specs": {
+                    "capabilities": "gpu"
+                  }, 
+                  "id": "289da7f8-6440-407c-9fb4-7db01ec49164", 
+                  "name": "vol-type-001"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Update extra specs for a volume type", 
+        "tags": [
+          "types"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information about a specified volume type.", 
+        "examples": {}, 
+        "id": "getVolumeType", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_type_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume_type": {
+                  "extra_specs": {
+                    "capabilities": "gpu"
+                  }, 
+                  "id": "289da7f8-6440-407c-9fb4-7db01ec49164", 
+                  "name": "vol-type-001"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show volume type information", 
+        "tags": [
+          "types"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified volume type.", 
+        "examples": {}, 
+        "id": "deleteVolumeType", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume type.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_type_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete volume type", 
+        "tags": [
+          "types"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/volumes": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Creates a volume.", 
+        "examples": {
+          "application/json": {
+            "volume": {
+              "availability_zone": "us-east1", 
+              "display_description": "Another volume.", 
+              "display_name": "vol-001", 
+              "metadata": {
+                "contents": "junk"
+              }, 
+              "size": 30, 
+              "volume_type": "289da7f8-6440-407c-9fb4-7db01ec49164"
+            }
+          }
+        }, 
+        "id": "createVolume", 
+        "method": "post", 
+        "parameters": [
+          {
+            "description": "", 
+            "in": "body", 
+            "name": "body", 
+            "required": false, 
+            "schema": {
+              "$ref": "#/definitions/createVolume"
+            }
+          }, 
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "examples": {
+              "application/json": {
+                "volume": {
+                  "attachments": [
+                    {
+                      "attachment_id": "03987cd1-0ad5-40d1-9b2a-7cc48295d4fa", 
+                      "device": "/", 
+                      "host_name": "mitaka", 
+                      "id": "47e9ecc5-4045-4ee3-9a4b-d859d546a0cf", 
+                      "server_id": "d1c4788b-9435-42e2-9b81-29f3be1cd01f", 
+                      "volume_id": "6c80f8ac-e3e2-480c-8e6e-f1db92fe4bfe"
+                    }
+                  ], 
+                  "availability_zone": "us-east1", 
+                  "bootable": "false", 
+                  "created_at": "2012-02-14T20:53:07Z", 
+                  "display_description": "Another volume.", 
+                  "display_name": "vol-001", 
+                  "id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c", 
+                  "metadata": {
+                    "contents": "junk"
+                  }, 
+                  "size": 30, 
+                  "snapshot_id": null, 
+                  "status": "active", 
+                  "volume_type": "289da7f8-6440-407c-9fb4-7db01ec49164"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Create volume", 
+        "tags": [
+          "volumes"
+        ]
+      }, 
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists simple volume entities.", 
+        "examples": {}, 
+        "id": "getVolumesSimple", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volumes": [
+                  {
+                    "attachments": [
+                      {
+                        "attachment_id": "03987cd1-0ad5-40d1-9b2a-7cc48295d4fa", 
+                        "device": "/", 
+                        "host_name": "mitaka", 
+                        "id": "47e9ecc5-4045-4ee3-9a4b-d859d546a0cf", 
+                        "server_id": "d1c4788b-9435-42e2-9b81-29f3be1cd01f", 
+                        "volume_id": "6c80f8ac-e3e2-480c-8e6e-f1db92fe4bfe"
+                      }
+                    ], 
+                    "availability_zone": "us-east1", 
+                    "created_at": "2012-02-14T20:53:07Z", 
+                    "display_description": "Another volume.", 
+                    "display_name": "vol-001", 
+                    "id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c", 
+                    "metadata": {
+                      "contents": "junk"
+                    }, 
+                    "size": 30, 
+                    "snapshot_id": null, 
+                    "status": "active", 
+                    "volume_type": "289da7f8-6440-407c-9fb4-7db01ec49164"
+                  }, 
+                  {
+                    "attachments": [], 
+                    "availability_zone": "us-east2", 
+                    "created_at": "2012-03-15T19:10:03Z", 
+                    "display_description": "Yet another volume.", 
+                    "display_name": "vol-002", 
+                    "id": "76b8950a-8594-4e5b-8dce-0dfa9c696358", 
+                    "metadata": {}, 
+                    "size": 25, 
+                    "snapshot_id": null, 
+                    "status": "active", 
+                    "volume_type": "96c3bda7-c82a-4f50-be73-ca7621794835"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List volumes", 
+        "tags": [
+          "volumes"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/volumes/detail": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Lists details for volume entities.", 
+        "examples": {}, 
+        "id": "getVolumesDetail", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volumes": [
+                  {
+                    "attachments": [
+                      {
+                        "attachment_id": "03987cd1-0ad5-40d1-9b2a-7cc48295d4fa", 
+                        "device": "/", 
+                        "host_name": "mitaka", 
+                        "id": "47e9ecc5-4045-4ee3-9a4b-d859d546a0cf", 
+                        "server_id": "d1c4788b-9435-42e2-9b81-29f3be1cd01f", 
+                        "volume_id": "6c80f8ac-e3e2-480c-8e6e-f1db92fe4bfe"
+                      }
+                    ], 
+                    "availability_zone": "us-east1", 
+                    "created_at": "2012-02-14T20:53:07Z", 
+                    "display_description": "Another volume.", 
+                    "display_name": "vol-001", 
+                    "id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c", 
+                    "metadata": {
+                      "contents": "junk"
+                    }, 
+                    "size": 30, 
+                    "snapshot_id": null, 
+                    "status": "active", 
+                    "volume_type": "289da7f8-6440-407c-9fb4-7db01ec49164"
+                  }, 
+                  {
+                    "attachments": [], 
+                    "availability_zone": "us-east2", 
+                    "created_at": "2012-03-15T19:10:03Z", 
+                    "display_description": "Yet another volume.", 
+                    "display_name": "vol-002", 
+                    "id": "76b8950a-8594-4e5b-8dce-0dfa9c696358", 
+                    "metadata": {}, 
+                    "size": 25, 
+                    "snapshot_id": null, 
+                    "status": "active", 
+                    "volume_type": "96c3bda7-c82a-4f50-be73-ca7621794835"
+                  }
+                ]
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "List volumes (detailed)", 
+        "tags": [
+          "volumes"
+        ]
+      }
+    ], 
+    "/v1/{tenant_id}/volumes/{volume_id}": [
+      {
+        "consumes": [
+          "application/json"
+        ], 
+        "description": "Shows information about a specified volume.", 
+        "examples": {}, 
+        "id": "getVolume", 
+        "method": "get", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "volume": {
+                  "attachments": [
+                    {
+                      "attachment_id": "03987cd1-0ad5-40d1-9b2a-7cc48295d4fa", 
+                      "device": "/", 
+                      "host_name": "mitaka", 
+                      "id": "47e9ecc5-4045-4ee3-9a4b-d859d546a0cf", 
+                      "server_id": "d1c4788b-9435-42e2-9b81-29f3be1cd01f", 
+                      "volume_id": "6c80f8ac-e3e2-480c-8e6e-f1db92fe4bfe"
+                    }
+                  ], 
+                  "availability_zone": "us-east1", 
+                  "bootable": "false", 
+                  "created_at": "2012-02-14T20:53:07Z", 
+                  "display_description": "Another volume.", 
+                  "display_name": "vol-001", 
+                  "id": "521752a6-acf6-4b2d-bc7a-119f9148cd8c", 
+                  "metadata": {
+                    "contents": "junk"
+                  }, 
+                  "size": 30, 
+                  "snapshot_id": null, 
+                  "status": "active", 
+                  "volume_type": "289da7f8-6440-407c-9fb4-7db01ec49164"
+                }
+              }
+            }, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Show volume information", 
+        "tags": [
+          "volumes"
+        ]
+      }, 
+      {
+        "consumes": [], 
+        "description": "Deletes a specified volume.", 
+        "examples": {}, 
+        "id": "deleteVolume", 
+        "method": "delete", 
+        "parameters": [
+          {
+            "description": "The unique identifier of the tenant or account.", 
+            "format": "", 
+            "in": "path", 
+            "name": "tenant_id", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "The unique identifier of an existing volume.", 
+            "format": "", 
+            "in": "path", 
+            "name": "volume_id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "produces": [], 
+        "responses": {
+          "202": {
+            "examples": {}, 
+            "headers": {}
+          }
+        }, 
+        "summary": "Delete volume", 
+        "tags": [
+          "volumes"
+        ]
+      }
+    ]
+  }, 
+  "schemes": {}, 
+  "securityDefinitions": {}, 
+  "swagger": "2.0", 
+  "tags": [
+    {
+      "description": "API versions", 
+      "name": "versions", 
+      "summary": ""
+    }, 
+    {
+      "description": "Volumes", 
+      "name": "volumes", 
+      "summary": "The ``snapshot_id`` and ``source_volid`` parameters specify the ID\nof the snapshot or volume from which the volume originates. If the\nvolume was not created from a snapshot or source volume, these\nvalues are null."
+    }, 
+    {
+      "description": "Volume types", 
+      "name": "types", 
+      "summary": ""
+    }, 
+    {
+      "description": "Snapshots", 
+      "name": "snapshots", 
+      "summary": ""
+    }, 
+    {
+      "description": "Quota sets extension (os-quota-sets)", 
+      "name": "os-quota-sets-v1", 
+      "summary": "Administrators only, depending on policy settings.\n\nShows, updates, and deletes quotas for a tenant."
+    }
+  ]
+}

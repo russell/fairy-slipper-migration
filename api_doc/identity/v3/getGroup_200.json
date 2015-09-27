@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The credential ID.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name of the resource.", 
+      "format": ""
+    }, 
+    "description": {
+      "required": false, 
+      "type": "string", 
+      "description": "The description.", 
+      "format": ""
+    }, 
+    "links": {
+      "required": true, 
+      "type": "object", 
+      "description": "Policy links.", 
+      "format": ""
+    }, 
+    "domain_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The domain ID.", 
+      "format": ""
+    }
+  }
+}

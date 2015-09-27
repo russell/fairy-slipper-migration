@@ -1,0 +1,23 @@
+{
+  "type": "object", 
+  "properties": {
+    "detailed": {
+      "required": false, 
+      "type": "string", 
+      "description": "Whether to return detailed usage information. Defaults to false.", 
+      "format": ""
+    }, 
+    "start": {
+      "required": true, 
+      "type": "string", 
+      "description": "The start of a time range, in date time format.", 
+      "format": ""
+    }, 
+    "end": {
+      "required": true, 
+      "type": "string", 
+      "description": "The end of the time range, in date time format.", 
+      "format": ""
+    }
+  }
+}

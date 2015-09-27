@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "ip_range": {
+      "required": true, 
+      "type": "string", 
+      "description": "The range of IP addresses from which to bulk-delete floating IPs.", 
+      "format": ""
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "object", 
+  "properties": {
+    "user_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID of the user who owns the credential.", 
+      "format": ""
+    }, 
+    "project_id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The UUID for the project.", 
+      "format": ""
+    }, 
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The MIME media type of the serialized policy blob. From the\nperspective of the Identity API, a policy blob can be based on any\ntechnology. In OpenStack, the ``policy.json`` blob (\n``type=\"application/json\"`` ) is the conventional solution.\nHowever, you might want to use an alternative policy engine that\nuses a different policy language type. For example,\n``type=\"application/xacml+xml\"`` .", 
+      "format": ""
+    }, 
+    "blob": {
+      "required": true, 
+      "type": "string", 
+      "description": "The policy rule set itself, as a serialized blob.", 
+      "format": ""
+    }
+  }
+}

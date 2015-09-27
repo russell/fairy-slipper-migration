@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "type": {
+      "required": true, 
+      "type": "string", 
+      "description": "The service type.", 
+      "format": ""
+    }
+  }
+}

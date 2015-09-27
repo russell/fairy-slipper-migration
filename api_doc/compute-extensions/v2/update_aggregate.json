@@ -1,0 +1,17 @@
+{
+  "type": "object", 
+  "properties": {
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "Name of aggregate.", 
+      "format": ""
+    }, 
+    "availability_zone": {
+      "required": true, 
+      "type": "string", 
+      "description": "Availability zone of aggregate.", 
+      "format": ""
+    }
+  }
+}

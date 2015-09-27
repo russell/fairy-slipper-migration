@@ -1,0 +1,18 @@
+{
+  "pool": {
+    "lb_algorithm": "ROUND_ROBIN", 
+    "protocol": "HTTP", 
+    "description": "simple pool", 
+    "admin_state_up": true, 
+    "tenant_id": "1a3e005cf9ce40308c900bcb08e5320c", 
+    "healthmonitor_id": null, 
+    "listeners": [
+      {
+        "id": "35cb8516-1173-4035-8dae-0dae3453f37f"
+      }
+    ], 
+    "members": [], 
+    "id": "4c0a0a5f-cf8f-44b7-b912-957daa8ce5e5", 
+    "name": "pool1"
+  }
+}

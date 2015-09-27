@@ -1,0 +1,379 @@
+.. http:get:: /v2.0
+   :synopsis: Get version details
+
+   Gets detailed information about a specified version of the Identity
+   API.
+
+   :responseexample 200: v2/examples/admin-getVersionInfo_resp_200.json
+   :responseexample 203: v2/examples/admin-getVersionInfo_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-versions
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{user_id}/roles
+   :synopsis: List user global roles
+
+   Lists global roles for a specified user. Excludes tenant roles.
+
+   :responseexample 200: v2/examples/admin-listUserGlobalRoles_resp_200.json
+   :responseexample 203: v2/examples/admin-listUserGlobalRoles_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants/{tenantId}
+   :synopsis: Get tenant information by ID
+
+   Gets detailed information about a specified tenant by ID.
+
+   :responseexample 200: v2/examples/admin-getTenantById_resp_200.json
+   :responseexample 203: v2/examples/admin-getTenantById_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tenants
+   :parameter tenantId: The tenant ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/users
+   :synopsis: Create user
+
+   Creates a user.
+
+   :requestexample: v2/examples/admin-createUser_req.json
+   :responseexample 201: v2/examples/admin-createUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-users
+   :requestschema: v2/admin-createUser.json
+   :reqheader X-Auth-Token: A valid authentication token for an
+                            administrative user.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users
+   :synopsis: Get user information by name
+
+   Gets detailed information about a specified user by user name.
+
+   :responseexample 200: v2/examples/admin-getUserByName_resp_200.json
+   :responseexample 203: v2/examples/admin-getUserByName_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-users
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/extensions/{alias}
+   :synopsis: Get extension details
+
+   Gets detailed information for a specified extension.
+   
+   Specify the extension alias in the URI.
+
+   :responseexample 200: v2/examples/admin-getExtension-v2.0_resp_200.json
+   :responseexample 203: v2/examples/admin-getExtension-v2.0_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-versions
+   :parameter alias: The extension name.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants/{tenantId}/users/{userId}/roles
+   :synopsis: List roles for user
+
+   Lists roles for a specified user on a specified tenant. Excludes
+   global roles.
+
+   :responseexample 200: v2/examples/admin-listRolesForUserOnTenant_resp_200.json
+   :responseexample 203: v2/examples/admin-listRolesForUserOnTenant_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tenants
+   :parameter userId: The user ID.
+   :parameter tenantId: The tenant ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/users/{user_id}
+   :synopsis: Get user information by ID
+
+   Gets detailed information about a specified user by user ID.
+
+   :responseexample 200: v2/examples/admin-getUserById_resp_200.json
+   :responseexample 203: v2/examples/admin-getUserById_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-users
+   :parameter user_id: The user ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tokens/{tokenId}/endpoints
+   :synopsis: List endoints for token
+
+   Lists the endpoints associated with a specified token.
+
+   :responseexample 200: v2/examples/admin-listEndpointsForToken_resp_200.json
+   :responseexample 203: v2/examples/admin-listEndpointsForToken_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tokens
+   :parameter tokenId: Required. The token ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants
+   :synopsis: List tenants
+
+   Lists all tenants.
+
+   :responseexample 200: v2/examples/admin-listTenants_resp_200.json
+   :responseexample 203: v2/examples/admin-listTenants_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tenants
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tenants
+   :synopsis: Get tenant information by name
+
+   Gets detailed information about a specified tenant by name.
+
+   :responseexample 200: v2/examples/admin-getTenantByName_resp_200.json
+   :responseexample 203: v2/examples/admin-getTenantByName_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tenants
+   :query name: The name of the tenant.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:put:: /v2.0/users/{userId}
+   :synopsis: Update user
+
+   Updates a user.
+
+   :requestexample: v2/examples/admin-updateUser_req.json
+   :responseexample 201: v2/examples/admin-updateUser_resp_201.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-users
+   :requestschema: v2/admin-updateUser.json
+   :parameter userId: The user ID.
+   :statuscode 201: 
+   :statuscode 413: 
+   :statuscode 415: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:delete:: /v2.0/users/{userId}
+   :synopsis: Delete user
+
+   Deletes a user.
+
+   :tag: admin-users
+   :parameter userId: The user ID.
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:post:: /v2.0/tokens
+   :synopsis: Authenticate for admin API
+
+   Authenticates and generates a token.
+   
+   A REST interface provides client authentication by using the POST
+   method with ``v2.0/tokens`` as the path. Include a payload of
+   credentials in the body.
+   
+   The Identity API is a RESTful web service. It is the entry point to
+   all service APIs. To access the Identity API, you must know its
+   URL.
+   
+   Each REST request against the Identity Service requires the ``X
+   -Auth-Token`` header. Clients obtain this token and the URL
+   endpoints for other service APIs by supplying their valid
+   credentials to the authentication service.
+   
+   If the authentication token has expired, this call returns the HTTP
+   ``401`` status code.
+   
+   If the token specified in the request body has expired, this call
+   returns the HTTP ``404`` status code.
+   
+   The Identity API treats expired tokens as no longer valid tokens.
+   
+   The deployment determines how long expired tokens are stored.
+
+   :requestexample: v2/examples/admin-authenticate_req.json
+   :responseexample 200: v2/examples/admin-authenticate_resp_200.json
+   :responseexample 203: v2/examples/admin-authenticate_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tokens
+   :requestschema: v2/admin-authenticate.json
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:get:: /v2.0/tokens/{tokenId}
+   :synopsis: Validate token
+
+   Validates a token and confirms that it belongs to a specified
+   tenant.
+   
+   Returns the permissions relevant to a particular client. Valid
+   tokens are in the ``/tokens/{tokenId}`` path. A user should expect
+   an ``itemNotFound (404)`` fault for an token that is not valid.
+
+   :responseexample 200: v2/examples/admin-validateToken_resp_200.json
+   :responseexample 203: v2/examples/admin-validateToken_resp_203.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: admin-tokens
+   :parameter tokenId: Required. The token ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+
+.. http:head:: /v2.0/tokens/{tokenId}
+   :synopsis: Validate token (admin)
+
+   Validates a token and confirms that it belongs to a specified
+   tenant, for performance.
+
+   :tag: admin-tokens
+   :parameter tokenId: Required. The token ID.
+   :statuscode 200: 
+   :statuscode 203: 
+   :statuscode 204: 
+   :statuscode 413: 
+   :statuscode 405: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 401: 
+   :statuscode 400: 
+   :statuscode 503: 
+
+

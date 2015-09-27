@@ -1,0 +1,26 @@
+{
+  "hypervisors": [
+    {
+      "service": {
+        "host": "1e0d7892083548cfb347e782d3b20342", 
+        "id": 2
+      }, 
+      "current_workload": 0, 
+      "hypervisor_type": "fake", 
+      "vcpus_used": 0, 
+      "local_gb_used": 0, 
+      "hypervisor_hostname": "fake-mini", 
+      "memory_mb_used": 512, 
+      "memory_mb": 8192, 
+      "cpu_info": "?", 
+      "vcpus": 1, 
+      "running_vms": 0, 
+      "free_disk_gb": 1028, 
+      "hypervisor_version": 1, 
+      "disk_available_least": null, 
+      "local_gb": 1028, 
+      "free_ram_mb": 7680, 
+      "id": 1
+    }
+  ]
+}

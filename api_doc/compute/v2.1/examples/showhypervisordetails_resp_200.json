@@ -1,0 +1,28 @@
+{
+  "hypervisor": {
+    "status": "enabled", 
+    "vcpus": 1, 
+    "service": {
+      "host": "043b3cacf6f34c90a7245151fc8ebcda", 
+      "disabled_reason": null, 
+      "id": 2
+    }, 
+    "current_workload": 0, 
+    "hypervisor_type": "fake", 
+    "vcpus_used": 0, 
+    "local_gb_used": 0, 
+    "host_ip": "1.1.1.1", 
+    "hypervisor_hostname": "fake-mini", 
+    "memory_mb_used": 512, 
+    "memory_mb": 8192, 
+    "cpu_info": "{\"arch\": \"x86_64\", \"model\": \"Nehalem\", \"vendor\": \"Intel\", \"features\": [\"pge\", \"clflush\"], \"topology\": {\"cores\": 1, \"threads\": 1, \"sockets\": 4}}", 
+    "state": "up", 
+    "running_vms": 0, 
+    "free_disk_gb": 1028, 
+    "hypervisor_version": 1000, 
+    "disk_available_least": 0, 
+    "local_gb": 1028, 
+    "free_ram_mb": 7680, 
+    "id": 1
+  }
+}

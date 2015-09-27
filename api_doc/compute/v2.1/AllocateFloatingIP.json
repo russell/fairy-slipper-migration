@@ -1,0 +1,11 @@
+{
+  "type": "object", 
+  "properties": {
+    "pool": {
+      "required": false, 
+      "type": "string", 
+      "description": "Pool to allocate IP address from. Default pool is used, if not\nspecified.\n\nPolicy defaults enable only users with the administrative role or\nthe owner of the server to perform this operation. Cloud providers\ncan change these permissions through the ``policy.json`` file.", 
+      "format": ""
+    }
+  }
+}

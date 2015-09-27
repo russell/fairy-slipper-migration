@@ -1,0 +1,35 @@
+{
+  "type": "object", 
+  "properties": {
+    "vcpus": {
+      "required": true, 
+      "type": "string", 
+      "description": "The virtual CPUs, in a whole integer amount, for the new flavor.", 
+      "format": ""
+    }, 
+    "disk": {
+      "required": true, 
+      "type": "string", 
+      "description": "The amount of disk space, in GBs.", 
+      "format": ""
+    }, 
+    "ram": {
+      "required": true, 
+      "type": "string", 
+      "description": "The amount of RAM, in MBs, for this flavor.", 
+      "format": ""
+    }, 
+    "id": {
+      "required": true, 
+      "type": "string", 
+      "description": "The ID for the new flavor, which is a unique integer value.", 
+      "format": ""
+    }, 
+    "name": {
+      "required": true, 
+      "type": "string", 
+      "description": "The name for the new flavor.", 
+      "format": ""
+    }
+  }
+}

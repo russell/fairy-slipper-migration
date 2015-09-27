@@ -1,0 +1,866 @@
+.. http:post:: /v1.1/{tenant_id}/jobs/{job_id}/execute
+   :synopsis: Run job
+
+   Runs a specified job.
+
+   :requestexample: v1.1/examples/jobExecute_req.json
+   :responseexample 202: v1.1/examples/jobExecute_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_id: The unique identifier of the job.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}/refresh-status
+   :synopsis: Refresh job execution status
+
+   Refreshes the status of and shows information for a specified job
+   execution.
+
+   :responseexample 200: v1.1/examples/job-executions-refresh_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_execution_id: The unique identifier of the job
+                                execution.
+   :statuscode 200: 
+
+
+.. http:put:: /v1.1/{tenant_id}/job-binary-internals/{name}
+   :synopsis: Create job binary internal
+
+   Creates a job binary internal.
+   
+   Job binary internals are objects that represent data processing
+   applications and libraries that are stored in the internal
+   database.
+   
+   Specify the file contents (raw data or script text) in the request
+   body. Specify the file name in the URI.
+
+   :responseexample 202: v1.1/examples/job-binary-internals-create_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter name: The name of the job binary internal.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/node-group-templates
+   :synopsis: List node group templates
+
+   Lists available node group templates.
+
+   :responseexample 200: v1.1/examples/node-group-templates-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: node-group-template
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/node-group-templates
+   :synopsis: Create node group template
+
+   Creates a node group template.
+
+   :requestexample: v1.1/examples/node-group-templates-create_req.json
+   :responseexample 202: v1.1/examples/node-group-templates-create_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: node-group-template
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
+   :synopsis: Show cluster template
+
+   Shows the cluster template.
+
+   :responseexample 200: v1.1/examples/cluster-templates-show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clustertemplate
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_template_id: The unique identifier of the
+                                   cluster template.
+   :statuscode 200: 
+
+
+.. http:put:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
+   :synopsis: Update cluster templates
+
+   Updates the cluster template.
+
+   :requestexample: v1.1/examples/cluster-templates-update_req.json
+   :responseexample 202: v1.1/examples/cluster-templates-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clustertemplate
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_template_id: The unique identifier of the
+                                   cluster template.
+   :statuscode 202: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/cluster-templates/{cluster_template_id}
+   :synopsis: Delete cluster template
+
+   Deletes the cluster template.
+
+   :tag: clustertemplate
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_template_id: The unique identifier of the
+                                   cluster template.
+   :statuscode 204: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-executions
+   :synopsis: List job executions
+
+   Lists available job executions.
+
+   :responseexample 200: v1.1/examples/job-executions-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/clusters
+   :synopsis: List available clusters
+
+   Lists available clusters.
+
+   :responseexample 200: v1.1/examples/clusters-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/clusters
+   :synopsis: Create cluster
+
+   Creates a cluster.
+
+   :requestexample: v1.1/examples/clusters-create_req.json
+   :responseexample 202: v1.1/examples/clusters-create_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:post:: /v1.1/{tenant_id}/images/{image_id}/tag
+   :synopsis: Add tags to image
+
+   Adds tags to a specified image.
+
+   :requestexample: v1.1/examples/addTags_req.json
+   :responseexample 202: v1.1/examples/addTags_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: imageregistry
+   :requestschema: v1.1/addTags.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter image_id: The unique identifier of the image.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/data-sources/{data_source_id}
+   :synopsis: Show data source details
+
+   Shows details for a specified data source.
+
+   :responseexample 200: v1.1/examples/dataSourceInfo_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datasources
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter data_source_id: The unique identifier of the data
+                              source.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/data-sources/{data_source_id}
+   :synopsis: Delete data source
+
+   Deletes a specified data source.
+
+   :tag: datasources
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter data_source_id: The unique identifier of the data
+                              source.
+   :statuscode 204: 
+
+
+.. http:put:: /v1.1/{tenant_id}/data-sources/{data_source_id}
+   :synopsis: Update data source
+
+   Updates a specified data source.
+
+   :requestexample: v1.1/examples/dataSourceUpdate_req.json
+   :responseexample 202: v1.1/examples/dataSourceUpdate_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datasources
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter data_source_id: The unique identifier of the data
+                              source.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
+   :synopsis: Show job execution details
+
+   Shows details for a specified job execution, by ID.
+
+   :responseexample 200: v1.1/examples/job-executions-show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_execution_id: The unique identifier of the job
+                                execution.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
+   :synopsis: Delete job execution
+
+   Deletes a specified job execution.
+
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_execution_id: The unique identifier of the job
+                                execution.
+   :statuscode 204: 
+
+
+.. http:patch:: /v1.1/{tenant_id}/job-executions/{job_execution_id}
+   :synopsis: Update job execution
+
+   Updates a specified job execution.
+
+   :requestexample: v1.1/examples/job-executions-update_req.json
+   :responseexample 202: v1.1/examples/job-executions-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_execution_id: The unique identifier of the job
+                                execution.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/jobs
+   :synopsis: List jobs
+
+   Lists all jobs.
+
+   :responseexample 200: v1.1/examples/jobsList_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/jobs
+   :synopsis: Create job
+
+   Creates a job object.
+
+   :requestexample: v1.1/examples/jobCreate_req.json
+   :responseexample 202: v1.1/examples/jobCreate_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binaries
+   :synopsis: List job binaries
+
+   Lists the available job binaries.
+
+   :responseexample 200: v1.1/examples/job-binaries-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/job-binaries
+   :synopsis: Create job binary
+
+   Creates a job binary.
+
+   :requestexample: v1.1/examples/job-binaries-create_req.json
+   :responseexample 202: v1.1/examples/job-binaries-create_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}/data
+   :synopsis: Get job binary internal data
+
+   Gets data for a specified job binary internal.
+   
+   The response body shows the job binary raw data and the response
+   headers show the data length.
+   
+   Example response:
+   
+   HTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-
+   Type: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:21:13 GMT
+   A = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =
+   foreach A generate com.hadoopbook.pig.Trim(fruit); store B into
+   '$OUTPUT' USING PigStorage();
+
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binary_internals_id: The ID of the job binary
+                                       internal.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/images/{image_id}
+   :synopsis: Show image details
+
+   Shows details about a specified image.
+
+   :responseexample 200: v1.1/examples/imageInfo_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: imageregistry
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter image_id: The unique identifier of the image.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/images/{image_id}
+   :synopsis: Register image
+
+   Registers a specified image in the image registry.
+
+   :requestexample: v1.1/examples/imageReg_req.json
+   :responseexample 202: v1.1/examples/imageReg_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: imageregistry
+   :requestschema: v1.1/imageReg.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter image_id: The unique identifier of the image.
+   :statuscode 202: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/images/{image_id}
+   :synopsis: Unregister image
+
+   Removes a specified image from the image registry.
+
+   :tag: imageregistry
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter image_id: The unique identifier of the image.
+   :statuscode 204: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
+   :synopsis: Show job binary details
+
+   Shows details for a specified job binary.
+
+   :responseexample 200: v1.1/examples/job-binaries-show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binaries_id: The ID of the job binary.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
+   :synopsis: Delete job binary
+
+   Deletes a specified job binary.
+
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binaries_id: The ID of the job binary.
+   :statuscode 204: 
+
+
+.. http:put:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}
+   :synopsis: Update job binary
+
+   Updates a specified job binary.
+
+   :requestexample: v1.1/examples/job-binaries-update_req.json
+   :responseexample 202: v1.1/examples/job-binaries-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binaries_id: The ID of the job binary.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binaries/{job_binaries_id}/data
+   :synopsis: Get job binary data
+
+   Gets data for a specified job binary.
+   
+   The response body shows the job binary raw data and the response
+   headers show the data length.
+   
+   Example response:
+   
+   HTTP/1.1 200 OK Connection: keep-alive Content-Length: 161 Content-
+   Type: text/html; charset=utf-8 Date: Sat, 28 Mar 2015 02:42:48 GMT
+   A = load '$INPUT' using PigStorage(':') as (fruit: chararray); B =
+   foreach A generate com.hadoopbook.pig.Trim(fruit); store B into
+   '$OUTPUT' USING PigStorage();
+
+   :tag: jobbinaries
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binaries_id: The ID of the job binary.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/clusters/{cluster_id}
+   :synopsis: Show details of a cluster
+
+   Shows cluster by ID.
+
+   :responseexample 200: v1.1/examples/clusters-get_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_id: The ID of the cluster
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/clusters/{cluster_id}
+   :synopsis: Delete a cluster
+
+   Deletes a cluster.
+
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_id: The ID of the cluster
+   :statuscode 204: 
+
+
+.. http:put:: /v1.1/{tenant_id}/clusters/{cluster_id}
+   :synopsis: Scale cluster
+
+   Scales a cluster.
+
+   :requestexample: v1.1/examples/clusters-scale_req.json
+   :responseexample 202: v1.1/examples/clusters-scale_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_id: The ID of the cluster
+   :statuscode 202: 
+
+
+.. http:patch:: /v1.1/{tenant_id}/clusters/{cluster_id}
+   :synopsis: Update cluster
+
+   Updates a specified cluster.
+
+   :requestexample: v1.1/examples/clusters-update_req.json
+   :responseexample 202: v1.1/examples/clusters-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clusters
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_id: The ID of the cluster
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/clusters/{cluster_id}
+   :synopsis: Show progress
+
+   Shows provisioning progress of cluster.
+
+   :responseexample 200: v1.1/examples/show-progress_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: event-log
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter cluster_id: The ID of the cluster
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/plugins/{plugin_name}
+   :synopsis: Show plugin information
+
+   Shows information for a specified plugin.
+
+   :responseexample 200: v1.1/examples/pluginsget_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: plugins
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter plugin_name: Name of the plugin.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/images/{image_id}/untag
+   :synopsis: Remove tags from image
+
+   Removes tags from a specified image.
+
+   :requestexample: v1.1/examples/removeTags_req.json
+   :responseexample 202: v1.1/examples/removeTags_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: imageregistry
+   :requestschema: v1.1/removeTags.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter image_id: The unique identifier of the image.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-types
+   :synopsis: List job types
+
+   Lists job types filtered by specified filter parameters.
+
+   :responseexample 200: v1.1/examples/jobTypesList_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-types
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter plugin: Filter results by plugin name.
+   :parameter version: Filter results by plugin version.
+   :parameter type: Filter results by job type.
+   :parameter hints: Include configuration hints in results.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
+   :synopsis: Show node group template details
+
+   Shows a specified node group template, by ID.
+
+   :responseexample 200: v1.1/examples/node-group-templates-get_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: node-group-template
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter node_group_template_id: The unique identifier of the
+                                      node group template.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
+   :synopsis: Delete node group template
+
+   Deletes a specified node group template.
+
+   :tag: node-group-template
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter node_group_template_id: The unique identifier of the
+                                      node group template.
+   :statuscode 204: 
+
+
+.. http:put:: /v1.1/{tenant_id}/node-group-templates/{node_group_template_id}
+   :synopsis: Update node group template
+
+   Updates a specified node group template.
+
+   :requestexample: v1.1/examples/node-group-templates-update_req.json
+   :responseexample 202: v1.1/examples/node-group-templates-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: node-group-template
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter node_group_template_id: The unique identifier of the
+                                      node group template.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/plugins
+   :synopsis: List plugins
+
+   Lists all registered plugins.
+
+   :responseexample 200: v1.1/examples/pluginslist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: plugins
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/images
+   :synopsis: List images
+
+   Lists all images registered in the image registry.
+
+   :responseexample 200: v1.1/examples/imageslist_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: imageregistry
+   :requestschema: v1.1/imageslist.json
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
+   :synopsis: Show job binary internal details
+
+   Shows details for a specified job binary internal.
+
+   :responseexample 200: v1.1/examples/job-binary-internals-show_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binary_internals_id: The ID of the job binary
+                                       internal.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
+   :synopsis: Delete job binary internal
+
+   Deletes a specified job binary internal.
+
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binary_internals_id: The ID of the job binary
+                                       internal.
+   :statuscode 204: 
+
+
+.. http:patch:: /v1.1/{tenant_id}/job-binary-internals/{job_binary_internals_id}
+   :synopsis: Update job binary internal
+
+   Updates a specified job binary internal.
+
+   :requestexample: v1.1/examples/job-binary-internals-update_req.json
+   :responseexample 202: v1.1/examples/job-binary-internals-update_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_binary_internals_id: The ID of the job binary
+                                       internal.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-binary-internals
+   :synopsis: List job binary internals
+
+   Lists the available job binary internals.
+
+   :responseexample 200: v1.1/examples/job-binary-internals-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobbinary-internals
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/jobs/{job_id}
+   :synopsis: Show job details
+
+   Shows details for a specified job.
+
+   :responseexample 200: v1.1/examples/jobInfo_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_id: The unique identifier of the job.
+   :statuscode 200: 
+
+
+.. http:delete:: /v1.1/{tenant_id}/jobs/{job_id}
+   :synopsis: Remove job
+
+   Removes a specified job.
+
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_id: The unique identifier of the job.
+   :statuscode 204: 
+
+
+.. http:patch:: /v1.1/{tenant_id}/jobs/{job_id}
+   :synopsis: Update job object
+
+   Updates a specified job object.
+
+   :requestexample: v1.1/examples/jobUpdate_req.json
+   :responseexample 202: v1.1/examples/jobUpdate_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: jobs
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_id: The unique identifier of the job.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/job-executions/{job_execution_id}/cancel
+   :synopsis: Cancel job execution
+
+   Cancels a specified job execution.
+
+   :responseexample 200: v1.1/examples/job-executions-cancel_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: job-executions
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter job_execution_id: The unique identifier of the job
+                                execution.
+   :statuscode 200: 
+
+
+.. http:get:: /v1.1/{tenant_id}/data-sources
+   :synopsis: List data sources
+
+   Lists all data sources.
+
+   :responseexample 200: v1.1/examples/dataSourcesList_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datasources
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/data-sources
+   :synopsis: Create data source
+
+   Creates a data source.
+
+   :requestexample: v1.1/examples/dataSourcesCreate_req.json
+   :responseexample 202: v1.1/examples/dataSourcesCreate_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: datasources
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/cluster-templates
+   :synopsis: List available cluster templates
+
+   Lists available cluster templates.
+
+   :responseexample 200: v1.1/examples/cluster-templates-list_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clustertemplate
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 200: 
+
+
+.. http:post:: /v1.1/{tenant_id}/cluster-templates
+   :synopsis: Create cluster templates
+
+   Creates a cluster template.
+
+   :requestexample: v1.1/examples/cluster-templates-create_req.json
+   :responseexample 202: v1.1/examples/cluster-templates-create_resp_202.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: clustertemplate
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :statuscode 202: 
+
+
+.. http:get:: /v1.1/{tenant_id}/plugins/{plugin_name}/{version}
+   :synopsis: Show detailed plugin information
+
+   Shows detailed information for a specified plugin.
+
+   :responseexample 200: v1.1/examples/pluginsgetversion_resp_200.json
+   :accepts: application/json
+   :produces: application/json
+   :tag: plugins
+   :parameter tenant_id: The unique identifier of the tenant or
+                         account.
+   :parameter version: Version of the plugin.
+   :parameter plugin_name: Name of the plugin.
+   :statuscode 200: 
+
+
