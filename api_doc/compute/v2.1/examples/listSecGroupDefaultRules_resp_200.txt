@@ -1,0 +1,24 @@
+HTTP/1.1 200
+status: 200
+content-length: 137
+content-location: http://127.0.0.1:8774/v2.1/7c440ed291a246c0a5d39b9b0f49b2fa/os-security-group-default-rules
+x-compute-request-id: req-0f10f9b7-ab8c-4d59-882a-8bf55531f5ba
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:09 GMT
+content-type: application/json
+
+{
+  "security_group_default_rules": [
+    {
+      "from_port": 22,
+      "id": 7,
+      "ip_protocol": "tcp",
+      "ip_range": {
+        "cidr": "10.10.0.0/24"
+      },
+      "to_port": 22
+    }
+  ]
+}

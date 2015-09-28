@@ -1,0 +1,17 @@
+HTTP/1.1 400
+status: 400
+content-length: 115
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:13 GMT
+content-type: application/json
+x-openstack-request-id: req-785752e6-33fd-4892-9f39-aa733798cabc
+
+{
+  "error": {
+    "code": 400,
+    "message": "User name should not be greater than 255 characters.",
+    "title": "Bad Request"
+  }
+}

@@ -1,0 +1,18 @@
+HTTP/1.1 200
+status: 200
+content-length: 102
+content-location: http://127.0.0.1:8774/v2.1/525b871be08447e093250770c50c51ed/os-tenant-networks/40414a9f-5ef3-484b-a0c2-d416d1cea29b
+x-compute-request-id: req-7133224a-deb9-442c-a67c-a5078b7b85d5
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:04:12 GMT
+content-type: application/json
+
+{
+  "network": {
+    "cidr": "10.1.0.0/20",
+    "id": "40414a9f-5ef3-484b-a0c2-d416d1cea29b",
+    "label": "private"
+  }
+}

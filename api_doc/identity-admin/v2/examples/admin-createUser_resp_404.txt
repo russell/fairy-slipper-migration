@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 96
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:11 GMT
+content-type: application/json
+x-openstack-request-id: req-4b893103-e4ba-4a0f-af3c-103654724ed8
+
+{
+  "error": {
+    "code": 404,
+    "message": "Could not find project: 49ffgg99999",
+    "title": "Not Found"
+  }
+}

@@ -1,0 +1,4 @@
+GET /v2.1/083f9223de8d404594609388a05e2f0f/os-floating-ips-bulk HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

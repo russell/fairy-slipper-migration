@@ -1,0 +1,4 @@
+DELETE /v3/domains/6ca1588d3c0c4a31baf67fccec72568d HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

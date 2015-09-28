@@ -1,0 +1,4 @@
+GET /v2.1/a6f8c8f6b8864cf29fb8420d4491b2bb/os-volumes HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

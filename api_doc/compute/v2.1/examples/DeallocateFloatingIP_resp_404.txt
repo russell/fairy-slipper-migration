@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 85
+x-compute-request-id: req-8fd09e5b-7267-4c2f-a42d-049a31fd39ff
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:40 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Floating ip not found for id 1736241759"
+  }
+}

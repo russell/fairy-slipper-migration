@@ -1,0 +1,30 @@
+HTTP/1.1 200
+status: 200
+content-length: 335
+content-location: http://127.0.0.1:8774/v2.1/a6f8c8f6b8864cf29fb8420d4491b2bb/os-volumes/7dc84804-4048-4a47-9df4-a0b8bbab76a7
+x-compute-request-id: req-42507564-4cb1-4dc6-9757-56a48cfd7d75
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:04:20 GMT
+content-type: application/json
+
+{
+  "volume": {
+    "attachments": [
+      {}
+    ],
+    "availabilityZone": "nova",
+    "createdAt": "2015-09-22T06:04:17.000000",
+    "displayDescription": null,
+    "displayName": "tempest-volume-1094796798",
+    "id": "7dc84804-4048-4a47-9df4-a0b8bbab76a7",
+    "metadata": {
+      "Type": "work"
+    },
+    "size": 1,
+    "snapshotId": null,
+    "status": "available",
+    "volumeType": "lvmdriver-1"
+  }
+}

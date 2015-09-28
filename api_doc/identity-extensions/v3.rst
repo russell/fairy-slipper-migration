@@ -206,7 +206,12 @@
           "access_token_id": "cce0b8be7"
       }
 
+   :requestexample: v3/examples/authenticate_req.txt
+   :responseexample 201: v3/examples/authenticate_resp_201.txt
+   :responseexample 404: v3/examples/authenticate_resp_404.txt
+   :responseexample 401: v3/examples/authenticate_resp_401.txt
    :tag: oauth1
+   :statuscode 201: 
    :statuscode 200: 
    :statuscode 413: 
    :statuscode 405: 

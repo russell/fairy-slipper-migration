@@ -1,0 +1,113 @@
+HTTP/1.1 200
+status: 200
+content-length: 1692
+content-location: http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors
+x-compute-request-id: req-bb29addd-46cf-491a-beca-f09d8ed017f3
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:07 GMT
+content-type: application/json
+
+{
+  "flavors": [
+    {
+      "id": "1",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/1",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/1",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.tiny"
+    },
+    {
+      "id": "2",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/2",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/2",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.small"
+    },
+    {
+      "id": "3",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/3",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/3",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.medium"
+    },
+    {
+      "id": "4",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/4",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/4",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.large"
+    },
+    {
+      "id": "42",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/42",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/42",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.nano"
+    },
+    {
+      "id": "5",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/5",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/5",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.xlarge"
+    },
+    {
+      "id": "84",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/84",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors/84",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.micro"
+    }
+  ]
+}

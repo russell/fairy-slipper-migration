@@ -1,0 +1,4 @@
+GET /v2.1/525b871be08447e093250770c50c51ed/os-tenant-networks/40414a9f-5ef3-484b-a0c2-d416d1cea29b HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

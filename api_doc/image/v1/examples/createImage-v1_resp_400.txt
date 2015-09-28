@@ -1,0 +1,10 @@
+HTTP/1.1 400
+status: 400
+content-length: 65
+connection: close
+date: Tue, 22 Sep 2015 06:12:01 GMT
+content-type: text/plain; charset=UTF-8
+x-openstack-request-id: req-7a198f68-2078-4042-b1fb-140ee2f2bf28
+
+400 Bad Request
+Invalid container format 'wrong' for image.

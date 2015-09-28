@@ -1,0 +1,4 @@
+POST /v2.1/6189ee9bc0c545e5a4847a1b91ab003f/os-server-groups HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

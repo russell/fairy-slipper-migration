@@ -1,0 +1,22 @@
+HTTP/1.1 200
+status: 200
+content-length: 279
+content-location: http://127.0.0.1:9292/v2/images/227e1fc5-d81a-48b5-9a4e-fd5458b0105d/members
+connection: close
+date: Tue, 22 Sep 2015 06:08:06 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-62ac7a55-70db-42aa-a0ea-24c98c615048
+
+{
+  "members": [
+    {
+      "created_at": "2015-09-22T06:08:06Z",
+      "image_id": "227e1fc5-d81a-48b5-9a4e-fd5458b0105d",
+      "member_id": "b3753781522b4d188ba174aad7b251e9",
+      "schema": "/v2/schemas/member",
+      "status": "accepted",
+      "updated_at": "2015-09-22T06:08:06Z"
+    }
+  ],
+  "schema": "/v2/schemas/members"
+}

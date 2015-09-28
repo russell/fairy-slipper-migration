@@ -1,0 +1,4 @@
+DELETE /v2.1/e86858efbe1e474b9302920bb3554e93/os-server-groups/34b7c1f4-1d1d-46f9-97ad-3741217736ff HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

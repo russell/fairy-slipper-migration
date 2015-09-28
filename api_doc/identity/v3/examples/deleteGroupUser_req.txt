@@ -1,0 +1,4 @@
+DELETE /v3/groups/5029ab7c67ea4504aeb088a8034d2c38/users/2fe3c74007d2459e94908d5a47e153eb HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

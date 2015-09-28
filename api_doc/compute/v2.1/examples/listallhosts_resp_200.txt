@@ -1,0 +1,40 @@
+HTTP/1.1 200
+status: 200
+content-length: 483
+content-location: http://127.0.0.1:8774/v2.1/1df0943f3b024eba9b430f9bbe146d11/os-hosts
+x-compute-request-id: req-6b79b2e1-64a5-4036-9017-0f20bbad8596
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:01 GMT
+content-type: application/json
+
+{
+  "hosts": [
+    {
+      "host_name": "devstack-trusty-hpcloud-b5-5038802",
+      "service": "conductor",
+      "zone": "internal"
+    },
+    {
+      "host_name": "devstack-trusty-hpcloud-b5-5038802",
+      "service": "scheduler",
+      "zone": "internal"
+    },
+    {
+      "host_name": "devstack-trusty-hpcloud-b5-5038802",
+      "service": "cert",
+      "zone": "internal"
+    },
+    {
+      "host_name": "devstack-trusty-hpcloud-b5-5038802",
+      "service": "network",
+      "zone": "internal"
+    },
+    {
+      "host_name": "devstack-trusty-hpcloud-b5-5038802",
+      "service": "compute",
+      "zone": "nova"
+    }
+  ]
+}

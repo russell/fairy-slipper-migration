@@ -1,0 +1,21 @@
+HTTP/1.1 200
+status: 200
+content-length: 204
+x-compute-request-id: req-efd9101b-1182-4724-ad6a-dba101a862f6
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:10 GMT
+content-type: application/json
+
+{
+  "agent": {
+    "agent_id": 3,
+    "architecture": "tempest-x86_64-2119579213",
+    "hypervisor": "common",
+    "md5hash": "add6bb58e139be103324d04d82d8f545",
+    "os": "linux",
+    "url": "xxx://xxxx/xxx/xxx",
+    "version": "7.0"
+  }
+}

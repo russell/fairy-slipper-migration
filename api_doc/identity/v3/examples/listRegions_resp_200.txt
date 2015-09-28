@@ -1,0 +1,68 @@
+HTTP/1.1 200
+status: 200
+content-length: 1134
+content-location: http://127.0.0.1:5000/v3/regions
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:47 GMT
+content-type: application/json
+x-openstack-request-id: req-912673a3-b582-49ac-b3ea-31bee76465d7
+
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:5000/v3/regions"
+  },
+  "regions": [
+    {
+      "description": "tempest-description-1212323079",
+      "id": "0ffaa3054e9b413b834c7e4ca3f3f89a",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/0ffaa3054e9b413b834c7e4ca3f3f89a"
+      },
+      "parent_region_id": null
+    },
+    {
+      "description": "tempest-description-1344302414",
+      "id": "2419235a3f2946009c9ac9407d0e2ba3",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/2419235a3f2946009c9ac9407d0e2ba3"
+      },
+      "parent_region_id": null
+    },
+    {
+      "description": "",
+      "id": "RegionOne",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/RegionOne"
+      },
+      "parent_region_id": null
+    },
+    {
+      "description": "",
+      "id": "tempest-region-1329552328",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/tempest-region-1329552328"
+      },
+      "parent_region_id": null
+    },
+    {
+      "description": "",
+      "id": "tempest-region-1604766293",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/tempest-region-1604766293"
+      },
+      "parent_region_id": null
+    },
+    {
+      "description": "",
+      "id": "tempest-region-1967585838",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/regions/tempest-region-1967585838"
+      },
+      "parent_region_id": null
+    }
+  ]
+}

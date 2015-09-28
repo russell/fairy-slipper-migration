@@ -1,0 +1,22 @@
+HTTP/1.1 201
+status: 201
+content-length: 267
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:34 GMT
+content-type: application/json
+x-openstack-request-id: req-924d5d08-42f4-4543-961c-10d995ecac85
+
+{
+  "group": {
+    "description": "tempest-Description-755370914",
+    "domain_id": "default",
+    "id": "b9584b3f8a42466e8687aa82a8867a63",
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/groups/b9584b3f8a42466e8687aa82a8867a63"
+    },
+    "name": "tempest-Group-53177133",
+    "project_id": null
+  }
+}

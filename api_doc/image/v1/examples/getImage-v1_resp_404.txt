@@ -1,0 +1,10 @@
+HTTP/1.1 404
+status: 404
+content-length: 120
+connection: close
+date: Tue, 22 Sep 2015 06:11:51 GMT
+content-type: text/plain; charset=UTF-8
+x-openstack-request-id: req-e6be260d-c5e6-4d2d-9313-b745ba16d17b
+
+404 Not Found
+The resource could not be found.

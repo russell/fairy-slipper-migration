@@ -1,0 +1,14 @@
+HTTP/1.1 200
+status: 200
+content-length: 14
+content-location: http://127.0.0.1:8774/v2.1/d1c5f968c54f4b149a450ed80df33f60/os-agents
+x-compute-request-id: req-b023833c-2822-4de1-b14b-0bb52d970401
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:10 GMT
+content-type: application/json
+
+{
+  "agents": []
+}

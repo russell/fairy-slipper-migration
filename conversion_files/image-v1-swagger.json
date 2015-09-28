@@ -276,7 +276,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "POST /v1/images HTTP/1.1\nx-image-meta-container_format: bare\nx-auth-token: <omitted>\nx-image-meta-property-prop1: val1\nx-image-meta-is_public: False\nx-image-meta-disk_format: raw\nx-image-meta-name: New Name\n"
+        }, 
         "id": "createImage-v1", 
         "method": "post", 
         "parameters": [
@@ -292,9 +294,19 @@
         ], 
         "produces": [], 
         "responses": {
+          "201": {
+            "examples": {
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 471\nconnection: close\nlocation: http://127.0.0.1:9292/v1/images/83374e14-9e88-4928-ba40-e8cde803a6c6\ndate: Tue, 22 Sep 2015 06:05:13 GMT\ncontent-type: application/json\nx-openstack-request-id: req-898313b7-ca40-45d4-8fc2-61bc8bf82dc3\n\n{\n  \"image\": {\n    \"checksum\": null,\n    \"container_format\": \"bare\",\n    \"created_at\": \"2015-09-22T06:05:13.000000\",\n    \"deleted\": false,\n    \"deleted_at\": null,\n    \"disk_format\": \"raw\",\n    \"id\": \"83374e14-9e88-4928-ba40-e8cde803a6c6\",\n    \"is_public\": false,\n    \"min_disk\": 0,\n    \"min_ram\": 0,\n    \"name\": \"New Name\",\n    \"owner\": \"1fa1f2439620463398c3ffb2d5204592\",\n    \"properties\": {\n      \"prop1\": \"val1\"\n    },\n    \"protected\": false,\n    \"size\": 0,\n    \"status\": \"queued\",\n    \"updated_at\": \"2015-09-22T06:05:13.000000\",\n    \"virtual_size\": null\n  }\n}"
+            }
+          }, 
           "202": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "400": {
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 65\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:01 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-7a198f68-2078-4042-b1fb-140ee2f2bf28\n\n400 Bad Request\nInvalid container format 'wrong' for image.\n\n"
+            }
           }
         }, 
         "summary": "Registers a virtual machine (VM) image.", 
@@ -308,7 +320,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v1/images HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listImage-v1", 
         "method": "get", 
         "parameters": [
@@ -375,20 +389,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "images": [
-                  {
-                    "container_format": "ovf", 
-                    "disk_format": "vhd", 
-                    "name": "Ubuntu 10.04 Plain", 
-                    "size": "5368709120", 
-                    "uri": "http://glance.example.com/images/71c675ab-d94f-49cd-a114-e12490b328d9"
-                  }, 
-                  {
-                    "...": "..."
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 2029\ncontent-location: http://127.0.0.1:9292/v1/images\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:46 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-286f906f-58a8-4b73-8b96-0ba7e4b5326a\n\n{\n  \"images\": [\n    {\n      \"checksum\": \"aa757e64be0118722f84a95ad7d034d2\",\n      \"container_format\": \"bare\",\n      \"disk_format\": \"raw\",\n      \"id\": \"9e82db6a-5f4d-4384-a093-a633baae1933\",\n      \"name\": \"New Standard Image 33\",\n      \"size\": 142\n    },\n    {\n      \"checksum\": \"e44daadd272516fc5982b54465fd033a\",\n      \"container_format\": \"bare\",\n      \"disk_format\": \"raw\",\n      \"id\": \"9d0b57c2-f244-40a5-94e9-18e94b7f4ba3\",\n      \"name\": \"New Standard Image 33\",\n      \"size\": 142\n    },\n    {\n      \"checksum\": \"af8b75caa359d54371d3810527905a34\",\n      \"container_format\": \"ami\",\n      \"disk_format\": \"ami\",\n      \"id\": \"59f26ddb-c577-46ff-b1dd-edf780b5674a\",\n      \"name\": \"New Standard Image 2\",\n      \"size\": 142\n    },\n    {\n      \"checksum\": null,\n      \"container_format\": \"bare\",\n      \"disk_format\": \"raw\",\n      \"id\": \"de0c62f8-2581-4a86-93a2-cb5ca0327603\",\n      \"name\": \"New Remote Image dup\",\n      \"size\": 3670\n    },\n    {\n      \"checksum\": \"82b84c18d3113fe9647aab6a5d8aacea\",\n      \"container_format\": \"ami\",\n      \"disk_format\": \"ami\",\n      \"id\": \"340467d8-8235-4471-bfdf-94dee7356d93\",\n      \"name\": \"New Standard Image 1\",\n      \"size\": 42\n    },\n    {\n      \"checksum\": null,\n      \"container_format\": \"bare\",\n      \"disk_format\": \"raw\",\n      \"id\": \"41135831-0c35-4d58-9ef9-4b22c89edad0\",\n      \"name\": \"New Remote Image dup\",\n      \"size\": 3670\n    },\n    {\n      \"checksum\": null,\n      \"container_format\": \"ami\",\n      \"disk_format\": \"ami\",\n      \"id\": \"c4d81b3c-8f2b-46e0-ab95-60eb9697381c\",\n      \"name\": \"New Remote Image two\",\n      \"size\": 3670\n    },\n    {\n      \"checksum\": null,\n      \"container_format\": \"bare\",\n      \"disk_format\": \"raw\",\n      \"id\": \"be10077d-6f68-4cf1-8c36-82600db1a573\",\n      \"name\": \"New Remote Image one\",\n      \"size\": 3670\n    },\n    {\n      \"checksum\": \"eb9139e4942121f22bbc2afc0400b2a4\",\n      \"container_format\": \"ami\",\n      \"disk_format\": \"ami\",\n      \"id\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\",\n      \"name\": \"cirros-0.3.4-x86_64-uec\",\n      \"size\": 25165824\n    },\n    {\n      \"checksum\": \"be575a2b939972276ef675752936977f\",\n      \"container_format\": \"ari\",\n      \"disk_format\": \"ari\",\n      \"id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\",\n      \"name\": \"cirros-0.3.4-x86_64-uec-ramdisk\",\n      \"size\": 3740163\n    },\n    {\n      \"checksum\": \"8a40c862b5735975d82605c1dd395796\",\n      \"container_format\": \"aki\",\n      \"disk_format\": \"aki\",\n      \"id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\",\n      \"name\": \"cirros-0.3.4-x86_64-uec-kernel\",\n      \"size\": 4979632\n    }\n  ]\n}"
             }, 
             "headers": {}
           }
@@ -514,7 +515,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v1/images/3cf3bb69-fafa-4f4a-be6e-d6512da71178 HTTP/1.1\nx-image-meta-property-key1: alt1\nx-image-meta-property-key2: value2\nx-auth-token: <omitted>\n"
+        }, 
         "id": "updateImage-v1", 
         "method": "put", 
         "parameters": [
@@ -530,7 +533,9 @@
         "produces": [], 
         "responses": {
           "200": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 530\nconnection: close\netag: bb9d8b9043a6d5ae396a39fef783a38a\ndate: Tue, 22 Sep 2015 06:05:22 GMT\ncontent-type: application/json\nx-openstack-request-id: req-bdb106cf-249c-4536-b91b-0617f99936d4\n\n{\n  \"image\": {\n    \"checksum\": \"bb9d8b9043a6d5ae396a39fef783a38a\",\n    \"container_format\": \"ami\",\n    \"created_at\": \"2015-09-22T06:05:19.000000\",\n    \"deleted\": false,\n    \"deleted_at\": null,\n    \"disk_format\": \"ami\",\n    \"id\": \"3cf3bb69-fafa-4f4a-be6e-d6512da71178\",\n    \"is_public\": false,\n    \"min_disk\": 0,\n    \"min_ram\": 0,\n    \"name\": \"New Standard Image 1\",\n    \"owner\": \"d67a9f8b0f994fce8b9d73547d8a721b\",\n    \"properties\": {\n      \"key1\": \"alt1\",\n      \"key2\": \"value2\"\n    },\n    \"protected\": false,\n    \"size\": 42,\n    \"status\": \"active\",\n    \"updated_at\": \"2015-09-22T06:05:22.000000\",\n    \"virtual_size\": null\n  }\n}"
+            }, 
             "headers": {}
           }
         }, 
@@ -545,7 +550,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v1/images/b853dcb0-e518-40d8-a420-fd376d52e00e HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImage-v1", 
         "method": "get", 
         "parameters": [
@@ -564,38 +571,18 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "images": [
-                  {
-                    "checksum": "c2e5db72bd7fd153f53ede5da5a06de3", 
-                    "container_format": "ovf", 
-                    "created_at": "2010-02-03 09:34:01", 
-                    "deleted_at": "", 
-                    "disk_format": "vhd", 
-                    "is_public": true, 
-                    "min_disk": 5, 
-                    "min_ram": 256, 
-                    "name": "Ubuntu 10.04 Plain 5GB", 
-                    "owner": null, 
-                    "properties": {
-                      "distro": "Ubuntu 10.04 LTS"
-                    }, 
-                    "size": "5368709120", 
-                    "status": "active", 
-                    "updated_at": "2010-02-03 09:34:01", 
-                    "uri": "http://glance.example.com/images/71c675ab-d94f-49cd-a114-e12490b328d9"
-                  }, 
-                  {
-                    "...": "..."
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nx-image-meta-status: active\nx-image-meta-owner: a8b8d8ddfe294271850d3151275da6b1\nx-image-meta-name: tempest-ImageMembersTest-instance-173486482\nx-image-meta-container_format: bare\nx-image-meta-created_at: 2015-09-22T06:03:53.000000\netag: f758edcc019c614fc86c73ee5ec8c891\nx-image-meta-min_ram: 0\nx-image-meta-updated_at: 2015-09-22T06:03:55.000000\nstatus: 200\nx-image-meta-id: 2d1e34cd-6009-44b9-a04d-b78803cabb73\ntransfer-encoding: chunked\ndate: Tue, 22 Sep 2015 06:03:58 GMT\nx-openstack-request-id: req-38d49766-fcfe-4b4c-b797-e489bfd75ec7\ncontent-location: http://127.0.0.1:9292/v1/images/2d1e34cd-6009-44b9-a04d-b78803cabb73\nx-image-meta-deleted: False\nx-image-meta-checksum: f758edcc019c614fc86c73ee5ec8c891\nx-image-meta-protected: False\nx-image-meta-min_disk: 0\nx-image-meta-size: 1024\nconnection: close\nx-image-meta-is_public: False\ncontent-type: application/octet-stream\nx-image-meta-disk_format: raw\n\n"
             }, 
             "headers": {}
           }, 
           "403": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 120\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:51 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-e6be260d-c5e6-4d2d-9313-b745ba16d17b\n\n404 Not Found\nThe resource could not be found.\n\n"
+            }
           }
         }, 
         "summary": "Shows the image details as headers and the image binary in the body of the response.", 
@@ -607,7 +594,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v1/images/478ecbae-1d23-45fa-bc5f-151c8ab95064 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteImage-v1", 
         "method": "delete", 
         "parameters": [
@@ -622,9 +611,19 @@
         ], 
         "produces": [], 
         "responses": {
+          "200": {
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:13:07 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-3e50eaf4-8537-4d1d-ac27-6f7b57f12228\n\n"
+            }
+          }, 
           "204": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 120\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:15 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-a4b7d8a8-1cf2-4430-8029-ac3a098915ff\n\n404 Not Found\nThe resource could not be found.\n\n"
+            }
           }
         }, 
         "summary": "Deletes the specified image.", 
@@ -697,18 +696,7 @@
         ], 
         "description": "If you omit the request body, this call adds the membership to the\nimage, leaves the existing memberships unmodified, and sets the\n``can_share`` attribute to ``false`` for new memberships.", 
         "examples": {
-          "application/json": {
-            "members": [
-              {
-                "can_share": false, 
-                "member_id": "tenant1"
-              }, 
-              {
-                "can_share": false, 
-                "member_id": "tenant2"
-              }
-            ]
-          }
+          "text/plain": "PUT /v1/images/d3dfe5ed-24be-4a67-adda-14f84bb61d23/members/a529043ace074612be1d9867416e5724 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "addMember-v1", 
         "method": "put", 
@@ -744,8 +732,15 @@
         ], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:01 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-48cd35be-8158-4278-bca2-78120a693045\n\n"
+            }, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 120\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:43 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-3a661cee-75c5-47c9-9435-91e04e6d2f85\n\n404 Not Found\nThe resource could not be found.\n\n"
+            }
           }
         }, 
         "summary": "Adds a member to an image.", 
@@ -757,7 +752,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v1/images/bbbbed45-20f3-408c-b514-cb0760a5e74c/members/e258ebb072bb4f738de56e8af8426190 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "removeMember-v1", 
         "method": "delete", 
         "parameters": [
@@ -790,8 +787,15 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:03 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-58646047-c9fc-403b-9b97-edaba2782588\n\n"
+            }, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 70\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:49 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-c45b4339-9fbb-4fab-825b-718199a64b4b\n\n404 Not Found\n404 Not Found  Membership could not be found.\n\n"
+            }
           }
         }, 
         "summary": "Removes a member from an image.", 
@@ -807,7 +811,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v1/shared-images/a529043ace074612be1d9867416e5724 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getSharedImages-v1", 
         "method": "get", 
         "parameters": [
@@ -826,17 +832,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "shared_images": [
-                  {
-                    "can_share": false, 
-                    "image_id": "71c675ab-d94f-49cd-a114-e12490b328d9"
-                  }, 
-                  {
-                    "...": "..."
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 241\ncontent-location: http://127.0.0.1:9292/v1/shared-images/a529043ace074612be1d9867416e5724\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:01 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-f40859ac-308f-41eb-a0ab-9426de1e0853\n\n{\n  \"shared_images\": [\n    {\n      \"can_share\": false,\n      \"image_id\": \"2d1e34cd-6009-44b9-a04d-b78803cabb73\"\n    },\n    {\n      \"can_share\": false,\n      \"image_id\": \"af63847a-0355-4e06-926e-e474f149da94\"\n    },\n    {\n      \"can_share\": false,\n      \"image_id\": \"d3dfe5ed-24be-4a67-adda-14f84bb61d23\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }

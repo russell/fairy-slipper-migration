@@ -1,0 +1,65 @@
+HTTP/1.1 200
+status: 200
+content-length: 1234
+content-location: http://127.0.0.1:35357/v3/domains
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:22 GMT
+content-type: application/json
+x-openstack-request-id: req-7604033d-a04a-4551-a048-950f019a811b
+
+{
+  "domains": [
+    {
+      "description": "Used for swift functional testing",
+      "enabled": true,
+      "id": "1f705ca0d9f44423be9c0c1bad001700",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/domains/1f705ca0d9f44423be9c0c1bad001700"
+      },
+      "name": "swift_test"
+    },
+    {
+      "description": "tempest-domain-desc-259853856",
+      "enabled": true,
+      "id": "3d5500fe5582487aa2ae93703dd68c08",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08"
+      },
+      "name": "tempest-domain-316134164"
+    },
+    {
+      "description": "tempest-domain-desc-924759109",
+      "enabled": true,
+      "id": "43614ff77cb242a5acd058ca88d38088",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/domains/43614ff77cb242a5acd058ca88d38088"
+      },
+      "name": "tempest-domain-2023504060"
+    },
+    {
+      "description": "tempest-domain-desc-917857009",
+      "enabled": true,
+      "id": "53e4f0cb198e4f6dbe6f5a970481efb8",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/domains/53e4f0cb198e4f6dbe6f5a970481efb8"
+      },
+      "name": "tempest-domain-920693992"
+    },
+    {
+      "description": "Owns users and tenants (i.e. projects) available on Identity API v2.",
+      "enabled": true,
+      "id": "default",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/domains/default"
+      },
+      "name": "Default"
+    }
+  ],
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:35357/v3/domains"
+  }
+}

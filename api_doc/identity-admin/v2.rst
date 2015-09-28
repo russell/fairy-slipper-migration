@@ -5,7 +5,8 @@
    Gets detailed information about a specified version of the Identity
    API.
 
-   :responseexample 200: v2/examples/admin-getVersionInfo_resp_200.json
+   :requestexample: v2/examples/admin-getVersionInfo_req.txt
+   :responseexample 200: v2/examples/admin-getVersionInfo_resp_200.txt
    :responseexample 203: v2/examples/admin-getVersionInfo_resp_203.json
    :accepts: application/json
    :produces: application/json
@@ -50,8 +51,12 @@
 
    
 
-   :responseexample 200: v2/examples/admin-getTenantById_resp_200.json
+   :requestexample: v2/examples/admin-getTenantById_req.txt
+   :responseexample 200: v2/examples/admin-getTenantById_resp_200.txt
    :responseexample 203: v2/examples/admin-getTenantById_resp_203.json
+   :responseexample 404: v2/examples/admin-getTenantById_resp_404.txt
+   :responseexample 403: v2/examples/admin-getTenantById_resp_403.txt
+   :responseexample 401: v2/examples/admin-getTenantById_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: admin-tenants
@@ -73,8 +78,14 @@
 
    
 
-   :requestexample: v2/examples/admin-createUser_req.json
+   :requestexample: v2/examples/admin-createUser_req.txt
    :responseexample 201: v2/examples/admin-createUser_resp_201.json
+   :responseexample 200: v2/examples/admin-createUser_resp_200.txt
+   :responseexample 404: v2/examples/admin-createUser_resp_404.txt
+   :responseexample 403: v2/examples/admin-createUser_resp_403.txt
+   :responseexample 401: v2/examples/admin-createUser_resp_401.txt
+   :responseexample 400: v2/examples/admin-createUser_resp_400.txt
+   :responseexample 409: v2/examples/admin-createUser_resp_409.txt
    :accepts: application/json
    :produces: application/json
    :tag: admin-users
@@ -82,6 +93,7 @@
    :reqheader X-Auth-Token: A valid authentication token for an
                             administrative user.
    :statuscode 201: 
+   :statuscode 200: 
    :statuscode 413: 
    :statuscode 415: 
    :statuscode 405: 
@@ -90,6 +102,7 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:get:: /v2.0/users
@@ -98,8 +111,11 @@
 
    
 
-   :responseexample 200: v2/examples/admin-getUserByName_resp_200.json
+   :requestexample: v2/examples/admin-getUserByName_req.txt
+   :responseexample 200: v2/examples/admin-getUserByName_resp_200.txt
    :responseexample 203: v2/examples/admin-getUserByName_resp_203.json
+   :responseexample 403: v2/examples/admin-getUserByName_resp_403.txt
+   :responseexample 401: v2/examples/admin-getUserByName_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: admin-users
@@ -143,8 +159,11 @@
 
    
 
-   :responseexample 200: v2/examples/admin-listRolesForUserOnTenant_resp_200.json
+   :requestexample: v2/examples/admin-listRolesForUserOnTenant_req.txt
+   :responseexample 200: v2/examples/admin-listRolesForUserOnTenant_resp_200.txt
    :responseexample 203: v2/examples/admin-listRolesForUserOnTenant_resp_203.json
+   :responseexample 403: v2/examples/admin-listRolesForUserOnTenant_resp_403.txt
+   :responseexample 401: v2/examples/admin-listRolesForUserOnTenant_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: admin-tenants
@@ -167,7 +186,8 @@
 
    
 
-   :responseexample 200: v2/examples/admin-getUserById_resp_200.json
+   :requestexample: v2/examples/admin-getUserById_req.txt
+   :responseexample 200: v2/examples/admin-getUserById_resp_200.txt
    :responseexample 203: v2/examples/admin-getUserById_resp_203.json
    :accepts: application/json
    :produces: application/json
@@ -321,9 +341,10 @@
    
    The deployment determines how long expired tokens are stored.
 
-   :requestexample: v2/examples/admin-authenticate_req.json
-   :responseexample 200: v2/examples/admin-authenticate_resp_200.json
+   :requestexample: v2/examples/admin-authenticate_req.txt
+   :responseexample 200: v2/examples/admin-authenticate_resp_200.txt
    :responseexample 203: v2/examples/admin-authenticate_resp_203.json
+   :responseexample 401: v2/examples/admin-authenticate_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: admin-tokens
@@ -347,7 +368,8 @@
    tokens are in the ``/tokens/{tokenId}`` path. A user should expect
    an ``itemNotFound (404)`` fault for an token that is not valid.
 
-   :responseexample 200: v2/examples/admin-validateToken_resp_200.json
+   :requestexample: v2/examples/admin-validateToken_req.txt
+   :responseexample 200: v2/examples/admin-validateToken_resp_200.txt
    :responseexample 203: v2/examples/admin-validateToken_resp_203.json
    :accepts: application/json
    :produces: application/json

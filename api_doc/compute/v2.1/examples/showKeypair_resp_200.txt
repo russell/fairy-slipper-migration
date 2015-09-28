@@ -1,0 +1,24 @@
+HTTP/1.1 200
+status: 200
+content-length: 690
+content-location: http://127.0.0.1:8774/v2.1/7d9b38a8f1b447e394358a48f5a2527f/os-keypairs/tempest-keypair-904140790
+x-compute-request-id: req-ca365702-c430-4d66-9f04-35ea01759426
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:33 GMT
+content-type: application/json
+
+{
+  "keypair": {
+    "created_at": "2015-09-22T05:53:32.000000",
+    "deleted": false,
+    "deleted_at": null,
+    "fingerprint": "fd:ff:55:fd:9e:4e:c8:67:3f:44:50:77:47:79:ff:fc",
+    "id": 1,
+    "name": "tempest-keypair-904140790",
+    "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbWIVqIBrPPK6R2eJXWZPJDr4tsYaWMzBHunWSXTE3wvmhDPHBMcsrYYHoMgAJy+NRakZttMfkFKskNI7O9Lwtckw3AeHNijUPxTAs5DdsXs+8eKqn+yS7V6Rs8vWnZrCV2mbIsEs6UkShPMzp0fKPBynjb9kNyPm1AbSzbvwz78OMIo10YK+Ipd0IjpWbkaQUojULwrcUHLV9gWPh9oAesgZxFN+PDC+eUvcE+2BU6aJ6XiBeKTx6maZad95P1npMPzFXOftkVc9MlUKlSIe6QPvhzmDOgJFyXQ7n477+31tmv/o+bzcVZgIBTbOL45oCMdp2PKUT+VWe0hBQt32X Generated-by-Nova",
+    "updated_at": null,
+    "user_id": "680317e1066c47d1a414c78766c81b3f"
+  }
+}

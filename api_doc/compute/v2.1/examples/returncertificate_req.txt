@@ -1,0 +1,4 @@
+GET /v2.1/07067c6cf37642a9ac53bb09ac908db0/os-certificates/root HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

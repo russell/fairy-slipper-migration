@@ -1,0 +1,4 @@
+GET /v2.1/69551518f79e4f29a78501c4b36a853a/servers/2f5f8934-a5ed-4610-9c48-742405480b70/metadata/meta1 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

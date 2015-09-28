@@ -1,0 +1,8 @@
+HTTP/1.1 204
+status: 204
+content-length: 0
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 05:56:54 GMT
+x-openstack-request-id: req-a42dab64-375e-4946-be93-a5886dee5dac

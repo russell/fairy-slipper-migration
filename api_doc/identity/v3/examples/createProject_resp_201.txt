@@ -1,0 +1,24 @@
+HTTP/1.1 201
+status: 201
+content-length: 343
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:36 GMT
+content-type: application/json
+x-openstack-request-id: req-f1357e30-7db2-4df1-8abe-bacfb9b0488b
+
+{
+  "project": {
+    "description": "tempest-DomainsNegativeTestJSON-562228116-desc",
+    "domain_id": "default",
+    "enabled": true,
+    "id": "a1740ba0cb5749589e3755144c505011",
+    "is_domain": false,
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/projects/a1740ba0cb5749589e3755144c505011"
+    },
+    "name": "tempest-DomainsNegativeTestJSON-562228116",
+    "parent_id": null
+  }
+}

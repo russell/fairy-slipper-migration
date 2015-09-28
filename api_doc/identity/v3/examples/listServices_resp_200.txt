@@ -1,0 +1,150 @@
+HTTP/1.1 200
+status: 200
+content-length: 3106
+content-location: http://127.0.0.1:5000/v3/services
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:31 GMT
+content-type: application/json
+x-openstack-request-id: req-e88f834e-6ab3-44d7-8c84-1408176a9c16
+
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:5000/v3/services"
+  },
+  "services": [
+    {
+      "description": "Cinder Volume Service",
+      "enabled": true,
+      "id": "084996172f8b4733b88ea230142dd67c",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/084996172f8b4733b88ea230142dd67c"
+      },
+      "name": "cinder",
+      "type": "volume"
+    },
+    {
+      "description": "Glance Image Service",
+      "enabled": true,
+      "id": "0874fa2346484eb8889ffc52c4f4c3d0",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/0874fa2346484eb8889ffc52c4f4c3d0"
+      },
+      "name": "glance",
+      "type": "image"
+    },
+    {
+      "description": "Nova Compute Service (Legacy 2.0)",
+      "enabled": true,
+      "id": "1d5fd306ed9a43f3bdf68063a86cf6c9",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/1d5fd306ed9a43f3bdf68063a86cf6c9"
+      },
+      "name": "nova_legacy",
+      "type": "compute_legacy"
+    },
+    {
+      "description": null,
+      "enabled": true,
+      "id": "2362f07d8e074559abd6d9106b664e12",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/2362f07d8e074559abd6d9106b664e12"
+      },
+      "name": "tempest-service-1682286042",
+      "type": "tempest-type-196921771"
+    },
+    {
+      "description": null,
+      "enabled": true,
+      "id": "28a0e29bbf55490db5d974b995c40081",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/28a0e29bbf55490db5d974b995c40081"
+      },
+      "name": "tempest-service-1853710985",
+      "type": "tempest-type-113451415"
+    },
+    {
+      "description": "OpenStack Telemetry Service",
+      "enabled": true,
+      "id": "2a4c92e3fad143ac9dafe542fc876792",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/2a4c92e3fad143ac9dafe542fc876792"
+      },
+      "name": "ceilometer",
+      "type": "metering"
+    },
+    {
+      "description": "Keystone Identity Service",
+      "enabled": true,
+      "id": "7f394a3e102f4fd78c39694efdeeff2c",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/7f394a3e102f4fd78c39694efdeeff2c"
+      },
+      "name": "keystone",
+      "type": "identity"
+    },
+    {
+      "description": "S3",
+      "enabled": true,
+      "id": "8a37a7869fe042d0a1f7f1d7832fc027",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/8a37a7869fe042d0a1f7f1d7832fc027"
+      },
+      "name": "s3",
+      "type": "s3"
+    },
+    {
+      "description": null,
+      "enabled": true,
+      "id": "8c3c49e0e9fb4d1b9f91779e688468eb",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/8c3c49e0e9fb4d1b9f91779e688468eb"
+      },
+      "name": "tempest-service-1118782627",
+      "type": "tempest-type-1857061173"
+    },
+    {
+      "description": "Nova Compute Service",
+      "enabled": true,
+      "id": "a55fc374a66245a192ba19e807586a65",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/a55fc374a66245a192ba19e807586a65"
+      },
+      "name": "nova",
+      "type": "compute"
+    },
+    {
+      "description": "Cinder Volume Service V2",
+      "enabled": true,
+      "id": "c08472fa96cf4a28bb347985fb1e60fb",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/c08472fa96cf4a28bb347985fb1e60fb"
+      },
+      "name": "cinderv2",
+      "type": "volumev2"
+    },
+    {
+      "description": "EC2 Compatibility Layer",
+      "enabled": true,
+      "id": "c9e4b5f796494282823764eebca119ff",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/c9e4b5f796494282823764eebca119ff"
+      },
+      "name": "ec2",
+      "type": "ec2"
+    },
+    {
+      "description": "Swift Service",
+      "enabled": true,
+      "id": "eadc8f78a1774f4e912245b514392592",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/services/eadc8f78a1774f4e912245b514392592"
+      },
+      "name": "swift",
+      "type": "object-store"
+    }
+  ]
+}

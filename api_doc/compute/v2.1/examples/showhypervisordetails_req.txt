@@ -1,0 +1,4 @@
+GET /v2.1/a01857fdb18f4fff981c3ac0068aa9bd/os-hypervisors/48f3203f-0ff8-4d92-9a97-6298bb8873cd/uptime HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

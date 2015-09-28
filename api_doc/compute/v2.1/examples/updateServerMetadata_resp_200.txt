@@ -1,0 +1,16 @@
+HTTP/1.1 200
+status: 200
+content-length: 50
+x-compute-request-id: req-7ca27fe0-9023-43e0-b61f-7509a685f9d3
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:25 GMT
+content-type: application/json
+
+{
+  "metadata": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}

@@ -1,0 +1,17 @@
+HTTP/1.1 403
+status: 403
+content-length: 179
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:14 GMT
+content-type: application/json
+x-openstack-request-id: req-872b67a9-d7f2-41c8-b93e-ca70e203653d
+
+{
+  "error": {
+    "code": 403,
+    "message": "You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)",
+    "title": "Forbidden"
+  }
+}

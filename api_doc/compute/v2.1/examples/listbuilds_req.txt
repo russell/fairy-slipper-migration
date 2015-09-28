@@ -1,0 +1,4 @@
+GET /v2.1/d1c5f968c54f4b149a450ed80df33f60/os-agents HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

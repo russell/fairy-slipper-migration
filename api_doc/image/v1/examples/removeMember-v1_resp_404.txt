@@ -1,0 +1,10 @@
+HTTP/1.1 404
+status: 404
+content-length: 70
+connection: close
+date: Tue, 22 Sep 2015 06:11:49 GMT
+content-type: text/plain; charset=UTF-8
+x-openstack-request-id: req-c45b4339-9fbb-4fab-825b-718199a64b4b
+
+404 Not Found
+404 Not Found  Membership could not be found.

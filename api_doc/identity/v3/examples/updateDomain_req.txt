@@ -1,0 +1,4 @@
+PATCH /v3/domains/cef9e958a8af421f99a99a5a269af78f HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

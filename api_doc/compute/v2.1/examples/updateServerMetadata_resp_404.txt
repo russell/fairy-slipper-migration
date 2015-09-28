@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 111
+x-compute-request-id: req-45db6bbf-e14d-423f-87b1-13258e73d7a2
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:46 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Instance dfa04c93-94bf-4c68-8bdc-a6237e518def could not be found."
+  }
+}

@@ -1,0 +1,29 @@
+HTTP/1.1 200
+status: 200
+content-length: 600
+connection: close
+date: Tue, 22 Sep 2015 06:05:32 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-dbdc4474-8322-46ef-b1c1-e59d5dc82fa3
+
+{
+  "checksum": "26db1837fb18ed4b5481865f294dc529",
+  "container_format": "bare",
+  "created_at": "2015-09-22T06:05:30Z",
+  "disk_format": "iso",
+  "file": "/v2/images/76caa18f-0fea-4ee8-9927-b6110568eaa1/file",
+  "id": "76caa18f-0fea-4ee8-9927-b6110568eaa1",
+  "min_disk": 0,
+  "min_ram": 0,
+  "name": "tempest-new-image-316806306",
+  "owner": "fa29838114b74d9cb7bac9efaf776e4b",
+  "protected": false,
+  "schema": "/v2/schemas/image",
+  "self": "/v2/images/76caa18f-0fea-4ee8-9927-b6110568eaa1",
+  "size": 1024,
+  "status": "active",
+  "tags": [],
+  "updated_at": "2015-09-22T06:05:31Z",
+  "virtual_size": null,
+  "visibility": "private"
+}

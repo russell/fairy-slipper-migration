@@ -1,0 +1,4 @@
+DELETE /v1/images/478ecbae-1d23-45fa-bc5f-151c8ab95064 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

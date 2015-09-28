@@ -1,9 +1,0 @@
-{
-  "user": {
-    "tenantId": "null", 
-    "password": "null", 
-    "enabled": true, 
-    "email": "john.smith@example.org", 
-    "name": "jqsmith"
-  }
-}

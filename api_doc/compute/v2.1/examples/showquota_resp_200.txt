@@ -1,0 +1,28 @@
+HTTP/1.1 200
+status: 200
+content-length: 303
+content-location: http://127.0.0.1:8774/v2.1/cf5e345ffd79409e8efa258be6810763/os-quota-class-sets/default
+x-compute-request-id: req-2b56263e-d4a5-4f7b-952b-ab1cd7a3b000
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:57 GMT
+content-type: application/json
+
+{
+  "quota_class_set": {
+    "cores": 20,
+    "fixed_ips": -1,
+    "floating_ips": 10,
+    "id": "default",
+    "injected_file_content_bytes": 10240,
+    "injected_file_path_bytes": 255,
+    "injected_files": 5,
+    "instances": 10,
+    "key_pairs": 100,
+    "metadata_items": 128,
+    "ram": 51200,
+    "security_group_rules": 20,
+    "security_groups": 10
+  }
+}

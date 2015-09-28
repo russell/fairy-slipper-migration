@@ -2062,7 +2062,9 @@
           "application/json"
         ], 
         "description": "Returns a subset of the larger collection of images and a link that\nyou can use to get the next set of images. You should always check\nfor the presence of a ``next`` link and use it as the URI in a\nsubsequent HTTP GET request. You should follow this pattern until a\n``next`` link is no longer provided. The next link preserves any\nquery parameters that you send in your initial request. You can use\nthe ``first`` link to jump back to the first page of the\ncollection. If you prefer to paginate through images manually, use\nthe ``limit`` and ``marker`` parameters.\n\nThe list operation accepts several types of query parameters that\nlet you filter the results of the returned collection.\n\nA client can provide direct comparison filters using most image\nattributes, such as ``name=Ubuntu`` , ``visibility=public`` , and\nso on. A client cannot filter on tags or anything defined as a\n``link`` in the json- schema, such as self, file, or schema.\n\nYou can use the ``size_min`` and ``size_max`` query parameters to\nperform greater-than and less-than filtering of images based on\ntheir ``size`` attribute. The size is measured in bytes and refers\nto the size of an image when it is stored on disk.\n\nFor example, sending a ``size_min`` filter of 1048576 and\n``size_max`` of 4194304 filters the container to include only\nimages that are between 1 and 4 MB.\n\nYou can see a list of VM images which status is in ``active`` ,\n``queued`` , or ``saving`` .\n\nYou can use query parameters to sort the results of this operation.\n\n- ``sort_key`` . Sorts by the requested image attribute. Sorts in\n  the natural sorting direction of the image attribute that is\n  provided as the ``sort_key`` .\n\n- ``sort_dir`` . Sorts in a specified sort direction.\n\n- ``sort`` . Sorts by one or more sets of attribute and sort\n  direction combinations. If you omit the sort direction in a set,\n  the default is ``desc`` .\n\nTo specify the ``sort_key`` and ``sort_dir`` query parameters to\nsort the results:\n\n.. code-block:: json\n\n   GET /v2/images?sort_key=name\n   &\n   sort_dir=asc\n   &\n   sort_key=status\n   &\n   sort_dir=desc\n\nTo specify the ``sort`` query parameter to sort the results:\n\n.. code-block:: json\n\n   GET /v2/images?sort=name:asc,status:desc", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/images HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listImages-v2", 
         "method": "get", 
         "parameters": [
@@ -2177,54 +2179,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "first": "/v2/images", 
-                "images": [
-                  {
-                    "checksum": "64d7c1cd2b6f60c92c14662941cb7913", 
-                    "container_format": "bare", 
-                    "created_at": "2014-11-07T17:07:06Z", 
-                    "disk_format": "qcow2", 
-                    "file": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27/file", 
-                    "id": "1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                    "min_disk": 0, 
-                    "min_ram": 0, 
-                    "name": "cirros-0.3.2-x86_64-disk", 
-                    "owner": "5ef70662f8b34079a6eddb8da9d75fe8", 
-                    "protected": false, 
-                    "schema": "/v2/schemas/image", 
-                    "self": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                    "size": 13167616, 
-                    "status": "active", 
-                    "tags": [], 
-                    "updated_at": "2014-11-07T17:19:09Z", 
-                    "virtual_size": null, 
-                    "visibility": "public"
-                  }, 
-                  {
-                    "checksum": "afab0f79bac770d61d24b4d0560b5f70", 
-                    "container_format": "bare", 
-                    "created_at": "2014-10-30T08:23:39Z", 
-                    "disk_format": "qcow2", 
-                    "file": "/v2/images/781b3762-9469-4cec-b58d-3349e5de4e9c/file", 
-                    "id": "781b3762-9469-4cec-b58d-3349e5de4e9c", 
-                    "min_disk": 0, 
-                    "min_ram": 0, 
-                    "name": "F17-x86_64-cfntools", 
-                    "owner": "5ef70662f8b34079a6eddb8da9d75fe8", 
-                    "protected": false, 
-                    "schema": "/v2/schemas/image", 
-                    "self": "/v2/images/781b3762-9469-4cec-b58d-3349e5de4e9c", 
-                    "size": 476704768, 
-                    "status": "active", 
-                    "tags": [], 
-                    "updated_at": "2014-11-03T16:40:10Z", 
-                    "virtual_size": null, 
-                    "visibility": "public"
-                  }
-                ], 
-                "schema": "/v2/schemas/images"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1987\ncontent-location: http://127.0.0.1:9292/v2/images\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:27 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-356ec420-a967-4af1-a0f5-99727a0cd52b\n\n{\n  \"first\": \"/v2/images\",\n  \"images\": [\n    {\n      \"checksum\": \"eb9139e4942121f22bbc2afc0400b2a4\",\n      \"container_format\": \"ami\",\n      \"created_at\": \"2015-09-22T05:49:58Z\",\n      \"disk_format\": \"ami\",\n      \"file\": \"/v2/images/db8ff66c-0e54-4a7b-931c-aa715c78917e/file\",\n      \"id\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\",\n      \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\",\n      \"min_disk\": 0,\n      \"min_ram\": 0,\n      \"name\": \"cirros-0.3.4-x86_64-uec\",\n      \"owner\": \"603e2acd7280415581e58d38a2fe1c87\",\n      \"protected\": false,\n      \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\",\n      \"schema\": \"/v2/schemas/image\",\n      \"self\": \"/v2/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\",\n      \"size\": 25165824,\n      \"status\": \"active\",\n      \"tags\": [],\n      \"updated_at\": \"2015-09-22T05:50:02Z\",\n      \"virtual_size\": null,\n      \"visibility\": \"public\"\n    },\n    {\n      \"checksum\": \"be575a2b939972276ef675752936977f\",\n      \"container_format\": \"ari\",\n      \"created_at\": \"2015-09-22T05:49:43Z\",\n      \"disk_format\": \"ari\",\n      \"file\": \"/v2/images/f34e4626-2b5d-478a-b079-b73012a0e4ad/file\",\n      \"id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\",\n      \"min_disk\": 0,\n      \"min_ram\": 0,\n      \"name\": \"cirros-0.3.4-x86_64-uec-ramdisk\",\n      \"owner\": \"603e2acd7280415581e58d38a2fe1c87\",\n      \"protected\": false,\n      \"schema\": \"/v2/schemas/image\",\n      \"self\": \"/v2/images/f34e4626-2b5d-478a-b079-b73012a0e4ad\",\n      \"size\": 3740163,\n      \"status\": \"active\",\n      \"tags\": [],\n      \"updated_at\": \"2015-09-22T05:49:47Z\",\n      \"virtual_size\": null,\n      \"visibility\": \"public\"\n    },\n    {\n      \"checksum\": \"8a40c862b5735975d82605c1dd395796\",\n      \"container_format\": \"aki\",\n      \"created_at\": \"2015-09-22T05:49:32Z\",\n      \"disk_format\": \"aki\",\n      \"file\": \"/v2/images/8edeeee9-dda0-4a03-8934-317b46b7343a/file\",\n      \"id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\",\n      \"min_disk\": 0,\n      \"min_ram\": 0,\n      \"name\": \"cirros-0.3.4-x86_64-uec-kernel\",\n      \"owner\": \"603e2acd7280415581e58d38a2fe1c87\",\n      \"protected\": false,\n      \"schema\": \"/v2/schemas/image\",\n      \"self\": \"/v2/images/8edeeee9-dda0-4a03-8934-317b46b7343a\",\n      \"size\": 4979632,\n      \"status\": \"active\",\n      \"tags\": [],\n      \"updated_at\": \"2015-09-22T05:49:42Z\",\n      \"virtual_size\": null,\n      \"visibility\": \"public\"\n    }\n  ],\n  \"schema\": \"/v2/schemas/images\"\n}"
             }, 
             "headers": {}
           }
@@ -2241,19 +2196,7 @@
         ], 
         "description": "Created with a ``Location`` header that contains the newly-created\nURI for the image. Response body represents the created image\nentity.\n\nSynchronous Postconditions\n\n- With correct permissions, you can see the image status as\n  ``queued`` through API calls.\n\n- With correct permissions, you can see the image status as\n  ``active`` through API calls if you created the image with\n  ``Location`` header.", 
         "examples": {
-          "application/json": {
-            "container_format": "bare", 
-            "disk_format": "qcow2", 
-            "min_disk": 0, 
-            "min_ram": 0, 
-            "name": "Ubuntu 12.10", 
-            "protected": false, 
-            "tags": [
-              "ubuntu", 
-              "quantal"
-            ], 
-            "visibility": "private"
-          }
+          "text/plain": "POST /v2/images HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createImage-v2", 
         "method": "post", 
@@ -2274,30 +2217,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "checksum": null, 
-                "container_format": "bare", 
-                "created_at": "2014-11-11T20:47:55Z", 
-                "disk_format": "qcow2", 
-                "file": "/v2/images/b2173dd3-7ad6-4362-baa6-a68bce3565ca/file", 
-                "id": "b2173dd3-7ad6-4362-baa6-a68bce3565ca", 
-                "min_disk": 0, 
-                "min_ram": 0, 
-                "name": "Ubuntu 12.10", 
-                "owner": "b4eedccc6fb74fa8a7ad6b08382b852b", 
-                "protected": false, 
-                "schema": "/v2/schemas/image", 
-                "self": "/v2/images/b2173dd3-7ad6-4362-baa6-a68bce3565ca", 
-                "size": null, 
-                "status": "queued", 
-                "tags": [
-                  "ubuntu", 
-                  "quantal"
-                ], 
-                "updated_at": "2014-11-11T20:47:55Z", 
-                "virtual_size": null, 
-                "visibility": "private"
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 567\nconnection: close\nlocation: http://127.0.0.1:9292/v2/images/d27f5e65-c566-419d-8d97-7557e7605281\ndate: Tue, 22 Sep 2015 06:05:26 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-a637e2a4-3676-4973-9048-b094fd1fc65b\n\n{\n  \"checksum\": null,\n  \"container_format\": \"bare\",\n  \"created_at\": \"2015-09-22T06:05:26Z\",\n  \"disk_format\": \"raw\",\n  \"file\": \"/v2/images/d27f5e65-c566-419d-8d97-7557e7605281/file\",\n  \"id\": \"d27f5e65-c566-419d-8d97-7557e7605281\",\n  \"min_disk\": 0,\n  \"min_ram\": 0,\n  \"name\": \"tempest-image-1310429096\",\n  \"owner\": \"fa29838114b74d9cb7bac9efaf776e4b\",\n  \"protected\": false,\n  \"schema\": \"/v2/schemas/image\",\n  \"self\": \"/v2/images/d27f5e65-c566-419d-8d97-7557e7605281\",\n  \"size\": null,\n  \"status\": \"queued\",\n  \"tags\": [],\n  \"updated_at\": \"2015-09-22T06:05:26Z\",\n  \"virtual_size\": null,\n  \"visibility\": \"private\"\n}"
             }, 
             "headers": {
               "location": {
@@ -2306,6 +2226,11 @@
                 "required": true, 
                 "type": "string"
               }
+            }
+          }, 
+          "400": {
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 404\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:25 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-c9dbaf54-dcfc-4a64-9f64-9458abc4b96b\n\n400 Bad Request\n\n"
             }
           }
         }, 
@@ -2323,21 +2248,7 @@
         ], 
         "description": "Depending on the referenced target location, this operation\nperforms one of the following functions:\n\n- The target location is an array index. A new value is inserted\n  into the array at the specified index.\n\n- The target location is an object member that does not exist. A new\n  member is added to the object.\n\n- The target location is an object member that exists. The member\n  value is replaced.\n\nThe operation object MUST contain a ``value`` member that specifies\nthe value to add. For example:\n\n.. code-block:: json\n\n   {\n      \"op\": \"add\",\n      \"path\": \"/a/b/c\",\n      \"value\": [\n         \"foo\",\n         \"bar\"\n      ]\n   }\n\nThe target location MUST reference one of these values:\n\n- The root of the target document. The specified value is the entire\n  content of the target document.\n\n- A member to add to an object. The specified value is added to that\n  object at the specified location. If the member already exists,\n  it is replaced by the specified value.\n\n- An element to add to the array. The specified value is added to\n  the array at the specified location. Any element that is at or\n  above the specified index is shifted one position to the right.\n  The specified index MUST NOT be greater than the number of\n  elements in the array. If the hyphen (-) character is used to\n  index the end of the array (see [RFC6901]), the value is appended\n  to the array.\n\nBecause this operation adds to existing objects and arrays, its\ntarget location often does not exist.\n\nThe request body must conform to one of these media types:\n\n- ``application/openstack-images-v2.0-json-patch``\n\n- ``application/openstack-images-v2.1-json-patch`` (Since Image API\n  v2.2.)\n\nYou can also use the PATCH method to add or remove image\nproperties.\n\nFor information about the PATCH method and the available media\ntypes, see `Image API v2 HTTP PATCH media types\n<http://specs.openstack.org/openstack/glance-specs/specs/api/v2\n/http-patch-image-api-v2.html>`_.\n\nPreconditions\n\n- When you add or replace a location to the specified image, you\n  must set the ``disk_format`` and ``container_format`` parameters\n  in the image.\n\n- When you replace a location, a location must be previously set in\n  the image.\n\nSynchronous Postconditions\n\n- With correct permissions, you can view the updated values of the\n  attributes of the image.\n\n- After you add a location to an image that had no location and with\n  correct permissions, you can use API calls to view the image\n  status as ``active`` .\n\n- After you remove all locations from the image and with correct\n  permissions, you can use API calls to view the image status as\n  ``queued`` .\n\nTroubleshooting\n\n- If you cannot update locations, your request might be missing some\n  information. Make sure that you meet the preconditions and run\n  the request again. If the request fails again, review your API\n  request.", 
         "examples": {
-          "application/json": [
-            {
-              "op": "replace", 
-              "path": "/name", 
-              "value": "Fedora 17"
-            }, 
-            {
-              "op": "replace", 
-              "path": "/tags", 
-              "value": [
-                "fedora", 
-                "beefy"
-              ]
-            }
-          ]
+          "text/plain": "PATCH /v2/images/76caa18f-0fea-4ee8-9927-b6110568eaa1 HTTP/1.1\ncontent-type: application/openstack-images-v2.0-json-patch\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateImage-v2", 
         "method": "patch", 
@@ -2366,29 +2277,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "checksum": "2cec138d7dae2aa59038ef8c9aec2390", 
-                "container_format": null, 
-                "created_at": "2012-08-10T19:23:50Z", 
-                "disk_format": null, 
-                "file": "/v2/images/da3b75d9-3f4a-40e7-8a2c-bfab23927dea/file", 
-                "id": "da3b75d9-3f4a-40e7-8a2c-bfab23927dea", 
-                "min_disk": null, 
-                "min_ram": null, 
-                "name": "Fedora 17", 
-                "owner": null, 
-                "schema": "/v2/schemas/image", 
-                "self": "/v2/images/da3b75d9-3f4a-40e7-8a2c-bfab23927dea", 
-                "size": 2254249, 
-                "status": "active", 
-                "tags": [
-                  "fedora", 
-                  "beefy"
-                ], 
-                "updated_at": "2012-08-12T11:11:33Z", 
-                "virtual_size": null, 
-                "visibility": "public"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 600\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:32 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-dbdc4474-8322-46ef-b1c1-e59d5dc82fa3\n\n{\n  \"checksum\": \"26db1837fb18ed4b5481865f294dc529\",\n  \"container_format\": \"bare\",\n  \"created_at\": \"2015-09-22T06:05:30Z\",\n  \"disk_format\": \"iso\",\n  \"file\": \"/v2/images/76caa18f-0fea-4ee8-9927-b6110568eaa1/file\",\n  \"id\": \"76caa18f-0fea-4ee8-9927-b6110568eaa1\",\n  \"min_disk\": 0,\n  \"min_ram\": 0,\n  \"name\": \"tempest-new-image-316806306\",\n  \"owner\": \"fa29838114b74d9cb7bac9efaf776e4b\",\n  \"protected\": false,\n  \"schema\": \"/v2/schemas/image\",\n  \"self\": \"/v2/images/76caa18f-0fea-4ee8-9927-b6110568eaa1\",\n  \"size\": 1024,\n  \"status\": \"active\",\n  \"tags\": [],\n  \"updated_at\": \"2015-09-22T06:05:31Z\",\n  \"virtual_size\": null,\n  \"visibility\": \"private\"\n}"
             }, 
             "headers": {}
           }
@@ -2404,7 +2293,9 @@
           "application/json"
         ], 
         "description": "Response body is a single image entity.\n\nPreconditions\n\n- The specified image must exist.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImage-v2", 
         "method": "get", 
         "parameters": [
@@ -2423,32 +2314,14 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "checksum": "64d7c1cd2b6f60c92c14662941cb7913", 
-                "container_format": "bare", 
-                "created_at": "2014-05-05T17:15:10Z", 
-                "disk_format": "qcow2", 
-                "file": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27/file", 
-                "id": "1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "min_disk": 0, 
-                "min_ram": 0, 
-                "name": "cirros-0.3.2-x86_64-disk", 
-                "owner": "5ef70662f8b34079a6eddb8da9d75fe8", 
-                "protected": false, 
-                "schema": "/v2/schemas/image", 
-                "self": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "size": 13167616, 
-                "status": "active", 
-                "tags": [], 
-                "updated_at": "2014-05-05T17:15:11Z", 
-                "virtual_size": null, 
-                "visibility": "public"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 594\ncontent-location: http://127.0.0.1:9292/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:25 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-d7929a39-2483-4025-a804-b1278daaf7de\n\n{\n  \"checksum\": \"d2e8d77fc0d7eaeb46d5a8c90e57eb4f\",\n  \"container_format\": \"bare\",\n  \"created_at\": \"2015-09-22T06:07:23Z\",\n  \"disk_format\": \"raw\",\n  \"file\": \"/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b/file\",\n  \"id\": \"f6b6ffab-b9a1-444f-8fdc-21493180695b\",\n  \"min_disk\": 0,\n  \"min_ram\": 0,\n  \"name\": \"image-2071310758\",\n  \"owner\": \"b3298ce4c6e2453f8bdddac88a0e2027\",\n  \"protected\": false,\n  \"schema\": \"/v2/schemas/image\",\n  \"self\": \"/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b\",\n  \"size\": 1024,\n  \"status\": \"deactivated\",\n  \"tags\": [],\n  \"updated_at\": \"2015-09-22T06:07:25Z\",\n  \"virtual_size\": null,\n  \"visibility\": \"private\"\n}"
             }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 79\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:33 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-7cd8ca62-b82a-4829-8dec-8a399503f409\n\n404 Not Found\nNo image found with ID bc68b06f-8194-4122-86a1-0f0f03125f39\n\n"
+            }, 
             "headers": {}
           }
         }, 
@@ -2461,7 +2334,9 @@
       {
         "consumes": [], 
         "description": "You cannot delete images with the 'protected' attribute set to true\n(boolean).\n\nPreconditions\n\n- You can delete an image in all status except ``deleted`` .\n\n- You must first set the 'protected' attribute to ``false``\n  (boolean) and then perform the delete.\n\nSynchronous Postconditions\n\n- The response is empty and returns the HTTP 204 status code.\n\n- The image is deleted in images index.\n\n- The binary image data managed by OpenStack Image service is\n  deleted from the storage node if the deleted image stores image\n  data in the node.\n\nTroubleShooting\n\n- The response returns the HTTP 403 status code when the\n  ``protected`` attribute is set to ``true`` even if you have\n  correct permissions. Ensure that you meet the preconditions and\n  run the request again. If the request fails again, review your\n  API request.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2/images/4404a91e-aa4d-491b-a9f1-ae2fd32f7dd6 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteImage-v2", 
         "method": "delete", 
         "parameters": [
@@ -2477,12 +2352,19 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:15 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-ba145e97-bcea-4bc4-88c7-25b402bbdee7\n\n"
+            }, 
             "headers": {}
           }, 
           "403": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 87\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:37 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-e86374a4-3644-479a-afa6-ed3d15cad09e\n\n404 Not Found\nFailed to find image b4225b3e-ecb0-4850-8014-5a378ac81d68 to delete\n\n"
+            }
           }
         }, 
         "summary": "Deletes a specified image. (Since Image API v2.0.)", 
@@ -2498,7 +2380,9 @@
           "application/json"
         ], 
         "description": "If you try to download a deactivated image, the 403 Forbidden error\nis returned. Also, image locations are not visible for deactivated\nimages unless the user is an administrative user.\n\nThe deactivate operation returns an error if the image status is\nnot ``active`` or ``deactivated`` .\n\nPreconditions\n\n- The specified image must exist.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "POST /v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b/actions/deactivate HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deactivateImage-v2", 
         "method": "post", 
         "parameters": [
@@ -2517,27 +2401,7 @@
         "responses": {
           "204": {
             "examples": {
-              "application/json": {
-                "checksum": "64d7c1cd2b6f60c92c14662941cb7913", 
-                "container_format": "bare", 
-                "created_at": "2014-05-05T17:15:10Z", 
-                "disk_format": "qcow2", 
-                "file": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27/file", 
-                "id": "1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "min_disk": 0, 
-                "min_ram": 0, 
-                "name": "cirros-0.3.2-x86_64-disk", 
-                "owner": "5ef70662f8b34079a6eddb8da9d75fe8", 
-                "protected": false, 
-                "schema": "/v2/schemas/image", 
-                "self": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "size": 13167616, 
-                "status": "deactivated", 
-                "tags": [], 
-                "updated_at": "2014-05-05T17:15:11Z", 
-                "virtual_size": null, 
-                "visibility": "public"
-              }
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:25 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-a1ed39f7-6f02-438f-bd09-e7956b3199c9\n\n"
             }, 
             "headers": {}
           }
@@ -2555,7 +2419,9 @@
           "application/json"
         ], 
         "description": "The reactivate operation returns an error if the image status is\nnot ``active`` or ``deactivated`` .\n\nPreconditions\n\n- The specified image must exist.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "POST /v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b/actions/reactivate HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "reactivateImage-v2", 
         "method": "post", 
         "parameters": [
@@ -2574,27 +2440,7 @@
         "responses": {
           "204": {
             "examples": {
-              "application/json": {
-                "checksum": "64d7c1cd2b6f60c92c14662941cb7913", 
-                "container_format": "bare", 
-                "created_at": "2014-05-05T17:15:10Z", 
-                "disk_format": "qcow2", 
-                "file": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27/file", 
-                "id": "1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "min_disk": 0, 
-                "min_ram": 0, 
-                "name": "cirros-0.3.2-x86_64-disk", 
-                "owner": "5ef70662f8b34079a6eddb8da9d75fe8", 
-                "protected": false, 
-                "schema": "/v2/schemas/image", 
-                "self": "/v2/images/1bea47ed-f6a9-463b-b423-14b9cca9ad27", 
-                "size": 13167616, 
-                "status": "active", 
-                "tags": [], 
-                "updated_at": "2014-05-05T17:15:11Z", 
-                "virtual_size": null, 
-                "visibility": "public"
-              }
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:27 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-b7032743-71f5-48ae-937c-a34d1457bad0\n\n"
             }, 
             "headers": {}
           }
@@ -2639,7 +2485,9 @@
       {
         "consumes": [], 
         "description": "Example call: ``curl -i -X GET -H \"X-Auth-Token: $token\"\n$image_url/v2/images/{image_id}/file``\n\nThe response body contains the raw binary data that represents the\nactual virtual disk. The ``Content-Type`` header contains the\n``application/octet-stream`` value. The ``Content-MD5`` header\ncontains an MD5 checksum of the image data. Clients are encouraged\nto use this checksum to verify the integrity of the image data that\nthey receive.\n\n\n\nPreconditions\n\n- The specified images must exist.\n\nSynchronous Postconditions\n\n- You can download the binary image data in your machine if the\n  specified image has image data.\n\n- If image data exists, the call returns the HTTP ``200`` status\n  code.\n\n- If no image data exists, the call returns the HTTP ``204`` status\n  code.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/images/bc68b06f-8194-4122-86a1-0f0f03125f39/file HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImageFile-v2", 
         "method": "get", 
         "parameters": [
@@ -2663,7 +2511,9 @@
         "produces": [], 
         "responses": {
           "200": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-location: http://127.0.0.1:9292/v2/images/bc68b06f-8194-4122-86a1-0f0f03125f39/file\ntransfer-encoding: chunked\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:30 GMT\ncontent-type: application/octet-stream\nx-openstack-request-id: req-47d0d660-e679-47ed-8142-892ec930b063\n\n"
+            }, 
             "headers": {}
           }, 
           "204": {
@@ -2671,7 +2521,9 @@
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 95\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:26 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-ccb3ad79-3af8-4258-9d8d-988283429884\n\n403 Forbidden\nThe requested image has been deactivated. Image data download is forbidden.\n\n"
+            }, 
             "headers": {}
           }
         }, 
@@ -2688,7 +2540,9 @@
           "application/json"
         ], 
         "description": "If a user with whom this image is shared makes this call, the\nmember list contains only information for that user.\n\nIf a user with whom this image has not been shared makes this call,\nthe call returns the HTTP 404 status code.\n\nPreconditions\n\n- The specified image must exist.\n\n- You must be the owner or a member of the specified image.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/images/227e1fc5-d81a-48b5-9a4e-fd5458b0105d/members HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listImageMembers-v2", 
         "method": "get", 
         "parameters": [
@@ -2707,27 +2561,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "members": [
-                  {
-                    "created_at": "2013-10-07T17:58:03Z", 
-                    "image_id": "dbc999e3-c52f-4200-bedd-3b18fe7f87fe", 
-                    "member_id": "123456789", 
-                    "schema": "/v2/schemas/member", 
-                    "status": "pending", 
-                    "updated_at": "2013-10-07T17:58:03Z"
-                  }, 
-                  {
-                    "created_at": "2013-10-07T17:58:55Z", 
-                    "image_id": "dbc999e3-c52f-4200-bedd-3b18fe7f87fe", 
-                    "member_id": "987654321", 
-                    "schema": "/v2/schemas/member", 
-                    "status": "accepted", 
-                    "updated_at": "2013-10-08T12:08:55Z"
-                  }
-                ], 
-                "schema": "/v2/schemas/members"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 279\ncontent-location: http://127.0.0.1:9292/v2/images/227e1fc5-d81a-48b5-9a4e-fd5458b0105d/members\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:06 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-62ac7a55-70db-42aa-a0ea-24c98c615048\n\n{\n  \"members\": [\n    {\n      \"created_at\": \"2015-09-22T06:08:06Z\",\n      \"image_id\": \"227e1fc5-d81a-48b5-9a4e-fd5458b0105d\",\n      \"member_id\": \"b3753781522b4d188ba174aad7b251e9\",\n      \"schema\": \"/v2/schemas/member\",\n      \"status\": \"accepted\",\n      \"updated_at\": \"2015-09-22T06:08:06Z\"\n    }\n  ],\n  \"schema\": \"/v2/schemas/members\"\n}"
             }, 
             "headers": {}
           }, 
@@ -2748,9 +2582,7 @@
         ], 
         "description": "Preconditions\n\n- The specified images must exist.\n\n- You can only add a new member to an image which 'visibility'\n  attribute is ``private`` .\n\n- You must be the owner of the specified image.\n\nSynchronous Postconditions\n\n- With correct permissions, you can see the member status of the\n  image as ``pending`` through API calls.\n\nTroubleshooting\n\n- Even if you have correct permissions, if the ``visibility``\n  attribute is set to ``public`` , the request returns the HTTP 403\n  error code. Ensure that you meet the preconditions and run the\n  request again. If the request fails again, review your API\n  request.\n\n- If the specified member is already a member for the image, the\n  service returns the HTTP 409 Conflict error code. In case you\n  meant a different member, double-check that you specified the\n  correct member.", 
         "examples": {
-          "application/json": {
-            "member": "8989447062e04a818baf9e073fd04fa7"
-          }
+          "text/plain": "POST /v2/images/26524250-a6d4-448e-9e10-d154d2798f1c/members HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createImageMember-v2", 
         "method": "post", 
@@ -2770,14 +2602,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "created_at": "2013-09-20T19:22:19Z", 
-                "image_id": "a96be11e-8536-4910-92cb-de50aa19dfe6", 
-                "member_id": "8989447062e04a818baf9e073fd04fa7", 
-                "schema": "/v2/schemas/member", 
-                "status": "pending", 
-                "updated_at": "2013-09-20T19:25:31Z"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 230\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:59 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-8fbe0059-5c7a-4543-86a9-1a9231c24dda\n\n{\n  \"created_at\": \"2015-09-22T06:07:59Z\",\n  \"image_id\": \"26524250-a6d4-448e-9e10-d154d2798f1c\",\n  \"member_id\": \"b3753781522b4d188ba174aad7b251e9\",\n  \"schema\": \"/v2/schemas/member\",\n  \"status\": \"pending\",\n  \"updated_at\": \"2015-09-22T06:07:59Z\"\n}"
             }, 
             "headers": {}
           }, 
@@ -2803,7 +2628,9 @@
           "application/json"
         ], 
         "description": "Response body is a single image member entity. (Since Image API\nv2.2.)\n\nPreconditions\n\n- The specified image must exist.\n\n- You must be the owner or a member of the specified image.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/images/26524250-a6d4-448e-9e10-d154d2798f1c/members/b3753781522b4d188ba174aad7b251e9 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImageMember-v2", 
         "method": "get", 
         "parameters": [
@@ -2830,14 +2657,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "created_at": "2013-11-26T07:21:21Z", 
-                "image_id": "0ae74cc5-5147-4239-9ce2-b0c580f7067e", 
-                "member_id": "8989447062e04a818baf9e073fd04fa7", 
-                "schema": "/v2/schemas/member", 
-                "status": "pending", 
-                "updated_at": "2013-11-26T07:21:21Z"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 231\ncontent-location: http://127.0.0.1:9292/v2/images/26524250-a6d4-448e-9e10-d154d2798f1c/members/b3753781522b4d188ba174aad7b251e9\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:03 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-f97bf64c-88d3-4dc4-a546-30a6c7e6d54b\n\n{\n  \"created_at\": \"2015-09-22T06:07:59Z\",\n  \"image_id\": \"26524250-a6d4-448e-9e10-d154d2798f1c\",\n  \"member_id\": \"b3753781522b4d188ba174aad7b251e9\",\n  \"schema\": \"/v2/schemas/member\",\n  \"status\": \"accepted\",\n  \"updated_at\": \"2015-09-22T06:08:00Z\"\n}"
             }, 
             "headers": {}
           }
@@ -2854,9 +2674,7 @@
         ], 
         "description": "Preconditions\n\n- The specified images must exist.\n\n- You must be a member of the specified image.\n\nSynchronous Postconditions\n\n- If you update the member status to ``accepted`` and have the\n  correct permissions, you see the image in list images responses.\n\n- With correct permissions, you can see the updated member status of\n  the image through API calls.", 
         "examples": {
-          "application/json": {
-            "status": "accepted"
-          }
+          "text/plain": "PUT /v2/images/d791fe60-dd90-40c8-b298-28d1add43aa3/members/b3753781522b4d188ba174aad7b251e9 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateImageMember-v2", 
         "method": "put", 
@@ -2893,16 +2711,19 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "created_at": "2013-09-20T19:22:19Z", 
-                "image_id": "a96be11e-8536-4910-92cb-de50aa19dfe6", 
-                "member_id": "8989447062e04a818baf9e073fd04fa7", 
-                "schema": "/v2/schemas/member", 
-                "status": "accepted", 
-                "updated_at": "2013-09-20T20:15:31Z"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 231\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:05 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-da894c7b-525a-4f91-8bcb-f8f9551a23ca\n\n{\n  \"created_at\": \"2015-09-22T06:08:04Z\",\n  \"image_id\": \"d791fe60-dd90-40c8-b298-28d1add43aa3\",\n  \"member_id\": \"b3753781522b4d188ba174aad7b251e9\",\n  \"schema\": \"/v2/schemas/member\",\n  \"status\": \"accepted\",\n  \"updated_at\": \"2015-09-22T06:08:05Z\"\n}"
             }, 
             "headers": {}
+          }, 
+          "400": {
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 92\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:06 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-441fd44e-0c68-4a06-83b3-cc93f0896113\n\n400 Bad Request\n\n"
+            }
+          }, 
+          "403": {
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 97\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:08 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-161da833-10a1-4462-9028-a65dc568385f\n\n403 Forbidden\nNot allowed to update members for image 662fd3d6-356a-44c9-b64e-017a4bf54eb7.\n\n"
+            }
           }
         }, 
         "summary": "Sets the specified status for the specified member of the specified image. (Since Image API v2.1.)", 
@@ -2914,7 +2735,9 @@
       {
         "consumes": [], 
         "description": "Preconditions\n\n- The specified image must exist.\n\n- You must be the owner of the specified image.\n\nSynchronous Postconditions\n\n- The specified member is removed from the image members.\n\nTroubleshooting\n\n- Even if you have correct permissions, if you are not the owner of\n  the specified image, the request returns the HTTP 403 error code.\n  Ensure that you meet the preconditions and run the request again.\n  If the request fails again, review your API request.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2/images/7ab254ab-515d-4357-bb25-5d9511ee939d/members/b3753781522b4d188ba174aad7b251e9 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteImageMember-v2", 
         "method": "delete", 
         "parameters": [
@@ -2938,7 +2761,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:07 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-bdb649c1-9211-479a-890e-ee5e30043a0b\n\n"
+            }, 
             "headers": {}
           }, 
           "403": {
@@ -2957,7 +2782,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v2/images/4404a91e-aa4d-491b-a9f1-ae2fd32f7dd6/tags/tempest-tag-2013046771 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "addImageTag-v2", 
         "method": "put", 
         "parameters": [
@@ -2981,8 +2808,15 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:13 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-fa6a4ab4-9946-4b70-8c3e-a35c04b45b74\n\n"
+            }, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 73\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:36 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-1061e855-a403-4481-902e-588e652329cf\n\n404 Not Found\nImage de8b1c38-a183-4357-84a8-9f3eafba1029 not found.\n\n"
+            }
           }
         }, 
         "summary": "Adds a specified tag to a specified image. (Since Image API v2.0.)", 
@@ -2994,7 +2828,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2/images/b4225b3e-ecb0-4850-8014-5a378ac81d68/tags/tempest-non-exist-tag-1574042958 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteImageTag-v2", 
         "method": "delete", 
         "parameters": [
@@ -3018,8 +2854,15 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:15 GMT\ncontent-type: text/html; charset=UTF-8\nx-openstack-request-id: req-1523d17d-bfa7-4f7b-ba79-3cea85d1f545\n\n"
+            }, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 52\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:36 GMT\ncontent-type: text/plain; charset=UTF-8\nx-openstack-request-id: req-5b24eedd-6b06-4101-affb-aaeea919ef76\n\n404 Not Found\nThe resource could not be found.\n\n"
+            }
           }
         }, 
         "summary": "Deletes a specified tag from a specified image. (Since Image API v2.0.)", 
@@ -4925,7 +4768,9 @@
           "application/json"
         ], 
         "description": "The following schema is solely an example. Consider only the\nresponse to the API call as authoritative.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/schemas/image HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImageSchema", 
         "method": "get", 
         "parameters": [], 
@@ -4935,222 +4780,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "additionalProperties": {
-                  "type": "string"
-                }, 
-                "links": [
-                  {
-                    "href": "{self}", 
-                    "rel": "self"
-                  }, 
-                  {
-                    "href": "{file}", 
-                    "rel": "enclosure"
-                  }, 
-                  {
-                    "href": "{schema}", 
-                    "rel": "describedby"
-                  }
-                ], 
-                "name": "image", 
-                "properties": {
-                  "architecture": {
-                    "description": "Operating system architecture as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html", 
-                    "is_base": false, 
-                    "type": "string"
-                  }, 
-                  "checksum": {
-                    "description": "md5 hash of image contents. (READ-ONLY)", 
-                    "maxLength": 32, 
-                    "type": [
-                      "null", 
-                      "string"
-                    ]
-                  }, 
-                  "container_format": {
-                    "description": "Format of the container", 
-                    "enum": [
-                      null, 
-                      "ami", 
-                      "ari", 
-                      "aki", 
-                      "bare", 
-                      "ovf", 
-                      "ova"
-                    ], 
-                    "type": [
-                      "null", 
-                      "string"
-                    ]
-                  }, 
-                  "created_at": {
-                    "description": "Date and time of image registration (READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "direct_url": {
-                    "description": "URL to access the image file kept in external store (READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "disk_format": {
-                    "description": "Format of the disk", 
-                    "enum": [
-                      null, 
-                      "ami", 
-                      "ari", 
-                      "aki", 
-                      "vhd", 
-                      "vmdk", 
-                      "raw", 
-                      "qcow2", 
-                      "vdi", 
-                      "iso"
-                    ], 
-                    "type": [
-                      "null", 
-                      "string"
-                    ]
-                  }, 
-                  "file": {
-                    "description": "(READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "id": {
-                    "description": "An identifier for the image", 
-                    "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                    "type": "string"
-                  }, 
-                  "instance_uuid": {
-                    "description": "ID of instance used to create this image.", 
-                    "is_base": false, 
-                    "type": "string"
-                  }, 
-                  "kernel_id": {
-                    "description": "ID of image stored in Glance that should be used as the kernel when booting an AMI-style image.", 
-                    "is_base": false, 
-                    "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                    "type": "string"
-                  }, 
-                  "locations": {
-                    "description": "A set of URLs to access the image file kept in external store", 
-                    "items": {
-                      "properties": {
-                        "metadata": {
-                          "type": "object"
-                        }, 
-                        "url": {
-                          "maxLength": 255, 
-                          "type": "string"
-                        }
-                      }, 
-                      "required": [
-                        "url", 
-                        "metadata"
-                      ], 
-                      "type": "object"
-                    }, 
-                    "type": "array"
-                  }, 
-                  "min_disk": {
-                    "description": "Amount of disk space (in GB) required to boot image.", 
-                    "type": "integer"
-                  }, 
-                  "min_ram": {
-                    "description": "Amount of ram (in MB) required to boot image.", 
-                    "type": "integer"
-                  }, 
-                  "name": {
-                    "description": "Descriptive name for the image", 
-                    "maxLength": 255, 
-                    "type": [
-                      "null", 
-                      "string"
-                    ]
-                  }, 
-                  "os_distro": {
-                    "description": "Common name of operating system distribution as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html", 
-                    "is_base": false, 
-                    "type": "string"
-                  }, 
-                  "os_version": {
-                    "description": "Operating system version as specified by the distributor", 
-                    "is_base": false, 
-                    "type": "string"
-                  }, 
-                  "owner": {
-                    "description": "Owner of the image", 
-                    "maxLength": 255, 
-                    "type": [
-                      "null", 
-                      "string"
-                    ]
-                  }, 
-                  "protected": {
-                    "description": "If true, image will not be deletable.", 
-                    "type": "boolean"
-                  }, 
-                  "ramdisk_id": {
-                    "description": "ID of image stored in Glance that should be used as the ramdisk when booting an AMI-style image.", 
-                    "is_base": false, 
-                    "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                    "type": "string"
-                  }, 
-                  "schema": {
-                    "description": "(READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "self": {
-                    "description": "(READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "size": {
-                    "description": "Size of image file in bytes (READ-ONLY)", 
-                    "type": [
-                      "null", 
-                      "integer"
-                    ]
-                  }, 
-                  "status": {
-                    "description": "Status of the image (READ-ONLY)", 
-                    "enum": [
-                      "queued", 
-                      "saving", 
-                      "active", 
-                      "killed", 
-                      "deleted", 
-                      "pending_delete"
-                    ], 
-                    "type": "string"
-                  }, 
-                  "tags": {
-                    "description": "List of strings related to the image", 
-                    "items": {
-                      "maxLength": 255, 
-                      "type": "string"
-                    }, 
-                    "type": "array"
-                  }, 
-                  "updated_at": {
-                    "description": "Date and time of the last image modification (READ-ONLY)", 
-                    "type": "string"
-                  }, 
-                  "virtual_size": {
-                    "description": "Virtual size of image in bytes (READ-ONLY)", 
-                    "type": [
-                      "null", 
-                      "integer"
-                    ]
-                  }, 
-                  "visibility": {
-                    "description": "Scope of image accessibility", 
-                    "enum": [
-                      "public", 
-                      "private"
-                    ], 
-                    "type": "string"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 3887\ncontent-location: http://127.0.0.1:9292/v2/schemas/image\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:27 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-6ba6bae6-7fa0-464d-92a6-5f1ddc1e1308\n\n{\n  \"additionalProperties\": {\n    \"type\": \"string\"\n  },\n  \"links\": [\n    {\n      \"href\": \"{self}\",\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"{file}\",\n      \"rel\": \"enclosure\"\n    },\n    {\n      \"href\": \"{schema}\",\n      \"rel\": \"describedby\"\n    }\n  ],\n  \"name\": \"image\",\n  \"properties\": {\n    \"architecture\": {\n      \"description\": \"Operating system architecture as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html\",\n      \"is_base\": false,\n      \"type\": \"string\"\n    },\n    \"checksum\": {\n      \"description\": \"md5 hash of image contents. (READ-ONLY)\",\n      \"maxLength\": 32,\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"container_format\": {\n      \"description\": \"Format of the container\",\n      \"enum\": [\n        null,\n        \"ami\",\n        \"ari\",\n        \"aki\",\n        \"bare\",\n        \"ovf\",\n        \"ova\"\n      ],\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"created_at\": {\n      \"description\": \"Date and time of image registration (READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"direct_url\": {\n      \"description\": \"URL to access the image file kept in external store (READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"disk_format\": {\n      \"description\": \"Format of the disk\",\n      \"enum\": [\n        null,\n        \"ami\",\n        \"ari\",\n        \"aki\",\n        \"vhd\",\n        \"vmdk\",\n        \"raw\",\n        \"qcow2\",\n        \"vdi\",\n        \"iso\"\n      ],\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"file\": {\n      \"description\": \"(READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\": \"An identifier for the image\",\n      \"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\",\n      \"type\": \"string\"\n    },\n    \"instance_uuid\": {\n      \"description\": \"ID of instance used to create this image.\",\n      \"is_base\": false,\n      \"type\": \"string\"\n    },\n    \"kernel_id\": {\n      \"description\": \"ID of image stored in Glance that should be used as the kernel when booting an AMI-style image.\",\n      \"is_base\": false,\n      \"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\",\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"locations\": {\n      \"description\": \"A set of URLs to access the image file kept in external store\",\n      \"items\": {\n        \"properties\": {\n          \"metadata\": {\n            \"type\": \"object\"\n          },\n          \"url\": {\n            \"maxLength\": 255,\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"url\",\n          \"metadata\"\n        ],\n        \"type\": \"object\"\n      },\n      \"type\": \"array\"\n    },\n    \"min_disk\": {\n      \"description\": \"Amount of disk space (in GB) required to boot image.\",\n      \"type\": \"integer\"\n    },\n    \"min_ram\": {\n      \"description\": \"Amount of ram (in MB) required to boot image.\",\n      \"type\": \"integer\"\n    },\n    \"name\": {\n      \"description\": \"Descriptive name for the image\",\n      \"maxLength\": 255,\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"os_distro\": {\n      \"description\": \"Common name of operating system distribution as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html\",\n      \"is_base\": false,\n      \"type\": \"string\"\n    },\n    \"os_version\": {\n      \"description\": \"Operating system version as specified by the distributor\",\n      \"is_base\": false,\n      \"type\": \"string\"\n    },\n    \"owner\": {\n      \"description\": \"Owner of the image\",\n      \"maxLength\": 255,\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"protected\": {\n      \"description\": \"If true, image will not be deletable.\",\n      \"type\": \"boolean\"\n    },\n    \"ramdisk_id\": {\n      \"description\": \"ID of image stored in Glance that should be used as the ramdisk when booting an AMI-style image.\",\n      \"is_base\": false,\n      \"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\",\n      \"type\": [\n        \"null\",\n        \"string\"\n      ]\n    },\n    \"schema\": {\n      \"description\": \"(READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"self\": {\n      \"description\": \"(READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size of image file in bytes (READ-ONLY)\",\n      \"type\": [\n        \"null\",\n        \"integer\"\n      ]\n    },\n    \"status\": {\n      \"description\": \"Status of the image (READ-ONLY)\",\n      \"enum\": [\n        \"queued\",\n        \"saving\",\n        \"active\",\n        \"killed\",\n        \"deleted\",\n        \"pending_delete\"\n      ],\n      \"type\": \"string\"\n    },\n    \"tags\": {\n      \"description\": \"List of strings related to the image\",\n      \"items\": {\n        \"maxLength\": 255,\n        \"type\": \"string\"\n      },\n      \"type\": \"array\"\n    },\n    \"updated_at\": {\n      \"description\": \"Date and time of the last image modification (READ-ONLY)\",\n      \"type\": \"string\"\n    },\n    \"virtual_size\": {\n      \"description\": \"Virtual size of image in bytes (READ-ONLY)\",\n      \"type\": [\n        \"null\",\n        \"integer\"\n      ]\n    },\n    \"visibility\": {\n      \"description\": \"Scope of image accessibility\",\n      \"enum\": [\n        \"public\",\n        \"private\"\n      ],\n      \"type\": \"string\"\n    }\n  }\n}"
             }, 
             "headers": {}
           }
@@ -5168,7 +4798,9 @@
           "application/json"
         ], 
         "description": "An images entity is a container of image entities.\n\nThe following schema is solely an example. Consider only the\nresponse to the API call as authoritative.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/schemas/images HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImagesSchema", 
         "method": "get", 
         "parameters": [], 
@@ -5178,253 +4810,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": [
-                  {
-                    "href": "{first}", 
-                    "rel": "first"
-                  }, 
-                  {
-                    "href": "{next}", 
-                    "rel": "next"
-                  }, 
-                  {
-                    "href": "{schema}", 
-                    "rel": "describedby"
-                  }
-                ], 
-                "name": "images", 
-                "properties": {
-                  "first": {
-                    "type": "string"
-                  }, 
-                  "images": {
-                    "items": {
-                      "additionalProperties": {
-                        "type": "string"
-                      }, 
-                      "links": [
-                        {
-                          "href": "{self}", 
-                          "rel": "self"
-                        }, 
-                        {
-                          "href": "{file}", 
-                          "rel": "enclosure"
-                        }, 
-                        {
-                          "href": "{schema}", 
-                          "rel": "describedby"
-                        }
-                      ], 
-                      "name": "image", 
-                      "properties": {
-                        "architecture": {
-                          "description": "Operating system architecture as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html", 
-                          "is_base": false, 
-                          "type": "string"
-                        }, 
-                        "checksum": {
-                          "description": "md5 hash of image contents. (READ-ONLY)", 
-                          "maxLength": 32, 
-                          "type": [
-                            "null", 
-                            "string"
-                          ]
-                        }, 
-                        "container_format": {
-                          "description": "Format of the container", 
-                          "enum": [
-                            null, 
-                            "ami", 
-                            "ari", 
-                            "aki", 
-                            "bare", 
-                            "ovf", 
-                            "ova"
-                          ], 
-                          "type": [
-                            "null", 
-                            "string"
-                          ]
-                        }, 
-                        "created_at": {
-                          "description": "Date and time of image registration (READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "direct_url": {
-                          "description": "URL to access the image file kept in external store (READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "disk_format": {
-                          "description": "Format of the disk", 
-                          "enum": [
-                            null, 
-                            "ami", 
-                            "ari", 
-                            "aki", 
-                            "vhd", 
-                            "vmdk", 
-                            "raw", 
-                            "qcow2", 
-                            "vdi", 
-                            "iso"
-                          ], 
-                          "type": [
-                            "null", 
-                            "string"
-                          ]
-                        }, 
-                        "file": {
-                          "description": "(READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "id": {
-                          "description": "An identifier for the image", 
-                          "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                          "type": "string"
-                        }, 
-                        "instance_uuid": {
-                          "description": "ID of instance used to create this image.", 
-                          "is_base": false, 
-                          "type": "string"
-                        }, 
-                        "kernel_id": {
-                          "description": "ID of image stored in Glance that should be used as the kernel when booting an AMI-style image.", 
-                          "is_base": false, 
-                          "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                          "type": "string"
-                        }, 
-                        "locations": {
-                          "description": "A set of URLs to access the image file kept in external store", 
-                          "items": {
-                            "properties": {
-                              "metadata": {
-                                "type": "object"
-                              }, 
-                              "url": {
-                                "maxLength": 255, 
-                                "type": "string"
-                              }
-                            }, 
-                            "required": [
-                              "url", 
-                              "metadata"
-                            ], 
-                            "type": "object"
-                          }, 
-                          "type": "array"
-                        }, 
-                        "min_disk": {
-                          "description": "Amount of disk space (in GB) required to boot image.", 
-                          "type": "integer"
-                        }, 
-                        "min_ram": {
-                          "description": "Amount of ram (in MB) required to boot image.", 
-                          "type": "integer"
-                        }, 
-                        "name": {
-                          "description": "Descriptive name for the image", 
-                          "maxLength": 255, 
-                          "type": [
-                            "null", 
-                            "string"
-                          ]
-                        }, 
-                        "os_distro": {
-                          "description": "Common name of operating system distribution as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html", 
-                          "is_base": false, 
-                          "type": "string"
-                        }, 
-                        "os_version": {
-                          "description": "Operating system version as specified by the distributor", 
-                          "is_base": false, 
-                          "type": "string"
-                        }, 
-                        "owner": {
-                          "description": "Owner of the image", 
-                          "maxLength": 255, 
-                          "type": [
-                            "null", 
-                            "string"
-                          ]
-                        }, 
-                        "protected": {
-                          "description": "If true, image will not be deletable.", 
-                          "type": "boolean"
-                        }, 
-                        "ramdisk_id": {
-                          "description": "ID of image stored in Glance that should be used as the ramdisk when booting an AMI-style image.", 
-                          "is_base": false, 
-                          "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                          "type": "string"
-                        }, 
-                        "schema": {
-                          "description": "(READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "self": {
-                          "description": "(READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "size": {
-                          "description": "Size of image file in bytes (READ-ONLY)", 
-                          "type": [
-                            "null", 
-                            "integer"
-                          ]
-                        }, 
-                        "status": {
-                          "description": "Status of the image (READ-ONLY)", 
-                          "enum": [
-                            "queued", 
-                            "saving", 
-                            "active", 
-                            "killed", 
-                            "deleted", 
-                            "pending_delete"
-                          ], 
-                          "type": "string"
-                        }, 
-                        "tags": {
-                          "description": "List of strings related to the image", 
-                          "items": {
-                            "maxLength": 255, 
-                            "type": "string"
-                          }, 
-                          "type": "array"
-                        }, 
-                        "updated_at": {
-                          "description": "Date and time of the last image modification (READ-ONLY)", 
-                          "type": "string"
-                        }, 
-                        "virtual_size": {
-                          "description": "Virtual size of image in bytes (READ-ONLY)", 
-                          "type": [
-                            "null", 
-                            "integer"
-                          ]
-                        }, 
-                        "visibility": {
-                          "description": "Scope of image accessibility", 
-                          "enum": [
-                            "public", 
-                            "private"
-                          ], 
-                          "type": "string"
-                        }
-                      }
-                    }, 
-                    "type": "array"
-                  }, 
-                  "next": {
-                    "type": "string"
-                  }, 
-                  "schema": {
-                    "type": "string"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4175\ncontent-location: http://127.0.0.1:9292/v2/schemas/images\nconnection: close\ndate: Tue, 22 Sep 2015 06:12:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-601d1972-662b-45a7-bf14-9ca73edf51fa\n\n{\"name\": \"images\", \"links\": [{\"href\": \"{first}\", \"rel\": \"first\"}, {\"href\": \"{next}\", \"rel\": \"next\"}, {\"href\": \"{schema}\", \"rel\": \"describedby\"}], \"properties\": {\"images\": {\"items\": {\"additionalProperties\": {\"type\": \"string\"}, \"name\": \"image\", \"links\": [{\"href\": \"{self}\", \"rel\": \"self\"}, {\"href\": \"{file}\", \"rel\": \"enclosure\"}, {\"href\": \"{schema}\", \"rel\": \"describedby\"}], \"properties\": {\"status\": {\"enum\": [\"queued\", \"saving\", \"active\", \"killed\", \"deleted\", \"pending_delete\"], \"type\": \"string\", \"description\": \"Status of the image (READ-ONLY)\"}, \"tags\": {\"items\": {\"type\": \"string\", \"maxLength\": 255}, \"type\": \"array\", \"description\": \"List of strings related to the image\"}, \"kernel_id\": {\"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\", \"type\": [\"null\", \"string\"], \"description\": \"ID of image stored in Glance that should be used as the kernel when booting an AMI-style image.\", \"is_base\": false}, \"container_format\": {\"enum\": [null, \"ami\", \"ari\", \"aki\", \"bare\", \"ovf\", \"ova\"], \"type\": [\"null\", \"string\"], \"description\": \"Format of the container\"}, \"min_ram\": {\"type\": \"integer\", \"description\": \"Amount of ram (in MB) required to boot image.\"}, \"ramdisk_id\": {\"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\", \"type\": [\"null\", \"string\"], \"description\": \"ID of image stored in Glance that should be used as the ramdisk when booting an AMI-style image.\", \"is_base\": false}, \"locations\": {\"items\": {\"required\": [\"url\", \"metadata\"], \"type\": \"object\", \"properties\": {\"url\": {\"type\": \"string\", \"maxLength\": 255}, \"metadata\": {\"type\": \"object\"}}}, \"type\": \"array\", \"description\": \"A set of URLs to access the image file kept in external store\"}, \"visibility\": {\"enum\": [\"public\", \"private\"], \"type\": \"string\", \"description\": \"Scope of image accessibility\"}, \"updated_at\": {\"type\": \"string\", \"description\": \"Date and time of the last image modification (READ-ONLY)\"}, \"owner\": {\"type\": [\"null\", \"string\"], \"description\": \"Owner of the image\", \"maxLength\": 255}, \"file\": {\"type\": \"string\", \"description\": \"(READ-ONLY)\"}, \"min_disk\": {\"type\": \"integer\", \"description\": \"Amount of disk space (in GB) required to boot image.\"}, \"virtual_size\": {\"type\": [\"null\", \"integer\"], \"description\": \"Virtual size of image in bytes (READ-ONLY)\"}, \"id\": {\"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\", \"type\": \"string\", \"description\": \"An identifier for the image\"}, \"size\": {\"type\": [\"null\", \"integer\"], \"description\": \"Size of image file in bytes (READ-ONLY)\"}, \"instance_uuid\": {\"type\": \"string\", \"description\": \"ID of instance used to create this image.\", \"is_base\": false}, \"os_distro\": {\"type\": \"string\", \"description\": \"Common name of operating system distribution as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html\", \"is_base\": false}, \"name\": {\"type\": [\"null\", \"string\"], \"description\": \"Descriptive name for the image\", \"maxLength\": 255}, \"checksum\": {\"type\": [\"null\", \"string\"], \"description\": \"md5 hash of image contents. (READ-ONLY)\", \"maxLength\": 32}, \"created_at\": {\"type\": \"string\", \"description\": \"Date and time of image registration (READ-ONLY)\"}, \"disk_format\": {\"enum\": [null, \"ami\", \"ari\", \"aki\", \"vhd\", \"vmdk\", \"raw\", \"qcow2\", \"vdi\", \"iso\"], \"type\": [\"null\", \"string\"], \"description\": \"Format of the disk\"}, \"os_version\": {\"type\": \"string\", \"description\": \"Operating system version as specified by the distributor\", \"is_base\": false}, \"protected\": {\"type\": \"boolean\", \"description\": \"If true, image will not be deletable.\"}, \"architecture\": {\"type\": \"string\", \"description\": \"Operating system architecture as specified in http://docs.openstack.org/trunk/openstack-compute/admin/content/adding-images.html\", \"is_base\": false}, \"direct_url\": {\"type\": \"string\", \"description\": \"URL to access the image file kept in external store (READ-ONLY)\"}, \"self\": {\"type\": \"string\", \"description\": \"(READ-ONLY)\"}, \"schema\": {\"type\": \"string\", \"description\": \"(READ-ONLY)\"}}}, \"type\": \"array\"}, \"schema\" "
             }, 
             "headers": {}
           }
@@ -5442,7 +4828,9 @@
           "application/json"
         ], 
         "description": "The following schema is solely an example. Consider only the\nresponse to the API call as authoritative.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/schemas/member HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImageMemberSchema", 
         "method": "get", 
         "parameters": [], 
@@ -5452,40 +4840,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "name": "member", 
-                "properties": {
-                  "created_at": {
-                    "description": "Date and time of image member creation", 
-                    "type": "string"
-                  }, 
-                  "image_id": {
-                    "description": "An identifier for the image", 
-                    "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                    "type": "string"
-                  }, 
-                  "member_id": {
-                    "description": "An identifier for the image member (tenantId)", 
-                    "type": "string"
-                  }, 
-                  "schema": {
-                    "type": "string"
-                  }, 
-                  "status": {
-                    "description": "The status of this image member", 
-                    "enum": [
-                      "pending", 
-                      "accepted", 
-                      "rejected"
-                    ], 
-                    "type": "string"
-                  }, 
-                  "updated_at": {
-                    "description": "Date and time of last modification of image member", 
-                    "type": "string"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 660\ncontent-location: http://127.0.0.1:9292/v2/schemas/member\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:03 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-efdb4f04-8f27-4e04-9a5f-6234b1cddf43\n\n{\n  \"name\": \"member\",\n  \"properties\": {\n    \"created_at\": {\n      \"description\": \"Date and time of image member creation\",\n      \"type\": \"string\"\n    },\n    \"image_id\": {\n      \"description\": \"An identifier for the image\",\n      \"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\",\n      \"type\": \"string\"\n    },\n    \"member_id\": {\n      \"description\": \"An identifier for the image member (tenantId)\",\n      \"type\": \"string\"\n    },\n    \"schema\": {\n      \"type\": \"string\"\n    },\n    \"status\": {\n      \"description\": \"The status of this image member\",\n      \"enum\": [\n        \"pending\",\n        \"accepted\",\n        \"rejected\"\n      ],\n      \"type\": \"string\"\n    },\n    \"updated_at\": {\n      \"description\": \"Date and time of last modification of image member\",\n      \"type\": \"string\"\n    }\n  }\n}"
             }, 
             "headers": {}
           }
@@ -5503,7 +4858,9 @@
           "application/json"
         ], 
         "description": "An image members entity is a container of image member entities.\n\nThe following schema is solely an example. Consider only the\nresponse to the API call as authoritative.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/schemas/members HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getImageMembersSchema", 
         "method": "get", 
         "parameters": [], 
@@ -5513,57 +4870,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": [
-                  {
-                    "href": "{schema}", 
-                    "rel": "describedby"
-                  }
-                ], 
-                "name": "members", 
-                "properties": {
-                  "members": {
-                    "items": {
-                      "name": "member", 
-                      "properties": {
-                        "created_at": {
-                          "description": "Date and time of image member creation", 
-                          "type": "string"
-                        }, 
-                        "image_id": {
-                          "description": "An identifier for the image", 
-                          "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$", 
-                          "type": "string"
-                        }, 
-                        "member_id": {
-                          "description": "An identifier for the image member (tenantId)", 
-                          "type": "string"
-                        }, 
-                        "schema": {
-                          "type": "string"
-                        }, 
-                        "status": {
-                          "description": "The status of this image member", 
-                          "enum": [
-                            "pending", 
-                            "accepted", 
-                            "rejected"
-                          ], 
-                          "type": "string"
-                        }, 
-                        "updated_at": {
-                          "description": "Date and time of last modification of image member", 
-                          "type": "string"
-                        }
-                      }
-                    }, 
-                    "type": "array"
-                  }, 
-                  "schema": {
-                    "type": "string"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 821\ncontent-location: http://127.0.0.1:9292/v2/schemas/members\nconnection: close\ndate: Tue, 22 Sep 2015 06:08:03 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-13af705e-3b3b-4e3c-996a-4ec66e8d717f\n\n{\n  \"links\": [\n    {\n      \"href\": \"{schema}\",\n      \"rel\": \"describedby\"\n    }\n  ],\n  \"name\": \"members\",\n  \"properties\": {\n    \"members\": {\n      \"items\": {\n        \"name\": \"member\",\n        \"properties\": {\n          \"created_at\": {\n            \"description\": \"Date and time of image member creation\",\n            \"type\": \"string\"\n          },\n          \"image_id\": {\n            \"description\": \"An identifier for the image\",\n            \"pattern\": \"^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$\",\n            \"type\": \"string\"\n          },\n          \"member_id\": {\n            \"description\": \"An identifier for the image member (tenantId)\",\n            \"type\": \"string\"\n          },\n          \"schema\": {\n            \"type\": \"string\"\n          },\n          \"status\": {\n            \"description\": \"The status of this image member\",\n            \"enum\": [\n              \"pending\",\n              \"accepted\",\n              \"rejected\"\n            ],\n            \"type\": \"string\"\n          },\n          \"updated_at\": {\n            \"description\": \"Date and time of last modification of image member\",\n            \"type\": \"string\"\n          }\n        }\n      },\n      \"type\": \"array\"\n    },\n    \"schema\": {\n      \"type\": \"string\"\n    }\n  }\n}"
             }, 
             "headers": {}
           }

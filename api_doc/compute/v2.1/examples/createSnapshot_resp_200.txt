@@ -1,0 +1,21 @@
+HTTP/1.1 200
+status: 200
+content-length: 260
+x-compute-request-id: req-bfa4e01e-fd27-428d-9ea5-ec31acdd301b
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:09:43 GMT
+content-type: application/json
+
+{
+  "snapshot": {
+    "createdAt": "2015-09-22T06:09:43.743099",
+    "displayDescription": null,
+    "displayName": "tempest-Snapshot-65414960",
+    "id": "0290a11c-9c7d-42ff-85f1-bb880b03579f",
+    "size": 1,
+    "status": "creating",
+    "volumeId": "02b6b759-a5a6-4e75-a7d6-dc84491794a3"
+  }
+}

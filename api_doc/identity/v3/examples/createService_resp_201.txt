@@ -1,0 +1,22 @@
+HTTP/1.1 201
+status: 201
+content-length: 255
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:30 GMT
+content-type: application/json
+x-openstack-request-id: req-1f8f6db6-0694-48de-a13a-7ce8dd873294
+
+{
+  "service": {
+    "description": null,
+    "enabled": true,
+    "id": "9f8074c63b584738a3c00e88a57c5000",
+    "links": {
+      "self": "http://127.0.0.1:5000/v3/services/9f8074c63b584738a3c00e88a57c5000"
+    },
+    "name": "tempest-service-1458420622",
+    "type": "tempest-type-2020212939"
+  }
+}

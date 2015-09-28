@@ -1,0 +1,101 @@
+HTTP/1.1 200
+status: 200
+content-length: 2029
+content-location: http://127.0.0.1:9292/v1/images
+connection: close
+date: Tue, 22 Sep 2015 06:07:46 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-286f906f-58a8-4b73-8b96-0ba7e4b5326a
+
+{
+  "images": [
+    {
+      "checksum": "aa757e64be0118722f84a95ad7d034d2",
+      "container_format": "bare",
+      "disk_format": "raw",
+      "id": "9e82db6a-5f4d-4384-a093-a633baae1933",
+      "name": "New Standard Image 33",
+      "size": 142
+    },
+    {
+      "checksum": "e44daadd272516fc5982b54465fd033a",
+      "container_format": "bare",
+      "disk_format": "raw",
+      "id": "9d0b57c2-f244-40a5-94e9-18e94b7f4ba3",
+      "name": "New Standard Image 33",
+      "size": 142
+    },
+    {
+      "checksum": "af8b75caa359d54371d3810527905a34",
+      "container_format": "ami",
+      "disk_format": "ami",
+      "id": "59f26ddb-c577-46ff-b1dd-edf780b5674a",
+      "name": "New Standard Image 2",
+      "size": 142
+    },
+    {
+      "checksum": null,
+      "container_format": "bare",
+      "disk_format": "raw",
+      "id": "de0c62f8-2581-4a86-93a2-cb5ca0327603",
+      "name": "New Remote Image dup",
+      "size": 3670
+    },
+    {
+      "checksum": "82b84c18d3113fe9647aab6a5d8aacea",
+      "container_format": "ami",
+      "disk_format": "ami",
+      "id": "340467d8-8235-4471-bfdf-94dee7356d93",
+      "name": "New Standard Image 1",
+      "size": 42
+    },
+    {
+      "checksum": null,
+      "container_format": "bare",
+      "disk_format": "raw",
+      "id": "41135831-0c35-4d58-9ef9-4b22c89edad0",
+      "name": "New Remote Image dup",
+      "size": 3670
+    },
+    {
+      "checksum": null,
+      "container_format": "ami",
+      "disk_format": "ami",
+      "id": "c4d81b3c-8f2b-46e0-ab95-60eb9697381c",
+      "name": "New Remote Image two",
+      "size": 3670
+    },
+    {
+      "checksum": null,
+      "container_format": "bare",
+      "disk_format": "raw",
+      "id": "be10077d-6f68-4cf1-8c36-82600db1a573",
+      "name": "New Remote Image one",
+      "size": 3670
+    },
+    {
+      "checksum": "eb9139e4942121f22bbc2afc0400b2a4",
+      "container_format": "ami",
+      "disk_format": "ami",
+      "id": "db8ff66c-0e54-4a7b-931c-aa715c78917e",
+      "name": "cirros-0.3.4-x86_64-uec",
+      "size": 25165824
+    },
+    {
+      "checksum": "be575a2b939972276ef675752936977f",
+      "container_format": "ari",
+      "disk_format": "ari",
+      "id": "f34e4626-2b5d-478a-b079-b73012a0e4ad",
+      "name": "cirros-0.3.4-x86_64-uec-ramdisk",
+      "size": 3740163
+    },
+    {
+      "checksum": "8a40c862b5735975d82605c1dd395796",
+      "container_format": "aki",
+      "disk_format": "aki",
+      "id": "8edeeee9-dda0-4a03-8934-317b46b7343a",
+      "name": "cirros-0.3.4-x86_64-uec-kernel",
+      "size": 4979632
+    }
+  ]
+}

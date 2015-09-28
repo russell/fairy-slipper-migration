@@ -1,0 +1,4 @@
+DELETE /v3/projects/c25f7174ecf34e72ad19d793ee32f5f1 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

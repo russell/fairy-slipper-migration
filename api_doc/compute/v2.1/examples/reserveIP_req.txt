@@ -1,0 +1,4 @@
+POST /v2.1/3a957c4584794cb3bf501cab33bd5a3c/os-fixed-ips/10.1.0.4/action HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

@@ -1,0 +1,4 @@
+GET /v2.1/7c9257fc481c4185ae7e50ac6e3d3bbc/servers/a922fb2b-62c5-4214-89e3-48e457ee5c95/ips HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

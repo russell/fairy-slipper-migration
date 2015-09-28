@@ -1,0 +1,22 @@
+HTTP/1.1 200
+status: 200
+content-length: 244
+content-location: http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:23 GMT
+content-type: application/json
+x-openstack-request-id: req-0c2511d8-4ed9-49b9-9939-574e3be82c30
+
+{
+  "domain": {
+    "description": "tempest-domain-desc-259853856",
+    "enabled": true,
+    "id": "3d5500fe5582487aa2ae93703dd68c08",
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08"
+    },
+    "name": "tempest-domain-316134164"
+  }
+}

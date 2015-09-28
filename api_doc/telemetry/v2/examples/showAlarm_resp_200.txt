@@ -1,0 +1,43 @@
+HTTP/1.1 200
+status: 200
+content-length: 837
+content-location: http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74
+server: Werkzeug/0.10.4 Python/2.7.6
+date: Tue, 22 Sep 2015 06:06:08 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-bbb33def-ee71-41fd-b3e1-79872afb0071
+
+{
+  "alarm_actions": [],
+  "alarm_id": "e8406422-3b2f-4914-9010-4a17b4838f74",
+  "description": "Alarm when cpu is eq a avg of 70.0 over 60 seconds",
+  "enabled": true,
+  "insufficient_data_actions": [],
+  "name": "tempest-telemetry-alarm-update-95497746",
+  "ok_actions": [],
+  "project_id": "4e397d0d62414540be0a0844cedfa015",
+  "repeat_actions": false,
+  "severity": "low",
+  "state": "insufficient data",
+  "state_timestamp": "2015-09-22T06:06:08.890079",
+  "threshold_rule": {
+    "comparison_operator": "eq",
+    "evaluation_periods": 1,
+    "exclude_outliers": false,
+    "meter_name": "cpu",
+    "period": 60,
+    "query": [
+      {
+        "field": "project_id",
+        "op": "eq",
+        "value": "4e397d0d62414540be0a0844cedfa015"
+      }
+    ],
+    "statistic": "avg",
+    "threshold": 70.0
+  },
+  "time_constraints": [],
+  "timestamp": "2015-09-22T06:06:08.948701",
+  "type": "threshold",
+  "user_id": "4c97b283e8a04ddd894ded0c96293921"
+}

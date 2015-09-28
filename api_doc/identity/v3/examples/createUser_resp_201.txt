@@ -1,0 +1,24 @@
+HTTP/1.1 201
+status: 201
+content-length: 366
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:41 GMT
+content-type: application/json
+x-openstack-request-id: req-0f3982e7-c181-46e5-9085-0f33aa6cdcdf
+
+{
+  "user": {
+    "description": "tempest-user-1475109074description",
+    "domain_id": "default",
+    "email": "tempest-user-1475109074@testmail.xx",
+    "enabled": true,
+    "id": "835e9d03f13a4bdca522422c9483532c",
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/users/835e9d03f13a4bdca522422c9483532c"
+    },
+    "name": "tempest-user-1475109074",
+    "project_id": "1060da699b7c4fa1a28758b28aec7841"
+  }
+}

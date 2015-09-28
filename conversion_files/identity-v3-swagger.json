@@ -1645,7 +1645,9 @@
           "application/json"
         ], 
         "description": "Shows details for the Identity API v3.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showVersionDetails-identity-v3", 
         "method": "get", 
         "parameters": [], 
@@ -1655,25 +1657,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "version": {
-                  "id": "v3.4", 
-                  "links": [
-                    {
-                      "href": "http://localhost:35357/v3/", 
-                      "rel": "self"
-                    }
-                  ], 
-                  "media-types": [
-                    {
-                      "base": "application/json", 
-                      "type": "application/vnd.openstack.identity-v3+json"
-                    }
-                  ], 
-                  "status": "stable", 
-                  "updated": "2015-03-30T00:00:00Z"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 249\ncontent-location: http://127.0.0.1:35357/v3\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:15 GMT\ncontent-type: application/json\nx-openstack-request-id: req-821662cd-68f6-4149-9779-5cbf4bb4d971\n\n{\n  \"version\": {\n    \"id\": \"v3.4\",\n    \"links\": [\n      {\n        \"href\": \"http://127.0.0.1:35357/v3/\",\n        \"rel\": \"self\"\n      }\n    ],\n    \"media-types\": [\n      {\n        \"base\": \"application/json\",\n        \"type\": \"application/vnd.openstack.identity-v3+json\"\n      }\n    ],\n    \"status\": \"stable\",\n    \"updated\": \"2015-03-30T00:00:00Z\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -1809,29 +1793,7 @@
         ], 
         "description": "Each REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nA REST interface provides client authentication by using the POST\nmethod with ``auth/tokens`` the path. The body of the request must\ninclude a payload of credentials including the authentication\nmethod and, optionally, the authorization scope. The scope includes\neither a project or domain. If you include both project and domain,\nthis call returns the HTTP ``Bad Request (400)`` status code\nbecause a token cannot be simultaneously scoped as both a project\nand domain.\n\nIf you do not include the optional scope and the authenticating\nuser has a defined default project (the ``default_project_id``\nattribute for the user), that default project is treated as the\npreferred authorization scope.\n\nIf no default project is defined, the token is issued without an\nexplicit scope of authorization.\n\nProvide one of the following sets of credentials to authenticate:\nUser ID and password, user name and password scoped by domain ID or\nname, user ID and password scoped by project ID or name with or\nwithout domain scope, or token.\n\nThe following examples demonstrate authentication requests with\ndifferent types of credentials.\n\nIf ``scope`` is included, ``project id`` uniquely identifies the\n``project`` . However, ``project name`` uniquely identifies the\n``project`` only when used in conjunction with a ``domain ID`` or a\n``domain name`` .\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the subject token has expired, this call returns the HTTP\n``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.\n\nAs the following example responses show, the response to an\nauthentication request returns the token ID in the ``X-Subject-\nToken`` header instead of in the token data.\n\nIf the call has no explicit authorization scope, the response does\nnot contain the ``catalog`` , ``project`` , ``domain`` , or\n``roles`` fields. However, the response still uniquely identifies\nthe user.\n\nA token scoped to a ``project`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nA token scoped to a ``domain`` also has both a service ``catalog``\nand the user's roles applicable to the ``project`` .\n\nOptionally, the Identity API implementation might return an\n``authentication`` attribute to indicate the supported\nauthentication methods.\n\nFor authentication processes that require multiple round trips, The\nIdentity API implementation might return an HTTP ``Unauthorized\n(401)`` status code with additional information for the next\nauthentication step.\n\nThe following examples illustrate several possible HTTP\n``Unauthorized (401)`` authentication errors. Other errors, like\nHTTP ``Forbidden (403)`` , are also possible.", 
         "examples": {
-          "application/json": {
-            "auth": {
-              "identity": {
-                "methods": [
-                  "password"
-                ], 
-                "password": {
-                  "user": {
-                    "id": "0ca8f6", 
-                    "password": "secretsecret"
-                  }
-                }
-              }, 
-              "scope": {
-                "project": {
-                  "domain": {
-                    "name": "example.com"
-                  }, 
-                  "name": "project-x"
-                }
-              }
-            }
-          }
+          "text/plain": "POST /v3/auth/tokens HTTP/1.1\n"
         }, 
         "id": "authenticate", 
         "method": "post", 
@@ -1852,80 +1814,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "token": {
-                  "catalog": [
-                    {
-                      "endpoints": [
-                        {
-                          "id": "example-a", 
-                          "interface": "public", 
-                          "links": {
-                            "self": "https://region-a.example.com:35357/v3/endpoints/130_P"
-                          }, 
-                          "region_id": "region-a.geo-1", 
-                          "service_id": "100", 
-                          "url": "https://region-a.example.com:35357/v2.0/"
-                        }, 
-                        {
-                          "id": "example-a", 
-                          "interface": "public", 
-                          "links": {
-                            "self": "https://region-a.example.com:35357/v3/endpoints/example-a"
-                          }, 
-                          "region_id": "region-a.geo-1", 
-                          "service_id": "100", 
-                          "url": "https://region-a.example.com:35357/v3/"
-                        }
-                      ], 
-                      "id": "100", 
-                      "type": "identity"
-                    }
-                  ], 
-                  "domain": {
-                    "id": "1789d1", 
-                    "links": {
-                      "self": "http://identity:35357/v3/domains/1789d1"
-                    }, 
-                    "name": "example.com"
-                  }, 
-                  "expires_at": "2013-02-27T18:30:59.999999Z", 
-                  "issued_at": "2013-02-27T16:30:59.999999Z", 
-                  "methods": [
-                    "password"
-                  ], 
-                  "roles": [
-                    {
-                      "id": "76e72a", 
-                      "links": {
-                        "self": "http://identity:35357/v3/roles/76e72a"
-                      }, 
-                      "name": "admin"
-                    }, 
-                    {
-                      "id": "f4f392", 
-                      "links": {
-                        "self": "http://identity:35357/v3/roles/f4f392"
-                      }, 
-                      "name": "member"
-                    }
-                  ], 
-                  "user": {
-                    "domain": {
-                      "id": "1789d1", 
-                      "links": {
-                        "self": "http://identity:35357/v3/domains/1789d1"
-                      }, 
-                      "name": "example.com"
-                    }, 
-                    "id": "0ca8f6", 
-                    "links": {
-                      "self": "http://identity:35357/v3/users/0ca8f6"
-                    }, 
-                    "name": "Joe"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 6525\nx-subject-token: 3e049895639948e69734c9e969503bd5\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:21 GMT\ncontent-type: application/json\nx-openstack-request-id: req-04c970a6-7d0a-4c98-a6b6-f7372a14f743\n\n"
             }, 
             "headers": {}
           }, 
@@ -1935,22 +1824,7 @@
           }, 
           "401": {
             "examples": {
-              "application/json": {
-                "error": {
-                  "code": 401, 
-                  "identity": {
-                    "challenge-response": {
-                      "challenge": "What was the zip code of your birthplace?", 
-                      "session_id": "123456"
-                    }, 
-                    "methods": [
-                      "challenge-response"
-                    ]
-                  }, 
-                  "message": "Additional authentications steps required.", 
-                  "title": "Not Authorized"
-                }
-              }
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 207\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:02 GMT\nx-openstack-request-id: req-3e61c58d-99f6-433c-9718-3a4e24da5cae\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:5000\"\n\n"
             }, 
             "headers": {}
           }, 
@@ -1959,7 +1833,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 115\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:18 GMT\ncontent-type: application/json\nx-openstack-request-id: req-25c02496-f263-4e61-afad-80981d6f34e4\n\n"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -1987,7 +1863,7 @@
         ], 
         "description": "Pass your own token in the ``X-Auth-Token`` header. Pass the token\nto be validated in the ``X-Subject-Token`` header. The Identity API\nreturns the same response as when the subject token was issued by\n``POST /auth/tokens`` .", 
         "examples": {
-          "text/plain": "Headers:\nX-Auth-Token: 1dd7e3\nX-Subject-Token: c67580\n"
+          "text/plain": "GET /v3/auth/tokens HTTP/1.1\nx-subject-token: c8bc99d80ceb4ec1a7491708d463bce9\nx-auth-token: <omitted>\n"
         }, 
         "id": "validateTokens", 
         "method": "get", 
@@ -2015,29 +1891,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "token": {
-                  "expires_at": "2013-02-27T18:30:59.999999Z", 
-                  "issued_at": "2013-02-27T16:30:59.999999Z", 
-                  "methods": [
-                    "password"
-                  ], 
-                  "user": {
-                    "domain": {
-                      "id": "1789d1", 
-                      "links": {
-                        "self": "http://identity:35357/v3/domains/1789d1"
-                      }, 
-                      "name": "example.com"
-                    }, 
-                    "id": "0ca8f6", 
-                    "links": {
-                      "self": "http://identity:35357/v3/users/0ca8f6"
-                    }, 
-                    "name": "Joe"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 6574\ncontent-location: http://127.0.0.1:35357/v3/auth/tokens\nx-subject-token: c8bc99d80ceb4ec1a7491708d463bce9\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:31 GMT\ncontent-type: application/json\nx-openstack-request-id: req-e38e4722-0548-4cd8-ad97-a79e29cb20e7\n\n{\"token\": {\"methods\": [\"password\"], \"roles\": [{\"id\": \"4e218caacb9848cbbd890e900330b971\", \"name\": \"admin\"}], \"expires_at\": \"2015-09-22T07:10:31.938841Z\", \"project\": {\"domain\": {\"id\": \"90968cb5155042db92b0345cfb644ce3\", \"name\": \"tempest-dom-141131768\"}, \"id\": \"07f398a3e8e0469d92f6e71e619fdcec\", \"name\": \"tempest-proj-1600532331\"}, \"catalog\": [{\"endpoints\": [{\"url\": \"http://127.0.0.1:8776/v1/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"18108644369740868630e2b8cf61d7a4\"}, {\"url\": \"http://127.0.0.1:8776/v1/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"588cd0264e1c4a6688db54ce3ccfaa22\"}, {\"url\": \"http://127.0.0.1:8776/v1/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"d9474375c9f34478ad9f09642322f34e\"}], \"type\": \"volume\", \"id\": \"084996172f8b4733b88ea230142dd67c\", \"name\": \"cinder\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:9292\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"32029ad0884643358286551326936fba\"}, {\"url\": \"http://127.0.0.1:9292\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"3cc0c91b14bb4de5b6cd96d13ab7825f\"}, {\"url\": \"http://127.0.0.1:9292\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"95c351c33cb74135b3dfb153ec0b2e7c\"}], \"type\": \"image\", \"id\": \"0874fa2346484eb8889ffc52c4f4c3d0\", \"name\": \"glance\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:8774/v2/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"767efa16ab204e4fbc4140b5d8c844e6\"}, {\"url\": \"http://127.0.0.1:8774/v2/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"cd4d3c5618844ac6a6cb8a4ae63ba52b\"}, {\"url\": \"http://127.0.0.1:8774/v2/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"f3a5d37cff10471bb4125ec77c6568a7\"}], \"type\": \"compute_legacy\", \"id\": \"1d5fd306ed9a43f3bdf68063a86cf6c9\", \"name\": \"nova_legacy\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:8777/\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"4d66cf35fc624b7385e44b9b18b58bed\"}, {\"url\": \"http://127.0.0.1:8777/\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"a972c652aa44476ebbb9be78a2632763\"}, {\"url\": \"http://127.0.0.1:8777/\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"f53088cdf7cd40c59591aabd99528d7c\"}], \"type\": \"metering\", \"id\": \"2a4c92e3fad143ac9dafe542fc876792\", \"name\": \"ceilometer\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:35357/v2.0\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"19493c86310c48898907516a3b572c89\"}, {\"url\": \"http://127.0.0.1:5000/v2.0\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"5851adfb6df8413c8a7fdf86f89fa8d3\"}, {\"url\": \"http://127.0.0.1:5000/v2.0\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"896374625b8a415dab364e3144e3d656\"}], \"type\": \"identity\", \"id\": \"7f394a3e102f4fd78c39694efdeeff2c\", \"name\": \"keystone\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:3333\", \"interface\": \"admin\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"304d403198af4e4d8beb58ec0d515cc3\"}, {\"url\": \"http://127.0.0.1:3333\", \"interface\": \"internal\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"4ab7b2be61594fe99bebcf6af669b2fa\"}, {\"url\": \"http://127.0.0.1:3333\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"c635934498aa4bafbeca3d6327112f10\"}], \"type\": \"s3\", \"id\": \"8a37a7869fe042d0a1f7f1d7832fc027\", \"name\": \"s3\"}, {\"endpoints\": [{\"url\": \"http://127.0.0.1:8774/v2.1/07f398a3e8e0469d92f6e71e619fdcec\", \"interface\": \"public\", \"region\": \"RegionOne\", \"region_id\": \"RegionOne\", \"id\": \"19a542d282a34c828393d2f0ee405c9a\"}, {\"url\": \"http://127.0.0.1:8774/v2.1/07f398a3e8e0469d92f6e71e619f "
             }, 
             "headers": {}
           }, 
@@ -2054,7 +1908,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 115\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:59 GMT\ncontent-type: application/json\nx-openstack-request-id: req-b679a60b-a67c-431d-9d82-b9c3a0782813\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find token: ed2dad41ff344d449e9dea13fd0a652c\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -2147,7 +2003,7 @@
         "consumes": [], 
         "description": "This call is similar to ``HEAD /auth/tokens`` except that the ``X\n-Subject-Token`` token is immediately not valid, regardless of the\n``expires_at`` attribute value. An additional ``X -Auth-Token`` is\nnot required.", 
         "examples": {
-          "text/plain": "Headers:\nX-Auth-Token: 1dd7e3\nX-Subject-Token: c67580\n"
+          "text/plain": "DELETE /v3/auth/tokens HTTP/1.1\nx-subject-token: ed2dad41ff344d449e9dea13fd0a652c\nx-auth-token: <omitted>\n"
         }, 
         "id": "revokeTokens", 
         "method": "delete", 
@@ -2171,6 +2027,11 @@
         ], 
         "produces": [], 
         "responses": {
+          "204": {
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:59 GMT\nx-openstack-request-id: req-54cf1be2-80ce-4af7-ab1d-26fc9366329e\n\n"
+            }
+          }, 
           "400": {
             "examples": {}, 
             "headers": {}
@@ -2213,7 +2074,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/credentials HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listCredentials", 
         "method": "get", 
         "parameters": [
@@ -2248,28 +2111,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": [
-                {
-                  "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-                  "id": "414243", 
-                  "links": {
-                    "self": "http://identity:35357/v3/credentials/414243"
-                  }, 
-                  "project_id": "456789", 
-                  "type": "ec2", 
-                  "user_id": "616263"
-                }, 
-                {
-                  "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-                  "id": "414243", 
-                  "links": {
-                    "self": "http://identity:35357/v3/credentials/414243"
-                  }, 
-                  "project_id": "456789", 
-                  "type": "ec2", 
-                  "user_id": "616263"
-                }
-              ]
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4033\ncontent-location: http://127.0.0.1:5000/v3/credentials\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:24 GMT\ncontent-type: application/json\nx-openstack-request-id: req-7be45f36-2fbd-43c1-a824-2b99f2ded413\n\n{\n  \"credentials\": [\n    {\n      \"blob\": \"{\\\"access\\\": \\\"190e3e3f260c4b4897caa9f009258bcb\\\", \\\"secret\\\": \\\"23d264c18a404bf6b79a782e3aa02a5a\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"29baff3eaeb24293d2a035d0f6f20df282571ed45a77057e350fc23ca4bfa5a8\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/29baff3eaeb24293d2a035d0f6f20df282571ed45a77057e350fc23ca4bfa5a8\"\n      },\n      \"project_id\": \"1c1403595fe24e2f862c2a5f20ac269a\",\n      \"type\": \"ec2\",\n      \"user_id\": \"85bf8d82e7c44013ac1fcdc0fe2d1dd4\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"31d8c326ad4f473db9209e1995f6aa90\\\", \\\"secret\\\": \\\"093c587ef068418d83371c6bcbe674b9\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"4ef286bbec06e5e397a11c91aa78c93c186e00d322f66b5a815ab52754986df5\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/4ef286bbec06e5e397a11c91aa78c93c186e00d322f66b5a815ab52754986df5\"\n      },\n      \"project_id\": \"1c1403595fe24e2f862c2a5f20ac269a\",\n      \"type\": \"ec2\",\n      \"user_id\": \"8fee3fbfc5c14709a08bc93c5e80e83e\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"tempest-Access-1501469709\\\", \\\"secret\\\": \\\"tempest-Secret-925198359\\\"}\",\n      \"id\": \"5f7125b46e34976365097d774f27fa4fbd7b661aebba742784ac999774dba5d7\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/5f7125b46e34976365097d774f27fa4fbd7b661aebba742784ac999774dba5d7\"\n      },\n      \"project_id\": \"355a8a67b0954f1885867ebd13b69b22\",\n      \"type\": \"ec2\",\n      \"user_id\": \"eb4727881b2d4113b3961d0213d0bea9\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"18ab75497a4147848e58fe04a36db8cb\\\", \\\"secret\\\": \\\"3a32047c186e46a28c44447df9dee85a\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"8736433334edcef6bcde3cfbcda0a1f2794c3c20d121f3183521f80e2a2038df\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/8736433334edcef6bcde3cfbcda0a1f2794c3c20d121f3183521f80e2a2038df\"\n      },\n      \"project_id\": \"77044e1e011d419db467ead202a351f0\",\n      \"type\": \"ec2\",\n      \"user_id\": \"fa22b00603c449418c2c583daa35d98b\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"825926733e70445083a60a2f000fd733\\\", \\\"secret\\\": \\\"9f01a2fbc82e43b491929d5f1bc65929\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"88a7fcbef147fa0cf1842e722884a87a1fe65c6b24d473f96c70f0960af58b3e\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/88a7fcbef147fa0cf1842e722884a87a1fe65c6b24d473f96c70f0960af58b3e\"\n      },\n      \"project_id\": \"77044e1e011d419db467ead202a351f0\",\n      \"type\": \"ec2\",\n      \"user_id\": \"089382dc16a24f239480bc3ef63159c5\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"18688f19b611433aa96bde7067c03b1a\\\", \\\"secret\\\": \\\"0c93453e99af406ca019e58d6822e5d5\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"9d7780e91add91ddf8e4377aa4bf3c84678149bdca865f67f3a4f998fe2ef258\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/9d7780e91add91ddf8e4377aa4bf3c84678149bdca865f67f3a4f998fe2ef258\"\n      },\n      \"project_id\": \"6e5b9d0ab67b4d1ca9e8b57cb2cb9fba\",\n      \"type\": \"ec2\",\n      \"user_id\": \"a25b6f5b8d564624a290d1a10017ab83\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"tempest-Access-945954084\\\", \\\"secret\\\": \\\"tempest-Secret-717436657\\\"}\",\n      \"id\": \"9f05d05a356edf34ebef00a9f48736f73bee2f726ff0c11ce4d002c04df55ceb\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/9f05d05a356edf34ebef00a9f48736f73bee2f726ff0c11ce4d002c04df55ceb\"\n      },\n      \"project_id\": \"355a8a67b0954f1885867ebd13b69b22\",\n      \"type\": \"ec2\",\n      \"user_id\": \"eb4727881b2d4113b3961d0213d0bea9\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"f4f30d7724ee4d13b2e2f32bf7327cb0\\\", \\\"secret\\\": \\\"f22b6bcfefcd49868f5c7fd6a1a73a3b\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"a96bb63d48bf586dbc7615161c6054ee9f2d556ade2f5671699abe8263c4bd1d\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/a96bb63d48bf586dbc7615161c6054ee9f2d556ade2f5671699abe8263c4bd1d\"\n      },\n      \"project_id\": \"dfa1523272d14408a2e9f3c65064dd15\",\n      \"type\": \"ec2\",\n      \"user_id\": \"fa22b00603c449418c2c583daa35d98b\"\n    },\n    {\n      \"blob\": \"{\\\"access\\\": \\\"dfab0e1220b847f1b0a422648975906d\\\", \\\"secret\\\": \\\"2d6a0663c7174ba4ba05783d3f901d52\\\", \\\"trust_id\\\": null}\",\n      \"id\": \"e401764df920c625bdb37eb7a587e52af06dfeb2410bc958f60f828114711ac4\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/credentials/e401764df920c625bdb37eb7a587e52af06dfeb2410bc958f60f828114711ac4\"\n      },\n      \"project_id\": \"603e2acd7280415581e58d38a2fe1c87\",\n      \"type\": \"ec2\",\n      \"user_id\": \"089382dc16a24f239480bc3ef63159c5\"\n    }\n  ],\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:5000/v3/credentials\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2314,12 +2156,7 @@
         ], 
         "description": "The following example shows how to create an EC2-style credential.\nThe credential blob is a string that contains a JSON-serialized\ndictionary with the ``access`` and ``secret`` keys. This format is\nrequired when you specify the ``ec2`` type. To specify other\ncredentials such as ``access_key`` , change the type and contents\nof the data blob.", 
         "examples": {
-          "application/json": {
-            "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-            "project_id": "456789", 
-            "type": "ec2", 
-            "user_id": "616263"
-          }
+          "text/plain": "POST /v3/credentials HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createCredential", 
         "method": "post", 
@@ -2330,16 +2167,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-                "id": "414243", 
-                "links": {
-                  "self": "http://identity:35357/v3/credentials/414243"
-                }, 
-                "project_id": "456789", 
-                "type": "ec2", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 423\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:23 GMT\ncontent-type: application/json\nx-openstack-request-id: req-5ebcd3dd-9b9a-4898-9de4-ea072d43fbab\n\n{\n  \"credential\": {\n    \"blob\": \"{\\\"access\\\": \\\"tempest-Access-1501469709\\\", \\\"secret\\\": \\\"tempest-Secret-925198359\\\"}\",\n    \"id\": \"5f7125b46e34976365097d774f27fa4fbd7b661aebba742784ac999774dba5d7\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/credentials/5f7125b46e34976365097d774f27fa4fbd7b661aebba742784ac999774dba5d7\"\n    },\n    \"project_id\": \"355a8a67b0954f1885867ebd13b69b22\",\n    \"type\": \"ec2\",\n    \"user_id\": \"eb4727881b2d4113b3961d0213d0bea9\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2385,7 +2213,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getCredential", 
         "method": "get", 
         "parameters": [
@@ -2404,16 +2234,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-                "id": "414243", 
-                "links": {
-                  "self": "http://identity:35357/v3/credentials/414243"
-                }, 
-                "project_id": "456789", 
-                "type": "ec2", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 424\ncontent-location: http://127.0.0.1:5000/v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:23 GMT\ncontent-type: application/json\nx-openstack-request-id: req-5ed8213b-f37b-41ad-8ee9-fadc0e9c483b\n\n{\n  \"credential\": {\n    \"blob\": \"{\\\"access\\\": \\\"tempest-Access-1726740092\\\", \\\"secret\\\": \\\"tempest-Secret-1580375423\\\"}\",\n    \"id\": \"82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016\"\n    },\n    \"project_id\": \"355a8a67b0954f1885867ebd13b69b22\",\n    \"type\": \"ec2\",\n    \"user_id\": \"eb4727881b2d4113b3961d0213d0bea9\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2458,12 +2279,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-            "project_id": "456789", 
-            "type": "ec2", 
-            "user_id": "616263"
-          }
+          "text/plain": "PATCH /v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateCredential", 
         "method": "patch", 
@@ -2483,16 +2299,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "blob": "{\"access\":\"181920\",\"secret\":\"secretKey\"}", 
-                "id": "414243", 
-                "links": {
-                  "self": "http://identity:35357/v3/credentials/414243"
-                }, 
-                "project_id": "456789", 
-                "type": "ec2", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 429\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:23 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0e7f7f3c-63e0-4592-9d6e-8ad86c3f6132\n\n{\n  \"credential\": {\n    \"blob\": \"{\\\"access\\\": \\\"tempest-NewAccess-526456182\\\", \\\"secret\\\": \\\"tempest-NewSecret-1053983805\\\"}\",\n    \"id\": \"82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016\"\n    },\n    \"project_id\": \"9f18155e4de24d7cbd63c43dcc2e1d17\",\n    \"type\": \"ec2\",\n    \"user_id\": \"eb4727881b2d4113b3961d0213d0bea9\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2534,7 +2341,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/credentials/82bd89ca4e071e694f5610675799840c1cc8bea2803e85c6cc37292682b3b016 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteCredential", 
         "method": "delete", 
         "parameters": [
@@ -2550,7 +2359,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:23 GMT\nx-openstack-request-id: req-b12c3a09-64fe-420b-883e-684176886770\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -2595,7 +2406,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/domains HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listDomains", 
         "method": "get", 
         "parameters": [
@@ -2638,28 +2451,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "domains": [
-                  {
-                    "description": "Domain description", 
-                    "enabled": true, 
-                    "id": "161718", 
-                    "links": {
-                      "self": "http://identity:35357/v3/domains/161718"
-                    }, 
-                    "name": "myDomain"
-                  }, 
-                  {
-                    "description": "Another domain", 
-                    "enabled": true, 
-                    "id": "864369", 
-                    "links": {
-                      "self": "http://identity:35357/v3/domains/864369"
-                    }, 
-                    "name": "anotherDomain"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1234\ncontent-location: http://127.0.0.1:35357/v3/domains\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:22 GMT\ncontent-type: application/json\nx-openstack-request-id: req-7604033d-a04a-4551-a048-950f019a811b\n\n{\n  \"domains\": [\n    {\n      \"description\": \"Used for swift functional testing\",\n      \"enabled\": true,\n      \"id\": \"1f705ca0d9f44423be9c0c1bad001700\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/domains/1f705ca0d9f44423be9c0c1bad001700\"\n      },\n      \"name\": \"swift_test\"\n    },\n    {\n      \"description\": \"tempest-domain-desc-259853856\",\n      \"enabled\": true,\n      \"id\": \"3d5500fe5582487aa2ae93703dd68c08\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08\"\n      },\n      \"name\": \"tempest-domain-316134164\"\n    },\n    {\n      \"description\": \"tempest-domain-desc-924759109\",\n      \"enabled\": true,\n      \"id\": \"43614ff77cb242a5acd058ca88d38088\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/domains/43614ff77cb242a5acd058ca88d38088\"\n      },\n      \"name\": \"tempest-domain-2023504060\"\n    },\n    {\n      \"description\": \"tempest-domain-desc-917857009\",\n      \"enabled\": true,\n      \"id\": \"53e4f0cb198e4f6dbe6f5a970481efb8\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/domains/53e4f0cb198e4f6dbe6f5a970481efb8\"\n      },\n      \"name\": \"tempest-domain-920693992\"\n    },\n    {\n      \"description\": \"Owns users and tenants (i.e. projects) available on Identity API v2.\",\n      \"enabled\": true,\n      \"id\": \"default\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/domains/default\"\n      },\n      \"name\": \"Default\"\n    }\n  ],\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/domains\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2704,13 +2496,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "domain": {
-              "description": "Domain description", 
-              "enabled": true, 
-              "name": "myDomain"
-            }
-          }
+          "text/plain": "POST /v3/domains HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createDomain", 
         "method": "post", 
@@ -2731,17 +2517,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "domain": {
-                  "description": "Domain description", 
-                  "enabled": true, 
-                  "id": "161718", 
-                  "links": {
-                    "self": "http://identity:35357/v3/domains/161718"
-                  }, 
-                  "name": "myDomain"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 244\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:22 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0874d809-b616-495b-b364-c32ac62a2532\n\n{\n  \"domain\": {\n    \"description\": \"tempest-domain-desc-917857009\",\n    \"enabled\": true,\n    \"id\": \"53e4f0cb198e4f6dbe6f5a970481efb8\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/domains/53e4f0cb198e4f6dbe6f5a970481efb8\"\n    },\n    \"name\": \"tempest-domain-920693992\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2787,7 +2563,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/domains/3d5500fe5582487aa2ae93703dd68c08 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getDomain", 
         "method": "get", 
         "parameters": [
@@ -2806,17 +2584,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "domain": {
-                  "description": "Domain description", 
-                  "enabled": true, 
-                  "id": "161718", 
-                  "links": {
-                    "self": "http://identity:35357/v3/domains/161718"
-                  }, 
-                  "name": "myDomain"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 244\ncontent-location: http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:23 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0c2511d8-4ed9-49b9-9939-574e3be82c30\n\n{\n  \"domain\": {\n    \"description\": \"tempest-domain-desc-259853856\",\n    \"enabled\": true,\n    \"id\": \"3d5500fe5582487aa2ae93703dd68c08\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/domains/3d5500fe5582487aa2ae93703dd68c08\"\n    },\n    \"name\": \"tempest-domain-316134164\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2861,13 +2629,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "domain": {
-              "description": "my updated domain", 
-              "enabled": true, 
-              "name": "myUpdatedDomain"
-            }
-          }
+          "text/plain": "PATCH /v3/domains/cef9e958a8af421f99a99a5a269af78f HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateDomain", 
         "method": "patch", 
@@ -2896,17 +2658,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "domain": {
-                  "description": "my updated domain", 
-                  "enabled": true, 
-                  "id": "161718", 
-                  "links": {
-                    "self": "http://identity:35357/v3/domains/161718"
-                  }, 
-                  "name": "myUpdatedDomain"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 246\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:22 GMT\ncontent-type: application/json\nx-openstack-request-id: req-8464d15e-0794-4179-9ce9-fb40a1fa56fe\n\n{\n  \"domain\": {\n    \"description\": \"tempest-new-desc-1047418990\",\n    \"enabled\": false,\n    \"id\": \"cef9e958a8af421f99a99a5a269af78f\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/domains/cef9e958a8af421f99a99a5a269af78f\"\n    },\n    \"name\": \"tempest-new-name-1201796044\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2948,7 +2700,9 @@
       {
         "consumes": [], 
         "description": "To minimize the risk of accidentally deleting a domain, you must\nfirst disable the domain by using the update domain method. If you\ntry to delete an enabled domain, this call returns an HTTP\n``Forbidden (403)`` status code.\n\nWhen you delete a domain, this call also deletes all entities owned\nby it, such as users, groups, and projects, and any credentials and\ngranted roles that relate to those entities.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/domains/6ca1588d3c0c4a31baf67fccec72568d HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteDomain", 
         "method": "delete", 
         "parameters": [
@@ -2964,7 +2718,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:09 GMT\nx-openstack-request-id: req-e3395044-2092-4d9a-8a83-09e0c8293397\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -2976,7 +2732,9 @@
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 229\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:38 GMT\ncontent-type: application/json\nx-openstack-request-id: req-32298b0c-8544-406a-9774-fddfbc0bbf54\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: cannot delete a domain that is enabled, please disable it first. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -3009,7 +2767,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/domains/1041ad04346a4ec1ace4e854a8cee128/groups/5029ab7c67ea4504aeb088a8034d2c38/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listDomainGroupRoles", 
         "method": "get", 
         "parameters": [
@@ -3036,29 +2796,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/domains/161718/groups/101112/roles"
-                }, 
-                "roles": [
-                  {
-                    "id": "123456", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123456"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "id": "123457", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123457"
-                    }, 
-                    "name": "manager"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 344\ncontent-location: http://127.0.0.1:35357/v3/domains/1041ad04346a4ec1ace4e854a8cee128/groups/5029ab7c67ea4504aeb088a8034d2c38/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:52 GMT\ncontent-type: application/json\nx-openstack-request-id: req-7022bc10-0d2d-4d5d-9c1b-3da9daf21e7b\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/domains/1041ad04346a4ec1ace4e854a8cee128/groups/5029ab7c67ea4504aeb088a8034d2c38/roles\"\n  },\n  \"roles\": [\n    {\n      \"id\": \"77f9414ff2d441d68161fc7ad6787378\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/77f9414ff2d441d68161fc7ad6787378\"\n      },\n      \"name\": \"tempest-Role-1912339669\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -3102,7 +2840,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v3/domains/1041ad04346a4ec1ace4e854a8cee128/groups/5029ab7c67ea4504aeb088a8034d2c38/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "grantDomainGroupRole", 
         "method": "put", 
         "parameters": [
@@ -3134,7 +2874,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:52 GMT\nx-openstack-request-id: req-5eba9f1e-5431-4ba6-bed5-5076d69453e3\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -3248,7 +2990,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/domains/1041ad04346a4ec1ace4e854a8cee128/groups/5029ab7c67ea4504aeb088a8034d2c38/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "revokeDomainGroupRole", 
         "method": "delete", 
         "parameters": [
@@ -3280,7 +3024,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:52 GMT\nx-openstack-request-id: req-3dc5914f-fd29-49ba-90bc-96096489761a\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -3325,7 +3071,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listDomainUserRoles", 
         "method": "get", 
         "parameters": [
@@ -3352,29 +3100,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/domains/161718/users/313233/roles"
-                }, 
-                "roles": [
-                  {
-                    "id": "123456", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123456"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "id": "123457", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123457"
-                    }, 
-                    "name": "manager"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 343\ncontent-location: http://127.0.0.1:35357/v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:53 GMT\ncontent-type: application/json\nx-openstack-request-id: req-19fcc75d-ea7a-4b18-89ae-362cce8a7e2c\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles\"\n  },\n  \"roles\": [\n    {\n      \"id\": \"77f9414ff2d441d68161fc7ad6787378\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/77f9414ff2d441d68161fc7ad6787378\"\n      },\n      \"name\": \"tempest-Role-1912339669\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -3418,7 +3144,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "grantDomainUserRole", 
         "method": "put", 
         "parameters": [
@@ -3450,7 +3178,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:53 GMT\nx-openstack-request-id: req-5b5c8f74-eae3-43c7-a4b2-1eb4ca0230a6\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -3564,7 +3294,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "revokeDomainUserRole", 
         "method": "delete", 
         "parameters": [
@@ -3596,7 +3328,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:54 GMT\nx-openstack-request-id: req-f74d49fd-28db-4751-914b-26214aebdae9\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -3641,7 +3375,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/endpoints HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listEndpoints", 
         "method": "get", 
         "parameters": [
@@ -3684,28 +3420,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "endpoints": [
-                  {
-                    "id": "828384", 
-                    "interface": "public", 
-                    "links": {
-                      "self": "http://identity:35357/v3/endpoints/828384"
-                    }, 
-                    "name": "the public volume endpoint", 
-                    "service_id": "686766"
-                  }, 
-                  {
-                    "id": "642136", 
-                    "interface": "internal", 
-                    "links": {
-                      "self": "http://identity:35357/v3/endpoints/642136"
-                    }, 
-                    "name": "the internal volume endpoint", 
-                    "service_id": "686766"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 10218\ncontent-location: http://127.0.0.1:5000/v3/endpoints\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:47 GMT\ncontent-type: application/json\nx-openstack-request-id: req-8f1a0c09-a9e6-4a3c-af3c-649381a3b4fe\n\n{\"endpoints\": [{\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/08df6ec9a96148e1a8a7de6e19dd056e\"}, \"url\": \"http://127.0.0.1:8080/v1/AUTH_$(tenant_id)s\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"eadc8f78a1774f4e912245b514392592\", \"id\": \"08df6ec9a96148e1a8a7de6e19dd056e\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/11c57a0ba2f9479eb4d2e23e7df6a687\"}, \"url\": \"http://127.0.0.1:8776/v2/$(tenant_id)s\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"admin\", \"service_id\": \"c08472fa96cf4a28bb347985fb1e60fb\", \"id\": \"11c57a0ba2f9479eb4d2e23e7df6a687\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/18108644369740868630e2b8cf61d7a4\"}, \"url\": \"http://127.0.0.1:8776/v1/$(tenant_id)s\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"internal\", \"service_id\": \"084996172f8b4733b88ea230142dd67c\", \"id\": \"18108644369740868630e2b8cf61d7a4\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/19493c86310c48898907516a3b572c89\"}, \"url\": \"http://127.0.0.1:35357/v2.0\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"admin\", \"service_id\": \"7f394a3e102f4fd78c39694efdeeff2c\", \"id\": \"19493c86310c48898907516a3b572c89\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/19a542d282a34c828393d2f0ee405c9a\"}, \"url\": \"http://127.0.0.1:8774/v2.1/$(tenant_id)s\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"a55fc374a66245a192ba19e807586a65\", \"id\": \"19a542d282a34c828393d2f0ee405c9a\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/304d403198af4e4d8beb58ec0d515cc3\"}, \"url\": \"http://127.0.0.1:3333\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"admin\", \"service_id\": \"8a37a7869fe042d0a1f7f1d7832fc027\", \"id\": \"304d403198af4e4d8beb58ec0d515cc3\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/32029ad0884643358286551326936fba\"}, \"url\": \"http://127.0.0.1:9292\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"0874fa2346484eb8889ffc52c4f4c3d0\", \"id\": \"32029ad0884643358286551326936fba\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/3cc0c91b14bb4de5b6cd96d13ab7825f\"}, \"url\": \"http://127.0.0.1:9292\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"admin\", \"service_id\": \"0874fa2346484eb8889ffc52c4f4c3d0\", \"id\": \"3cc0c91b14bb4de5b6cd96d13ab7825f\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/4ab7b2be61594fe99bebcf6af669b2fa\"}, \"url\": \"http://127.0.0.1:3333\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"internal\", \"service_id\": \"8a37a7869fe042d0a1f7f1d7832fc027\", \"id\": \"4ab7b2be61594fe99bebcf6af669b2fa\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/4d66cf35fc624b7385e44b9b18b58bed\"}, \"url\": \"http://127.0.0.1:8777/\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"2a4c92e3fad143ac9dafe542fc876792\", \"id\": \"4d66cf35fc624b7385e44b9b18b58bed\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/5851adfb6df8413c8a7fdf86f89fa8d3\"}, \"url\": \"http://127.0.0.1:5000/v2.0\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"7f394a3e102f4fd78c39694efdeeff2c\", \"id\": \"5851adfb6df8413c8a7fdf86f89fa8d3\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/588cd0264e1c4a6688db54ce3ccfaa22\"}, \"url\": \"http://127.0.0.1:8776/v1/$(tenant_id)s\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"public\", \"service_id\": \"084996172f8b4733b88ea230142dd67c\", \"id\": \"588cd0264e1c4a6688db54ce3ccfaa22\"}, {\"region_id\": \"RegionOne\", \"links\": {\"self\": \"http://127.0.0.1:5000/v3/endpoints/73d2744bf92143758404ce6dbc90c8b5\"}, \"url\": \"http://127.0.0.1:8773/\", \"region\": \"RegionOne\", \"enabled\": true, \"interface\": \"internal\", \"service_id\": \"c9e4b5f796494282823764eebca119ff\", \"id\": \"73d2744bf92143758404ce6dbc90c8b5\"}, {\"region_ "
             }, 
             "headers": {}
           }, 
@@ -3750,15 +3465,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "endpoint": {
-              "interface": "public", 
-              "name": "name", 
-              "region": "north", 
-              "service_id": "686766", 
-              "url": "http://identity:35357/v3/endpoints/828384"
-            }
-          }
+          "text/plain": "POST /v3/endpoints HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createEndpoint", 
         "method": "post", 
@@ -3779,24 +3486,14 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "endpoint": {
-                  "id": "828384", 
-                  "interface": "internal", 
-                  "links": {
-                    "self": "http://identity:35357/v3/endpoints/828384"
-                  }, 
-                  "name": "the internal volume endpoint", 
-                  "region": "north", 
-                  "service_id": "686766", 
-                  "url": "http://identity:35357/v3/endpoints/828384"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 353\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:46 GMT\ncontent-type: application/json\nx-openstack-request-id: req-6d7545fd-d63a-4035-820b-8a83bde242d3\n\n{\n  \"endpoint\": {\n    \"enabled\": true,\n    \"id\": \"a468519595fa4094a21b287af8f9b2f2\",\n    \"interface\": \"public\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/endpoints/a468519595fa4094a21b287af8f9b2f2\"\n    },\n    \"region\": \"tempest-region-1735085313\",\n    \"region_id\": \"tempest-region-1735085313\",\n    \"service_id\": \"1c9da405064146b6aed98190f5ec02ab\",\n    \"url\": \"https://url-835182233.com\"\n  }\n}"
             }, 
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 118\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:56 GMT\ncontent-type: application/json\nx-openstack-request-id: req-be55486c-451b-4b40-abcd-4f6a7085c5a2\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid input for field 'enabled'. The value is 'True'.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
@@ -3838,15 +3535,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "endpoint": {
-              "interface": "public", 
-              "name": "Name", 
-              "region": "north", 
-              "service_id": "345678", 
-              "url": "http://identity:35357/v3/endpoints/828384"
-            }
-          }
+          "text/plain": "PATCH /v3/endpoints/53aa0aa8de7c411589586695db47db96 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateEndpoint", 
         "method": "patch", 
@@ -3875,24 +3564,14 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "endpoint": {
-                  "id": "828384", 
-                  "interface": "internal", 
-                  "links": {
-                    "self": "http://identity:35357/v3/endpoints/828384"
-                  }, 
-                  "name": "the internal volume endpoint", 
-                  "region": "north", 
-                  "service_id": "686766", 
-                  "url": "http://identity:35357/v3/endpoints/828384"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 357\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:48 GMT\ncontent-type: application/json\nx-openstack-request-id: req-23c0377c-17a4-44e2-9a93-8718e15e4b3e\n\n{\n  \"endpoint\": {\n    \"enabled\": false,\n    \"id\": \"53aa0aa8de7c411589586695db47db96\",\n    \"interface\": \"internal\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/endpoints/53aa0aa8de7c411589586695db47db96\"\n    },\n    \"region\": \"tempest-region-1897971603\",\n    \"region_id\": \"tempest-region-1897971603\",\n    \"service_id\": \"335857f49a21492fbaec8fa853400a91\",\n    \"url\": \"https://url-1295003220.com\"\n  }\n}"
             }, 
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 118\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:57 GMT\ncontent-type: application/json\nx-openstack-request-id: req-248752a9-868e-406f-a399-f7b364adf67c\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid input for field 'enabled'. The value is 'True'.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
@@ -3929,7 +3608,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/endpoints/97dbe8ff94624adf842e806ce0be8b5f HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteEndpoint", 
         "method": "delete", 
         "parameters": [
@@ -3945,7 +3626,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:49 GMT\nx-openstack-request-id: req-c62b5bd7-a21f-4942-ae89-f11e67526345\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -3990,7 +3673,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/groups HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listGroups", 
         "method": "get", 
         "parameters": [], 
@@ -4000,42 +3685,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "groups": [
-                  {
-                    "description": "Developers cleared for work on all general projects", 
-                    "domain_id": "161718", 
-                    "id": "101112", 
-                    "links": {
-                      "self": "http://identity:35357/v3/groups/101112"
-                    }, 
-                    "name": "Developers"
-                  }, 
-                  {
-                    "description": "Developers cleared for work on secret projects", 
-                    "domain_id": "161718", 
-                    "id": "101113", 
-                    "links": {
-                      "self": "http://identity:35357/v3/groups/101113"
-                    }, 
-                    "name": "Secure Developers"
-                  }, 
-                  {
-                    "description": "Testers cleared for work on all general projects", 
-                    "domain_id": "161718", 
-                    "id": "101114", 
-                    "links": {
-                      "self": "http://identity:35357/v3/groups/101114"
-                    }, 
-                    "name": "Testers"
-                  }
-                ], 
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/groups"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1302\ncontent-location: http://127.0.0.1:35357/v3/groups\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:34 GMT\ncontent-type: application/json\nx-openstack-request-id: req-1f005b76-67a7-44ae-a4e3-726b7ce56c6e\n\n{\n  \"groups\": [\n    {\n      \"description\": \"tempest-Description-966092121\",\n      \"domain_id\": \"default\",\n      \"id\": \"4da087c3d50441f08ee29e61445bddc7\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/4da087c3d50441f08ee29e61445bddc7\"\n      },\n      \"name\": \"tempest-Group-137620833\",\n      \"project_id\": null\n    },\n    {\n      \"description\": \"openstack admin group\",\n      \"domain_id\": \"default\",\n      \"id\": \"615fcacf6f884598b6e74f7d0b626d8d\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/615fcacf6f884598b6e74f7d0b626d8d\"\n      },\n      \"name\": \"admins\"\n    },\n    {\n      \"description\": \"tempest-Description-1431185387\",\n      \"domain_id\": \"default\",\n      \"id\": \"8af0314bdd1f4a3aa74eb88527a4b4b3\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/8af0314bdd1f4a3aa74eb88527a4b4b3\"\n      },\n      \"name\": \"tempest-Group-1421729322\",\n      \"project_id\": null\n    },\n    {\n      \"description\": \"tempest-Description-755370914\",\n      \"domain_id\": \"default\",\n      \"id\": \"b9584b3f8a42466e8687aa82a8867a63\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/b9584b3f8a42466e8687aa82a8867a63\"\n      },\n      \"name\": \"tempest-Group-53177133\",\n      \"project_id\": null\n    },\n    {\n      \"description\": \"non-admin group\",\n      \"domain_id\": \"default\",\n      \"id\": \"fa7ac3bb2749449c920bd19a435bd2c7\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/fa7ac3bb2749449c920bd19a435bd2c7\"\n      },\n      \"name\": \"nonadmins\"\n    }\n  ],\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/groups\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4080,13 +3730,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "group": {
-              "description": "Developers cleared for work on secret projects", 
-              "domain_id": "161718", 
-              "name": "Secure Developers"
-            }
-          }
+          "text/plain": "POST /v3/groups HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createGroup", 
         "method": "post", 
@@ -4107,17 +3751,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "group": {
-                  "description": "Developers cleared for work on secret projects", 
-                  "domain_id": "161718", 
-                  "id": "101112", 
-                  "links": {
-                    "self": "http://identity:35357/v3/groups/101112"
-                  }, 
-                  "name": "Secure Developers"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 267\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:34 GMT\ncontent-type: application/json\nx-openstack-request-id: req-924d5d08-42f4-4543-961c-10d995ecac85\n\n{\n  \"group\": {\n    \"description\": \"tempest-Description-755370914\",\n    \"domain_id\": \"default\",\n    \"id\": \"b9584b3f8a42466e8687aa82a8867a63\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/groups/b9584b3f8a42466e8687aa82a8867a63\"\n    },\n    \"name\": \"tempest-Group-53177133\",\n    \"project_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4163,7 +3797,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getGroup", 
         "method": "get", 
         "parameters": [
@@ -4182,17 +3818,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "group": {
-                  "description": "Developers cleared for work on secret projects", 
-                  "domain_id": "161718", 
-                  "id": "101112", 
-                  "links": {
-                    "self": "http://identity:35357/v3/groups/101112"
-                  }, 
-                  "name": "Secure Developers"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 270\ncontent-location: http://127.0.0.1:35357/v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:28 GMT\ncontent-type: application/json\nx-openstack-request-id: req-55eea538-da02-4db4-ba68-e2e4169aa8e6\n\n{\n  \"group\": {\n    \"description\": \"tempest-Description-1951215040\",\n    \"domain_id\": \"default\",\n    \"id\": \"b19d8e1c3b4f48509ceba63c8ae94bf5\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5\"\n    },\n    \"name\": \"tempest-Group-1083029864\",\n    \"project_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4237,12 +3863,7 @@
         ], 
         "description": "If the back-end driver does not allow this functionality, this\noperation might return the HTTP ``Not Implemented (501)`` status\ncode.", 
         "examples": {
-          "application/json": {
-            "group": {
-              "description": "my updated group", 
-              "name": "myUpdatedGroup"
-            }
-          }
+          "text/plain": "PATCH /v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateGroup", 
         "method": "patch", 
@@ -4262,17 +3883,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "group": {
-                  "description": "my updated group", 
-                  "domain_id": "161718", 
-                  "id": "101112", 
-                  "links": {
-                    "self": "http://identity:35357/v3/groups/101112"
-                  }, 
-                  "name": "myUpdatedGroup"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 282\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:28 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3e91425c-91f4-40e7-916f-ceb3a2dd335b\n\n{\n  \"group\": {\n    \"description\": \"tempest-UpdateDescription-1966444770\",\n    \"domain_id\": \"default\",\n    \"id\": \"b19d8e1c3b4f48509ceba63c8ae94bf5\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5\"\n    },\n    \"name\": \"tempest-UpdateGroup-1774978430\",\n    \"project_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4314,7 +3925,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/groups/5029ab7c67ea4504aeb088a8034d2c38 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteGroup", 
         "method": "delete", 
         "parameters": [
@@ -4330,7 +3943,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:55 GMT\nx-openstack-request-id: req-85c6ea84-3605-4780-9df1-3e9c5bbfaf63\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -4375,7 +3990,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/groups/3c5ce4d0c70a4aef85e9914cf0e59409/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listGroupUsers", 
         "method": "get", 
         "parameters": [
@@ -4442,39 +4059,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/groups/101112/users"
-                }, 
-                "users": [
-                  {
-                    "default_project_id": "414345", 
-                    "description": "a user", 
-                    "domain_id": "161718", 
-                    "email": "user@example.com", 
-                    "enabled": true, 
-                    "id": "313233", 
-                    "links": {
-                      "self": "http://identity:35357/v3/users/313233"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "default_project_id": "414345", 
-                    "description": "another user", 
-                    "domain_id": "161718", 
-                    "email": "user@example.com", 
-                    "enabled": true, 
-                    "id": "313233", 
-                    "links": {
-                      "self": "http://identity:35357/v3/users/313233"
-                    }, 
-                    "name": "someone"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 139\ncontent-location: http://127.0.0.1:35357/v3/groups/3c5ce4d0c70a4aef85e9914cf0e59409/users\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:32 GMT\ncontent-type: application/json\nx-openstack-request-id: req-d33758a4-dbbf-4eba-b41e-96da2aa2d1c2\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/groups/3c5ce4d0c70a4aef85e9914cf0e59409/users\"\n  },\n  \"users\": []\n}"
             }, 
             "headers": {}
           }, 
@@ -4518,7 +4103,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v3/groups/3c5ce4d0c70a4aef85e9914cf0e59409/users/fc9265823c844961bea220f20ad8ba11 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "assignUserToGroup", 
         "method": "put", 
         "parameters": [
@@ -4542,7 +4129,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:29 GMT\nx-openstack-request-id: req-4add7e48-d276-4ed7-b761-4e7167bf3394\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -4583,7 +4172,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/groups/5029ab7c67ea4504aeb088a8034d2c38/users/2fe3c74007d2459e94908d5a47e153eb HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteGroupUser", 
         "method": "delete", 
         "parameters": [
@@ -4607,7 +4198,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:53 GMT\nx-openstack-request-id: req-b4895af0-a0a1-466a-b7c9-2cea703a7251\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -4717,7 +4310,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/policies HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listPolicies", 
         "method": "get", 
         "parameters": [
@@ -4752,36 +4347,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": [
-                {
-                  "blob": {
-                    "foobar_user": [
-                      "role:compute-user"
-                    ]
-                  }, 
-                  "id": "717273", 
-                  "links": {
-                    "self": "http://identity:35357/v3/policies/717273"
-                  }, 
-                  "project_id": "456789", 
-                  "type": "application/json", 
-                  "user_id": "616263"
-                }, 
-                {
-                  "blob": {
-                    "foobar_user": [
-                      "role:compute-user"
-                    ]
-                  }, 
-                  "id": "717274", 
-                  "links": {
-                    "self": "http://identity:35357/v3/policies/717274"
-                  }, 
-                  "project_id": "456789", 
-                  "type": "application/json", 
-                  "user_id": "616263"
-                }
-              ]
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 738\ncontent-location: http://127.0.0.1:5000/v3/policies\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:41 GMT\ncontent-type: application/json\nx-openstack-request-id: req-db674643-bccb-42d8-98ff-807a9d0196b2\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:5000/v3/policies\"\n  },\n  \"policies\": [\n    {\n      \"blob\": \"tempest-BlobName-1663328740\",\n      \"id\": \"009691f452964605af3d2f9135c7ed0c\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/policies/009691f452964605af3d2f9135c7ed0c\"\n      },\n      \"type\": \"tempest-PolicyType-544543879\"\n    },\n    {\n      \"blob\": \"tempest-BlobName-895959279\",\n      \"id\": \"8425e1226538430c92d9c9f68c1d7c37\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/policies/8425e1226538430c92d9c9f68c1d7c37\"\n      },\n      \"type\": \"tempest-PolicyType-955936722\"\n    },\n    {\n      \"blob\": \"tempest-BlobName-1135034489\",\n      \"id\": \"920668ec5185429a97258cdb1df521e7\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/policies/920668ec5185429a97258cdb1df521e7\"\n      },\n      \"type\": \"tempest-PolicyType-1466371598\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -4826,14 +4392,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "blob": {
-              "default": false
-            }, 
-            "project_id": "456789", 
-            "type": "application/json", 
-            "user_id": "616263"
-          }
+          "text/plain": "POST /v3/policies HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createPolicy", 
         "method": "post", 
@@ -4854,20 +4413,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "blob": {
-                  "foobar_user": [
-                    "role:compute-user"
-                  ]
-                }, 
-                "id": "717273", 
-                "links": {
-                  "self": "http://identity:35357/v3/policies/717273"
-                }, 
-                "project_id": "456789", 
-                "type": "application/json", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 223\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:39 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4f8bd116-921d-4835-97cc-9d36a21dffd7\n\n{\n  \"policy\": {\n    \"blob\": \"tempest-BlobName-1098962284\",\n    \"id\": \"8435032094214fc2b2e0b45a1f5e50e4\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4\"\n    },\n    \"type\": \"tempest-PolicyType-1841371129\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4913,7 +4459,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/policies/8435032094214fc2b2e0b45a1f5e50e4 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getPolicy", 
         "method": "get", 
         "parameters": [
@@ -4932,20 +4480,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "blob": {
-                  "foobar_user": [
-                    "role:compute-user"
-                  ]
-                }, 
-                "id": "717273", 
-                "links": {
-                  "self": "http://identity:35357/v3/policies/717273"
-                }, 
-                "project_id": "456789", 
-                "type": "application/json", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 230\ncontent-location: http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:40 GMT\ncontent-type: application/json\nx-openstack-request-id: req-b031f40c-ee61-419f-8f46-3a96a4be5bc0\n\n{\n  \"policy\": {\n    \"blob\": \"tempest-BlobName-1098962284\",\n    \"id\": \"8435032094214fc2b2e0b45a1f5e50e4\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4\"\n    },\n    \"type\": \"tempest-UpdatedPolicyType-1379767591\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -4990,16 +4525,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "blob": {
-              "foobar_user": [
-                "role:compute-user"
-              ]
-            }, 
-            "project_id": "456789", 
-            "type": "application/json", 
-            "user_id": "616263"
-          }
+          "text/plain": "PATCH /v3/policies/8435032094214fc2b2e0b45a1f5e50e4 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updatePolicy", 
         "method": "patch", 
@@ -5019,20 +4545,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "blob": {
-                  "foobar_user": [
-                    "role:compute-user"
-                  ]
-                }, 
-                "id": "717273", 
-                "links": {
-                  "self": "http://identity:35357/v3/policies/717273"
-                }, 
-                "project_id": "456789", 
-                "type": "application/json", 
-                "user_id": "616263"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 230\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:40 GMT\ncontent-type: application/json\nx-openstack-request-id: req-6d7be3d5-873a-4544-aa48-cf96f5b238ad\n\n{\n  \"policy\": {\n    \"blob\": \"tempest-BlobName-1098962284\",\n    \"id\": \"8435032094214fc2b2e0b45a1f5e50e4\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4\"\n    },\n    \"type\": \"tempest-UpdatedPolicyType-1379767591\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -5074,7 +4587,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/policies/8425e1226538430c92d9c9f68c1d7c37 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deletePolicy", 
         "method": "delete", 
         "parameters": [
@@ -5090,7 +4605,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:41 GMT\nx-openstack-request-id: req-a10374b3-89ad-428a-a981-83e115e28a97\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -5135,7 +4652,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/projects HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listProjects", 
         "method": "get", 
         "parameters": [
@@ -5194,35 +4713,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "https://identity:35357/v3/users/9fe1d3/projects"
-                }, 
-                "projects": [
-                  {
-                    "domain_id": "1789d1", 
-                    "enabled": true, 
-                    "id": "263fd9", 
-                    "links": {
-                      "self": "https://identity:35357/v3/projects/263fd9"
-                    }, 
-                    "name": "Test Group", 
-                    "parent_id": "123c56"
-                  }, 
-                  {
-                    "domain_id": "1789d1", 
-                    "enabled": true, 
-                    "id": "50ef01", 
-                    "links": {
-                      "self": "https://identity:35357/v3/projects/50ef01"
-                    }, 
-                    "name": "Build Group", 
-                    "parent_id": "123c56"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 5389\ncontent-location: http://127.0.0.1:35357/v3/projects\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:26 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3b7ce13a-1fea-4c55-8b2a-628ef5f873cf\n\n{\"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects\", \"previous\": null, \"next\": null}, \"projects\": [{\"is_domain\": false, \"description\": \"tempest-ServerActionsTestJSON-114888604-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/04e82878bb6b48e98fa8170bb21de6e1\"}, \"enabled\": true, \"id\": \"04e82878bb6b48e98fa8170bb21de6e1\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-ServerActionsTestJSON-114888604\"}, {\"is_domain\": false, \"description\": null, \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/0da6a6a18e1842dfa6bab2361c5f8c78\"}, \"enabled\": true, \"id\": \"0da6a6a18e1842dfa6bab2361c5f8c78\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-project-1525226819\"}, {\"is_domain\": false, \"description\": \"\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/1c1403595fe24e2f862c2a5f20ac269a\"}, \"enabled\": true, \"id\": \"1c1403595fe24e2f862c2a5f20ac269a\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"swifttenanttest1\"}, {\"is_domain\": false, \"description\": \"tempest-MultipleCreateNegativeTestJSON-442422824-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/2633b785c540470b9f46d77b9269c459\"}, \"enabled\": true, \"id\": \"2633b785c540470b9f46d77b9269c459\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-MultipleCreateNegativeTestJSON-442422824\"}, {\"is_domain\": false, \"description\": null, \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/3261fe5d854e48ac98ee47293e02ed48\"}, \"enabled\": false, \"id\": \"3261fe5d854e48ac98ee47293e02ed48\", \"parent_id\": null, \"domain_id\": \"c2e4b99b742d4f70a451772f1787836b\", \"name\": \"tempest-project-480208372\"}, {\"is_domain\": false, \"description\": \"\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/603e2acd7280415581e58d38a2fe1c87\"}, \"enabled\": true, \"id\": \"603e2acd7280415581e58d38a2fe1c87\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"admin\"}, {\"is_domain\": false, \"description\": \"\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/6e5b9d0ab67b4d1ca9e8b57cb2cb9fba\"}, \"enabled\": true, \"id\": \"6e5b9d0ab67b4d1ca9e8b57cb2cb9fba\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"swifttenanttest2\"}, {\"is_domain\": false, \"description\": \"tempest-ServersTestJSON-1478337693-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/73eb7d3d053e4fd3a52eb382a2720265\"}, \"enabled\": true, \"id\": \"73eb7d3d053e4fd3a52eb382a2720265\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-ServersTestJSON-1478337693\"}, {\"is_domain\": false, \"description\": \"\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/77044e1e011d419db467ead202a351f0\"}, \"enabled\": true, \"id\": \"77044e1e011d419db467ead202a351f0\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"demo\"}, {\"is_domain\": false, \"description\": \"tempest-ListProjectsTestJSON-365216161-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/8b6f32e300cf401c94ae625237798155\"}, \"enabled\": true, \"id\": \"8b6f32e300cf401c94ae625237798155\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-ListProjectsTestJSON-365216161\"}, {\"is_domain\": false, \"description\": \"tempest-ServersTestJSON-1973980000-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/9ec5d01fc75e466180830b8492ae7e35\"}, \"enabled\": true, \"id\": \"9ec5d01fc75e466180830b8492ae7e35\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-ServersTestJSON-1973980000\"}, {\"is_domain\": false, \"description\": \"tempest-MultipleCreateNegativeTestJSON-610832146-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/a80fe7e030994a4ea9a6bd169cb6a600\"}, \"enabled\": true, \"id\": \"a80fe7e030994a4ea9a6bd169cb6a600\", \"parent_id\": null, \"domain_id\": \"default\", \"name\": \"tempest-MultipleCreateNegativeTestJSON-610832146\"}, {\"is_domain\": false, \"description\": \"\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/projects/c35c44e94e89466d8bca12d96a9e22c8\"}, \"enabled\": true, \"id\": \"c35c44e94e89466d8bca12d96a9e22c8\", \"parent_id\": null, \"domain_id\": \"1f705ca0d9f44423be9c0c1bad001700\", \"name\": \"swifttenanttest4\"}, {\"is_domain\": false, \"description\": \"tempest-ServerActionsTestJSON-1516539030-desc\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/pro "
             }, 
             "headers": {}
           }, 
@@ -5235,7 +4726,9 @@
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 187\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:42 GMT\ncontent-type: application/json\nx-openstack-request-id: req-1bb669c2-bce0-48e5-8e63-62350194a28a\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: identity:list_projects (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -5267,15 +4760,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "project": {
-              "description": "My new project", 
-              "domain_id": "1789d1", 
-              "enabled": true, 
-              "name": "myNewProject", 
-              "parent_id": "123c56"
-            }
-          }
+          "text/plain": "POST /v3/projects HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createProject", 
         "method": "post", 
@@ -5296,23 +4781,14 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "project": {
-                  "domain_id": "1789d1", 
-                  "enabled": true, 
-                  "id": "456789", 
-                  "links": {
-                    "self": "http://identity:35357/v3/projects/456789"
-                  }, 
-                  "name": "myNewProject", 
-                  "parent_id": "123c56"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 343\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:36 GMT\ncontent-type: application/json\nx-openstack-request-id: req-f1357e30-7db2-4df1-8abe-bacfb9b0488b\n\n{\n  \"project\": {\n    \"description\": \"tempest-DomainsNegativeTestJSON-562228116-desc\",\n    \"domain_id\": \"default\",\n    \"enabled\": true,\n    \"id\": \"a1740ba0cb5749589e3755144c505011\",\n    \"is_domain\": false,\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/projects/a1740ba0cb5749589e3755144c505011\"\n    },\n    \"name\": \"tempest-DomainsNegativeTestJSON-562228116\",\n    \"parent_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 111\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:42 GMT\ncontent-type: application/json\nx-openstack-request-id: req-86588785-bcc1-4d3f-8c62-c3a1684674f0\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid input for field 'name'. The value is ''.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
@@ -5320,7 +4796,9 @@
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 188\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:41 GMT\ncontent-type: application/json\nx-openstack-request-id: req-42439810-f50e-4d7f-9ee3-f139c13bd8dd\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: identity:create_project (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -5330,6 +4808,11 @@
           "405": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "409": {
+            "examples": {
+              "text/plain": "HTTP/1.1 409\nstatus: 409\ncontent-length: 123\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:42 GMT\ncontent-type: application/json\nx-openstack-request-id: req-d1c2491b-7073-4ebb-a315-c43d4bc792f2\n\n{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"Conflict occurred attempting to store project - Duplicate Entry\",\n    \"title\": \"Conflict\"\n  }\n}"
+            }
           }, 
           "413": {
             "examples": {}, 
@@ -5353,7 +4836,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/projects/9ee98f64ce654c7a8d8a99e9da2db6ae HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getProject", 
         "method": "get", 
         "parameters": [
@@ -5372,18 +4857,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "project": {
-                  "domain_id": "1789d1", 
-                  "enabled": true, 
-                  "id": "456789", 
-                  "links": {
-                    "self": "http://identity:35357/v3/projects/456789"
-                  }, 
-                  "name": "myNewProject", 
-                  "parent_id": "123c56"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 284\ncontent-location: http://127.0.0.1:35357/v3/projects/9ee98f64ce654c7a8d8a99e9da2db6ae\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:49 GMT\ncontent-type: application/json\nx-openstack-request-id: req-57750a3b-6fc0-4337-bbee-a20db6ed839b\n\n{\n  \"project\": {\n    \"description\": null,\n    \"domain_id\": \"default\",\n    \"enabled\": true,\n    \"id\": \"9ee98f64ce654c7a8d8a99e9da2db6ae\",\n    \"is_domain\": false,\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/projects/9ee98f64ce654c7a8d8a99e9da2db6ae\"\n    },\n    \"name\": \"tempest-project2-796591604\",\n    \"parent_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -5428,15 +4902,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "project": {
-              "description": "My updated project", 
-              "domain_id": "1789d1", 
-              "enabled": true, 
-              "name": "myUpdatedProject", 
-              "parent_id": "123c56"
-            }
-          }
+          "text/plain": "PATCH /v3/projects/144f7e6de21a40adb003fbc88bdf46ce HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateProject", 
         "method": "patch", 
@@ -5456,19 +4922,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "project": {
-                  "description": "My updated project", 
-                  "domain_id": "1789d1", 
-                  "enabled": true, 
-                  "id": "263fd9", 
-                  "links": {
-                    "self": "http://identity:35357/v3/projects/263fd9"
-                  }, 
-                  "name": "myUpdatedProject", 
-                  "parent_id": "123c56"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 317\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:48 GMT\ncontent-type: application/json\nx-openstack-request-id: req-f5859a36-de13-4d9b-a9d7-10b73e12b66a\n\n{\n  \"project\": {\n    \"description\": \"tempest-desc2-975977724\",\n    \"domain_id\": \"default\",\n    \"enabled\": true,\n    \"extra\": {},\n    \"id\": \"144f7e6de21a40adb003fbc88bdf46ce\",\n    \"is_domain\": false,\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/projects/144f7e6de21a40adb003fbc88bdf46ce\"\n    },\n    \"name\": \"tempest-project-351045169\",\n    \"parent_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -5510,7 +4964,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/projects/c25f7174ecf34e72ad19d793ee32f5f1 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteProject", 
         "method": "delete", 
         "parameters": [
@@ -5526,7 +4982,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:40 GMT\nx-openstack-request-id: req-f8d144b8-46cb-4265-9a53-e8dfc6ce4c14\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -5538,11 +4996,15 @@
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 188\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:43 GMT\ncontent-type: application/json\nx-openstack-request-id: req-bb029329-0914-444d-ac37-3083cd8cd57d\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: identity:delete_project (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:42 GMT\ncontent-type: application/json\nx-openstack-request-id: req-ff6f0dab-ad78-4302-9dc6-93d9e310a7ee\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 6723cbacf4cc45d09914cc64c63a6427\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -5571,7 +5033,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/groups/5029ab7c67ea4504aeb088a8034d2c38/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listProjectGroupRoles", 
         "method": "get", 
         "parameters": [
@@ -5598,29 +5062,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/projects/456789/groups/101112/roles"
-                }, 
-                "roles": [
-                  {
-                    "id": "123456", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123456"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "id": "123457", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123457"
-                    }, 
-                    "name": "manager"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 345\ncontent-location: http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/groups/5029ab7c67ea4504aeb088a8034d2c38/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:53 GMT\ncontent-type: application/json\nx-openstack-request-id: req-52d8b58a-e09c-4081-b2c8-960ed5c25b6e\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/groups/5029ab7c67ea4504aeb088a8034d2c38/roles\"\n  },\n  \"roles\": [\n    {\n      \"id\": \"77f9414ff2d441d68161fc7ad6787378\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/77f9414ff2d441d68161fc7ad6787378\"\n      },\n      \"name\": \"tempest-Role-1912339669\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -5664,7 +5106,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/groups/5029ab7c67ea4504aeb088a8034d2c38/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "grantProjectGroupRole", 
         "method": "put", 
         "parameters": [
@@ -5696,7 +5140,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:52 GMT\nx-openstack-request-id: req-62b94220-2070-44f3-929d-17aa9e06d541\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -5810,7 +5256,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/groups/5029ab7c67ea4504aeb088a8034d2c38/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "revokeProjectGroupRole", 
         "method": "delete", 
         "parameters": [
@@ -5842,7 +5290,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:53 GMT\nx-openstack-request-id: req-d631fb7d-c3e2-4b71-a9bd-32f7f04a382d\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -5887,7 +5337,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listProjectUserRoles", 
         "method": "get", 
         "parameters": [
@@ -5914,29 +5366,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/projects/456789/users/313233/roles"
-                }, 
-                "roles": [
-                  {
-                    "id": "123456", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123456"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "id": "123457", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123457"
-                    }, 
-                    "name": "manager"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 344\ncontent-location: http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:54 GMT\ncontent-type: application/json\nx-openstack-request-id: req-20388672-6972-4839-a61e-3a3cff6e2b23\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles\"\n  },\n  \"roles\": [\n    {\n      \"id\": \"77f9414ff2d441d68161fc7ad6787378\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/77f9414ff2d441d68161fc7ad6787378\"\n      },\n      \"name\": \"tempest-Role-1912339669\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -5980,7 +5410,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v3/projects/6f4fe38784ee45e783344b223792e87b/users/59601c0aa76d40e3bc2f01671932c21d/roles/4e218caacb9848cbbd890e900330b971 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "grantProjectUserRole", 
         "method": "put", 
         "parameters": [
@@ -6012,7 +5444,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:04 GMT\nx-openstack-request-id: req-0a981af4-cbda-4aa3-9ea7-7a6f96016c09\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -6126,7 +5560,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "revokeProjectUserRole", 
         "method": "delete", 
         "parameters": [
@@ -6158,7 +5594,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:54 GMT\nx-openstack-request-id: req-e76f4429-9f9f-48b7-8c0a-d24de466bc55\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -6204,12 +5642,7 @@
         ], 
         "description": "If you try to add a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found (404)`` status code.\n\nIf you try to add a region with a parent region ID that would form\na circular relationship, this call returns the HTTP ``Conflict\n(409)`` status code.", 
         "examples": {
-          "application/json": {
-            "region": {
-              "description": "US West Subregion 1", 
-              "parent_region_id": "829551"
-            }
-          }
+          "text/plain": "POST /v3/regions HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createRegion", 
         "method": "post", 
@@ -6230,17 +5663,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "region": {
-                  "description": "US West Subregion 1", 
-                  "id": "8ebd7f", 
-                  "links": {
-                    "child_regions": "https://identity:35357/v3/regions?parent_region_id=8ebd7f", 
-                    "self": "https://identity:35357/v3/regions/8ebd7f"
-                  }, 
-                  "parent_region_id": "829551"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 247\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:46 GMT\ncontent-type: application/json\nx-openstack-request-id: req-dcc9870b-a23e-4028-89cf-c829cf5cb6c2\n\n{\n  \"region\": {\n    \"description\": \"tempest-description-1659471810\",\n    \"id\": \"8d30ffdfb4f8417ab52aa111718a8625\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/regions/8d30ffdfb4f8417ab52aa111718a8625\"\n    },\n    \"parent_region_id\": \"0ffaa3054e9b413b834c7e4ca3f3f89a\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -6284,7 +5707,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/regions HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listRegions", 
         "method": "get", 
         "parameters": [
@@ -6303,24 +5728,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "https://identity:35357/v3/regions"
-                }, 
-                "regions": [
-                  {
-                    "description": "US East Region", 
-                    "id": "us-east", 
-                    "links": {
-                      "child_regions": "https://identity:35357/v3/regions?parent_region_id=us-east", 
-                      "self": "https://identity:35357/v3/regions/us-east"
-                    }, 
-                    "parent_region_id": "us-east-coast"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1134\ncontent-location: http://127.0.0.1:5000/v3/regions\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:47 GMT\ncontent-type: application/json\nx-openstack-request-id: req-912673a3-b582-49ac-b3ea-31bee76465d7\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:5000/v3/regions\"\n  },\n  \"regions\": [\n    {\n      \"description\": \"tempest-description-1212323079\",\n      \"id\": \"0ffaa3054e9b413b834c7e4ca3f3f89a\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/0ffaa3054e9b413b834c7e4ca3f3f89a\"\n      },\n      \"parent_region_id\": null\n    },\n    {\n      \"description\": \"tempest-description-1344302414\",\n      \"id\": \"2419235a3f2946009c9ac9407d0e2ba3\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/2419235a3f2946009c9ac9407d0e2ba3\"\n      },\n      \"parent_region_id\": null\n    },\n    {\n      \"description\": \"\",\n      \"id\": \"RegionOne\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/RegionOne\"\n      },\n      \"parent_region_id\": null\n    },\n    {\n      \"description\": \"\",\n      \"id\": \"tempest-region-1329552328\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/tempest-region-1329552328\"\n      },\n      \"parent_region_id\": null\n    },\n    {\n      \"description\": \"\",\n      \"id\": \"tempest-region-1604766293\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/tempest-region-1604766293\"\n      },\n      \"parent_region_id\": null\n    },\n    {\n      \"description\": \"\",\n      \"id\": \"tempest-region-1967585838\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/regions/tempest-region-1967585838\"\n      },\n      \"parent_region_id\": null\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -6366,7 +5774,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/regions/8d30ffdfb4f8417ab52aa111718a8625 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getRegion", 
         "method": "get", 
         "parameters": [
@@ -6385,17 +5795,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "region": {
-                  "description": "US Southwest Region", 
-                  "id": "us-southwest", 
-                  "links": {
-                    "child_regions": "http://identity:35357/v3/regions?parent_region_id=us-southwest", 
-                    "self": "https://identity:35357/v3/regions/us-southwest"
-                  }, 
-                  "parent_region_id": "us-west-coast"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 247\ncontent-location: http://127.0.0.1:5000/v3/regions/8d30ffdfb4f8417ab52aa111718a8625\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:47 GMT\ncontent-type: application/json\nx-openstack-request-id: req-9a0dec85-3562-4de9-8fee-000c128dd170\n\n{\n  \"region\": {\n    \"description\": \"tempest-description-2090277711\",\n    \"id\": \"8d30ffdfb4f8417ab52aa111718a8625\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/regions/8d30ffdfb4f8417ab52aa111718a8625\"\n    },\n    \"parent_region_id\": \"2419235a3f2946009c9ac9407d0e2ba3\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -6412,7 +5812,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 116\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:47 GMT\ncontent-type: application/json\nx-openstack-request-id: req-72c67bcb-ce9e-4db7-bc4c-0f56faf40249\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find region: 8d30ffdfb4f8417ab52aa111718a8625\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -6440,12 +5842,7 @@
         ], 
         "description": "If you try to update a region with a parent region ID that does not\nexist, this call returns the HTTP ``Not Found (404)`` status code.", 
         "examples": {
-          "application/json": {
-            "region": {
-              "description": "US Southwest Subregion", 
-              "parent_region_id": "us-southwest"
-            }
-          }
+          "text/plain": "PATCH /v3/regions/8d30ffdfb4f8417ab52aa111718a8625 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateRegion", 
         "method": "patch", 
@@ -6474,17 +5871,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "region": {
-                  "description": "US Southwest Subregion", 
-                  "id": "us-southwest-1", 
-                  "links": {
-                    "child_regions": "https://identity:35357/v3/regions?parent_region_id=us-southwest-1", 
-                    "self": "https://identity:35357/v3/regions/us-southwest-1"
-                  }, 
-                  "parent_region_id": "us-southwest"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 247\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:47 GMT\ncontent-type: application/json\nx-openstack-request-id: req-c9cd329d-a792-40bc-b685-94b6111e4fa4\n\n{\n  \"region\": {\n    \"description\": \"tempest-description-2090277711\",\n    \"id\": \"8d30ffdfb4f8417ab52aa111718a8625\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/regions/8d30ffdfb4f8417ab52aa111718a8625\"\n    },\n    \"parent_region_id\": \"2419235a3f2946009c9ac9407d0e2ba3\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -6526,7 +5913,9 @@
       {
         "consumes": [], 
         "description": "If you try to delete a region that has child regions, this call\nreturns the HTTP ``Conflict (409)`` status code.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/regions/2419235a3f2946009c9ac9407d0e2ba3 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteRegion", 
         "method": "delete", 
         "parameters": [
@@ -6542,7 +5931,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:48 GMT\nx-openstack-request-id: req-903376de-7965-4680-832c-2ed2d99579ff\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -6776,7 +6167,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listRoles", 
         "method": "get", 
         "parameters": [
@@ -6811,29 +6204,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/roles"
-                }, 
-                "roles": [
-                  {
-                    "id": "123456", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123456"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "id": "123457", 
-                    "links": {
-                      "self": "http://identity:35357/v3/roles/123457"
-                    }, 
-                    "name": "manager"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1005\ncontent-location: http://127.0.0.1:35357/v3/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:00 GMT\ncontent-type: application/json\nx-openstack-request-id: req-5dd226d6-9477-4f37-b4c9-70ab879baf1f\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/roles\"\n  },\n  \"roles\": [\n    {\n      \"id\": \"28ff384b1a8340e48c14c613d60730a1\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/28ff384b1a8340e48c14c613d60730a1\"\n      },\n      \"name\": \"Member\"\n    },\n    {\n      \"id\": \"4e218caacb9848cbbd890e900330b971\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/4e218caacb9848cbbd890e900330b971\"\n      },\n      \"name\": \"admin\"\n    },\n    {\n      \"id\": \"9fe2ff9ee4384b1894a90878d3e92bab\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/9fe2ff9ee4384b1894a90878d3e92bab\"\n      },\n      \"name\": \"_member_\"\n    },\n    {\n      \"id\": \"c188c4fd3570441ca99491131e443f2d\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/c188c4fd3570441ca99491131e443f2d\"\n      },\n      \"name\": \"service\"\n    },\n    {\n      \"id\": \"c1cfeaacbf364a058e1bfba3521f8fb0\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/c1cfeaacbf364a058e1bfba3521f8fb0\"\n      },\n      \"name\": \"anotherrole\"\n    },\n    {\n      \"id\": \"cd60863d48984ba988da0cdc14733d51\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/roles/cd60863d48984ba988da0cdc14733d51\"\n      },\n      \"name\": \"ResellerAdmin\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -6878,11 +6249,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "role": {
-              "name": "a role name"
-            }
-          }
+          "text/plain": "POST /v3/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createRole", 
         "method": "post", 
@@ -6903,13 +6270,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "id": "123456", 
-                "links": {
-                  "self": "http://identity:35357/v3/roles/123456"
-                }, 
-                "name": "a role name"
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 185\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:37 GMT\ncontent-type: application/json\nx-openstack-request-id: req-de910299-d3a2-48d9-971d-22e4c02453f1\n\n{\n  \"role\": {\n    \"id\": \"445f4857ffba43a98fd91d04fbc76774\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/roles/445f4857ffba43a98fd91d04fbc76774\"\n    },\n    \"name\": \"tempest-NotDelegatedRole-983902140\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -6955,7 +6316,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getRole", 
         "method": "get", 
         "parameters": [
@@ -6974,13 +6337,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "id": "123456", 
-                "links": {
-                  "self": "http://identity:35357/v3/roles/131415"
-                }, 
-                "name": "a role name"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 176\ncontent-location: http://127.0.0.1:35357/v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:55 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3085daa1-7bf2-4592-a541-38af54db5748\n\n{\n  \"role\": {\n    \"id\": \"dc1d5e8fbe944d4fa7bef3cd7d37a001\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001\"\n    },\n    \"name\": \"tempest-NewRole-457774585\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7025,11 +6382,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "role": {
-              "name": "a new role name"
-            }
-          }
+          "text/plain": "PATCH /v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateRole", 
         "method": "patch", 
@@ -7049,13 +6402,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "id": "123456", 
-                "links": {
-                  "self": "http://identity:35357/v3/roles/131415"
-                }, 
-                "name": "a role name"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 176\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:55 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4e7e9691-5b49-447b-8cd9-151966514ca4\n\n{\n  \"role\": {\n    \"id\": \"dc1d5e8fbe944d4fa7bef3cd7d37a001\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001\"\n    },\n    \"name\": \"tempest-NewRole-457774585\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7097,7 +6444,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/roles/445f4857ffba43a98fd91d04fbc76774 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteRole", 
         "method": "delete", 
         "parameters": [
@@ -7113,7 +6462,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:38 GMT\nx-openstack-request-id: req-4ca18fe4-a375-4619-ad10-3f8eb37fc731\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -7158,7 +6509,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/services HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listServices", 
         "method": "get", 
         "parameters": [
@@ -7193,33 +6546,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:5000/v3/services"
-                }, 
-                "services": [
-                  {
-                    "description": "Keystone Identity Service", 
-                    "enabled": true, 
-                    "id": "686766", 
-                    "links": {
-                      "self": "http://identity:5000/v3/services/686766"
-                    }, 
-                    "name": "keystone", 
-                    "type": "identity"
-                  }, 
-                  {
-                    "enabled": true, 
-                    "id": "936521", 
-                    "links": {
-                      "self": "http://identity:5000/v3/services/936521"
-                    }, 
-                    "type": "volume"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 3106\ncontent-location: http://127.0.0.1:5000/v3/services\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:31 GMT\ncontent-type: application/json\nx-openstack-request-id: req-e88f834e-6ab3-44d7-8c84-1408176a9c16\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:5000/v3/services\"\n  },\n  \"services\": [\n    {\n      \"description\": \"Cinder Volume Service\",\n      \"enabled\": true,\n      \"id\": \"084996172f8b4733b88ea230142dd67c\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/084996172f8b4733b88ea230142dd67c\"\n      },\n      \"name\": \"cinder\",\n      \"type\": \"volume\"\n    },\n    {\n      \"description\": \"Glance Image Service\",\n      \"enabled\": true,\n      \"id\": \"0874fa2346484eb8889ffc52c4f4c3d0\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/0874fa2346484eb8889ffc52c4f4c3d0\"\n      },\n      \"name\": \"glance\",\n      \"type\": \"image\"\n    },\n    {\n      \"description\": \"Nova Compute Service (Legacy 2.0)\",\n      \"enabled\": true,\n      \"id\": \"1d5fd306ed9a43f3bdf68063a86cf6c9\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/1d5fd306ed9a43f3bdf68063a86cf6c9\"\n      },\n      \"name\": \"nova_legacy\",\n      \"type\": \"compute_legacy\"\n    },\n    {\n      \"description\": null,\n      \"enabled\": true,\n      \"id\": \"2362f07d8e074559abd6d9106b664e12\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/2362f07d8e074559abd6d9106b664e12\"\n      },\n      \"name\": \"tempest-service-1682286042\",\n      \"type\": \"tempest-type-196921771\"\n    },\n    {\n      \"description\": null,\n      \"enabled\": true,\n      \"id\": \"28a0e29bbf55490db5d974b995c40081\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/28a0e29bbf55490db5d974b995c40081\"\n      },\n      \"name\": \"tempest-service-1853710985\",\n      \"type\": \"tempest-type-113451415\"\n    },\n    {\n      \"description\": \"OpenStack Telemetry Service\",\n      \"enabled\": true,\n      \"id\": \"2a4c92e3fad143ac9dafe542fc876792\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/2a4c92e3fad143ac9dafe542fc876792\"\n      },\n      \"name\": \"ceilometer\",\n      \"type\": \"metering\"\n    },\n    {\n      \"description\": \"Keystone Identity Service\",\n      \"enabled\": true,\n      \"id\": \"7f394a3e102f4fd78c39694efdeeff2c\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/7f394a3e102f4fd78c39694efdeeff2c\"\n      },\n      \"name\": \"keystone\",\n      \"type\": \"identity\"\n    },\n    {\n      \"description\": \"S3\",\n      \"enabled\": true,\n      \"id\": \"8a37a7869fe042d0a1f7f1d7832fc027\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/8a37a7869fe042d0a1f7f1d7832fc027\"\n      },\n      \"name\": \"s3\",\n      \"type\": \"s3\"\n    },\n    {\n      \"description\": null,\n      \"enabled\": true,\n      \"id\": \"8c3c49e0e9fb4d1b9f91779e688468eb\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/8c3c49e0e9fb4d1b9f91779e688468eb\"\n      },\n      \"name\": \"tempest-service-1118782627\",\n      \"type\": \"tempest-type-1857061173\"\n    },\n    {\n      \"description\": \"Nova Compute Service\",\n      \"enabled\": true,\n      \"id\": \"a55fc374a66245a192ba19e807586a65\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/a55fc374a66245a192ba19e807586a65\"\n      },\n      \"name\": \"nova\",\n      \"type\": \"compute\"\n    },\n    {\n      \"description\": \"Cinder Volume Service V2\",\n      \"enabled\": true,\n      \"id\": \"c08472fa96cf4a28bb347985fb1e60fb\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/c08472fa96cf4a28bb347985fb1e60fb\"\n      },\n      \"name\": \"cinderv2\",\n      \"type\": \"volumev2\"\n    },\n    {\n      \"description\": \"EC2 Compatibility Layer\",\n      \"enabled\": true,\n      \"id\": \"c9e4b5f796494282823764eebca119ff\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/c9e4b5f796494282823764eebca119ff\"\n      },\n      \"name\": \"ec2\",\n      \"type\": \"ec2\"\n    },\n    {\n      \"description\": \"Swift Service\",\n      \"enabled\": true,\n      \"id\": \"eadc8f78a1774f4e912245b514392592\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:5000/v3/services/eadc8f78a1774f4e912245b514392592\"\n      },\n      \"name\": \"swift\",\n      \"type\": \"object-store\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -7264,11 +6591,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "service": {
-              "type": "volume"
-            }
-          }
+          "text/plain": "POST /v3/services HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createService", 
         "method": "post", 
@@ -7289,16 +6612,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "service": {
-                  "enabled": true, 
-                  "id": "686766", 
-                  "links": {
-                    "self": "http://identity:5000/v3/services/686766"
-                  }, 
-                  "type": "volume"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 255\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:30 GMT\ncontent-type: application/json\nx-openstack-request-id: req-1f8f6db6-0694-48de-a13a-7ce8dd873294\n\n{\n  \"service\": {\n    \"description\": null,\n    \"enabled\": true,\n    \"id\": \"9f8074c63b584738a3c00e88a57c5000\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/services/9f8074c63b584738a3c00e88a57c5000\"\n    },\n    \"name\": \"tempest-service-1458420622\",\n    \"type\": \"tempest-type-2020212939\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7344,7 +6658,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/services/5f2fc6142e5c4aaf8f1ecef3d61c7da1 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getService", 
         "method": "get", 
         "parameters": [
@@ -7363,18 +6679,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "service": {
-                  "description": "Keystone Identity Service", 
-                  "enabled": true, 
-                  "id": "686766", 
-                  "links": {
-                    "self": "http://identity:5000/v3/services/686766"
-                  }, 
-                  "name": "keystone", 
-                  "type": "identity"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 274\ncontent-location: http://127.0.0.1:5000/v3/services/5f2fc6142e5c4aaf8f1ecef3d61c7da1\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:30 GMT\ncontent-type: application/json\nx-openstack-request-id: req-ab2b4a6c-4454-4b9d-ac89-aa15d28da904\n\n{\n  \"service\": {\n    \"description\": \"tempest-desc2-563655736\",\n    \"enabled\": true,\n    \"id\": \"5f2fc6142e5c4aaf8f1ecef3d61c7da1\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/services/5f2fc6142e5c4aaf8f1ecef3d61c7da1\"\n    },\n    \"name\": \"tempest-service-864307568\",\n    \"type\": \"tempest-type-316252317\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7391,7 +6696,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:30 GMT\ncontent-type: application/json\nx-openstack-request-id: req-f3b2eeae-c5d2-454d-b75d-f4fa95ba1589\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find service: 5f2fc6142e5c4aaf8f1ecef3d61c7da1\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -7419,9 +6726,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "type": "volume"
-          }
+          "text/plain": "PATCH /v3/services/5f2fc6142e5c4aaf8f1ecef3d61c7da1 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateService", 
         "method": "patch", 
@@ -7450,12 +6755,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "service": {
-                  "id": "686766", 
-                  "type": "volume"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 274\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:30 GMT\ncontent-type: application/json\nx-openstack-request-id: req-30ab9297-727c-45c7-ab32-4e483e0af5d9\n\n{\n  \"service\": {\n    \"description\": \"tempest-desc2-563655736\",\n    \"enabled\": true,\n    \"id\": \"5f2fc6142e5c4aaf8f1ecef3d61c7da1\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:5000/v3/services/5f2fc6142e5c4aaf8f1ecef3d61c7da1\"\n    },\n    \"name\": \"tempest-service-864307568\",\n    \"type\": \"tempest-type-316252317\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7497,7 +6797,9 @@
       {
         "consumes": [], 
         "description": "If you try to delete a service when endpoints exist, this call\neither deletes all associated endpoints or fails until all\nendpoints are deleted.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/services/07a05a9b98714b95813423bfdd33c20d HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteService", 
         "method": "delete", 
         "parameters": [
@@ -7513,7 +6815,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:58 GMT\nx-openstack-request-id: req-cfd4ca87-f621-4bc2-bcc1-4e0b1c0ddc3e\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -7558,7 +6862,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listUsers", 
         "method": "get", 
         "parameters": [
@@ -7609,39 +6915,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/users"
-                }, 
-                "users": [
-                  {
-                    "default_project_id": "263fd9", 
-                    "description": "Admin user", 
-                    "domain_id": "1789d1", 
-                    "email": "admin@example.com", 
-                    "enabled": true, 
-                    "id": "0ca8f6", 
-                    "links": {
-                      "self": "https://identity:35357/v3/users/0ca8f6"
-                    }, 
-                    "name": "admin"
-                  }, 
-                  {
-                    "default_project_id": "263fd9", 
-                    "description": "John Smith's user", 
-                    "domain_id": "1789d1", 
-                    "email": "jsmith@example.com", 
-                    "enabled": true, 
-                    "id": "9fe1d3", 
-                    "links": {
-                      "self": "https://identity:35357/v3/users/9fe1d3"
-                    }, 
-                    "name": "jsmith"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 5531\ncontent-location: http://127.0.0.1:35357/v3/users\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:07 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3bbc7801-a366-4418-a62d-e20d7f8d6171\n\n{\"users\": [{\"name\": \"admin\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/089382dc16a24f239480bc3ef63159c5\"}, \"enabled\": true, \"id\": \"089382dc16a24f239480bc3ef63159c5\", \"domain_id\": \"default\"}, {\"domain_id\": \"default\", \"name\": \"tempest-VolumesV2GetTest-563803670\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/1c1af67539f140b0a720ab9f40bf6034\"}, \"id\": \"1c1af67539f140b0a720ab9f40bf6034\", \"enabled\": true, \"email\": \"tempest-VolumesV2GetTest-1855744208@example.com\", \"default_project_id\": \"d3221d8bd46c418bb06f024bef00d584\"}, {\"project_id\": null, \"name\": \"tempest-test_user-63816401\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/1d5d337581614b62922f0ff5f088d725\"}, \"enabled\": false, \"email\": \"tempest-test_user-472286789@testmail.tm\", \"id\": \"1d5d337581614b62922f0ff5f088d725\", \"domain_id\": \"default\", \"description\": null}, {\"name\": \"cinder\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/230e1024da7a4b45917b880c9ca87ac6\"}, \"enabled\": true, \"id\": \"230e1024da7a4b45917b880c9ca87ac6\", \"domain_id\": \"default\"}, {\"project_id\": \"a7f2c6256a2b48488897907c521f68bf\", \"name\": \"tempest-UsersV3TestJSON-721121862\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/26b740aa265d4c50911039136890e567\"}, \"enabled\": true, \"email\": \"tempest-UsersV3TestJSON-383201889@example.com\", \"id\": \"26b740aa265d4c50911039136890e567\", \"domain_id\": \"default\", \"description\": null}, {\"project_id\": null, \"name\": \"tempest-test_user-1679214187\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/357df8478a50467ab4a4c83668159b66\"}, \"enabled\": true, \"email\": \"tempest-test_user-472286789@testmail.tm\", \"id\": \"357df8478a50467ab4a4c83668159b66\", \"domain_id\": \"6ca1588d3c0c4a31baf67fccec72568d\", \"description\": null}, {\"name\": \"nova\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/3edf1b4319c24c30a22ded62ea59cb46\"}, \"enabled\": true, \"id\": \"3edf1b4319c24c30a22ded62ea59cb46\", \"domain_id\": \"default\"}, {\"name\": \"glance-swift\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/40b69c4effea4a9bb40fc53fa36d1c42\"}, \"domain_id\": \"default\", \"enabled\": true, \"email\": \"glance-swift@example.com\", \"id\": \"40b69c4effea4a9bb40fc53fa36d1c42\"}, {\"domain_id\": \"default\", \"name\": \"tempest-VolumesV2ActionsTest-1284652667\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/4cc49c0eed4643ca9ed2899d2b081d30\"}, \"id\": \"4cc49c0eed4643ca9ed2899d2b081d30\", \"enabled\": true, \"email\": \"tempest-VolumesV2ActionsTest-1409958351@example.com\", \"default_project_id\": \"25ed642d7ca8406b92c3a2501dc68f86\"}, {\"name\": \"swiftusertest4\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/55cbed8786424a85a3a7a2271689fea9\"}, \"domain_id\": \"1f705ca0d9f44423be9c0c1bad001700\", \"enabled\": true, \"email\": \"test4@example.com\", \"id\": \"55cbed8786424a85a3a7a2271689fea9\"}, {\"project_id\": \"6f4fe38784ee45e783344b223792e87b\", \"name\": \"tempest-UsersV3TestJSON-1513255188\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/59601c0aa76d40e3bc2f01671932c21d\"}, \"enabled\": true, \"email\": \"tempest-UsersV3TestJSON-1214502762@example.com\", \"id\": \"59601c0aa76d40e3bc2f01671932c21d\", \"domain_id\": \"default\", \"description\": null}, {\"name\": \"swift\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/7a01e140f98343348e6ced5cba50435e\"}, \"enabled\": true, \"id\": \"7a01e140f98343348e6ced5cba50435e\", \"domain_id\": \"default\"}, {\"name\": \"swiftusertest1\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/85bf8d82e7c44013ac1fcdc0fe2d1dd4\"}, \"domain_id\": \"default\", \"enabled\": true, \"email\": \"test@example.com\", \"id\": \"85bf8d82e7c44013ac1fcdc0fe2d1dd4\"}, {\"name\": \"swiftusertest3\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/8fee3fbfc5c14709a08bc93c5e80e83e\"}, \"domain_id\": \"default\", \"enabled\": true, \"email\": \"test3@example.com\", \"id\": \"8fee3fbfc5c14709a08bc93c5e80e83e\"}, {\"name\": \"glance\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/99ff77b0c0e24ee4b8735ce5dd68cffe\"}, \"enabled\": true, \"id\": \"99ff77b0c0e24ee4b8735ce5dd68cffe\", \"domain_id\": \"default\"}, {\"domain_id\": \"default\", \"name\": \"tempest-VolumesV2ActionsTest-968673057\", \"links\": {\"self\": \"http://127.0.0.1:35357/v3/users/9dbc46bb193d4deda3d138133871580a\"}, \"id\": \"9dbc46bb193d4deda3d1 "
             }, 
             "headers": {}
           }, 
@@ -7686,17 +6960,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "user": {
-              "default_project_id": "263fd9", 
-              "description": "James Doe's user", 
-              "domain_id": "1789d1", 
-              "email": "jdoe@example.com", 
-              "enabled": true, 
-              "name": "James Doe", 
-              "password": "secretsecret"
-            }
-          }
+          "text/plain": "POST /v3/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createUser", 
         "method": "post", 
@@ -7717,20 +6981,7 @@
         "responses": {
           "201": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "default_project_id": "263fd9", 
-                  "description": "James Doe's user", 
-                  "domain_id": "1789d1", 
-                  "email": "jdoe@example.com", 
-                  "enabled": true, 
-                  "id": "ff4e51", 
-                  "links": {
-                    "self": "https://identity:35357/v3/users/ff4e51"
-                  }, 
-                  "name": "James Doe"
-                }
-              }
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 366\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:03:41 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0f3982e7-c181-46e5-9085-0f33aa6cdcdf\n\n{\n  \"user\": {\n    \"description\": \"tempest-user-1475109074description\",\n    \"domain_id\": \"default\",\n    \"email\": \"tempest-user-1475109074@testmail.xx\",\n    \"enabled\": true,\n    \"id\": \"835e9d03f13a4bdca522422c9483532c\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/users/835e9d03f13a4bdca522422c9483532c\"\n    },\n    \"name\": \"tempest-user-1475109074\",\n    \"project_id\": \"1060da699b7c4fa1a28758b28aec7841\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7776,7 +7027,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getUser", 
         "method": "get", 
         "parameters": [
@@ -7795,20 +7048,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "default_project_id": "263fd9", 
-                  "description": "John Smith's user", 
-                  "domain_id": "1789d1", 
-                  "email": "jsmith@example.com", 
-                  "enabled": true, 
-                  "id": "9fe1d3", 
-                  "links": {
-                    "self": "https://identity:35357/v3/users/9fe1d3"
-                  }, 
-                  "name": "jsmith"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 337\ncontent-location: http://127.0.0.1:35357/v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:36 GMT\ncontent-type: application/json\nx-openstack-request-id: req-134f00e9-8048-4988-b46e-8f375ddda464\n\n{\n  \"user\": {\n    \"description\": \"tempest-user-2072830409description\",\n    \"domain_id\": \"default\",\n    \"email\": \"tempest-user-2072830409@testmail.tm\",\n    \"enabled\": false,\n    \"id\": \"dd78eff4b37a4cf193cd935bcbe0a1a0\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0\"\n    },\n    \"name\": \"tempest-user-2072830409\",\n    \"project_id\": null\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7853,14 +7093,7 @@
         ], 
         "description": "If the back-end driver does not allow this functionality, this call\nmight return the HTTP ``Not Implemented (501)`` status code.", 
         "examples": {
-          "application/json": {
-            "user": {
-              "default_project_id": "263fd9", 
-              "description": "James Doe's user", 
-              "email": "jamesdoe@example.com", 
-              "enabled": true
-            }
-          }
+          "text/plain": "PATCH /v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateUser", 
         "method": "patch", 
@@ -7880,20 +7113,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "default_project_id": "263fd9", 
-                  "description": "James Doe's user", 
-                  "domain_id": "1789d1", 
-                  "email": "jamesdoe@example.com", 
-                  "enabled": true, 
-                  "id": "ff4e51", 
-                  "links": {
-                    "self": "https://identity:35357/v3/users/ff4e51"
-                  }, 
-                  "name": "jamesdoe"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 536\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:36 GMT\ncontent-type: application/json\nx-openstack-request-id: req-ed5a1295-600d-4d68-9e37-d77162d121ce\n\n{\n  \"user\": {\n    \"description\": \"tempest-user2-1632958695 description\",\n    \"domain_id\": \"default\",\n    \"email\": \"tempest-user2-1632958695@testmail.tm\",\n    \"enabled\": false,\n    \"extra\": {\n      \"description\": \"tempest-user2-1632958695 description\",\n      \"email\": \"tempest-user2-1632958695@testmail.tm\",\n      \"project_id\": \"6357aab2bc35475abdbc279c896d42b3\"\n    },\n    \"id\": \"dd78eff4b37a4cf193cd935bcbe0a1a0\",\n    \"links\": {\n      \"self\": \"http://127.0.0.1:35357/v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0\"\n    },\n    \"name\": \"tempest-user2-1632958695\",\n    \"project_id\": \"6357aab2bc35475abdbc279c896d42b3\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -7935,7 +7155,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v3/users/357df8478a50467ab4a4c83668159b66 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteUser", 
         "method": "delete", 
         "parameters": [
@@ -7951,7 +7173,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:11:08 GMT\nx-openstack-request-id: req-5cdeee4f-0010-44bc-b2cb-d9bee9b3eb6f\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -7996,7 +7220,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listUserGroups", 
         "method": "get", 
         "parameters": [
@@ -8015,33 +7241,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "groups": [
-                  {
-                    "description": "Developers cleared for work on all general projects", 
-                    "domain_id": "1789d1", 
-                    "id": "ea167b", 
-                    "links": {
-                      "self": "https://identity:35357/v3/groups/ea167b"
-                    }, 
-                    "name": "Developers"
-                  }, 
-                  {
-                    "description": "Developers cleared for work on secret projects", 
-                    "domain_id": "1789d1", 
-                    "id": "a62db1", 
-                    "links": {
-                      "self": "https://identity:35357/v3/groups/a62db1"
-                    }, 
-                    "name": "Secure Developers"
-                  }
-                ], 
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/users/9fe1d3/groups"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 602\ncontent-location: http://127.0.0.1:35357/v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:35 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3e55a980-0d3d-4a0e-8f0b-e53f6d6d6006\n\n{\n  \"groups\": [\n    {\n      \"description\": null,\n      \"domain_id\": \"default\",\n      \"id\": \"4cefd21636964b6ea6f0ecddef201a27\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/4cefd21636964b6ea6f0ecddef201a27\"\n      },\n      \"name\": \"tempest-Group-1913640981\",\n      \"project_id\": null\n    },\n    {\n      \"description\": null,\n      \"domain_id\": \"default\",\n      \"id\": \"cc9996abc66c42ca9158d0207ad8925c\",\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/groups/cc9996abc66c42ca9158d0207ad8925c\"\n      },\n      \"name\": \"tempest-Group-37575467\",\n      \"project_id\": null\n    }\n  ],\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -8087,7 +7287,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v3/users/00e72607e2d04d0c9a792e06f50a4a0f/projects HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listUserProjects", 
         "method": "get", 
         "parameters": [
@@ -8106,37 +7308,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "links": {
-                  "next": null, 
-                  "previous": null, 
-                  "self": "http://identity:35357/v3/users/313233/projects"
-                }, 
-                "projects": [
-                  {
-                    "description": "description of this project", 
-                    "domain_id": "161718", 
-                    "enabled": true, 
-                    "id": "456788", 
-                    "links": {
-                      "self": "http://identity:35357/v3/projects/456788"
-                    }, 
-                    "name": "a project name", 
-                    "parent_id": "212223"
-                  }, 
-                  {
-                    "description": "description of this project", 
-                    "domain_id": "161718", 
-                    "enabled": true, 
-                    "id": "456789", 
-                    "links": {
-                      "self": "http://identity:35357/v3/projects/456789"
-                    }, 
-                    "name": "another domain", 
-                    "parent_id": "212223"
-                  }
-                ]
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 474\ncontent-location: http://127.0.0.1:35357/v3/users/00e72607e2d04d0c9a792e06f50a4a0f/projects\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:01 GMT\ncontent-type: application/json\nx-openstack-request-id: req-1e65504a-e495-43ff-9ef9-4f25708a5f4f\n\n{\n  \"links\": {\n    \"next\": null,\n    \"previous\": null,\n    \"self\": \"http://127.0.0.1:35357/v3/users/00e72607e2d04d0c9a792e06f50a4a0f/projects\"\n  },\n  \"projects\": [\n    {\n      \"description\": \"tempest-IdentityV3ProjectsTest-1942622525-desc\",\n      \"domain_id\": \"default\",\n      \"enabled\": true,\n      \"id\": \"1de5cde028ab43eb91080b75482c9ee8\",\n      \"is_domain\": false,\n      \"links\": {\n        \"self\": \"http://127.0.0.1:35357/v3/projects/1de5cde028ab43eb91080b75482c9ee8\"\n      },\n      \"name\": \"tempest-IdentityV3ProjectsTest-1942622525\",\n      \"parent_id\": null\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 

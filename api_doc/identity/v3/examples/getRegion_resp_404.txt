@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 116
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:47 GMT
+content-type: application/json
+x-openstack-request-id: req-72c67bcb-ce9e-4db7-bc4c-0f56faf40249
+
+{
+  "error": {
+    "code": 404,
+    "message": "Could not find region: 8d30ffdfb4f8417ab52aa111718a8625",
+    "title": "Not Found"
+  }
+}

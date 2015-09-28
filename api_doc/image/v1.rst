@@ -6,7 +6,9 @@
    image, leaves the existing memberships unmodified, and sets the
    ``can_share`` attribute to ``false`` for new memberships.
 
-   :requestexample: v1/examples/addMember-v1_req.json
+   :requestexample: v1/examples/addMember-v1_req.txt
+   :responseexample 404: v1/examples/addMember-v1_resp_404.txt
+   :responseexample 204: v1/examples/addMember-v1_resp_204.txt
    :accepts: application/json
    :produces: application/json
    :tag: members
@@ -14,6 +16,7 @@
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :parameter owner_id: Owner ID, which is the tenant ID.
+   :statuscode 404: 
    :statuscode 204: 
 
 
@@ -23,11 +26,15 @@
 
    
 
+   :requestexample: v1/examples/removeMember-v1_req.txt
+   :responseexample 404: v1/examples/removeMember-v1_resp_404.txt
+   :responseexample 204: v1/examples/removeMember-v1_resp_204.txt
    :tag: members
    :requestschema: v1/removeMember-v1.json
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :parameter owner_id: Owner ID, which is the tenant ID.
+   :statuscode 404: 
    :statuscode 204: 
 
 
@@ -53,7 +60,8 @@
 
    
 
-   :responseexample 200: v1/examples/getSharedImages-v1_resp_200.json
+   :requestexample: v1/examples/getSharedImages-v1_req.txt
+   :responseexample 200: v1/examples/getSharedImages-v1_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: shared-images
@@ -67,9 +75,14 @@
 
    
 
+   :requestexample: v1/examples/createImage-v1_req.txt
+   :responseexample 201: v1/examples/createImage-v1_resp_201.txt
+   :responseexample 400: v1/examples/createImage-v1_resp_400.txt
    :tag: images
    :requestschema: v1/createImage-v1.json
+   :statuscode 201: 
    :statuscode 202: 
+   :statuscode 400: 
 
 
 .. http:get:: /v1/images
@@ -78,7 +91,8 @@
 
    
 
-   :responseexample 200: v1/examples/listImage-v1_resp_200.json
+   :requestexample: v1/examples/listImage-v1_req.txt
+   :responseexample 200: v1/examples/listImage-v1_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
@@ -126,6 +140,8 @@
 
    
 
+   :requestexample: v1/examples/updateImage-v1_req.txt
+   :responseexample 200: v1/examples/updateImage-v1_resp_200.txt
    :tag: images
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
@@ -138,13 +154,16 @@
 
    
 
-   :responseexample 200: v1/examples/getImage-v1_resp_200.json
+   :requestexample: v1/examples/getImage-v1_req.txt
+   :responseexample 200: v1/examples/getImage-v1_resp_200.txt
+   :responseexample 404: v1/examples/getImage-v1_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :statuscode 200: 
+   :statuscode 404: 
    :statuscode 403: 
 
 
@@ -154,9 +173,14 @@
 
    
 
+   :requestexample: v1/examples/deleteImage-v1_req.txt
+   :responseexample 200: v1/examples/deleteImage-v1_resp_200.txt
+   :responseexample 404: v1/examples/deleteImage-v1_resp_404.txt
    :tag: images
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
+   :statuscode 200: 
+   :statuscode 404: 
    :statuscode 204: 
 
 

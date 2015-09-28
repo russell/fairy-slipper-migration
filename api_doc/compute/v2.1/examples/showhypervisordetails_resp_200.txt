@@ -1,0 +1,20 @@
+HTTP/1.1 200
+status: 200
+content-length: 200
+content-location: http://127.0.0.1:8774/v2.1/8e81948d4d2a492e9264589ed3084042/os-hypervisors/1/uptime
+x-compute-request-id: req-aac3260d-3b03-497e-a345-8e51460d97c4
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:06 GMT
+content-type: application/json
+
+{
+  "hypervisor": {
+    "hypervisor_hostname": "devstack-trusty-hpcloud-b5-5038802",
+    "id": 1,
+    "state": "up",
+    "status": "enabled",
+    "uptime": " 05:53:06 up 31 min,  0 users,  load average: 4.36, 2.24, 1.28\n"
+  }
+}

@@ -1,0 +1,4 @@
+PUT /v3/projects/6f4fe38784ee45e783344b223792e87b/users/59601c0aa76d40e3bc2f01671932c21d/roles/4e218caacb9848cbbd890e900330b971 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

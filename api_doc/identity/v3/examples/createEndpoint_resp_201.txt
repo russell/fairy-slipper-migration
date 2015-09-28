@@ -1,0 +1,24 @@
+HTTP/1.1 201
+status: 201
+content-length: 353
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:46 GMT
+content-type: application/json
+x-openstack-request-id: req-6d7545fd-d63a-4035-820b-8a83bde242d3
+
+{
+  "endpoint": {
+    "enabled": true,
+    "id": "a468519595fa4094a21b287af8f9b2f2",
+    "interface": "public",
+    "links": {
+      "self": "http://127.0.0.1:5000/v3/endpoints/a468519595fa4094a21b287af8f9b2f2"
+    },
+    "region": "tempest-region-1735085313",
+    "region_id": "tempest-region-1735085313",
+    "service_id": "1c9da405064146b6aed98190f5ec02ab",
+    "url": "https://url-835182233.com"
+  }
+}

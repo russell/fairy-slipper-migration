@@ -1,0 +1,10 @@
+HTTP/1.1 404
+status: 404
+content-length: 87
+connection: close
+date: Tue, 22 Sep 2015 06:05:37 GMT
+content-type: text/plain; charset=UTF-8
+x-openstack-request-id: req-e86374a4-3644-479a-afa6-ed3d15cad09e
+
+404 Not Found
+Failed to find image b4225b3e-ecb0-4850-8014-5a378ac81d68 to delete

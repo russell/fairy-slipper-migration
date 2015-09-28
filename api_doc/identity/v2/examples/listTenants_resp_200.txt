@@ -1,0 +1,94 @@
+HTTP/1.1 200
+status: 200
+content-length: 1792
+content-location: http://127.0.0.1:35357/v2.0/tenants
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:06 GMT
+content-type: application/json
+x-openstack-request-id: req-eab57270-0ae1-4c6f-984d-9eb87acedecc
+
+{
+  "tenants": [
+    {
+      "description": "tempest-SnapshotV2MetadataTestJSON-2087182419-desc",
+      "enabled": true,
+      "id": "0d2dcccdc602454aae2543d4005c3166",
+      "name": "tempest-SnapshotV2MetadataTestJSON-2087182419"
+    },
+    {
+      "description": "tempest-TenantsTestJSON-151001139-desc",
+      "enabled": true,
+      "id": "1597adcdfc624799bd1cae012ad543e7",
+      "name": "tempest-TenantsTestJSON-151001139"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "1c1403595fe24e2f862c2a5f20ac269a",
+      "name": "swifttenanttest1"
+    },
+    {
+      "description": "tempest-VolumesV2ListTestJSON-253834780-desc",
+      "enabled": true,
+      "id": "500f8fc90edd42b7b1cf6b31e92c0978",
+      "name": "tempest-VolumesV2ListTestJSON-253834780"
+    },
+    {
+      "description": "tempest-VolumesBackupsV2Test-1776158537-desc",
+      "enabled": true,
+      "id": "507837cc3eef4b77ba5a9e37cac03bf6",
+      "name": "tempest-VolumesBackupsV2Test-1776158537"
+    },
+    {
+      "description": "tempest-TenantsTestJSON-1512749740-desc",
+      "enabled": true,
+      "id": "50de5b83ae0041ad9e21eda5f88b6643",
+      "name": "tempest-TenantsTestJSON-1512749740"
+    },
+    {
+      "description": "tempest-VolumesBackupsV2Test-1116120520-desc",
+      "enabled": true,
+      "id": "5609d7ff66d744fcaa69802273f21e57",
+      "name": "tempest-VolumesBackupsV2Test-1116120520"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "603e2acd7280415581e58d38a2fe1c87",
+      "name": "admin"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "6e5b9d0ab67b4d1ca9e8b57cb2cb9fba",
+      "name": "swifttenanttest2"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "77044e1e011d419db467ead202a351f0",
+      "name": "demo"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "dfa1523272d14408a2e9f3c65064dd15",
+      "name": "invisible_to_admin"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "e31dd6ce7e9849d1989efcc81102a8c5",
+      "name": "alt_demo"
+    },
+    {
+      "description": "",
+      "enabled": true,
+      "id": "ef25afb233fc446693e211580b1124f9",
+      "name": "service"
+    }
+  ],
+  "tenants_links": []
+}

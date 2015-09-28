@@ -4,7 +4,8 @@
 
    
 
-   :responseexample 200: v2/examples/getVersionInfo-v2.0_resp_200.json
+   :requestexample: v2/examples/getVersionInfo-v2.0_req.txt
+   :responseexample 200: v2/examples/getVersionInfo-v2.0_resp_200.txt
    :responseexample 203: v2/examples/getVersionInfo-v2.0_resp_203.json
    :accepts: application/json
    :produces: application/json
@@ -70,8 +71,10 @@
    
 
    :requestexample: v2/examples/listTenants_req.txt
-   :responseexample 200: v2/examples/listTenants_resp_200.json
+   :responseexample 200: v2/examples/listTenants_resp_200.txt
    :responseexample 203: v2/examples/listTenants_resp_203.json
+   :responseexample 403: v2/examples/listTenants_resp_403.txt
+   :responseexample 401: v2/examples/listTenants_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: identity-auth
@@ -112,9 +115,10 @@
    
    The deployment determines how long expired tokens are stored.
 
-   :requestexample: v2/examples/authenticate-v2.0_req.json
-   :responseexample 200: v2/examples/authenticate-v2.0_resp_200.json
+   :requestexample: v2/examples/authenticate-v2.0_req.txt
+   :responseexample 200: v2/examples/authenticate-v2.0_resp_200.txt
    :responseexample 203: v2/examples/authenticate-v2.0_resp_203.json
+   :responseexample 401: v2/examples/authenticate-v2.0_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: identity-auth

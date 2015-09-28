@@ -1,0 +1,17 @@
+HTTP/1.1 200
+status: 200
+content-length: 86
+content-location: http://127.0.0.1:35357/v2.0/OS-KSADM/roles/85ae601a9c614216a90ecf72f445ff9f
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:05:29 GMT
+content-type: application/json
+x-openstack-request-id: req-daf760e6-ecf4-4070-993c-a5e10bec4881
+
+{
+  "role": {
+    "id": "85ae601a9c614216a90ecf72f445ff9f",
+    "name": "tempest-role-125959677"
+  }
+}

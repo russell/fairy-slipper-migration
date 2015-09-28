@@ -1,0 +1,4 @@
+PUT /v2/images/d791fe60-dd90-40c8-b298-28d1add43aa3/members/b3753781522b4d188ba174aad7b251e9 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

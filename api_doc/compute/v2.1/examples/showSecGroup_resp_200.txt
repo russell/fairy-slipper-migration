@@ -1,0 +1,20 @@
+HTTP/1.1 200
+status: 200
+content-length: 186
+content-location: http://127.0.0.1:8774/v2.1/a204ce17b10d4f999f0c2650c06a1f38/os-security-groups/42
+x-compute-request-id: req-312174fa-49d0-4d62-ac93-9f452182176a
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:05 GMT
+content-type: application/json
+
+{
+  "security_group": {
+    "description": "tempest-description-1184736542",
+    "id": 42,
+    "name": " tempest-securitygroup -81149407 ",
+    "rules": [],
+    "tenant_id": "a204ce17b10d4f999f0c2650c06a1f38"
+  }
+}

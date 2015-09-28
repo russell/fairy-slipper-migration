@@ -1,0 +1,4 @@
+GET /v3/domains/3d5500fe5582487aa2ae93703dd68c08 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

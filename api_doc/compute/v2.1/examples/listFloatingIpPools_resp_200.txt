@@ -1,0 +1,21 @@
+HTTP/1.1 200
+status: 200
+content-length: 61
+content-location: http://127.0.0.1:8774/v2.1/a6f7fc31b87c4216bc988f1f1b37b275/os-floating-ip-pools
+x-compute-request-id: req-d77cc967-2aee-4d24-962f-720987304962
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:55:08 GMT
+content-type: application/json
+
+{
+  "floating_ip_pools": [
+    {
+      "name": "public"
+    },
+    {
+      "name": "test"
+    }
+  ]
+}

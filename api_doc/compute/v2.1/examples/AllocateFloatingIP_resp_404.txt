@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 73
+x-compute-request-id: req-41481393-e655-4600-9262-d18c2948477b
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:39 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Floating ip pool not found."
+  }
+}

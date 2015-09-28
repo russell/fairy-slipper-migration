@@ -1,0 +1,62 @@
+HTTP/1.1 200
+status: 200
+content-length: 1005
+content-location: http://127.0.0.1:35357/v3/roles
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:05:00 GMT
+content-type: application/json
+x-openstack-request-id: req-5dd226d6-9477-4f37-b4c9-70ab879baf1f
+
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:35357/v3/roles"
+  },
+  "roles": [
+    {
+      "id": "28ff384b1a8340e48c14c613d60730a1",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/28ff384b1a8340e48c14c613d60730a1"
+      },
+      "name": "Member"
+    },
+    {
+      "id": "4e218caacb9848cbbd890e900330b971",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/4e218caacb9848cbbd890e900330b971"
+      },
+      "name": "admin"
+    },
+    {
+      "id": "9fe2ff9ee4384b1894a90878d3e92bab",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/9fe2ff9ee4384b1894a90878d3e92bab"
+      },
+      "name": "_member_"
+    },
+    {
+      "id": "c188c4fd3570441ca99491131e443f2d",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/c188c4fd3570441ca99491131e443f2d"
+      },
+      "name": "service"
+    },
+    {
+      "id": "c1cfeaacbf364a058e1bfba3521f8fb0",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/c1cfeaacbf364a058e1bfba3521f8fb0"
+      },
+      "name": "anotherrole"
+    },
+    {
+      "id": "cd60863d48984ba988da0cdc14733d51",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/cd60863d48984ba988da0cdc14733d51"
+      },
+      "name": "ResellerAdmin"
+    }
+  ]
+}

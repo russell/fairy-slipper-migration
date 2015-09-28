@@ -1,0 +1,4 @@
+GET /v2.1/c1f7654ae2db454096df8fe0b0260cbf/os-availability-zone/detail HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

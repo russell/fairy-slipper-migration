@@ -1,0 +1,4 @@
+DELETE /v2.0/tenants/24d57626399b4f55a33dc49719b0574f HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

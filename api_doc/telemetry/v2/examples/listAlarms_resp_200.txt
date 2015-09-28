@@ -1,0 +1,79 @@
+HTTP/1.1 200
+status: 200
+content-length: 1688
+content-location: http://127.0.0.1:8777/v2/alarms
+server: Werkzeug/0.10.4 Python/2.7.6
+date: Tue, 22 Sep 2015 06:06:08 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-33f68521-8743-4554-a50a-3adc1b849559
+
+[
+  {
+    "alarm_actions": [],
+    "alarm_id": "7b5897f6-7dcd-4253-ba99-8d3435459aa5",
+    "description": "Alarm when cpu_util is gt a avg of 80.0 over 70 seconds",
+    "enabled": true,
+    "insufficient_data_actions": [],
+    "name": "tempest-telemetry_alarm-1166578842",
+    "ok_actions": [],
+    "project_id": "4e397d0d62414540be0a0844cedfa015",
+    "repeat_actions": false,
+    "severity": "low",
+    "state": "insufficient data",
+    "state_timestamp": "2015-09-22T06:06:08.779063",
+    "threshold_rule": {
+      "comparison_operator": "gt",
+      "evaluation_periods": 1,
+      "exclude_outliers": false,
+      "meter_name": "cpu_util",
+      "period": 70,
+      "query": [
+        {
+          "field": "project_id",
+          "op": "eq",
+          "value": "4e397d0d62414540be0a0844cedfa015"
+        }
+      ],
+      "statistic": "avg",
+      "threshold": 80.0
+    },
+    "time_constraints": [],
+    "timestamp": "2015-09-22T06:06:08.779063",
+    "type": "threshold",
+    "user_id": "4c97b283e8a04ddd894ded0c96293921"
+  },
+  {
+    "alarm_actions": [],
+    "alarm_id": "d6e06168-7a3f-4854-b114-8842b520d2b6",
+    "description": "Alarm when cpu_util is gt a avg of 80.0 over 70 seconds",
+    "enabled": true,
+    "insufficient_data_actions": [],
+    "name": "tempest-telemetry_alarm-2046711287",
+    "ok_actions": [],
+    "project_id": "4e397d0d62414540be0a0844cedfa015",
+    "repeat_actions": false,
+    "severity": "low",
+    "state": "insufficient data",
+    "state_timestamp": "2015-09-22T06:06:08.748864",
+    "threshold_rule": {
+      "comparison_operator": "gt",
+      "evaluation_periods": 1,
+      "exclude_outliers": false,
+      "meter_name": "cpu_util",
+      "period": 70,
+      "query": [
+        {
+          "field": "project_id",
+          "op": "eq",
+          "value": "4e397d0d62414540be0a0844cedfa015"
+        }
+      ],
+      "statistic": "avg",
+      "threshold": 80.0
+    },
+    "time_constraints": [],
+    "timestamp": "2015-09-22T06:06:08.748864",
+    "type": "threshold",
+    "user_id": "4c97b283e8a04ddd894ded0c96293921"
+  }
+]

@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 123
+x-compute-request-id: req-ec854f2b-d0c0-40f6-8bd1-0a62fe70fa1d
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:51 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Hypervisor with ID '48f3203f-0ff8-4d92-9a97-6298bb8873cd' could not be found."
+  }
+}

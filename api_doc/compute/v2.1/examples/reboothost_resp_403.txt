@@ -1,0 +1,16 @@
+HTTP/1.1 403
+status: 403
+content-length: 104
+x-compute-request-id: req-1e0d9582-def9-4c6e-8a82-689bc12b6796
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:01 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "forbidden": {
+    "code": 403,
+    "message": "Policy doesn't allow os_compute_api:os-hosts to be performed."
+  }
+}

@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 141
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:09 GMT
+content-type: application/json
+x-openstack-request-id: req-547a3400-4792-4d09-a799-9bac7fc5746c
+
+{
+  "tenant": {
+    "description": "",
+    "enabled": true,
+    "extra": {},
+    "id": "f0166cfd85294ff4873358445525fdfd",
+    "name": "tempest-tenant2-2121396344"
+  }
+}

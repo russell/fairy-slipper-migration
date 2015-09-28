@@ -1,0 +1,4 @@
+GET /v2/images/227e1fc5-d81a-48b5-9a4e-fd5458b0105d/members HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

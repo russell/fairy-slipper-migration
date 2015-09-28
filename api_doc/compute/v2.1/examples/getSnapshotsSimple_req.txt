@@ -1,0 +1,4 @@
+GET /v2.1/5ef641d804e743d49ae950cb35de4f50/os-snapshots HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

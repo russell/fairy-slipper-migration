@@ -1,0 +1,6 @@
+HTTP/1.1 204
+date: Tue, 22 Sep 2015 06:06:09 GMT
+status: 204
+content-length: 0
+x-openstack-request-id: req-01e114bd-4e90-4cbe-bd75-f9a4e7a5fe85
+server: Werkzeug/0.10.4 Python/2.7.6

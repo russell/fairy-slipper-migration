@@ -1,0 +1,27 @@
+HTTP/1.1 200
+status: 200
+content-length: 259
+content-location: http://127.0.0.1:8774/v2.1/8e81948d4d2a492e9264589ed3084042/os-hypervisors/statistics
+x-compute-request-id: req-92f63cbe-a261-4565-b7df-16e94bcc494e
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:05 GMT
+content-type: application/json
+
+{
+  "hypervisor_statistics": {
+    "count": 1,
+    "current_workload": 1,
+    "disk_available_least": 401,
+    "free_disk_gb": 432,
+    "free_ram_mb": 6904,
+    "local_gb": 432,
+    "local_gb_used": 0,
+    "memory_mb": 7480,
+    "memory_mb_used": 576,
+    "running_vms": 1,
+    "vcpus": 8,
+    "vcpus_used": 1
+  }
+}

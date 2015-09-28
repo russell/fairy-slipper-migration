@@ -1,0 +1,4 @@
+GET /v2.1/3de7cee8a91047239eead8302d57cbf5/os-hosts/devstack-trusty-hpcloud-b5-5038802/shutdown HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

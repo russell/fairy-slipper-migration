@@ -1,0 +1,4 @@
+GET /v2.1/b01a64b8d47b40778cb31ee799afdccb/servers/c8f2b90f-3810-4e7d-a4a7-96a4416d1bac/os-virtual-interfaces HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

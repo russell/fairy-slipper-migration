@@ -1,0 +1,28 @@
+HTTP/1.1 200
+status: 200
+content-length: 265
+content-location: http://127.0.0.1:8774/v2.1/06fa3253e2334d66bfd12df477b02432/os-aggregates
+x-compute-request-id: req-34110695-c407-4041-8a9d-52bd75db3ad6
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:39 GMT
+content-type: application/json
+
+{
+  "aggregates": [
+    {
+      "availability_zone": null,
+      "created_at": "2015-09-22T05:52:39.000000",
+      "deleted": false,
+      "deleted_at": null,
+      "hosts": [
+        "devstack-trusty-hpcloud-b5-5038802"
+      ],
+      "id": 3,
+      "metadata": {},
+      "name": "tempest-test_aggregate-996884508",
+      "updated_at": null
+    }
+  ]
+}

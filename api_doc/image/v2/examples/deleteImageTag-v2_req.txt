@@ -1,0 +1,4 @@
+DELETE /v2/images/b4225b3e-ecb0-4850-8014-5a378ac81d68/tags/tempest-non-exist-tag-1574042958 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

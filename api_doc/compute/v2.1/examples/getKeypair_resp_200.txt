@@ -1,0 +1,36 @@
+HTTP/1.1 200
+status: 200
+content-length: 1618
+content-location: http://127.0.0.1:8774/v2.1/7d9b38a8f1b447e394358a48f5a2527f/os-keypairs
+x-compute-request-id: req-6a7dad7e-3a4e-4cda-a69a-823915778507
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:45 GMT
+content-type: application/json
+
+{
+  "keypairs": [
+    {
+      "keypair": {
+        "fingerprint": "e1:d9:bc:20:dd:6d:3a:18:f1:13:b5:ff:a1:91:e5:fd",
+        "name": "tempest-keypair-1400913166",
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDU86zsnyBpkchf29GEMcDlkkf711faSgwCxwGrBZ3UK8Pmzp1+dIHB/u00vD4sIRe2sGF77It0nauiJeufcUtsXtg+/E/6TMH+VybdXCweIB8oIx0EUhJfY1xPzmsQCbJ50b1bST/6VEivozlg49AhT/ZIxHZmfkADmSPw7QOFauLasamqPEmMm34QYRCJTCaguyKNFNa4osa9nstlyhRZY3O6VggR1juodMcSfRmyDqdlJhT748N3ldvQeN8sA4u2WxMOVQoEjZLGcpALLmgVN4nxR0/Ebio1kshl9aNiQsjFGrppd4ARloXUhA03LxM1aIbSDKiAnEU+J8rQ3zKp Generated-by-Nova"
+      }
+    },
+    {
+      "keypair": {
+        "fingerprint": "d0:cb:c6:e8:a4:d4:12:5d:e3:83:90:06:73:08:c5:9c",
+        "name": "tempest-keypair-811363521",
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBntRKy5M0Mt2bbTWZURODbsKiOsbBC6iGQC73dtqUYhtjziVSaLCnH2repRHJJn0tYgATBnDckScdyw9fGIOPYhGVgMY597vRerPon629AWWRay7B7XDjk9Bz+CUtONGSEa/W1T9fCt6qeZDjqJwcrwj+xvlndR7shEaHPa/6iUS3OyBW9HDxLSanFoSLgaIDLDanrh2AGI2sH6rLvhOS0DKhl6lC2jTIKrGzpnYfLVbu7aEjUss9M2nkSe1NxlV+P3k/2LXMo+cLLP5ZYI7NfPLZLb9OkMhJY8ubqBO5e/tXm8szm0BOHBLBTb81LL3LcTPRIuDTVVdGnPVPU6H9 Generated-by-Nova"
+      }
+    },
+    {
+      "keypair": {
+        "fingerprint": "75:47:fe:0b:e7:ec:aa:3a:44:6a:a0:8c:4a:eb:2f:29",
+        "name": "tempest-keypair-1164168027",
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjEmK90jfLqirdn0ztN+cG3piO2dPhIyvMMGpoAN+x7JeNiwMtAyZctLGfJhibzkWVf5zETmrxweIDfo5wLzJhyAkHRUkAVq0Fk04bfxL7bT87ZB6y9nfz6/i9ks0KZ/KHjV1K03Wr1iABYmAh6qIEuswHwl0gX3948oAwR8OIPDbehm623FWYeO7iMwI0FkDn46FFjebesNo6FAmZOAnsRZkws8sPkHsAuc9gHAKlcTtWk1wNyRjkkhOPbpjEhJRRYPqz1PSASh9plvNrSLilC2dq+Y77rgojNsh8iShEP3vi9OHjvc/HkZW4Cc+myKqqE8AlfFTFlSTcKHkU+8NF Generated-by-Nova"
+      }
+    }
+  ]
+}

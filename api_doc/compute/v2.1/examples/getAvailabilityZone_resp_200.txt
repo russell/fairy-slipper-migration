@@ -1,0 +1,22 @@
+HTTP/1.1 200
+status: 200
+content-length: 97
+content-location: http://127.0.0.1:8774/v2.1/3856ad4ff9e745ab8a5191ab64ea9f8c/os-availability-zone
+x-compute-request-id: req-1f501502-4504-4a36-b0fd-84fbc4a8cbd8
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:55:33 GMT
+content-type: application/json
+
+{
+  "availabilityZoneInfo": [
+    {
+      "hosts": null,
+      "zoneName": "nova",
+      "zoneState": {
+        "available": true
+      }
+    }
+  ]
+}

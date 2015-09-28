@@ -1,0 +1,4 @@
+GET /v3/users/00e72607e2d04d0c9a792e06f50a4a0f/projects HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

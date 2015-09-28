@@ -1,0 +1,4 @@
+GET /v2.0/tenants/82ca01925e2f47089f94675b7b9ef4c0 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

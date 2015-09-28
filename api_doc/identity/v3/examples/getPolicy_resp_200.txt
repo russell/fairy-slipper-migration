@@ -1,0 +1,21 @@
+HTTP/1.1 200
+status: 200
+content-length: 230
+content-location: http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:40 GMT
+content-type: application/json
+x-openstack-request-id: req-b031f40c-ee61-419f-8f46-3a96a4be5bc0
+
+{
+  "policy": {
+    "blob": "tempest-BlobName-1098962284",
+    "id": "8435032094214fc2b2e0b45a1f5e50e4",
+    "links": {
+      "self": "http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4"
+    },
+    "type": "tempest-UpdatedPolicyType-1379767591"
+  }
+}

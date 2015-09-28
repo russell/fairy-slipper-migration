@@ -1,0 +1,4 @@
+DELETE /v2.0/tenants/4018efbc9a6b45d4b165ff9bb4a04b58/users/218ad6b9d9254d54b11e873f54ee31a2/roles/OS-KSADM/a203ed1ced984c56a1f61584b04cd4c2 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

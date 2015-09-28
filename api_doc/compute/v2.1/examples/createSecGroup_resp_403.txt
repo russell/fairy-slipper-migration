@@ -1,0 +1,16 @@
+HTTP/1.1 403
+status: 403
+content-length: 84
+x-compute-request-id: req-41c862ce-175a-4dc0-a04d-59cf0ec34307
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:01 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "forbidden": {
+    "code": 403,
+    "message": "Quota exceeded, too many security groups."
+  }
+}

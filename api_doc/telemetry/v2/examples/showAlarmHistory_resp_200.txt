@@ -1,0 +1,31 @@
+HTTP/1.1 200
+status: 200
+content-length: 2009
+content-location: http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74/history
+server: Werkzeug/0.10.4 Python/2.7.6
+date: Tue, 22 Sep 2015 06:06:08 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-b3e8caba-03c3-48ce-8a27-db057adfb362
+
+[
+  {
+    "alarm_id": "e8406422-3b2f-4914-9010-4a17b4838f74",
+    "detail": "{\"name\": \"tempest-telemetry-alarm-update-95497746\", \"rule\": {\"meter_name\": \"cpu\", \"evaluation_periods\": 1, \"period\": 60, \"statistic\": \"avg\", \"threshold\": 70.0, \"query\": [{\"field\": \"project_id\", \"value\": \"4e397d0d62414540be0a0844cedfa015\", \"op\": \"eq\"}], \"comparison_operator\": \"eq\", \"exclude_outliers\": false}, \"description\": \"Alarm when cpu is eq a avg of 70.0 over 60 seconds\"}",
+    "event_id": "22bd7888-6e80-43a8-8c3a-69434436e65e",
+    "on_behalf_of": "4e397d0d62414540be0a0844cedfa015",
+    "project_id": "4e397d0d62414540be0a0844cedfa015",
+    "timestamp": "2015-09-22T06:06:08.948701",
+    "type": "rule change",
+    "user_id": "4c97b283e8a04ddd894ded0c96293921"
+  },
+  {
+    "alarm_id": "e8406422-3b2f-4914-9010-4a17b4838f74",
+    "detail": "{\"alarm_actions\": [], \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\", \"name\": \"tempest-telemetry_alarm-1193975763\", \"state\": \"insufficient data\", \"timestamp\": \"2015-09-22T06:06:08.890079\", \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\", \"enabled\": true, \"state_timestamp\": \"2015-09-22T06:06:08.890079\", \"rule\": {\"meter_name\": \"cpu_util\", \"evaluation_periods\": 1, \"period\": 70, \"statistic\": \"avg\", \"threshold\": 80.0, \"query\": [{\"field\": \"project_id\", \"value\": \"4e397d0d62414540be0a0844cedfa015\", \"op\": \"eq\"}], \"comparison_operator\": \"gt\", \"exclude_outliers\": false}, \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\", \"time_constraints\": [], \"insufficient_data_actions\": [], \"repeat_actions\": false, \"ok_actions\": [], \"project_id\": \"4e397d0d62414540be0a0844cedfa015\", \"type\": \"threshold\", \"severity\": \"low\"}",
+    "event_id": "f4cd7f07-4126-4b50-82b7-a66c16e6ae50",
+    "on_behalf_of": "4e397d0d62414540be0a0844cedfa015",
+    "project_id": "4e397d0d62414540be0a0844cedfa015",
+    "timestamp": "2015-09-22T06:06:08.890079",
+    "type": "creation",
+    "user_id": "4c97b283e8a04ddd894ded0c96293921"
+  }
+]

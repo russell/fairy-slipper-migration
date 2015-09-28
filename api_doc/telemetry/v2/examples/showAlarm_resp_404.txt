@@ -1,0 +1,15 @@
+HTTP/1.1 404
+status: 404
+content-length: 176
+server: Werkzeug/0.10.4 Python/2.7.6
+date: Tue, 22 Sep 2015 06:06:09 GMT
+content-type: application/json
+x-openstack-request-id: req-2a291999-9fe0-42ee-a9cb-1bc50f909be1
+
+{
+  "error_message": {
+    "debuginfo": null,
+    "faultcode": "Client",
+    "faultstring": "Alarm e8406422-3b2f-4914-9010-4a17b4838f74 not found in project 4e397d0d62414540be0a0844cedfa015"
+  }
+}

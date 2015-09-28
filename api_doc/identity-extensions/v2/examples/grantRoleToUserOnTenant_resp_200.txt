@@ -1,0 +1,16 @@
+HTTP/1.1 200
+status: 200
+content-length: 70
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:07:44 GMT
+content-type: application/json
+x-openstack-request-id: req-f36869ea-c56b-4d3c-b79b-c2b48f6e2de2
+
+{
+  "role": {
+    "id": "28ff384b1a8340e48c14c613d60730a1",
+    "name": "Member"
+  }
+}

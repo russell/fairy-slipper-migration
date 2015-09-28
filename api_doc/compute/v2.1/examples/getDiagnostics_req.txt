@@ -1,0 +1,4 @@
+GET /v2.1/5e0c5012192b4b318bc1bf1a840bda63/servers/73656910-1c63-45c9-bc32-b295baf7eaa7/diagnostics HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

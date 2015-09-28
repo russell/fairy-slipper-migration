@@ -1,0 +1,4 @@
+POST /v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b/actions/deactivate HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

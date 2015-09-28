@@ -23,7 +23,8 @@
    The following schema is solely an example. Consider only the
    response to the API call as authoritative.
 
-   :responseexample 200: v2/examples/getImagesSchema_resp_200.json
+   :requestexample: v2/examples/getImagesSchema_req.txt
+   :responseexample 200: v2/examples/getImagesSchema_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: image-schemas
@@ -134,10 +135,14 @@
 
    
 
+   :requestexample: v2/examples/addImageTag-v2_req.txt
+   :responseexample 404: v2/examples/addImageTag-v2_resp_404.txt
+   :responseexample 204: v2/examples/addImageTag-v2_resp_204.txt
    :tag: image-tags
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :parameter tag: Image tag.
+   :statuscode 404: 
    :statuscode 204: 
 
 
@@ -147,10 +152,14 @@
 
    
 
+   :requestexample: v2/examples/deleteImageTag-v2_req.txt
+   :responseexample 404: v2/examples/deleteImageTag-v2_resp_404.txt
+   :responseexample 204: v2/examples/deleteImageTag-v2_resp_204.txt
    :tag: image-tags
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
    :parameter tag: Image tag.
+   :statuscode 404: 
    :statuscode 204: 
 
 
@@ -420,8 +429,8 @@
      the request again. If the request fails again, review your API
      request.
 
-   :requestexample: v2/examples/updateImage-v2_req.json
-   :responseexample 200: v2/examples/updateImage-v2_resp_200.json
+   :requestexample: v2/examples/updateImage-v2_req.txt
+   :responseexample 200: v2/examples/updateImage-v2_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
@@ -441,7 +450,9 @@
    
    - The specified image must exist.
 
-   :responseexample 200: v2/examples/getImage-v2_resp_200.json
+   :requestexample: v2/examples/getImage-v2_req.txt
+   :responseexample 200: v2/examples/getImage-v2_resp_200.txt
+   :responseexample 404: v2/examples/getImage-v2_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
@@ -483,9 +494,13 @@
      run the request again. If the request fails again, review your
      API request.
 
+   :requestexample: v2/examples/deleteImage-v2_req.txt
+   :responseexample 404: v2/examples/deleteImage-v2_resp_404.txt
+   :responseexample 204: v2/examples/deleteImage-v2_resp_204.txt
    :tag: images
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
+   :statuscode 404: 
    :statuscode 403: 
    :statuscode 204: 
 
@@ -530,7 +545,8 @@
    
    - The specified image must exist.
 
-   :responseexample 204: v2/examples/reactivateImage-v2_resp_204.json
+   :requestexample: v2/examples/reactivateImage-v2_req.txt
+   :responseexample 204: v2/examples/reactivateImage-v2_resp_204.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
@@ -561,7 +577,8 @@
    The following schema is solely an example. Consider only the
    response to the API call as authoritative.
 
-   :responseexample 200: v2/examples/getImageMemberSchema_resp_200.json
+   :requestexample: v2/examples/getImageMemberSchema_req.txt
+   :responseexample 200: v2/examples/getImageMemberSchema_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: image-schemas
@@ -627,7 +644,8 @@
    
    - You must be the owner or a member of the specified image.
 
-   :responseexample 200: v2/examples/getImageMember-v2_resp_200.json
+   :requestexample: v2/examples/getImageMember-v2_req.txt
+   :responseexample 200: v2/examples/getImageMember-v2_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: members
@@ -657,8 +675,10 @@
    - With correct permissions, you can see the updated member status of
      the image through API calls.
 
-   :requestexample: v2/examples/updateImageMember-v2_req.json
-   :responseexample 200: v2/examples/updateImageMember-v2_resp_200.json
+   :requestexample: v2/examples/updateImageMember-v2_req.txt
+   :responseexample 200: v2/examples/updateImageMember-v2_resp_200.txt
+   :responseexample 403: v2/examples/updateImageMember-v2_resp_403.txt
+   :responseexample 400: v2/examples/updateImageMember-v2_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: members
@@ -669,6 +689,8 @@
                          of the user with whom the image is being
                          shared.
    :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:delete:: /v2/images/{image_id}/members/{member_id}
@@ -692,6 +714,8 @@
      Ensure that you meet the preconditions and run the request again.
      If the request fails again, review your API request.
 
+   :requestexample: v2/examples/deleteImageMember-v2_req.txt
+   :responseexample 204: v2/examples/deleteImageMember-v2_resp_204.txt
    :tag: members
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
@@ -882,7 +906,8 @@
    
       GET /v2/images?sort=name:asc,status:desc
 
-   :responseexample 200: v2/examples/listImages-v2_resp_200.json
+   :requestexample: v2/examples/listImages-v2_req.txt
+   :responseexample 200: v2/examples/listImages-v2_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
@@ -960,13 +985,15 @@
      ``active`` through API calls if you created the image with
      ``Location`` header.
 
-   :requestexample: v2/examples/createImage-v2_req.json
-   :responseexample 201: v2/examples/createImage-v2_resp_201.json
+   :requestexample: v2/examples/createImage-v2_req.txt
+   :responseexample 201: v2/examples/createImage-v2_resp_201.txt
+   :responseexample 400: v2/examples/createImage-v2_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: images
    :requestschema: v2/createImage-v2.json
    :statuscode 201: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2/tasks
@@ -1085,7 +1112,8 @@
    The following schema is solely an example. Consider only the
    response to the API call as authoritative.
 
-   :responseexample 200: v2/examples/getImageMembersSchema_resp_200.json
+   :requestexample: v2/examples/getImageMembersSchema_req.txt
+   :responseexample 200: v2/examples/getImageMembersSchema_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: image-schemas
@@ -1122,7 +1150,8 @@
    
    - You must be the owner or a member of the specified image.
 
-   :responseexample 200: v2/examples/listImageMembers-v2_resp_200.json
+   :requestexample: v2/examples/listImageMembers-v2_req.txt
+   :responseexample 200: v2/examples/listImageMembers-v2_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: members
@@ -1163,8 +1192,8 @@
      meant a different member, double-check that you specified the
      correct member.
 
-   :requestexample: v2/examples/createImageMember-v2_req.json
-   :responseexample 200: v2/examples/createImageMember-v2_resp_200.json
+   :requestexample: v2/examples/createImageMember-v2_req.txt
+   :responseexample 200: v2/examples/createImageMember-v2_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: members
@@ -1196,7 +1225,8 @@
    The following schema is solely an example. Consider only the
    response to the API call as authoritative.
 
-   :responseexample 200: v2/examples/getImageSchema_resp_200.json
+   :requestexample: v2/examples/getImageSchema_req.txt
+   :responseexample 200: v2/examples/getImageSchema_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: image-schemas
@@ -1317,6 +1347,9 @@
    - If no image data exists, the call returns the HTTP ``204`` status
      code.
 
+   :requestexample: v2/examples/getImageFile-v2_req.txt
+   :responseexample 200: v2/examples/getImageFile-v2_resp_200.txt
+   :responseexample 403: v2/examples/getImageFile-v2_resp_403.txt
    :tag: image-data
    :parameter image_id: Image ID stored through the image API.
                         Typically a UUID.
@@ -1405,7 +1438,8 @@
    
    - The specified image must exist.
 
-   :responseexample 204: v2/examples/deactivateImage-v2_resp_204.json
+   :requestexample: v2/examples/deactivateImage-v2_req.txt
+   :responseexample 204: v2/examples/deactivateImage-v2_resp_204.txt
    :accepts: application/json
    :produces: application/json
    :tag: images

@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 181
+x-compute-request-id: req-fadc0ea6-2149-48c1-9ac0-a8270bf3ffce
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:29 GMT
+content-type: application/json
+
+{
+  "security_group": {
+    "description": "tempest-description-hth-546837868",
+    "id": 50,
+    "name": "tempest-sg-hth-1146114742",
+    "rules": [],
+    "tenant_id": "a204ce17b10d4f999f0c2650c06a1f38"
+  }
+}

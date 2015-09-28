@@ -1,0 +1,27 @@
+HTTP/1.1 200
+status: 200
+content-length: 344
+content-location: http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:54 GMT
+content-type: application/json
+x-openstack-request-id: req-20388672-6972-4839-a61e-3a3cff6e2b23
+
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:35357/v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles"
+  },
+  "roles": [
+    {
+      "id": "77f9414ff2d441d68161fc7ad6787378",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/roles/77f9414ff2d441d68161fc7ad6787378"
+      },
+      "name": "tempest-Role-1912339669"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+HTTP/1.1 200
+status: 200
+content-length: 3349
+content-location: http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/detail
+x-compute-request-id: req-a31ebd27-6a80-4867-b1cf-5403c745f615
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:12 GMT
+content-type: application/json
+
+{
+  "flavors": [
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 1,
+      "id": "1",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/1",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/1",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.tiny",
+      "os-flavor-access:is_public": true,
+      "ram": 512,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 1
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 10,
+      "id": "1965911357",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/1965911357",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/1965911357",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "tempest-test_flavor_-41744026",
+      "os-flavor-access:is_public": true,
+      "ram": 512,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 1
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 20,
+      "id": "2",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/2",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/2",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.small",
+      "os-flavor-access:is_public": true,
+      "ram": 2048,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 1
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 40,
+      "id": "3",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/3",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/3",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.medium",
+      "os-flavor-access:is_public": true,
+      "ram": 4096,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 2
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 80,
+      "id": "4",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/4",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/4",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.large",
+      "os-flavor-access:is_public": true,
+      "ram": 8192,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 4
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 0,
+      "id": "42",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/42",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/42",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.nano",
+      "os-flavor-access:is_public": true,
+      "ram": 64,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 1
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 160,
+      "id": "5",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/5",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/5",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.xlarge",
+      "os-flavor-access:is_public": true,
+      "ram": 16384,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 8
+    },
+    {
+      "OS-FLV-DISABLED:disabled": false,
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "disk": 0,
+      "id": "84",
+      "links": [
+        {
+          "href": "http://127.0.0.1:8774/v2.1/11ed65d399a14091ad0c39c9a2bc591c/flavors/84",
+          "rel": "self"
+        },
+        {
+          "href": "http://127.0.0.1:8774/11ed65d399a14091ad0c39c9a2bc591c/flavors/84",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "m1.micro",
+      "os-flavor-access:is_public": true,
+      "ram": 128,
+      "rxtx_factor": 1.0,
+      "swap": "",
+      "vcpus": 1
+    }
+  ]
+}

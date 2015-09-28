@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 111
+x-compute-request-id: req-7a8edab6-645f-4cc4-b0a9-cf589b8be315
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:09:46 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Snapshot 0290a11c-9c7d-42ff-85f1-bb880b03579f could not be found."
+  }
+}

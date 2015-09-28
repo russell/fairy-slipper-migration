@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 139
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:05:51 GMT
+content-type: application/json
+x-openstack-request-id: req-cb5edbdb-ea31-425d-b38d-ab4ad27f320d
+
+{
+  "error": {
+    "code": 404,
+    "message": "Cannot remove role that has not been granted, 531e35ff76e947a4ad6fcabfaed644cb",
+    "title": "Not Found"
+  }
+}

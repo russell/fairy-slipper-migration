@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 115
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:59 GMT
+content-type: application/json
+x-openstack-request-id: req-b679a60b-a67c-431d-9d82-b9c3a0782813
+
+{
+  "error": {
+    "code": 404,
+    "message": "Could not find token: ed2dad41ff344d449e9dea13fd0a652c",
+    "title": "Not Found"
+  }
+}

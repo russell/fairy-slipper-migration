@@ -1,0 +1,4 @@
+GET /v3/roles/dc1d5e8fbe944d4fa7bef3cd7d37a001 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

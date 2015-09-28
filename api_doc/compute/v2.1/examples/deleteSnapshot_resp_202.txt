@@ -1,4 +1,9 @@
-HTTP/1.1 202 Accepted
-Content-Type: text/html; charset=UTF-8
-Content-Length: 0
-Date: Mon, 01 Dec 2014 16:23:10 GMT
+HTTP/1.1 202
+status: 202
+content-length: 0
+x-compute-request-id: req-c58764b3-c23a-4061-bac3-f5a201115040
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:09:45 GMT
+content-type: application/json

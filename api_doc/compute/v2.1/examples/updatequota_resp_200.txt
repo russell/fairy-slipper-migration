@@ -1,0 +1,26 @@
+HTTP/1.1 200
+status: 200
+content-length: 293
+x-compute-request-id: req-63e641e5-e6bf-41f5-a3b3-4a2e0f021996
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:58 GMT
+content-type: application/json
+
+{
+  "quota_class_set": {
+    "cores": 120,
+    "fixed_ips": 99,
+    "floating_ips": 110,
+    "injected_file_content_bytes": 10340,
+    "injected_file_path_bytes": 355,
+    "injected_files": 105,
+    "instances": 110,
+    "key_pairs": 200,
+    "metadata_items": 228,
+    "ram": 51300,
+    "security_group_rules": 120,
+    "security_groups": 110
+  }
+}

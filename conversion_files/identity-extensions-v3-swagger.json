@@ -2237,7 +2237,9 @@
       {
         "consumes": [], 
         "description": "The token represents the delegated authorization and identity\n(impersonation) of the authorizing user. The roles and scope of the\ngenerated token match those that the consumer initially requested.\n\nSupported signature methods: HMAC-SHA1.\n\nThe consumer must provide required OAuth parameters in the request.\nSee `Consumer Obtains a Request Token\n<http://oauth.net/core/1.0a/#auth_step1>`_.\n\nThe returned token is scoped to the requested project and with the\nrequested roles. In addition to the standard token response, the\ntoken has an OAuth-specific object.\n\nExample OAuth-specific object in a token:\n\n.. code-block:: json\n\n   \"OS-OAUTH1\": {\n       \"access_token_id\": \"cce0b8be7\"\n   }", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "POST /v3/auth/tokens HTTP/1.1\n"
+        }, 
         "id": "authenticate", 
         "method": "post", 
         "parameters": [], 
@@ -2247,12 +2249,19 @@
             "examples": {}, 
             "headers": {}
           }, 
+          "201": {
+            "examples": {
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 6525\nx-subject-token: 3e049895639948e69734c9e969503bd5\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:21 GMT\ncontent-type: application/json\nx-openstack-request-id: req-04c970a6-7d0a-4c98-a6b6-f7372a14f743\n\n"
+            }
+          }, 
           "400": {
             "examples": {}, 
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 207\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:02 GMT\nx-openstack-request-id: req-3e61c58d-99f6-433c-9718-3a4e24da5cae\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:5000\"\n\n"
+            }, 
             "headers": {}
           }, 
           "403": {
@@ -2260,7 +2269,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 115\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:18 GMT\ncontent-type: application/json\nx-openstack-request-id: req-25c02496-f263-4e61-afad-80981d6f34e4\n\n"
+            }, 
             "headers": {}
           }, 
           "405": {

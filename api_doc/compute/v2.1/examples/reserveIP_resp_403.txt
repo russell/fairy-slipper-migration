@@ -1,0 +1,16 @@
+HTTP/1.1 403
+status: 403
+content-length: 108
+x-compute-request-id: req-1df6d691-6f53-42b0-b996-aa88d7d90a6d
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:39 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "forbidden": {
+    "code": 403,
+    "message": "Policy doesn't allow os_compute_api:os-fixed-ips to be performed."
+  }
+}

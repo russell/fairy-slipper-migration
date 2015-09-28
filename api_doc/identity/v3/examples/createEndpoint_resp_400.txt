@@ -1,0 +1,17 @@
+HTTP/1.1 400
+status: 400
+content-length: 118
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:56 GMT
+content-type: application/json
+x-openstack-request-id: req-be55486c-451b-4b40-abcd-4f6a7085c5a2
+
+{
+  "error": {
+    "code": 400,
+    "message": "Invalid input for field 'enabled'. The value is 'True'.",
+    "title": "Bad Request"
+  }
+}

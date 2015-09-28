@@ -1,0 +1,4 @@
+POST /v2/images/26524250-a6d4-448e-9e10-d154d2798f1c/members HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

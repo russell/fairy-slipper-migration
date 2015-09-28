@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 108
+content-location: http://127.0.0.1:8774/v2.1/b01a64b8d47b40778cb31ee799afdccb/servers/c8f2b90f-3810-4e7d-a4a7-96a4416d1bac/os-virtual-interfaces
+x-compute-request-id: req-c873db06-90ed-47b7-b0b9-c229c34b9f27
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:04:01 GMT
+content-type: application/json
+
+{
+  "virtual_interfaces": [
+    {
+      "id": "33ed551e-02d1-413c-a5db-955f7022c66d",
+      "mac_address": "fa:16:3e:ca:e9:ce"
+    }
+  ]
+}

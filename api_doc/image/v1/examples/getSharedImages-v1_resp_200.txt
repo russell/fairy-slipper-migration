@@ -1,0 +1,25 @@
+HTTP/1.1 200
+status: 200
+content-length: 241
+content-location: http://127.0.0.1:9292/v1/shared-images/a529043ace074612be1d9867416e5724
+connection: close
+date: Tue, 22 Sep 2015 06:04:01 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-f40859ac-308f-41eb-a0ab-9426de1e0853
+
+{
+  "shared_images": [
+    {
+      "can_share": false,
+      "image_id": "2d1e34cd-6009-44b9-a04d-b78803cabb73"
+    },
+    {
+      "can_share": false,
+      "image_id": "af63847a-0355-4e06-926e-e474f149da94"
+    },
+    {
+      "can_share": false,
+      "image_id": "d3dfe5ed-24be-4a67-adda-14f84bb61d23"
+    }
+  ]
+}

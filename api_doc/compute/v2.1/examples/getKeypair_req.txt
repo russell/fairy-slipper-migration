@@ -1,0 +1,4 @@
+GET /v2.1/7d9b38a8f1b447e394358a48f5a2527f/os-keypairs HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

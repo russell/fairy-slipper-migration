@@ -1,0 +1,16 @@
+HTTP/1.1 409
+status: 409
+content-length: 110
+x-compute-request-id: req-52d28b59-139b-40d6-b45e-8eda9b874d8a
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:51 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "conflictingRequest": {
+    "code": 409,
+    "message": "Aggregate tempest-test_aggregate-674329773 already exists."
+  }
+}

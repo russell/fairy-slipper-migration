@@ -1,0 +1,4 @@
+GET /v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

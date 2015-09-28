@@ -1,0 +1,16 @@
+HTTP/1.1 400
+status: 400
+content-length: 170
+x-compute-request-id: req-b0105199-1040-4d84-be5a-656cbe964315
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:46 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "badRequest": {
+    "code": 400,
+    "message": "Invalid input for field/attribute metadata. Value: {u'': u'data1'}. Additional properties are not allowed (u'' was unexpected)"
+  }
+}

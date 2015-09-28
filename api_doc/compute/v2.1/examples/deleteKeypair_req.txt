@@ -1,0 +1,4 @@
+DELETE /v2.1/d9f9b1275f094c8bab80c1d64da8470a/os-keypairs/tempest-TestShelveInstance-1047699958 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

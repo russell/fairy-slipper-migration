@@ -1,0 +1,17 @@
+HTTP/1.1 400
+status: 400
+content-length: 117
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:34 GMT
+content-type: application/json
+x-openstack-request-id: req-d57ddd04-9cc4-4b1a-8b03-77193e7423c0
+
+{
+  "error": {
+    "code": 400,
+    "message": "Project name should not be greater than 64 characters.",
+    "title": "Bad Request"
+  }
+}

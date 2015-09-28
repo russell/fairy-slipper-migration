@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 103
+x-compute-request-id: req-536237aa-dee3-41b4-b2fb-2b159a907f32
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:55:07 GMT
+content-type: application/json
+
+{
+  "floating_ip": {
+    "fixed_ip": null,
+    "id": 4,
+    "instance_id": null,
+    "ip": "172.24.5.4",
+    "pool": "public"
+  }
+}

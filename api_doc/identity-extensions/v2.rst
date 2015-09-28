@@ -4,11 +4,18 @@
 
    
 
+   :requestexample: v2/examples/grantRoleToUserOnTenant_req.txt
+   :responseexample 200: v2/examples/grantRoleToUserOnTenant_resp_200.txt
+   :responseexample 404: v2/examples/grantRoleToUserOnTenant_resp_404.txt
+   :responseexample 403: v2/examples/grantRoleToUserOnTenant_resp_403.txt
+   :responseexample 401: v2/examples/grantRoleToUserOnTenant_resp_401.txt
+   :responseexample 409: v2/examples/grantRoleToUserOnTenant_resp_409.txt
    :tag: ksadm-admin
    :parameter userId: The user ID.
    :parameter roleId: The role ID.
    :parameter tenantId: The tenant ID.
    :statuscode 201: 
+   :statuscode 200: 
    :statuscode 413: 
    :statuscode 415: 
    :statuscode 405: 
@@ -17,6 +24,7 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:delete:: /v2.0/tenants/{tenantId}/users/{userId}/roles/OS-KSADM/{roleId}
@@ -25,6 +33,11 @@
 
    
 
+   :requestexample: v2/examples/revokeRoleFromUserOnTenant_req.txt
+   :responseexample 204: v2/examples/revokeRoleFromUserOnTenant_resp_204.txt
+   :responseexample 404: v2/examples/revokeRoleFromUserOnTenant_resp_404.txt
+   :responseexample 403: v2/examples/revokeRoleFromUserOnTenant_resp_403.txt
+   :responseexample 401: v2/examples/revokeRoleFromUserOnTenant_resp_401.txt
    :tag: ksadm-admin
    :parameter userId: The user ID.
    :parameter roleId: The role ID.
@@ -186,8 +199,10 @@
 
    
 
-   :responseexample 200: v2/examples/listUsersForTenant_resp_200.json
+   :requestexample: v2/examples/listUsersForTenant_req.txt
+   :responseexample 200: v2/examples/listUsersForTenant_resp_200.txt
    :responseexample 203: v2/examples/listUsersForTenant_resp_203.json
+   :responseexample 404: v2/examples/listUsersForTenant_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
@@ -254,8 +269,11 @@
 
    
 
-   :responseexample 200: v2/examples/listUsers_resp_200.json
+   :requestexample: v2/examples/listUsers_req.txt
+   :responseexample 200: v2/examples/listUsers_resp_200.txt
    :responseexample 203: v2/examples/listUsers_resp_203.json
+   :responseexample 403: v2/examples/listUsers_resp_403.txt
+   :responseexample 401: v2/examples/listUsers_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
@@ -276,12 +294,19 @@
 
    
 
-   :requestexample: v2/examples/createUser_req.json
+   :requestexample: v2/examples/createUser_req.txt
    :responseexample 201: v2/examples/createUser_resp_201.json
+   :responseexample 200: v2/examples/createUser_resp_200.txt
+   :responseexample 404: v2/examples/createUser_resp_404.txt
+   :responseexample 403: v2/examples/createUser_resp_403.txt
+   :responseexample 401: v2/examples/createUser_resp_401.txt
+   :responseexample 400: v2/examples/createUser_resp_400.txt
+   :responseexample 409: v2/examples/createUser_resp_409.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
    :statuscode 201: 
+   :statuscode 200: 
    :statuscode 413: 
    :statuscode 415: 
    :statuscode 405: 
@@ -290,6 +315,7 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:get:: /v2.0/OS-KSADM/roles/{role_name}
@@ -298,7 +324,8 @@
 
    
 
-   :responseexample 200: v2/examples/showRoleByName_resp_200.json
+   :requestexample: v2/examples/showRoleByName_req.txt
+   :responseexample 200: v2/examples/showRoleByName_resp_200.txt
    :responseexample 203: v2/examples/showRoleByName_resp_203.json
    :accepts: application/json
    :produces: application/json
@@ -624,19 +651,26 @@
 
    
 
-   :requestexample: v2/examples/createTenant_req.json
+   :requestexample: v2/examples/createTenant_req.txt
    :responseexample 201: v2/examples/createTenant_resp_201.json
+   :responseexample 200: v2/examples/createTenant_resp_200.txt
+   :responseexample 403: v2/examples/createTenant_resp_403.txt
+   :responseexample 401: v2/examples/createTenant_resp_401.txt
+   :responseexample 400: v2/examples/createTenant_resp_400.txt
+   :responseexample 409: v2/examples/createTenant_resp_409.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
    :statuscode 201: 
-   :statuscode 400: 
+   :statuscode 200: 
+   :statuscode 413: 
    :statuscode 415: 
    :statuscode 405: 
    :statuscode 403: 
    :statuscode 401: 
-   :statuscode 413: 
+   :statuscode 400: 
    :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:get:: /v2.0/OS-KSCATALOG/endpointTemplates/{endpointTemplateId}
@@ -778,8 +812,8 @@
 
    
 
-   :requestexample: v2/examples/updateTenant_req.json
-   :responseexample 200: v2/examples/updateTenant_resp_200.json
+   :requestexample: v2/examples/updateTenant_req.txt
+   :responseexample 200: v2/examples/updateTenant_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
@@ -801,6 +835,11 @@
 
    
 
+   :requestexample: v2/examples/deleteTenant_req.txt
+   :responseexample 204: v2/examples/deleteTenant_resp_204.txt
+   :responseexample 404: v2/examples/deleteTenant_resp_404.txt
+   :responseexample 403: v2/examples/deleteTenant_resp_403.txt
+   :responseexample 401: v2/examples/deleteTenant_resp_401.txt
    :tag: ksadm-admin
    :parameter tenantId: The tenant ID.
    :statuscode 204: 
@@ -933,8 +972,11 @@
 
    
 
-   :responseexample 200: v2/examples/showRoleByID_resp_200.json
+   :requestexample: v2/examples/showRoleByID_req.txt
+   :responseexample 200: v2/examples/showRoleByID_resp_200.txt
    :responseexample 203: v2/examples/showRoleByID_resp_203.json
+   :responseexample 403: v2/examples/showRoleByID_resp_403.txt
+   :responseexample 401: v2/examples/showRoleByID_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
@@ -975,8 +1017,11 @@
 
    
 
-   :requestexample: v2/examples/updateUser_req.json
-   :responseexample 200: v2/examples/updateUser_resp_200.json
+   :requestexample: v2/examples/updateUser_req.txt
+   :responseexample 200: v2/examples/updateUser_resp_200.txt
+   :responseexample 404: v2/examples/updateUser_resp_404.txt
+   :responseexample 403: v2/examples/updateUser_resp_403.txt
+   :responseexample 401: v2/examples/updateUser_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: ksadm-admin
@@ -998,6 +1043,11 @@
 
    
 
+   :requestexample: v2/examples/deleteUser_req.txt
+   :responseexample 204: v2/examples/deleteUser_resp_204.txt
+   :responseexample 404: v2/examples/deleteUser_resp_404.txt
+   :responseexample 403: v2/examples/deleteUser_resp_403.txt
+   :responseexample 401: v2/examples/deleteUser_resp_401.txt
    :tag: ksadm-admin
    :parameter userId: The user ID.
    :statuscode 204: 

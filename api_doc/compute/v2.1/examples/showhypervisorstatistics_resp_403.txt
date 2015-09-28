@@ -1,0 +1,16 @@
+HTTP/1.1 403
+status: 403
+content-length: 110
+x-compute-request-id: req-4fa7b33a-e1bd-4f39-90ba-6cc38388eafa
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:51 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "forbidden": {
+    "code": 403,
+    "message": "Policy doesn't allow os_compute_api:os-hypervisors to be performed."
+  }
+}

@@ -241,7 +241,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/alarms HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listAlarms", 
         "method": "get", 
         "parameters": [
@@ -260,32 +262,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": [
-                {
-                  "alarm_actions": [
-                    "http://site:8000/alarm"
-                  ], 
-                  "alarm_id": null, 
-                  "combination_rule": null, 
-                  "description": "An alarm", 
-                  "enabled": true, 
-                  "insufficient_data_actions": [
-                    "http://site:8000/nodata"
-                  ], 
-                  "name": "SwiftObjectAlarm", 
-                  "ok_actions": [
-                    "http://site:8000/ok"
-                  ], 
-                  "project_id": "c96c887c216949acbdfbd8b494863567", 
-                  "repeat_actions": false, 
-                  "state": "ok", 
-                  "state_timestamp": "2013-11-21T12:33:08.486228", 
-                  "threshold_rule": null, 
-                  "timestamp": "2013-11-21T12:33:08.486221", 
-                  "type": "threshold", 
-                  "user_id": "c96c887c216949acbdfbd8b494863567"
-                }
-              ]
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1688\ncontent-location: http://127.0.0.1:8777/v2/alarms\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-33f68521-8743-4554-a50a-3adc1b849559\n\n[\n  {\n    \"alarm_actions\": [],\n    \"alarm_id\": \"7b5897f6-7dcd-4253-ba99-8d3435459aa5\",\n    \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [],\n    \"name\": \"tempest-telemetry_alarm-1166578842\",\n    \"ok_actions\": [],\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"repeat_actions\": false,\n    \"severity\": \"low\",\n    \"state\": \"insufficient data\",\n    \"state_timestamp\": \"2015-09-22T06:06:08.779063\",\n    \"threshold_rule\": {\n      \"comparison_operator\": \"gt\",\n      \"evaluation_periods\": 1,\n      \"exclude_outliers\": false,\n      \"meter_name\": \"cpu_util\",\n      \"period\": 70,\n      \"query\": [\n        {\n          \"field\": \"project_id\",\n          \"op\": \"eq\",\n          \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n        }\n      ],\n      \"statistic\": \"avg\",\n      \"threshold\": 80.0\n    },\n    \"time_constraints\": [],\n    \"timestamp\": \"2015-09-22T06:06:08.779063\",\n    \"type\": \"threshold\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  },\n  {\n    \"alarm_actions\": [],\n    \"alarm_id\": \"d6e06168-7a3f-4854-b114-8842b520d2b6\",\n    \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [],\n    \"name\": \"tempest-telemetry_alarm-2046711287\",\n    \"ok_actions\": [],\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"repeat_actions\": false,\n    \"severity\": \"low\",\n    \"state\": \"insufficient data\",\n    \"state_timestamp\": \"2015-09-22T06:06:08.748864\",\n    \"threshold_rule\": {\n      \"comparison_operator\": \"gt\",\n      \"evaluation_periods\": 1,\n      \"exclude_outliers\": false,\n      \"meter_name\": \"cpu_util\",\n      \"period\": 70,\n      \"query\": [\n        {\n          \"field\": \"project_id\",\n          \"op\": \"eq\",\n          \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n        }\n      ],\n      \"statistic\": \"avg\",\n      \"threshold\": 80.0\n    },\n    \"time_constraints\": [],\n    \"timestamp\": \"2015-09-22T06:06:08.748864\",\n    \"type\": \"threshold\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  }\n]"
             }, 
             "headers": {}
           }
@@ -301,7 +278,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "POST /v2/alarms HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "createAlarm", 
         "method": "post", 
         "parameters": [
@@ -346,6 +325,11 @@
               }
             }, 
             "headers": {}
+          }, 
+          "201": {
+            "examples": {
+              "text/plain": "HTTP/1.1 201\nstatus: 201\ncontent-length: 842\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-2cdce35b-6160-4744-a258-88b0c047830b\n\n{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"7b5897f6-7dcd-4253-ba99-8d3435459aa5\",\n  \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry_alarm-1166578842\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.779063\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"gt\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu_util\",\n    \"period\": 70,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 80.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.779063\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}"
+            }
           }
         }, 
         "summary": "Creates an alarm.", 
@@ -361,7 +345,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showAlarm", 
         "method": "get", 
         "parameters": [
@@ -380,32 +366,14 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "alarm_actions": [
-                  "http://site:8000/alarm"
-                ], 
-                "alarm_id": null, 
-                "combination_rule": null, 
-                "description": "An alarm", 
-                "enabled": true, 
-                "insufficient_data_actions": [
-                  "http://site:8000/nodata"
-                ], 
-                "name": "SwiftObjectAlarm", 
-                "ok_actions": [
-                  "http://site:8000/ok"
-                ], 
-                "project_id": "c96c887c216949acbdfbd8b494863567", 
-                "repeat_actions": false, 
-                "state": "ok", 
-                "state_timestamp": "2013-11-21T12:33:08.486228", 
-                "threshold_rule": null, 
-                "timestamp": "2013-11-21T12:33:08.486221", 
-                "type": "threshold", 
-                "user_id": "c96c887c216949acbdfbd8b494863567"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 837\ncontent-location: http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-bbb33def-ee71-41fd-b3e1-79872afb0071\n\n{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n  \"description\": \"Alarm when cpu is eq a avg of 70.0 over 60 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry-alarm-update-95497746\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"eq\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu\",\n    \"period\": 60,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 70.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.948701\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}"
             }, 
             "headers": {}
+          }, 
+          "404": {
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 176\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:09 GMT\ncontent-type: application/json\nx-openstack-request-id: req-2a291999-9fe0-42ee-a9cb-1bc50f909be1\n\n{\n  \"error_message\": {\n    \"debuginfo\": null,\n    \"faultcode\": \"Client\",\n    \"faultstring\": \"Alarm e8406422-3b2f-4914-9010-4a17b4838f74 not found in project 4e397d0d62414540be0a0844cedfa015\"\n  }\n}"
+            }
           }
         }, 
         "summary": "Shows information for a specified alarm, by alarm ID.", 
@@ -419,7 +387,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "updateAlarm", 
         "method": "put", 
         "parameters": [
@@ -446,30 +416,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "alarm_actions": [
-                  "http://site:8000/alarm"
-                ], 
-                "alarm_id": null, 
-                "combination_rule": null, 
-                "description": "An alarm", 
-                "enabled": true, 
-                "insufficient_data_actions": [
-                  "http://site:8000/nodata"
-                ], 
-                "name": "SwiftObjectAlarm", 
-                "ok_actions": [
-                  "http://site:8000/ok"
-                ], 
-                "project_id": "c96c887c216949acbdfbd8b494863567", 
-                "repeat_actions": false, 
-                "state": "ok", 
-                "state_timestamp": "2013-11-21T12:33:08.486228", 
-                "threshold_rule": null, 
-                "timestamp": "2013-11-21T12:33:08.486221", 
-                "type": "threshold", 
-                "user_id": "c96c887c216949acbdfbd8b494863567"
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 837\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-6df468c3-68b8-4227-907e-26f9d695e398\n\n{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n  \"description\": \"Alarm when cpu is eq a avg of 70.0 over 60 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry-alarm-update-95497746\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"eq\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu\",\n    \"period\": 60,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 70.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.948701\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}"
             }, 
             "headers": {}
           }
@@ -483,7 +430,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteAlarm", 
         "method": "delete", 
         "parameters": [
@@ -499,7 +448,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\ndate: Tue, 22 Sep 2015 06:06:09 GMT\nstatus: 204\ncontent-length: 0\nx-openstack-request-id: req-01e114bd-4e90-4cbe-bd75-f9a4e7a5fe85\nserver: Werkzeug/0.10.4 Python/2.7.6\n\n"
+            }, 
             "headers": {}
           }
         }, 
@@ -514,7 +465,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74/history HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showAlarmHistory", 
         "method": "get", 
         "parameters": [
@@ -538,7 +491,9 @@
         "produces": [], 
         "responses": {
           "200": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 2009\ncontent-location: http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74/history\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:08 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-b3e8caba-03c3-48ce-8a27-db057adfb362\n\n[\n  {\n    \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n    \"detail\": \"{\\\"name\\\": \\\"tempest-telemetry-alarm-update-95497746\\\", \\\"rule\\\": {\\\"meter_name\\\": \\\"cpu\\\", \\\"evaluation_periods\\\": 1, \\\"period\\\": 60, \\\"statistic\\\": \\\"avg\\\", \\\"threshold\\\": 70.0, \\\"query\\\": [{\\\"field\\\": \\\"project_id\\\", \\\"value\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"op\\\": \\\"eq\\\"}], \\\"comparison_operator\\\": \\\"eq\\\", \\\"exclude_outliers\\\": false}, \\\"description\\\": \\\"Alarm when cpu is eq a avg of 70.0 over 60 seconds\\\"}\",\n    \"event_id\": \"22bd7888-6e80-43a8-8c3a-69434436e65e\",\n    \"on_behalf_of\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"timestamp\": \"2015-09-22T06:06:08.948701\",\n    \"type\": \"rule change\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  },\n  {\n    \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n    \"detail\": \"{\\\"alarm_actions\\\": [], \\\"user_id\\\": \\\"4c97b283e8a04ddd894ded0c96293921\\\", \\\"name\\\": \\\"tempest-telemetry_alarm-1193975763\\\", \\\"state\\\": \\\"insufficient data\\\", \\\"timestamp\\\": \\\"2015-09-22T06:06:08.890079\\\", \\\"description\\\": \\\"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\\\", \\\"enabled\\\": true, \\\"state_timestamp\\\": \\\"2015-09-22T06:06:08.890079\\\", \\\"rule\\\": {\\\"meter_name\\\": \\\"cpu_util\\\", \\\"evaluation_periods\\\": 1, \\\"period\\\": 70, \\\"statistic\\\": \\\"avg\\\", \\\"threshold\\\": 80.0, \\\"query\\\": [{\\\"field\\\": \\\"project_id\\\", \\\"value\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"op\\\": \\\"eq\\\"}], \\\"comparison_operator\\\": \\\"gt\\\", \\\"exclude_outliers\\\": false}, \\\"alarm_id\\\": \\\"e8406422-3b2f-4914-9010-4a17b4838f74\\\", \\\"time_constraints\\\": [], \\\"insufficient_data_actions\\\": [], \\\"repeat_actions\\\": false, \\\"ok_actions\\\": [], \\\"project_id\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"type\\\": \\\"threshold\\\", \\\"severity\\\": \\\"low\\\"}\",\n    \"event_id\": \"f4cd7f07-4126-4b50-82b7-a66c16e6ae50\",\n    \"on_behalf_of\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"timestamp\": \"2015-09-22T06:06:08.890079\",\n    \"type\": \"creation\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  }\n]"
+            }, 
             "headers": {}
           }
         }, 
@@ -553,7 +508,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "updateAlarmState", 
         "method": "put", 
         "parameters": [
@@ -577,7 +534,9 @@
         "produces": [], 
         "responses": {
           "200": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:09 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-0771d376-62a3-4b12-b87e-5fe428db70d8\n\nok"
+            }, 
             "headers": {}
           }
         }, 
@@ -590,7 +549,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showAlarmState", 
         "method": "get", 
         "parameters": [
@@ -606,7 +567,9 @@
         "produces": [], 
         "responses": {
           "200": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4\ncontent-location: http://127.0.0.1:8777/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:06:09 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-47d9d41a-aec2-42e6-9af6-76e4e285b7cc\n\nok"
+            }, 
             "headers": {}
           }
         }, 
@@ -758,7 +721,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2/meters/memory?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listSamplesforMeter", 
         "method": "get", 
         "parameters": [
@@ -801,24 +766,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": [
-                {
-                  "counter_name": "instance", 
-                  "counter_type": "gauge", 
-                  "counter_unit": "instance", 
-                  "counter_volume": 1.0, 
-                  "message_id": "5460acce-4fd6-480d-ab18-9735ec7b1996", 
-                  "project_id": "35b17138-b364-4e6a-a131-8f3099c5be68", 
-                  "resource_id": "bd9431c1-8d69-4ad3-803a-8d4a6b89fd36", 
-                  "resource_metadata": {
-                    "name1": "value1", 
-                    "name2": "value2"
-                  }, 
-                  "source": "openstack", 
-                  "timestamp": "2013-11-21T12:33:08.323533", 
-                  "user_id": "efd87807-12d2-4b38-9c70-5f5c2ac427ff"
-                }
-              ]
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 18357\ncontent-location: http://127.0.0.1:8777/v2/meters/memory?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource\nserver: Werkzeug/0.10.4 Python/2.7.6\ndate: Tue, 22 Sep 2015 06:13:05 GMT\ncontent-type: application/json; charset=UTF-8\nx-openstack-request-id: req-051356d4-7052-4e43-b5af-32d7ce517187\n\n[{\"counter_name\": \"memory\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.657207\", \"recorded_at\": \"2015-09-22T06:13:04.854695\", \"message_id\": \"fc58b5e4-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"MB\", \"counter_volume\": 64.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.create.end\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"message\": \"Success\", \"deleted_at\": \"\", \"fixed_ips\": \"[{'version': 4, 'vif_mac': 'fa:16:3e:83:c5:34', 'floating_ips': [], 'label': 'private', 'meta': {}, 'address': '10.1.0.5', 'type': 'fixed'}]\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"reservation_id\": \"r-hb4pbo6x\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_meta.min_disk\": \"0\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.355630\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"cell_name\": \"\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"instance_type\": \"m1.nano\", \"vcpus\": \"1\", \"architecture\": \"None\", \"os_type\": \"None\", \"instance_flavor_id\": \"42\"}, \"counter_type\": \"gauge\"}, {\"counter_name\": \"memory\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.627959\", \"recorded_at\": \"2015-09-22T06:13:04.756667\", \"message_id\": \"fc533d76-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"MB\", \"counter_volume\": 64.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.update\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"deleted_at\": \"\", \"reservation_id\": \"r-hb4pbo6x\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"instance_type\": \"m1.nano\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"old_state\": \"building\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.000000\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_meta.min_disk\": \"0\", \"cell_name\": \"\", \"audit_period_beginning\": \"2015-09-22T06:00:00.000000\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"old_task_state\": \"spawning\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"vcpus\": \"1\", \"architecture\": \"None\", \"new_task_state\": \"None\", \"audit_period_ending\": \"2015-09-22T06:13:04.564995\", \"os_type\": \"None\", \"instance "
             }, 
             "headers": {}
           }

@@ -1,0 +1,4 @@
+GET /v2.1/06fa3253e2334d66bfd12df477b02432/os-aggregates HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

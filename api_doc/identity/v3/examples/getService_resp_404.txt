@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 117
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:30 GMT
+content-type: application/json
+x-openstack-request-id: req-f3b2eeae-c5d2-454d-b75d-f4fa95ba1589
+
+{
+  "error": {
+    "code": 404,
+    "message": "Could not find service: 5f2fc6142e5c4aaf8f1ecef3d61c7da1",
+    "title": "Not Found"
+  }
+}

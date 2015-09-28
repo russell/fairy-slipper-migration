@@ -279,7 +279,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "getVersionInfo-v2.0", 
         "method": "get", 
         "parameters": [], 
@@ -289,30 +291,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "version": {
-                  "id": "v2.0", 
-                  "links": [
-                    {
-                      "href": "http://localhost:5000/v2.0/", 
-                      "rel": "self"
-                    }, 
-                    {
-                      "href": "http://docs.openstack.org/", 
-                      "rel": "describedby", 
-                      "type": "text/html"
-                    }
-                  ], 
-                  "media-types": [
-                    {
-                      "base": "application/json", 
-                      "type": "application/vnd.openstack.identity-v2.0+json"
-                    }
-                  ], 
-                  "status": "stable", 
-                  "updated": "2014-04-17T00:00:00Z"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 335\ncontent-location: http://127.0.0.1:5000/v2.0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:59 GMT\ncontent-type: application/json\nx-openstack-request-id: req-5bf58e3c-91e7-4aa1-bbdc-c4b488492a30\n\n{\n  \"version\": {\n    \"id\": \"v2.0\",\n    \"links\": [\n      {\n        \"href\": \"http://127.0.0.1:5000/v2.0/\",\n        \"rel\": \"self\"\n      },\n      {\n        \"href\": \"http://docs.openstack.org/\",\n        \"rel\": \"describedby\",\n        \"type\": \"text/html\"\n      }\n    ],\n    \"media-types\": [\n      {\n        \"base\": \"application/json\",\n        \"type\": \"application/vnd.openstack.identity-v2.0+json\"\n      }\n    ],\n    \"status\": \"stable\",\n    \"updated\": \"2014-04-17T00:00:00Z\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -490,7 +469,7 @@
         ], 
         "description": "", 
         "examples": {
-          "text/plain": "GET /v2.0/tenants HTTP/1.1\nHost: identity.api.openstack.org\nContent-Type: application/json\nX-Auth-Token: fa8426a0-8eaf-4d22-8e13-7c1b16a9370c\nAccept: application/json\n"
+          "text/plain": "GET /v2.0/tenants HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "listTenants", 
         "method": "get", 
@@ -501,23 +480,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "tenants": [
-                  {
-                    "description": "A description ...", 
-                    "enabled": true, 
-                    "id": "1234", 
-                    "name": "ACME Corp"
-                  }, 
-                  {
-                    "description": "A description ...", 
-                    "enabled": true, 
-                    "id": "3456", 
-                    "name": "Iron Works"
-                  }
-                ], 
-                "tenants_links": []
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 1792\ncontent-location: http://127.0.0.1:35357/v2.0/tenants\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:06 GMT\ncontent-type: application/json\nx-openstack-request-id: req-eab57270-0ae1-4c6f-984d-9eb87acedecc\n\n{\n  \"tenants\": [\n    {\n      \"description\": \"tempest-SnapshotV2MetadataTestJSON-2087182419-desc\",\n      \"enabled\": true,\n      \"id\": \"0d2dcccdc602454aae2543d4005c3166\",\n      \"name\": \"tempest-SnapshotV2MetadataTestJSON-2087182419\"\n    },\n    {\n      \"description\": \"tempest-TenantsTestJSON-151001139-desc\",\n      \"enabled\": true,\n      \"id\": \"1597adcdfc624799bd1cae012ad543e7\",\n      \"name\": \"tempest-TenantsTestJSON-151001139\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"1c1403595fe24e2f862c2a5f20ac269a\",\n      \"name\": \"swifttenanttest1\"\n    },\n    {\n      \"description\": \"tempest-VolumesV2ListTestJSON-253834780-desc\",\n      \"enabled\": true,\n      \"id\": \"500f8fc90edd42b7b1cf6b31e92c0978\",\n      \"name\": \"tempest-VolumesV2ListTestJSON-253834780\"\n    },\n    {\n      \"description\": \"tempest-VolumesBackupsV2Test-1776158537-desc\",\n      \"enabled\": true,\n      \"id\": \"507837cc3eef4b77ba5a9e37cac03bf6\",\n      \"name\": \"tempest-VolumesBackupsV2Test-1776158537\"\n    },\n    {\n      \"description\": \"tempest-TenantsTestJSON-1512749740-desc\",\n      \"enabled\": true,\n      \"id\": \"50de5b83ae0041ad9e21eda5f88b6643\",\n      \"name\": \"tempest-TenantsTestJSON-1512749740\"\n    },\n    {\n      \"description\": \"tempest-VolumesBackupsV2Test-1116120520-desc\",\n      \"enabled\": true,\n      \"id\": \"5609d7ff66d744fcaa69802273f21e57\",\n      \"name\": \"tempest-VolumesBackupsV2Test-1116120520\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"603e2acd7280415581e58d38a2fe1c87\",\n      \"name\": \"admin\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"6e5b9d0ab67b4d1ca9e8b57cb2cb9fba\",\n      \"name\": \"swifttenanttest2\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"77044e1e011d419db467ead202a351f0\",\n      \"name\": \"demo\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"dfa1523272d14408a2e9f3c65064dd15\",\n      \"name\": \"invisible_to_admin\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"e31dd6ce7e9849d1989efcc81102a8c5\",\n      \"name\": \"alt_demo\"\n    },\n    {\n      \"description\": \"\",\n      \"enabled\": true,\n      \"id\": \"ef25afb233fc446693e211580b1124f9\",\n      \"name\": \"service\"\n    }\n  ],\n  \"tenants_links\": []\n}"
             }, 
             "headers": {}
           }, 
@@ -548,11 +511,15 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:35 GMT\nx-openstack-request-id: req-c80a94ad-6b51-47dc-b719-b9f8046e16a6\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:35 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0dc5f860-1110-4ba3-a1d8-2a7d57a60aaf\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -586,14 +553,7 @@
         ], 
         "description": "The Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against Identity requires the X-Auth-Token\nheader. Clients obtain this token, along with the URL to other\nservice APIs, by first authenticating against Identity with valid\ncredentials.\n\nTo authenticate, you must provide either a user ID and password or\na token.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
         "examples": {
-          "application/json": {
-            "auth": {
-              "tenantName": "demo", 
-              "token": {
-                "id": "cbc36478b0bd8e67e89469c7749d4127"
-              }
-            }
-          }
+          "text/plain": "POST /v2.0/tokens HTTP/1.1\n"
         }, 
         "id": "authenticate-v2.0", 
         "method": "post", 
@@ -614,184 +574,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "access": {
-                  "metadata": {
-                    "is_admin": 0, 
-                    "roles": [
-                      "7598ac3c634d4c3da4b9126a5f67ca2b", 
-                      "f95c0ab82d6045d9805033ee1fbc80d4"
-                    ]
-                  }, 
-                  "serviceCatalog": [
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8774/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "id": "2dad48f09e2a447a9bf852bcd93548ef", 
-                          "internalURL": "http://23.253.72.207:8774/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "publicURL": "http://23.253.72.207:8774/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "nova", 
-                      "type": "compute"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:9696/", 
-                          "id": "97c526db8d7a4c88bbb8d68db1bdcdb8", 
-                          "internalURL": "http://23.253.72.207:9696/", 
-                          "publicURL": "http://23.253.72.207:9696/", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "neutron", 
-                      "type": "network"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8776/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "id": "93f86dfcbba143a39a33d0c2cd424870", 
-                          "internalURL": "http://23.253.72.207:8776/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "publicURL": "http://23.253.72.207:8776/v2/fc394f2ab2df4114bde39905f800dc57", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "cinder", 
-                      "type": "volumev2"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8774/v3", 
-                          "id": "3eb274b12b1d47b2abc536038d87339e", 
-                          "internalURL": "http://23.253.72.207:8774/v3", 
-                          "publicURL": "http://23.253.72.207:8774/v3", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "nova", 
-                      "type": "computev3"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:3333", 
-                          "id": "957f1e54afc64d33a62099faa5e980a2", 
-                          "internalURL": "http://23.253.72.207:3333", 
-                          "publicURL": "http://23.253.72.207:3333", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "s3", 
-                      "type": "s3"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:9292", 
-                          "id": "27d5749f36864c7d96bebf84a5ec9767", 
-                          "internalURL": "http://23.253.72.207:9292", 
-                          "publicURL": "http://23.253.72.207:9292", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "glance", 
-                      "type": "image"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8776/v1/fc394f2ab2df4114bde39905f800dc57", 
-                          "id": "37c83a2157f944f1972e74658aa0b139", 
-                          "internalURL": "http://23.253.72.207:8776/v1/fc394f2ab2df4114bde39905f800dc57", 
-                          "publicURL": "http://23.253.72.207:8776/v1/fc394f2ab2df4114bde39905f800dc57", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "cinder", 
-                      "type": "volume"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8773/services/Admin", 
-                          "id": "289b59289d6048e2912b327e5d3240ca", 
-                          "internalURL": "http://23.253.72.207:8773/services/Cloud", 
-                          "publicURL": "http://23.253.72.207:8773/services/Cloud", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "ec2", 
-                      "type": "ec2"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8080", 
-                          "id": "16b76b5e5b7d48039a6e4cc3129545f3", 
-                          "internalURL": "http://23.253.72.207:8080/v1/AUTH_fc394f2ab2df4114bde39905f800dc57", 
-                          "publicURL": "http://23.253.72.207:8080/v1/AUTH_fc394f2ab2df4114bde39905f800dc57", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "swift", 
-                      "type": "object-store"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:35357/v2.0", 
-                          "id": "26af053673df4ef3a2340c4239e21ea2", 
-                          "internalURL": "http://23.253.72.207:5000/v2.0", 
-                          "publicURL": "http://23.253.72.207:5000/v2.0", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "keystone", 
-                      "type": "identity"
-                    }
-                  ], 
-                  "token": {
-                    "expires": "2014-01-31T15:30:58Z", 
-                    "id": "aaaaa-bbbbb-ccccc-dddd", 
-                    "issued_at": "2014-01-30T15:30:58.819584", 
-                    "tenant": {
-                      "description": null, 
-                      "enabled": true, 
-                      "id": "fc394f2ab2df4114bde39905f800dc57", 
-                      "name": "demo"
-                    }
-                  }, 
-                  "user": {
-                    "id": "9a6590b2ab024747bc2167c4e064d00d", 
-                    "name": "demo", 
-                    "roles": [
-                      {
-                        "name": "Member"
-                      }, 
-                      {
-                        "name": "anotherrole"
-                      }
-                    ], 
-                    "roles_links": [], 
-                    "username": "demo"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 3921\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:52:45 GMT\ncontent-type: application/json\nx-openstack-request-id: req-946602df-8f59-45dd-b008-bc591abc67f6\n\n"
             }, 
             "headers": {}
           }, 
@@ -983,7 +766,9 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 165\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:10 GMT\nx-openstack-request-id: req-94743781-ecb3-492f-b650-d6301974ca79\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:5000\"\n\n"
+            }, 
             "headers": {}
           }, 
           "403": {

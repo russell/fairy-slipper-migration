@@ -1,0 +1,18 @@
+HTTP/1.1 200
+status: 200
+content-length: 199
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:07 GMT
+content-type: application/json
+x-openstack-request-id: req-cac620d4-3e69-456b-ae9f-98efaa2db058
+
+{
+  "tenant": {
+    "description": "tempest-VolumeQuotasAdminV1TestJSON-1703561346-desc",
+    "enabled": true,
+    "id": "1641732024894b9a9ae6e9cc46f890ed",
+    "name": "tempest-VolumeQuotasAdminV1TestJSON-1703561346"
+  }
+}

@@ -1,0 +1,4 @@
+DELETE /v2.1/a6f8c8f6b8864cf29fb8420d4491b2bb/os-volumes/f905447b-4a15-40cd-a6ca-8afbbcc8b257 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

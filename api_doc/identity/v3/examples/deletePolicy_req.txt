@@ -1,0 +1,4 @@
+DELETE /v3/policies/8425e1226538430c92d9c9f68c1d7c37 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

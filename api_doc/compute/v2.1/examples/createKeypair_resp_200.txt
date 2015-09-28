@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 2308
+x-compute-request-id: req-0ff64b6a-cca1-4b2f-9595-38ed0e3d8510
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:36 GMT
+content-type: application/json
+
+{
+  "keypair": {
+    "fingerprint": "7b:3a:dc:d3:b2:fa:a8:21:e6:8d:dc:08:4b:ce:b3:71",
+    "name": "tempest-keypair-145676997",
+    "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpwIBAAKCAQEAnM57f6vovEiKllO06zxalghDA7d/e915iugJnClbUCkP8uNI\n85XK9GaN3HbkcoqZDNrczkveWjkkUTAH8RXTx5PQoUdlOR6ys1WO5IdXKwhFaRs2\npPpqHqblV5vU3f8ySsmXUSk/tlGcFhIyabVz60LyGYNrqwfbbFqjnb/c0GpOlNFD\nuv3vZvsbfKb2QaVEctCgfWrOfaqHcK7MzDqCqgdo5NAY7uTsV5k6gCJpYtaGRV9c\nhMTAqZAf9j1XXZB6EiupB79FhS/zpztp12h3RIadSEq4OESUG5/CRlmLbZgo6V3B\nsrBowIJD/R9zIJldCedc5Gr89IzSsrLptrnWBQIDAQABAoIA/zcgYEqCJVAMMKyo\nwPHyReZ5ARZNbIQfWJt89+PupiuIRBMf1IXOI4vIghb/tVCPaT8bsoTUJ1eQvzPL\nrv8SrWF8ldwdPXjXUfu6GII/EmYOglhxOMTHRIeCJR6nqi5hiUzBknD2D3AJQNaB\njzeakyYiYvqVOUTnfjyZoOvUh8y9BZDow5tEolSGfsHnTAwgBx27qQmwUEmPWe+N\nZwMqxa8hqzL8nCFlL7BK+neLYY3eB/r58Y+QsNrQ3WytpQZupxTT+Zq483p4kkXw\navBqehVvzMipw4gkuNDyNQXXCnuyUfqW4Lw/uUP0pJZY0R0hVOMVlHUnGWHH5dnj\nIXzdwQKCAIEAuQZhy52nunDB8N8K+aGb6kGT8ftsDJf55Nh1yYMu3KcfhVtdTCXw\nVu1wVqziaC2+qPVH39WyqXIneyXNH0bQQ1jItw2f8T+si3zdq8U3K60IzM0dHmqF\n26l83ZsUBBEMBta8uvJWUOfuIyMEv6ttfG/8milF5K8J3KthGhwUC70CggCBANj1\nCCFQcfeG1huWyVfJgJrtpo/e3ngCfnaElersZ0iRZuKYposHhL/XuudaS9CSQN2/\nAPKfZrVPkUNrVmwh6PPXTt+uLtDbEXzN5E976QA3Bq24cE9LKhZtZD/HlP3oq/ss\nfHTC1fFntoW1J8YO7Ahf2F2iTi2BlhOFFiEGvrPpAoIAgQCCK35D/Q+SuF+JcbHL\n/Cmv/iDynlre5VDW8n6zncorTJx9etDBkPNshLGDGTBT8NLxFVdSn4qJcZlbJzYP\nagd9Sgoz1q8O0Cg5Hkjp3t64qIzHYQq6amDwMGZ7le3YCpI2gX7X20RkuTctmyZt\nHlLxt+u0HZNhls/OYvf2oYhs1QKCAIAj9G+1fax1dg4TomiZuNYsVsgsvaWmw9sL\nbyudNDJlr1saoGuxTLyuQmVCJA++cA558UaJ7urJj3cmcipvXytJBdyXazls+XEr\ner+kgId7tqLPtWo/adh+wQBFJaFGdwHRbWzuuL9V83cnL3947k4lkSS9V8GW/wvN\nDlg9fu2pyQKCAIBInq+fkC3h4ANnF4oeSVJ8uYT0C93Urd36kRCtNizzj0XaY3XB\nm5BW/7BZN+3GOAvr1pesXH856UsNg3i3WzBrIx789Z4wkzJPGak/+TPP3u6vBgI7\nj5Wqsj4dd7GiFnuwNR2GBpdwo2G5rmakImnSxzSUvsZBcLwY9UDjzwaY4A==\n-----END RSA PRIVATE KEY-----\n",
+    "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcznt/q+i8SIqWU7TrPFqWCEMDt3973XmK6AmcKVtQKQ/y40jzlcr0Zo3cduRyipkM2tzOS95aOSRRMAfxFdPHk9ChR2U5HrKzVY7kh1crCEVpGzak+moepuVXm9Td/zJKyZdRKT+2UZwWEjJptXPrQvIZg2urB9tsWqOdv9zQak6U0UO6/e9m+xt8pvZBpURy0KB9as59qodwrszMOoKqB2jk0Bju5OxXmTqAImli1oZFX1yExMCpkB/2PVddkHoSK6kHv0WFL/OnO2nXaHdEhp1ISrg4RJQbn8JGWYttmCjpXcGysGjAgkP9H3MgmV0J51zkavz0jNKysum2udYF Generated-by-Nova",
+    "user_id": "680317e1066c47d1a414c78766c81b3f"
+  }
+}

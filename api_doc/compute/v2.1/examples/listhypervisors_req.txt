@@ -1,0 +1,4 @@
+GET /v2.1/4193188b520642908199e209bb21224c/os-hypervisors HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

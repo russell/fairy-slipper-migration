@@ -1,0 +1,4 @@
+GET /v2.1/6a2b5befb54e4fecae4d00f702c160ae/servers/8cadaf28-ba92-4b54-b038-f10c493dbcf1/ips/private HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

@@ -1,0 +1,43 @@
+HTTP/1.1 200
+status: 200
+content-length: 660
+content-location: http://127.0.0.1:9292/v2/schemas/member
+connection: close
+date: Tue, 22 Sep 2015 06:08:03 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-efdb4f04-8f27-4e04-9a5f-6234b1cddf43
+
+{
+  "name": "member",
+  "properties": {
+    "created_at": {
+      "description": "Date and time of image member creation",
+      "type": "string"
+    },
+    "image_id": {
+      "description": "An identifier for the image",
+      "pattern": "^([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}$",
+      "type": "string"
+    },
+    "member_id": {
+      "description": "An identifier for the image member (tenantId)",
+      "type": "string"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "status": {
+      "description": "The status of this image member",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ],
+      "type": "string"
+    },
+    "updated_at": {
+      "description": "Date and time of last modification of image member",
+      "type": "string"
+    }
+  }
+}

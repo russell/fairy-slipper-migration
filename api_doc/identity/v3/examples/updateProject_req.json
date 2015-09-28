@@ -1,9 +1,0 @@
-{
-  "project": {
-    "parent_id": "123c56", 
-    "enabled": true, 
-    "description": "My updated project", 
-    "name": "myUpdatedProject", 
-    "domain_id": "1789d1"
-  }
-}

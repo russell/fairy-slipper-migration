@@ -1,0 +1,47 @@
+HTTP/1.1 200
+status: 200
+content-length: 794
+content-location: http://127.0.0.1:8774/v2.1/627a0b1b37b347028b642749f6c159bf/os-networks/40414a9f-5ef3-484b-a0c2-d416d1cea29b
+x-compute-request-id: req-93642173-3f97-4854-b874-fec196fb694d
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:54 GMT
+content-type: application/json
+
+{
+  "network": {
+    "bridge": "br100",
+    "bridge_interface": "eth0",
+    "broadcast": "10.1.15.255",
+    "cidr": "10.1.0.0/20",
+    "cidr_v6": null,
+    "created_at": "2015-09-22T05:50:15.000000",
+    "deleted": false,
+    "deleted_at": null,
+    "dhcp_server": "10.1.0.1",
+    "dhcp_start": "10.1.0.2",
+    "dns1": "8.8.4.4",
+    "dns2": null,
+    "enable_dhcp": true,
+    "gateway": "10.1.0.1",
+    "gateway_v6": null,
+    "host": "devstack-trusty-hpcloud-b5-5038802",
+    "id": "40414a9f-5ef3-484b-a0c2-d416d1cea29b",
+    "injected": false,
+    "label": "private",
+    "mtu": null,
+    "multi_host": false,
+    "netmask": "255.255.240.0",
+    "netmask_v6": null,
+    "priority": null,
+    "project_id": null,
+    "rxtx_base": null,
+    "share_address": false,
+    "updated_at": "2015-09-22T05:52:12.000000",
+    "vlan": null,
+    "vpn_private_address": null,
+    "vpn_public_address": null,
+    "vpn_public_port": null
+  }
+}

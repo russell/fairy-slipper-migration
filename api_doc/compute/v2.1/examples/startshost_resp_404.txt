@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 110
+x-compute-request-id: req-8b3a09d6-27e5-4a66-a76c-ae0d9baf3c4b
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:53:03 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Compute host tempest-rand_hostname-928659675 could not be found."
+  }
+}

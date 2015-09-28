@@ -1,0 +1,66 @@
+HTTP/1.1 200
+status: 200
+content-length: 984
+content-location: http://127.0.0.1:8774/v2.1/a6f8c8f6b8864cf29fb8420d4491b2bb/os-volumes/detail
+x-compute-request-id: req-c550902f-63d4-419a-9731-2ccc689f54de
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:04:25 GMT
+content-type: application/json
+
+{
+  "volumes": [
+    {
+      "attachments": [
+        {}
+      ],
+      "availabilityZone": "nova",
+      "createdAt": "2015-09-22T06:04:22.000000",
+      "displayDescription": null,
+      "displayName": "tempest-volume-843561",
+      "id": "9fb501ba-ba5f-4cb8-a99c-02ce9084db27",
+      "metadata": {
+        "Type": "work"
+      },
+      "size": 1,
+      "snapshotId": null,
+      "status": "available",
+      "volumeType": "lvmdriver-1"
+    },
+    {
+      "attachments": [
+        {}
+      ],
+      "availabilityZone": "nova",
+      "createdAt": "2015-09-22T06:04:17.000000",
+      "displayDescription": null,
+      "displayName": "tempest-volume-1094796798",
+      "id": "7dc84804-4048-4a47-9df4-a0b8bbab76a7",
+      "metadata": {
+        "Type": "work"
+      },
+      "size": 1,
+      "snapshotId": null,
+      "status": "available",
+      "volumeType": "lvmdriver-1"
+    },
+    {
+      "attachments": [
+        {}
+      ],
+      "availabilityZone": "nova",
+      "createdAt": "2015-09-22T06:04:14.000000",
+      "displayDescription": null,
+      "displayName": "tempest-volume-1601947518",
+      "id": "f905447b-4a15-40cd-a6ca-8afbbcc8b257",
+      "metadata": {
+        "Type": "work"
+      },
+      "size": 1,
+      "snapshotId": null,
+      "status": "available",
+      "volumeType": "lvmdriver-1"
+    }
+  ]
+}

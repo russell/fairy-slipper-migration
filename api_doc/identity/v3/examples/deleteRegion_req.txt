@@ -1,0 +1,4 @@
+DELETE /v3/regions/2419235a3f2946009c9ac9407d0e2ba3 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

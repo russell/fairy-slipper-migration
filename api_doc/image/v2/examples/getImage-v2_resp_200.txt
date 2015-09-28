@@ -1,0 +1,30 @@
+HTTP/1.1 200
+status: 200
+content-length: 594
+content-location: http://127.0.0.1:9292/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b
+connection: close
+date: Tue, 22 Sep 2015 06:07:25 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-d7929a39-2483-4025-a804-b1278daaf7de
+
+{
+  "checksum": "d2e8d77fc0d7eaeb46d5a8c90e57eb4f",
+  "container_format": "bare",
+  "created_at": "2015-09-22T06:07:23Z",
+  "disk_format": "raw",
+  "file": "/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b/file",
+  "id": "f6b6ffab-b9a1-444f-8fdc-21493180695b",
+  "min_disk": 0,
+  "min_ram": 0,
+  "name": "image-2071310758",
+  "owner": "b3298ce4c6e2453f8bdddac88a0e2027",
+  "protected": false,
+  "schema": "/v2/schemas/image",
+  "self": "/v2/images/f6b6ffab-b9a1-444f-8fdc-21493180695b",
+  "size": 1024,
+  "status": "deactivated",
+  "tags": [],
+  "updated_at": "2015-09-22T06:07:25Z",
+  "virtual_size": null,
+  "visibility": "private"
+}

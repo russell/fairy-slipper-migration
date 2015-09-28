@@ -1,0 +1,17 @@
+HTTP/1.1 403
+status: 403
+content-length: 229
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:10:38 GMT
+content-type: application/json
+x-openstack-request-id: req-32298b0c-8544-406a-9774-fddfbc0bbf54
+
+{
+  "error": {
+    "code": 403,
+    "message": "You are not authorized to perform the requested action: cannot delete a domain that is enabled, please disable it first. (Disable debug mode to suppress these details.)",
+    "title": "Forbidden"
+  }
+}

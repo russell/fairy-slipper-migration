@@ -1,0 +1,4 @@
+DELETE /v3/services/07a05a9b98714b95813423bfdd33c20d HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

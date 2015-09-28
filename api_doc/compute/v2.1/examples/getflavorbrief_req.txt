@@ -1,0 +1,4 @@
+GET /v2.1/36c1cdd6fa1143539c5c9fb5ea8eff11/flavors HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

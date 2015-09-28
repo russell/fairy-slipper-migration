@@ -1,0 +1,4 @@
+DELETE /v3/projects/0926c7ec8b0443ac9e067a32a1a5e215/users/2fe3c74007d2459e94908d5a47e153eb/roles/77f9414ff2d441d68161fc7ad6787378 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

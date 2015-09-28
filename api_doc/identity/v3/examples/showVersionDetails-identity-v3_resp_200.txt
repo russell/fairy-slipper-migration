@@ -1,0 +1,30 @@
+HTTP/1.1 200
+status: 200
+content-length: 249
+content-location: http://127.0.0.1:35357/v3
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:07:15 GMT
+content-type: application/json
+x-openstack-request-id: req-821662cd-68f6-4149-9779-5cbf4bb4d971
+
+{
+  "version": {
+    "id": "v3.4",
+    "links": [
+      {
+        "href": "http://127.0.0.1:35357/v3/",
+        "rel": "self"
+      }
+    ],
+    "media-types": [
+      {
+        "base": "application/json",
+        "type": "application/vnd.openstack.identity-v3+json"
+      }
+    ],
+    "status": "stable",
+    "updated": "2015-03-30T00:00:00Z"
+  }
+}

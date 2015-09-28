@@ -1,0 +1,68 @@
+HTTP/1.1 200
+status: 200
+content-length: 1302
+content-location: http://127.0.0.1:35357/v3/groups
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:34 GMT
+content-type: application/json
+x-openstack-request-id: req-1f005b76-67a7-44ae-a4e3-726b7ce56c6e
+
+{
+  "groups": [
+    {
+      "description": "tempest-Description-966092121",
+      "domain_id": "default",
+      "id": "4da087c3d50441f08ee29e61445bddc7",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/4da087c3d50441f08ee29e61445bddc7"
+      },
+      "name": "tempest-Group-137620833",
+      "project_id": null
+    },
+    {
+      "description": "openstack admin group",
+      "domain_id": "default",
+      "id": "615fcacf6f884598b6e74f7d0b626d8d",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/615fcacf6f884598b6e74f7d0b626d8d"
+      },
+      "name": "admins"
+    },
+    {
+      "description": "tempest-Description-1431185387",
+      "domain_id": "default",
+      "id": "8af0314bdd1f4a3aa74eb88527a4b4b3",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/8af0314bdd1f4a3aa74eb88527a4b4b3"
+      },
+      "name": "tempest-Group-1421729322",
+      "project_id": null
+    },
+    {
+      "description": "tempest-Description-755370914",
+      "domain_id": "default",
+      "id": "b9584b3f8a42466e8687aa82a8867a63",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/b9584b3f8a42466e8687aa82a8867a63"
+      },
+      "name": "tempest-Group-53177133",
+      "project_id": null
+    },
+    {
+      "description": "non-admin group",
+      "domain_id": "default",
+      "id": "fa7ac3bb2749449c920bd19a435bd2c7",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/fa7ac3bb2749449c920bd19a435bd2c7"
+      },
+      "name": "nonadmins"
+    }
+  ],
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:35357/v3/groups"
+  }
+}

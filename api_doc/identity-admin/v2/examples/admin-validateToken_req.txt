@@ -1,0 +1,4 @@
+GET /v2.0/tokens/2e65c5afb0224e7390c9f565cfa5a746 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

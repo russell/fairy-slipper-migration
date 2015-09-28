@@ -1,0 +1,19 @@
+HTTP/1.1 200
+status: 200
+content-length: 164
+content-location: http://127.0.0.1:8774/v2.1/8efa1174e59c4510bf7a278c005c89db/os-fixed-ips/10.1.0.2
+x-compute-request-id: req-d8342a15-4d77-49e6-953e-1ae539f498f3
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:38 GMT
+content-type: application/json
+
+{
+  "fixed_ip": {
+    "address": "10.1.0.2",
+    "cidr": "10.1.0.0/20",
+    "host": "devstack-trusty-hpcloud-b5-5038802",
+    "hostname": "tempest.common.compute-instance-1410788452"
+  }
+}

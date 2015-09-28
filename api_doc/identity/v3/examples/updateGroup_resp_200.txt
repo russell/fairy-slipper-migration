@@ -1,0 +1,22 @@
+HTTP/1.1 200
+status: 200
+content-length: 282
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:28 GMT
+content-type: application/json
+x-openstack-request-id: req-3e91425c-91f4-40e7-916f-ceb3a2dd335b
+
+{
+  "group": {
+    "description": "tempest-UpdateDescription-1966444770",
+    "domain_id": "default",
+    "id": "b19d8e1c3b4f48509ceba63c8ae94bf5",
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5"
+    },
+    "name": "tempest-UpdateGroup-1774978430",
+    "project_id": null
+  }
+}

@@ -1,0 +1,17 @@
+HTTP/1.1 200
+status: 200
+content-length: 99
+x-compute-request-id: req-67101036-ccb8-437c-b693-ffcdddd8f7ac
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:59 GMT
+content-type: application/json
+
+{
+  "floating_ips_bulk_create": {
+    "interface": "eth0",
+    "ip_range": "10.0.0.0/29",
+    "pool": "test_pool"
+  }
+}

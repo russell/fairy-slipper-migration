@@ -1,0 +1,8 @@
+HTTP/1.1 200
+status: 200
+content-location: http://127.0.0.1:9292/v2/images/bc68b06f-8194-4122-86a1-0f0f03125f39/file
+transfer-encoding: chunked
+connection: close
+date: Tue, 22 Sep 2015 06:05:30 GMT
+content-type: application/octet-stream
+x-openstack-request-id: req-47d0d660-e679-47ed-8142-892ec930b063

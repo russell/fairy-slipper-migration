@@ -1,0 +1,4 @@
+DELETE /v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

@@ -1,0 +1,16 @@
+HTTP/1.1 400
+status: 400
+content-length: 73
+x-compute-request-id: req-4be9c3cb-079a-44af-bd0c-642320b76e3d
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:17 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "badRequest": {
+    "code": 400,
+    "message": "Invalid minDisk filter [None]"
+  }
+}

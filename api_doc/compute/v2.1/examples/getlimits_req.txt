@@ -1,0 +1,4 @@
+GET /v2.1/b266e81cfd1446229128afc5ffdd5446/limits HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

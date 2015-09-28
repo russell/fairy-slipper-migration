@@ -1,0 +1,24 @@
+HTTP/1.1 200
+status: 200
+content-length: 202
+content-location: http://127.0.0.1:8774/v2.1/473b56e170f94c938f03bcf3bfa77720/os-server-groups/08f5b7c7-47c0-4440-bd92-93172be05abe
+x-compute-request-id: req-fa87077f-8cfd-48a8-9d8b-8387db34a054
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:10 GMT
+content-type: application/json
+
+{
+  "server_group": {
+    "id": "08f5b7c7-47c0-4440-bd92-93172be05abe",
+    "members": [
+      "06b008d2-ae80-4837-b44e-4fe123dd9186"
+    ],
+    "metadata": {},
+    "name": "tempest-server_group-1446827548",
+    "policies": [
+      "affinity"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+HTTP/1.1 409
+status: 409
+content-length: 123
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:35 GMT
+content-type: application/json
+x-openstack-request-id: req-a036ddfc-f010-4f05-8bec-cf8b1b80f1ff
+
+{
+  "error": {
+    "code": 409,
+    "message": "Conflict occurred attempting to store project - Duplicate Entry",
+    "title": "Conflict"
+  }
+}

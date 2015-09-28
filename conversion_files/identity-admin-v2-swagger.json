@@ -318,7 +318,9 @@
           "application/json"
         ], 
         "description": "Gets detailed information about a specified version of the Identity\nAPI.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-getVersionInfo", 
         "method": "get", 
         "parameters": [], 
@@ -328,30 +330,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "version": {
-                  "id": "v2.0", 
-                  "links": [
-                    {
-                      "href": "http://localhost:5000/v2.0/", 
-                      "rel": "self"
-                    }, 
-                    {
-                      "href": "http://docs.openstack.org/", 
-                      "rel": "describedby", 
-                      "type": "text/html"
-                    }
-                  ], 
-                  "media-types": [
-                    {
-                      "base": "application/json", 
-                      "type": "application/vnd.openstack.identity-v2.0+json"
-                    }
-                  ], 
-                  "status": "stable", 
-                  "updated": "2014-04-17T00:00:00Z"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 335\ncontent-location: http://127.0.0.1:5000/v2.0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:59 GMT\ncontent-type: application/json\nx-openstack-request-id: req-5bf58e3c-91e7-4aa1-bbdc-c4b488492a30\n\n{\n  \"version\": {\n    \"id\": \"v2.0\",\n    \"links\": [\n      {\n        \"href\": \"http://127.0.0.1:5000/v2.0/\",\n        \"rel\": \"self\"\n      },\n      {\n        \"href\": \"http://docs.openstack.org/\",\n        \"rel\": \"describedby\",\n        \"type\": \"text/html\"\n      }\n    ],\n    \"media-types\": [\n      {\n        \"base\": \"application/json\",\n        \"type\": \"application/vnd.openstack.identity-v2.0+json\"\n      }\n    ],\n    \"status\": \"stable\",\n    \"updated\": \"2014-04-17T00:00:00Z\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -704,7 +683,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/tenants/82ca01925e2f47089f94675b7b9ef4c0 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-getTenantById", 
         "method": "get", 
         "parameters": [
@@ -723,14 +704,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "tenant": {
-                  "description": "A description ...", 
-                  "enabled": true, 
-                  "id": "1234", 
-                  "name": "ACME corp"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 154\ncontent-location: http://127.0.0.1:35357/v2.0/tenants/82ca01925e2f47089f94675b7b9ef4c0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:10 GMT\ncontent-type: application/json\nx-openstack-request-id: req-b76b7979-0a03-41cc-834f-10ad21abb1b1\n\n{\n  \"tenant\": {\n    \"description\": \"tempest-desc-239963621\",\n    \"enabled\": true,\n    \"id\": \"82ca01925e2f47089f94675b7b9ef4c0\",\n    \"name\": \"tempest-test_tenant-1491481525\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -752,15 +726,21 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:37 GMT\nx-openstack-request-id: req-6c3f195e-bf36-4020-b5cf-71484d74c62f\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:37 GMT\ncontent-type: application/json\nx-openstack-request-id: req-cebfad17-8f71-43e1-acf9-d28d67708ff8\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:37 GMT\ncontent-type: application/json\nx-openstack-request-id: req-a780fa48-240f-4986-abdc-b13540f3d7ef\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 342b90a6805848bf9a522418750fd19b\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -789,7 +769,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/tenants/057cdd2d75e44b0f841fa07b388d677d/users/6f2d572295e74fc38bef1ea800cfe433/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-listRolesForUserOnTenant", 
         "method": "get", 
         "parameters": [
@@ -816,16 +798,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "roles": [
-                  {
-                    "description": "Nova Administrator", 
-                    "id": "123", 
-                    "name": "compute:admin"
-                  }
-                ], 
-                "roles_links": []
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 154\ncontent-location: http://127.0.0.1:35357/v2.0/tenants/5d62c7d241ad495a84f79ace8de586c7/users/189d1f517fa645e3a499a5301c6cb60d/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:30 GMT\ncontent-type: application/json\nx-openstack-request-id: req-3a6ae9dc-13e5-4a4f-b07b-b9aa37286fef\n\n{\n  \"roles\": [\n    {\n      \"id\": \"6bcfe913a41b40e587ec1bc54eecc81a\",\n      \"name\": \"tempest-role-2093149425\"\n    },\n    {\n      \"id\": \"9fe2ff9ee4384b1894a90878d3e92bab\",\n      \"name\": \"_member_\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -849,11 +822,15 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:47 GMT\nx-openstack-request-id: req-875bd49a-2580-4a47-9226-d2625c59118b\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:46 GMT\ncontent-type: application/json\nx-openstack-request-id: req-a61fa4d8-d518-4fc1-81a8-cafc11869dbd\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -887,14 +864,7 @@
         ], 
         "description": "A REST interface provides client authentication by using the POST\nmethod with ``v2.0/tokens`` as the path. Include a payload of\ncredentials in the body.\n\nThe Identity API is a RESTful web service. It is the entry point to\nall service APIs. To access the Identity API, you must know its\nURL.\n\nEach REST request against the Identity Service requires the ``X\n-Auth-Token`` header. Clients obtain this token and the URL\nendpoints for other service APIs by supplying their valid\ncredentials to the authentication service.\n\nIf the authentication token has expired, this call returns the HTTP\n``401`` status code.\n\nIf the token specified in the request body has expired, this call\nreturns the HTTP ``404`` status code.\n\nThe Identity API treats expired tokens as no longer valid tokens.\n\nThe deployment determines how long expired tokens are stored.", 
         "examples": {
-          "application/json": {
-            "auth": {
-              "tenantName": "demo", 
-              "token": {
-                "id": "cbc36478b0bd8e67e89469c7749d4127"
-              }
-            }
-          }
+          "text/plain": "POST /v2.0/tokens HTTP/1.1\n"
         }, 
         "id": "admin-authenticate", 
         "method": "post", 
@@ -915,184 +885,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "access": {
-                  "metadata": {
-                    "is_admin": 0, 
-                    "roles": [
-                      "8341d3603a1d4d5985bff09f10704d4d", 
-                      "2e66d57df76946fdbe034bc4da6fdec0"
-                    ]
-                  }, 
-                  "serviceCatalog": [
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8774/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "id": "2dad48f09e2a447a9bf852bcd93548ef", 
-                          "internalURL": "http://23.253.72.207:8774/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "publicURL": "http://23.253.72.207:8774/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "nova", 
-                      "type": "compute"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:9696/", 
-                          "id": "97c526db8d7a4c88bbb8d68db1bdcdb8", 
-                          "internalURL": "http://23.253.72.207:9696/", 
-                          "publicURL": "http://23.253.72.207:9696/", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "neutron", 
-                      "type": "network"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8776/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "id": "93f86dfcbba143a39a33d0c2cd424870", 
-                          "internalURL": "http://23.253.72.207:8776/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "publicURL": "http://23.253.72.207:8776/v2/73f0aa26640f4971864919d0eb0f0880", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "cinder", 
-                      "type": "volumev2"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8774/v3", 
-                          "id": "3eb274b12b1d47b2abc536038d87339e", 
-                          "internalURL": "http://23.253.72.207:8774/v3", 
-                          "publicURL": "http://23.253.72.207:8774/v3", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "nova", 
-                      "type": "computev3"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:3333", 
-                          "id": "957f1e54afc64d33a62099faa5e980a2", 
-                          "internalURL": "http://23.253.72.207:3333", 
-                          "publicURL": "http://23.253.72.207:3333", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "s3", 
-                      "type": "s3"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:9292", 
-                          "id": "27d5749f36864c7d96bebf84a5ec9767", 
-                          "internalURL": "http://23.253.72.207:9292", 
-                          "publicURL": "http://23.253.72.207:9292", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "glance", 
-                      "type": "image"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8776/v1/73f0aa26640f4971864919d0eb0f0880", 
-                          "id": "37c83a2157f944f1972e74658aa0b139", 
-                          "internalURL": "http://23.253.72.207:8776/v1/73f0aa26640f4971864919d0eb0f0880", 
-                          "publicURL": "http://23.253.72.207:8776/v1/73f0aa26640f4971864919d0eb0f0880", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "cinder", 
-                      "type": "volume"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8773/services/Admin", 
-                          "id": "289b59289d6048e2912b327e5d3240ca", 
-                          "internalURL": "http://23.253.72.207:8773/services/Cloud", 
-                          "publicURL": "http://23.253.72.207:8773/services/Cloud", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "ec2", 
-                      "type": "ec2"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:8080", 
-                          "id": "16b76b5e5b7d48039a6e4cc3129545f3", 
-                          "internalURL": "http://23.253.72.207:8080/v1/AUTH_73f0aa26640f4971864919d0eb0f0880", 
-                          "publicURL": "http://23.253.72.207:8080/v1/AUTH_73f0aa26640f4971864919d0eb0f0880", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "swift", 
-                      "type": "object-store"
-                    }, 
-                    {
-                      "endpoints": [
-                        {
-                          "adminURL": "http://23.253.72.207:35357/v2.0", 
-                          "id": "26af053673df4ef3a2340c4239e21ea2", 
-                          "internalURL": "http://23.253.72.207:5000/v2.0", 
-                          "publicURL": "http://23.253.72.207:5000/v2.0", 
-                          "region": "RegionOne"
-                        }
-                      ], 
-                      "endpoints_links": [], 
-                      "name": "keystone", 
-                      "type": "identity"
-                    }
-                  ], 
-                  "token": {
-                    "expires": "2014-01-31T17:09:57Z", 
-                    "id": "admin_id", 
-                    "issued_at": "2014-01-30T17:09:57.647795", 
-                    "tenant": {
-                      "description": null, 
-                      "enabled": true, 
-                      "id": "73f0aa26640f4971864919d0eb0f0880", 
-                      "name": "admin"
-                    }
-                  }, 
-                  "user": {
-                    "id": "1f568815cb8148688e6ee9b2f7527dcc", 
-                    "name": "admin", 
-                    "roles": [
-                      {
-                        "name": "service"
-                      }, 
-                      {
-                        "name": "admin"
-                      }
-                    ], 
-                    "roles_links": [], 
-                    "username": "admin"
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 3921\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:52:45 GMT\ncontent-type: application/json\nx-openstack-request-id: req-946602df-8f59-45dd-b008-bc591abc67f6\n\n"
             }, 
             "headers": {}
           }, 
@@ -1284,7 +1077,9 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 165\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:10 GMT\nx-openstack-request-id: req-94743781-ecb3-492f-b650-d6301974ca79\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:5000\"\n\n"
+            }, 
             "headers": {}
           }, 
           "403": {
@@ -1321,7 +1116,9 @@
           "application/json"
         ], 
         "description": "Returns the permissions relevant to a particular client. Valid\ntokens are in the ``/tokens/{tokenId}`` path. A user should expect\nan ``itemNotFound (404)`` fault for an token that is not valid.", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/tokens/2e65c5afb0224e7390c9f565cfa5a746 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-validateToken", 
         "method": "get", 
         "parameters": [
@@ -1340,34 +1137,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "access": {
-                  "token": {
-                    "expires": "2010-11-01T03:32:15-05:00", 
-                    "id": "ab48a9efdfedb23ty3494", 
-                    "tenant": {
-                      "id": "345", 
-                      "name": "My Project"
-                    }
-                  }, 
-                  "user": {
-                    "id": "123", 
-                    "name": "jqsmith", 
-                    "roles": [
-                      {
-                        "id": "234", 
-                        "name": "compute:admin"
-                      }, 
-                      {
-                        "id": "234", 
-                        "name": "object-store:admin", 
-                        "tenantId": "1"
-                      }
-                    ], 
-                    "roles_links": []
-                  }
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 3721\ncontent-location: http://127.0.0.1:35357/v2.0/tokens/2e65c5afb0224e7390c9f565cfa5a746\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:03 GMT\ncontent-type: application/json\nx-openstack-request-id: req-c59c0ca3-642f-490e-a9ca-a1a3d70aacfe\n\n{\n  \"access\": {\n    \"metadata\": {\n      \"is_admin\": 0,\n      \"roles\": [\n        \"9fe2ff9ee4384b1894a90878d3e92bab\"\n      ]\n    },\n    \"serviceCatalog\": [\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8774/v2.1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"id\": \"19a542d282a34c828393d2f0ee405c9a\",\n            \"internalURL\": \"http://127.0.0.1:8774/v2.1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"publicURL\": \"http://127.0.0.1:8774/v2.1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"nova\",\n        \"type\": \"compute\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8776/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"id\": \"11c57a0ba2f9479eb4d2e23e7df6a687\",\n            \"internalURL\": \"http://127.0.0.1:8776/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"publicURL\": \"http://127.0.0.1:8776/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"cinderv2\",\n        \"type\": \"volumev2\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:3333\",\n            \"id\": \"304d403198af4e4d8beb58ec0d515cc3\",\n            \"internalURL\": \"http://127.0.0.1:3333\",\n            \"publicURL\": \"http://127.0.0.1:3333\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"s3\",\n        \"type\": \"s3\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:9292\",\n            \"id\": \"32029ad0884643358286551326936fba\",\n            \"internalURL\": \"http://127.0.0.1:9292\",\n            \"publicURL\": \"http://127.0.0.1:9292\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"glance\",\n        \"type\": \"image\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8777/\",\n            \"id\": \"4d66cf35fc624b7385e44b9b18b58bed\",\n            \"internalURL\": \"http://127.0.0.1:8777/\",\n            \"publicURL\": \"http://127.0.0.1:8777/\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"ceilometer\",\n        \"type\": \"metering\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8774/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"id\": \"767efa16ab204e4fbc4140b5d8c844e6\",\n            \"internalURL\": \"http://127.0.0.1:8774/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"publicURL\": \"http://127.0.0.1:8774/v2/b45e91e421ae412da4e4f339f85e81e3\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"nova_legacy\",\n        \"type\": \"compute_legacy\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8776/v1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"id\": \"18108644369740868630e2b8cf61d7a4\",\n            \"internalURL\": \"http://127.0.0.1:8776/v1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"publicURL\": \"http://127.0.0.1:8776/v1/b45e91e421ae412da4e4f339f85e81e3\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"cinder\",\n        \"type\": \"volume\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8773/\",\n            \"id\": \"73d2744bf92143758404ce6dbc90c8b5\",\n            \"internalURL\": \"http://127.0.0.1:8773/\",\n            \"publicURL\": \"http://127.0.0.1:8773/\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"ec2\",\n        \"type\": \"ec2\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:8080\",\n            \"id\": \"08df6ec9a96148e1a8a7de6e19dd056e\",\n            \"internalURL\": \"http://127.0.0.1:8080/v1/AUTH_b45e91e421ae412da4e4f339f85e81e3\",\n            \"publicURL\": \"http://127.0.0.1:8080/v1/AUTH_b45e91e421ae412da4e4f339f85e81e3\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"swift\",\n        \"type\": \"object-store\"\n      },\n      {\n        \"endpoints\": [\n          {\n            \"adminURL\": \"http://127.0.0.1:35357/v2.0\",\n            \"id\": \"19493c86310c48898907516a3b572c89\",\n            \"internalURL\": \"http://127.0.0.1:5000/v2.0\",\n            \"publicURL\": \"http://127.0.0.1:5000/v2.0\",\n            \"region\": \"RegionOne\"\n          }\n        ],\n        \"endpoints_links\": [],\n        \"name\": \"keystone\",\n        \"type\": \"identity\"\n      }\n    ],\n    \"token\": {\n      \"audit_ids\": [\n        \"f2yevwOBRzaUvyT2x-l4fA\"\n      ],\n      \"expires\": \"2015-09-22T07:06:03Z\",\n      \"id\": \"2e65c5afb0224e7390c9f565cfa5a746\",\n      \"issued_at\": \"2015-09-22T06:06:03.657920\",\n      \"tenant\": {\n        \"description\": \"\",\n        \"enabled\": true,\n        \"id\": \"b45e91e421ae412da4e4f339f85e81e3\",\n        \"name\": \"tempest-tenant-1085934487\"\n      }\n    },\n    \"user\": {\n      \"id\": \"8b0057d4c3614029b7e56233f6aa6b63\",\n      \"name\": \"tempest-user-447958894\",\n      \"roles\": [\n        {\n          \"name\": \"_member_\"\n        }\n      ],\n      \"roles_links\": [],\n      \"username\": \"tempest-user-447958894\"\n    }\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -1825,15 +1595,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "user": {
-              "email": "john.smith@example.org", 
-              "enabled": true, 
-              "name": "jqsmith", 
-              "password": "null", 
-              "tenantId": "null"
-            }
-          }
+          "text/plain": "POST /v2.0/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "admin-createUser", 
         "method": "post", 
@@ -1860,6 +1622,11 @@
           "application/json"
         ], 
         "responses": {
+          "200": {
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 313\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:54:57 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4245fa3d-706b-4410-b102-4ab3bdbf3c42\n\n{\n  \"user\": {\n    \"email\": \"tempest-ServicesAdminNegativeTestJSON-101911633@example.com\",\n    \"enabled\": true,\n    \"id\": \"5e2bfd51df9e4676890b15e154bbd6c6\",\n    \"name\": \"tempest-ServicesAdminNegativeTestJSON-1418420527\",\n    \"tenantId\": \"99a62b982c8d4898b2ba1dcc6b60e37c\",\n    \"username\": \"tempest-ServicesAdminNegativeTestJSON-1418420527\"\n  }\n}"
+            }
+          }, 
           "201": {
             "examples": {
               "application/json": {
@@ -1875,24 +1642,37 @@
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 115\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:13 GMT\ncontent-type: application/json\nx-openstack-request-id: req-785752e6-33fd-4892-9f39-aa733798cabc\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User name should not be greater than 255 characters.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:12 GMT\nx-openstack-request-id: req-c7f930cc-c7e0-412c-a2ad-0ab9fd24684d\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:11 GMT\ncontent-type: application/json\nx-openstack-request-id: req-12317765-308e-4f62-8008-c0edee62d5d6\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 96\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:11 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4b893103-e4ba-4a0f-af3c-103654724ed8\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 49ffgg99999\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "409": {
+            "examples": {
+              "text/plain": "HTTP/1.1 409\nstatus: 409\ncontent-length: 120\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:12 GMT\ncontent-type: application/json\nx-openstack-request-id: req-e329969d-c3a2-4468-9ffa-97cf004f36bd\n\n{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"Conflict occurred attempting to store user - Duplicate Entry\",\n    \"title\": \"Conflict\"\n  }\n}"
+            }
           }, 
           "413": {
             "examples": {}, 
@@ -1918,7 +1698,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-getUserByName", 
         "method": "get", 
         "parameters": [], 
@@ -1928,15 +1710,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "email": "john.smith@example.org", 
-                  "enabled": true, 
-                  "id": "u1000", 
-                  "name": "jqsmith", 
-                  "username": "jqsmith"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4137\ncontent-location: http://127.0.0.1:35357/v2.0/users\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:31 GMT\ncontent-type: application/json\nx-openstack-request-id: req-6553a198-c10e-41fa-b638-05cda3629c3d\n\n{\"users\": [{\"username\": \"admin\", \"enabled\": true, \"name\": \"admin\", \"id\": \"089382dc16a24f239480bc3ef63159c5\"}, {\"username\": \"tempest-SnapshotsActionsV1Test-1107178329\", \"name\": \"tempest-SnapshotsActionsV1Test-1107178329\", \"id\": \"0cca5cf587fc4897b53d9b1bd2b43ace\", \"enabled\": true, \"email\": \"tempest-SnapshotsActionsV1Test-524403592@example.com\", \"tenantId\": \"d0f14df5171b4fbe8022d86a01345a8e\"}, {\"username\": \"tempest-test_user-1725257880\", \"name\": \"tempest-test_user-1725257880\", \"id\": \"189d1f517fa645e3a499a5301c6cb60d\", \"enabled\": true, \"email\": \"tempest-test_user-1725257880@testmail.tm\", \"tenantId\": \"5d62c7d241ad495a84f79ace8de586c7\"}, {\"username\": \"tempest-test_user-508026503\", \"name\": \"tempest-test_user-508026503\", \"id\": \"218ad6b9d9254d54b11e873f54ee31a2\", \"enabled\": true, \"email\": \"tempest-test_user-508026503@testmail.tm\", \"tenantId\": \"4018efbc9a6b45d4b165ff9bb4a04b58\"}, {\"username\": \"cinder\", \"enabled\": true, \"name\": \"cinder\", \"id\": \"230e1024da7a4b45917b880c9ca87ac6\"}, {\"username\": \"tempest-RolesTestJSON-21954337\", \"name\": \"tempest-RolesTestJSON-21954337\", \"id\": \"35a12968bd1544d8bc0189db1d233f55\", \"enabled\": true, \"email\": \"tempest-RolesTestJSON-1083416835@example.com\", \"tenantId\": \"a03b17d32e9b49c9a521fcdf9f46d6f9\"}, {\"username\": \"nova\", \"enabled\": true, \"name\": \"nova\", \"id\": \"3edf1b4319c24c30a22ded62ea59cb46\"}, {\"username\": \"glance-swift\", \"name\": \"glance-swift\", \"enabled\": true, \"email\": \"glance-swift@example.com\", \"id\": \"40b69c4effea4a9bb40fc53fa36d1c42\"}, {\"username\": \"tempest-RolesTestJSON-744600521\", \"name\": \"tempest-RolesTestJSON-744600521\", \"id\": \"789908f4e3fe47e3a114e716a1cc74de\", \"enabled\": true, \"email\": \"tempest-RolesTestJSON-2128251882@example.com\", \"tenantId\": \"b417f9aaf1e54531a98d38e2b2c3a1e7\"}, {\"username\": \"swift\", \"enabled\": true, \"name\": \"swift\", \"id\": \"7a01e140f98343348e6ced5cba50435e\"}, {\"username\": \"swiftusertest1\", \"name\": \"swiftusertest1\", \"enabled\": true, \"email\": \"test@example.com\", \"id\": \"85bf8d82e7c44013ac1fcdc0fe2d1dd4\"}, {\"username\": \"tempest-ServerActionsTestJSON-2066842384\", \"name\": \"tempest-ServerActionsTestJSON-2066842384\", \"id\": \"8dc418d0fd774083b67ea300e1f462e3\", \"enabled\": true, \"email\": \"tempest-ServerActionsTestJSON-1435211170@example.com\", \"tenantId\": \"c960909e5a484492850863fd8529b601\"}, {\"username\": \"tempest-test_user-442980779\", \"name\": \"tempest-test_user-442980779\", \"id\": \"8ebd7c5d0c1a4d7fa842a498c1d00717\", \"enabled\": true, \"email\": \"tempest-test_user-442980779@testmail.tm\", \"tenantId\": \"8f1bd836e20f4b318d4ba8815c3e8f6c\"}, {\"username\": \"swiftusertest3\", \"name\": \"swiftusertest3\", \"enabled\": true, \"email\": \"test3@example.com\", \"id\": \"8fee3fbfc5c14709a08bc93c5e80e83e\"}, {\"username\": \"glance\", \"enabled\": true, \"name\": \"glance\", \"id\": \"99ff77b0c0e24ee4b8735ce5dd68cffe\"}, {\"username\": \"swiftusertest2\", \"name\": \"swiftusertest2\", \"enabled\": true, \"email\": \"test2@example.com\", \"id\": \"a25b6f5b8d564624a290d1a10017ab83\"}, {\"username\": \"tempest-ServerActionsTestJSON-512723268\", \"name\": \"tempest-ServerActionsTestJSON-512723268\", \"id\": \"ad64d32e6ae24d408cb10f21402c7af2\", \"enabled\": true, \"email\": \"tempest-ServerActionsTestJSON-1077831127@example.com\", \"tenantId\": \"04e82878bb6b48e98fa8170bb21de6e1\"}, {\"username\": \"alt_demo\", \"name\": \"alt_demo\", \"enabled\": true, \"email\": \"alt_demo@example.com\", \"id\": \"aef52e73d8044802863a9343d42fbf1e\"}, {\"username\": \"ceilometer\", \"enabled\": true, \"name\": \"ceilometer\", \"id\": \"c75f9349875341049e2d9ccc74d680ff\"}, {\"username\": \"tempest-BasicOperationsImagesTest-1720942804\", \"name\": \"tempest-BasicOperationsImagesTest-1720942804\", \"id\": \"dbd551ff7bb741eeb33c41a34ab2501f\", \"enabled\": true, \"email\": \"tempest-BasicOperationsImagesTest-1950448459@example.com\", \"tenantId\": \"fa29838114b74d9cb7bac9efaf776e4b\"}, {\"username\": \"demo\", \"name\": \"demo\", \"enabled\": true, \"email\": \"demo@example.com\", \"id\": \"fa22b00603c449418c2c583daa35d98b\"}, {\"username\": \"tempest-SnapshotsActionsV1Test-1226766032\", \"name\": \"tempest-SnapshotsActionsV1Test-1226766032\", \"id\": \"fe732c6b7a324463ac52adfec263bb91\", \"enabled\": true, \"email\": \"tempest-SnapshotsActionsV1Test-678337985@example.com\", \"tenantI "
             }, 
             "headers": {}
           }, 
@@ -1959,11 +1733,15 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:14 GMT\nx-openstack-request-id: req-960d0f02-cd31-4700-bf27-8500fd30b7fc\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:14 GMT\ncontent-type: application/json\nx-openstack-request-id: req-872b67a9-d7f2-41c8-b93e-ca70e203653d\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -2149,7 +1927,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/users/75e5a01fff7041028fd9d81d4bd36163 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "admin-getUserById", 
         "method": "get", 
         "parameters": [
@@ -2168,15 +1948,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "email": "john.smith@example.org", 
-                  "enabled": true, 
-                  "id": "u1000", 
-                  "name": "jqsmith", 
-                  "username": "jqsmith"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 237\ncontent-location: http://127.0.0.1:35357/v2.0/users/75e5a01fff7041028fd9d81d4bd36163\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:19 GMT\ncontent-type: application/json\nx-openstack-request-id: req-352e5c62-a431-440a-a270-664aa19ca67b\n\n{\n  \"user\": {\n    \"email\": \"tempest-user2-89436447@testmail.tm\",\n    \"enabled\": false,\n    \"id\": \"75e5a01fff7041028fd9d81d4bd36163\",\n    \"name\": \"tempest-user2-89436447\",\n    \"tenantId\": \"f9932a0385f84ef9ba23161686a53ffe\",\n    \"username\": \"tempest-user2-89436447\"\n  }\n}"
             }, 
             "headers": {}
           }, 

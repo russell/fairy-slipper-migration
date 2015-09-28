@@ -1,0 +1,23 @@
+HTTP/1.1 200
+status: 200
+content-length: 154
+content-location: http://127.0.0.1:35357/v2.0/tenants/5d62c7d241ad495a84f79ace8de586c7/users/189d1f517fa645e3a499a5301c6cb60d/roles
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:05:30 GMT
+content-type: application/json
+x-openstack-request-id: req-3a6ae9dc-13e5-4a4f-b07b-b9aa37286fef
+
+{
+  "roles": [
+    {
+      "id": "6bcfe913a41b40e587ec1bc54eecc81a",
+      "name": "tempest-role-2093149425"
+    },
+    {
+      "id": "9fe2ff9ee4384b1894a90878d3e92bab",
+      "name": "_member_"
+    }
+  ]
+}

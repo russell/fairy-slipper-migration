@@ -1,0 +1,4 @@
+DELETE /v2/images/4404a91e-aa4d-491b-a9f1-ae2fd32f7dd6 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

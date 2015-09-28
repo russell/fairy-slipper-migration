@@ -1,0 +1,51 @@
+HTTP/1.1 200
+status: 200
+content-length: 546
+content-location: http://127.0.0.1:8774/v2.1/75b52b52d2a3444e90f89e8e7c5fd4c2/os-hosts/devstack-trusty-hpcloud-b5-5038802
+x-compute-request-id: req-6f1865ec-fec6-4fa3-b697-4da1841382e0
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:53 GMT
+content-type: application/json
+
+{
+  "host": [
+    {
+      "resource": {
+        "cpu": 8,
+        "disk_gb": 432,
+        "host": "devstack-trusty-hpcloud-b5-5038802",
+        "memory_mb": 7480,
+        "project": "(total)"
+      }
+    },
+    {
+      "resource": {
+        "cpu": 1,
+        "disk_gb": 0,
+        "host": "devstack-trusty-hpcloud-b5-5038802",
+        "memory_mb": 576,
+        "project": "(used_now)"
+      }
+    },
+    {
+      "resource": {
+        "cpu": 1,
+        "disk_gb": 0,
+        "host": "devstack-trusty-hpcloud-b5-5038802",
+        "memory_mb": 64,
+        "project": "(used_max)"
+      }
+    },
+    {
+      "resource": {
+        "cpu": 1,
+        "disk_gb": 0,
+        "host": "devstack-trusty-hpcloud-b5-5038802",
+        "memory_mb": 64,
+        "project": "d294fcc1c35940f7857477655373ffdb"
+      }
+    }
+  ]
+}

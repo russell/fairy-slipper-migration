@@ -1,0 +1,17 @@
+HTTP/1.1 403
+status: 403
+content-length: 188
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:04:41 GMT
+content-type: application/json
+x-openstack-request-id: req-42439810-f50e-4d7f-9ee3-f139c13bd8dd
+
+{
+  "error": {
+    "code": 403,
+    "message": "You are not authorized to perform the requested action: identity:create_project (Disable debug mode to suppress these details.)",
+    "title": "Forbidden"
+  }
+}

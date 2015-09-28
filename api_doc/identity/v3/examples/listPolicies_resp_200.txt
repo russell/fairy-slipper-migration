@@ -1,0 +1,44 @@
+HTTP/1.1 200
+status: 200
+content-length: 738
+content-location: http://127.0.0.1:5000/v3/policies
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:41 GMT
+content-type: application/json
+x-openstack-request-id: req-db674643-bccb-42d8-98ff-807a9d0196b2
+
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:5000/v3/policies"
+  },
+  "policies": [
+    {
+      "blob": "tempest-BlobName-1663328740",
+      "id": "009691f452964605af3d2f9135c7ed0c",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/policies/009691f452964605af3d2f9135c7ed0c"
+      },
+      "type": "tempest-PolicyType-544543879"
+    },
+    {
+      "blob": "tempest-BlobName-895959279",
+      "id": "8425e1226538430c92d9c9f68c1d7c37",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/policies/8425e1226538430c92d9c9f68c1d7c37"
+      },
+      "type": "tempest-PolicyType-955936722"
+    },
+    {
+      "blob": "tempest-BlobName-1135034489",
+      "id": "920668ec5185429a97258cdb1df521e7",
+      "links": {
+        "self": "http://127.0.0.1:5000/v3/policies/920668ec5185429a97258cdb1df521e7"
+      },
+      "type": "tempest-PolicyType-1466371598"
+    }
+  ]
+}

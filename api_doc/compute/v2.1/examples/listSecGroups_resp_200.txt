@@ -1,0 +1,22 @@
+HTTP/1.1 200
+status: 200
+content-length: 140
+content-location: http://127.0.0.1:8774/v2.1/5060e95b4fdd4e83a47074f6b3548a19/os-security-groups
+x-compute-request-id: req-f094afe4-9021-4596-a8c0-b34ad50a5e0e
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:32 GMT
+content-type: application/json
+
+{
+  "security_groups": [
+    {
+      "description": "default",
+      "id": 51,
+      "name": "default",
+      "rules": [],
+      "tenant_id": "5060e95b4fdd4e83a47074f6b3548a19"
+    }
+  ]
+}

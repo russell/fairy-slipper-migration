@@ -1,0 +1,21 @@
+HTTP/1.1 200
+status: 200
+content-length: 64
+content-location: http://127.0.0.1:8774/v2.1/7c9257fc481c4185ae7e50ac6e3d3bbc/servers/a922fb2b-62c5-4214-89e3-48e457ee5c95/ips
+x-compute-request-id: req-3d9518ca-491d-4a47-8673-361105e59f08
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:04:53 GMT
+content-type: application/json
+
+{
+  "addresses": {
+    "private": [
+      {
+        "addr": "10.1.0.3",
+        "version": 4
+      }
+    ]
+  }
+}

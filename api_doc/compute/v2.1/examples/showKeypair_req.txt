@@ -1,0 +1,4 @@
+GET /v2.1/69551518f79e4f29a78501c4b36a853a/os-keypairs/tempest-keypair-609795246 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

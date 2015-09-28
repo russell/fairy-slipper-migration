@@ -1,0 +1,4 @@
+DELETE /v2.0/users/6cd9370550a34cb29d9392ba13da319b HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

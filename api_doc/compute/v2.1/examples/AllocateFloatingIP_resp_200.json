@@ -1,9 +1,0 @@
-{
-  "floating_ip": {
-    "instance_id": null, 
-    "ip": "10.10.10.1", 
-    "fixed_ip": null, 
-    "id": 1, 
-    "pool": "nova"
-  }
-}

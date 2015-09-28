@@ -1,0 +1,4 @@
+GET /v2/meters/memory?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

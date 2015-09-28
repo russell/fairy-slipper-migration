@@ -262,7 +262,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/OS-KSADM/roles/85ae601a9c614216a90ecf72f445ff9f HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showRoleByName", 
         "method": "get", 
         "parameters": [], 
@@ -272,13 +274,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "role": {
-                  "description": "Guest Access", 
-                  "id": "123", 
-                  "name": "Guest"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 86\ncontent-location: http://127.0.0.1:35357/v2.0/OS-KSADM/roles/85ae601a9c614216a90ecf72f445ff9f\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:29 GMT\ncontent-type: application/json\nx-openstack-request-id: req-daf760e6-ecf4-4070-993c-a5e10bec4881\n\n{\n  \"role\": {\n    \"id\": \"85ae601a9c614216a90ecf72f445ff9f\",\n    \"name\": \"tempest-role-125959677\"\n  }\n}"
             }, 
             "headers": {
               "Location": {
@@ -354,7 +350,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/OS-KSADM/roles HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "showRoleByID", 
         "method": "get", 
         "parameters": [
@@ -373,13 +371,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "role": {
-                  "description": "Guest Access", 
-                  "id": "123", 
-                  "name": "Guest"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 397\ncontent-location: http://127.0.0.1:35357/v2.0/OS-KSADM/roles\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:52:44 GMT\ncontent-type: application/json\nx-openstack-request-id: req-c68fc72d-8807-4880-a102-01253e44ecda\n\n{\n  \"roles\": [\n    {\n      \"id\": \"28ff384b1a8340e48c14c613d60730a1\",\n      \"name\": \"Member\"\n    },\n    {\n      \"id\": \"4e218caacb9848cbbd890e900330b971\",\n      \"name\": \"admin\"\n    },\n    {\n      \"id\": \"9fe2ff9ee4384b1894a90878d3e92bab\",\n      \"name\": \"_member_\"\n    },\n    {\n      \"id\": \"c188c4fd3570441ca99491131e443f2d\",\n      \"name\": \"service\"\n    },\n    {\n      \"id\": \"c1cfeaacbf364a058e1bfba3521f8fb0\",\n      \"name\": \"anotherrole\"\n    },\n    {\n      \"id\": \"cd60863d48984ba988da0cdc14733d51\",\n      \"name\": \"ResellerAdmin\"\n    }\n  ]\n}"
             }, 
             "headers": {
               "Location": {
@@ -414,11 +406,15 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:45 GMT\nx-openstack-request-id: req-5e6de2f0-f5c7-425d-bc6b-6fac160ceeef\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:44 GMT\ncontent-type: application/json\nx-openstack-request-id: req-2a2bd3db-280f-4187-ae42-a4756760e8cc\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -1784,13 +1780,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "tenant": {
-              "description": "A description ...", 
-              "enabled": true, 
-              "name": "ACME corp"
-            }
-          }
+          "text/plain": "POST /v2.0/tenants HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createTenant", 
         "method": "post", 
@@ -1799,6 +1789,11 @@
           "application/json"
         ], 
         "responses": {
+          "200": {
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 199\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:07 GMT\ncontent-type: application/json\nx-openstack-request-id: req-cac620d4-3e69-456b-ae9f-98efaa2db058\n\n{\n  \"tenant\": {\n    \"description\": \"tempest-VolumeQuotasAdminV1TestJSON-1703561346-desc\",\n    \"enabled\": true,\n    \"id\": \"1641732024894b9a9ae6e9cc46f890ed\",\n    \"name\": \"tempest-VolumeQuotasAdminV1TestJSON-1703561346\"\n  }\n}"
+            }
+          }, 
           "201": {
             "examples": {
               "application/json": {
@@ -1813,20 +1808,31 @@
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:34 GMT\ncontent-type: application/json\nx-openstack-request-id: req-d57ddd04-9cc4-4b1a-8b03-77193e7423c0\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Project name should not be greater than 64 characters.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:34 GMT\nx-openstack-request-id: req-6a4a1bb6-8344-4e9c-9aa5-ac7c8bc2ef57\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:33 GMT\ncontent-type: application/json\nx-openstack-request-id: req-6fcd25ba-49c6-480f-88eb-4a2baed9ca9e\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "409": {
+            "examples": {
+              "text/plain": "HTTP/1.1 409\nstatus: 409\ncontent-length: 123\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:35 GMT\ncontent-type: application/json\nx-openstack-request-id: req-a036ddfc-f010-4f05-8bec-cf8b1b80f1ff\n\n{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"Conflict occurred attempting to store project - Duplicate Entry\",\n    \"title\": \"Conflict\"\n  }\n}"
+            }
           }, 
           "413": {
             "examples": {}, 
@@ -1855,14 +1861,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "tenant": {
-              "description": "A description ...", 
-              "enabled": true, 
-              "id": "1234", 
-              "name": "ACME corp"
-            }
-          }
+          "text/plain": "POST /v2.0/tenants/f0166cfd85294ff4873358445525fdfd HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateTenant", 
         "method": "post", 
@@ -1882,14 +1881,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "tenant": {
-                  "description": "A description ...", 
-                  "enabled": true, 
-                  "id": "1234", 
-                  "name": "ACME corp"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 141\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:09 GMT\ncontent-type: application/json\nx-openstack-request-id: req-547a3400-4792-4d09-a799-9bac7fc5746c\n\n{\n  \"tenant\": {\n    \"description\": \"\",\n    \"enabled\": true,\n    \"extra\": {},\n    \"id\": \"f0166cfd85294ff4873358445525fdfd\",\n    \"name\": \"tempest-tenant2-2121396344\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -1935,7 +1927,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2.0/tenants/24d57626399b4f55a33dc49719b0574f HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteTenant", 
         "method": "delete", 
         "parameters": [
@@ -1951,7 +1945,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:02 GMT\nx-openstack-request-id: req-fb8b1db1-9e5d-4a63-961a-6f03ae850ba5\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -1959,15 +1955,21 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:37 GMT\nx-openstack-request-id: req-17481cc2-63cb-4e99-80eb-8dee03f231b1\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:36 GMT\ncontent-type: application/json\nx-openstack-request-id: req-66a07a79-e734-44a5-9afc-a1374c1689c1\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:35 GMT\ncontent-type: application/json\nx-openstack-request-id: req-db95bfd5-1445-408d-8734-ed86aec32b1c\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 2dbcdeaa2ea84b2eb56e6e466727dd24\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -2458,7 +2460,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/tenants/alpha/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listUsersForTenant", 
         "method": "get", 
         "parameters": [
@@ -2477,23 +2481,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "users": [
-                  {
-                    "email": "john.smith@example.org", 
-                    "enabled": true, 
-                    "id": "u1000", 
-                    "name": "jqsmith"
-                  }, 
-                  {
-                    "email": "john.smith@example.org", 
-                    "enabled": true, 
-                    "id": "u1001", 
-                    "name": "jqsmith"
-                  }
-                ], 
-                "users_links": []
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 471\ncontent-location: http://127.0.0.1:35357/v2.0/tenants/fd7f305ccca24d5f9e56338bcf844152/users\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:18 GMT\ncontent-type: application/json\nx-openstack-request-id: req-90fb4d5e-a178-4bf1-b3c8-e5900539b381\n\n{\n  \"users\": [\n    {\n      \"email\": \"user2@123\",\n      \"enabled\": true,\n      \"id\": \"3b59c696a1334776b73bc71edc6e2df3\",\n      \"name\": \"tempest-second_user-757929754\",\n      \"tenantId\": \"fd7f305ccca24d5f9e56338bcf844152\",\n      \"username\": \"tempest-second_user-757929754\"\n    },\n    {\n      \"email\": \"tempest-test_user-165696254@testmail.tm\",\n      \"enabled\": true,\n      \"id\": \"9e0a98a1e3b545d68794d01d54245bdf\",\n      \"name\": \"tempest-test_user-165696254\",\n      \"tenantId\": \"fd7f305ccca24d5f9e56338bcf844152\",\n      \"username\": \"tempest-test_user-165696254\"\n    }\n  ]\n}"
             }, 
             "headers": {}
           }, 
@@ -2532,7 +2520,9 @@
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 90\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:15 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4dbe87d2-b9c1-4b6d-aea3-0a492929994d\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: alpha\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -2559,7 +2549,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "PUT /v2.0/tenants/098dfc978a934b27972b1f426bcf5a63/users/5a8267e54d174d6181b89faca30f64a0/roles/OS-KSADM/28ff384b1a8340e48c14c613d60730a1 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "grantRoleToUserOnTenant", 
         "method": "put", 
         "parameters": [
@@ -2590,6 +2582,11 @@
         ], 
         "produces": [], 
         "responses": {
+          "200": {
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 70\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:07:44 GMT\ncontent-type: application/json\nx-openstack-request-id: req-f36869ea-c56b-4d3c-b79b-c2b48f6e2de2\n\n{\n  \"role\": {\n    \"id\": \"28ff384b1a8340e48c14c613d60730a1\",\n    \"name\": \"Member\"\n  }\n}"
+            }
+          }, 
           "201": {
             "examples": {}, 
             "headers": {}
@@ -2599,20 +2596,31 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:43 GMT\nx-openstack-request-id: req-56948b07-e3b9-4721-b16c-738b3bc7c775\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:40 GMT\ncontent-type: application/json\nx-openstack-request-id: req-1002f541-e589-444c-a967-90dcb61fae56\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 117\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:42 GMT\ncontent-type: application/json\nx-openstack-request-id: req-93f99ccc-4f54-48ec-87ed-ba15af8c3cc6\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 537f8cdae110404f9b205eccbc8487eb\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "409": {
+            "examples": {
+              "text/plain": "HTTP/1.1 409\nstatus: 409\ncontent-length: 241\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:04:27 GMT\ncontent-type: application/json\nx-openstack-request-id: req-0bf41684-72cb-4908-a830-50fe7aaeb701\n\n{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"Conflict occurred attempting to store role grant - User c3c1feba79584f7eadc67c96e662ab32 already has role 28ff384b1a8340e48c14c613d60730a1 in tenant 112f45d5888f4a6a90b47f0a5d110e04\",\n    \"title\": \"Conflict\"\n  }\n}"
+            }
           }, 
           "413": {
             "examples": {}, 
@@ -2636,7 +2644,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2.0/tenants/4018efbc9a6b45d4b165ff9bb4a04b58/users/218ad6b9d9254d54b11e873f54ee31a2/roles/OS-KSADM/a203ed1ced984c56a1f61584b04cd4c2 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "revokeRoleFromUserOnTenant", 
         "method": "delete", 
         "parameters": [
@@ -2668,7 +2678,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:31 GMT\nx-openstack-request-id: req-c572163d-4c5c-4f8a-846c-70de2d320464\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -2676,15 +2688,21 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:52 GMT\nx-openstack-request-id: req-432b7f3f-98f5-45e0-8e48-e416fe65831d\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:48 GMT\ncontent-type: application/json\nx-openstack-request-id: req-c8270422-248e-4e18-bea9-634d75e62607\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 139\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:51 GMT\ncontent-type: application/json\nx-openstack-request-id: req-cb5edbdb-ea31-425d-b38d-ab4ad27f320d\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Cannot remove role that has not been granted, 531e35ff76e947a4ad6fcabfaed644cb\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -2713,7 +2731,9 @@
           "application/json"
         ], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "GET /v2.0/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "listUsers", 
         "method": "get", 
         "parameters": [], 
@@ -2723,23 +2743,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "users": [
-                  {
-                    "email": "john.smith@example.org", 
-                    "enabled": true, 
-                    "id": "u1000", 
-                    "name": "jqsmith"
-                  }, 
-                  {
-                    "email": "john.smith@example.org", 
-                    "enabled": true, 
-                    "id": "u1001", 
-                    "name": "jqsmith"
-                  }
-                ], 
-                "users_links": []
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 4137\ncontent-location: http://127.0.0.1:35357/v2.0/users\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:05:31 GMT\ncontent-type: application/json\nx-openstack-request-id: req-6553a198-c10e-41fa-b638-05cda3629c3d\n\n{\"users\": [{\"username\": \"admin\", \"enabled\": true, \"name\": \"admin\", \"id\": \"089382dc16a24f239480bc3ef63159c5\"}, {\"username\": \"tempest-SnapshotsActionsV1Test-1107178329\", \"name\": \"tempest-SnapshotsActionsV1Test-1107178329\", \"id\": \"0cca5cf587fc4897b53d9b1bd2b43ace\", \"enabled\": true, \"email\": \"tempest-SnapshotsActionsV1Test-524403592@example.com\", \"tenantId\": \"d0f14df5171b4fbe8022d86a01345a8e\"}, {\"username\": \"tempest-test_user-1725257880\", \"name\": \"tempest-test_user-1725257880\", \"id\": \"189d1f517fa645e3a499a5301c6cb60d\", \"enabled\": true, \"email\": \"tempest-test_user-1725257880@testmail.tm\", \"tenantId\": \"5d62c7d241ad495a84f79ace8de586c7\"}, {\"username\": \"tempest-test_user-508026503\", \"name\": \"tempest-test_user-508026503\", \"id\": \"218ad6b9d9254d54b11e873f54ee31a2\", \"enabled\": true, \"email\": \"tempest-test_user-508026503@testmail.tm\", \"tenantId\": \"4018efbc9a6b45d4b165ff9bb4a04b58\"}, {\"username\": \"cinder\", \"enabled\": true, \"name\": \"cinder\", \"id\": \"230e1024da7a4b45917b880c9ca87ac6\"}, {\"username\": \"tempest-RolesTestJSON-21954337\", \"name\": \"tempest-RolesTestJSON-21954337\", \"id\": \"35a12968bd1544d8bc0189db1d233f55\", \"enabled\": true, \"email\": \"tempest-RolesTestJSON-1083416835@example.com\", \"tenantId\": \"a03b17d32e9b49c9a521fcdf9f46d6f9\"}, {\"username\": \"nova\", \"enabled\": true, \"name\": \"nova\", \"id\": \"3edf1b4319c24c30a22ded62ea59cb46\"}, {\"username\": \"glance-swift\", \"name\": \"glance-swift\", \"enabled\": true, \"email\": \"glance-swift@example.com\", \"id\": \"40b69c4effea4a9bb40fc53fa36d1c42\"}, {\"username\": \"tempest-RolesTestJSON-744600521\", \"name\": \"tempest-RolesTestJSON-744600521\", \"id\": \"789908f4e3fe47e3a114e716a1cc74de\", \"enabled\": true, \"email\": \"tempest-RolesTestJSON-2128251882@example.com\", \"tenantId\": \"b417f9aaf1e54531a98d38e2b2c3a1e7\"}, {\"username\": \"swift\", \"enabled\": true, \"name\": \"swift\", \"id\": \"7a01e140f98343348e6ced5cba50435e\"}, {\"username\": \"swiftusertest1\", \"name\": \"swiftusertest1\", \"enabled\": true, \"email\": \"test@example.com\", \"id\": \"85bf8d82e7c44013ac1fcdc0fe2d1dd4\"}, {\"username\": \"tempest-ServerActionsTestJSON-2066842384\", \"name\": \"tempest-ServerActionsTestJSON-2066842384\", \"id\": \"8dc418d0fd774083b67ea300e1f462e3\", \"enabled\": true, \"email\": \"tempest-ServerActionsTestJSON-1435211170@example.com\", \"tenantId\": \"c960909e5a484492850863fd8529b601\"}, {\"username\": \"tempest-test_user-442980779\", \"name\": \"tempest-test_user-442980779\", \"id\": \"8ebd7c5d0c1a4d7fa842a498c1d00717\", \"enabled\": true, \"email\": \"tempest-test_user-442980779@testmail.tm\", \"tenantId\": \"8f1bd836e20f4b318d4ba8815c3e8f6c\"}, {\"username\": \"swiftusertest3\", \"name\": \"swiftusertest3\", \"enabled\": true, \"email\": \"test3@example.com\", \"id\": \"8fee3fbfc5c14709a08bc93c5e80e83e\"}, {\"username\": \"glance\", \"enabled\": true, \"name\": \"glance\", \"id\": \"99ff77b0c0e24ee4b8735ce5dd68cffe\"}, {\"username\": \"swiftusertest2\", \"name\": \"swiftusertest2\", \"enabled\": true, \"email\": \"test2@example.com\", \"id\": \"a25b6f5b8d564624a290d1a10017ab83\"}, {\"username\": \"tempest-ServerActionsTestJSON-512723268\", \"name\": \"tempest-ServerActionsTestJSON-512723268\", \"id\": \"ad64d32e6ae24d408cb10f21402c7af2\", \"enabled\": true, \"email\": \"tempest-ServerActionsTestJSON-1077831127@example.com\", \"tenantId\": \"04e82878bb6b48e98fa8170bb21de6e1\"}, {\"username\": \"alt_demo\", \"name\": \"alt_demo\", \"enabled\": true, \"email\": \"alt_demo@example.com\", \"id\": \"aef52e73d8044802863a9343d42fbf1e\"}, {\"username\": \"ceilometer\", \"enabled\": true, \"name\": \"ceilometer\", \"id\": \"c75f9349875341049e2d9ccc74d680ff\"}, {\"username\": \"tempest-BasicOperationsImagesTest-1720942804\", \"name\": \"tempest-BasicOperationsImagesTest-1720942804\", \"id\": \"dbd551ff7bb741eeb33c41a34ab2501f\", \"enabled\": true, \"email\": \"tempest-BasicOperationsImagesTest-1950448459@example.com\", \"tenantId\": \"fa29838114b74d9cb7bac9efaf776e4b\"}, {\"username\": \"demo\", \"name\": \"demo\", \"enabled\": true, \"email\": \"demo@example.com\", \"id\": \"fa22b00603c449418c2c583daa35d98b\"}, {\"username\": \"tempest-SnapshotsActionsV1Test-1226766032\", \"name\": \"tempest-SnapshotsActionsV1Test-1226766032\", \"id\": \"fe732c6b7a324463ac52adfec263bb91\", \"enabled\": true, \"email\": \"tempest-SnapshotsActionsV1Test-678337985@example.com\", \"tenantI "
             }, 
             "headers": {}
           }, 
@@ -2770,11 +2774,15 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:14 GMT\nx-openstack-request-id: req-960d0f02-cd31-4700-bf27-8500fd30b7fc\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:14 GMT\ncontent-type: application/json\nx-openstack-request-id: req-872b67a9-d7f2-41c8-b93e-ca70e203653d\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
@@ -2806,14 +2814,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "user": {
-              "OS-KSADM:password": "secretsecret", 
-              "email": "john.smith@example.org", 
-              "enabled": true, 
-              "name": "jqsmith"
-            }
-          }
+          "text/plain": "POST /v2.0/users HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "createUser", 
         "method": "post", 
@@ -2822,6 +2823,11 @@
           "application/json"
         ], 
         "responses": {
+          "200": {
+            "examples": {
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 313\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:54:57 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4245fa3d-706b-4410-b102-4ab3bdbf3c42\n\n{\n  \"user\": {\n    \"email\": \"tempest-ServicesAdminNegativeTestJSON-101911633@example.com\",\n    \"enabled\": true,\n    \"id\": \"5e2bfd51df9e4676890b15e154bbd6c6\",\n    \"name\": \"tempest-ServicesAdminNegativeTestJSON-1418420527\",\n    \"tenantId\": \"99a62b982c8d4898b2ba1dcc6b60e37c\",\n    \"username\": \"tempest-ServicesAdminNegativeTestJSON-1418420527\"\n  }\n}"
+            }
+          }, 
           "201": {
             "examples": {
               "application/json": {
@@ -2836,24 +2842,37 @@
             "headers": {}
           }, 
           "400": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 400\nstatus: 400\ncontent-length: 115\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:13 GMT\ncontent-type: application/json\nx-openstack-request-id: req-785752e6-33fd-4892-9f39-aa733798cabc\n\n{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User name should not be greater than 255 characters.\",\n    \"title\": \"Bad Request\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:12 GMT\nx-openstack-request-id: req-c7f930cc-c7e0-412c-a2ad-0ab9fd24684d\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:11 GMT\ncontent-type: application/json\nx-openstack-request-id: req-12317765-308e-4f62-8008-c0edee62d5d6\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 96\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:11 GMT\ncontent-type: application/json\nx-openstack-request-id: req-4b893103-e4ba-4a0f-af3c-103654724ed8\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find project: 49ffgg99999\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
             "examples": {}, 
             "headers": {}
+          }, 
+          "409": {
+            "examples": {
+              "text/plain": "HTTP/1.1 409\nstatus: 409\ncontent-length: 120\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:12 GMT\ncontent-type: application/json\nx-openstack-request-id: req-e329969d-c3a2-4468-9ffa-97cf004f36bd\n\n{\n  \"error\": {\n    \"code\": 409,\n    \"message\": \"Conflict occurred attempting to store user - Duplicate Entry\",\n    \"title\": \"Conflict\"\n  }\n}"
+            }
           }, 
           "413": {
             "examples": {}, 
@@ -2882,14 +2901,7 @@
         ], 
         "description": "", 
         "examples": {
-          "application/json": {
-            "user": {
-              "email": "john.smith@example.org", 
-              "enabled": true, 
-              "id": "u1000", 
-              "name": "jqsmith"
-            }
-          }
+          "text/plain": "PUT /v2.0/users/tempest-test_user-1426374013 HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
         }, 
         "id": "updateUser", 
         "method": "put", 
@@ -2909,14 +2921,7 @@
         "responses": {
           "200": {
             "examples": {
-              "application/json": {
-                "user": {
-                  "email": "john.smith@example.org", 
-                  "enabled": true, 
-                  "id": "u1000", 
-                  "name": "jqsmith"
-                }
-              }
+              "text/plain": "HTTP/1.1 200\nstatus: 200\ncontent-length: 295\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:10:19 GMT\ncontent-type: application/json\nx-openstack-request-id: req-c82d3e9b-75ef-48f2-997b-195918b5ef20\n\n{\n  \"user\": {\n    \"email\": \"tempest-user2-89436447@testmail.tm\",\n    \"enabled\": false,\n    \"extra\": {\n      \"email\": \"tempest-user2-89436447@testmail.tm\"\n    },\n    \"id\": \"75e5a01fff7041028fd9d81d4bd36163\",\n    \"name\": \"tempest-user2-89436447\",\n    \"tenantId\": \"f9932a0385f84ef9ba23161686a53ffe\",\n    \"username\": \"tempest-user2-89436447\"\n  }\n}"
             }, 
             "headers": {}
           }, 
@@ -2925,15 +2930,21 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:16 GMT\nx-openstack-request-id: req-cb1cd884-908d-4c4b-aff4-6e8e60f73b7d\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:15 GMT\ncontent-type: application/json\nx-openstack-request-id: req-2e4ecac1-9d82-46bf-bdc0-8796c407c309\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 118\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:15 GMT\ncontent-type: application/json\nx-openstack-request-id: req-49b31192-336f-4ae4-a389-932a3f65b02b\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find user: d3e589ad-4444-4429-9736-04cd0234fb75\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {
@@ -2962,7 +2973,9 @@
       {
         "consumes": [], 
         "description": "", 
-        "examples": {}, 
+        "examples": {
+          "text/plain": "DELETE /v2.0/users/6cd9370550a34cb29d9392ba13da319b HTTP/1.1\ncontent-type: application/json\naccept: application/json\nx-auth-token: <omitted>\n"
+        }, 
         "id": "deleteUser", 
         "method": "delete", 
         "parameters": [
@@ -2978,7 +2991,9 @@
         "produces": [], 
         "responses": {
           "204": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 204\nstatus: 204\ncontent-length: 0\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 05:56:54 GMT\nx-openstack-request-id: req-a42dab64-375e-4946-be93-a5886dee5dac\n\n"
+            }, 
             "headers": {}
           }, 
           "400": {
@@ -2986,15 +3001,21 @@
             "headers": {}
           }, 
           "401": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 401\nstatus: 401\ncontent-length: 162\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:13 GMT\nx-openstack-request-id: req-7f6055c1-3542-467b-9d17-af95981105c1\ncontent-type: application/json\nwww-authenticate: Keystone uri=\"http://127.0.0.1:35357\"\n\n{\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"The request you have made requires authentication. (Disable debug mode to suppress these details.)\",\n    \"title\": \"Unauthorized\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "403": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 403\nstatus: 403\ncontent-length: 179\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:14 GMT\ncontent-type: application/json\nx-openstack-request-id: req-df5a1fdd-9bca-4e83-951d-2d7ea77d40a1\n\n{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"You are not authorized to perform the requested action: admin_required (Disable debug mode to suppress these details.)\",\n    \"title\": \"Forbidden\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "404": {
-            "examples": {}, 
+            "examples": {
+              "text/plain": "HTTP/1.1 404\nstatus: 404\ncontent-length: 94\nvary: X-Auth-Token\nserver: Apache/2.4.7 (Ubuntu)\nconnection: close\ndate: Tue, 22 Sep 2015 06:06:13 GMT\ncontent-type: application/json\nx-openstack-request-id: req-05f3127b-51ab-43da-802d-01be7f709977\n\n{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"Could not find user: junk12345123\",\n    \"title\": \"Not Found\"\n  }\n}"
+            }, 
             "headers": {}
           }, 
           "405": {

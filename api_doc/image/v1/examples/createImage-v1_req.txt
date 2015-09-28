@@ -1,0 +1,7 @@
+POST /v1/images HTTP/1.1
+x-image-meta-container_format: bare
+x-auth-token: <omitted>
+x-image-meta-property-prop1: val1
+x-image-meta-is_public: False
+x-image-meta-disk_format: raw
+x-image-meta-name: New Name

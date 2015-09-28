@@ -1,0 +1,685 @@
+[
+  [
+    {
+      "url": "/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "ok", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "4", 
+        "content-location": "http://127.0.0.1:8777/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-47d9d41a-aec2-42e6-9af6-76e4e285b7cc"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "PUT", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n  \"description\": \"Alarm when cpu is eq a avg of 70.0 over 60 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry-alarm-update-95497746\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"eq\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu\",\n    \"period\": 60,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 70.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.948701\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "837", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-6df468c3-68b8-4227-907e-26f9d695e398"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/vcpus?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[{\"counter_name\": \"vcpus\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.657207\", \"recorded_at\": \"2015-09-22T06:13:04.843776\", \"message_id\": \"fc58b076-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"vcpu\", \"counter_volume\": 1.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.create.end\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"message\": \"Success\", \"deleted_at\": \"\", \"fixed_ips\": \"[{'version': 4, 'vif_mac': 'fa:16:3e:83:c5:34', 'floating_ips': [], 'label': 'private', 'meta': {}, 'address': '10.1.0.5', 'type': 'fixed'}]\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"reservation_id\": \"r-hb4pbo6x\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_meta.min_disk\": \"0\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.355630\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"cell_name\": \"\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"instance_type\": \"m1.nano\", \"vcpus\": \"1\", \"architecture\": \"None\", \"os_type\": \"None\", \"instance_flavor_id\": \"42\"}, \"counter_type\": \"gauge\"}, {\"counter_name\": \"vcpus\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.627959\", \"recorded_at\": \"2015-09-22T06:13:04.740941\", \"message_id\": \"fc5337a4-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"vcpu\", \"counter_volume\": 1.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.update\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"deleted_at\": \"\", \"reservation_id\": \"r-hb4pbo6x\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"instance_type\": \"m1.nano\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"old_state\": \"building\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.000000\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_meta.min_disk\": \"0\", \"cell_name\": \"\", \"audit_period_beginning\": \"2015-09-22T06:00:00.000000\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"old_task_state\": \"spawning\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"vcpus\": \"1\", \"architecture\": \"None\", \"new_task_state\": \"None\", \"audit_period_ending\": \"2015-09-22T06:13:04.564995\", \"os_type\": \"None\", \"instance ", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "18357", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/vcpus?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:13:05 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-1f59debf-ade1-45e1-b815-d52bbd252760"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/disk.root.size?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[{\"counter_name\": \"disk.root.size\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.657207\", \"recorded_at\": \"2015-09-22T06:13:04.764220\", \"message_id\": \"fc58aad6-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"GB\", \"counter_volume\": 0.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.create.end\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"message\": \"Success\", \"deleted_at\": \"\", \"fixed_ips\": \"[{'version': 4, 'vif_mac': 'fa:16:3e:83:c5:34', 'floating_ips': [], 'label': 'private', 'meta': {}, 'address': '10.1.0.5', 'type': 'fixed'}]\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"reservation_id\": \"r-hb4pbo6x\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_meta.min_disk\": \"0\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.355630\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"cell_name\": \"\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"instance_type\": \"m1.nano\", \"vcpus\": \"1\", \"architecture\": \"None\", \"os_type\": \"None\", \"instance_flavor_id\": \"42\"}, \"counter_type\": \"gauge\"}, {\"counter_name\": \"disk.root.size\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.627959\", \"recorded_at\": \"2015-09-22T06:13:04.700446\", \"message_id\": \"fc533182-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"GB\", \"counter_volume\": 0.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.update\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"deleted_at\": \"\", \"reservation_id\": \"r-hb4pbo6x\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"instance_type\": \"m1.nano\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"old_state\": \"building\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.000000\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_meta.min_disk\": \"0\", \"cell_name\": \"\", \"audit_period_beginning\": \"2015-09-22T06:00:00.000000\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"old_task_state\": \"spawning\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"vcpus\": \"1\", \"architecture\": \"None\", \"new_task_state\": \"None\", \"audit_period_ending\": \"2015-09-22T06:13:04.564995\", \"os_type\": \"No ", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "18420", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/disk.root.size?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:13:05 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-e5233229-4518-422d-b54d-b9fc25ab61c6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/ab15d2f1-1177-4f7b-9fec-5f348bdf4733", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "DELETE", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": null, 
+      "status_code": "204", 
+      "headers": {
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "status": "204", 
+        "content-length": "0", 
+        "x-openstack-request-id": "req-ed0c0bfa-c9f2-4aa2-8a77-562dd23472f9", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/7b5897f6-7dcd-4253-ba99-8d3435459aa5", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "DELETE", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": null, 
+      "status_code": "204", 
+      "headers": {
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "status": "204", 
+        "content-length": "0", 
+        "x-openstack-request-id": "req-e280614d-81a6-4ab4-b623-0536415b6dec", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "POST", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n  \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry_alarm-1193975763\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"gt\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu_util\",\n    \"period\": 70,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 80.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "201", 
+      "headers": {
+        "status": "201", 
+        "content-length": "842", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-e9b75ac7-e176-4126-b1f4-261714ed5afb"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/image.serve?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"counter_name\": \"image.serve\",\n    \"counter_type\": \"delta\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f62eec10-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:54.350180\",\n    \"resource_id\": \"478ecbae-1d23-45fa-bc5f-151c8ab95064\",\n    \"resource_metadata\": {\n      \"bytes_sent\": \"4\",\n      \"event_type\": \"image.send\",\n      \"host\": \"image.localhost\",\n      \"image_id\": \"478ecbae-1d23-45fa-bc5f-151c8ab95064\",\n      \"owner_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"receiver_tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"receiver_user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:54.328787\",\n    \"user_id\": null\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "700", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/image.serve?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:12:55 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-62f10f55-6909-4684-88c7-c8b2c3134d93"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "PUT", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "ok", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "4", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-0771d376-62a3-4b12-b87e-5fe428db70d8"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/disk.ephemeral.size?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[{\"counter_name\": \"disk.ephemeral.size\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.657207\", \"recorded_at\": \"2015-09-22T06:13:04.747844\", \"message_id\": \"fc58a4f0-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"GB\", \"counter_volume\": 0.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.create.end\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"message\": \"Success\", \"deleted_at\": \"\", \"fixed_ips\": \"[{'version': 4, 'vif_mac': 'fa:16:3e:83:c5:34', 'floating_ips': [], 'label': 'private', 'meta': {}, 'address': '10.1.0.5', 'type': 'fixed'}]\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"reservation_id\": \"r-hb4pbo6x\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_meta.min_disk\": \"0\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.355630\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"cell_name\": \"\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"instance_type\": \"m1.nano\", \"vcpus\": \"1\", \"architecture\": \"None\", \"os_type\": \"None\", \"instance_flavor_id\": \"42\"}, \"counter_type\": \"gauge\"}, {\"counter_name\": \"disk.ephemeral.size\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.627959\", \"recorded_at\": \"2015-09-22T06:13:04.676441\", \"message_id\": \"fc532b42-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"GB\", \"counter_volume\": 0.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.update\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"deleted_at\": \"\", \"reservation_id\": \"r-hb4pbo6x\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"instance_type\": \"m1.nano\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"old_state\": \"building\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.000000\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_meta.min_disk\": \"0\", \"cell_name\": \"\", \"audit_period_beginning\": \"2015-09-22T06:00:00.000000\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"old_task_state\": \"spawning\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"vcpus\": \"1\", \"architecture\": \"None\", \"new_task_state\": \"None\", \"audit_period_ending\": \"2015-09-22T06:13:04.564995\", \"os_ ", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "18465", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/disk.ephemeral.size?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:13:05 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-1440ac0f-c863-4bc4-83d2-062dcc4c10f8"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/image.size?q.op=eq&q.value=ec0a7645-516d-47e5-8f88-f4d13966daf2&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"counter_name\": \"image.size\",\n    \"counter_type\": \"gauge\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f4046000-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:50.733830\",\n    \"resource_id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n    \"resource_metadata\": {\n      \"checksum\": \"8d777f385d3dfec8815d20f7496026dc\",\n      \"container_format\": \"bare\",\n      \"created_at\": \"2015-09-22T06:12:44.000000\",\n      \"deleted\": \"False\",\n      \"deleted_at\": \"None\",\n      \"disk_format\": \"raw\",\n      \"event_type\": \"image.delete\",\n      \"host\": \"image.localhost\",\n      \"id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n      \"is_public\": \"False\",\n      \"min_disk\": \"0\",\n      \"min_ram\": \"0\",\n      \"name\": \"tempest-image-177327555\",\n      \"owner\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"protected\": \"False\",\n      \"size\": \"4\",\n      \"status\": \"deleted\",\n      \"updated_at\": \"2015-09-22T06:12:49.000000\",\n      \"virtual_size\": \"None\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:50.695403\",\n    \"user_id\": null\n  },\n  {\n    \"counter_name\": \"image.size\",\n    \"counter_type\": \"gauge\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f28edc82-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:48.299505\",\n    \"resource_id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n    \"resource_metadata\": {\n      \"checksum\": \"8d777f385d3dfec8815d20f7496026dc\",\n      \"container_format\": \"bare\",\n      \"created_at\": \"2015-09-22T06:12:44.000000\",\n      \"deleted\": \"False\",\n      \"deleted_at\": \"None\",\n      \"disk_format\": \"raw\",\n      \"event_type\": \"image.update\",\n      \"host\": \"image.localhost\",\n      \"id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n      \"is_public\": \"False\",\n      \"min_disk\": \"0\",\n      \"min_ram\": \"0\",\n      \"name\": \"tempest-image-177327555\",\n      \"owner\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"protected\": \"False\",\n      \"size\": \"4\",\n      \"status\": \"active\",\n      \"updated_at\": \"2015-09-22T06:12:48.000000\",\n      \"virtual_size\": \"None\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:48.241111\",\n    \"user_id\": null\n  },\n  {\n    \"counter_name\": \"image.size\",\n    \"counter_type\": \"gauge\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f28f63aa-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:48.274815\",\n    \"resource_id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n    \"resource_metadata\": {\n      \"checksum\": \"8d777f385d3dfec8815d20f7496026dc\",\n      \"container_format\": \"bare\",\n      \"created_at\": \"2015-09-22T06:12:44.000000\",\n      \"deleted\": \"False\",\n      \"deleted_at\": \"None\",\n      \"disk_format\": \"raw\",\n      \"event_type\": \"image.update\",\n      \"host\": \"image.localhost\",\n      \"id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n      \"is_public\": \"False\",\n      \"min_disk\": \"0\",\n      \"min_ram\": \"0\",\n      \"name\": \"tempest-image-177327555\",\n      \"owner\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"protected\": \"False\",\n      \"size\": \"4\",\n      \"status\": \"active\",\n      \"updated_at\": \"2015-09-22T06:12:48.000000\",\n      \"virtual_size\": \"None\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:48.239440\",\n    \"user_id\": null\n  },\n  {\n    \"counter_name\": \"image.size\",\n    \"counter_type\": \"gauge\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f27f4308-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:48.163095\",\n    \"resource_id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n    \"resource_metadata\": {\n      \"checksum\": \"8d777f385d3dfec8815d20f7496026dc\",\n      \"container_format\": \"bare\",\n      \"created_at\": \"2015-09-22T06:12:44.000000\",\n      \"deleted\": \"False\",\n      \"deleted_at\": \"None\",\n      \"disk_format\": \"raw\",\n      \"event_type\": \"image.upload\",\n      \"host\": \"image.localhost\",\n      \"id\": \"ec0a7645-516d-47e5-8f88-f4d13966daf2\",\n      \"is_public\": \"False\",\n      \"min_disk\": \"0\",\n      \"min_ram\": \"0\",\n      \"name\": \"tempest-image-177327555\",\n      \"owner\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"protected\": \"False\",\n      \"size\": \"4\",\n      \"status\": \"saving\",\n      \"updated_at\": \"2015-09-22T06:12:48.000000\",\n      \"virtual_size\": \"None\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:48.143078\",\n    \"user_id\": null\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "3825", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/image.size?q.op=eq&q.value=ec0a7645-516d-47e5-8f88-f4d13966daf2&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:12:51 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-07f298d3-bdd9-419f-9bf9-e2ca00fb6542"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/d6e06168-7a3f-4854-b114-8842b520d2b6", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "DELETE", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": null, 
+      "status_code": "204", 
+      "headers": {
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "status": "204", 
+        "content-length": "0", 
+        "x-openstack-request-id": "req-822824e4-c9d8-466f-9814-968e346f2def", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "POST", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"9a18b5ee-5622-44e4-a730-c1db11b351ad\",\n  \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry_alarm-1118992141\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:09.024464\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"gt\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu_util\",\n    \"period\": 70,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 80.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:09.024464\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "201", 
+      "headers": {
+        "status": "201", 
+        "content-length": "842", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-2ff69859-5067-4ec7-be9b-c6eb951cad96"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "POST", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"ab15d2f1-1177-4f7b-9fec-5f348bdf4733\",\n  \"combination_rule\": {\n    \"alarm_ids\": [\n      \"d6e06168-7a3f-4854-b114-8842b520d2b6\",\n      \"7b5897f6-7dcd-4253-ba99-8d3435459aa5\"\n    ],\n    \"operator\": \"or\"\n  },\n  \"description\": \"Combined state of alarms d6e06168-7a3f-4854-b114-8842b520d2b6 or 7b5897f6-7dcd-4253-ba99-8d3435459aa5\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-combination_alarm-1394805315\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.838830\",\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.838830\",\n  \"type\": \"combination\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "201", 
+      "headers": {
+        "status": "201", 
+        "content-length": "754", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-019ce8cb-684b-48a6-8e3f-82dc0a637e53"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74/history", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n    \"detail\": \"{\\\"name\\\": \\\"tempest-telemetry-alarm-update-95497746\\\", \\\"rule\\\": {\\\"meter_name\\\": \\\"cpu\\\", \\\"evaluation_periods\\\": 1, \\\"period\\\": 60, \\\"statistic\\\": \\\"avg\\\", \\\"threshold\\\": 70.0, \\\"query\\\": [{\\\"field\\\": \\\"project_id\\\", \\\"value\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"op\\\": \\\"eq\\\"}], \\\"comparison_operator\\\": \\\"eq\\\", \\\"exclude_outliers\\\": false}, \\\"description\\\": \\\"Alarm when cpu is eq a avg of 70.0 over 60 seconds\\\"}\",\n    \"event_id\": \"22bd7888-6e80-43a8-8c3a-69434436e65e\",\n    \"on_behalf_of\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"timestamp\": \"2015-09-22T06:06:08.948701\",\n    \"type\": \"rule change\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  },\n  {\n    \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n    \"detail\": \"{\\\"alarm_actions\\\": [], \\\"user_id\\\": \\\"4c97b283e8a04ddd894ded0c96293921\\\", \\\"name\\\": \\\"tempest-telemetry_alarm-1193975763\\\", \\\"state\\\": \\\"insufficient data\\\", \\\"timestamp\\\": \\\"2015-09-22T06:06:08.890079\\\", \\\"description\\\": \\\"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\\\", \\\"enabled\\\": true, \\\"state_timestamp\\\": \\\"2015-09-22T06:06:08.890079\\\", \\\"rule\\\": {\\\"meter_name\\\": \\\"cpu_util\\\", \\\"evaluation_periods\\\": 1, \\\"period\\\": 70, \\\"statistic\\\": \\\"avg\\\", \\\"threshold\\\": 80.0, \\\"query\\\": [{\\\"field\\\": \\\"project_id\\\", \\\"value\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"op\\\": \\\"eq\\\"}], \\\"comparison_operator\\\": \\\"gt\\\", \\\"exclude_outliers\\\": false}, \\\"alarm_id\\\": \\\"e8406422-3b2f-4914-9010-4a17b4838f74\\\", \\\"time_constraints\\\": [], \\\"insufficient_data_actions\\\": [], \\\"repeat_actions\\\": false, \\\"ok_actions\\\": [], \\\"project_id\\\": \\\"4e397d0d62414540be0a0844cedfa015\\\", \\\"type\\\": \\\"threshold\\\", \\\"severity\\\": \\\"low\\\"}\",\n    \"event_id\": \"f4cd7f07-4126-4b50-82b7-a66c16e6ae50\",\n    \"on_behalf_of\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"timestamp\": \"2015-09-22T06:06:08.890079\",\n    \"type\": \"creation\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "2009", 
+        "content-location": "http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74/history", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-b3e8caba-03c3-48ce-8a27-db057adfb362"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"alarm_actions\": [],\n    \"alarm_id\": \"7b5897f6-7dcd-4253-ba99-8d3435459aa5\",\n    \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [],\n    \"name\": \"tempest-telemetry_alarm-1166578842\",\n    \"ok_actions\": [],\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"repeat_actions\": false,\n    \"severity\": \"low\",\n    \"state\": \"insufficient data\",\n    \"state_timestamp\": \"2015-09-22T06:06:08.779063\",\n    \"threshold_rule\": {\n      \"comparison_operator\": \"gt\",\n      \"evaluation_periods\": 1,\n      \"exclude_outliers\": false,\n      \"meter_name\": \"cpu_util\",\n      \"period\": 70,\n      \"query\": [\n        {\n          \"field\": \"project_id\",\n          \"op\": \"eq\",\n          \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n        }\n      ],\n      \"statistic\": \"avg\",\n      \"threshold\": 80.0\n    },\n    \"time_constraints\": [],\n    \"timestamp\": \"2015-09-22T06:06:08.779063\",\n    \"type\": \"threshold\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  },\n  {\n    \"alarm_actions\": [],\n    \"alarm_id\": \"d6e06168-7a3f-4854-b114-8842b520d2b6\",\n    \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n    \"enabled\": true,\n    \"insufficient_data_actions\": [],\n    \"name\": \"tempest-telemetry_alarm-2046711287\",\n    \"ok_actions\": [],\n    \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n    \"repeat_actions\": false,\n    \"severity\": \"low\",\n    \"state\": \"insufficient data\",\n    \"state_timestamp\": \"2015-09-22T06:06:08.748864\",\n    \"threshold_rule\": {\n      \"comparison_operator\": \"gt\",\n      \"evaluation_periods\": 1,\n      \"exclude_outliers\": false,\n      \"meter_name\": \"cpu_util\",\n      \"period\": 70,\n      \"query\": [\n        {\n          \"field\": \"project_id\",\n          \"op\": \"eq\",\n          \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n        }\n      ],\n      \"statistic\": \"avg\",\n      \"threshold\": 80.0\n    },\n    \"time_constraints\": [],\n    \"timestamp\": \"2015-09-22T06:06:08.748864\",\n    \"type\": \"threshold\",\n    \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "1688", 
+        "content-location": "http://127.0.0.1:8777/v2/alarms", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-33f68521-8743-4554-a50a-3adc1b849559"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"e8406422-3b2f-4914-9010-4a17b4838f74\",\n  \"description\": \"Alarm when cpu is eq a avg of 70.0 over 60 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry-alarm-update-95497746\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.890079\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"eq\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu\",\n    \"period\": 60,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 70.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.948701\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "837", 
+        "content-location": "http://127.0.0.1:8777/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-bbb33def-ee71-41fd-b3e1-79872afb0071"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/ab15d2f1-1177-4f7b-9fec-5f348bdf4733", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"error_message\": {\n    \"debuginfo\": null,\n    \"faultcode\": \"Client\",\n    \"faultstring\": \"Alarm ab15d2f1-1177-4f7b-9fec-5f348bdf4733 not found in project 4e397d0d62414540be0a0844cedfa015\"\n  }\n}", 
+      "status_code": "404", 
+      "headers": {
+        "status": "404", 
+        "content-length": "176", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json", 
+        "x-openstack-request-id": "req-88157c1d-656c-4eb0-8e5b-6a58aa566b5a"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/storage.objects.incoming.bytes", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"counter_name\": \"storage.objects.incoming.bytes\",\n    \"counter_type\": \"delta\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"3158c23e-60f1-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"44b6b0465c8b4fab9417d965ce15ceeb\",\n    \"recorded_at\": \"2015-09-22T06:14:33.609543\",\n    \"resource_id\": \"44b6b0465c8b4fab9417d965ce15ceeb\",\n    \"resource_metadata\": {\n      \"action\": \"update\",\n      \"eventTime\": \"2015-09-22T06:14:33.578270\",\n      \"eventType\": \"activity\",\n      \"event_type\": \"objectstore.http.request\",\n      \"host\": \"ceilometermiddleware\",\n      \"id\": \"openstack:d98565c8-770b-420d-bde9-0c263d63cd26\",\n      \"initiator.id\": \"f33deb9c5f32411f9a598ec6e0c257a6\",\n      \"initiator.project_id\": \"44b6b0465c8b4fab9417d965ce15ceeb\",\n      \"initiator.typeURI\": \"service/security/account/user\",\n      \"measurements\": \"[{'metric': {'metricId': 'openstack:7b3a5daa-b5b4-4641-8a35-5401cbd5b2b6', 'name': 'storage.objects.incoming.bytes', 'unit': 'B'}, 'result': 4}]\",\n      \"observer.id\": \"target\",\n      \"outcome\": \"success\",\n      \"target.action\": \"put\",\n      \"target.id\": \"44b6b0465c8b4fab9417d965ce15ceeb\",\n      \"target.metadata:container\": \"tempest-swift-scenario-container-1969811479\",\n      \"target.metadata:object\": \"tempest-swift-scenario-object-1164986023\",\n      \"target.metadata:path\": \"v1/AUTH_44b6b0465c8b4fab9417d965ce15ceeb/tempest-swift-scenario-container-1969811479/tempest-swift-scenario-object-1164986023\",\n      \"target.metadata:version\": \"v1\",\n      \"target.typeURI\": \"service/storage/object\",\n      \"typeURI\": \"http://schemas.dmtf.org/cloud/audit/1.0/event\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:14:33.578937\",\n    \"user_id\": \"f33deb9c5f32411f9a598ec6e0c257a6\"\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "1561", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/storage.objects.incoming.bytes", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:14:34 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-13149585-d7ac-449f-9902-91a3066a73d3"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/image.download?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[\n  {\n    \"counter_name\": \"image.download\",\n    \"counter_type\": \"delta\",\n    \"counter_unit\": \"B\",\n    \"counter_volume\": 4.0,\n    \"message_id\": \"f62f2e64-60f0-11e5-9c6f-fa163eff00f6\",\n    \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n    \"recorded_at\": \"2015-09-22T06:12:54.359713\",\n    \"resource_id\": \"478ecbae-1d23-45fa-bc5f-151c8ab95064\",\n    \"resource_metadata\": {\n      \"bytes_sent\": \"4\",\n      \"event_type\": \"image.send\",\n      \"host\": \"image.localhost\",\n      \"image_id\": \"478ecbae-1d23-45fa-bc5f-151c8ab95064\",\n      \"owner_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"receiver_tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\",\n      \"receiver_user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\"\n    },\n    \"source\": \"openstack\",\n    \"timestamp\": \"2015-09-22T06:12:54.328787\",\n    \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\"\n  }\n]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "733", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/image.download?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:12:55 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-46d53505-0015-407d-b4d5-68de1816db9c"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "DELETE", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": null, 
+      "status_code": "204", 
+      "headers": {
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "status": "204", 
+        "content-length": "0", 
+        "x-openstack-request-id": "req-03e5a6ac-200c-487d-bb59-b1857d4f63ad", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "DELETE", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": null, 
+      "status_code": "204", 
+      "headers": {
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "status": "204", 
+        "content-length": "0", 
+        "x-openstack-request-id": "req-01e114bd-4e90-4cbe-bd75-f9a4e7a5fe85", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "POST", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"d6e06168-7a3f-4854-b114-8842b520d2b6\",\n  \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry_alarm-2046711287\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.748864\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"gt\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu_util\",\n    \"period\": 70,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 80.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.748864\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "201", 
+      "headers": {
+        "status": "201", 
+        "content-length": "842", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-6d694ecb-d4e4-4b0f-a0ca-e4cf4ebde11a"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms/e8406422-3b2f-4914-9010-4a17b4838f74", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"error_message\": {\n    \"debuginfo\": null,\n    \"faultcode\": \"Client\",\n    \"faultstring\": \"Alarm e8406422-3b2f-4914-9010-4a17b4838f74 not found in project 4e397d0d62414540be0a0844cedfa015\"\n  }\n}", 
+      "status_code": "404", 
+      "headers": {
+        "status": "404", 
+        "content-length": "176", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:09 GMT", 
+        "content-type": "application/json", 
+        "x-openstack-request-id": "req-2a291999-9fe0-42ee-a9cb-1bc50f909be1"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/image.download?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[]", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "2", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/image.download?q.op=eq&q.value=478ecbae-1d23-45fa-bc5f-151c8ab95064&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:12:54 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-993403e0-25fb-4115-b06b-798cc63f716c"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/meters/memory?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "GET", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "[{\"counter_name\": \"memory\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.657207\", \"recorded_at\": \"2015-09-22T06:13:04.854695\", \"message_id\": \"fc58b5e4-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"MB\", \"counter_volume\": 64.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.create.end\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"message\": \"Success\", \"deleted_at\": \"\", \"fixed_ips\": \"[{'version': 4, 'vif_mac': 'fa:16:3e:83:c5:34', 'floating_ips': [], 'label': 'private', 'meta': {}, 'address': '10.1.0.5', 'type': 'fixed'}]\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"reservation_id\": \"r-hb4pbo6x\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_meta.min_disk\": \"0\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.355630\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"cell_name\": \"\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"instance_type\": \"m1.nano\", \"vcpus\": \"1\", \"architecture\": \"None\", \"os_type\": \"None\", \"instance_flavor_id\": \"42\"}, \"counter_type\": \"gauge\"}, {\"counter_name\": \"memory\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"resource_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"timestamp\": \"2015-09-22T06:13:04.627959\", \"recorded_at\": \"2015-09-22T06:13:04.756667\", \"message_id\": \"fc533d76-60f0-11e5-9c6f-fa163eff00f6\", \"source\": \"openstack\", \"counter_unit\": \"MB\", \"counter_volume\": 64.0, \"project_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"resource_metadata\": {\"state_description\": \"\", \"image_meta.base_image_ref\": \"db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"event_type\": \"compute.instance.update\", \"availability_zone\": \"None\", \"terminated_at\": \"\", \"ephemeral_gb\": \"0\", \"instance_type_id\": \"6\", \"deleted_at\": \"\", \"reservation_id\": \"r-hb4pbo6x\", \"memory_mb\": \"64\", \"display_name\": \"tempest-ceilometer-instance-1128525961\", \"instance_type\": \"m1.nano\", \"hostname\": \"tempest-ceilometer-instance-1128525961\", \"state\": \"active\", \"image_ref_url\": \"http://10.0.4.137:9292/images/db8ff66c-0e54-4a7b-931c-aa715c78917e\", \"image_meta.kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"old_state\": \"building\", \"progress\": \"\", \"launched_at\": \"2015-09-22T06:13:04.000000\", \"node\": \"devstack-trusty-hpcloud-b5-5038802\", \"ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"access_ip_v6\": \"None\", \"disk_gb\": \"0\", \"access_ip_v4\": \"None\", \"kernel_id\": \"8edeeee9-dda0-4a03-8934-317b46b7343a\", \"image_meta.disk_format\": \"ami\", \"image_meta.container_format\": \"ami\", \"user_id\": \"c0c674fa6ad742bb90e64f6413db50f7\", \"image_meta.min_disk\": \"0\", \"cell_name\": \"\", \"audit_period_beginning\": \"2015-09-22T06:00:00.000000\", \"root_gb\": \"0\", \"tenant_id\": \"62fa3d5f3ecb453b8a77771ec1de9f2d\", \"created_at\": \"2015-09-22 06:12:58+00:00\", \"image_meta.min_ram\": \"0\", \"host\": \"compute.devstack-trusty-hpcloud-b5-5038802\", \"old_task_state\": \"spawning\", \"instance_id\": \"bb1922d9-4ae7-4222-a754-4758cef6affe\", \"image_meta.ramdisk_id\": \"f34e4626-2b5d-478a-b079-b73012a0e4ad\", \"vcpus\": \"1\", \"architecture\": \"None\", \"new_task_state\": \"None\", \"audit_period_ending\": \"2015-09-22T06:13:04.564995\", \"os_type\": \"None\", \"instance ", 
+      "status_code": "200", 
+      "headers": {
+        "status": "200", 
+        "content-length": "18357", 
+        "content-location": "http://127.0.0.1:8777/v2/meters/memory?q.op=eq&q.value=bb1922d9-4ae7-4222-a754-4758cef6affe&q.field=resource", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:13:05 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-051356d4-7052-4e43-b5af-32d7ce517187"
+      }
+    }
+  ], 
+  [
+    {
+      "url": "/v2/alarms", 
+      "headers": {
+        "content-type": "application/json", 
+        "accept": "application/json", 
+        "x-auth-token": "<omitted>"
+      }, 
+      "body": null, 
+      "method": "POST", 
+      "service": "telemetry"
+    }, 
+    {
+      "body": "{\n  \"alarm_actions\": [],\n  \"alarm_id\": \"7b5897f6-7dcd-4253-ba99-8d3435459aa5\",\n  \"description\": \"Alarm when cpu_util is gt a avg of 80.0 over 70 seconds\",\n  \"enabled\": true,\n  \"insufficient_data_actions\": [],\n  \"name\": \"tempest-telemetry_alarm-1166578842\",\n  \"ok_actions\": [],\n  \"project_id\": \"4e397d0d62414540be0a0844cedfa015\",\n  \"repeat_actions\": false,\n  \"severity\": \"low\",\n  \"state\": \"insufficient data\",\n  \"state_timestamp\": \"2015-09-22T06:06:08.779063\",\n  \"threshold_rule\": {\n    \"comparison_operator\": \"gt\",\n    \"evaluation_periods\": 1,\n    \"exclude_outliers\": false,\n    \"meter_name\": \"cpu_util\",\n    \"period\": 70,\n    \"query\": [\n      {\n        \"field\": \"project_id\",\n        \"op\": \"eq\",\n        \"value\": \"4e397d0d62414540be0a0844cedfa015\"\n      }\n    ],\n    \"statistic\": \"avg\",\n    \"threshold\": 80.0\n  },\n  \"time_constraints\": [],\n  \"timestamp\": \"2015-09-22T06:06:08.779063\",\n  \"type\": \"threshold\",\n  \"user_id\": \"4c97b283e8a04ddd894ded0c96293921\"\n}", 
+      "status_code": "201", 
+      "headers": {
+        "status": "201", 
+        "content-length": "842", 
+        "server": "Werkzeug/0.10.4 Python/2.7.6", 
+        "date": "Tue, 22 Sep 2015 06:06:08 GMT", 
+        "content-type": "application/json; charset=UTF-8", 
+        "x-openstack-request-id": "req-2cdce35b-6160-4744-a258-88b0c047830b"
+      }
+    }
+  ]
+]

@@ -1,0 +1,4 @@
+PUT /v1/images/3cf3bb69-fafa-4f4a-be6e-d6512da71178 HTTP/1.1
+x-image-meta-property-key1: alt1
+x-image-meta-property-key2: value2
+x-auth-token: <omitted>

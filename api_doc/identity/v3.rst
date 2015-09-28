@@ -4,7 +4,9 @@
 
    
 
-   :responseexample 200: v3/examples/listProjects_resp_200.json
+   :requestexample: v3/examples/listProjects_req.txt
+   :responseexample 200: v3/examples/listProjects_resp_200.txt
+   :responseexample 403: v3/examples/listProjects_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -32,8 +34,11 @@
 
    
 
-   :requestexample: v3/examples/createProject_req.json
-   :responseexample 201: v3/examples/createProject_resp_201.json
+   :requestexample: v3/examples/createProject_req.txt
+   :responseexample 201: v3/examples/createProject_resp_201.txt
+   :responseexample 403: v3/examples/createProject_resp_403.txt
+   :responseexample 400: v3/examples/createProject_resp_400.txt
+   :responseexample 409: v3/examples/createProject_resp_409.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -46,6 +51,7 @@
    :statuscode 401: 
    :statuscode 400: 
    :statuscode 503: 
+   :statuscode 409: 
 
 
 .. http:get:: /v3/policies
@@ -54,7 +60,8 @@
 
    
 
-   :responseexample 200: v3/examples/listPolicies_resp_200.json
+   :requestexample: v3/examples/listPolicies_req.txt
+   :responseexample 200: v3/examples/listPolicies_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: policies
@@ -79,8 +86,8 @@
 
    
 
-   :requestexample: v3/examples/createPolicy_req.json
-   :responseexample 201: v3/examples/createPolicy_resp_201.json
+   :requestexample: v3/examples/createPolicy_req.txt
+   :responseexample 201: v3/examples/createPolicy_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: policies
@@ -101,7 +108,8 @@
 
    
 
-   :responseexample 200: v3/examples/getProject_resp_200.json
+   :requestexample: v3/examples/getProject_req.txt
+   :responseexample 200: v3/examples/getProject_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -122,8 +130,8 @@
 
    
 
-   :requestexample: v3/examples/updateProject_req.json
-   :responseexample 200: v3/examples/updateProject_resp_200.json
+   :requestexample: v3/examples/updateProject_req.txt
+   :responseexample 200: v3/examples/updateProject_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -144,6 +152,10 @@
 
    
 
+   :requestexample: v3/examples/deleteProject_req.txt
+   :responseexample 204: v3/examples/deleteProject_resp_204.txt
+   :responseexample 404: v3/examples/deleteProject_resp_404.txt
+   :responseexample 403: v3/examples/deleteProject_resp_403.txt
    :tag: projects
    :parameter project_id: Filters on the UUID for a project.
    :statuscode 204: 
@@ -162,7 +174,8 @@
 
    
 
-   :responseexample 200: v3/examples/listUsers_resp_200.json
+   :requestexample: v3/examples/listUsers_req.txt
+   :responseexample 200: v3/examples/listUsers_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: users
@@ -189,8 +202,8 @@
 
    
 
-   :requestexample: v3/examples/createUser_req.json
-   :responseexample 201: v3/examples/createUser_resp_201.json
+   :requestexample: v3/examples/createUser_req.txt
+   :responseexample 201: v3/examples/createUser_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: users
@@ -211,6 +224,8 @@
 
    
 
+   :requestexample: v3/examples/grantProjectGroupRole_req.txt
+   :responseexample 204: v3/examples/grantProjectGroupRole_resp_204.txt
    :tag: projects
    :parameter role_id: The role ID.
    :parameter project_id: Filters on the UUID for a project.
@@ -251,6 +266,8 @@
 
    
 
+   :requestexample: v3/examples/revokeProjectGroupRole_req.txt
+   :responseexample 204: v3/examples/revokeProjectGroupRole_resp_204.txt
    :tag: projects
    :parameter role_id: The role ID.
    :parameter project_id: Filters on the UUID for a project.
@@ -291,7 +308,8 @@
 
    
 
-   :responseexample 200: v3/examples/getUser_resp_200.json
+   :requestexample: v3/examples/getUser_req.txt
+   :responseexample 200: v3/examples/getUser_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: users
@@ -313,8 +331,8 @@
    If the back-end driver does not allow this functionality, this call
    might return the HTTP ``Not Implemented (501)`` status code.
 
-   :requestexample: v3/examples/updateUser_req.json
-   :responseexample 200: v3/examples/updateUser_resp_200.json
+   :requestexample: v3/examples/updateUser_req.txt
+   :responseexample 200: v3/examples/updateUser_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: users
@@ -335,6 +353,8 @@
 
    
 
+   :requestexample: v3/examples/deleteUser_req.txt
+   :responseexample 204: v3/examples/deleteUser_resp_204.txt
    :tag: users
    :parameter user_id: The user ID.
    :statuscode 204: 
@@ -353,7 +373,8 @@
 
    
 
-   :responseexample 200: v3/examples/listGroupUsers_resp_200.json
+   :requestexample: v3/examples/listGroupUsers_req.txt
+   :responseexample 200: v3/examples/listGroupUsers_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: groups
@@ -453,9 +474,10 @@
    ``Unauthorized (401)`` authentication errors. Other errors, like
    HTTP ``Forbidden (403)`` , are also possible.
 
-   :requestexample: v3/examples/authenticate_req.json
-   :responseexample 201: v3/examples/authenticate_resp_201.json
-   :responseexample 401: v3/examples/authenticate_resp_401.json
+   :requestexample: v3/examples/authenticate_req.txt
+   :responseexample 201: v3/examples/authenticate_resp_201.txt
+   :responseexample 404: v3/examples/authenticate_resp_404.txt
+   :responseexample 401: v3/examples/authenticate_resp_401.txt
    :accepts: application/json
    :produces: application/json
    :tag: tokens
@@ -480,7 +502,8 @@
    ``POST /auth/tokens`` .
 
    :requestexample: v3/examples/validateTokens_req.txt
-   :responseexample 200: v3/examples/validateTokens_resp_200.json
+   :responseexample 200: v3/examples/validateTokens_resp_200.txt
+   :responseexample 404: v3/examples/validateTokens_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: tokens
@@ -534,16 +557,18 @@
    not required.
 
    :requestexample: v3/examples/revokeTokens_req.txt
+   :responseexample 204: v3/examples/revokeTokens_resp_204.txt
    :tag: tokens
    :reqheader X-Auth-Token: A valid authentication token for an
                             administrative user.
    :reqheader X-Subject-Token: The token ID.
-   :statuscode 400: 
+   :statuscode 204: 
+   :statuscode 413: 
    :statuscode 405: 
    :statuscode 404: 
    :statuscode 403: 
    :statuscode 401: 
-   :statuscode 413: 
+   :statuscode 400: 
    :statuscode 503: 
 
 
@@ -553,6 +578,8 @@
 
    
 
+   :requestexample: v3/examples/assignUserToGroup_req.txt
+   :responseexample 204: v3/examples/assignUserToGroup_resp_204.txt
    :tag: groups
    :parameter user_id: The user ID.
    :parameter group_id: The group ID.
@@ -572,6 +599,8 @@
 
    
 
+   :requestexample: v3/examples/deleteGroupUser_req.txt
+   :responseexample 204: v3/examples/deleteGroupUser_resp_204.txt
    :tag: groups
    :parameter user_id: The user ID.
    :parameter group_id: The group ID.
@@ -610,7 +639,8 @@
 
    
 
-   :responseexample 200: v3/examples/listServices_resp_200.json
+   :requestexample: v3/examples/listServices_req.txt
+   :responseexample 200: v3/examples/listServices_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: service-catalog
@@ -635,8 +665,8 @@
 
    
 
-   :requestexample: v3/examples/createService_req.json
-   :responseexample 201: v3/examples/createService_resp_201.json
+   :requestexample: v3/examples/createService_req.txt
+   :responseexample 201: v3/examples/createService_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: service-catalog
@@ -657,7 +687,9 @@
 
    
 
-   :responseexample 200: v3/examples/getRegion_resp_200.json
+   :requestexample: v3/examples/getRegion_req.txt
+   :responseexample 200: v3/examples/getRegion_resp_200.txt
+   :responseexample 404: v3/examples/getRegion_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: regions-v3
@@ -679,8 +711,8 @@
    If you try to update a region with a parent region ID that does not
    exist, this call returns the HTTP ``Not Found (404)`` status code.
 
-   :requestexample: v3/examples/updateRegion_req.json
-   :responseexample 200: v3/examples/updateRegion_resp_200.json
+   :requestexample: v3/examples/updateRegion_req.txt
+   :responseexample 200: v3/examples/updateRegion_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: regions-v3
@@ -703,6 +735,8 @@
    If you try to delete a region that has child regions, this call
    returns the HTTP ``Conflict (409)`` status code.
 
+   :requestexample: v3/examples/deleteRegion_req.txt
+   :responseexample 204: v3/examples/deleteRegion_resp_204.txt
    :tag: regions-v3
    :parameter region_id: The region ID.
    :statuscode 204: 
@@ -721,7 +755,8 @@
 
    
 
-   :responseexample 200: v3/examples/listRoles_resp_200.json
+   :requestexample: v3/examples/listRoles_req.txt
+   :responseexample 200: v3/examples/listRoles_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: roles
@@ -745,8 +780,8 @@
 
    
 
-   :requestexample: v3/examples/createRole_req.json
-   :responseexample 201: v3/examples/createRole_resp_201.json
+   :requestexample: v3/examples/createRole_req.txt
+   :responseexample 201: v3/examples/createRole_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: roles
@@ -767,6 +802,8 @@
 
    
 
+   :requestexample: v3/examples/grantProjectUserRole_req.txt
+   :responseexample 204: v3/examples/grantProjectUserRole_resp_204.txt
    :tag: projects
    :parameter user_id: The user ID.
    :parameter role_id: The role ID.
@@ -807,6 +844,8 @@
 
    
 
+   :requestexample: v3/examples/revokeProjectUserRole_req.txt
+   :responseexample 204: v3/examples/revokeProjectUserRole_resp_204.txt
    :tag: projects
    :parameter user_id: The user ID.
    :parameter role_id: The role ID.
@@ -827,7 +866,8 @@
 
    
 
-   :responseexample 200: v3/examples/listUserGroups_resp_200.json
+   :requestexample: v3/examples/listUserGroups_req.txt
+   :responseexample 200: v3/examples/listUserGroups_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: users
@@ -848,7 +888,8 @@
 
    
 
-   :responseexample 200: v3/examples/listProjectUserRoles_resp_200.json
+   :requestexample: v3/examples/listProjectUserRoles_req.txt
+   :responseexample 200: v3/examples/listProjectUserRoles_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -870,7 +911,8 @@
 
    
 
-   :responseexample 200: v3/examples/listCredentials_resp_200.json
+   :requestexample: v3/examples/listCredentials_req.txt
+   :responseexample 200: v3/examples/listCredentials_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: credentials
@@ -899,8 +941,8 @@
    credentials such as ``access_key`` , change the type and contents
    of the data blob.
 
-   :requestexample: v3/examples/createCredential_req.json
-   :responseexample 201: v3/examples/createCredential_resp_201.json
+   :requestexample: v3/examples/createCredential_req.txt
+   :responseexample 201: v3/examples/createCredential_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: credentials
@@ -920,7 +962,8 @@
 
    
 
-   :responseexample 200: v3/examples/listEndpoints_resp_200.json
+   :requestexample: v3/examples/listEndpoints_req.txt
+   :responseexample 200: v3/examples/listEndpoints_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: endpoints
@@ -945,8 +988,9 @@
 
    
 
-   :requestexample: v3/examples/createEndpoint_req.json
-   :responseexample 201: v3/examples/createEndpoint_resp_201.json
+   :requestexample: v3/examples/createEndpoint_req.txt
+   :responseexample 201: v3/examples/createEndpoint_resp_201.txt
+   :responseexample 400: v3/examples/createEndpoint_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: endpoints
@@ -967,7 +1011,8 @@
 
    
 
-   :responseexample 200: v3/examples/listProjectGroupRoles_resp_200.json
+   :requestexample: v3/examples/listProjectGroupRoles_req.txt
+   :responseexample 200: v3/examples/listProjectGroupRoles_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: projects
@@ -989,7 +1034,8 @@
 
    
 
-   :responseexample 200: v3/examples/getPolicy_resp_200.json
+   :requestexample: v3/examples/getPolicy_req.txt
+   :responseexample 200: v3/examples/getPolicy_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: policies
@@ -1010,8 +1056,8 @@
 
    
 
-   :requestexample: v3/examples/updatePolicy_req.json
-   :responseexample 200: v3/examples/updatePolicy_resp_200.json
+   :requestexample: v3/examples/updatePolicy_req.txt
+   :responseexample 200: v3/examples/updatePolicy_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: policies
@@ -1032,6 +1078,8 @@
 
    
 
+   :requestexample: v3/examples/deletePolicy_req.txt
+   :responseexample 204: v3/examples/deletePolicy_resp_204.txt
    :tag: policies
    :parameter policy_id: The policy ID.
    :statuscode 204: 
@@ -1050,7 +1098,8 @@
 
    Shows details for the Identity API v3.
 
-   :responseexample 200: v3/examples/showVersionDetails-identity-v3_resp_200.json
+   :requestexample: v3/examples/showVersionDetails-identity-v3_req.txt
+   :responseexample 200: v3/examples/showVersionDetails-identity-v3_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: versions-identity
@@ -1070,6 +1119,8 @@
 
    
 
+   :requestexample: v3/examples/grantDomainGroupRole_req.txt
+   :responseexample 204: v3/examples/grantDomainGroupRole_resp_204.txt
    :tag: domains
    :parameter domain_id: Filters on domain_id.
    :parameter role_id: The role ID.
@@ -1110,6 +1161,8 @@
 
    
 
+   :requestexample: v3/examples/revokeDomainGroupRole_req.txt
+   :responseexample 204: v3/examples/revokeDomainGroupRole_resp_204.txt
    :tag: domains
    :parameter domain_id: Filters on domain_id.
    :parameter role_id: The role ID.
@@ -1130,7 +1183,8 @@
 
    
 
-   :responseexample 200: v3/examples/getGroup_resp_200.json
+   :requestexample: v3/examples/getGroup_req.txt
+   :responseexample 200: v3/examples/getGroup_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: groups
@@ -1153,8 +1207,8 @@
    operation might return the HTTP ``Not Implemented (501)`` status
    code.
 
-   :requestexample: v3/examples/updateGroup_req.json
-   :responseexample 200: v3/examples/updateGroup_resp_200.json
+   :requestexample: v3/examples/updateGroup_req.txt
+   :responseexample 200: v3/examples/updateGroup_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: groups
@@ -1175,6 +1229,8 @@
 
    
 
+   :requestexample: v3/examples/deleteGroup_req.txt
+   :responseexample 204: v3/examples/deleteGroup_resp_204.txt
    :tag: groups
    :parameter group_id: The group ID.
    :statuscode 204: 
@@ -1198,8 +1254,8 @@
    a circular relationship, this call returns the HTTP ``Conflict
    (409)`` status code.
 
-   :requestexample: v3/examples/createRegion_req.json
-   :responseexample 201: v3/examples/createRegion_resp_201.json
+   :requestexample: v3/examples/createRegion_req.txt
+   :responseexample 201: v3/examples/createRegion_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: regions-v3
@@ -1220,7 +1276,8 @@
 
    
 
-   :responseexample 200: v3/examples/listRegions_resp_200.json
+   :requestexample: v3/examples/listRegions_req.txt
+   :responseexample 200: v3/examples/listRegions_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: regions-v3
@@ -1242,7 +1299,8 @@
 
    
 
-   :responseexample 200: v3/examples/listDomains_resp_200.json
+   :requestexample: v3/examples/listDomains_req.txt
+   :responseexample 200: v3/examples/listDomains_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1268,8 +1326,8 @@
 
    
 
-   :requestexample: v3/examples/createDomain_req.json
-   :responseexample 201: v3/examples/createDomain_resp_201.json
+   :requestexample: v3/examples/createDomain_req.txt
+   :responseexample 201: v3/examples/createDomain_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1290,7 +1348,8 @@
 
    
 
-   :responseexample 200: v3/examples/listDomainUserRoles_resp_200.json
+   :requestexample: v3/examples/listDomainUserRoles_req.txt
+   :responseexample 200: v3/examples/listDomainUserRoles_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1336,6 +1395,8 @@
 
    
 
+   :requestexample: v3/examples/grantDomainUserRole_req.txt
+   :responseexample 204: v3/examples/grantDomainUserRole_resp_204.txt
    :tag: domains
    :parameter domain_id: Filters on domain_id.
    :parameter user_id: The user ID.
@@ -1376,6 +1437,8 @@
 
    
 
+   :requestexample: v3/examples/revokeDomainUserRole_req.txt
+   :responseexample 204: v3/examples/revokeDomainUserRole_resp_204.txt
    :tag: domains
    :parameter domain_id: Filters on domain_id.
    :parameter user_id: The user ID.
@@ -1482,7 +1545,8 @@
 
    
 
-   :responseexample 200: v3/examples/getDomain_resp_200.json
+   :requestexample: v3/examples/getDomain_req.txt
+   :responseexample 200: v3/examples/getDomain_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1503,8 +1567,8 @@
 
    
 
-   :requestexample: v3/examples/updateDomain_req.json
-   :responseexample 200: v3/examples/updateDomain_resp_200.json
+   :requestexample: v3/examples/updateDomain_req.txt
+   :responseexample 200: v3/examples/updateDomain_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1533,6 +1597,9 @@
    by it, such as users, groups, and projects, and any credentials and
    granted roles that relate to those entities.
 
+   :requestexample: v3/examples/deleteDomain_req.txt
+   :responseexample 204: v3/examples/deleteDomain_resp_204.txt
+   :responseexample 403: v3/examples/deleteDomain_resp_403.txt
    :tag: domains
    :parameter domain_id: Filters on domain_id.
    :statuscode 204: 
@@ -1551,7 +1618,9 @@
 
    
 
-   :responseexample 200: v3/examples/getService_resp_200.json
+   :requestexample: v3/examples/getService_req.txt
+   :responseexample 200: v3/examples/getService_resp_200.txt
+   :responseexample 404: v3/examples/getService_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: service-catalog
@@ -1572,8 +1641,8 @@
 
    
 
-   :requestexample: v3/examples/updateService_req.json
-   :responseexample 200: v3/examples/updateService_resp_200.json
+   :requestexample: v3/examples/updateService_req.txt
+   :responseexample 200: v3/examples/updateService_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: service-catalog
@@ -1597,6 +1666,8 @@
    either deletes all associated endpoints or fails until all
    endpoints are deleted.
 
+   :requestexample: v3/examples/deleteService_req.txt
+   :responseexample 204: v3/examples/deleteService_resp_204.txt
    :tag: service-catalog
    :parameter service_id: The service ID.
    :statuscode 204: 
@@ -1615,8 +1686,9 @@
 
    
 
-   :requestexample: v3/examples/updateEndpoint_req.json
-   :responseexample 200: v3/examples/updateEndpoint_resp_200.json
+   :requestexample: v3/examples/updateEndpoint_req.txt
+   :responseexample 200: v3/examples/updateEndpoint_resp_200.txt
+   :responseexample 400: v3/examples/updateEndpoint_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: endpoints
@@ -1638,6 +1710,8 @@
 
    
 
+   :requestexample: v3/examples/deleteEndpoint_req.txt
+   :responseexample 204: v3/examples/deleteEndpoint_resp_204.txt
    :tag: endpoints
    :parameter endpoint_id: The endpoint ID.
    :statuscode 204: 
@@ -1656,7 +1730,8 @@
 
    
 
-   :responseexample 200: v3/examples/getRole_resp_200.json
+   :requestexample: v3/examples/getRole_req.txt
+   :responseexample 200: v3/examples/getRole_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: roles
@@ -1677,8 +1752,8 @@
 
    
 
-   :requestexample: v3/examples/updateRole_req.json
-   :responseexample 200: v3/examples/updateRole_resp_200.json
+   :requestexample: v3/examples/updateRole_req.txt
+   :responseexample 200: v3/examples/updateRole_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: roles
@@ -1699,6 +1774,8 @@
 
    
 
+   :requestexample: v3/examples/deleteRole_req.txt
+   :responseexample 204: v3/examples/deleteRole_resp_204.txt
    :tag: roles
    :parameter role_id: The role ID.
    :statuscode 204: 
@@ -1717,7 +1794,8 @@
 
    
 
-   :responseexample 200: v3/examples/listDomainGroupRoles_resp_200.json
+   :requestexample: v3/examples/listDomainGroupRoles_req.txt
+   :responseexample 200: v3/examples/listDomainGroupRoles_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: domains
@@ -1739,7 +1817,8 @@
 
    
 
-   :responseexample 200: v3/examples/getCredential_resp_200.json
+   :requestexample: v3/examples/getCredential_req.txt
+   :responseexample 200: v3/examples/getCredential_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: credentials
@@ -1760,8 +1839,8 @@
 
    
 
-   :requestexample: v3/examples/updateCredential_req.json
-   :responseexample 200: v3/examples/updateCredential_resp_200.json
+   :requestexample: v3/examples/updateCredential_req.txt
+   :responseexample 200: v3/examples/updateCredential_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: credentials
@@ -1782,6 +1861,8 @@
 
    
 
+   :requestexample: v3/examples/deleteCredential_req.txt
+   :responseexample 204: v3/examples/deleteCredential_resp_204.txt
    :tag: credentials
    :parameter credential_id: The credential ID.
    :statuscode 204: 
@@ -1800,7 +1881,8 @@
 
    
 
-   :responseexample 200: v3/examples/listGroups_resp_200.json
+   :requestexample: v3/examples/listGroups_req.txt
+   :responseexample 200: v3/examples/listGroups_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: groups
@@ -1820,8 +1902,8 @@
 
    
 
-   :requestexample: v3/examples/createGroup_req.json
-   :responseexample 201: v3/examples/createGroup_resp_201.json
+   :requestexample: v3/examples/createGroup_req.txt
+   :responseexample 201: v3/examples/createGroup_resp_201.txt
    :accepts: application/json
    :produces: application/json
    :tag: groups
@@ -1842,7 +1924,8 @@
 
    
 
-   :responseexample 200: v3/examples/listUserProjects_resp_200.json
+   :requestexample: v3/examples/listUserProjects_req.txt
+   :responseexample 200: v3/examples/listUserProjects_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: users

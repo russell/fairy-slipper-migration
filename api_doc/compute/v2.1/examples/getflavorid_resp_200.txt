@@ -1,0 +1,35 @@
+HTTP/1.1 200
+status: 200
+content-length: 420
+content-location: http://127.0.0.1:8774/v2.1/c105e067792f4fe791bc072a158b5431/flavors/42
+x-compute-request-id: req-11949ffb-c870-44f4-95dd-3aff97095052
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:55:03 GMT
+content-type: application/json
+
+{
+  "flavor": {
+    "OS-FLV-DISABLED:disabled": false,
+    "OS-FLV-EXT-DATA:ephemeral": 0,
+    "disk": 0,
+    "id": "42",
+    "links": [
+      {
+        "href": "http://127.0.0.1:8774/v2.1/c105e067792f4fe791bc072a158b5431/flavors/42",
+        "rel": "self"
+      },
+      {
+        "href": "http://127.0.0.1:8774/c105e067792f4fe791bc072a158b5431/flavors/42",
+        "rel": "bookmark"
+      }
+    ],
+    "name": "m1.nano",
+    "os-flavor-access:is_public": true,
+    "ram": 64,
+    "rxtx_factor": 1.0,
+    "swap": "",
+    "vcpus": 1
+  }
+}

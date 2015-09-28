@@ -1,0 +1,4 @@
+PATCH /v3/groups/b19d8e1c3b4f48509ceba63c8ae94bf5 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

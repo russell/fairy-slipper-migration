@@ -1,0 +1,4 @@
+DELETE /v3/roles/445f4857ffba43a98fd91d04fbc76774 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

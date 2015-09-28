@@ -1,0 +1,4 @@
+GET /v2.1/627a0b1b37b347028b642749f6c159bf/os-networks/40414a9f-5ef3-484b-a0c2-d416d1cea29b HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

@@ -1,0 +1,29 @@
+HTTP/1.1 200
+status: 200
+content-length: 194
+content-location: http://127.0.0.1:8774/v2.1/b6086f3dbb9a4571a1aef41a509c818c/os-floating-ips
+x-compute-request-id: req-4dfa06a7-31da-4ca9-bf6f-2c832027c348
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:08 GMT
+content-type: application/json
+
+{
+  "floating_ips": [
+    {
+      "fixed_ip": null,
+      "id": 1,
+      "instance_id": null,
+      "ip": "172.24.5.1",
+      "pool": "public"
+    },
+    {
+      "fixed_ip": null,
+      "id": 2,
+      "instance_id": null,
+      "ip": "172.24.5.2",
+      "pool": "public"
+    }
+  ]
+}

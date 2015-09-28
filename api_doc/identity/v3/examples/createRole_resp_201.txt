@@ -1,0 +1,19 @@
+HTTP/1.1 201
+status: 201
+content-length: 185
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:03:37 GMT
+content-type: application/json
+x-openstack-request-id: req-de910299-d3a2-48d9-971d-22e4c02453f1
+
+{
+  "role": {
+    "id": "445f4857ffba43a98fd91d04fbc76774",
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/roles/445f4857ffba43a98fd91d04fbc76774"
+    },
+    "name": "tempest-NotDelegatedRole-983902140"
+  }
+}

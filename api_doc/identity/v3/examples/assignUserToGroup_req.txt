@@ -1,0 +1,4 @@
+PUT /v3/groups/3c5ce4d0c70a4aef85e9914cf0e59409/users/fc9265823c844961bea220f20ad8ba11 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

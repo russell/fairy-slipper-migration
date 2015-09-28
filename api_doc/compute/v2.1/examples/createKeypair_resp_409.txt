@@ -1,0 +1,16 @@
+HTTP/1.1 409
+status: 409
+content-length: 105
+x-compute-request-id: req-8b440ea9-5630-41f8-947e-61e921dba90c
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:03 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "conflictingRequest": {
+    "code": 409,
+    "message": "Key pair 'tempest-keypair-1001805310' already exists."
+  }
+}

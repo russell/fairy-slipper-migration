@@ -1,0 +1,16 @@
+HTTP/1.1 200
+status: 200
+content-length: 28
+content-location: http://127.0.0.1:8774/v2.1/d7e0aec518ce4248b0a8854302d4e4e1/servers/fa5aa718-d3a9-42c2-ae1b-16b5c8db33f2/metadata/key2
+x-compute-request-id: req-e9f34e5e-3e57-4e63-aac0-918a2ebccb99
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:21 GMT
+content-type: application/json
+
+{
+  "meta": {
+    "key2": "value2"
+  }
+}

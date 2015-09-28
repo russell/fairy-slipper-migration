@@ -1,0 +1,4 @@
+DELETE /v2.1/3b576fbf6e2a44099eeb8deae1368013/os-floating-ips/2 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

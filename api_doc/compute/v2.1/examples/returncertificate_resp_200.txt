@@ -1,0 +1,17 @@
+HTTP/1.1 200
+status: 200
+content-length: 1096
+content-location: http://127.0.0.1:8774/v2.1/07067c6cf37642a9ac53bb09ac908db0/os-certificates/root
+x-compute-request-id: req-108146dd-c861-4002-8300-fa12d78a9231
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:55:01 GMT
+content-type: application/json
+
+{
+  "certificate": {
+    "data": "-----BEGIN CERTIFICATE-----\nMIICyzCCAjSgAwIBAgIJAIZX6kOJsL0IMA0GCSqGSIb3DQEBCwUAME4xEjAQBgNV\nBAoTCU5PVkEgUk9PVDEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzETMBEGA1UECBMK\nQ2FsaWZvcm5pYTELMAkGA1UEBhMCVVMwHhcNMTUwOTIyMDU1MDI1WhcNMTYwOTIx\nMDU1MDI1WjBOMRIwEAYDVQQKEwlOT1ZBIFJPT1QxFjAUBgNVBAcTDU1vdW50YWlu\nIFZpZXcxEzARBgNVBAgTCkNhbGlmb3JuaWExCzAJBgNVBAYTAlVTMIGfMA0GCSqG\nSIb3DQEBAQUAA4GNADCBiQKBgQDfZVydt/n3bkxalpppaq7JYY0SqPiSR7heH9sG\n5+y17TfZ7XhOtgyi1yGNWo+KdXG1zsA5VjlUTrj0n/mJtwUEwpSg97/yyRYdYqq8\nbqcgd0yOzq+NfHlWIV3/JH+FWSk8kZclF/JR3PvdaFf24DXhQcc/71OVau8J7pwx\n3/bsnQIDAQABo4GwMIGtMAwGA1UdEwQFMAMBAf8wHQYDVR0OBBYEFJ1yuIcRz3Wr\nsva/djKMmAf6cS/KMH4GA1UdIwR3MHWAFJ1yuIcRz3Wrsva/djKMmAf6cS/KoVKk\nUDBOMRIwEAYDVQQKEwlOT1ZBIFJPT1QxFjAUBgNVBAcTDU1vdW50YWluIFZpZXcx\nEzARBgNVBAgTCkNhbGlmb3JuaWExCzAJBgNVBAYTAlVTggkAhlfqQ4mwvQgwDQYJ\nKoZIhvcNAQELBQADgYEALRpvupyEszWVco9PfQkmMuqAj8zzqPoYmr5rC/xKilpH\nrScSZofJE4fgFOf9wCb938iJErMC48UAav4TIcetXibeKv+lJrvqi2C/Iv5592/z\nnQSW/vJUpAM8GvLotccOI9y8EE3nqTHeD4tL4rDMyyO0NxSm201/Tv2GozwVxDA=\n-----END CERTIFICATE-----\n",
+    "private_key": null
+  }
+}

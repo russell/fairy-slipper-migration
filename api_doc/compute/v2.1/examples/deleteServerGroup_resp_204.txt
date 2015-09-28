@@ -1,0 +1,9 @@
+HTTP/1.1 204
+status: 204
+content-length: 0
+x-compute-request-id: req-d85aa090-8625-4b5b-80a8-6b81499ba269
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:10 GMT
+content-type: application/json

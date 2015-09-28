@@ -1,0 +1,4 @@
+GET /v2.1/8efa1174e59c4510bf7a278c005c89db/os-fixed-ips/10.1.0.2 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

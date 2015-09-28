@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 109
+x-compute-request-id: req-02285f81-c07f-4753-8411-a31ccf525792
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 06:09:28 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Volume 1553f5a0-6d89-49a1-b27d-6fc1692567e5 could not be found."
+  }
+}

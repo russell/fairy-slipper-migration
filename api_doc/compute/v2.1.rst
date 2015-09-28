@@ -55,7 +55,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/GetNetwork_resp_200.json
+   :requestexample: v2.1/examples/GetNetwork_req.txt
+   :responseexample 200: v2.1/examples/GetNetwork_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: networks
@@ -84,7 +85,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getVolumesDetail_resp_200.json
+   :requestexample: v2.1/examples/getVolumesDetail_req.txt
+   :responseexample 200: v2.1/examples/getVolumesDetail_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -172,7 +174,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/ListFloatingIPsBulk_resp_200.json
+   :requestexample: v2.1/examples/ListFloatingIPsBulk_req.txt
+   :responseexample 200: v2.1/examples/ListFloatingIPsBulk_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: floating-ips-bulk
@@ -186,8 +189,8 @@
 
    
 
-   :requestexample: v2.1/examples/CreateFloatingIPsBulk_req.json
-   :responseexample 200: v2.1/examples/CreateFloatingIPsBulk_resp_200.json
+   :requestexample: v2.1/examples/CreateFloatingIPsBulk_req.txt
+   :responseexample 200: v2.1/examples/CreateFloatingIPsBulk_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: floating-ips-bulk
@@ -328,7 +331,9 @@
 
    
 
-   :responseexample 200: v2.1/examples/showSecGroupDefaultRule_resp_200.json
+   :requestexample: v2.1/examples/showSecGroupDefaultRule_req.txt
+   :responseexample 200: v2.1/examples/showSecGroupDefaultRule_resp_200.txt
+   :responseexample 404: v2.1/examples/showSecGroupDefaultRule_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-security-group-default-rules-v2.1
@@ -351,6 +356,8 @@
 
    
 
+   :requestexample: v2.1/examples/deleteSecGroupDefaultRule_req.txt
+   :responseexample 204: v2.1/examples/deleteSecGroupDefaultRule_resp_204.txt
    :tag: os-security-group-default-rules-v2.1
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
@@ -371,8 +378,10 @@
 
    
 
-   :requestexample: v2.1/examples/createVolume_req.json
+   :requestexample: v2.1/examples/createVolume_req.txt
    :responseexample 201: v2.1/examples/createVolume_resp_201.json
+   :responseexample 200: v2.1/examples/createVolume_resp_200.txt
+   :responseexample 400: v2.1/examples/createVolume_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -380,6 +389,7 @@
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
    :statuscode 201: 
+   :statuscode 200: 
    :statuscode 405: 
    :statuscode 404: 
    :statuscode 403: 
@@ -394,7 +404,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getVolumesSimple_resp_200.json
+   :requestexample: v2.1/examples/getVolumesSimple_req.txt
+   :responseexample 200: v2.1/examples/getVolumesSimple_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -429,12 +440,15 @@
 
    
 
-   :responseexample 200: v2.1/examples/listhypervisors_resp_200.json
+   :requestexample: v2.1/examples/listhypervisors_req.txt
+   :responseexample 200: v2.1/examples/listhypervisors_resp_200.txt
+   :responseexample 403: v2.1/examples/listhypervisors_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hypervisors
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-migrations
@@ -445,7 +459,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/returnmigrations_resp_200.json
+   :requestexample: v2.1/examples/returnmigrations_req.txt
+   :responseexample 200: v2.1/examples/returnmigrations_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: migrations
@@ -459,13 +474,18 @@
 
    
 
+   :requestexample: v2.1/examples/startshost_req.txt
    :responseexample 200: v2.1/examples/startshost_resp_200.json
+   :responseexample 404: v2.1/examples/startshost_resp_404.txt
+   :responseexample 403: v2.1/examples/startshost_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter host_name: The name of the host.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/metadata
@@ -476,8 +496,10 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/listServerMetadata_resp_200.json
+   :requestexample: v2.1/examples/listServerMetadata_req.txt
+   :responseexample 200: v2.1/examples/listServerMetadata_resp_200.txt
    :responseexample 203: v2.1/examples/listServerMetadata_resp_203.json
+   :responseexample 404: v2.1/examples/listServerMetadata_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-metadata-v2.1
@@ -485,6 +507,7 @@
    :parameter server_id: The UUID for the server.
    :statuscode 200: 
    :statuscode 203: 
+   :statuscode 404: 
 
 
 .. http:post:: /v2.1/{tenant_id}/servers/{server_id}/metadata
@@ -501,14 +524,20 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :requestexample: v2.1/examples/updateServerMetadata_req.json
-   :responseexample 200: v2.1/examples/updateServerMetadata_resp_200.json
+   :requestexample: v2.1/examples/updateServerMetadata_req.txt
+   :responseexample 200: v2.1/examples/updateServerMetadata_resp_200.txt
+   :responseexample 404: v2.1/examples/updateServerMetadata_resp_404.txt
+   :responseexample 403: v2.1/examples/updateServerMetadata_resp_403.txt
+   :responseexample 400: v2.1/examples/updateServerMetadata_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-metadata-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata
@@ -526,14 +555,20 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :requestexample: v2.1/examples/createServerMetadata_req.json
-   :responseexample 200: v2.1/examples/createServerMetadata_resp_200.json
+   :requestexample: v2.1/examples/createServerMetadata_req.txt
+   :responseexample 200: v2.1/examples/createServerMetadata_resp_200.txt
+   :responseexample 404: v2.1/examples/createServerMetadata_resp_404.txt
+   :responseexample 403: v2.1/examples/createServerMetadata_resp_403.txt
+   :responseexample 400: v2.1/examples/createServerMetadata_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-metadata-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-services/detail
@@ -556,13 +591,18 @@
 
    
 
+   :requestexample: v2.1/examples/shutdownhost_req.txt
    :responseexample 200: v2.1/examples/shutdownhost_resp_200.json
+   :responseexample 404: v2.1/examples/shutdownhost_resp_404.txt
+   :responseexample 403: v2.1/examples/shutdownhost_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter host_name: The name of the host.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-tenant-networks
@@ -573,7 +613,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/listProjectNetworks_resp_200.json
+   :requestexample: v2.1/examples/listProjectNetworks_req.txt
+   :responseexample 200: v2.1/examples/listProjectNetworks_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: tenant-networks
@@ -693,7 +734,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getlimits_resp_200.json
+   :requestexample: v2.1/examples/getlimits_req.txt
+   :responseexample 200: v2.1/examples/getlimits_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: limits
@@ -707,7 +749,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/returnflavorall_resp_200.json
+   :requestexample: v2.1/examples/returnflavorall_req.txt
+   :responseexample 200: v2.1/examples/returnflavorall_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: flavors
@@ -744,7 +787,11 @@
    body. To release a fixed IP address, specify ``unreserve`` in the
    request body.
 
-   :requestexample: v2.1/examples/reserveIP_req.json
+   :requestexample: v2.1/examples/reserveIP_req.txt
+   :responseexample 202: v2.1/examples/reserveIP_resp_202.txt
+   :responseexample 404: v2.1/examples/reserveIP_resp_404.txt
+   :responseexample 403: v2.1/examples/reserveIP_resp_403.txt
+   :responseexample 400: v2.1/examples/reserveIP_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-fixed-ips-v2.1
@@ -754,6 +801,7 @@
    :statuscode 202: 
    :statuscode 415: 
    :statuscode 405: 
+   :statuscode 404: 
    :statuscode 403: 
    :statuscode 401: 
    :statuscode 400: 
@@ -766,8 +814,9 @@
 
    
 
-   :requestexample: v2.1/examples/createSnapshot_req.json
+   :requestexample: v2.1/examples/createSnapshot_req.txt
    :responseexample 201: v2.1/examples/createSnapshot_resp_201.json
+   :responseexample 200: v2.1/examples/createSnapshot_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -775,6 +824,7 @@
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
    :statuscode 201: 
+   :statuscode 200: 
    :statuscode 405: 
    :statuscode 404: 
    :statuscode 403: 
@@ -789,7 +839,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getSnapshotsSimple_resp_200.json
+   :requestexample: v2.1/examples/getSnapshotsSimple_req.txt
+   :responseexample 200: v2.1/examples/getSnapshotsSimple_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -826,8 +877,10 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/getServerMetadataItem_resp_200.json
+   :requestexample: v2.1/examples/getServerMetadataItem_req.txt
+   :responseexample 200: v2.1/examples/getServerMetadataItem_resp_200.txt
    :responseexample 203: v2.1/examples/getServerMetadataItem_resp_203.json
+   :responseexample 404: v2.1/examples/getServerMetadataItem_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-metadata-v2.1
@@ -836,6 +889,7 @@
    :parameter key: The metadata key.
    :statuscode 200: 
    :statuscode 203: 
+   :statuscode 404: 
 
 
 .. http:put:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
@@ -853,8 +907,9 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :requestexample: v2.1/examples/setServerMetadataItem_req.json
-   :responseexample 200: v2.1/examples/setServerMetadataItem_resp_200.json
+   :requestexample: v2.1/examples/setServerMetadataItem_req.txt
+   :responseexample 200: v2.1/examples/setServerMetadataItem_resp_200.txt
+   :responseexample 400: v2.1/examples/setServerMetadataItem_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-metadata-v2.1
@@ -862,6 +917,7 @@
    :parameter server_id: The UUID for the server.
    :parameter key: The metadata key.
    :statuscode 200: 
+   :statuscode 400: 
 
 
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/metadata/{key}
@@ -872,10 +928,14 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
+   :requestexample: v2.1/examples/deleteServerMetadataItem_req.txt
+   :responseexample 404: v2.1/examples/deleteServerMetadataItem_resp_404.txt
+   :responseexample 204: v2.1/examples/deleteServerMetadataItem_resp_204.txt
    :tag: server-metadata-v2.1
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
    :parameter key: The metadata key.
+   :statuscode 404: 
    :statuscode 204: 
 
 
@@ -941,10 +1001,14 @@
 
    
 
+   :requestexample: v2.1/examples/deleteSecGroupRule_req.txt
+   :responseexample 404: v2.1/examples/deleteSecGroupRule_resp_404.txt
+   :responseexample 202: v2.1/examples/deleteSecGroupRule_resp_202.txt
    :tag: os-security-group-rules-v2.1
    :parameter tenant_id: The ID of the tenant.
    :parameter security_group_rule_id: The ID of the security group
                                       rule.
+   :statuscode 404: 
    :statuscode 202: 
 
 
@@ -969,7 +1033,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/listSecGroups_resp_200.json
+   :requestexample: v2.1/examples/listSecGroups_req.txt
+   :responseexample 200: v2.1/examples/listSecGroups_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: security-groups
@@ -983,14 +1048,18 @@
 
    
 
-   :requestexample: v2.1/examples/createSecGroup_req.json
-   :responseexample 200: v2.1/examples/createSecGroup_resp_200.json
+   :requestexample: v2.1/examples/createSecGroup_req.txt
+   :responseexample 200: v2.1/examples/createSecGroup_resp_200.txt
+   :responseexample 403: v2.1/examples/createSecGroup_resp_403.txt
+   :responseexample 400: v2.1/examples/createSecGroup_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: security-groups
    :requestschema: v2.1/createSecGroup.json
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-aggregates/{aggregate_id}
@@ -1106,7 +1175,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getflavorbrief_resp_200.json
+   :requestexample: v2.1/examples/getflavorbrief_req.txt
+   :responseexample 200: v2.1/examples/getflavorbrief_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: flavors
@@ -1152,12 +1222,15 @@
 
    
 
+   :requestexample: v2.1/examples/createcertificate_req.txt
    :responseexample 201: v2.1/examples/createcertificate_resp_201.json
+   :responseexample 200: v2.1/examples/createcertificate_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: certificates
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 201: 
+   :statuscode 200: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-cloudpipe
@@ -1284,12 +1357,15 @@
 
    
 
-   :responseexample 200: v2.1/examples/listServices_resp_200.json
+   :requestexample: v2.1/examples/listServices_req.txt
+   :responseexample 200: v2.1/examples/listServices_resp_200.txt
+   :responseexample 403: v2.1/examples/listServices_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: services
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-services
@@ -1366,7 +1442,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getAvailabilityZone_resp_200.json
+   :requestexample: v2.1/examples/getAvailabilityZone_req.txt
+   :responseexample 200: v2.1/examples/getAvailabilityZone_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: availability-zone
@@ -1382,7 +1459,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/ListNetworks_resp_200.json
+   :requestexample: v2.1/examples/ListNetworks_req.txt
+   :responseexample 200: v2.1/examples/ListNetworks_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: networks
@@ -1494,13 +1572,16 @@
 
    
 
-   :responseexample 200: v2.1/examples/showSecGroup_resp_200.json
+   :requestexample: v2.1/examples/showSecGroup_req.txt
+   :responseexample 200: v2.1/examples/showSecGroup_resp_200.txt
+   :responseexample 404: v2.1/examples/showSecGroup_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: security-groups
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter security_group_id: The ID of the security group.
    :statuscode 200: 
+   :statuscode 404: 
 
 
 .. http:put:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
@@ -1509,8 +1590,10 @@
 
    
 
-   :requestexample: v2.1/examples/updateSecGroup_req.json
-   :responseexample 200: v2.1/examples/updateSecGroup_resp_200.json
+   :requestexample: v2.1/examples/updateSecGroup_req.txt
+   :responseexample 200: v2.1/examples/updateSecGroup_resp_200.txt
+   :responseexample 404: v2.1/examples/updateSecGroup_resp_404.txt
+   :responseexample 400: v2.1/examples/updateSecGroup_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: security-groups
@@ -1518,6 +1601,8 @@
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter security_group_id: The ID of the security group.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 400: 
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-security-groups/{security_group_id}
@@ -1526,10 +1611,16 @@
 
    
 
+   :requestexample: v2.1/examples/deleteSecGroup_req.txt
+   :responseexample 404: v2.1/examples/deleteSecGroup_resp_404.txt
+   :responseexample 202: v2.1/examples/deleteSecGroup_resp_202.txt
+   :responseexample 400: v2.1/examples/deleteSecGroup_resp_400.txt
    :tag: security-groups
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter security_group_id: The ID of the security group.
+   :statuscode 404: 
    :statuscode 202: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-fping
@@ -1593,7 +1684,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/returncertificate_resp_200.json
+   :requestexample: v2.1/examples/returncertificate_req.txt
+   :responseexample 200: v2.1/examples/returncertificate_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: certificates
@@ -2619,7 +2711,9 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/show-ip_resp_200.json
+   :requestexample: v2.1/examples/show-ip_req.txt
+   :responseexample 200: v2.1/examples/show-ip_resp_200.txt
+   :responseexample 404: v2.1/examples/show-ip_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-ips
@@ -2628,6 +2722,7 @@
    :parameter network_label: The network label, such as ``public`` or
                              ``private`` .
    :statuscode 200: 
+   :statuscode 404: 
 
 
 .. http:post:: /v2.1/{tenant_id}/os-security-group-rules
@@ -2636,14 +2731,20 @@
 
    
 
-   :requestexample: v2.1/examples/createSecGroupRule_req.json
-   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.json
+   :requestexample: v2.1/examples/createSecGroupRule_req.txt
+   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.txt
+   :responseexample 404: v2.1/examples/createSecGroupRule_resp_404.txt
+   :responseexample 403: v2.1/examples/createSecGroupRule_resp_403.txt
+   :responseexample 400: v2.1/examples/createSecGroupRule_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-security-group-rules-v2.1
    :requestschema: v2.1/createSecGroupRule.json
    :parameter tenant_id: The ID of the tenant.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:post:: /v2.1/{tenant_id}/os-server-groups
@@ -2652,8 +2753,8 @@
 
    
 
-   :requestexample: v2.1/examples/createServerGroup_req.json
-   :responseexample 200: v2.1/examples/createServerGroup_resp_200.json
+   :requestexample: v2.1/examples/createServerGroup_req.txt
+   :responseexample 200: v2.1/examples/createServerGroup_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-groups
@@ -2668,7 +2769,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/listServerGroups_resp_200.json
+   :requestexample: v2.1/examples/listServerGroups_req.txt
+   :responseexample 200: v2.1/examples/listServerGroups_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-groups
@@ -2682,7 +2784,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/listSecGroupDefaultRules_resp_200.json
+   :requestexample: v2.1/examples/listSecGroupDefaultRules_req.txt
+   :responseexample 200: v2.1/examples/listSecGroupDefaultRules_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-security-group-default-rules-v2.1
@@ -2706,8 +2809,8 @@
    port value. Otherwise, the operation returns the ``Bad request
    (400) Source/destination port requires a protocol`` error.
 
-   :requestexample: v2.1/examples/createSecGroupRule_req.json
-   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.json
+   :requestexample: v2.1/examples/createSecGroupRule_req.txt
+   :responseexample 200: v2.1/examples/createSecGroupRule_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-security-group-default-rules-v2.1
@@ -2731,7 +2834,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/listFloatingIpPools_resp_200.json
+   :requestexample: v2.1/examples/listFloatingIpPools_req.txt
+   :responseexample 200: v2.1/examples/listFloatingIpPools_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: floating-ip-pools
@@ -2864,13 +2968,18 @@
    the owner of the server to perform this operation. Change these
    permissions through the ``policy.json`` file.
 
+   :requestexample: v2.1/examples/getVirtualInterfaces_req.txt
+   :responseexample 200: v2.1/examples/getVirtualInterfaces_resp_200.txt
    :responseexample 202: v2.1/examples/getVirtualInterfaces_resp_202.json
+   :responseexample 404: v2.1/examples/getVirtualInterfaces_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: virtual-interfaces
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
+   :statuscode 200: 
    :statuscode 202: 
+   :statuscode 404: 
 
 
 .. http:post:: /v2.1/{tenant_id}/os-cloudpipe/configure-project
@@ -2935,7 +3044,9 @@
 
    
 
-   :responseexample 200: v2.1/examples/getVolume_resp_200.json
+   :requestexample: v2.1/examples/getVolume_req.txt
+   :responseexample 200: v2.1/examples/getVolume_resp_200.txt
+   :responseexample 404: v2.1/examples/getVolume_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -2957,7 +3068,9 @@
 
    
 
+   :requestexample: v2.1/examples/deleteVolume_req.txt
    :responseexample 202: v2.1/examples/deleteVolume_resp_202.txt
+   :responseexample 404: v2.1/examples/deleteVolume_resp_404.txt
    :tag: os-volumes
    :parameter tenant_id: The unique identifier of the tenant or
                          account.
@@ -3180,7 +3293,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/showServerGroup_resp_200.json
+   :requestexample: v2.1/examples/showServerGroup_req.txt
+   :responseexample 200: v2.1/examples/showServerGroup_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-groups
@@ -3195,6 +3309,9 @@
 
    
 
+   :requestexample: v2.1/examples/deleteServerGroup_req.txt
+   :responseexample 204: v2.1/examples/deleteServerGroup_resp_204.txt
+   :responseexample 404: v2.1/examples/deleteServerGroup_resp_404.txt
    :tag: server-groups
    :parameter ServerGroup_id: The server group ID.
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
@@ -3215,7 +3332,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/GetProjectNetwork_resp_200.json
+   :requestexample: v2.1/examples/GetProjectNetwork_req.txt
+   :responseexample 200: v2.1/examples/GetProjectNetwork_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: tenant-networks
@@ -3244,12 +3362,15 @@
 
    
 
-   :responseexample 200: v2.1/examples/listallhosts_resp_200.json
+   :requestexample: v2.1/examples/listallhosts_req.txt
+   :responseexample 200: v2.1/examples/listallhosts_resp_200.txt
+   :responseexample 403: v2.1/examples/listallhosts_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-quota-class-sets/{class_id}
@@ -3258,7 +3379,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/showquota_resp_200.json
+   :requestexample: v2.1/examples/showquota_req.txt
+   :responseexample 200: v2.1/examples/showquota_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: quota-class-sets
@@ -3273,8 +3395,8 @@
 
    
 
-   :requestexample: v2.1/examples/updatequota_req.json
-   :responseexample 200: v2.1/examples/updatequota_resp_200.json
+   :requestexample: v2.1/examples/updatequota_req.txt
+   :responseexample 200: v2.1/examples/updatequota_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: quota-class-sets
@@ -3323,8 +3445,8 @@
 
    
 
-   :requestexample: v2.1/examples/updatebuild_req.json
-   :responseexample 200: v2.1/examples/updatebuild_resp_200.json
+   :requestexample: v2.1/examples/updatebuild_req.txt
+   :responseexample 200: v2.1/examples/updatebuild_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: agents
@@ -3340,13 +3462,16 @@
 
    
 
-   :responseexample 200: v2.1/examples/showKeypair_resp_200.json
+   :requestexample: v2.1/examples/showKeypair_req.txt
+   :responseexample 200: v2.1/examples/showKeypair_resp_200.txt
+   :responseexample 404: v2.1/examples/showKeypair_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: keypairs
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter keypair_name: The keypair name.
    :statuscode 200: 
+   :statuscode 404: 
 
 
 .. http:delete:: /v2.1/{tenant_id}/os-keypairs/{keypair_name}
@@ -3355,9 +3480,14 @@
 
    
 
+   :requestexample: v2.1/examples/deleteKeypair_req.txt
+   :responseexample 404: v2.1/examples/deleteKeypair_resp_404.txt
+   :responseexample 202: v2.1/examples/deleteKeypair_resp_202.txt
    :tag: keypairs
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter keypair_name: The keypair name.
+   :statuscode 404: 
+   :statuscode 202: 
    :statuscode 204: 
 
 
@@ -3367,12 +3497,15 @@
 
    
 
-   :responseexample 200: v2.1/examples/showhypervisorstatistics_resp_200.json
+   :requestexample: v2.1/examples/showhypervisorstatistics_req.txt
+   :responseexample 200: v2.1/examples/showhypervisorstatistics_resp_200.txt
+   :responseexample 403: v2.1/examples/showhypervisorstatistics_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hypervisors
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/os-server-actions/{server_id}/{request_id}
@@ -3434,13 +3567,18 @@
 
    
 
-   :responseexample 200: v2.1/examples/getflavorid_resp_200.json
+   :requestexample: v2.1/examples/getflavorid_req.txt
+   :responseexample 200: v2.1/examples/getflavorid_resp_200.txt
+   :responseexample 404: v2.1/examples/getflavorid_resp_404.txt
+   :responseexample 400: v2.1/examples/getflavorid_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: flavors
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter flavor_id: The flavor ID.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/diagnostics
@@ -3451,13 +3589,16 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
+   :requestexample: v2.1/examples/getDiagnostics_req.txt
    :responseexample 200: v2.1/examples/getDiagnostics_resp_200.json
+   :responseexample 403: v2.1/examples/getDiagnostics_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: diagnostics
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:delete:: /v2.1/{tenant_id}/servers/{server_id}/os-baremetal-nodes/{node_id}
@@ -3506,12 +3647,15 @@
 
    
 
-   :responseexample 200: v2.1/examples/getAvailabilityZoneDetails_resp_200.json
+   :requestexample: v2.1/examples/getAvailabilityZoneDetails_req.txt
+   :responseexample 200: v2.1/examples/getAvailabilityZoneDetails_resp_200.txt
+   :responseexample 403: v2.1/examples/getAvailabilityZoneDetails_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: availability-zone
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:post:: /v2.1/servers
@@ -3575,13 +3719,15 @@
 
    
 
-   :requestexample: v2.1/examples/agentbuild_req.json
+   :requestexample: v2.1/examples/agentbuild_req.txt
    :responseexample 201: v2.1/examples/agentbuild_resp_201.json
+   :responseexample 200: v2.1/examples/agentbuild_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: agents
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 201: 
+   :statuscode 200: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-agents
@@ -3590,7 +3736,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/listbuilds_resp_200.json
+   :requestexample: v2.1/examples/listbuilds_req.txt
+   :responseexample 200: v2.1/examples/listbuilds_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: agents
@@ -3664,7 +3811,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/ListFloatingIPs_resp_200.json
+   :requestexample: v2.1/examples/ListFloatingIPs_req.txt
+   :responseexample 200: v2.1/examples/ListFloatingIPs_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: floating-ips
@@ -3680,14 +3828,16 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :requestexample: v2.1/examples/AllocateFloatingIP_req.json
-   :responseexample 200: v2.1/examples/AllocateFloatingIP_resp_200.json
+   :requestexample: v2.1/examples/AllocateFloatingIP_req.txt
+   :responseexample 200: v2.1/examples/AllocateFloatingIP_resp_200.txt
+   :responseexample 404: v2.1/examples/AllocateFloatingIP_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: floating-ips
    :requestschema: v2.1/AllocateFloatingIP.json
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 404: 
    :statuscode 400: 
 
 
@@ -3768,7 +3918,9 @@
 
    
 
-   :responseexample 200: v2.1/examples/getSnapshot_resp_200.json
+   :requestexample: v2.1/examples/getSnapshot_req.txt
+   :responseexample 200: v2.1/examples/getSnapshot_resp_200.txt
+   :responseexample 404: v2.1/examples/getSnapshot_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-volumes
@@ -3791,6 +3943,7 @@
    This operation is asynchronous. You must list snapshots repeatedly
    to determine whether the snapshot was deleted.
 
+   :requestexample: v2.1/examples/deleteSnapshot_req.txt
    :responseexample 202: v2.1/examples/deleteSnapshot_resp_202.txt
    :tag: os-volumes
    :parameter tenant_id: The unique identifier of the tenant or
@@ -3826,7 +3979,9 @@
 
    
 
-   :responseexample 200: v2.1/examples/showIP_resp_200.json
+   :requestexample: v2.1/examples/showIP_req.txt
+   :responseexample 200: v2.1/examples/showIP_resp_200.txt
+   :responseexample 403: v2.1/examples/showIP_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: os-fixed-ips-v2.1
@@ -3854,9 +4009,13 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
+   :requestexample: v2.1/examples/DeallocateFloatingIP_req.txt
+   :responseexample 404: v2.1/examples/DeallocateFloatingIP_resp_404.txt
+   :responseexample 202: v2.1/examples/DeallocateFloatingIP_resp_202.txt
    :tag: floating-ips
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter id: The ID of the floating IP address.
+   :statuscode 404: 
    :statuscode 202: 
 
 
@@ -3866,7 +4025,8 @@
 
    
 
-   :responseexample 200: v2.1/examples/getKeypair_resp_200.json
+   :requestexample: v2.1/examples/getKeypair_req.txt
+   :responseexample 200: v2.1/examples/getKeypair_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: keypairs
@@ -3881,8 +4041,11 @@
 
    
 
-   :requestexample: v2.1/examples/createKeypair_req.json
+   :requestexample: v2.1/examples/createKeypair_req.txt
    :responseexample 201: v2.1/examples/createKeypair_resp_201.json
+   :responseexample 200: v2.1/examples/createKeypair_resp_200.txt
+   :responseexample 409: v2.1/examples/createKeypair_resp_409.txt
+   :responseexample 400: v2.1/examples/createKeypair_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: keypairs
@@ -3890,6 +4053,9 @@
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :query user_id: The user ID of the user who runs the operation.
    :statuscode 201: 
+   :statuscode 200: 
+   :statuscode 409: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-hypervisors/{hypervisor_id}/{hypervisor_id}
@@ -3898,13 +4064,18 @@
 
    
 
-   :responseexample 200: v2.1/examples/showhypervisordetails_resp_200.json
+   :requestexample: v2.1/examples/showhypervisordetails_req.txt
+   :responseexample 200: v2.1/examples/showhypervisordetails_resp_200.txt
+   :responseexample 404: v2.1/examples/showhypervisordetails_resp_404.txt
+   :responseexample 403: v2.1/examples/showhypervisordetails_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hypervisors
    :parameter hypervisor_id: The ID of the hypervisor.
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
 
 
 .. http:post:: /v2.1/{tenant_id}/os-aggregates
@@ -3913,13 +4084,21 @@
 
    
 
-   :requestexample: v2.1/examples/createaggregate_req.json
+   :requestexample: v2.1/examples/createaggregate_req.txt
    :responseexample 201: v2.1/examples/createaggregate_resp_201.json
+   :responseexample 200: v2.1/examples/createaggregate_resp_200.txt
+   :responseexample 403: v2.1/examples/createaggregate_resp_403.txt
+   :responseexample 409: v2.1/examples/createaggregate_resp_409.txt
+   :responseexample 400: v2.1/examples/createaggregate_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: aggregates
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 201: 
+   :statuscode 200: 
+   :statuscode 403: 
+   :statuscode 409: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/os-aggregates
@@ -3928,13 +4107,15 @@
 
    
 
-   :requestexample: v2.1/examples/listaggregate_req.json
-   :responseexample 200: v2.1/examples/listaggregate_resp_200.json
+   :requestexample: v2.1/examples/listaggregate_req.txt
+   :responseexample 200: v2.1/examples/listaggregate_resp_200.txt
+   :responseexample 403: v2.1/examples/listaggregate_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: aggregates
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :statuscode 200: 
+   :statuscode 403: 
 
 
 .. http:put:: /v2.1/{tenant_id}/os-floating-ip-dns/{domain}/entries/{name}
@@ -4060,13 +4241,18 @@
 
    
 
-   :responseexample 200: v2.1/examples/showinfo_resp_200.json
+   :requestexample: v2.1/examples/showinfo_req.txt
+   :responseexample 200: v2.1/examples/showinfo_resp_200.txt
+   :responseexample 404: v2.1/examples/showinfo_resp_404.txt
+   :responseexample 403: v2.1/examples/showinfo_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter host_name: The name of the host.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
 
 
 .. http:put:: /v2.1/{tenant_id}/os-hosts/{host_name}
@@ -4075,14 +4261,20 @@
 
    
 
-   :requestexample: v2.1/examples/enablehost_req.json
+   :requestexample: v2.1/examples/enablehost_req.txt
    :responseexample 200: v2.1/examples/enablehost_resp_200.json
+   :responseexample 404: v2.1/examples/enablehost_resp_404.txt
+   :responseexample 403: v2.1/examples/enablehost_resp_403.txt
+   :responseexample 400: v2.1/examples/enablehost_resp_400.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter host_name: The name of the host.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
+   :statuscode 400: 
 
 
 .. http:get:: /v2.1/{tenant_id}/servers/{server_id}/os-server-password
@@ -4093,7 +4285,8 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/getPassword_resp_200.json
+   :requestexample: v2.1/examples/getPassword_req.txt
+   :responseexample 200: v2.1/examples/getPassword_resp_200.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-password
@@ -4110,13 +4303,16 @@
    the owner of the server to perform this operation. Cloud providers
    can change these permissions through the ``policy.json`` file.
 
-   :responseexample 200: v2.1/examples/list-ips_resp_200.json
+   :requestexample: v2.1/examples/list-ips_req.txt
+   :responseexample 200: v2.1/examples/list-ips_resp_200.txt
+   :responseexample 404: v2.1/examples/list-ips_resp_404.txt
    :accepts: application/json
    :produces: application/json
    :tag: server-ips
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter server_id: The UUID for the server.
    :statuscode 200: 
+   :statuscode 404: 
 
 
 .. http:get:: /v2.1/{tenant_id}/flavors/os-flavor-access/{flavor_id}
@@ -4262,12 +4458,17 @@
 
    
 
+   :requestexample: v2.1/examples/reboothost_req.txt
    :responseexample 200: v2.1/examples/reboothost_resp_200.json
+   :responseexample 404: v2.1/examples/reboothost_resp_404.txt
+   :responseexample 403: v2.1/examples/reboothost_resp_403.txt
    :accepts: application/json
    :produces: application/json
    :tag: hosts
    :parameter tenant_id: The tenant ID in a multi-tenancy cloud.
    :parameter host_name: The name of the host.
    :statuscode 200: 
+   :statuscode 404: 
+   :statuscode 403: 
 
 

@@ -1,0 +1,16 @@
+HTTP/1.1 400
+status: 400
+content-length: 109
+x-compute-request-id: req-fa709c57-5885-4900-8535-a4a7a36e30ae
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:50 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "badRequest": {
+    "code": 400,
+    "message": "Invalid input for field/attribute name. Value: . u'' is too short"
+  }
+}

@@ -1,0 +1,17 @@
+HTTP/1.1 404
+status: 404
+content-length: 118
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:15 GMT
+content-type: application/json
+x-openstack-request-id: req-49b31192-336f-4ae4-a389-932a3f65b02b
+
+{
+  "error": {
+    "code": 404,
+    "message": "Could not find user: d3e589ad-4444-4429-9736-04cd0234fb75",
+    "title": "Not Found"
+  }
+}

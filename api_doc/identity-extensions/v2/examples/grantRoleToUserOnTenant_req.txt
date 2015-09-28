@@ -1,0 +1,4 @@
+PUT /v2.0/tenants/098dfc978a934b27972b1f426bcf5a63/users/5a8267e54d174d6181b89faca30f64a0/roles/OS-KSADM/28ff384b1a8340e48c14c613d60730a1 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

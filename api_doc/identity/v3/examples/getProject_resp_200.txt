@@ -1,0 +1,25 @@
+HTTP/1.1 200
+status: 200
+content-length: 284
+content-location: http://127.0.0.1:35357/v3/projects/9ee98f64ce654c7a8d8a99e9da2db6ae
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:49 GMT
+content-type: application/json
+x-openstack-request-id: req-57750a3b-6fc0-4337-bbee-a20db6ed839b
+
+{
+  "project": {
+    "description": null,
+    "domain_id": "default",
+    "enabled": true,
+    "id": "9ee98f64ce654c7a8d8a99e9da2db6ae",
+    "is_domain": false,
+    "links": {
+      "self": "http://127.0.0.1:35357/v3/projects/9ee98f64ce654c7a8d8a99e9da2db6ae"
+    },
+    "name": "tempest-project2-796591604",
+    "parent_id": null
+  }
+}

@@ -1,0 +1,65 @@
+HTTP/1.1 200
+status: 200
+content-length: 1051
+content-location: http://127.0.0.1:8774/v2.1/590dd27fdec84af0ac7f0175435f1615/os-services
+x-compute-request-id: req-8b03dbd3-78ff-45e8-a59a-c4fc9a3d982d
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:54:13 GMT
+content-type: application/json
+
+{
+  "services": [
+    {
+      "binary": "nova-conductor",
+      "disabled_reason": null,
+      "host": "devstack-trusty-hpcloud-b5-5038802",
+      "id": 1,
+      "state": "up",
+      "status": "enabled",
+      "updated_at": "2015-09-22T05:54:11.000000",
+      "zone": "internal"
+    },
+    {
+      "binary": "nova-scheduler",
+      "disabled_reason": null,
+      "host": "devstack-trusty-hpcloud-b5-5038802",
+      "id": 2,
+      "state": "up",
+      "status": "enabled",
+      "updated_at": "2015-09-22T05:54:11.000000",
+      "zone": "internal"
+    },
+    {
+      "binary": "nova-cert",
+      "disabled_reason": null,
+      "host": "devstack-trusty-hpcloud-b5-5038802",
+      "id": 3,
+      "state": "up",
+      "status": "enabled",
+      "updated_at": "2015-09-22T05:54:11.000000",
+      "zone": "internal"
+    },
+    {
+      "binary": "nova-network",
+      "disabled_reason": null,
+      "host": "devstack-trusty-hpcloud-b5-5038802",
+      "id": 4,
+      "state": "up",
+      "status": "enabled",
+      "updated_at": "2015-09-22T05:54:11.000000",
+      "zone": "internal"
+    },
+    {
+      "binary": "nova-compute",
+      "disabled_reason": null,
+      "host": "devstack-trusty-hpcloud-b5-5038802",
+      "id": 5,
+      "state": "up",
+      "status": "enabled",
+      "updated_at": "2015-09-22T05:54:11.000000",
+      "zone": "nova"
+    }
+  ]
+}

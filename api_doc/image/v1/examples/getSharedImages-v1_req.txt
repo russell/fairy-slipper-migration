@@ -1,0 +1,4 @@
+GET /v1/shared-images/a529043ace074612be1d9867416e5724 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

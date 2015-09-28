@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 74
+x-compute-request-id: req-d4c031bf-b8d9-424d-b322-b87108bbeb8a
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:30 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Security group 47 not found."
+  }
+}

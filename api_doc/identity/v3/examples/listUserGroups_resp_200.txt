@@ -1,0 +1,40 @@
+HTTP/1.1 200
+status: 200
+content-length: 602
+content-location: http://127.0.0.1:35357/v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:35 GMT
+content-type: application/json
+x-openstack-request-id: req-3e55a980-0d3d-4a0e-8f0b-e53f6d6d6006
+
+{
+  "groups": [
+    {
+      "description": null,
+      "domain_id": "default",
+      "id": "4cefd21636964b6ea6f0ecddef201a27",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/4cefd21636964b6ea6f0ecddef201a27"
+      },
+      "name": "tempest-Group-1913640981",
+      "project_id": null
+    },
+    {
+      "description": null,
+      "domain_id": "default",
+      "id": "cc9996abc66c42ca9158d0207ad8925c",
+      "links": {
+        "self": "http://127.0.0.1:35357/v3/groups/cc9996abc66c42ca9158d0207ad8925c"
+      },
+      "name": "tempest-Group-37575467",
+      "project_id": null
+    }
+  ],
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "http://127.0.0.1:35357/v3/users/ed6089966f034ffa8f90df56ebb61b2e/groups"
+  }
+}

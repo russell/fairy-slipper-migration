@@ -1,0 +1,4 @@
+GET /v2.0/OS-KSADM/roles/85ae601a9c614216a90ecf72f445ff9f HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

@@ -1,0 +1,4 @@
+GET /v3/domains/1041ad04346a4ec1ace4e854a8cee128/users/2fe3c74007d2459e94908d5a47e153eb/roles HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

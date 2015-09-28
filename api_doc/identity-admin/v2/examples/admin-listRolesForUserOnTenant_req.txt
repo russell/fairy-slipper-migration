@@ -1,0 +1,4 @@
+GET /v2.0/tenants/057cdd2d75e44b0f841fa07b388d677d/users/6f2d572295e74fc38bef1ea800cfe433/roles HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

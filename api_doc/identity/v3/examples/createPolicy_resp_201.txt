@@ -1,0 +1,20 @@
+HTTP/1.1 201
+status: 201
+content-length: 223
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:06:39 GMT
+content-type: application/json
+x-openstack-request-id: req-4f8bd116-921d-4835-97cc-9d36a21dffd7
+
+{
+  "policy": {
+    "blob": "tempest-BlobName-1098962284",
+    "id": "8435032094214fc2b2e0b45a1f5e50e4",
+    "links": {
+      "self": "http://127.0.0.1:5000/v3/policies/8435032094214fc2b2e0b45a1f5e50e4"
+    },
+    "type": "tempest-PolicyType-1841371129"
+  }
+}

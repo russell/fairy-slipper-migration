@@ -1,0 +1,10 @@
+HTTP/1.1 404
+status: 404
+content-length: 79
+connection: close
+date: Tue, 22 Sep 2015 06:05:33 GMT
+content-type: text/plain; charset=UTF-8
+x-openstack-request-id: req-7cd8ca62-b82a-4829-8dec-8a399503f409
+
+404 Not Found
+No image found with ID bc68b06f-8194-4122-86a1-0f0f03125f39

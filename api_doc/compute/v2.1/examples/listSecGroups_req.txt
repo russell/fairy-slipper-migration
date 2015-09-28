@@ -1,0 +1,4 @@
+GET /v2.1/5060e95b4fdd4e83a47074f6b3548a19/os-security-groups HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

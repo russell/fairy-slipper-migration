@@ -1,0 +1,4 @@
+POST /v3/roles HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

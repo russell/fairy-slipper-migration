@@ -1,0 +1,16 @@
+HTTP/1.1 400
+status: 400
+content-length: 78
+x-compute-request-id: req-812d4018-d8bc-4cc5-9d9b-4eadaacae058
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:56:33 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "badRequest": {
+    "code": 400,
+    "message": "name has more than 255 characters."
+  }
+}

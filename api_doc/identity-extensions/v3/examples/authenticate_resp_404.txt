@@ -1,0 +1,9 @@
+HTTP/1.1 404
+status: 404
+content-length: 115
+vary: X-Auth-Token
+server: Apache/2.4.7 (Ubuntu)
+connection: close
+date: Tue, 22 Sep 2015 06:07:18 GMT
+content-type: application/json
+x-openstack-request-id: req-25c02496-f263-4e61-afad-80981d6f34e4

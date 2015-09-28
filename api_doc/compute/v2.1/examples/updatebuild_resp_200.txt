@@ -1,0 +1,18 @@
+HTTP/1.1 200
+status: 200
+content-length: 123
+x-compute-request-id: req-9a6db471-7f32-4718-8af3-2de91acad8ad
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:52:10 GMT
+content-type: application/json
+
+{
+  "agent": {
+    "agent_id": "7",
+    "md5hash": "add6bb58e139be103324d04d82d8f547",
+    "url": "xxx://xxxx/xxx/xxx2",
+    "version": "8.0"
+  }
+}

@@ -1,0 +1,4 @@
+PATCH /v3/users/dd78eff4b37a4cf193cd935bcbe0a1a0 HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

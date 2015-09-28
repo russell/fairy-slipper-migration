@@ -1,0 +1,4 @@
+PUT /v2.1/d7e0aec518ce4248b0a8854302d4e4e1/servers/fa5aa718-d3a9-42c2-ae1b-16b5c8db33f2/metadata HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

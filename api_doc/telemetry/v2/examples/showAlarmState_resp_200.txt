@@ -1,0 +1,10 @@
+HTTP/1.1 200
+status: 200
+content-length: 4
+content-location: http://127.0.0.1:8777/v2/alarms/9a18b5ee-5622-44e4-a730-c1db11b351ad/state
+server: Werkzeug/0.10.4 Python/2.7.6
+date: Tue, 22 Sep 2015 06:06:09 GMT
+content-type: application/json; charset=UTF-8
+x-openstack-request-id: req-47d9d41a-aec2-42e6-9af6-76e4e285b7cc
+
+ok

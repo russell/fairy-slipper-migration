@@ -1,0 +1,4 @@
+GET /v2.1/cf5e345ffd79409e8efa258be6810763/os-quota-class-sets/default HTTP/1.1
+content-type: application/json
+accept: application/json
+x-auth-token: <omitted>

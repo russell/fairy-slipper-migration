@@ -1,0 +1,16 @@
+HTTP/1.1 404
+status: 404
+content-length: 91
+x-compute-request-id: req-7c6fb2e5-edad-4318-8cee-f34093652ef7
+vary: X-OpenStack-Nova-API-Version
+connection: close
+x-openstack-nova-api-version: 2.1
+date: Tue, 22 Sep 2015 05:59:16 GMT
+content-type: application/json; charset=UTF-8
+
+{
+  "itemNotFound": {
+    "code": 404,
+    "message": "Instance is not a member of specified network"
+  }
+}
